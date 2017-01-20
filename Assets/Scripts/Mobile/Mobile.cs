@@ -8,25 +8,50 @@ public class Mobile : MonoBehaviour {
 
 	public float animationSeconds = 1;
 
-	private Vector2 start;
-	private float delta;
-	public Vector2 goal;
+	public GameObject eyelids;
 
-	public float delay;
+	private Vector2 hidePosition;
+	public Vector2 showPosition;
+
+	private Vector2 goal;
+	private Vector2 start;
+
+	private float delta;
+
+	private bool animate = false;
 
 	// Use this for initialization
 	void Start()
 	{
-		delta = 0;
-		start = this.GetComponent<Transform>().position;
+		hidePosition = this.GetComponent<Transform>().position;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		if (delta > delay)
-			this.GetComponent<Transform>().position = Vector3.Lerp(start, goal, curve.Evaluate((delta-delay) / animationSeconds));
+		if (animate)
+		{
+			this.GetComponent<Transform>().position = Vector3.Lerp(start, goal, curve.Evaluate((delta) / animationSeconds));
+			delta += Time.deltaTime;
+			if (delta >= animationSeconds)
+				animate = false;
+		}
 
-		delta += Time.deltaTime;
+	}
+
+	public void takeMobile()
+	{
+		goal = showPosition;
+		start = hidePosition;
+		delta = 0;
+		animate = true;
+	}
+
+	public void hideMobile()
+	{
+		goal = hidePosition;
+		start = showPosition;
+		delta = 0;
+		animate = true;
 	}
 }

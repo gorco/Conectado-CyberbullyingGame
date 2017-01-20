@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 52732c2906624f941bd637f0157ea755
+timeCreated: 1484913150
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sani Trixie Sans
+  fontNames:
+  - Sani Trixie Sans
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
