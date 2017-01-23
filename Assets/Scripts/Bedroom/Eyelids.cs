@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class Eyelids : MonoBehaviour {
 
-	public AnimationCurve curve;
+	private AnimationCurve curve;
 
-	private AnimationCurve curveWakeUp;
-	private AnimationCurve curveGoToSleep;
+	public AnimationCurve curveWakeUp;
+	public AnimationCurve curveGoToSleep;
 
 	public UnityEngine.UI.Image topEyelid;
 	public UnityEngine.UI.Image bottomEyelid;
 
-	public float wakeUpOffset = 1;
-	public float animationSeconds = 1;
+	private float animationSeconds;
 
 	private Vector2 start1;
 	private Vector2 start2;
 
 	private Vector2 goal1;
 	private Vector2 goal2;
+
+	private bool animate = false;
 
 	private float delta;
 
@@ -28,12 +29,17 @@ public class Eyelids : MonoBehaviour {
 	}
 	
 	void Update () {
-		topEyelid.rectTransform.anchoredPosition = Vector3.Lerp(start1, goal1, curve.Evaluate(delta / animationSeconds));
-		bottomEyelid.rectTransform.anchoredPosition = Vector3.Lerp(start2, goal2, curve.Evaluate(delta / animationSeconds));
-		delta += Time.deltaTime;
+		if (animate)
+		{
+			topEyelid.rectTransform.anchoredPosition = Vector3.Lerp(start1, goal1, curve.Evaluate(delta / animationSeconds));
+			bottomEyelid.rectTransform.anchoredPosition = Vector3.Lerp(start2, goal2, curve.Evaluate(delta / animationSeconds));
+			delta += Time.deltaTime;
+			if (delta >= animationSeconds)
+				animate = false;
+		}
 	}
 
-	public void wakeUp()
+	public void wakeUp(float seconds)
 	{
 		curve = curveWakeUp;
 		delta = 0;
@@ -42,9 +48,12 @@ public class Eyelids : MonoBehaviour {
 		start2 = bottomEyelid.rectTransform.anchoredPosition;
 		goal1 = topEyelid.rectTransform.anchoredPosition + new Vector2(0, topEyelid.rectTransform.sizeDelta.y);
 		goal2 = bottomEyelid.rectTransform.anchoredPosition - new Vector2(0, bottomEyelid.rectTransform.sizeDelta.y);
+
+		animate = true;
+		animationSeconds = seconds;
 	}
 
-	public void goToSleep()
+	public void goToSleep(float seconds)
 	{
 		curve = curveGoToSleep;
 		delta = 0;
@@ -57,6 +66,9 @@ public class Eyelids : MonoBehaviour {
 		aux = start2;
 		start2 = goal2;
 		goal2 = aux;
+
+		animate = true;
+		animationSeconds = seconds;
 	}
 
 }
