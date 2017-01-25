@@ -28,11 +28,11 @@ public class AlarmSelector : MonoBehaviour {
 
 	void OnMouseDown()
 	{
-		xStartPosition = this.transform.position.x;
-		yPosition = gameObject.transform.position.y;
+		xStartPosition = transform.position.x;
+		yPosition = transform.position.y;
 
-		max = delayButton.transform.position.x;
-		min = turnOffButton.transform.position.x;
+		min = delayButton.transform.position.x;
+		max = turnOffButton.transform.position.x;
 		
 		screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 		offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
