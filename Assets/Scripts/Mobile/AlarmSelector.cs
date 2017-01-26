@@ -48,14 +48,14 @@ public class AlarmSelector : MonoBehaviour {
 	private void OnMouseUp()
 	{
 		//delay alarm
-		if(this.transform.localPosition.x + this.GetComponent<Renderer>().bounds.size.x > delayButton.transform.localPosition.x)
-		{
-			this.GetComponentInParent<Mobile>().stopAlarm(true);
-		}
-		//turn off alarm
-		else if (this.transform.localPosition.x < turnOffButton.transform.localPosition.x + turnOffButton.GetComponent<Renderer>().bounds.size.x)
+		if(this.transform.localPosition.x + this.GetComponent<Renderer>().bounds.size.x > turnOffButton.transform.localPosition.x)
 		{
 			this.GetComponentInParent<Mobile>().stopAlarm(false);
+		}
+		//turn off alarm
+		else if (this.transform.localPosition.x < delayButton.transform.localPosition.x + delayButton.GetComponent<Renderer>().bounds.size.x)
+		{
+			this.GetComponentInParent<Mobile>().stopAlarm(true);
 		}
 		this.transform.position = new Vector3(xStartPosition, transform.position.y, transform.position.z);
 	}

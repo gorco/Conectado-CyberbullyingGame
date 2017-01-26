@@ -10,6 +10,10 @@ public class Mobile : MonoBehaviour {
 	private Vector2 hidePosition;
 	public Vector2 showPosition;
 
+	public TextMesh hour;
+	public TextMesh alarm;
+	public TextMesh day;
+
 	private Vector2 goal;
 	private Vector2 start;
 
@@ -74,4 +78,25 @@ public class Mobile : MonoBehaviour {
 	{
 		return delayed;
 	}
+
+	public void setHour(int hour, int minute)
+	{
+		this.hour.text = "";
+		if (hour < 10)
+		{
+			this.hour.text = "0";
+		}
+		this.hour.text += hour + ":";
+		if(minute < 10)
+		{
+			this.hour.text += "0";
+		}
+		this.hour.text += minute;
+	}
+
+	public void updateHour()
+	{
+		setHour(CalendarTime.Hour, CalendarTime.Minute);
+	}
+
 }

@@ -34,15 +34,19 @@ public class WakeUpManager : MonoBehaviour {
 	void Start () {
 		state = 0;
 		Debug.Log(CalendarTime.Day + "  -  " + CalendarTime.Repeated);
-		if (CalendarTime.Day == 0 && !CalendarTime.Repeated) {
-			introText.enabled = true;
-			offset = introTime;
+		if (!CalendarTime.Repeated) {
+			if (CalendarTime.Day == 0)
+			{
+				introText.enabled = true;
+				offset = introTime;
+			}
 			CalendarTime.Hour = 7;
 			CalendarTime.Minute = 30;
 		} else {
 			introText.enabled = false;
 		}
-		
+		mobileObject.updateHour();
+
 	}
 	
 	// Update is called once per frame
@@ -79,6 +83,7 @@ public class WakeUpManager : MonoBehaviour {
 				eyelidsObject.goToSleep(sleepSeconds);
 				CalendarTime.Hour = 8;
 				CalendarTime.Minute = 5;
+				mobileObject.updateHour();
 			}
 			state = 5;
 			dTime = 0;
