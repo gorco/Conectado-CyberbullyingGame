@@ -7,6 +7,7 @@ public class WakeUpManager : MonoBehaviour {
 
 	public Mobile mobileObject;
 	public Eyelids eyelidsObject;
+	public CameraScroll cameraScroll;
 
 	public float wakeUpSeconds = 6;
 	public float sleepSeconds = 2;
@@ -32,6 +33,7 @@ public class WakeUpManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		cameraScroll.disableScroll(true);
 		state = 0;
 		Debug.Log(CalendarTime.Day + "  -  " + CalendarTime.Repeated);
 		if (!CalendarTime.Repeated) {
@@ -61,11 +63,17 @@ public class WakeUpManager : MonoBehaviour {
 			state = 2;
 			mobileObject.takeMobile(takeMobileSeconds);
 			dTime = 0;
-		} else if (state == 2 && !mobileObject.isSounding())
+		} else if (state == 2 && dTime > takeMobileSeconds)
 		{
-			state = 3;
-			dTime = 0;
+			if (mobileObject.isSounding() && !cameraScroll.isDisabled())
+			{
+				cameraScroll.disableScroll(false);
+			} else if (!mobileObject.isSounding()) {
+				state = 3;
+				dTime = 0;
+			}
 		} else if (state == 3) {
+			cameraScroll.disableScroll(true);
 			state = 4;
 			mobileObject.hideMobile(hideMobileSeconds);
 			dTime = 0;

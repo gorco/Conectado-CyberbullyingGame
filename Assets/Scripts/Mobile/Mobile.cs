@@ -28,7 +28,7 @@ public class Mobile : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
-		hidePosition = this.GetComponent<Transform>().position;
+		hidePosition = this.GetComponent<Transform>().localPosition;
 	}
 
 	// Update is called once per frame
@@ -36,7 +36,7 @@ public class Mobile : MonoBehaviour {
 	{
 		if (animate)
 		{
-			this.GetComponent<Transform>().position = Vector3.Lerp(start, goal, curve.Evaluate((delta) / animationSeconds));
+			this.GetComponent<Transform>().localPosition = Vector3.Lerp(start, goal, curve.Evaluate((delta) / animationSeconds));
 			delta += Time.deltaTime;
 			if (delta >= animationSeconds)
 				animate = false;
