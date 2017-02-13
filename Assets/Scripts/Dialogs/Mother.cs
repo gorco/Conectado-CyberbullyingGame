@@ -11,23 +11,26 @@ public class Mother : MonoBehaviour {
 	void Start()
 	{
 		soon = new Sequence();
-		soon.Root = soon.createChild(new Dialog(new List<Fragment>()
+		soon.Root = soon.createChild(Dialog.Create(new List<Fragment>()
 		{
 			new Fragment("Mamá", "Buenos días cariño, veo que te has levantado con tiempo"),
 			new Fragment("Mamá", "Portate bien y haz muchos amigos"),
 		}), 1);
 
 		late = new Sequence();
-		late.Root = late.createChild(new Dialog(new List<Fragment>()
+		late.Root = late.createChild(Dialog.Create(new List<Fragment>()
 		{
 			new Fragment("Mamá", "No te pusiste anoche el despertador"),
-		}, new List<DialogOption>()
+		}), 1);
+		/*
+		new List<Option>()
 		{
-			new DialogOption("Sí, pero me he vuelto a quedar dormido"),
-			new DialogOption("Lo puse, pero no ha sonado")
+			new Option("Sí, pero me he vuelto a quedar dormido"),
+			new Option("Lo puse, pero no ha sonado")
 		}), 2);
+		*/
 
-		Dialog d = new Dialog(new List<Fragment>()
+		Dialog d = Dialog.Create(new List<Fragment>()
 		{
 			new Fragment("Mamá", "Es tu primer día y ya llegas tarde"),
 			new Fragment("Mamá", "Venga, vete ya")

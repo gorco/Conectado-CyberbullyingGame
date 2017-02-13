@@ -53,17 +53,22 @@ public class WakeUpManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//Wake up (Move eyelids)
 		if (state == 0 && dTime >= offset) {
 			introText.enabled = false;
 			state = 1;
 			eyelidsObject.wakeUp (wakeUpSeconds);
 			dTime = 0;
-		} else if (state == 1 && dTime >= wakeUpSeconds)
+		}
+		//Take the mobile
+		else if (state == 1 && dTime >= wakeUpSeconds)
 		{
 			state = 2;
 			mobileObject.takeMobile(takeMobileSeconds);
 			dTime = 0;
-		} else if (state == 2 && dTime > takeMobileSeconds)
+		}
+		//Wait a mobile interaction
+		else if (state == 2 && dTime > takeMobileSeconds)
 		{
 			if (mobileObject.isSounding() && !cameraScroll.isDisabled())
 			{
@@ -72,12 +77,16 @@ public class WakeUpManager : MonoBehaviour {
 				state = 3;
 				dTime = 0;
 			}
-		} else if (state == 3) {
+		}
+		//Hide mobile
+		else if (state == 3) {
 			cameraScroll.disableScroll(true);
 			state = 4;
 			mobileObject.hideMobile(hideMobileSeconds);
 			dTime = 0;
-		} else if (state == 4 && dTime >= hideMobileSeconds)
+		}
+		//Check if wake up or go to sleep
+		else if (state == 4 && dTime >= hideMobileSeconds)
 		{
 			if (!mobileObject.isAlarmDelayed())
 			{
@@ -95,7 +104,9 @@ public class WakeUpManager : MonoBehaviour {
 			}
 			state = 5;
 			dTime = 0;
-		} else if (state == 5 && dTime > sleepSeconds)
+		}
+		//Go to sleep
+		else if (state == 5 && dTime > sleepSeconds)
 		{
 			CalendarTime.Repeated = true;
 			//change hour

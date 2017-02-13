@@ -1,0 +1,23 @@
+{
+	"bed":{
+		"root": [{
+			"tag": "Tú",
+			"msn": "Ahora que me he conseguido levantar no debería volver a acostarme"
+		}]		
+	},
+	"bag":{
+		"root": [{
+			"tag": "Tú",
+			"msn": "Creo que tengo todo preparado",
+		},
+		{
+			"tag": "Tú",
+			"msn": "mmm...",
+			"next": "node1"
+		}],
+		"node1":  [{
+			"tag": "Tú",
+			"msn": "Si, lo llevo todo, será mejor que coja la mochila y me marche ya",
+		}]
+	}
+}

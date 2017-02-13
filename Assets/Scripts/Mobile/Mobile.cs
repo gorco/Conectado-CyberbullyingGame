@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mobile : MonoBehaviour {
 
@@ -13,6 +14,9 @@ public class Mobile : MonoBehaviour {
 	public TextMesh hour;
 	public TextMesh alarm;
 	public TextMesh day;
+
+	public GameObject wakeUpPanel;
+	public BoxCollider2D selector;
 
 	private Vector2 goal;
 	private Vector2 start;
@@ -29,6 +33,9 @@ public class Mobile : MonoBehaviour {
 	void Start()
 	{
 		hidePosition = this.GetComponent<Transform>().localPosition;
+		wakeUpPanel.SetActive(false);
+		wakeUpPanel.GetComponentInChildren<Text>().text = "Llegas tarde a clase \n" +
+														"Sera mejor que apagues la alarma y te levantes YA";
 	}
 
 	// Update is called once per frame
@@ -39,7 +46,10 @@ public class Mobile : MonoBehaviour {
 			this.GetComponent<Transform>().localPosition = Vector3.Lerp(start, goal, curve.Evaluate((delta) / animationSeconds));
 			delta += Time.deltaTime;
 			if (delta >= animationSeconds)
+			{
 				animate = false;
+				selector.enabled = true;
+			}
 		}
 
 	}
@@ -65,8 +75,15 @@ public class Mobile : MonoBehaviour {
 
 	internal void stopAlarm(bool delayed)
 	{
-		this.delayed = delayed;
-		sound = false;
+		if (!delayed || CalendarTime.Hour < 8)
+		{
+			this.delayed = delayed;
+			sound = false;
+			wakeUpPanel.SetActive(false);
+		} else
+		{
+			wakeUpPanel.SetActive(true);
+		}
 	}
 
 	public bool isSounding()

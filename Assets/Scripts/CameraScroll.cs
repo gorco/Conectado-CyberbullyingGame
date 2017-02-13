@@ -10,13 +10,11 @@ public class CameraScroll : MonoBehaviour
 
 	private bool scroll = true;
 
-	private float initY;
 	private float initZ; 
 
 	// Use this for initialization
 	void Start()
 	{
-		initY = this.transform.localPosition.y;
 		initZ = this.transform.localPosition.z;
 	}
 
@@ -41,12 +39,12 @@ public class CameraScroll : MonoBehaviour
 		if (position)
 		{
 			if (this.transform.localPosition.x >= (scroll_min + desp))
-				this.transform.localPosition = new Vector3(this.transform.localPosition.x - desp, initY, initZ);
+				this.transform.localPosition = new Vector3(this.transform.localPosition.x - desp, this.transform.localPosition.y, initZ);
 		}
 		else
 		{
 			if (this.transform.localPosition.x <= (scroll_max - desp))
-				this.transform.localPosition = new Vector3(this.transform.localPosition.x + desp, initY, initZ);
+				this.transform.localPosition = new Vector3(this.transform.localPosition.x + desp, this.transform.localPosition.y, initZ);
 		}
 	}
 
