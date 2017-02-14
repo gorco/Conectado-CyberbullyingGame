@@ -34,6 +34,7 @@ public class Mobile : MonoBehaviour {
 	{
 		hidePosition = this.GetComponent<Transform>().localPosition;
 		wakeUpPanel.SetActive(false);
+		//TODO
 		wakeUpPanel.GetComponentInChildren<Text>().text = "Llegas tarde a clase \n" +
 														"Sera mejor que apagues la alarma y te levantes YA";
 	}

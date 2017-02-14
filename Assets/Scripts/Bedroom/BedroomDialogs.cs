@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class BedroomDialogs : MonoBehaviour {
 
 	private Sequence bed;
 	private Sequence bag;
+	private Sequence computer;
 	private GameEvent gameEvent;
 
 	// Use this for initialization
@@ -23,62 +25,34 @@ public class BedroomDialogs : MonoBehaviour {
 		Debug.Log(fileContents);
 		json = JSONObject.Create(fileContents);
 
-		this.bed = createSimplyDialog("bed");
-		this.bag = createSimplyDialog("bag");
+		this.bed = SequenceGenerator.createSimplyDialog("bed", json);
+		this.bag = SequenceGenerator.createSimplyDialog("bag", json);
+		this.computer = SequenceGenerator.createSimplyDialog("computer", json);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
 
-	private Sequence createSimplyDialog(string key)
-	{
-		Sequence seq = ScriptableObject.CreateInstance<Sequence>();
-		JSONObject jsonObj = this.json.GetField(key);
-
-		List<Fragment> fragments = new List<Fragment>();
-
-		bool endNode = false;
-		string nodeId = "root";
-		while (!endNode)
-		{
-			JSONObject node = jsonObj.GetField(nodeId);
-			string nextNode = "";
-			foreach (JSONObject j in node.list)
-			{
-				fragments.Add(new Fragment(j.GetField("tag").ToString(), j.GetField("msn").ToString()));
-				if (j.HasField("next"))
-				{
-					nextNode = j.GetField("next").ToString().Replace("\"","");
-				}
-			}
-			if (nodeId == "root")
-			{
-				seq.Root = seq.createChild(Dialog.Create(fragments));
-			}
-			if (nextNode != "")
-			{
-				nodeId = nextNode;
-			} else
-			{
-				endNode = true;
-			}
-		}
-		return seq;
 	}
 
 	public void startBedDialog()
 	{
-		this.gameEvent.Name = "bed interaction";
+		this.gameEvent.Name = "start sequence";
 		this.gameEvent.setParameter("sequence", this.bed);
 		Game.main.enqueueEvent(this.gameEvent);
 	}
 
 	public void startBagDialog()
 	{
-		this.gameEvent.Name = "bag interaction";
+		this.gameEvent.Name = "start sequence";
 		this.gameEvent.setParameter("sequence", this.bag);
+		Game.main.enqueueEvent(this.gameEvent);
+	}
+
+	public void startComputerDialog()
+	{
+		this.gameEvent.Name = "start sequence";
+		this.gameEvent.setParameter("sequence", this.computer);
 		Game.main.enqueueEvent(this.gameEvent);
 	}
 }

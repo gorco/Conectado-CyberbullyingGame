@@ -90,10 +90,6 @@ public class WakeUpManager : MonoBehaviour {
 		{
 			if (!mobileObject.isAlarmDelayed())
 			{
-				//TODO si es dia repetido levantarse de todas formas... decir que se llega tarde
-				//change hour
-				//TODO
-				//Wake up, load the bedroom scene
 				SceneManager.LoadScene(2);
 			} else
 			{
@@ -109,9 +105,6 @@ public class WakeUpManager : MonoBehaviour {
 		else if (state == 5 && dTime > sleepSeconds)
 		{
 			CalendarTime.Repeated = true;
-			//change hour
-			//TODO
-			//Go to sleep and load the same scene
 			SceneManager.LoadScene(1);
 		}
 		dTime += Time.deltaTime;
