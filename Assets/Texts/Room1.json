@@ -23,11 +23,20 @@
 		},
 		"node1": {
 			"type": "dialog",
+			"next": "node2",
 			"fragments": [{
 				"tag": "Tú",
 				"msn": "Si, lo llevo todo, será mejor que coja la mochila y me marche ya"
 			}]
-		}
+		},
+		"node2": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "BagPicked",
+				"value": true
+			}
+		},
 	},
 	"computer":{
 		"root": {
@@ -63,26 +72,5 @@
 				"msn": "Lo mejor será que me vaya"
 			}]
 		}		
-	},
-	"plug": {
-		"root": [{
-			"tag": "",
-			"msn": "Quieres poner el móvil a cargar",
-			"options": [{
-				"msn":"Si, será mejor que cargue el móvil", 
-				"next": "node1",
-			}, {
-				"msn":"No, no hace falta", 
-				"next": "node2"	
-			}]
-		}],
-		"node1":  [{
-			"tag": "Tú",
-			"msn": "El móvil está cargando",
-		}]
-		"node2":  [{
-			"tag": "Tú",
-			"msn": "No, no hace falta",
-		}]
 	}
 }

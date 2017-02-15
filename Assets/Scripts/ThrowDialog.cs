@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,6 @@ public class ThrowDialog : MonoBehaviour {
 	private void OnMouseUp()
 	{
 		Debug.Log("OnMouseUp");
-		GetComponentInParent<BedroomDialogs>().Invoke("start" + fieldName + "Dialog", 0);
+		GetComponentInParent<ObjectsWithDialogsManager>().startDialog(this.name);
 	}
 }
