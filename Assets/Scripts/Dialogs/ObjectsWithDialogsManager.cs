@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 using UnityEngine;
 
 public class ObjectsWithDialogsManager : MonoBehaviour {
@@ -25,12 +28,17 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 		JSONObject json = JSONObject.Create(fileContents);
 
 		foreach (Transform child in transform)
-         {
-             if (json.HasField(child.name.ToLower()))
-             {
-                 sequenceDict.Add(child.name, SequenceGenerator.createSimplyDialog(child.name.ToLower(), json));
-             }
-         }		
+        {
+			String name = child.name;
+			name = name.First().ToString().ToLower() + name.Substring(1);
+			if (json.HasField(name))
+			{
+				sequenceDict.Add(child.name, SequenceGenerator.createSimplyDialog(name, json));
+			} else if (json.HasField(name.ToLower()))
+            {
+                sequenceDict.Add(child.name, SequenceGenerator.createSimplyDialog(name.ToLower(), json));
+            }		 
+        }		
 	}
 	
 	// Update is called once per frame

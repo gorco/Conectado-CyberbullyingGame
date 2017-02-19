@@ -2,15 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BedroomState : MonoBehaviour {
+public class BedroomState : IState {
 
 	[SerializeField]
-	private bool bagPicked;
+	private bool bagPicked = false;
 
 	public bool BagPicked
 	{
 		get { return bagPicked; }
 		set { bagPicked = value; }
+	}
+
+	[SerializeField]
+	private bool chargingMobile = false;
+
+	public bool ChargingMobile
+	{
+		get { return chargingMobile; }
+		set { chargingMobile = value; }
 	}
 
 	// Use this for initialization

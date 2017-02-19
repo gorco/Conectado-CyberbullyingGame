@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,8 @@ public class Mobile : MonoBehaviour {
 	public GameObject wakeUpPanel;
 	public BoxCollider2D selector;
 
+	public string textFile;
+
 	private Vector2 goal;
 	private Vector2 start;
 
@@ -34,9 +37,12 @@ public class Mobile : MonoBehaviour {
 	{
 		hidePosition = this.GetComponent<Transform>().localPosition;
 		wakeUpPanel.SetActive(false);
-		//TODO
-		wakeUpPanel.GetComponentInChildren<Text>().text = "Llegas tarde a clase \n" +
-														"Sera mejor que apagues la alarma y te levantes YA";
+
+		StreamReader sr = new StreamReader(Application.dataPath + "/Texts/" + textFile);
+		string fileContents = sr.ReadToEnd();
+		sr.Close();
+
+		wakeUpPanel.GetComponentInChildren<Text>().text = fileContents;
 	}
 
 	// Update is called once per frame

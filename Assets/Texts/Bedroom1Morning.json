@@ -8,6 +8,24 @@
 			}]
 		}		
 	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No hay nada útil dentro"
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Deberia ordenar un poco todo esto"
+			}]
+		}		
+	},
 	"bag":{
 		"root": {
 			"type": "dialog",
@@ -71,6 +89,45 @@
 				"tag": "Tú",
 				"msn": "Lo mejor será que me vaya"
 			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "¿Dejo el móvil cargando?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"options": [{
+				"next": "node1a",
+				"msn": "Si"
+			},
+			{
+				"next": "node1b",
+				"msn": "No"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
 		}		
 	}
 }

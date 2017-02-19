@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -19,6 +20,7 @@ public class SequenceGenerator  {
 	public const string EVENT_NAME_FIELD = "name";
 	public const string EVENT_VALUE_FIELD = "value";
 	public const string EVENT_VARIABLE_FIELD = "var";
+	public const string EVENT_STATE_FIELD = "state";
 
 	public static Sequence createSimplyDialog(string key, JSONObject json)
 	{
@@ -34,6 +36,12 @@ public class SequenceGenerator  {
 
 	internal static void createNode(Sequence seq, JSONObject jsonObj, string nodeId,  string key)
 	{
+		if(seq[nodeId]!=null && seq[nodeId].Content != null)
+		{
+			Debug.LogWarning("Bucle encontrado");
+			return;
+		}
+
 		JSONObject node = jsonObj.GetField(nodeId);
 		if (!node.HasField(TYPE_FIELD))
 		{
@@ -156,7 +164,21 @@ public class SequenceGenerator  {
 					aux.setParameter(EVENT_VALUE_FIELD, value);
 				}
 				aux.setParameter(EVENT_VARIABLE_FIELD, variable);
+
+				if (eventNode.HasField(EVENT_STATE_FIELD))
+				{
+					JSONObject state = eventNode.GetField(EVENT_STATE_FIELD);
+					if (state.IsNumber)
+					{
+						aux.setParameter(EVENT_STATE_FIELD, Int32.Parse(state.ToString()));
+					}
+					else
+					{
+						Debug.LogError("The field " + EVENT_STATE_FIELD + " in node " + key + "->" + nodeId + " has to be a number");
+					}
+				}
 			}
+
 		}
 
 		newNode.Content = aux;
@@ -171,6 +193,7 @@ public class SequenceGenerator  {
 		if (node.HasField(NEXT_FIELD))
 		{
 			string nextNodeId = node.GetField(NEXT_FIELD).ToString().Replace("\"", "");
+			Debug.Log("Siguiente "+ key +" nodo a " + nodeId + "= " + nextNodeId);
 			if (nodeId == "root")
 			{
 				seq.Root.Childs[0] = seq[nextNodeId];

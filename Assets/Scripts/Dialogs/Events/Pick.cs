@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Pick : EventManager {
 
-	public BedroomState state;
+	public IState state;
 
 	/// <summary>
 	/// Receive the pick event
@@ -44,7 +44,8 @@ public class Pick : EventManager {
 	/// <param name="varValue"></param>
 	private void PickObject(string varName, System.Object varValue)
 	{
-		typeof(BedroomState).GetProperty(varName).SetValue(state, varValue, null);
+		Type t = state.GetType();
+		t.GetProperty(varName).SetValue(state, varValue, null);
 		/*
 		 * Throw exception in IsoUnityDialogs
 		 * this.gameObject.SetActive(false);
