@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class HighlightedObject : MonoBehaviour {
+public class HighlightedObject : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
 	private Sprite original;
 	public Sprite highlighted;
@@ -22,7 +24,7 @@ public class HighlightedObject : MonoBehaviour {
 
 	}
 
-	private void OnMouseEnter()
+	public void OnPointerEnter(PointerEventData eventData)
 	{
 		textMesh.transform.localPosition = this.transform.localPosition;
 
@@ -31,7 +33,7 @@ public class HighlightedObject : MonoBehaviour {
 		this.GetComponent<SpriteRenderer>().sprite = highlighted;
 	}
 
-	private void OnMouseExit()
+	public void OnPointerExit(PointerEventData eventData)
 	{
 		textMesh.SetActive(false);
 		this.GetComponent<SpriteRenderer>().sprite = original;

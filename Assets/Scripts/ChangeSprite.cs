@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ChangeSprite : MonoBehaviour {
+public class ChangeSprite : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
+{
 
 	public Sprite newSprite;
 	public bool switchObject = true;
@@ -48,8 +50,21 @@ public class ChangeSprite : MonoBehaviour {
 		original = !original;
 	}
 
-	void OnMouseUp()
+	public void OnPointerClick(PointerEventData eventData)
 	{
+		Debug.Log("ON POINTER CLICK");
+	}
+
+	public void OnPointerDown(PointerEventData eventData)
+	{
+		Debug.Log("ON POINTER DOWN");
+
+	}
+
+	public void OnPointerUp(PointerEventData eventData)
+	{
+		Debug.Log("ON POINTER UP");
+
 		changeSprite();
 	}
 }

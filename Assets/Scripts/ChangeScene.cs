@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class ChangeScene : MonoBehaviour {
+public class ChangeScene : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
+{
 
 	public int sceneToGo;
 
@@ -17,7 +20,15 @@ public class ChangeScene : MonoBehaviour {
 		
 	}
 
-	private void OnMouseDown()
+	public void OnPointerClick(PointerEventData eventData)
+	{
+	}
+
+	public void OnPointerDown(PointerEventData eventData)
+	{
+	}
+
+	public void OnPointerUp(PointerEventData eventData)
 	{
 		SceneManager.LoadScene(sceneToGo);
 	}
