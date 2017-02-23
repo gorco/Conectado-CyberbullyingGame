@@ -69,7 +69,7 @@
 			"type": "options",
 			"options": [{
 				"next": "node1a",
-				"msn": "Si, sin vicio no puedo estar"
+				"msn": "Si"
 			},
 			{
 				"next": "node1b",

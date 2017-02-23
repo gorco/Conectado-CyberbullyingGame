@@ -5,9 +5,6 @@ using UnityEngine;
 public class CalendarTime
 {
 
-	private static int day = 0, hour = 0, minute = 0;
-	private static bool repeated = false;
-
 	public static int Day {	get; set; }
 
 	public static int Hour { get; set; }
@@ -16,5 +13,26 @@ public class CalendarTime
 
 	public static bool Repeated { get; set; }
 
+	protected static CalendarTime instance;
+	public static CalendarTime Instance {  get { return instance == null ? instance = new CalendarTime() : instance; } }
 
+	public int DayNonStatic
+	{
+		get { return Day; }
+	}
+
+	public int HourNonStatic
+	{
+		get { return Hour; }
+	}
+
+	public int MinuteNonStatic
+	{
+		get { return Minute; }
+	}
+
+	public bool RepeatedNonStatic
+	{
+		get { return Repeated; }
+	}
 }

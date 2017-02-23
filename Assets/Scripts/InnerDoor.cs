@@ -26,12 +26,10 @@ public class InnerDoor : MonoBehaviour, IPointerClickHandler, IPointerDownHandle
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		throw new NotImplementedException();
 	}
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
-		throw new NotImplementedException();
 	}
 
 	public void OnPointerUp(PointerEventData eventData)

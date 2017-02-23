@@ -12,6 +12,7 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 	private GameEvent gameEvent;
 
 	public string fileName;
+	public IState variablesObject;
 
 	// Use this for initialization
 	void Start () {
@@ -33,10 +34,10 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 			name = name.First().ToString().ToLower() + name.Substring(1);
 			if (json.HasField(name))
 			{
-				sequenceDict.Add(child.name, SequenceGenerator.createSimplyDialog(name, json));
+				sequenceDict.Add(child.name, SequenceGenerator.createSimplyDialog(name, json, variablesObject));
 			} else if (json.HasField(name.ToLower()))
             {
-                sequenceDict.Add(child.name, SequenceGenerator.createSimplyDialog(name.ToLower(), json));
+                sequenceDict.Add(child.name, SequenceGenerator.createSimplyDialog(name.ToLower(), json , variablesObject));
             }		 
         }		
 	}
