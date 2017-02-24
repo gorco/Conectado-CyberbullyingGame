@@ -1,0 +1,123 @@
+{
+	"guillermo":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Guillermo",
+				"msn": "¿Eres nuevo? No te había visto antes por aquí"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"options": [{
+				"next": "node1a",
+				"msn": "Si, encantado. ¿Y tú eres?"
+			},
+			{
+				"next": "node2",
+				"msn": "... (Te vas sin decir nada)"
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "Guillermo",
+				"msn": "Llamame Guille"
+			},
+			{
+				"tag": "",
+				"msn": "<<La campana está sonando>>"
+			},
+			{
+				"tag": "Guillermo",
+				"msn": "Deberiamos entrar ya, nos vemos"
+			}]
+		}, 
+		"node2": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		}		
+	},
+	"alejandro":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Alejandro",
+				"msn": "Hoy me has quitado el sitio en clase porque he llegado tarde"
+			},
+			{
+				"tag": "Alejandro",
+				"msn": "Para compensarlo ¿qué tal si te quito yo algo a ti?"
+			},
+			{
+				"tag": "Alejandro",
+				"msn": "Es la hora del recreo, así que dame el sandwich que llevas en la mano"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"options": [{
+				"next": "node1b",
+				"msn": "... (Darle el sandwich)"
+			},
+			{
+				"next": "node1a",
+				"msn": "Vete a la cafeteria a comprarte el tuyo"
+			}]
+		},
+		"node1a": {
+			"type": "dialog"
+			"fragments": [{
+				"tag": "Alejandro",
+				"msn": "Parece que va a ver que enseñarte a la fuerza, te espero a la salida"
+			}]
+		}, 
+		"node1b": {
+			"type": "dialog"
+			"fragments": [{
+				"tag": "Alejandro",
+				"msn": "Ves, podemos llevarnos bie. ¿Qué tal si mañana me traés otro igual?"
+			},
+			{
+				"tag": "Alejandro",
+				"msn": "Hasta luego"
+			}]
+		}		
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true"
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "Parece que he llegado pronto y aún no se puede pasar"
+			}]
+		}
+	}
+}

@@ -35,4 +35,19 @@ public class CalendarTime
 	{
 		get { return Repeated; }
 	}
+
+	public static bool isLate(int hour, int min)
+	{
+		if(hour > Hour)
+		{
+			return true;
+		} else if (hour == Hour && min > Minute)
+		{
+			return true;
+		} else
+		{
+
+			return false;
+		}
+	}
 }

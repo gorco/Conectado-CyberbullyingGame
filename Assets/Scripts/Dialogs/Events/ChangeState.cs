@@ -9,6 +9,7 @@ public class ChangeState : EventManager
 	public IState state;
 	public GameObject objectToChange;
 	public Sprite[] sprites;
+	public string keyEvent;
 
 	/// <summary>
 	/// Receive the pick event
@@ -17,13 +18,24 @@ public class ChangeState : EventManager
 	public override void ReceiveEvent(IGameEvent ev)
 	{
 		Debug.Log("EVENTO " + ev.Name);
-		if (ev.Name.Replace("\"", "") == "change state")
+		if (ev.Name.Replace("\"", "") == "change state" && (keyEvent == null || keyEvent == "" ||
+			((String)ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD)).Replace("\"", "")  == keyEvent))
 		{
-			string var = ((String)ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD)).Replace("\"", "");
+			object vAux = ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD);
+			string var = null;
+			if (vAux != null)
+			{
+				var = ((String)vAux).Replace("\"", "");
+			}
 
 			var value = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
 
-			int state = (int)ev.getParameter(SequenceGenerator.EVENT_STATE_FIELD);
+			object sAux = ev.getParameter(SequenceGenerator.EVENT_STATE_FIELD);
+			int state = 0;
+			if (sAux != null)
+			{
+				state = (int)sAux;
+			}	
 
 			this.ChangeStateObject(var, value, state);
 		}

@@ -22,6 +22,7 @@ public class SequenceGenerator  {
 	public const string EVENT_VALUE_FIELD = "value";
 	public const string EVENT_VARIABLE_FIELD = "var";
 	public const string EVENT_STATE_FIELD = "state";
+	public const string EVENT_KEY_FIELD = "key";
 
 	public static Sequence createSimplyDialog(string key, JSONObject json, IState variablesObject)
 	{
@@ -219,6 +220,27 @@ public class SequenceGenerator  {
 
 		GameEvent aux = new GameEvent();
 		aux.name = eventNode.GetField(EVENT_NAME_FIELD).ToString().Replace("\"", "");
+
+		if (eventNode.HasField(EVENT_KEY_FIELD))
+		{
+			string keyEvent = eventNode.GetField(EVENT_KEY_FIELD).ToString().Replace("\"", "");
+			aux.setParameter(EVENT_KEY_FIELD, keyEvent);
+
+		}
+
+		if (eventNode.HasField(EVENT_STATE_FIELD))
+		{
+			JSONObject state = eventNode.GetField(EVENT_STATE_FIELD);
+			if (state.IsNumber)
+			{
+				aux.setParameter(EVENT_STATE_FIELD, Int32.Parse(state.ToString().Replace("\"", "")));
+			}
+			else
+			{
+				Debug.LogError("The field " + EVENT_STATE_FIELD + " in node " + key + "->" + nodeId + " has to be a number");
+			}
+		}
+
 		if (eventNode.HasField(EVENT_VARIABLE_FIELD))
 		{
 			string variable = eventNode.GetField(EVENT_VARIABLE_FIELD).ToString().Replace("\"", "");
@@ -240,21 +262,7 @@ public class SequenceGenerator  {
 					aux.setParameter(EVENT_VALUE_FIELD, value);
 				}
 				aux.setParameter(EVENT_VARIABLE_FIELD, variable);
-
-				if (eventNode.HasField(EVENT_STATE_FIELD))
-				{
-					JSONObject state = eventNode.GetField(EVENT_STATE_FIELD);
-					if (state.IsNumber)
-					{
-						aux.setParameter(EVENT_STATE_FIELD, Int32.Parse(state.ToString().Replace("\"", "")));
-					}
-					else
-					{
-						Debug.LogError("The field " + EVENT_STATE_FIELD + " in node " + key + "->" + nodeId + " has to be a number");
-					}
-				}
 			}
-
 		}
 
 		newNode.Content = aux;
@@ -297,13 +305,13 @@ public class SequenceGenerator  {
 
 		foreach (JSONObject j in optionsList)
 		{
-			if (j.HasField(NEXT_FIELD) && j.HasField(MESSAGE_FIELD))
+			if (j.HasField(MESSAGE_FIELD))
 			{
 				options.Add(new Option(j.GetField(MESSAGE_FIELD).ToString().Replace("\"", "")));
 			}
 			else
 			{
-				Debug.LogError("The node " + key + "->" + nodeId + " need a " + NEXT_FIELD + " and " + MESSAGE_FIELD + " field");
+				Debug.LogError("The node " + key + "->" + nodeId + " need a " + MESSAGE_FIELD + " field");
 			}
 		}
 
@@ -331,10 +339,6 @@ public class SequenceGenerator  {
 				}
 				createNode(seq, jsonObj, variables, nextNodeId, key);
 				child++;
-			}
-			else
-			{
-				Debug.LogError("The node " + key + "->" + nodeId + " need a " + NEXT_FIELD + " and " + MESSAGE_FIELD + " field");
 			}
 		}
 	}
