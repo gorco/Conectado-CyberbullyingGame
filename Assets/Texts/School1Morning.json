@@ -75,14 +75,14 @@
 			}]
 		},
 		"node1a": {
-			"type": "dialog"
+			"type": "dialog",
 			"fragments": [{
 				"tag": "Alejandro",
 				"msn": "Parece que va a ver que enseñarte a la fuerza, te espero a la salida"
 			}]
 		}, 
 		"node1b": {
-			"type": "dialog"
+			"type": "dialog",
 			"fragments": [{
 				"tag": "Alejandro",
 				"msn": "Ves, podemos llevarnos bie. ¿Qué tal si mañana me traés otro igual?"

@@ -1,3 +1,3 @@
-[submodule "Assets/Dialogs"]
-	path = Assets/Dialogs
-	url = https://github.com/Victorma/isometra-dialog-system
+[submodule "Assets/isometra-dialog-system"]
+	path = Assets/isometra-dialog-system
+	url = https://github.com/gorco/isometra-dialog-system
