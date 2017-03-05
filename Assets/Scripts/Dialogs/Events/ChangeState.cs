@@ -9,6 +9,8 @@ public class ChangeState : EventManager
 	public IState state;
 	public GameObject objectToChange;
 	public Sprite[] sprites;
+	public bool changePositionWhenChange = false;
+	public Vector2 newPos;
 	public string keyEvent;
 
 	/// <summary>
@@ -77,6 +79,7 @@ public class ChangeState : EventManager
 			that = objectToChange;
 		}
 		that.GetComponent<SpriteRenderer>().sprite = sprites[pos];
+		that.transform.localPosition = newPos;
 	}
 }
 

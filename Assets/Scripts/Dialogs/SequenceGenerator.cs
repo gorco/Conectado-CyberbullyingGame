@@ -51,7 +51,7 @@ public class SequenceGenerator  {
 
 		if (!jsonObj.HasField(nodeId))
 		{
-			Debug.LogError("The json of "+ key + "doesn't have node with id "+ nodeId);
+			Debug.LogError("The json of "+ key + " doesn't have node with id "+ nodeId);
 		}
 
 		JSONObject node = jsonObj.GetField(nodeId);
