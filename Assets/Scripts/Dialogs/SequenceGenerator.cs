@@ -24,6 +24,9 @@ public class SequenceGenerator  {
 	public const string EVENT_STATE_FIELD = "state";
 	public const string EVENT_KEY_FIELD = "key";
 
+	public const string GLOBAL_STATE = "global";
+	public const string LOCAL_STATE = "state";
+
 	public static Sequence createSimplyDialog(string key, JSONObject json, IState variablesObject)
 	{
 		Sequence seq = ScriptableObject.CreateInstance<Sequence>();
@@ -135,13 +138,13 @@ public class SequenceGenerator  {
 
 	internal static void createForkNode(Sequence seq, JSONObject jsonObj, IState variables, string nodeId, string key)
 	{
-		if(variables && seq.GetObject("state") == null)
+		if(variables && seq.GetObject(LOCAL_STATE) == null)
 		{
-			seq.SetObject("state", variables);
+			seq.SetObject(LOCAL_STATE, variables);
 		}
-		if(seq.GetObject("calendar") == null)
+		if(seq.GetObject(GLOBAL_STATE) == null)
 		{
-			seq.SetObject("calendar", CalendarTime.Instance);
+			seq.SetObject(GLOBAL_STATE, GlobalState.Instance);
 		}
 
 		JSONObject node = jsonObj.GetField(nodeId);

@@ -59,7 +59,7 @@
 			"event": {
 				"name": "change scene",
 				"var": "scene",
-				"value": 3
+				"value": 4
 			}
 		},
 		"dialogNode": {

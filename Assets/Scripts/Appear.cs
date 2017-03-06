@@ -11,7 +11,7 @@ public class Appear : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
-		bool late = CalendarTime.isLate(edgeHour, edgeMinutes);
+		bool late = GlobalState.isLate(edgeHour, edgeMinutes);
 		if(appearSoon && !late)
 		{
 			this.gameObject.SetActive(false);

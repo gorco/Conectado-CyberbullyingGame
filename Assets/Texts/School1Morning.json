@@ -1,5 +1,5 @@
 {
-	"guillermo":{
+	"guillermoPlayground":{
 		"root": {
 			"type": "fork",
 			"options": [{
@@ -33,7 +33,7 @@
 				"msn": "Si, encantado. ¿Y tú eres?"
 			},
 			{
-				"next": "node2",
+				"next": "bell",
 				"msn": "... (Te vas sin decir nada)"
 			}]
 		},
@@ -55,7 +55,6 @@
 		}, 
 		"node2": {
 			"type": "event",
-			"next": "bell"
 			"event": {
 				"name": "change state",
 				"key": "ExitDoorByBell",
@@ -66,6 +65,7 @@
 		},
 		"bell": {
 			"type": "dialog",
+			"next": "node2",
 			"fragments": [
 			{
 				"tag": "",
@@ -73,7 +73,7 @@
 			}]
 		}
 	},
-	"jose":{
+	"josePlayground":{
 		"root": {
 			"type": "dialog",
 			"next": "options",
@@ -137,7 +137,7 @@
 			}]
 		}
 	},
-	"alison":{
+	"alisonPlayground":{
 		"root": {
 			"type": "dialog",
 			"next": "options",
@@ -222,52 +222,91 @@
 			}]
 		}
 	},
-	"alejandro":{
+	"anaStairs":{
 		"root": {
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "Alejandro",
-				"msn": "Hoy me has quitado el sitio en clase porque he llegado tarde"
+				"tag": "Ana",
+				"msn": "¿Qué miras?"
 			},
 			{
-				"tag": "Alejandro",
-				"msn": "Para compensarlo ¿qué tal si te quito yo algo a ti?"
-			},
-			{
-				"tag": "Alejandro",
-				"msn": "Es la hora del recreo, así que dame el sandwich que llevas en la mano"
-			}]
-		},		
-		"node1": {
-			"type": "options",
-			"options": [{
-				"next": "node1b",
-				"msn": "... (Darle el sandwich)"
-			},
-			{
-				"next": "node1a",
-				"msn": "Vete a la cafeteria a comprarte el tuyo"
-			}]
-		},
-		"node1a": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Alejandro",
-				"msn": "Parece que va a ver que enseñarte a la fuerza, te espero a la salida"
-			}]
-		}, 
-		"node1b": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Alejandro",
-				"msn": "Ves, podemos llevarnos bie. ¿Qué tal si mañana me traés otro igual?"
-			},
-			{
-				"tag": "Alejandro",
-				"msn": "Hasta luego"
+				"tag": "Ana",
+				"msn": "Das mal rollo, ¡aparta!"
 			}]
 		}		
+	},
+	"alisonCorridor":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Alison",
+				"msn": "Veo que has encontrado la clase sin problemas"
+			},
+			{
+				"tag": "Alison",
+				"msn": "La chica pelirroja que está al lado de la puerta es María, también va a nuestra clase. Es bastante tímida pero buena gente"
+			},
+			{
+				"tag": "Alison",
+				"msn": "Y al lado del tablón de anuncios está Guille, al que ya conoces"
+			}]
+		}		
+	},
+	"mariaCorridor":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "María",
+				"msn": "..."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Parece incómoda, mejor dejarla en paz por ahora"
+			}]
+		}		
+	},
+	"guillermoCorridor":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Guillermo",
+				"msn": "Buenas, estaba leyendo el corcho de anuncios"
+			},
+			{
+				"tag": "Guillermo",
+				"msn": "A veces hay cosas interantes, incluso últimamente alguién va dejando cromos, mensajes y adivinanzas"
+			},
+			{
+				"tag": "Guillermo",
+				"msn": "Acostumbrate a mirarlo una vez al día"
+			},
+			{
+				"tag": "Guillermo",
+				"msn": "¿Entramos a clase?"
+			}]
+		}		
+	},
+	"principalNote":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Nota",
+				"msn": "Despacho del Director"
+			}]
+		}
+	},
+	"principalDoor":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Parece que está cerrada y no hay nadie dentro"
+			}]
+		}
 	},
 	"schoolEnter": {
 		"root": {
@@ -285,15 +324,32 @@
 			"type": "event",
 			"event": {
 				"name": "move camera",
-				"key": "corridor"
+				"key": "stairs"
 			}
 		},
 		"dialogNode": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "",
-				"msn": "Parece que he llegado pronto y aún no se puede pasar. Será
-				mejor que haga algo de tiempo."
+				"msn": "Parece que he llegado pronto y aún no se puede pasar. Será mejor que haga algo de tiempo."
+			}]
+		}
+	},
+	"stairsToCorridor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"stairsToPlayground": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Debería ir directo a clase"
 			}]
 		}
 	}

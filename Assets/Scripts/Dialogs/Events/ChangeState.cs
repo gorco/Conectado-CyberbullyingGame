@@ -10,7 +10,7 @@ public class ChangeState : EventManager
 	public GameObject objectToChange;
 	public Sprite[] sprites;
 	public bool changePositionWhenChange = false;
-	public Vector2 newPos;
+	public Vector2[] newPos;
 	public string keyEvent;
 
 	/// <summary>
@@ -19,7 +19,6 @@ public class ChangeState : EventManager
 	/// <param name="ev"></param>
 	public override void ReceiveEvent(IGameEvent ev)
 	{
-		Debug.Log("EVENTO " + ev.Name);
 		if (ev.Name.Replace("\"", "") == "change state" && (keyEvent == null || keyEvent == "" ||
 			((String)ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD)).Replace("\"", "")  == keyEvent))
 		{
@@ -79,7 +78,10 @@ public class ChangeState : EventManager
 			that = objectToChange;
 		}
 		that.GetComponent<SpriteRenderer>().sprite = sprites[pos];
-		that.transform.localPosition = newPos;
+		if (changePositionWhenChange)
+		{
+			that.transform.localPosition = newPos[pos];
+		}
 	}
 }
 
