@@ -1,5 +1,5 @@
 {
-	"guillermoPlayground":{
+	"guillermo":{
 		"root": {
 			"type": "fork",
 			"options": [{
@@ -73,7 +73,7 @@
 			}]
 		}
 	},
-	"josePlayground":{
+	"jose":{
 		"root": {
 			"type": "dialog",
 			"next": "options",
@@ -137,7 +137,7 @@
 			}]
 		}
 	},
-	"alisonPlayground":{
+	"alison":{
 		"root": {
 			"type": "dialog",
 			"next": "options",
@@ -222,92 +222,6 @@
 			}]
 		}
 	},
-	"anaStairs":{
-		"root": {
-			"type": "dialog",
-			"next": "node1",
-			"fragments": [{
-				"tag": "Ana",
-				"msn": "¿Qué miras?"
-			},
-			{
-				"tag": "Ana",
-				"msn": "Das mal rollo, ¡aparta!"
-			}]
-		}		
-	},
-	"alisonCorridor":{
-		"root": {
-			"type": "dialog",
-			"next": "node1",
-			"fragments": [{
-				"tag": "Alison",
-				"msn": "Veo que has encontrado la clase sin problemas"
-			},
-			{
-				"tag": "Alison",
-				"msn": "La chica pelirroja que está al lado de la puerta es María, también va a nuestra clase. Es bastante tímida pero buena gente"
-			},
-			{
-				"tag": "Alison",
-				"msn": "Y al lado del tablón de anuncios está Guille, al que ya conoces"
-			}]
-		}		
-	},
-	"mariaCorridor":{
-		"root": {
-			"type": "dialog",
-			"next": "node1",
-			"fragments": [{
-				"tag": "María",
-				"msn": "..."
-			},
-			{
-				"tag": "Tú",
-				"msn": "Parece incómoda, mejor dejarla en paz por ahora"
-			}]
-		}		
-	},
-	"guillermoCorridor":{
-		"root": {
-			"type": "dialog",
-			"next": "node1",
-			"fragments": [{
-				"tag": "Guillermo",
-				"msn": "Buenas, estaba leyendo el corcho de anuncios"
-			},
-			{
-				"tag": "Guillermo",
-				"msn": "A veces hay cosas interantes, incluso últimamente alguién va dejando cromos, mensajes y adivinanzas"
-			},
-			{
-				"tag": "Guillermo",
-				"msn": "Acostumbrate a mirarlo una vez al día"
-			},
-			{
-				"tag": "Guillermo",
-				"msn": "¿Entramos a clase?"
-			}]
-		}		
-	},
-	"principalNote":{
-		"root": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Nota",
-				"msn": "Despacho del Director"
-			}]
-		}
-	},
-	"principalDoor":{
-		"root": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Tú",
-				"msn": "Parece que está cerrada y no hay nadie dentro"
-			}]
-		}
-	},
 	"schoolEnter": {
 		"root": {
 			"type": "fork",
@@ -332,24 +246,6 @@
 			"fragments": [{
 				"tag": "",
 				"msn": "Parece que he llegado pronto y aún no se puede pasar. Será mejor que haga algo de tiempo."
-			}]
-		}
-	},
-	"stairsToCorridor": {
-		"root": {
-			"type": "event",
-			"event": {
-				"name": "move camera",
-				"key": "corridor"
-			}
-		}
-	},
-	"stairsToPlayground": {
-		"root": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Tú",
-				"msn": "Debería ir directo a clase"
 			}]
 		}
 	}

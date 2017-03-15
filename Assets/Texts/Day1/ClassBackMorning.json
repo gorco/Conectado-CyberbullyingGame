@@ -1,0 +1,41 @@
+﻿{
+	"ana":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Ana",
+				"msn": "Me parece que te has equivocado de clase"
+			}]
+		},
+		"node1": {
+			"type": "options",
+			"options": [{
+				"next": "node1a",
+				"msn": "No, es que hoy es mi primer día, soy <$ varObject('global', 'UserNameNonStatic') $>"
+			},
+			{
+				"next": "node1b",
+				"msn": "A palabras necias oidos sordos"
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Ana",
+				"msn": "Oh, así que tú eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'el nuevo', 'la nueva') $>"
+			},
+			{
+				"tag": "Ana",
+				"msn": "Yo soy Ana, también estoy en esta clase"
+			}]
+		},
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Ana",
+				"msn": "Subnormal..."
+			}]
+		}
+	}
+}

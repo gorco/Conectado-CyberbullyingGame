@@ -39,7 +39,11 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
             {
                 sequenceDict.Add(child.name, SequenceGenerator.createSimplyDialog(name.ToLower(), json , variablesObject));
             }		 
-        }		
+        }
+
+		/* TO TEST WITHOUT START AT THE FIRST SCENE*/
+		GlobalState.UserName = "Juan";
+		GlobalState.MaleSex = true;
 	}
 	
 	// Update is called once per frame
@@ -49,6 +53,12 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 
 	public void startDialog(string objectName)
 	{
+		if (!sequenceDict.ContainsKey(objectName))
+		{
+			Debug.LogError("The sequence with key " + objectName + " doesn't exit");
+			return;
+		}
+
 		this.gameEvent.setParameter("sequence", sequenceDict[objectName]);
 		Game.main.enqueueEvent(this.gameEvent);
 	}

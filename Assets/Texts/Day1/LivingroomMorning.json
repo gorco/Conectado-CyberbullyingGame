@@ -4,11 +4,11 @@
 			"type": "fork",
 			"options": [{
 				"next": "motherSoon",
-				"condition": "varObject('calendar', 'HourNonStatic') < 8"
+				"condition": "varObject('global', 'HourNonStatic') < 8"
 			},
 			{
 				"next": "motherLate",
-				"condition": "varObject('calendar', 'HourNonStatic') >= 8"
+				"condition": "varObject('global', 'HourNonStatic') >= 8"
 			}]
 		},
 		"motherSoon": {

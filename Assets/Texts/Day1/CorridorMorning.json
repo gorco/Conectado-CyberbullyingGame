@@ -1,0 +1,62 @@
+{
+	"alison":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"msn": "Veo que has encontrado la clase sin problemas"
+			},
+			{
+				"tag": "Alison",
+				"msn": "La chica pelirroja que está al lado de la puerta es María, también va a nuestra clase. Es bastante tímida pero buena gente"
+			},
+			{
+				"tag": "Alison",
+				"msn": "Y al lado del tablón de anuncios está Guille, al que ya conoces"
+			}]
+		}		
+	},
+	"maria":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "María",
+				"msn": "..."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Parece incómoda, mejor dejarla en paz por ahora"
+			}]
+		}		
+	},
+	"guillermo":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Guillermo",
+				"msn": "Buenas, estaba leyendo el corcho de anuncios"
+			},
+			{
+				"tag": "Guillermo",
+				"msn": "A veces hay cosas interantes, incluso últimamente alguién va dejando cromos, mensajes y adivinanzas"
+			},
+			{
+				"tag": "Guillermo",
+				"msn": "Acostumbrate a mirarlo una vez al día"
+			},
+			{
+				"tag": "Guillermo",
+				"msn": "¿Entramos a clase?"
+			}]
+		}		
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	}
+}

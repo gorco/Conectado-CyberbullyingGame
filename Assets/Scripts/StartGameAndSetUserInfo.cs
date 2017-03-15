@@ -9,9 +9,11 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 	public UnityEngine.UI.Toggle male;
 	public UnityEngine.UI.Toggle female;
 
+	public UnityEngine.UI.Text error;
+
 	// Use this for initialization
 	void Start () {
-		
+		error.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -23,13 +25,15 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 	{
 		if(userName.text == "")
 		{
-
+			error.text = "Hace falta un nombre de jugador";
+			error.enabled = true;
 			return;
 		}
 
 		if(!male.isOn && !female.isOn)
 		{
-
+			error.text = "Hace falta que selecciones tu género";
+			error.enabled = true;
 			return;
 		}
 

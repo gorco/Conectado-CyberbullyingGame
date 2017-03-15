@@ -30,6 +30,21 @@ public class SequenceGenerator  {
 	public static Sequence createSimplyDialog(string key, JSONObject json, IState variablesObject)
 	{
 		Sequence seq = ScriptableObject.CreateInstance<Sequence>();
+		if (variablesObject && seq.GetObject(LOCAL_STATE) == null)
+		{
+			seq.SetObject(LOCAL_STATE, variablesObject);
+		}
+		if (seq.GetObject(GLOBAL_STATE) == null)
+		{
+			seq.SetObject(GLOBAL_STATE, GlobalState.Instance);
+		}
+
+		if (!json.HasField(key))
+		{
+			Debug.LogError("Not found the key " + key);
+			return null;
+		}
+
 		JSONObject jsonObj = json.GetField(key);
 
 		string nodeId = "root";
@@ -138,15 +153,6 @@ public class SequenceGenerator  {
 
 	internal static void createForkNode(Sequence seq, JSONObject jsonObj, IState variables, string nodeId, string key)
 	{
-		if(variables && seq.GetObject(LOCAL_STATE) == null)
-		{
-			seq.SetObject(LOCAL_STATE, variables);
-		}
-		if(seq.GetObject(GLOBAL_STATE) == null)
-		{
-			seq.SetObject(GLOBAL_STATE, GlobalState.Instance);
-		}
-
 		JSONObject node = jsonObj.GetField(nodeId);
 		if (!node.HasField(OPTIONS_FIELD))
 		{
