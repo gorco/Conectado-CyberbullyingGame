@@ -27,17 +27,16 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 
 		Debug.Log(fileContents);
 		JSONObject json = JSONObject.Create(fileContents);
-
 		foreach (Transform child in transform)
         {
-			String name = child.name;
-			name = name.First().ToString().ToLower() + name.Substring(1);
+			String saveName = child.GetComponent<ThrowDialog>().fieldName;
+			String name = saveName.First().ToString().ToLower() + saveName.Substring(1);
 			if (json.HasField(name))
 			{
-				sequenceDict.Add(child.name, SequenceGenerator.createSimplyDialog(name, json, variablesObject));
+				sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name, json, variablesObject));
 			} else if (json.HasField(name.ToLower()))
             {
-                sequenceDict.Add(child.name, SequenceGenerator.createSimplyDialog(name.ToLower(), json , variablesObject));
+                sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name.ToLower(), json , variablesObject));
             }		 
         }
 
