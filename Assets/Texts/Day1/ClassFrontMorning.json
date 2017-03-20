@@ -1,0 +1,47 @@
+﻿{
+	"teacher":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Teacher",
+				"msn": "La semana pasada, si recordaís, terminamos de ver como hacer el análisis morfológico de una frase"
+			},
+			{
+				"tag": "Teacher",
+				"msn": "Ahora toca ver como hacer el analisis sintáctico"
+			},
+			{
+				"tag": "Ruidos en la puerta",
+				"msn": "(Alguien está llamando a la puerta)"
+			},
+			{
+				"tag": "Profesor",
+				"msn": "Pasa"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"next": "node2",
+			"event": {
+				"name": "class entrance",
+				"synchronous": true,
+			}
+		},
+		"node2": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Profesor",
+				"msn": "Alejandro, llegas tarde, por favor sientate"
+			},
+			{
+				"tag": "Alejandro",
+				"msn": "El nuevo está en mi sitio"
+			},
+			{
+				"tag": "Profesor",
+				"msn": "Su nombre es <$ varObject('global', 'UserNameNonStatic') $>. Sientate por ahora en otro lugar, he pedido a Alison que le ayude en sus primeros días"
+			}]
+		}
+	}
+}

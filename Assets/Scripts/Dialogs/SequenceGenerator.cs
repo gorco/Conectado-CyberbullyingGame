@@ -23,6 +23,7 @@ public class SequenceGenerator  {
 	public const string EVENT_VARIABLE_FIELD = "var";
 	public const string EVENT_STATE_FIELD = "state";
 	public const string EVENT_KEY_FIELD = "key";
+	public const string EVENT_SYNC_FIELD = "synchronous";
 
 	public const string GLOBAL_STATE = "global";
 	public const string LOCAL_STATE = "state";
@@ -230,6 +231,12 @@ public class SequenceGenerator  {
 		GameEvent aux = new GameEvent();
 		aux.name = eventNode.GetField(EVENT_NAME_FIELD).ToString().Replace("\"", "");
 
+		if (eventNode.HasField(EVENT_SYNC_FIELD))
+		{
+			bool syncValue = (bool)eventNode.GetField(EVENT_SYNC_FIELD);
+			aux.setParameter(EVENT_SYNC_FIELD, syncValue);
+		}
+
 		if (eventNode.HasField(EVENT_KEY_FIELD))
 		{
 			string keyEvent = eventNode.GetField(EVENT_KEY_FIELD).ToString().Replace("\"", "");
@@ -255,22 +262,31 @@ public class SequenceGenerator  {
 			string variable = eventNode.GetField(EVENT_VARIABLE_FIELD).ToString().Replace("\"", "");
 			if (!eventNode.HasField(EVENT_VALUE_FIELD))
 			{
-				Debug.LogError("The event "+ variable + " in node " + key + "->" + nodeId + " need a " + EVENT_VALUE_FIELD + " field");
+				Debug.LogError("The event " + variable + " in node " + key + "->" + nodeId + " need a " + EVENT_VALUE_FIELD + " field");
 				return;
-			} else
+			}
+			else
 			{
 				JSONObject value = eventNode.GetField(EVENT_VALUE_FIELD);
 				if (value.IsBool)
 				{
 					aux.setParameter(EVENT_VALUE_FIELD, (bool)value);
-				} else if (value.IsNumber)
+				}
+				else if (value.IsNumber)
 				{
 					aux.setParameter(EVENT_VALUE_FIELD, Int32.Parse(value.ToString().Replace("\"", "")));
-				} else 
+				}
+				else if (value.IsString)
+				{
+					aux.setParameter(EVENT_VALUE_FIELD, value.ToString().Replace("\"", ""));
+				}
+				else
 				{
 					aux.setParameter(EVENT_VALUE_FIELD, value);
 				}
+
 				aux.setParameter(EVENT_VARIABLE_FIELD, variable);
+				
 			}
 		}
 

@@ -29,8 +29,13 @@ public class ThrowDialog : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 
 	}
 
-	public void OnPointerUp(PointerEventData eventData)
+	public void ThrowDialogNow()
 	{
 		GetComponentInParent<ObjectsWithDialogsManager>().startDialog(fieldName);
+	}
+
+	public void OnPointerUp(PointerEventData eventData)
+	{
+		ThrowDialogNow();
 	}
 }

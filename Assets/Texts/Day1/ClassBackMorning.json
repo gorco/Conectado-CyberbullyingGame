@@ -1,4 +1,57 @@
 ﻿{
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'HourNonStatic') > 8"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "Profesor",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> ¿verdad?"
+			},{
+				"tag": "Profesor",
+				"msn": "Llegar tarde tu primer día no es una buena manera de empezar"
+			},
+			{
+				"tag": "Profesor",
+				"msn": "Clase, este es vuestro nuevo compañero, es nuevo en el colegio, así que por favor, ayudadle en sus primeros días"
+			},
+			{
+				"tag": "Profesor",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> Yo soy vuestro tutor, cualquier cosa que necesites dimelo"
+			},
+			{
+				"tag": "Profesor",
+				"msn": "Por favor, <$ varObject('global', 'UserNameNonStatic') $> sientate al lado de Alison, la mesa vacía de quinta fila"
+			},
+			{
+				"tag": "Profesor",
+				"msn": "Continuemos con la clase"
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Te diriges entre todas las miradas a tu sitio y te sientas"
+			}
+		},
+		"node3": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classFront"
+			}
+		}
+	},
 	"ana":{
 		"root": {
 			"type": "dialog",
@@ -21,6 +74,7 @@
 		},
 		"node1a": {
 			"type": "dialog",
+			"next": "node2",
 			"fragments": [{
 				"tag": "Ana",
 				"msn": "Oh, así que tú eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'el nuevo', 'la nueva') $>"
@@ -32,10 +86,67 @@
 		},
 		"node1b": {
 			"type": "dialog",
+			"next": "node2",
 			"fragments": [{
 				"tag": "Ana",
 				"msn": "Subnormal..."
 			}]
-		}
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "nodeTeacher",
+			"fragments": [{
+				"tag": "",
+				"msn": "(Ruidos de fondo, parece que tú nuevo profesor ha llegado)"
+			}]
+		},
+		"nodeTeacher": {
+			"type": "dialog",
+			"next": "nodeSit",
+			"fragments": [{
+				"tag": "Profesor",
+				"msn": "Vamos a empezar la clase, venga, pasad todos y sentaos"
+			}]
+		},
+		"nodeSit": {
+			"type": "options",
+			"options": [{
+				"next": "node3a",
+				"msn": "(Sentarse en última fila)"
+			},
+			{
+				"next": "node3b",
+				"msn": "(Preguntar dónde puedes sentarte)"
+			}]
+		},
+		"node3a": {
+			"type": "event",
+			"next": "node4",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Os sentaís todos y empieza la clase"
+			}
+		},
+		"node4": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classFront"
+			}
+		},
+		"node3b": {
+			"type": "dialog",
+			"next": "node3a",
+			"fragments": [{
+				"tag": "Profesor",
+				"msn": "Sientate al lado de Alison"
+			},
+			{
+				"tag": "Profesor",
+				"msn": "Alison, haz el favor de resolver todas las dudas que tenga <$ varObject('global', 'UserNameNonStatic') $> sobre el colegio"
+			}]
+		},
 	}
 }

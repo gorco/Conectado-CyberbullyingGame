@@ -30,7 +30,7 @@
 			"type": "options",
 			"options": [{
 				"next": "node1a",
-				"msn": "Si, encantado. ¿Y tú eres?"
+				"msn": "Si, soy <$ varObject('global', 'UserNameNonStatic') $>, encantado. ¿Y tú eres?"
 			},
 			{
 				"next": "bell",

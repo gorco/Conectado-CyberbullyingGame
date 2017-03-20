@@ -6,6 +6,7 @@ public class MoveCamera : EventManager
 {
 	public string keyEvent;
 	public Camera sceneCamera;
+	public float minScroll = 0;
 	public float maxScroll;
 	public float x;
 	public float y;
@@ -46,7 +47,15 @@ public class MoveCamera : EventManager
 	/// </summary>
 	private void moveCamera()
 	{
-		sceneCamera.GetComponent<CameraScroll>().scroll_max = maxScroll;
+		CameraScroll cam = sceneCamera.GetComponent<CameraScroll>();
+		cam.scroll_min = minScroll;
+		cam.scroll_max = maxScroll;
 		sceneCamera.transform.localPosition = new Vector3(x, y, sceneCamera.transform.localPosition.z);
+
+		ThrowDialog t = this.gameObject.GetComponent<ThrowDialog>();
+		if (t)
+		{
+			t.ThrowDialogNow();
+		}
 	}
 }

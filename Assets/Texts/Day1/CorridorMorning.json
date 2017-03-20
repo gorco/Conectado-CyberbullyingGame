@@ -58,5 +58,14 @@
 				"key": "stairs"
 			}
 		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		}
 	}
 }

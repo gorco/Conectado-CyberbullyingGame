@@ -31,13 +31,17 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
         {
 			String saveName = child.GetComponent<ThrowDialog>().fieldName;
 			String name = saveName.First().ToString().ToLower() + saveName.Substring(1);
+			Debug.Log(saveName + " ----- " + name);
 			if (json.HasField(name))
 			{
 				sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name, json, variablesObject));
 			} else if (json.HasField(name.ToLower()))
             {
                 sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name.ToLower(), json , variablesObject));
-            }		 
+            } else
+			{
+				Debug.LogWarning("Dialog with key " + name + " doesn't exist in file " + fileName);
+			}		 
         }
 
 		/* TO TEST WITHOUT START AT THE FIRST SCENE*/
