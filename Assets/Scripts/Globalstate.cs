@@ -17,6 +17,14 @@ public class GlobalState
 
 	public static string UserName { get; set; }
 
+	// Frienship
+	public static int MariaFS { get; set; }
+	public static int AlisonFS { get; set; }
+	public static int AnaFS { get; set; }
+	public static int GuillermoFS { get; set; }
+	public static int JoseFS { get; set; }
+	public static int AlejandroFS { get; set; }
+
 	protected static GlobalState instance;
 	public static GlobalState Instance {  get { return instance == null ? instance = new GlobalState() : instance; } }
 
@@ -48,6 +56,31 @@ public class GlobalState
 	public string UserNameNonStatic
 	{
 		get { return UserName; }
+	}
+
+	public int MariaFSNonStatic
+	{
+		get { return MariaFS; }
+	}
+	public int AlisonFSNonStatic
+	{
+		get { return AlisonFS; }
+	}
+	public int AnaFSNonStatic
+	{
+		get { return AnaFS; }
+	}
+	public int GuillermoFSNonStatic
+	{
+		get { return GuillermoFS; }
+	}
+	public int JoseFSNonStatic
+	{
+		get { return JoseFS; }
+	}
+	public int AlejandroFSNonStatic
+	{
+		get { return AlejandroFS; }
 	}
 
 	public static bool isLate(int hour, int min)

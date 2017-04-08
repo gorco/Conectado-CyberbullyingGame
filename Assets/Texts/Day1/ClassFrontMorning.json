@@ -30,6 +30,7 @@
 		},
 		"node2": {
 			"type": "dialog",
+			"next": "black",
 			"fragments": [{
 				"tag": "Profesor",
 				"msn": "Alejandro, llegas tarde, por favor sientate"
@@ -42,6 +43,24 @@
 				"tag": "Profesor",
 				"msn": "Su nombre es <$ varObject('global', 'UserNameNonStatic') $>. Sientate por ahora en otro lugar, he pedido a Alison que le ayude en sus primeros días"
 			}]
+		},
+		"black": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Después de la clase, cuándo suena la campana que indica el recreo"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 5
+			}
 		}
 	}
 }

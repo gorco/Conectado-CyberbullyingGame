@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Isometra;
+using Isometra.Sequences;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -29,19 +31,28 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 		JSONObject json = JSONObject.Create(fileContents);
 		foreach (Transform child in transform)
         {
-			String saveName = child.GetComponent<ThrowDialog>().fieldName;
-			String name = saveName.First().ToString().ToLower() + saveName.Substring(1);
-			Debug.Log(saveName + " ----- " + name);
-			if (json.HasField(name))
+			if (!child.GetComponent<ThrowDialog>())
 			{
-				sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name, json, variablesObject));
-			} else if (json.HasField(name.ToLower()))
-            {
-                sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name.ToLower(), json , variablesObject));
-            } else
+				Debug.LogError("The object with the name " + child.gameObject.name + " doesn't have ThrowDialog component");
+			}
+			else
 			{
-				Debug.LogWarning("Dialog with key " + name + " doesn't exist in file " + fileName);
-			}		 
+				ThrowDialog dialog = child.GetComponent<ThrowDialog>();
+				String saveName = dialog.fieldName;
+				String name = saveName.First().ToString().ToLower() + saveName.Substring(1);
+				if (json.HasField(name))
+				{
+					sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name, json, variablesObject));
+				}
+				else if (json.HasField(name.ToLower()))
+				{
+					sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name.ToLower(), json, variablesObject));
+				}
+				else
+				{
+					Debug.LogWarning("Dialog with key " + name + " doesn't exist in file " + fileName);
+				}
+			}
         }
 
 		/* TO TEST WITHOUT START AT THE FIRST SCENE*/

@@ -55,28 +55,12 @@
 		}, 
 		"node2": {
 			"type": "event",
-			"next": "fade1",
 			"event": {
 				"name": "change state",
 				"key": "ExitDoorByBell",
 				"var": "BellSounded",
 				"value": true,
 				"state": 0
-			}
-		},
-		"fade1": {
-			"type": "event",
-			"next": "fade2",
-			"event": {
-				"name": "fade out",
-				"key": "alison"
-			}
-		},
-		"fade2": {
-			"type": "event",
-			"event": {
-				"name": "fade out",
-				"key": "guillermo"
 			}
 		},
 		"bell": {

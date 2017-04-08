@@ -1,0 +1,108 @@
+{
+	"maria":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Maria",
+				"msn": "¿Quieres algo?"
+			}]
+		},
+		"node1": {
+			"type": "options",
+			"options": [{
+				"msn": "Nada, adios"
+			},
+			{
+				"next": "node2",
+				"msn": "¿Por qué estás aquí sola en vez de en el patio?"
+			}]
+		},		
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "Maria",
+				"msn": "Prefiero quedarme aquí tranquila leyendo"
+			}]
+		},
+		"node3": {
+			"type": "options",
+			"options": [{
+				"msn": "Disfruta, adios (Que chica más rara)"
+			},
+			{
+				"next": "node4",
+				"msn": "¿No prefieres estar en el recreo con tus amigos?"
+			}]
+		},	
+		"node4": {
+			"type": "dialog",
+			"next": "node5",
+			"fragments": [{
+				"tag": "Maria",
+				"msn": "Eres un poco pesado con las preguntas"
+			},
+			{
+				"tag": "Maria",
+				"msn": "No tengo amigos, creen que soy rara"
+			},
+			{
+				"tag": "Maria",
+				"msn": "Ya te puedes ir"
+			}]
+		},
+		"node5": {
+			"type": "options",
+			"options": [{
+				"msn": "(Irte)"
+			},
+			{
+				"next": "node6",
+				"msn": "(Quedarte)"
+			}]
+		},
+		"node6": {
+			"type": "dialog",
+			"next": "node5",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No me pareces rara"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Voy a bajar al recreo, si quieres venir estaré abajo"
+			},
+			{
+				"tag": "Maria",
+				"msn": "Gracias, eres muy amable"
+			}, 
+			{
+				"tag": "Maria",
+				"msn": "Pero al menos hoy me quedaré aquí, me quead poco para terminar el libro"
+			},
+			{
+				"tag": "Maria",
+				"msn": "Pásalo muy bien en el recreo, y evita a Alex, es estúpido"
+			}]
+		},
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		}
+	}
+}

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Isometra;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class MoveCamera : EventManager
 	public float maxScroll;
 	public float x;
 	public float y;
+	public bool throwMyDialog = false;
 
 	/// <summary>
 	/// Receive the pick event
@@ -17,7 +19,6 @@ public class MoveCamera : EventManager
 	/// <param name="ev"></param>
 	public override void ReceiveEvent(IGameEvent ev)
 	{
-		Debug.Log("EVENTO " + ev.Name);
 		if (ev.Name.Replace("\"", "") == "move camera" &&
 			ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD).ToString() == keyEvent)
 		{
@@ -52,10 +53,13 @@ public class MoveCamera : EventManager
 		cam.scroll_max = maxScroll;
 		sceneCamera.transform.localPosition = new Vector3(x, y, sceneCamera.transform.localPosition.z);
 
-		ThrowDialog t = this.gameObject.GetComponent<ThrowDialog>();
-		if (t)
+		if (throwMyDialog)
 		{
-			t.ThrowDialogNow();
+			ThrowDialog t = this.gameObject.GetComponent<ThrowDialog>();
+			if (t)
+			{
+				t.ThrowDialogNow();
+			}
 		}
 	}
 }

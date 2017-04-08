@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Isometra;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,6 @@ public class ChangeToScene : EventManager
 	/// <param name="ev"></param>
 	public override void ReceiveEvent(IGameEvent ev)
 	{
-		Debug.Log("EVENTO " + ev.Name);
 		if (ev.Name.Replace("\"", "") == "change scene")
 		{
 			int scene = (int)ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
