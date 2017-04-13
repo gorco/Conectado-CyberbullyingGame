@@ -1,29 +1,11 @@
 {
 	"guillermo":{
 		"root": {
-			"type": "fork",
-			"options": [{
-				"next": "first",
-				"condition": "varObject('state', 'BellSounded') == false"
-			},
-			{
-				"next": "second",
-				"condition": "varObject('state', 'BellSounded') == true"
-			}]
-		},
-		"second": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Guillermo",
-				"msn": "Vamos a llegar tarde a clase si no entramos ya"
-			}]
-		},
-		"first": {
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
 				"tag": "Guillermo",
-				"msn": "¿Eres nuevo? No te había visto antes por aquí"
+				"msn": "¿Eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nuevo', 'nueva') $>? No te había visto antes por aquí"
 			}]
 		},		
 		"node1": {
@@ -33,13 +15,22 @@
 				"msn": "Si, soy <$ varObject('global', 'UserNameNonStatic') $>, encantado. ¿Y tú eres?"
 			},
 			{
-				"next": "bell",
-				"msn": "... (Te vas sin decir nada)"
+				"next": "node1b",
+				"msn": "Perdona, tengo prisa (Te vas)"
 			}]
+		},
+		"node1b": {
+			"type": "event",
+			"next": "bell",
+			"event": {
+				"name": "change friendship",
+				"var": "GuillermoFSNonStatic",
+				"value": -10,
+			}
 		},
 		"node1a": {
 			"type": "dialog",
-			"next": "node2",
+			"next": "nodeFS",
 			"fragments": [{
 				"tag": "Guillermo",
 				"msn": "Llamame Guille"
@@ -53,6 +44,24 @@
 				"msn": "Deberiamos entrar ya, nos vemos"
 			}]
 		}, 
+		"nodeFS": {
+			"type": "event",
+			"next": "quest",
+			"event": {
+				"name": "change friendship",
+				"var": "GuillermoFSNonStatic",
+				"value": 10,
+			}
+		},
+		"quest": {
+			"type": "event",
+			"next": "node2",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuestFSNonStatic",
+				"value": 1,
+			}
+		},
 		"node2": {
 			"type": "event",
 			"next": "fade1",
@@ -91,22 +100,49 @@
 	},
 	"jose":{
 		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
 			"type": "dialog",
 			"next": "options",
+			"fragments": [{
+				"tag": "Jose",
+				"msn": "Has vuelto ¿querías algo más?"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"next": "setter",
 			"fragments": [{
 				"tag": "Jose",
 				"msn": "Eres nuevo, ¿no?"
 			},
 			{
 				"tag": "Jose",
-				"msn": "¿Necesitas algo?"
+				"msn": "¿Quieres algo?"
 			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
 		},
 		"options": {
 			"type": "options",
 			"options": [{
-				"next": "node1",
-				"msn": "(Presentarte)"
+				"next": "introduceFork",
+				"msn": "Hola, soy <$ varObject('global', 'UserNameNonStatic') $>"
 			},
 			{
 				"next": "node2",
@@ -114,23 +150,64 @@
 			},
 			{
 				"next": "node3",
-				"msn": "(Despedirte e irte)"
+				"msn": "No necesito nada, hasta luego"
 			}]
+		},
+		"introduceFork": {
+			"type": "fork",
+			"options": [{
+				"next": "know",
+				"condition": "introduced == true"
+			},
+			{
+				"next": "introducedSetter",
+				"condition": "true"
+			}]
+		},
+		"know": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Jose",
+				"msn": "Ya me habías dicho tu nombre"
+			}]
+		},
+		"introducedSetter":{
+			"type": "setter",
+			"next": "nodeFS",
+			"set": {
+				"var": "introduced",
+				"value": true
+			}
+		},
+		"nodeFS": {
+			"type": "event",
+			"next": "quest",
+			"event": {
+				"name": "change friendship",
+				"var": "JoseFSNonStatic",
+				"value": 10,
+			}
+		},
+		"quest": {
+			"type": "event",
+			"next": "node1",
+			"event": {
+				"name": "change variable",
+				"var": "JoseQuestFSNonStatic",
+				"value": 1,
+			}
 		},
 		"node1": {
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
 				"tag": "Jose",
-				"msn": "Encantado, yo soy Jose"
+				"msn": "Yo soy Jose"
 			},
 			{
 				"tag": "Jose",
-				"msn": "Parece que vamos a la misma clase, así que nos veremos a menudo"
-			},
-			{
-				"tag": "Jose",
-				"msn": "¿Quieres algo más?"
+				"msn": "¿Quieres algo?"
 			}]
 		},
 		"node2": {
@@ -149,7 +226,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Jose",
-				"msn": "Te veo en clase"
+				"msn": "Adios"
 			}]
 		}
 	},
@@ -165,13 +242,22 @@
 		"options": {
 			"type": "options",
 			"options": [{
-				"next": "node1",
-				"msn": "Soy nuevo (Presentarte)"
+				"next": "nodeFS",
+				"msn": "Soy <$ varObject('global', 'UserNameNonStatic') $> ¿Y tú eres?"
 			},
 			{
 				"next": "node2",
-				"msn": "No (Responder timidamente e irte)"
+				"msn": "No, los siento, tengo prisa. Adios."
 			}]
+		},
+		"nodeFS": {
+			"type": "event",
+			"next": "node1",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFSNonStatic",
+				"value": 10,
+			}
 		},
 		"node1": {
 			"type": "dialog",
@@ -262,6 +348,15 @@
 			"fragments": [{
 				"tag": "",
 				"msn": "Parece que he llegado pronto y aún no se puede pasar. Será mejor que haga algo de tiempo."
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Acabo de llegar, no puedo irme aún"
 			}]
 		}
 	}

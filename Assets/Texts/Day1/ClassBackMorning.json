@@ -3,8 +3,15 @@
 		"root": {
 				"type": "fork",
 				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
 					"next": "node1",
-					"condition": "varObject('global', 'HourNonStatic') > 8"
+					"condition": "varObject('global', 'MinuteNonStatic') > 0"
 				}]
 		},
 		"node1": {
@@ -15,11 +22,11 @@
 				"msn": "<$ varObject('global', 'UserNameNonStatic') $> ¿verdad?"
 			},{
 				"tag": "Profesor",
-				"msn": "Llegar tarde tu primer día no es una buena manera de empezar"
+				"msn": "Llegar tarde tu primer día, no es una buena manera de empezar"
 			},
 			{
 				"tag": "Profesor",
-				"msn": "Clase, este es vuestro nuevo compañero, es nuevo en el colegio, así que por favor, ayudadle en sus primeros días"
+				"msn": "Clase, este es vuestro nuevo compañero, nuevo en el colegio, por favor, ayudadle en sus primeros días"
 			},
 			{
 				"tag": "Profesor",
@@ -27,7 +34,11 @@
 			},
 			{
 				"tag": "Profesor",
-				"msn": "Por favor, <$ varObject('global', 'UserNameNonStatic') $> sientate al lado de Alison, la mesa vacía de quinta fila"
+				"msn": "Por favor, <$ varObject('global', 'UserNameNonStatic') $> sientate al lado de Alison"
+			},
+			{
+				"tag": "Profesor",
+				"msn": "Alison, haz el favor de resolver todas las dudas que tenga <$ varObject('global', 'UserNameNonStatic') $> sobre el colegio"
 			},
 			{
 				"tag": "Profesor",
@@ -55,11 +66,20 @@
 	"ana":{
 		"root": {
 			"type": "dialog",
-			"next": "node1",
+			"next": "quest",
 			"fragments": [{
 				"tag": "Ana",
 				"msn": "Me parece que te has equivocado de clase"
 			}]
+		},
+		"quest": {
+			"type": "event",
+			"next": "node2",
+			"event": {
+				"name": "change variable",
+				"var": "AnaQuestFSNonStatic",
+				"value": 1,
+			}
 		},
 		"node1": {
 			"type": "options",

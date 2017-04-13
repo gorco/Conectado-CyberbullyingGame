@@ -1,0 +1,111 @@
+{
+	"testSetter":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "second",
+				"condition": "talk == true"
+			},
+			{
+				"next": "first",
+				"condition": "true"
+			}]
+		},
+		"first": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Test",
+				"msn": "La variable talk = false"
+			},
+			{
+				"tag": "Test",
+				"msn": "La seteo a true"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "done",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		},
+		"done": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Test",
+				"msn": "DONE --> La variable talk se ha seteado a true"
+			}]
+		},
+		"second": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Test",
+				"msn": "La variable talkGood = true"
+			}]
+		}
+	},
+	"testOptions": {
+		"root": {
+			"type": "options",
+			"options": [{
+				"next": "node1",
+				"msn": "Siguiente node1"
+			},
+			{
+				"msn": "Nada"
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Test",
+				"msn": "Algo mas"
+			}]
+		}
+	},
+	"testOptions2": {
+		"root": {
+			"type": "options",
+			"options": [{
+				"msn": "Nada"
+			},
+			{
+				"msn": "Siguiente node1",
+				"next": "node1"
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Test",
+				"msn": "Algo mas"
+			}]
+		}
+	},
+	"testOptions3": {
+		"root": {
+			"type": "options",
+			"options": [{
+				"msn": "Nada"
+			},
+			{
+				"msn": "Muestra más opciones",
+				"next": "setter"
+			},
+			{
+				"msn": "Condicional",
+				"condition": "condition == true"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "root",
+			"set": {
+				"var": "condition",
+				"value": true
+			}
+		}
+	}
+}

@@ -1,6 +1,32 @@
 ﻿{
 	"alejandro":{
 		"root": {
+			"type": "fork",
+			"options": [{
+					"next": "go",
+					"condition": "spoken == true"
+			},
+			{
+					"next": "setter",
+					"condition": "true"
+			}]
+		},
+		"go": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alejandro",
+				"msn": "¿Qué miras? largo, ya hemos hablado todo lo que teniamos que hablar"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "node0",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"node0": {
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
@@ -19,17 +45,26 @@
 		"node1": {
 			"type": "options",
 			"options": [{
-				"next": "node2a",
+				"next": "quest2a",
 				"msn": "Vale, perdona, no volverá a pasar"
 			},
 			{
-				"next": "node2b",
+				"next": "quest2b",
 				"msn": "Es sólo un sitio"
 			},
 			{
-				"next": "node2c",
+				"next": "quest2c",
 				"msn": "¿Y quién se supone que eres para decirme donde no puedo sentarme?"
 			}]
+		},
+		"quest2a": {
+			"type": "event",
+			"next": "node2a",
+			"event": {
+				"name": "change variable",
+				"var": "AlejandroQuestFSNonStatic",
+				"value": 1,
+			}
 		},
 		"node2a": {
 			"type": "dialog",
@@ -50,6 +85,15 @@
 				"tag": "Alejandro",
 				"msn": "Venga, fuera de mi vista"
 			}]
+		},
+		"quest2b": {
+			"type": "event",
+			"next": "node2b",
+			"event": {
+				"name": "change variable",
+				"var": "AlejandroQuestFSNonStatic",
+				"value": 1,
+			}
 		},
 		"node2b": {
 			"type": "dialog",
@@ -74,6 +118,15 @@
 				"tag": "Alejandro",
 				"msn": "Y ahora largate"
 			}]
+		},
+		"quest2c": {
+			"type": "event",
+			"next": "node2c",
+			"event": {
+				"name": "change variable",
+				"var": "AlejandroQuestFSNonStatic",
+				"value": 2,
+			}
 		},
 		"node2c": {
 			"type": "dialog",
@@ -112,6 +165,81 @@
 	},
 	"alison":{
 		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "first",
+				"condition": "varObject('state', 'AlisonDialog') == false"
+			},
+			{
+				"next": "earingFound",
+				"condition": "varObject('state', 'EaringFound') == true"
+			},
+			{
+				"next": "earingNotFound",
+				"condition": "varObject('state', 'EaringFound') == false"
+			}]
+		},
+		"earingFound": {
+			"type": "dialog",
+			"next": "quest",
+			"fragments": [{
+				"tag": "Alison",
+				"msn": "Veo que has encontrado el pendiente"
+			},
+			{
+				"tag": "Alison",
+				"msn": "Muchas gracias"
+			},
+			{
+				"tag": "Alison",
+				"msn": "Eres genial, te debo una"
+			},
+			{
+				"tag": "Alison",
+				"msn": "El recreo se va a acabar ya, deberíamos ir entrando a clase"
+			},
+			{
+				"tag": "Alison",
+				"msn": "Nos vemos dentro"
+			}]
+		},
+		"quest": {
+			"type": "event",
+			"next": "nodeFS",
+			"event": {
+				"name": "change variable",
+				"var": "AlisonFSNonStatic",
+				"value": 1,
+			}
+		},
+		"nodeFS":{
+			"type": "event",
+			"next": "fade",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFSNonStatic",
+				"value": 20,
+			}
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "alison"
+			}
+		},
+		"earingNotFound": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"msn": "¿Aún no has encontrado nada?"
+			},
+			{
+				"tag": "Alison",
+				"msn": "Sigue buscando por favor"
+			}]
+		},
+		"first": {
 			"type": "dialog",
 			"next": "earing",
 			"fragments": [{
@@ -178,7 +306,7 @@
 			},
 			{
 				"tag": "Alison",
-				"msn": "So so son nuevos, un re regalo"
+				"msn": "So... so... son nuevos, un re... regalo"
 			},
 			{
 				"tag": "",

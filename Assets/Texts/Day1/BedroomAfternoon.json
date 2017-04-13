@@ -2,10 +2,29 @@
 	"bed":{
 		"root": {
 			"type": "dialog",
+			"next": "node1",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Ahora que me he conseguido levantar no debería volver a acostarme"
+				"msn": "¿mmm, Debería irme ya a dormir?"
 			}]
+		},
+		"node1": {
+			"type": "options",
+			"options": [{
+				"next": "sleep",
+				"msn": "Si"
+			},
+			{
+				"msn": "No"
+			}]
+		},
+		"sleep": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 7
+			}
 		}		
 	},
 	"wardrobeInside1":{
@@ -29,32 +48,15 @@
 	"bag":{
 		"root": {
 			"type": "dialog",
-			"next": "node1",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Creo que tengo todo preparado"
+				"msn": "..."
 			},
 			{
 				"tag": "Tú",
-				"msn": "mmm...",
+				"msn": "Ya tengo todo listo",
 			}]
-		},
-		"node1": {
-			"type": "dialog",
-			"next": "node2",
-			"fragments": [{
-				"tag": "Tú",
-				"msn": "Si, lo llevo todo, será mejor que coja la mochila y me marche ya"
-			}]
-		},
-		"node2": {
-			"type": "event",
-			"event": {
-				"name": "pick",
-				"var": "BagPicked",
-				"value": true
-			}
-		},
+		}
 	},
 	"computer":{
 		"root": {

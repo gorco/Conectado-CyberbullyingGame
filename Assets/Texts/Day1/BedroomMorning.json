@@ -80,7 +80,11 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No se enciende..."
+				"msn": "No debería encenderlo, si me entretengo llegaré tarde"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Esta tarde pordré usarlo al volver"
 			}]
 		}, 
 		"node1b": {

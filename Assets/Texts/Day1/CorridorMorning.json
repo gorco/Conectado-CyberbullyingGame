@@ -1,6 +1,17 @@
 {
 	"alison":{
 		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "varObject('state', 'AlisonDialog') == true"
+			},
+			{
+				"next": "node2",
+				"condition": "varObject('state', 'AlisonDialog') == false"
+			}]
+		},
+		"node1": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Alison",
@@ -14,7 +25,14 @@
 				"tag": "Alison",
 				"msn": "Y al lado del tablón de anuncios está Guille, al que ya conoces"
 			}]
-		}		
+		},
+		"node2": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"msn": "Perdona,  tengo prisa, si no entro ya a classe voy a llegar tarde"
+			}]
+		}			
 	},
 	"maria":{
 		"root": {
@@ -31,7 +49,26 @@
 	},
 	"guillermo":{
 		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node2",
+				"condition": "true"
+			}]
+		},
+		"node1": {
 			"type": "dialog",
+			"fragments": [{
+				"tag": "Guillermo",
+				"msn": "Acuerdate de mirar los corchos, a veces se encuentran cosas interesantes"
+			}]
+		},		
+		"node2": {
+			"type": "dialog",
+			"next": "quest",
 			"fragments": [{
 				"tag": "Guillermo",
 				"msn": "Buenas, estaba leyendo el corcho de anuncios"
@@ -48,7 +85,77 @@
 				"tag": "Guillermo",
 				"msn": "¿Entramos a clase?"
 			}]
-		}		
+		},	
+		"quest": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuestFSNonStatic",
+				"value": 2,
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicos"
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicas"
+			}]
+		}
 	},
 	"doorToStairs": {
 		"root": {

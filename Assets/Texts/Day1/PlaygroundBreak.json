@@ -1,251 +1,77 @@
 {
-	"guillermo":{
+	"ana":{
 		"root": {
-			"type": "fork",
-			"options": [{
-				"next": "first",
-				"condition": "varObject('state', 'BellSounded') == false"
-			},
-			{
-				"next": "second",
-				"condition": "varObject('state', 'BellSounded') == true"
-			}]
-		},
-		"second": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Guillermo",
-				"msn": "Vamos a llegar tarde a clase si no entramos ya"
+				"tag": "Ana",
+				"msn": "Hay algo raro cerca de la canasta"
+			},
+			{
+				"tag": "Ana",
+				"msn": "Veo algo brillar desde aquí"
+			}]
+		}
+	},
+	"guille":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Guille",
+				"msn": "Nuestro tutor es bastante majo"
+			},
+			{
+				"tag": "Guille",
+				"msn": "Si tienes cualquier problema habla con él"
+			}]
+		}
+	},
+	"shine":{
+		"root": {
+			"type": "dialog",
+			"next": "take",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Parece que es el pendiente de Alison"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Será mejor que me lo lleve"
 			}]
 		},
-		"first": {
-			"type": "dialog",
-			"next": "node1",
-			"fragments": [{
-				"tag": "Guillermo",
-				"msn": "¿Eres nuevo? No te había visto antes por aquí"
-			}]
-		},		
-		"node1": {
-			"type": "options",
-			"options": [{
-				"next": "node1a",
-				"msn": "Si, soy <$ varObject('global', 'UserNameNonStatic') $>, encantado. ¿Y tú eres?"
-			},
-			{
-				"next": "bell",
-				"msn": "... (Te vas sin decir nada)"
-			}]
-		},
-		"node1a": {
-			"type": "dialog",
-			"next": "node2",
-			"fragments": [{
-				"tag": "Guillermo",
-				"msn": "Llamame Guille"
-			},
-			{
-				"tag": "",
-				"msn": "<<La campana está sonando>>"
-			},
-			{
-				"tag": "Guillermo",
-				"msn": "Deberiamos entrar ya, nos vemos"
-			}]
-		}, 
-		"node2": {
+		"take": {
 			"type": "event",
+			"next": "fade",
 			"event": {
 				"name": "change state",
-				"key": "ExitDoorByBell",
-				"var": "BellSounded",
+				"key": "EaringFound",
+				"var": "EaringFound",
 				"value": true,
 				"state": 0
 			}
 		},
-		"bell": {
-			"type": "dialog",
-			"next": "node2",
-			"fragments": [
-			{
-				"tag": "",
-				"msn": "<<La campana está sonando>>"
-			}]
-		}
-	},
-	"jose":{
-		"root": {
-			"type": "dialog",
-			"next": "options",
-			"fragments": [{
-				"tag": "Jose",
-				"msn": "Eres nuevo, ¿no?"
-			},
-			{
-				"tag": "Jose",
-				"msn": "¿Necesitas algo?"
-			}]
-		},
-		"options": {
-			"type": "options",
-			"options": [{
-				"next": "node1",
-				"msn": "(Presentarte)"
-			},
-			{
-				"next": "node2",
-				"msn": "(Preguntar dónde está tu clase)"
-			},
-			{
-				"next": "node3",
-				"msn": "(Despedirte e irte)"
-			}]
-		},
-		"node1": {
-			"type": "dialog",
-			"next": "options",
-			"fragments": [{
-				"tag": "Jose",
-				"msn": "Encantado, yo soy Jose"
-			},
-			{
-				"tag": "Jose",
-				"msn": "Parece que vamos a la misma clase, así que nos veremos a menudo"
-			},
-			{
-				"tag": "Jose",
-				"msn": "¿Quieres algo más?"
-			}]
-		},
-		"node2": {
-			"type": "dialog",
-			"next": "options",
-			"fragments": [{
-				"tag": "Jose",
-				"msn": "Esa es también mi clase, está en la primera planta, subiendo las escaleras de la derecha que encuentras nada más entrar al edificio"
-			},
-			{
-				"tag": "Jose",
-				"msn": "¿Necesitas algo más?"
-			}]
-		},
-		"node3": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Jose",
-				"msn": "Te veo en clase"
-			}]
-		}
-	},
-	"alison":{
-		"root": {
-			"type": "dialog",
-			"next": "options",
-			"fragments": [{
-				"tag": "Alison",
-				"msn": "¿Te conozco?"
-			}]
-		},
-		"options": {
-			"type": "options",
-			"options": [{
-				"next": "node1",
-				"msn": "Soy nuevo (Presentarte)"
-			},
-			{
-				"next": "node2",
-				"msn": "No (Responder timidamente e irte)"
-			}]
-		},
-		"node1": {
-			"type": "dialog",
-			"next": "fork",
-			"fragments": [{
-				"tag": "Alison",
-				"msn": "Encantada, yo soy Alison"
-			},
-			{
-				"tag": "Alison",
-				"msn": "Espero que estés agusto aquí, hay gente muy maja."
-			},
-			{
-				"tag": "Alison",
-				"msn": "¿A qué curso vas?"
-			},
-			{
-				"tag": "Tú",
-				"msn": "(Contestas)"
-			},
-			{
-				"tag": "Alison",
-				"msn": "Entonces te veré en clase"
-			}]
-		},
-		"node2": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Alison",
-				"msn": "No seas tan tímido, no muerdo"
-			},
-			{
-				"tag": "Alison",
-				"msn": "Bueno, nos vemos. Que sea un buen primer día."
-			}]
-		},
-		"fork": {
-			"type": "fork",
-			"options": [{
-				"next": "abierto",
-				"condition": "varObject('state', 'BellSounded') == true"
-			},
-			{
-				"next": "cerrado",
-				"condition": "varObject('state', 'BellSounded') == false"
-			}]
-		},
-		"abierto": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Alison",
-				"msn": "Será mejor que entremos ya, sino llegaremos tarde"
-			}]
-		},
-		"cerrado": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Alison",
-				"msn": "El chico de la camiseta amarilla que está cerca de la entrada al patio también va a nuestra clase"
-			},
-			{
-				"tag": "Alison",
-				"msn": "Es muy majo, ¿Por qué no hablas con él?"
-			}]
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "earing"
+			}
 		}
 	},
 	"schoolEnter": {
 		"root": {
-			"type": "fork",
-			"options": [{
-				"next": "enterNode",
-				"condition": "varObject('state', 'BellSounded') == true"
-			},
-			{
-				"next": "dialogNode",
-				"condition": "varObject('state', 'BellSounded') == false"
-			}]
-		},
-		"enterNode": {
 			"type": "event",
 			"event": {
 				"name": "move camera",
 				"key": "stairs"
 			}
-		},
-		"dialogNode": {
+		}
+	},
+	"schoolExit": {
+		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "",
-				"msn": "Parece que he llegado pronto y aún no se puede pasar. Será mejor que haga algo de tiempo."
+				"tag": "Tú",
+				"msn": "Es la hora del recreo, aún me quedan clases antes de poder irme."
 			}]
 		}
 	}

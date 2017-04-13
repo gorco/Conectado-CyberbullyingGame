@@ -28,11 +28,11 @@
 	},
 	"stairsToPlayground": {
 		"root": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Tú",
-				"msn": "Debería ir directo a clase"
-			}]
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "playground"
+			}
 		}
 	}
 }
