@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ExitRoom : MonoBehaviour {
+public class ExitRoom : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler {
 
 	public int sceneToGo;
 	public string varName;
@@ -30,13 +31,24 @@ public class ExitRoom : MonoBehaviour {
 		
 	}
 
-	private void OnMouseUp()
+	public void OnPointerClick(PointerEventData eventData)
+	{
+
+	}
+
+	public void OnPointerDown(PointerEventData eventData)
+	{
+
+	}
+
+	public void OnPointerUp(PointerEventData eventData)
 	{
 		Type t = state.GetType();
-		if(valueToExit == (bool)t.GetProperty(varName).GetValue(state, null))
+		if (valueToExit == (bool)t.GetProperty(varName).GetValue(state, null))
 		{
 			SceneManager.LoadScene(sceneToGo);
-		} else
+		}
+		else
 		{
 			panel.SetActive(true);
 		}

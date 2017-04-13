@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ThrowDialog : MonoBehaviour {
+public class ThrowDialog : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
+{
 
 	public string fieldName;
 
@@ -17,9 +19,23 @@ public class ThrowDialog : MonoBehaviour {
 		
 	}
 
-	private void OnMouseUp()
+	public void OnPointerClick(PointerEventData eventData)
 	{
-		Debug.Log("OnMouseUp");
-		GetComponentInParent<ObjectsWithDialogsManager>().startDialog(this.name);
+
+	}
+
+	public void OnPointerDown(PointerEventData eventData)
+	{
+
+	}
+
+	public void ThrowDialogNow()
+	{
+		GetComponentInParent<ObjectsWithDialogsManager>().startDialog(fieldName);
+	}
+
+	public void OnPointerUp(PointerEventData eventData)
+	{
+		ThrowDialogNow();
 	}
 }

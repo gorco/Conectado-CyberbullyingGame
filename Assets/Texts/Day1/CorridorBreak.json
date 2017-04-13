@@ -1,0 +1,282 @@
+{
+	"maria":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "secondGood",
+				"condition": "normal == true"
+			},
+			{
+				"next": "secondBad",
+				"condition": "freak == true"
+			},
+			{
+				"next": "first",
+				"condition": "true"
+			}]
+		},
+		"secondGood": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Maria",
+				"msn": "Estoy terminando el libro, hablamos en otro momento"
+			}]
+		},
+		"secondBad": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Maria",
+				"msn": "..."
+			},{
+				"tag": "Tú",
+				"msn": "Parece que me está ignorando"
+			}]
+		},
+		"first": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Maria",
+				"msn": "¿Quieres algo?"
+			}]
+		},
+		"node1": {
+			"type": "options",
+			"options": [{
+				"next": "setterBad",
+				"msn": "Nada, adios"
+			},
+			{
+				"next": "node2",
+				"msn": "¿Por qué estás aquí sola en vez de en el patio?"
+			}]
+		},		
+		"setterBad":{
+			"type": "setter",
+			"set": {
+				"var": "freak",
+				"value": true
+			}
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "Maria",
+				"msn": "Prefiero quedarme aquí tranquila leyendo"
+			}]
+		},
+		"node3": {
+			"type": "options",
+			"options": [{
+				"next": "node2",
+				"msn": "Disfruta, adios (Que chica más rara)"
+			},
+			{
+				"next": "node4",
+				"msn": "¿No prefieres estar en el recreo con tus amigos?"
+			}]
+		},	
+		"quest2": {
+			"type": "event",
+			"next": "nodeFS2",
+			"event": {
+				"name": "change variable",
+				"var": "MariaoQuestFSNonStatic",
+				"value": 1,
+			}
+		},
+		"nodeFS2": {
+			"type": "event",
+			"next": "setterBad",
+			"event": {
+				"name": "change friendship",
+				"var": "MariaFSNonStatic",
+				"value": -10,
+			}
+		},
+		"node4": {
+			"type": "dialog",
+			"next": "node5",
+			"fragments": [{
+				"tag": "Maria",
+				"msn": "Eres un poco pesado con las preguntas"
+			},
+			{
+				"tag": "Maria",
+				"msn": "No tengo amigos, creen que soy rara"
+			},
+			{
+				"tag": "Maria",
+				"msn": "Ya te puedes ir"
+			}]
+		},
+		"node5": {
+			"type": "options",
+			"options": [{
+				"next": "node6",
+				"msn": "(Quedarte)"
+			},
+			{
+				"msn": "(Irte)"
+			}]
+		},
+		"node6": {
+			"type": "dialog",
+			"next": "quest1",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No me pareces rara"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Voy a bajar al recreo, si quieres venir estaré abajo"
+			},
+			{
+				"tag": "Maria",
+				"msn": "Gracias, eres muy amable"
+			}, 
+			{
+				"tag": "Maria",
+				"msn": "Pero al menos hoy me quedaré aquí, me quead poco para terminar el libro"
+			},
+			{
+				"tag": "Maria",
+				"msn": "Pásalo muy bien en el recreo, y evita a Alex, es estúpido"
+			}]
+		},
+		"quest1": {
+			"type": "event",
+			"next": "nodeFS1",
+			"event": {
+				"name": "change variable",
+				"var": "MariaQuestFSNonStatic",
+				"value": 1,
+			}
+		},
+		"nodeFS1": {
+			"type": "event",
+			"next": "setterGood",
+			"event": {
+				"name": "change friendship",
+				"var": "MariaFSNonStatic",
+				"value": 20,
+			}
+		},
+		"setterGood":{
+			"type": "setter",
+			"set": {
+				"var": "normal",
+				"value": true
+			}
+		},
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"next": "alisonMove",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"alisonMove": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "alison"
+			}
+		}
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicos"
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicas"
+			}]
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Si entro y aparece el profesor ya no podré salir"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"options": [{
+				"msn": "(Entrar de todas formas)"
+			},
+			{
+				"next": "black",
+				"msn": "Mejor, voy a dar otra vuelta por el edificio"
+			}]
+		},
+		"black": {
+			"type": "event",
+			"next": "enter",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Al entrar suena la campana y aparece el profesor. La mañana termina sin darte cuenta, es hora de volver a casa..."
+			}
+		},
+		"enter": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "endDay"
+			}
+		}
+	}
+}

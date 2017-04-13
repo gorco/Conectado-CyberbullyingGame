@@ -15,6 +15,9 @@ public class WakeUpManager : MonoBehaviour {
 	public float hideMobileSeconds = 2;
 	public float introTime = 5;
 
+	public int sameScene;
+	public int nextScene;
+
 	private float offset = 1;
 
 	private float dTime = 0;
@@ -35,22 +38,33 @@ public class WakeUpManager : MonoBehaviour {
 	void Start () {
 		cameraScroll.disableScroll(true);
 		state = 0;
-		Debug.Log(CalendarTime.Day + "  -  " + CalendarTime.Repeated);
-		if (!CalendarTime.Repeated) {
-			if (CalendarTime.Day == 0)
+		Debug.Log(GlobalState.Day + "  -  " + GlobalState.Repeated);
+		if (!GlobalState.Repeated) {
+			if (GlobalState.Day == 0)
 			{
 				introText.enabled = true;
 				offset = introTime;
 			}
-			CalendarTime.Hour = 7;
-			CalendarTime.Minute = 30;
+			GlobalState.Hour = 7;
+			GlobalState.Minute = 30;
 		} else {
 			introText.enabled = false;
+			initQuests();
 		}
 		mobileObject.updateHour();
 
 	}
 	
+	void initQuests()
+	{
+		GlobalState.GuillermoQuest = 0;
+		GlobalState.AlisonQuest = 0;
+		GlobalState.JoseQuest = 0;
+		GlobalState.MariaQuest = 0;
+		GlobalState.AlejandroQuest = 0;
+		GlobalState.AnaQuest = 0;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		//Wake up (Move eyelids)
@@ -90,12 +104,12 @@ public class WakeUpManager : MonoBehaviour {
 		{
 			if (!mobileObject.isAlarmDelayed())
 			{
-				SceneManager.LoadScene(2);
+				SceneManager.LoadScene(nextScene);
 			} else
 			{
 				eyelidsObject.goToSleep(sleepSeconds);
-				CalendarTime.Hour = 8;
-				CalendarTime.Minute = 5;
+				GlobalState.Hour = 8;
+				GlobalState.Minute = 5;
 				mobileObject.updateHour();
 			}
 			state = 5;
@@ -104,8 +118,8 @@ public class WakeUpManager : MonoBehaviour {
 		//Go to sleep
 		else if (state == 5 && dTime > sleepSeconds)
 		{
-			CalendarTime.Repeated = true;
-			SceneManager.LoadScene(1);
+			GlobalState.Repeated = true;
+			SceneManager.LoadScene(sameScene);
 		}
 		dTime += Time.deltaTime;
 	}

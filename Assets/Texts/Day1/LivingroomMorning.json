@@ -1,0 +1,126 @@
+{
+	"mother": {
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "checkBag",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "checkHour",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"checkBag": {
+			"type": "fork",
+			"options": [{
+				"next": "bye",
+				"condition": "varObject('state', 'BagPicked') == true"
+			},
+			{
+				"next": "getBag",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"bye": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Mama",
+				"msn": "Veo que llevas todo"
+			}, 
+			{
+				"tag": "Mama",
+				"msn": "<$ if(varObject('global', 'HourNonStatic')<8, 'vete ya o acabarás llegando tarde', 'vete ya, estás llegando tarde') $>"
+			}]
+		},
+		"getBag": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Mama",
+				"msn": "Te dejas la mochila"
+			}, 
+			{
+				"tag": "Mama",
+				"msn": "Está en tu cuarto, cogela y vete ya"
+			}]
+		},
+		"checkHour": {
+			"type": "fork",
+			"options": [{
+				"next": "motherSoon",
+				"condition": "varObject('global', 'HourNonStatic') < 8"
+			},
+			{
+				"next": "motherLate",
+				"condition": "varObject('global', 'HourNonStatic') >= 8"
+			}]
+		},
+		"motherSoon": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Mama",
+				"msn": "Veo que ya estás listo para irte"
+			}, 
+			{
+				"tag": "Mama",
+				"msn": "¿Llevas todo?, Acuerdate de coger la mochila"
+			},
+			{
+				"tag": "Mama",
+				"msn": "Portate bien y haz muchos amigos"
+			}]
+		},		
+		"motherLate": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Mama",
+				"msn": "¿Has visto la hora que es?"
+			}, 
+			{
+				"tag": "Mama",
+				"msn": "Tu primer día en el nuevo colegio y ya llegas tarde"
+			},
+			{
+				"tag": "Mama",
+				"msn": "Venga, coge todo lo que necesites y vete YA!"
+			}]
+		}
+	},
+	"exitDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "exitNode",
+				"condition": "varObject('state', 'BagPicked') == true"
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"exitNode": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 4
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "Te olvidas la mochila. Será mejor que pases por tu habitación a recogerla antes de irte"
+			}]
+		}
+	}
+}

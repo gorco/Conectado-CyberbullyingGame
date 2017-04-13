@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Isometra;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class ChangeState : EventManager
 	public IState state;
 	public GameObject objectToChange;
 	public Sprite[] sprites;
+	public bool changePositionWhenChange = false;
+	public Vector2[] newPos;
+	public string keyEvent;
 
 	/// <summary>
 	/// Receive the pick event
@@ -16,14 +20,24 @@ public class ChangeState : EventManager
 	/// <param name="ev"></param>
 	public override void ReceiveEvent(IGameEvent ev)
 	{
-		Debug.Log("EVENTO " + ev.Name);
-		if (ev.Name.Replace("\"", "") == "change state")
+		if (ev.Name.Replace("\"", "") == "change state" && (keyEvent == null || keyEvent == "" ||
+			((String)ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD)).Replace("\"", "")  == keyEvent))
 		{
-			string var = ((String)ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD)).Replace("\"", "");
+			object vAux = ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD);
+			string var = null;
+			if (vAux != null)
+			{
+				var = ((String)vAux).Replace("\"", "");
+			}
 
 			var value = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
 
-			int state = (int)ev.getParameter(SequenceGenerator.EVENT_STATE_FIELD);
+			object sAux = ev.getParameter(SequenceGenerator.EVENT_STATE_FIELD);
+			int state = 0;
+			if (sAux != null)
+			{
+				state = (int)sAux;
+			}	
 
 			this.ChangeStateObject(var, value, state);
 		}
@@ -51,8 +65,9 @@ public class ChangeState : EventManager
 	/// </summary>
 	/// <param name="varName"></param>
 	/// <param name="varValue"></param>
-	private void ChangeStateObject(string varName, System.Object varValue, int pos)
+	public void ChangeStateObject(string varName, System.Object varValue, int pos)
 	{
+		Debug.Log("Change BELL");
 		if(varName != null && varValue != null)
 		{
 			Type t = state.GetType();
@@ -65,6 +80,10 @@ public class ChangeState : EventManager
 			that = objectToChange;
 		}
 		that.GetComponent<SpriteRenderer>().sprite = sprites[pos];
+		if (changePositionWhenChange)
+		{
+			that.transform.localPosition = newPos[pos];
+		}
 	}
 }
 

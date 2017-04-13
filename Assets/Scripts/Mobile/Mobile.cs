@@ -82,7 +82,7 @@ public class Mobile : MonoBehaviour {
 
 	internal void stopAlarm(bool delayed)
 	{
-		if (!delayed || CalendarTime.Hour < 8)
+		if (!delayed || GlobalState.Hour < 8)
 		{
 			this.delayed = delayed;
 			sound = false;
@@ -120,7 +120,7 @@ public class Mobile : MonoBehaviour {
 
 	public void updateHour()
 	{
-		setHour(CalendarTime.Hour, CalendarTime.Minute);
+		setHour(GlobalState.Hour, GlobalState.Minute);
 	}
 
 }

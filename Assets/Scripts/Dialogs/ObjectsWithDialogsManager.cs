@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Isometra;
+using Isometra.Sequences;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +14,7 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 	private GameEvent gameEvent;
 
 	public string fileName;
+	public IState variablesObject;
 
 	// Use this for initialization
 	void Start () {
@@ -26,19 +29,31 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 
 		Debug.Log(fileContents);
 		JSONObject json = JSONObject.Create(fileContents);
-
 		foreach (Transform child in transform)
         {
-			String name = child.name;
-			name = name.First().ToString().ToLower() + name.Substring(1);
-			if (json.HasField(name))
+			if (!child.GetComponent<ThrowDialog>())
 			{
-				sequenceDict.Add(child.name, SequenceGenerator.createSimplyDialog(name, json));
-			} else if (json.HasField(name.ToLower()))
-            {
-                sequenceDict.Add(child.name, SequenceGenerator.createSimplyDialog(name.ToLower(), json));
-            }		 
-        }		
+				Debug.LogError("The object with the name " + child.gameObject.name + " doesn't have ThrowDialog component");
+			}
+			else
+			{
+				ThrowDialog dialog = child.GetComponent<ThrowDialog>();
+				String saveName = dialog.fieldName;
+				String name = saveName.First().ToString().ToLower() + saveName.Substring(1);
+				if (json.HasField(name))
+				{
+					sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name, json, variablesObject));
+				}
+				else if (json.HasField(name.ToLower()))
+				{
+					sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name.ToLower(), json, variablesObject));
+				}
+				else
+				{
+					Debug.LogWarning("Dialog with key " + name + " doesn't exist in file " + fileName);
+				}
+			}
+        }
 	}
 	
 	// Update is called once per frame
@@ -48,6 +63,12 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 
 	public void startDialog(string objectName)
 	{
+		if (!sequenceDict.ContainsKey(objectName))
+		{
+			Debug.LogError("The sequence with key " + objectName + " doesn't exit");
+			return;
+		}
+
 		this.gameEvent.setParameter("sequence", sequenceDict[objectName]);
 		Game.main.enqueueEvent(this.gameEvent);
 	}
