@@ -25,6 +25,26 @@ public class GlobalState
 	public static int JoseFS { get; set; }
 	public static int AlejandroFS { get; set; }
 
+	//QuestsPerDay
+
+	public static int MariaQuest { get; set; }
+	//Day1 -> Meet Maria [0 - no spoken] [1 - freak] [2 - friend]
+
+	public static int AlisonQuest { get; set; }
+	//Day1 -> Found earing [0 - not found] [1 - found]
+
+	public static int AnaQuest { get; set; }
+	//Day1 -> Meet Ana [0 - no spoken] [1 - spoken]
+
+	public static int GuillermoQuest { get; set; }
+	//Day1 -> Meet Guille [0 - no spoken] [1 - spoken] [2 - noteboard]
+
+	public static int JoseQuest { get; set; }		
+	//Day1 -> Meet Jose [0 - no spoken] [1 - spoken]
+
+	public static int AlejandroQuest { get; set; }  
+	//Day1 -> Meet Alex [0 - sorry] [1 - threat] [2 - bad]
+
 	protected static GlobalState instance;
 	public static GlobalState Instance {  get { return instance == null ? instance = new GlobalState() : instance; } }
 
@@ -83,12 +103,37 @@ public class GlobalState
 		get { return AlejandroFS; }
 	}
 
-	public static bool isLate(int hour, int min)
+	public int MariaQuestNonStatic
 	{
-		if(hour > Hour)
+		get { return MariaQuest; }
+	}
+	public int AlisonQuestNonStatic
+	{
+		get { return AlisonQuest; }
+	}
+	public int AnaQuestNonStatic
+	{
+		get { return AnaFS; }
+	}
+	public int GuillermoQuestNonStatic
+	{
+		get { return GuillermoQuest; }
+	}
+	public int JoseQuestNonStatic
+	{
+		get { return JoseFS; }
+	}
+	public int AlejandroQuestNonStatic
+	{
+		get { return AlejandroQuest; }
+	}
+
+	public static bool NowIsLaterThan(int hour, int min)
+	{
+		if(Hour > hour)
 		{
 			return true;
-		} else if (hour == Hour && min > Minute)
+		} else if (hour == Hour && Minute > min)
 		{
 			return true;
 		} else

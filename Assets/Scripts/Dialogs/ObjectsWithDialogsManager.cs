@@ -54,10 +54,6 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 				}
 			}
         }
-
-		/* TO TEST WITHOUT START AT THE FIRST SCENE*/
-		GlobalState.UserName = "Juan";
-		GlobalState.MaleSex = true;
 	}
 	
 	// Update is called once per frame

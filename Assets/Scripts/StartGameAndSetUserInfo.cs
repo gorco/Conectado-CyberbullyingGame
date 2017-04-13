@@ -37,8 +37,19 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 			return;
 		}
 
+		//Save data
 		GlobalState.UserName = userName.text;
 		GlobalState.MaleSex = male.isOn;
+
+		//Friendship
+		GlobalState.AlejandroFS = 50;
+		GlobalState.GuillermoFS = 50;
+		GlobalState.JoseFS = 50;
+		GlobalState.AnaFS = 50;
+		GlobalState.AlisonFS = 50;
+		GlobalState.MariaFS = 50;
+
+		//Start game
 		SceneManager.LoadScene(2);
 		
 	}

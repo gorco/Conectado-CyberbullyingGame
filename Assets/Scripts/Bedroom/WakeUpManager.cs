@@ -49,11 +49,22 @@ public class WakeUpManager : MonoBehaviour {
 			GlobalState.Minute = 30;
 		} else {
 			introText.enabled = false;
+			initQuests();
 		}
 		mobileObject.updateHour();
 
 	}
 	
+	void initQuests()
+	{
+		GlobalState.GuillermoQuest = 0;
+		GlobalState.AlisonQuest = 0;
+		GlobalState.JoseQuest = 0;
+		GlobalState.MariaQuest = 0;
+		GlobalState.AlejandroQuest = 0;
+		GlobalState.AnaQuest = 0;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		//Wake up (Move eyelids)

@@ -8,18 +8,25 @@ public class Appear : MonoBehaviour {
 	public int edgeHour;
 	public int edgeMinutes;
 
+	public Sprite lateSprite;
+	public Vector2 latePosition;
+
 	// Use this for initialization
 	void Start()
 	{
-		bool late = GlobalState.isLate(edgeHour, edgeMinutes);
-		if(appearSoon && !late)
+		bool late = GlobalState.NowIsLaterThan(edgeHour, edgeMinutes);
+		if(appearSoon && late || !appearSoon && !late)
 		{
-			this.gameObject.SetActive(false);
-		} else if (!appearSoon && late)
-		{
-			this.gameObject.SetActive(false);
-		}
-
+			if (lateSprite)
+			{
+				this.GetComponent<SpriteRenderer>().sprite = lateSprite;
+				this.transform.localPosition = latePosition;
+			}
+			else
+			{
+				this.gameObject.SetActive(false);
+			}
+		} 
 	}
 	
 	// Update is called once per frame

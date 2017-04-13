@@ -65,8 +65,9 @@ public class ChangeState : EventManager
 	/// </summary>
 	/// <param name="varName"></param>
 	/// <param name="varValue"></param>
-	private void ChangeStateObject(string varName, System.Object varValue, int pos)
+	public void ChangeStateObject(string varName, System.Object varValue, int pos)
 	{
+		Debug.Log("Change BELL");
 		if(varName != null && varValue != null)
 		{
 			Type t = state.GetType();

@@ -12,6 +12,7 @@ public class SequenceGenerator  {
 	public const string FORK_TYPE = "fork";
 	public const string OPTIONS_TYPE = "options";
 	public const string EVENT_TYPE = "event";
+	public const string SETTER_TYPE = "setter";
 	public const string NEXT_FIELD = "next";
 	public const string TYPE_FIELD = "type";
 	public const string FRAGMENTS_FIELD = "fragments";
@@ -26,6 +27,9 @@ public class SequenceGenerator  {
 	public const string EVENT_STATE_FIELD = "state";
 	public const string EVENT_KEY_FIELD = "key";
 	public const string EVENT_SYNC_FIELD = "synchronous";
+	public const string SETTER_FIELD = "set";
+	public const string SETTER_VALUE_FIELD = "value";
+	public const string SETTER_VARIABLE_FIELD = "var";
 
 	public const string GLOBAL_STATE = "global";
 	public const string LOCAL_STATE = "state";
@@ -97,6 +101,9 @@ public class SequenceGenerator  {
 				break;
 			case EVENT_TYPE:
 				createEventNode(seq, jsonObj, variables, nodeId, key);
+				break;
+			case SETTER_TYPE:
+				createSetterNode(seq, jsonObj, variables, nodeId, key);
 				break;
 			default:
 				Debug.LogError("The type " + typeNode + "doesn't exist in " + key + "->" + nodeId);
@@ -217,7 +224,7 @@ public class SequenceGenerator  {
 		JSONObject node = jsonObj.GetField(nodeId);
 		if (!node.HasField(EVENT_FIELD))
 		{
-			Debug.LogError("The node " + key + "->" + nodeId + " need a " + OPTIONS_FIELD + " field");
+			Debug.LogError("The node " + key + "->" + nodeId + " need a " + EVENT_FIELD + " field");
 			return;
 		}
 
@@ -304,7 +311,6 @@ public class SequenceGenerator  {
 		if (node.HasField(NEXT_FIELD))
 		{
 			string nextNodeId = node.GetField(NEXT_FIELD).ToString().Replace("\"", "");
-			Debug.Log("Siguiente "+ key +" nodo a " + nodeId + "= " + nextNodeId);
 			if (nodeId == "root")
 			{
 				seq.Root.Childs[0] = seq[nextNodeId];
@@ -334,7 +340,12 @@ public class SequenceGenerator  {
 		{
 			if (j.HasField(MESSAGE_FIELD))
 			{
-				options.Add(new Option(j.GetField(MESSAGE_FIELD).ToString().Replace("\"", "")));
+				Checkable check = null;
+				if (j.HasField(CONDITION_FIELD))
+				{
+					check = FormulaFork.Create(j.GetField(CONDITION_FIELD).ToString().Replace("\"", ""));
+				}
+				options.Add(new Option(j.GetField(MESSAGE_FIELD).ToString().Replace("\"", ""), string.Empty, check));
 			}
 			else
 			{
@@ -365,8 +376,63 @@ public class SequenceGenerator  {
 					seq[nodeId][child] = seq[nextNodeId];
 				}
 				createNode(seq, jsonObj, variables, nextNodeId, key);
-				child++;
 			}
+			child++;
+		}
+	}
+
+	internal static void createSetterNode(Sequence seq, JSONObject jsonObj, IState variables, string nodeId, string key)
+	{
+
+		JSONObject node = jsonObj.GetField(nodeId);
+		if (!node.HasField(SETTER_FIELD))
+		{
+			Debug.LogError("The node " + key + "->" + nodeId + " setter need a " + SETTER_FIELD + " field");
+			return;
+		}
+		JSONObject setterNode = node.GetField(SETTER_FIELD);
+		SequenceNode newNode = seq[nodeId];
+
+		if (setterNode.HasField(SETTER_VARIABLE_FIELD))
+		{
+			string variable = setterNode.GetField(SETTER_VARIABLE_FIELD).ToString().Replace("\"", "");
+			string value = "false";
+			if (!setterNode.HasField(SETTER_VALUE_FIELD))
+			{
+				Debug.LogError("The variable " + variable + " in node " + key + "->" + nodeId + " need a " + SETTER_VALUE_FIELD + " field");
+				return;
+			}
+			else
+			{
+				value = setterNode.GetField(SETTER_VALUE_FIELD).ToString().Replace("\"", "");
+			}
+
+			FormulaSetter fSetter = FormulaSetter.Create(variable, value);
+			newNode.Content = fSetter;
+
+			//Assign content if root
+			if (nodeId == "root")
+			{
+				seq.Root = newNode;
+			}
+
+			//Create child
+			if (node.HasField(NEXT_FIELD))
+			{
+				string nextNodeId = node.GetField(NEXT_FIELD).ToString().Replace("\"", "");
+				if (nodeId == "root")
+				{
+					seq.Root.Childs[0] = seq[nextNodeId];
+				}
+				else
+				{
+					seq[nodeId][0] = seq[nextNodeId];
+				}
+				createNode(seq, jsonObj, variables, nextNodeId, key);
+			}
+		} else
+		{
+			Debug.LogError("The node " + key + "->" + nodeId + " setter need a " + SETTER_VARIABLE_FIELD + " field");
 		}
 	}
 

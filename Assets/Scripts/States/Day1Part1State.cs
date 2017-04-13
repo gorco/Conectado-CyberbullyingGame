@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BedroomState : IState {
+public class Day1Part1State : IState {
 
 	[SerializeField]
 	private bool bagPicked = false;
