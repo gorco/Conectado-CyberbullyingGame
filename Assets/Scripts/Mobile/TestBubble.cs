@@ -6,7 +6,6 @@ public class TestBubble : MonoBehaviour {
 
 	public string text;
 	public string from;
-	public TextBubble bubble;
 
 	public MobileChat chat;
 
@@ -18,6 +17,11 @@ public class TestBubble : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void CreateChat()
+	{
+		chat.CreateChat(text);
 	}
 
 	public void WriteText()

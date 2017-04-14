@@ -9,7 +9,8 @@ public class TextBubble : MonoBehaviour {
 	private RectTransform textTransform;
 	private Text from;
 
-	public Text maxTextSize;
+	public Text textPrefab;
+	private Text maxTextSize;
 
 	[SerializeField]
 	private Vector2 templateSizeDelta;
@@ -34,7 +35,10 @@ public class TextBubble : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		templateSizeDelta = maxTextSize.rectTransform.sizeDelta;
+		if (maxTextSize != null)
+		{
+			templateSizeDelta = maxTextSize.rectTransform.sizeDelta;
+		}
 		
 		if (textTransform.sizeDelta.y < templateSizeDelta.y)
 		{
@@ -46,6 +50,8 @@ public class TextBubble : MonoBehaviour {
 
 	public void CreateBubble(string text, string from)
 	{
+		maxTextSize = Instantiate(textPrefab, this.transform);
+
 		this.text.text = text;
 		this.maxTextSize.text = text;
 		if (from != null && from != "")
