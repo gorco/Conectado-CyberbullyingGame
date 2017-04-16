@@ -24,6 +24,9 @@ public class GlobalState
 	public static int GuillermoFS { get; set; }
 	public static int JoseFS { get; set; }
 	public static int AlejandroFS { get; set; }
+	public static int ParentsFS { get; set; }
+	public static int TeacherFS { get; set; }
+	public static int Risk{ get { return 100 - ((MariaFS + AlisonFS + AnaFS + GuillermoFS + JoseFS + AlejandroFS) / 12) - ParentsFS/4 - TeacherFS/4 ; } }
 
 	//QuestsPerDay
 
@@ -101,6 +104,14 @@ public class GlobalState
 	public int AlejandroFSNonStatic
 	{
 		get { return AlejandroFS; }
+	}
+	public int ParentsFSNonStatic
+	{
+		get { return ParentsFS; }
+	}
+	public int TeacherFSNonStatic
+	{
+		get { return TeacherFS; }
 	}
 
 	public int MariaQuestNonStatic

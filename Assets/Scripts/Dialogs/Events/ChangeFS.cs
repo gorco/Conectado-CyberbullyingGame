@@ -57,7 +57,7 @@ public class ChangeFS : EventManager
 		{
 			Type t = state.GetType();
 			var oldValue = t.GetProperty(varName).GetValue(state, null);
-			var newValue = (int)varValue + (int)oldValue;
+			var newValue = Mathf.Clamp((int)varValue + (int)oldValue, 0, 100);
 			t.GetProperty(varName).SetValue(state, newValue, null);
 		}
 	}

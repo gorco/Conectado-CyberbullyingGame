@@ -48,6 +48,8 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 		GlobalState.AnaFS = 50;
 		GlobalState.AlisonFS = 50;
 		GlobalState.MariaFS = 50;
+		GlobalState.TeacherFS = 50;
+		GlobalState.ParentsFS = 50;
 
 		//Start game
 		SceneManager.LoadScene(2);
