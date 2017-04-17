@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using Isometra.Sequences;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,6 +37,7 @@ public class MobileChat : MonoBehaviour {
 	private bool outPocket;
 
 	Dictionary<string, List<GameObject>> chats;
+	Dictionary<string, Sequence> sequences;
 
 	private bool animate;
 	private float delta;
@@ -52,6 +55,7 @@ public class MobileChat : MonoBehaviour {
 		outPocket = false;
 		hidePosition = this.GetComponent<Transform>().localPosition;
 		chats = new Dictionary<string, List<GameObject>>();
+		sequences = new Dictionary<string, Sequence>();
 		bubbleContent.sizeDelta = new Vector2(bubbleContent.sizeDelta.x, initContentSize);
 	}
 
@@ -72,6 +76,30 @@ public class MobileChat : MonoBehaviour {
 		AddBubble(bubble, chat);
 	}
 
+	public Sequence GetChatSequence(string chat)
+	{
+		if (sequences.ContainsKey(chat))
+		{
+			return sequences[chat];
+		} else if (sequences.ContainsKey("default"))
+		{
+			return sequences["default"];
+		} else
+		{
+			return null;
+		}		
+	}
+
+	public void AddChatSequence(string chat, Sequence seq)
+	{
+		sequences.Add(chat, seq);
+	}
+
+	public void ClearChatSequence(string chat)
+	{
+		sequences.Remove(chat);
+	}
+
 	private void AddBubble(GameObject bubble, string chat)
 	{
 		if(chat == "")
@@ -82,17 +110,7 @@ public class MobileChat : MonoBehaviour {
 			}
 			chat = currentChat;
 		}
-		else
-		{
-			LoadChat(chat, false);
-			foreach(ChatGroup script in chatListContent.GetComponentsInChildren<ChatGroup>())
-			{
-				if(script.nameChat.text == chat)
-				{
-					script.AddAdvertisement();
-				}
-			}
-		}
+		
 		RectTransform rectTransform = bubble.GetComponent<RectTransform>();
 		RectTransform lastTransform = null;
 
@@ -123,6 +141,18 @@ public class MobileChat : MonoBehaviour {
 
 		chats[chat].Add(bubble);
 		ScrollChatToBottom();
+
+		if (currentChat != chat)
+		{
+			LoadChat(chat, false);
+			foreach (ChatGroup script in chatListContent.GetComponentsInChildren<ChatGroup>())
+			{
+				if (script.nameChat.text == chat)
+				{
+					script.AddAdvertisement();
+				}
+			}
+		}
 	}
 
 	public void RemoveCurrentChat()

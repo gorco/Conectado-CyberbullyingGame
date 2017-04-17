@@ -24,7 +24,7 @@ public class Day1Part1State : IState {
 
 	// Use this for initialization
 	void Start () {
-		
+		InitMobileGUI.InitMobileGUIObject();
 	}
 	
 	// Update is called once per frame
