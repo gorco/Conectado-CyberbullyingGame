@@ -8,6 +8,8 @@ public class Day1Part2Init : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//GlobalState.UserName = "pepe";
+		//GlobalState.MaleSex = true;
 		if(GlobalState.NowIsLaterThan(8, 0))
 		{
 			state.BellSounded = true;

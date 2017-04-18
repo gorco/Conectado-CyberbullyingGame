@@ -19,7 +19,8 @@ public class Mobile : MonoBehaviour {
 	public GameObject wakeUpPanel;
 	public BoxCollider2D selector;
 
-	public string textFile;
+	public string fileName;
+	public TextAsset jsonFile;
 
 	private Vector2 goal;
 	private Vector2 start;
@@ -38,9 +39,11 @@ public class Mobile : MonoBehaviour {
 		hidePosition = this.GetComponent<Transform>().localPosition;
 		wakeUpPanel.SetActive(false);
 
+		/*
 		StreamReader sr = new StreamReader(Application.dataPath + "/Texts/" + textFile);
 		string fileContents = sr.ReadToEnd();
-		sr.Close();
+		sr.Close();*/
+		string fileContents = jsonFile.text;
 
 		wakeUpPanel.GetComponentInChildren<Text>().text = fileContents;
 	}
@@ -121,6 +124,17 @@ public class Mobile : MonoBehaviour {
 	public void updateHour()
 	{
 		setHour(GlobalState.Hour, GlobalState.Minute);
+	}
+
+	private void OnValidate()
+	{
+#if UNITY_EDITOR
+		if (jsonFile == null && !string.IsNullOrEmpty(fileName))
+		{
+			jsonFile = UnityEditor.AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Texts/" + fileName);
+			Debug.Log("JSON FILE Setted: " + fileName);
+		}
+#endif
 	}
 
 }

@@ -237,7 +237,6 @@ public class MobileChat : MonoBehaviour {
 		{
 			HideChat("");
 		}
-		currentChat = chat;
 		chatTitle.text = chat;
 		bubbleContent.sizeDelta = new Vector2(bubbleContent.sizeDelta.x, initContentSize);
 		RectTransform lastTransform = null;
@@ -261,6 +260,7 @@ public class MobileChat : MonoBehaviour {
 		if (show)
 		{
 			chatList.SetActive(false);
+			currentChat = chat;
 		}
 	}
 

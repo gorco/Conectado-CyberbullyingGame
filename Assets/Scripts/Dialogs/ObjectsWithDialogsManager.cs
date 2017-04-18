@@ -14,6 +14,7 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 	private GameEvent gameEvent;
 
 	public string fileName;
+	public TextAsset jsonFile;
 	public IState variablesObject;
 
 	// Use this for initialization
@@ -22,10 +23,13 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 
 		gameEvent = new GameEvent();
 		this.gameEvent.Name = "start sequence";
-
+		/*
 		StreamReader sr = new StreamReader(Application.dataPath + "/Texts/" + fileName);
+
 		string fileContents = sr.ReadToEnd();
-		sr.Close();
+		sr.Close();*/
+
+		string fileContents = jsonFile.text;
 
 		Debug.Log(fileContents);
 		JSONObject json = JSONObject.Create(fileContents);
@@ -71,5 +75,15 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 
 		this.gameEvent.setParameter("sequence", sequenceDict[objectName]);
 		Game.main.enqueueEvent(this.gameEvent);
+	}
+	private void OnValidate()
+	{
+#if UNITY_EDITOR
+		if (jsonFile == null && !string.IsNullOrEmpty(fileName))
+		{
+			jsonFile = UnityEditor.AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Texts/" + fileName);
+			Debug.Log("JSON FILE Setted: " + fileName);
+		}
+#endif
 	}
 }

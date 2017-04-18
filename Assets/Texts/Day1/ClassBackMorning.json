@@ -74,7 +74,7 @@
 		},
 		"quest": {
 			"type": "event",
-			"next": "node2",
+			"next": "node1",
 			"event": {
 				"name": "change variable",
 				"var": "AnaQuestFSNonStatic",
