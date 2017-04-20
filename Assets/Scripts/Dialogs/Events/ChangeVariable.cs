@@ -59,10 +59,18 @@ public class ChangeVariable : EventManager
 			if (t.GetProperty(varName) != null)
 			{
 				t.GetProperty(varName).SetValue(state, varValue, null);
-			} else
+			}
+			else
 			{
-				t = GlobalState.Instance.GetType();
-				t.GetProperty(varName).SetValue(state, varValue, null);
+				GlobalState gState = GlobalState.Instance;
+				t = gState.GetType();
+				try
+				{
+					t.GetProperty(varName).SetValue(gState, varValue, null);
+				} catch (Exception e)
+				{
+					Debug.Log("Error with the variable: "+varName +"\n"+e);
+				}
 			}
 		}
 	}

@@ -91,7 +91,7 @@
 			"next": "setter",
 			"event": {
 				"name": "change variable",
-				"var": "GuillermoQuestFSNonStatic",
+				"var": "GuillermoQuest",
 				"value": 2,
 			}
 		},

@@ -44,8 +44,9 @@ public class TextBubble : MonoBehaviour {
 		{
 			float difference = templateSizeDelta.y - textTransform.sizeDelta.y;
 			textTransform.sizeDelta = templateSizeDelta;
-			myRect.sizeDelta = new Vector2(myRect.sizeDelta.x, myRect.sizeDelta.y + difference);
+			myRect.sizeDelta = new Vector2(0, myRect.sizeDelta.y + difference);
 		}
+		myRect.localScale = new Vector2(1, 1);
 	}
 
 	public void CreateBubble(string text, string from)

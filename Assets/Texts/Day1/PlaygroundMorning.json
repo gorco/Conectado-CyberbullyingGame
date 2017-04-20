@@ -24,7 +24,7 @@
 			"next": "bell",
 			"event": {
 				"name": "change friendship",
-				"var": "GuillermoFSNonStatic",
+				"var": "GuillermoFS",
 				"value": -10,
 			}
 		},
@@ -49,7 +49,7 @@
 			"next": "quest",
 			"event": {
 				"name": "change friendship",
-				"var": "GuillermoFSNonStatic",
+				"var": "GuillermoFS",
 				"value": 10,
 			}
 		},
@@ -58,7 +58,7 @@
 			"next": "node2",
 			"event": {
 				"name": "change variable",
-				"var": "GuillermoQuestFSNonStatic",
+				"var": "GuillermoQuest",
 				"value": 1,
 			}
 		},
@@ -185,7 +185,7 @@
 			"next": "quest",
 			"event": {
 				"name": "change friendship",
-				"var": "JoseFSNonStatic",
+				"var": "JoseFS",
 				"value": 10,
 			}
 		},
@@ -194,7 +194,7 @@
 			"next": "node1",
 			"event": {
 				"name": "change variable",
-				"var": "JoseQuestFSNonStatic",
+				"var": "JoseQuest",
 				"value": 1,
 			}
 		},
@@ -255,7 +255,7 @@
 			"next": "node1",
 			"event": {
 				"name": "change friendship",
-				"var": "AlisonFSNonStatic",
+				"var": "AlisonFS",
 				"value": 10,
 			}
 		},

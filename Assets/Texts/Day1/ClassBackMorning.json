@@ -77,7 +77,7 @@
 			"next": "node1",
 			"event": {
 				"name": "change variable",
-				"var": "AnaQuestFSNonStatic",
+				"var": "AnaQuest",
 				"value": 1,
 			}
 		},

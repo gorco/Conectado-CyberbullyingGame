@@ -26,6 +26,8 @@ public class SequenceGenerator  {
 	public const string EVENT_VARIABLE_FIELD = "var";
 	public const string EVENT_STATE_FIELD = "state";
 	public const string EVENT_KEY_FIELD = "key";
+	public const string EVENT_TIME_FIELD = "time";
+	public const string EVENT_OTHER_FIELD = "other";
 	public const string EVENT_SYNC_FIELD = "synchronous";
 	public const string SETTER_FIELD = "set";
 	public const string SETTER_VALUE_FIELD = "value";
@@ -263,6 +265,25 @@ public class SequenceGenerator  {
 			else
 			{
 				Debug.LogError("The field " + EVENT_STATE_FIELD + " in node " + key + "->" + nodeId + " has to be a number");
+			}
+		}
+
+		if (eventNode.HasField(EVENT_OTHER_FIELD))
+		{
+			JSONObject other = eventNode.GetField(EVENT_OTHER_FIELD);
+			aux.setParameter(EVENT_OTHER_FIELD, other.ToString().Replace("\"", ""));
+		}
+
+		if (eventNode.HasField(EVENT_TIME_FIELD))
+		{
+			JSONObject time = eventNode.GetField(EVENT_TIME_FIELD);
+			if (time.IsNumber)
+			{
+				aux.setParameter(EVENT_TIME_FIELD, float.Parse(time.ToString().Replace("\"", "")));
+			}
+			else
+			{
+				Debug.LogError("The field " + EVENT_TIME_FIELD + " in node " + key + "->" + nodeId + " has to be a number");
 			}
 		}
 

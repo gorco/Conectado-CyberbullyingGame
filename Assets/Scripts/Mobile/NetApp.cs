@@ -9,7 +9,6 @@ public class NetApp : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		progressBars = barsParent.transform.GetComponentsInChildren<ProgressBar>(true);
-		gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -19,6 +18,10 @@ public class NetApp : MonoBehaviour {
 
 	public void UpdateBars()
 	{
+		if (progressBars == null)
+		{
+			progressBars = barsParent.transform.GetComponentsInChildren<ProgressBar>(true);
+		}
 		foreach( ProgressBar bar in progressBars)
 		{
 			bar.UpdateNow();

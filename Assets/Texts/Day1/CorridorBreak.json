@@ -82,7 +82,7 @@
 			"next": "nodeFS2",
 			"event": {
 				"name": "change variable",
-				"var": "MariaoQuestFSNonStatic",
+				"var": "MariaoQuest",
 				"value": 1,
 			}
 		},
@@ -91,7 +91,7 @@
 			"next": "setterBad",
 			"event": {
 				"name": "change friendship",
-				"var": "MariaFSNonStatic",
+				"var": "MariaFS",
 				"value": -10,
 			}
 		},
@@ -138,7 +138,7 @@
 			}, 
 			{
 				"tag": "Maria",
-				"msn": "Pero al menos hoy me quedaré aquí, me quead poco para terminar el libro"
+				"msn": "Pero al menos hoy me quedaré aquí, me queda poco para terminar el libro"
 			},
 			{
 				"tag": "Maria",
@@ -150,7 +150,7 @@
 			"next": "nodeFS1",
 			"event": {
 				"name": "change variable",
-				"var": "MariaQuestFSNonStatic",
+				"var": "MariaQuest",
 				"value": 1,
 			}
 		},
@@ -159,7 +159,7 @@
 			"next": "setterGood",
 			"event": {
 				"name": "change friendship",
-				"var": "MariaFSNonStatic",
+				"var": "MariaFS",
 				"value": 20,
 			}
 		},
@@ -254,10 +254,10 @@
 		"options": {
 			"type": "options",
 			"options": [{
+				"next": "black",
 				"msn": "(Entrar de todas formas)"
 			},
 			{
-				"next": "black",
 				"msn": "Mejor, voy a dar otra vuelta por el edificio"
 			}]
 		},

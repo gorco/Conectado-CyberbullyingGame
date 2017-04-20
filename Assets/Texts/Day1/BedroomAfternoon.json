@@ -131,5 +131,14 @@
 				"state": 1
 			}
 		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
 	}
 }

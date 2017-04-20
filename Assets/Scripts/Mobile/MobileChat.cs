@@ -14,6 +14,7 @@ public class MobileChat : MonoBehaviour {
 
 	public GameObject chatList;
 	public GameObject friendsApp;
+	public GameObject settingsApp;
 	public GameObject appsMenu;
 
 	public GameObject otherBubblePrefab;
@@ -68,7 +69,7 @@ public class MobileChat : MonoBehaviour {
 		}
 		else
 		{
-			bubble = Instantiate(otherBubblePrefab);
+			bubble = Instantiate(otherBubblePrefab, bubbleContent);
 		}
 		TextBubble script = bubble.GetComponent<TextBubble>();
 		script.textPrefab = textTemplate;
@@ -204,6 +205,7 @@ public class MobileChat : MonoBehaviour {
 		if (name != null || name != "")
 		{
 			chat = Instantiate(chatPrefab, chatListContent);
+			chat.transform.localScale = new Vector2(1, 1);
 			ChatGroup script = chat.GetComponent<ChatGroup>();
 			script.InitChat(name, null, this);
 			AddChat(chat);
@@ -225,7 +227,8 @@ public class MobileChat : MonoBehaviour {
 			rectTransform.anchoredPosition = new Vector2(0, lastTransform.localPosition.y - lastTransform.sizeDelta.y);
 		}
 		//bubbleContent.sizeDelta = new Vector2(bubbleContent.sizeDelta.x, bubbleContent.sizeDelta.y + (lastTransform != null ? lastTransform.sizeDelta.y : 0) + offset);
-
+		rectTransform.offsetMin = new Vector2(0, rectTransform.offsetMin.y);
+		rectTransform.offsetMax = new Vector2(0, rectTransform.offsetMax.y);
 		//chats[currentChat].Add(bubble);
 		lastChat = chat;
 		//ScrollChatToBottom();
@@ -315,28 +318,39 @@ public class MobileChat : MonoBehaviour {
 
 	public void OpenMobileHome()
 	{
+		Debug.LogWarning("SHOW MENU");
 		appsMenu.SetActive(true);
 		chatList.SetActive(false);
 		friendsApp.SetActive(false);
+		settingsApp.SetActive(false);
 	}
 
 	public void OpenChatApp()
 	{
+		Debug.LogWarning("SHOW CHATLIST");
 		appsMenu.SetActive(false);
 		chatList.SetActive(true);
 		friendsApp.SetActive(false);
+		settingsApp.SetActive(false);
 	}
 
 	public void OpenFriendshipApp()
 	{
+		Debug.LogWarning("SHOW FRIENDS");
 		appsMenu.SetActive(false);
 		chatList.SetActive(false);
 		friendsApp.SetActive(true);
+		settingsApp.SetActive(false);
+		friendsApp.GetComponent<NetApp>().UpdateBars();
 	}
 
 	public void OpenSettingsApp()
 	{
-
+		Debug.LogWarning("SHOW SETINGS");
+		appsMenu.SetActive(false);
+		chatList.SetActive(false);
+		friendsApp.SetActive(false);
+		settingsApp.SetActive(true);
 	}
 
 	private void UpdateHour()
@@ -362,7 +376,6 @@ public class MobileChat : MonoBehaviour {
 		start = hidePosition;
 		animationSeconds = seconds;
 		delta = 0;
-		friendsApp.GetComponent<NetApp>().UpdateBars();
 		animate = true;
 		outPocket = true;
 	}

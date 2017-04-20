@@ -528,5 +528,14 @@
 				"msn": "No tengo nada que hacer en la calle"
 			}]
 		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		}
 	}
 }

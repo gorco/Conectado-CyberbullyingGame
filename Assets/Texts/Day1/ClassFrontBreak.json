@@ -62,7 +62,7 @@
 			"next": "node2a",
 			"event": {
 				"name": "change variable",
-				"var": "AlejandroQuestFSNonStatic",
+				"var": "AlejandroQuest",
 				"value": 1,
 			}
 		},
@@ -91,7 +91,7 @@
 			"next": "node2b",
 			"event": {
 				"name": "change variable",
-				"var": "AlejandroQuestFSNonStatic",
+				"var": "AlejandroQuest",
 				"value": 1,
 			}
 		},
@@ -124,7 +124,7 @@
 			"next": "node2c",
 			"event": {
 				"name": "change variable",
-				"var": "AlejandroQuestFSNonStatic",
+				"var": "AlejandroQuest",
 				"value": 2,
 			}
 		},
@@ -208,7 +208,7 @@
 			"next": "nodeFS",
 			"event": {
 				"name": "change variable",
-				"var": "AlisonFSNonStatic",
+				"var": "AlisonQuest",
 				"value": 1,
 			}
 		},
@@ -217,7 +217,7 @@
 			"next": "fade",
 			"event": {
 				"name": "change friendship",
-				"var": "AlisonFSNonStatic",
+				"var": "AlisonFS",
 				"value": 20,
 			}
 		},
@@ -306,7 +306,7 @@
 			},
 			{
 				"tag": "Alison",
-				"msn": "So... so... son nuevos, un re... regalo"
+				"msn": "So- so- son nuevos, un re... regalo"
 			},
 			{
 				"tag": "",
@@ -314,7 +314,7 @@
 			},
 			{
 				"tag": "Alison",
-				"msn": "Por favor, snif , snif ¿puedes ayudarme a encontrarlos?"
+				"msn": "Por favor, *snif* , *snif* ¿puedes ayudarme a encontrarlos?"
 			}]
 		},
 		"node3": {
@@ -333,6 +333,14 @@
 			"fragments": [{
 				"tag": "Alison",
 				"msn": "Muchas gracias"
+			},
+			{
+				"tag": "Alison",
+				"msn": "Además toma mi número, así podemos escribirnos"
+			},
+			{
+				"tag": "",
+				"msn": "También le das tu número"
 			}]
 		}
 	},
@@ -360,10 +368,21 @@
 			}]
 		},
 		"corridor": {
+			"next": "alisonMsn",
 			"type": "event",
 			"event": {
 				"name": "move camera",
 				"key": "corridor"
+			}
+		},
+		"alisonMsn": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alison Clase",
+				"value": "De nuevo muchas gracias por ayudarme",
+				"key": "Alison Clase",
+				"time": 3
 			}
 		}
 	}
