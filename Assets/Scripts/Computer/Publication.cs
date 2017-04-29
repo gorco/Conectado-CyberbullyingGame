@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +21,9 @@ public class Publication : MonoBehaviour {
 	public Text textTemplate;
 	private RectTransform rectTextTemplate;
 
+	private ComputerManager computer;
+	private string key;
+
 	// Use this for initialization
 	void Start () {
 		likes = 0;
@@ -36,6 +40,12 @@ public class Publication : MonoBehaviour {
 	{
 		this.likes += likes;
 		likesText.text = ""+this.likes;
+	}
+
+	public void SetKeyAndComputerManager(string key, ComputerManager computer)
+	{
+		this.key = key;
+		this.computer = computer;
 	}
 
 	public void SetAuthorAndComment(string author, string comment)
@@ -63,7 +73,22 @@ public class Publication : MonoBehaviour {
 		sc.SetAuthorAndComment(from, text);
 		comment.transform.localScale = new Vector3(1, 1, 1);
 		commentsContent.sizeDelta = new Vector2(commentsContent.sizeDelta.x, commentsContent.sizeDelta.y + last);
-
 		comment.transform.localPosition = new Vector2(comment.transform.localPosition.x, comment.transform.localPosition.y - height);
+	}
+
+	public void ThrowCommentDialog()
+	{
+		computer.ThrowPublicationDialog(this.key);
+	}
+
+	internal void CommentsLayout()
+	{
+		float height = 0;
+		foreach (SocialComment child in commentsContent.GetComponentsInChildren<SocialComment>(false))
+		{
+			RectTransform rctT = child.GetComponent<RectTransform>();
+			child.transform.localPosition = new Vector2(child.transform.localPosition.x, - height);
+			height += rctT.sizeDelta.y;
+		}
 	}
 }

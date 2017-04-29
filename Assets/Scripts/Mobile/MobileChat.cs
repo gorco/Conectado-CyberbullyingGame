@@ -1,4 +1,5 @@
-﻿using Isometra.Sequences;
+﻿using Isometra;
+using Isometra.Sequences;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -49,6 +50,7 @@ public class MobileChat : MonoBehaviour {
 	public Vector3 showPosition;
 	public AnimationCurve curve;
 
+	private GameEvent gameEvent;
 
 	// Use this for initialization
 	void Start () {
@@ -56,8 +58,15 @@ public class MobileChat : MonoBehaviour {
 		outPocket = false;
 		hidePosition = this.GetComponent<Transform>().localPosition;
 		chats = new Dictionary<string, List<GameObject>>();
-		sequences = new Dictionary<string, Sequence>();
 		bubbleContent.sizeDelta = new Vector2(bubbleContent.sizeDelta.x, initContentSize);
+	}
+
+	private void Awake()
+	{
+		sequences = new Dictionary<string, Sequence>();
+
+		this.gameEvent = new GameEvent();
+		this.gameEvent.Name = "start sequence";
 	}
 
 	public void AddMessage(string text, string from, string chat = "")
@@ -390,5 +399,19 @@ public class MobileChat : MonoBehaviour {
 		animate = true;
 		outPocket = false;
 	}
+
+	public void ThrowResponseMessage()
+	{
+		if (sequences.ContainsKey(currentChat))
+		{
+			this.gameEvent.setParameter("sequence", sequences[currentChat]);
+		}
+		else if(sequences.ContainsKey("default"))
+		{
+			this.gameEvent.setParameter("sequence", sequences["default"]);
+		}
+		Game.main.enqueueEvent(this.gameEvent);
+	}
+
 
 }

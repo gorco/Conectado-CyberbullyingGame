@@ -33,6 +33,7 @@ public class Mobile : MonoBehaviour {
 	private bool sound = true;
 	private bool delayed;
 
+	private string[] daysName = { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES" };
 	// Use this for initialization
 	void Start()
 	{
@@ -124,6 +125,7 @@ public class Mobile : MonoBehaviour {
 	public void updateHour()
 	{
 		setHour(GlobalState.Hour, GlobalState.Minute);
+		this.day.text = daysName[GlobalState.Day] + ", DIA "+ (GlobalState.Day+1).ToString();
 	}
 
 	private void OnValidate()

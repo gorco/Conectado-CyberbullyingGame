@@ -17,6 +17,16 @@ public class GlobalState
 
 	public static string UserName { get; set; }
 
+	// SocialNet
+	public static int MariaNet { get; set; }
+	public static int AlisonNet { get; set; }
+	public static int AnaNet { get; set; }
+	public static int GuillermoNet { get; set; }
+	public static int JoseNet { get; set; }
+	public static int AlejandroNet { get; set; }
+	public static int ParentsNet { get; set; }
+	public static int TeacherNet { get; set; }
+
 	// Frienship
 	public static int MariaFS { get; set; }
 	public static int AlisonFS { get; set; }
@@ -28,25 +38,31 @@ public class GlobalState
 	public static int TeacherFS { get; set; }
 	public static int Risk{ get { return 100 - ((MariaFS + AlisonFS + AnaFS + GuillermoFS + JoseFS + AlejandroFS) / 12) - ParentsFS/4 - TeacherFS/4 ; } }
 
-	//QuestsPerDay
+	// QuestsPerDay
 
 	public static int MariaQuest { get; set; }
-	//Day1 -> Meet Maria [0 - no spoken] [1 - freak] [2 - friend]
+	// Day1 -> Meet Maria [0 - no spoken] [1 - freak] [2 - friend]
+	// Day2 -> Speak Maria [0 - no spoken] [1 - spoken]
 
 	public static int AlisonQuest { get; set; }
-	//Day1 -> Found earing [0 - not found] [1 - found]
+	// Day1 -> Found earing [0 - not found] [1 - found]
+	// Day2 -> Speak Alison [0 - no spoken] [1 - spoken]
 
 	public static int AnaQuest { get; set; }
-	//Day1 -> Meet Ana [0 - no spoken] [1 - spoken]
+	// Day1 -> Meet Ana [0 - no spoken] [1 - spoken]
+	// Day2 -> Speak Ana [0 - no spoken] [1 - spoken]
 
 	public static int GuillermoQuest { get; set; }
-	//Day1 -> Meet Guille [0 - no spoken] [1 - spoken] [2 - noteboard]
+	// Day1 -> Meet Guille [0 - no spoken] [1 - spoken] [2 - noteboard]
+	// Day2 -> Speak Guille [0 - no spoken] [1 - spoken]
 
-	public static int JoseQuest { get; set; }		
-	//Day1 -> Meet Jose [0 - no spoken] [1 - spoken]
+	public static int JoseQuest { get; set; }
+	// Day1 -> Meet Jose [0 - no spoken] [1 - spoken]
+	// Day2 -> Speak Jose [0 - no spoken] [1 - spoken]
 
-	public static int AlejandroQuest { get; set; }  
-	//Day1 -> Meet Alex [0 - sorry] [1 - threat] [2 - bad]
+	public static int AlejandroQuest { get; set; }
+	// Day1 -> Meet Alex [0 - sorry] [1 - threat] [2 - bad]
+	// Day2 -> Speak Alex [0 - no spoken] [1 - spoken]
 
 	protected static GlobalState instance;
 	public static GlobalState Instance {  get { return instance == null ? instance = new GlobalState() : instance; } }
@@ -81,6 +97,7 @@ public class GlobalState
 		get { return UserName; }
 	}
 
+	// FriendShip
 	public int MariaFSNonStatic
 	{
 		get { return MariaFS; }
@@ -114,6 +131,7 @@ public class GlobalState
 		get { return TeacherFS; }
 	}
 
+	//Quests
 	public int MariaQuestNonStatic
 	{
 		get { return MariaQuest; }
@@ -124,7 +142,7 @@ public class GlobalState
 	}
 	public int AnaQuestNonStatic
 	{
-		get { return AnaFS; }
+		get { return AnaQuest; }
 	}
 	public int GuillermoQuestNonStatic
 	{
@@ -132,11 +150,37 @@ public class GlobalState
 	}
 	public int JoseQuestNonStatic
 	{
-		get { return JoseFS; }
+		get { return JoseQuest; }
 	}
 	public int AlejandroQuestNonStatic
 	{
 		get { return AlejandroQuest; }
+	}
+
+	// SocialNet
+	public int MariaNetNonStatic
+	{
+		get { return MariaNet; }
+	}
+	public int AlisonNetNonStatic
+	{
+		get { return AlisonNet; }
+	}
+	public int AnaNetNonStatic
+	{
+		get { return AnaNet; }
+	}
+	public int GuillermoNetNonStatic
+	{
+		get { return GuillermoNet; }
+	}
+	public int JoseNetNonStatic
+	{
+		get { return JoseNet; }
+	}
+	public int AlejandroNetNonStatic
+	{
+		get { return AlejandroNet; }
 	}
 
 	public static bool NowIsLaterThan(int hour, int min)

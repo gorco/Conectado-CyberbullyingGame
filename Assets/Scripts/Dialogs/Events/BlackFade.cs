@@ -33,11 +33,13 @@ public class BlackFade : EventManager {
 		if (state == 1)
 		{
 			black.GetComponent<Image>().CrossFadeAlpha(1.0f, 2.0f, false);
+			black.GetComponentInChildren<Text>().CrossFadeAlpha(1.0f, 2.0f, false);
 			state = 2;
 			dTime = 0;
 		} else if (state == 2 && dTime >= blackDuration)
 		{
 			black.GetComponent<Image>().CrossFadeAlpha(0.0f, 2.0f, false);
+			black.GetComponentInChildren<Text>().CrossFadeAlpha(0.0f, 2.0f, false);
 			state = 3;
 		} else if (state == 3)
 		{

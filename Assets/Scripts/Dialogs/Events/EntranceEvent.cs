@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class EntranceEvent : EventManager {
 
 	public GameObject character;
+	public GameObject finalSprite;
+
 	public float xGoal;
 	public float movementDuration;
 
@@ -59,6 +61,12 @@ public class EntranceEvent : EventManager {
 		}
 		else if (state == 2)
 		{
+			if (finalSprite)
+			{
+				character.SetActive(false);
+				finalSprite.SetActive(true);
+			}
+			
 			Game.main.eventFinished(gEvent);
 		}
 		dTime += Time.deltaTime;

@@ -46,7 +46,8 @@ public class FadeOut : EventManager
 			float t = dTime / duration;
 			foreach (SpriteRenderer sprite in sprites)
 			{
-				sprite.color = new Color(1f, 1f, 1f, Mathf.SmoothStep(1, 0, t));
+				Color c = sprite.color;
+				sprite.color = new Color(c.r, c.g, c.b, Mathf.SmoothStep(1, 0, t));
 			}
 			dTime += Time.deltaTime;
 		}

@@ -50,8 +50,7 @@ public class SequenceGenerator  {
 
 		if (!json.HasField(key))
 		{
-			Debug.LogError("Not found the key " + key);
-			return null;
+			throw new Exception("Not found the key " + key);
 		}
 
 		JSONObject jsonObj = json.GetField(key);
@@ -72,13 +71,12 @@ public class SequenceGenerator  {
 	{
 		if(seq[nodeId]!=null && seq[nodeId].Content != null)
 		{
-			Debug.LogWarning("Bucle encontrado");
 			return;
 		}
 
 		if (!jsonObj.HasField(nodeId))
 		{
-			Debug.LogError("The json of "+ key + " doesn't have node with id "+ nodeId);
+			Debug.LogError(jsonObj.ToString() + " The json of "+ key + " doesn't have node with id "+ nodeId);
 		}
 
 		JSONObject node = jsonObj.GetField(nodeId);

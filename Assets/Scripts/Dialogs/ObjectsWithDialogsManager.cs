@@ -19,47 +19,55 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		sequenceDict = new Dictionary<string, Sequence>();
-
-		gameEvent = new GameEvent();
-		this.gameEvent.Name = "start sequence";
 		/*
 		StreamReader sr = new StreamReader(Application.dataPath + "/Texts/" + fileName);
 
 		string fileContents = sr.ReadToEnd();
 		sr.Close();*/
+	}
+
+	private void Awake()
+	{
+		sequenceDict = new Dictionary<string, Sequence>();
+
+		gameEvent = new GameEvent();
+		this.gameEvent.Name = "start sequence";
 
 		string fileContents = jsonFile.text;
 
-		Debug.Log(fileContents);
 		JSONObject json = JSONObject.Create(fileContents);
 		foreach (Transform child in transform)
-        {
+		{
 			if (!child.GetComponent<ThrowDialog>())
 			{
-				Debug.LogError("The object with the name " + child.gameObject.name + " doesn't have ThrowDialog component");
+				Debug.LogWarning("The object with the name " + child.gameObject.name + " doesn't have ThrowDialog component");
 			}
 			else
 			{
 				ThrowDialog dialog = child.GetComponent<ThrowDialog>();
 				String saveName = dialog.fieldName;
 				String name = saveName.First().ToString().ToLower() + saveName.Substring(1);
-				if (json.HasField(name))
+				if (!sequenceDict.ContainsKey(saveName))
 				{
-					sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name, json, variablesObject));
+					Debug.Log(">>>>Reading file " + jsonFile.name);
+					if (json.HasField(name))
+					{
+						sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name, json, variablesObject));
+					}
+					else if (json.HasField(name.ToLower()))
+					{
+						sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name.ToLower(), json, variablesObject));
+					}
+					else
+					{
+						Debug.LogWarning("Dialog with key " + name + " doesn't exist in file " + fileName);
+					}
 				}
-				else if (json.HasField(name.ToLower()))
-				{
-					sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name.ToLower(), json, variablesObject));
-				}
-				else
-				{
-					Debug.LogWarning("Dialog with key " + name + " doesn't exist in file " + fileName);
-				}
+
 			}
-        }
+		}
+
 	}
-	
 	// Update is called once per frame
 	void Update () {
 		

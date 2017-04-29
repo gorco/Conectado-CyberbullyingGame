@@ -21,7 +21,7 @@ public class MobileMessage : EventManager {
 			string from = ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD).ToString().Replace("\"", "");
 
 			float time = (float)ev.getParameter(SequenceGenerator.EVENT_TIME_FIELD);
-			object otherObj = ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD);
+			object otherObj = ev.getParameter(SequenceGenerator.EVENT_OTHER_FIELD);
 			string other = otherObj != null ? otherObj.ToString().Replace("\"", "") : "";
 
 			StartCoroutine(ExecuteAfterTime(time, message, from, chatName, other));
@@ -39,6 +39,9 @@ public class MobileMessage : EventManager {
 			string fileContents = jsonFile.text;
 			jsonObj = JSONObject.Create(fileContents);
 		}
+
+		Sequence seq = SequenceGenerator.createSimplyDialog("default", jsonObj);
+		mobile.AddChatSequence("default", seq);
 	}
 	
 	// Update is called once per frame
