@@ -8,10 +8,14 @@ public class ThrowDialog : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 {
 
 	public string fieldName;
+	public bool throwAtStart = false;
 
 	// Use this for initialization
 	void Start () {
-		
+		if (throwAtStart)
+		{
+			ThrowDialogNow();
+		}
 	}
 	
 	// Update is called once per frame

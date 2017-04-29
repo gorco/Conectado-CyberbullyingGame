@@ -37,6 +37,12 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 			return;
 		}
 
+		//Init day
+		GlobalState.Day = 0;
+		GlobalState.Hour = 7;
+		GlobalState.Minute = 0;
+		GlobalState.Repeated = false;
+
 		//Save data
 		GlobalState.UserName = userName.text;
 		GlobalState.MaleSex = male.isOn;

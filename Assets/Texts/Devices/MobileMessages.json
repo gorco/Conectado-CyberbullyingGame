@@ -1,0 +1,72 @@
+{
+	"default":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No tengo nada que contestar"
+			}]
+		}
+	},
+	"alisonThx":{
+		"root": {
+			"type": "options",
+			"options": [{
+				"next": "node1",
+				"msn": "No es nada"
+			},
+			{
+				"msn": "(No contestar, ya la veré luego)"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alison Clase",
+				"value": "No es nada",
+				"key": "",
+				"other": "empty",
+				"time": 0 
+			}
+		}
+	},
+	"alisonRequest":{
+		"root": {
+			"type": "options",
+			"options": [{
+				"next": "node1",
+				"msn": "Si, ahora te acepto"
+			},
+			{
+				"next": "node2",
+				"msn": "Cuando pueda lo miro"
+			},
+			{
+				"msn": "(Es un poco pesada, paso de contestar nada)"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alison Clase",
+				"value": "Si, ahora te acpeto la invitación :)",
+				"key": "",
+				"other": "empty",
+				"time": 0 
+			}
+		},
+		"node2": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alison Clase",
+				"value": "Cuando pueda lo miro, ahora mismo estoy ocupado",
+				"key": "",
+				"other": "empty",
+				"time": 0 
+			}
+		}
+	}
+}

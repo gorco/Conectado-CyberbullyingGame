@@ -24,7 +24,6 @@ public class ChangeVariable : EventManager
 			}
 
 			var value = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
-
 			this.ChangeVarValue(var, value);
 		}
 	}
@@ -55,8 +54,21 @@ public class ChangeVariable : EventManager
 	{
 		if (varName != null && varValue != null)
 		{
-			Type t = state.GetType();
-			if (t.GetProperty(varName) != null)
+			if (varName == "hour" && varValue.ToString().Contains(":")) 
+			{
+				string[] hour = varValue.ToString().Split(':');
+				GlobalState.Hour = Int32.Parse(hour[0]);
+				GlobalState.Minute = Int32.Parse(hour[1]);
+				return;
+			}
+
+			Type t = null;
+			if(state != null)
+			{
+				t = state.GetType();
+			}
+
+			if (t != null && t.GetProperty(varName) != null)
 			{
 				t.GetProperty(varName).SetValue(state, varValue, null);
 			}
