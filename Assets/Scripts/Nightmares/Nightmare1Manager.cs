@@ -4,14 +4,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Nightmare1Manager : MonoBehaviour {
+public class Nightmare1Manager : NightmareManager
+{
 
 	private float time = 3;
 	private bool throwFinish = false;
 
 	// Use this for initialization
 	void Start () {
-	
+		InitMobileGUI.InitMobileGUIObject(false);
 	}
 	
 	// Update is called once per frame
@@ -23,7 +24,7 @@ public class Nightmare1Manager : MonoBehaviour {
 		}
 	}
 
-	public float HowLong()
+	public override float HowLong()
 	{
 		time /= 2f;
 		return time;

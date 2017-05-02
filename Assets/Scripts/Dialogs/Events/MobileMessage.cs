@@ -16,13 +16,27 @@ public class MobileMessage : EventManager {
 	{
 		if (ev.Name.Replace("\"", "") == "mobile message")
 		{
+			object otherObj = ev.getParameter(SequenceGenerator.EVENT_OTHER_FIELD);
+			string other = otherObj != null ? otherObj.ToString().Replace("\"", "") : "";
+
+			if(other == "save")
+			{
+				mobile.SaveMobileState();
+				return;
+			}
+
+			if (other == "load")
+			{
+				mobile.LoadMobileState();
+				return;
+			}
+
 			string chatName = ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD).ToString().Replace("\"", "");
 			string message = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD).ToString().Replace("\"", "");
 			string from = ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD).ToString().Replace("\"", "");
 
 			float time = (float)ev.getParameter(SequenceGenerator.EVENT_TIME_FIELD);
-			object otherObj = ev.getParameter(SequenceGenerator.EVENT_OTHER_FIELD);
-			string other = otherObj != null ? otherObj.ToString().Replace("\"", "") : "";
+			
 
 			StartCoroutine(ExecuteAfterTime(time, message, from, chatName, other));
 		}

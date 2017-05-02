@@ -35,7 +35,7 @@
 			},
 			{
 				"tag": "Alejandro",
-				"msn": "Hoy estabas sentado en mi sitio, no quiero que te vuelvas a sentar ahí"
+				"msn": "Hoy estabas <$ if(varObject('global', 'MaleSexNonStatic')==true, 'sentado', 'sentada') $> en mi sitio, no quiero que te vuelvas a sentar ahí"
 			},
 			{
 				"tag": "Alejandro",

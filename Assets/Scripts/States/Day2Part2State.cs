@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Day1Part2State : IState
+public class Day2Part2State : IState
 {
 
 	[SerializeField]
 	private bool bellSounded = false;
 
 	[SerializeField]
-	private bool alisonDialog = false;
+	private bool jokeAdvise = false;
 
 	public bool BellSounded
 	{
@@ -17,10 +17,10 @@ public class Day1Part2State : IState
 		set { bellSounded = value; }
 	}
 
-	public bool AlisonDialog
+	public bool JokeAdvise
 	{
-		get { return alisonDialog; }
-		set { alisonDialog = value; }
+		get { return jokeAdvise; }
+		set { jokeAdvise = value; }
 	}
 
 	// Use this for initialization
@@ -39,4 +39,3 @@ public class Day1Part2State : IState
 
 	}
 }
-

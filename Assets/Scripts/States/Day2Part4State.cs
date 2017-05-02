@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Day1Part4State : IState
-{
+public class Day2Part4State : IState {
 	[SerializeField]
 	private bool chargingMobile = false;
 
@@ -13,3 +12,4 @@ public class Day1Part4State : IState
 		set { chargingMobile = value; }
 	}
 }
+

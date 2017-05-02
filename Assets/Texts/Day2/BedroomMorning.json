@@ -4,16 +4,36 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Ahora que me he conseguido levantar no debería volver a acostarme"
+				"msn": "Ya tendré tiempo de dormir cuando vuelva de clase"
 			}]
 		}		
+	},
+	"init":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node0",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Soy yo... o el móvil me marcaba la fecha de ayer ¿¿??"
+			},
+			{
+				"tag": "Tú",
+				"msn": "¿Se me habrá roto?"
+			}]
+		}
 	},
 	"wardrobeInside1":{
 		"root": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No hay nada útil dentro"
+				"msn": "Por ahora no necesito nada que pueda estar ahí dentro"
 			}]
 		}		
 	},
@@ -32,22 +52,10 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Creo que tengo todo preparado"
-			},
-			{
-				"tag": "Tú",
-				"msn": "mmm...",
+				"msn": "Todo listo, vamonos"
 			}]
 		},
 		"node1": {
-			"type": "dialog",
-			"next": "node2",
-			"fragments": [{
-				"tag": "Tú",
-				"msn": "Si, lo llevo todo, será mejor que coja la mochila y me marche ya"
-			}]
-		},
-		"node2": {
 			"type": "event",
 			"event": {
 				"name": "pick",

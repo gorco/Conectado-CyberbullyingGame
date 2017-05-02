@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class Sit : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler
 {
 
-	public Nightmare1Manager nightmareManager;
+	public NightmareManager nightmareManager;
 
 	// Use this for initialization
 	void Start () {

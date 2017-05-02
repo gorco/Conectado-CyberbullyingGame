@@ -22,7 +22,7 @@ public class WakeUpManager : MonoBehaviour {
 
 	private float dTime = 0;
 
-	public Text introText;
+	public GameObject introText;
 
 	public int[] scenesPerDay = {3, 8, 3, 3, 3 };
 
@@ -45,16 +45,16 @@ public class WakeUpManager : MonoBehaviour {
 		if (!GlobalState.NowIsLaterThan(8, 0)) {
 			if (GlobalState.Day == 0)
 			{
-				introText.enabled = true;
+				introText.SetActive(true);
 				offset = introTime;
 			}
 			GlobalState.Hour = 7;
 			GlobalState.Minute = 30;
 		} else {
-			introText.enabled = false;
-			initQuests();
+			introText.SetActive(false);
 		}
 		mobileObject.updateHour();
+		initQuests();
 	}
 	
 	void initQuests()
@@ -65,13 +65,17 @@ public class WakeUpManager : MonoBehaviour {
 		GlobalState.MariaQuest = 0;
 		GlobalState.AlejandroQuest = 0;
 		GlobalState.AnaQuest = 0;
+		if (GlobalState.Day != 2)
+		{
+			GlobalState.AuxQuest = 0;
+		}
 	}
 
 	// Update is called once per frame
 	void Update () {
 		//Wake up (Move eyelids)
 		if (state == 0 && dTime >= offset) {
-			introText.enabled = false;
+			introText.SetActive(false);
 			state = 1;
 			eyelidsObject.wakeUp (wakeUpSeconds);
 			dTime = 0;

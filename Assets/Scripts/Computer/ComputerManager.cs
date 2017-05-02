@@ -29,6 +29,9 @@ public class ComputerManager : EventManager {
 	private Dictionary<string, Publication> publications;
 	private List<SocialFriend> friends;
 
+	private List<GameObject> tmpPublications;
+	private List<GameObject> tmpComments;
+
 	private string pass = "";
 
 	public Text notePass;
@@ -55,6 +58,7 @@ public class ComputerManager : EventManager {
 		newFriends.SetActive(false);
 		friendsRequests = 0;
 		friends = new List<SocialFriend>();
+		tmpPublications = new List<GameObject>();
 		publications = new Dictionary<string, Publication>();
 		error.SetActive(false);
 		ShowLogin();
@@ -82,6 +86,11 @@ public class ComputerManager : EventManager {
 	{
 		Debug.LogWarning("añadir comentario a la publicación con KEY -> " + keyPublication);
 		publications[keyPublication].AddComment(author, comment);
+	}
+
+	public void AddTmpComment(GameObject socialComment)
+	{
+		tmpComments.Add(socialComment);
 	}
 
 	public void ResolveFriendRequest(bool accepted, string name, SocialFriend friend)
@@ -171,6 +180,7 @@ public class ComputerManager : EventManager {
 
 		Debug.LogWarning("añadir publicación con KEY -> "+ key + " From the user" + author);
 		publications.Add(key, pb);
+		tmpPublications.Add(photo);
 	}
 
 	public void ShowLogin()
@@ -303,5 +313,26 @@ public class ComputerManager : EventManager {
 
 	public override void Tick()
 	{
+	}
+
+	public void SaveComputerState()
+	{
+		tmpComments.Clear();
+		tmpPublications.Clear();
+	}
+
+	public void LoadComputerState()
+	{
+		foreach(Publication pub in photosContent.GetComponentsInChildren<Publication>(true))
+		{
+			pub.RemoveComments(tmpComments);
+		}
+
+		foreach (GameObject pub in tmpPublications)
+		{
+			Publication p = pub.GetComponent<Publication>();
+			publications.Remove(p.GetPublicationKey());
+			Destroy(pub);
+		}
 	}
 }

@@ -100,7 +100,7 @@
 			"next": "node5",
 			"fragments": [{
 				"tag": "Maria",
-				"msn": "Eres un poco pesado con las preguntas"
+				"msn": "Eres un poco  <$ if(varObject('global', 'MaleSexNonStatic')==true, 'pesado', 'pesada') $> con las preguntas"
 			},
 			{
 				"tag": "Maria",

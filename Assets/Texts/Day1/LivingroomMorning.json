@@ -99,12 +99,11 @@
 		"root": {
 			"type": "fork",
 			"options": [{
-				"next": "changeHourLate",
-				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') >= 8 "
-			},
-			{
 				"next": "changeHourSoon",
 				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') < 8"
+			},{
+				"next": "changeHourLate",
+				"condition": "varObject('global', 'HourNonStatic') >= 8 && varObject('state', 'BagPicked') == true"
 			},
 			{
 				"next": "dialogNode",
@@ -140,8 +139,8 @@
 		"dialogNode": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "",
-				"msn": "Te olvidas la mochila. Será mejor que pases por tu habitación a recogerla antes de irte"
+				"tag": "Tú",
+				"msn": "Me dejo la mochila. Será mejor que pases por mi habitación a recogerla antes de irme"
 			}]
 		}
 	},

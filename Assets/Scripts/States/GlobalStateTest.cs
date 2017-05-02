@@ -28,8 +28,9 @@ public class GlobalStateTest : MonoBehaviour {
 	public int alejandroQuest;
 
 	// Use this for initialization
-	void Start () {
-		Debug.LogError("INITGLOBAL STATE");
+	void Awake () {
+		Debug.LogWarning("INIT GLOBAL STATE");
+
 		GlobalState.Day = this.day;
 		GlobalState.Hour = this.hour;
 		GlobalState.Minute = this.minute;
@@ -51,7 +52,7 @@ public class GlobalStateTest : MonoBehaviour {
 		GlobalState.JoseQuest = this.joseQuest;
 		GlobalState.AlejandroQuest = this.alejandroQuest;
 
-		Debug.LogError("USUARIO "+GlobalState.UserName);
+		Debug.LogWarning("FIN INIT GLOBAL STATE");
 		/*
 		this.Day = GlobalState.Day;
 		this.Hour = GlobalState.Hour;

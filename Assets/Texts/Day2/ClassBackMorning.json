@@ -19,30 +19,10 @@
 			"next": "node2",
 			"fragments": [{
 				"tag": "Profesor",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $> ¿verdad?"
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> llegas tarde"
 			},{
 				"tag": "Profesor",
-				"msn": "Llegar tarde tu primer día, no es una buena manera de empezar"
-			},
-			{
-				"tag": "Profesor",
-				"msn": "Clase, este es vuestro nuevo compañero, nuevo en el colegio, por favor, ayudadle en sus primeros días"
-			},
-			{
-				"tag": "Profesor",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $> Yo soy vuestro tutor, cualquier cosa que necesites dimelo"
-			},
-			{
-				"tag": "Profesor",
-				"msn": "Por favor, <$ varObject('global', 'UserNameNonStatic') $> sientate al lado de Alison"
-			},
-			{
-				"tag": "Profesor",
-				"msn": "Alison, haz el favor de resolver todas las dudas que tenga <$ varObject('global', 'UserNameNonStatic') $> sobre el colegio"
-			},
-			{
-				"tag": "Profesor",
-				"msn": "Continuemos con la clase"
+				"msn": "Por favor, sientate para que podamos continuar la clase"
 			}]
 		},
 		"node2": {
@@ -52,7 +32,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Te diriges entre todas las miradas a tu sitio y te sientas"
+				"value": "Te diriges entre todas las miradas y te sientas en el primer sitio que ves libre"
 			}
 		},
 		"node3": {
@@ -63,119 +43,85 @@
 			}
 		}
 	},
-	"ana":{
+	"table":{
 		"root": {
 			"type": "dialog",
-			"next": "quest",
+			"next": "options",
 			"fragments": [{
-				"tag": "Ana",
-				"msn": "Me parece que te has equivocado de clase"
+				"tag": "Tú",
+				"msn": "Este sitio está libreo, ¿me siento aquí?"
 			}]
 		},
-		"quest": {
-			"type": "event",
-			"next": "node1",
-			"event": {
-				"name": "change variable",
-				"var": "AnaQuest",
-				"value": 1,
-			}
-		},
-		"node1": {
+		"options": {
 			"type": "options",
 			"options": [{
-				"next": "node1a",
-				"msn": "No, es que hoy es mi primer día, soy <$ varObject('global', 'UserNameNonStatic') $>"
+				"next": "node2",
+				"msn": "Si"
 			},
 			{
-				"next": "node1b",
-				"msn": "¿Y tú quién eres? ¿La marimacho de clase?"
-			}]
-		},
-		"node1a": {
-			"type": "dialog",
-			"next": "node2",
-			"fragments": [{
-				"tag": "Ana",
-				"msn": "Oh, así que tú eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'el nuevo', 'la nueva') $>"
+				"msn": "No"
 			},
 			{
-				"tag": "Ana",
-				"msn": "Yo soy Ana, también estoy en esta clase"
+				"next": "gum",
+				"msn": "Mirar antes la silla",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
 			}]
-		},
-		"node1b": {
-			"type": "dialog",
-			"next": "nodeFS",
-			"fragments": [{
-				"tag": "Ana",
-				"msn": "Subnormal..."
-			}]
-		},
-		"nodeFS":{
-			"type": "event",
-			"next": "node2",
-			"event": {
-				"name": "change friendship",
-				"var": "AnaFS",
-				"value": -20,
-			}
 		},
 		"node2": {
 			"type": "dialog",
-			"next": "nodeTeacher",
+			"next": "node3",
 			"fragments": [{
 				"tag": "",
-				"msn": "(Ruidos de fondo, parece que tú nuevo profesor ha llegado)"
+				"msn": "(Ruidos de fondo, el profesor ha llegado)"
 			}]
 		},
-		"nodeTeacher": {
+		"gum": {
 			"type": "dialog",
-			"next": "nodeSit",
+			"next": "noGum",
 			"fragments": [{
-				"tag": "Profesor",
-				"msn": "Vamos a empezar la clase, venga, pasad todos y sentaos"
-			}]
-		},
-		"nodeSit": {
-			"type": "options",
-			"options": [{
-				"next": "node3a",
-				"msn": "(Sentarse en última fila)"
+				"tag": "Tú",
+				"msn": "Hay un chicle pegado"
 			},
 			{
-				"next": "node3b",
-				"msn": "(Preguntar dónde puedes sentarte)"
+				"tag": "Tú",
+				"msn": "Ayer debió pasar lo mismo, será mejor que lo quite y me siente"
 			}]
 		},
-		"node3a": {
+		"noGum": {
 			"type": "event",
-			"next": "node4",
+			"next": "node3",
+			"event": {
+				"name": "change variable",
+				"var": "AuxQuest",
+				"value": 2,
+			}
+		},
+		"node3": {
+			"type": "event",
+			"next": "changeHour",
 			"event": {
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Os sentaís todos y empieza la clase"
+				"value": "Os sentaís todos, para cuando te das cuenta es la hora del recreo"
 			}
 		},
-		"node4": {
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"nextScene": {
 			"type": "event",
 			"event": {
-				"name": "move camera",
-				"key": "classFront"
+				"name": "change scene",
+				"var": "scene",
+				"value": 10
 			}
-		},
-		"node3b": {
-			"type": "dialog",
-			"next": "node3a",
-			"fragments": [{
-				"tag": "Profesor",
-				"msn": "Sientate al lado de Alison"
-			},
-			{
-				"tag": "Profesor",
-				"msn": "Alison, haz el favor de resolver todas las dudas que tenga <$ varObject('global', 'UserNameNonStatic') $> sobre el colegio"
-			}]
-		},
+		}
 	}
 }

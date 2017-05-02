@@ -40,11 +40,28 @@
 		},
 		"variable": {
 			"type": "event",
-			"next": "nextScene",
+			"next": "changeHour",
 			"event": {
 				"name": "change variable",
 				"var": "Day",
 				"value": 1,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
 			}
 		},
 		"nextScene": {

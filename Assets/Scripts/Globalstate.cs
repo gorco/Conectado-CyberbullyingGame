@@ -41,28 +41,32 @@ public class GlobalState
 	// QuestsPerDay
 
 	public static int MariaQuest { get; set; }
-	// Day1 -> Meet Maria [0 - no spoken] [1 - freak] [2 - friend]
-	// Day2 -> Speak Maria [0 - no spoken] [1 - spoken]
+	// Day1 -> Meet Maria [0 - not spoken] [1 - freak] [2 - friend]
+	// Day2 -> Speak Maria [0 - spoken] [1 - joke advise]
 
 	public static int AlisonQuest { get; set; }
 	// Day1 -> Found earing [0 - not found] [1 - found]
-	// Day2 -> Speak Alison [0 - no spoken] [1 - spoken]
+	// Day2 -> Speak Alison [0 - not spoken] [1 - spoken] [2 - joke advise]
 
 	public static int AnaQuest { get; set; }
-	// Day1 -> Meet Ana [0 - no spoken] [1 - spoken]
-	// Day2 -> Speak Ana [0 - no spoken] [1 - spoken]
+	// Day1 -> Meet Ana [0 - not spoken] [1 - spoken]
+	// Day2 -> Speak Ana []
 
 	public static int GuillermoQuest { get; set; }
-	// Day1 -> Meet Guille [0 - no spoken] [1 - spoken] [2 - noteboard]
-	// Day2 -> Speak Guille [0 - no spoken] [1 - spoken]
+	// Day1 -> Meet Guille [0 - not spoken] [1 - spoken] [2 - noteboard]
+	// Day2 -> Speak Guille [0 - not spoken] [1 - spoken and go] [2 - spoken and not go] [3 - spoken and quest]
 
 	public static int JoseQuest { get; set; }
-	// Day1 -> Meet Jose [0 - no spoken] [1 - spoken]
-	// Day2 -> Speak Jose [0 - no spoken] [1 - spoken]
+	// Day1 -> Meet Jose [0 - not spoken] [1 - spoken]
+	// Day2 -> Speak Jose [0 - not spoken] [1 - spoken]
 
 	public static int AlejandroQuest { get; set; }
 	// Day1 -> Meet Alex [0 - sorry] [1 - threat] [2 - bad]
-	// Day2 -> Speak Alex [0 - no spoken] [1 - spoken]
+	// Day2 -> Speak Alex [0 - not spoken] [1 - joke] [2 - zero] [3 - fight]
+
+	public static int AuxQuest { get; set; }
+	// Day1 -> []
+	// Day2 -> Gum [0 - not wash] [1 - wash] [2 - not gum]
 
 	protected static GlobalState instance;
 	public static GlobalState Instance {  get { return instance == null ? instance = new GlobalState() : instance; } }
@@ -155,6 +159,10 @@ public class GlobalState
 	public int AlejandroQuestNonStatic
 	{
 		get { return AlejandroQuest; }
+	}
+	public int AuxQuestNonStatic
+	{
+		get { return AuxQuest; }
 	}
 
 	// SocialNet

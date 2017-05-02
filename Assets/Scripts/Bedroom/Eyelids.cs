@@ -29,12 +29,23 @@ public class Eyelids : MonoBehaviour {
 
 	private float delta;
 
+	public bool startOpened = false;
+
 	void Start () {
 		topOpened = new Vector2(0, 1f);
 		topClosed = new Vector2(0, 0.5f);
 
 		bottomOpened = new Vector2(1, 0.0f);
 		bottomClosed = new Vector2(1, 0.5f);
+
+		if (startOpened)
+		{
+			topEyelid.rectTransform.anchorMin = topOpened;
+			bottomEyelid.rectTransform.anchorMax = bottomOpened;
+
+			topEyelid.rectTransform.sizeDelta = new Vector2(0, 0);
+			bottomEyelid.rectTransform.sizeDelta = new Vector2(0, 0);
+		}
 	}
 	
 	void Update () {

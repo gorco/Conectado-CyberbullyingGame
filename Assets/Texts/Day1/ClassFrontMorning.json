@@ -37,7 +37,7 @@
 			},
 			{
 				"tag": "Alejandro",
-				"msn": "El nuevo está en mi sitio"
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'El nuevo', 'La nueva') $> está en mi sitio"
 			},
 			{
 				"tag": "Profesor",
@@ -51,7 +51,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Después de la clase, cuándo suena la campana que indica el recreo"
+				"value": "Suena la campana que indica la hora del recreo"
 			}
 		},
 		"changeHour": {

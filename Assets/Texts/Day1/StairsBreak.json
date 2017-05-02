@@ -13,7 +13,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Parece que está cerrada y no hay nadie dentro"
+				"msn": "Parece que no hay nadie dentro"
 			}]
 		}
 	},

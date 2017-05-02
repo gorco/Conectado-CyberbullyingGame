@@ -41,6 +41,8 @@ public class MobileChat : MonoBehaviour {
 	Dictionary<string, List<GameObject>> chats;
 	Dictionary<string, Sequence> sequences;
 
+	private List<GameObject> tempBubbles;
+
 	private bool animate;
 	private float delta;
 	private float animationSeconds;
@@ -58,6 +60,7 @@ public class MobileChat : MonoBehaviour {
 		outPocket = false;
 		hidePosition = this.GetComponent<Transform>().localPosition;
 		chats = new Dictionary<string, List<GameObject>>();
+		tempBubbles = new List<GameObject>();
 		bubbleContent.sizeDelta = new Vector2(bubbleContent.sizeDelta.x, initContentSize);
 	}
 
@@ -84,6 +87,7 @@ public class MobileChat : MonoBehaviour {
 		script.textPrefab = textTemplate;
 		script.CreateBubble(text, from);
 		AddBubble(bubble, chat);
+		tempBubbles.Add(bubble);
 	}
 
 	public Sequence GetChatSequence(string chat)
@@ -162,6 +166,7 @@ public class MobileChat : MonoBehaviour {
 					script.AddAdvertisement();
 				}
 			}
+			HideChat(chat);
 		}
 	}
 
@@ -273,6 +278,32 @@ public class MobileChat : MonoBehaviour {
 		{
 			chatList.SetActive(false);
 			currentChat = chat;
+		}
+	}
+
+	public void SaveMobileState()
+	{
+		tempBubbles.Clear();
+	}
+
+	public void LoadMobileState()
+	{
+		foreach(ChatGroup chat in chatListContent.GetComponentsInChildren<ChatGroup>(true))
+		{
+			List<GameObject> tmp = new List<GameObject>();
+			foreach(GameObject bubble in chats[chat.nameChat.text])
+			{
+				if (tempBubbles.Contains(bubble)){
+					tmp.Add(bubble);
+				}
+			}
+			foreach (GameObject bubble in tmp)
+			{
+				ClearChatSequence(chat.nameChat.text);
+				tempBubbles.Remove(bubble);
+				chats[chat.nameChat.text].Remove(bubble);
+				Destroy(bubble);
+			}
 		}
 	}
 

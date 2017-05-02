@@ -48,6 +48,11 @@ public class Publication : MonoBehaviour {
 		this.computer = computer;
 	}
 
+	public string GetPublicationKey()
+	{
+		return this.key;
+	}
+
 	public void SetAuthorAndComment(string author, string comment)
 	{
 		this.author.text = author;
@@ -74,6 +79,7 @@ public class Publication : MonoBehaviour {
 		comment.transform.localScale = new Vector3(1, 1, 1);
 		commentsContent.sizeDelta = new Vector2(commentsContent.sizeDelta.x, commentsContent.sizeDelta.y + last);
 		comment.transform.localPosition = new Vector2(comment.transform.localPosition.x, comment.transform.localPosition.y - height);
+		computer.AddTmpComment(comment);
 	}
 
 	public void ThrowCommentDialog()
@@ -89,6 +95,18 @@ public class Publication : MonoBehaviour {
 			RectTransform rctT = child.GetComponent<RectTransform>();
 			child.transform.localPosition = new Vector2(child.transform.localPosition.x, - height);
 			height += rctT.sizeDelta.y;
+		}
+	}
+
+	internal void RemoveComments(List<GameObject> tmpComments)
+	{
+		foreach(SocialComment sc in commentsContent.GetComponentsInChildren<SocialComment>(true))
+		{
+			if (tmpComments.Contains(sc.gameObject))
+			{
+				tmpComments.Remove(sc.gameObject);
+				Destroy(sc.gameObject);
+			}
 		}
 	}
 }
