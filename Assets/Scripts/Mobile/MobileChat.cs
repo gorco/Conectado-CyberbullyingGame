@@ -106,7 +106,12 @@ public class MobileChat : MonoBehaviour {
 
 	public void AddChatSequence(string chat, Sequence seq)
 	{
-		sequences.Add(chat, seq);
+		if (!sequences.ContainsKey(chat))
+		{
+			sequences.Add(chat, seq);
+			return;
+		}
+		sequences[chat] = seq;
 	}
 
 	public void ClearChatSequence(string chat)

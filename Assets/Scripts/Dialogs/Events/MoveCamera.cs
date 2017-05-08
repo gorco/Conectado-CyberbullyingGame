@@ -20,7 +20,7 @@ public class MoveCamera : EventManager
 	public override void ReceiveEvent(IGameEvent ev)
 	{
 		if (ev.Name.Replace("\"", "") == "move camera" &&
-			ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD).ToString() == keyEvent)
+			ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD).ToString().Replace("\"", "") == keyEvent)
 		{
 			this.moveCamera();
 		}

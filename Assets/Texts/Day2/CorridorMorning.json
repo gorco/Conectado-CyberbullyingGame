@@ -56,7 +56,7 @@
 				"msn": "Ten cuidado, ¿vale?"
 			}]
 		},
-		"forkRepeat": {
+		"checkRepeat": {
 			"type": "checkRepeat",
 			"options": [{
 				"next": "repeatedDay1",

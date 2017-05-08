@@ -515,11 +515,117 @@
 	},
 	"bedroomDoor" : {
 		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "move",
+				"condition": "repeated == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"move": {
 			"type": "event",
 			"next": "changeHour",
 			"event": {
 				"name": "move camera",
 				"key": "bedroom"
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"next": "move2",
+			"set": {
+				"var": "repeated",
+				"value": true
+			}
+		},
+		"move2": {
+			"type": "event",
+			"next": "message1",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		},
+		"message1": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "<$ varObject('global', 'UserNameNonStatic') $> este es el chat k tenemos ls de clase",
+				"key": "Alison",
+				"other": "thxClass",
+				"time": 0 
+			}
+		},
+		"message2": {
+			"type": "event",
+			"next": "message3",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Bienvenido', 'Bienvenida') $>",
+				"key": "Guille",
+				"time": 1 
+			}
+		},
+		"message3": {
+			"type": "event",
+			"next": "message4",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": ":)",
+				"key": "Alsion",
+				"time": 2 
+			}
+		},
+		"message4": {
+			"type": "event",
+			"next": "message5",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "xq le invitas al grupo? no hablaste cn alex esta mañana?",
+				"key": "Ana",
+				"time": 8 
+			}
+		},
+		"message5": {
+			"type": "event",
+			"next": "message6",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Pff, no se ha ganado estar en el grupo. El k pueda k le eche YA!",
+				"key": "Alex",
+				"time": 10 
+			}
+		},
+		"message6": {
+			"type": "event",
+			"next": "message7",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Ya sólo falta que inviteís a la friki de María",
+				"key": "Alex",
+				"other": "kickClass",
+				"time": 12 
+			}
+		},
+		"message7": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Jose es el admin, habla con él mañana, q el chat no suele leerlo",
+				"key": "Ana",
+				"time": 14
 			}
 		},
 		"changeHour": {

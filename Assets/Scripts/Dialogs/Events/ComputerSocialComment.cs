@@ -81,33 +81,6 @@ public class ComputerSocialComment : EventManager
 				GenerateAndSetSequence(other, publicationKey);
 			}
 		}
-		
-		Regex r = new Regex(@"\$(\w+)", RegexOptions.IgnoreCase);
-		Match m = r.Match(message);
-
-		GlobalState gState = GlobalState.Instance;
-		Type t = gState.GetType();
-
-		while (m.Success)
-		{
-			string g = m.Groups[1].Value;
-			message = message.Replace("$"+g, t.GetProperty(g).GetValue(gState, null).ToString());
-			m = m.NextMatch();
-		}
-
-		message = message.Replace("True", "true");
-		message = message.Replace("False", "false");
-
-		Regex e = new Regex(@"<\$(.*)\$>", RegexOptions.IgnoreCase);
-		m = e.Match(message);
-		while (m.Success)
-		{
-			string g = m.Groups[1].Value;
-			Expression exp = new Expression(g);
-			message = message.Replace("<$" + g + "$>", exp.Evaluate().ToString());
-			m = m.NextMatch();
-		}
-
 
 		computer.AddPublicationComment(publicationKey, author, message);
 	}

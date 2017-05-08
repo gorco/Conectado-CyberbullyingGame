@@ -633,13 +633,23 @@
 		},
 		"alisonFriend" :{
 			"type": "event",
-			"next": "alisonMsn",
+			"next": "joseFriend",
 			"event": {
 				"name": "computer friend",
 				"var": "Alison",
 				"value": "Siempre hay un motivo para seguir adelante",
 				"time": 0,
 				"other": "alisonAccept,alisonDeny"
+			}
+		},
+		"joseFriend" :{
+			"type": "event",
+			"next": "alisonMsn",
+			"event": {
+				"name": "computer friend",
+				"var": "Guille",
+				"value": ":) ... (:",
+				"time": 3
 			}
 		},
 		"alisonMsn" : {
