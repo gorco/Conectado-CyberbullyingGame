@@ -17,6 +17,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Guille",
+				"character": "Guille",
 				"msn": "No les hagas caso y vete a casa, mañana será otro día"
 			}]
 		},
@@ -35,11 +36,11 @@
 			"type": "fork",
 			"options": [{
 				"next": "wash",
-				"condition": "varObject('global', 'AuxQuestNonStatic') == 1"
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
 			},
 			{
 				"next": "notGum",
-				"condition": "varObject('global', 'AuxQuestNonStatic') == 2"
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
 			}
 			{
 				"next": "notWash",

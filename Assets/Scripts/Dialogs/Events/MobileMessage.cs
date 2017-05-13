@@ -53,9 +53,15 @@ public class MobileMessage : EventManager {
 			string fileContents = jsonFile.text;
 			jsonObj = JSONObject.Create(fileContents);
 		}
-
-		Sequence seq = SequenceGenerator.createSimplyDialog("default", jsonObj);
-		mobile.AddChatSequence("default", seq);
+		try
+		{
+			Sequence seq = SequenceGenerator.createSimplyDialog("default", jsonObj);
+			mobile.AddChatSequence("default", seq);
+		}
+		catch (Exception e)
+		{
+			Debug.LogError("Error in " + jsonFile.name + " file. The error is: " + e.Message);
+		}
 	}
 	
 	// Update is called once per frame
@@ -65,8 +71,14 @@ public class MobileMessage : EventManager {
 
 	private void GenerateAndSetSequence(string jsonKey, string chatName)
 	{
-		Sequence seq = SequenceGenerator.createSimplyDialog(jsonKey, jsonObj);
-		mobile.AddChatSequence(chatName, seq);
+		try
+		{
+			Sequence seq = SequenceGenerator.createSimplyDialog(jsonKey, jsonObj);
+			mobile.AddChatSequence(chatName, seq);
+		} catch (Exception e)
+		{
+			Debug.LogError("Error in " + jsonFile.name + " file. The error is: " + e.Message);
+		}
 	}
 
 	private void RemoveSequence(string chatName)

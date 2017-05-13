@@ -59,6 +59,7 @@ public class ComputerManager : EventManager {
 		friendsRequests = 0;
 		friends = new List<SocialFriend>();
 		tmpPublications = new List<GameObject>();
+		tmpComments = new List<GameObject>();
 		publications = new Dictionary<string, Publication>();
 		error.SetActive(false);
 		ShowLogin();

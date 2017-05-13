@@ -19,9 +19,11 @@
 			"next": "node2",
 			"fragments": [{
 				"tag": "Profesor",
+				"character": "Teacher",
 				"msn": "<$ varObject('global', 'UserNameNonStatic') $> llegas tarde"
 			},{
 				"tag": "Profesor",
+				"character": "Teacher",
 				"msn": "Por favor, sientate para que podamos continuar la clase"
 			}]
 		},
@@ -92,7 +94,7 @@
 			"next": "node3",
 			"event": {
 				"name": "change variable",
-				"var": "AuxQuest",
+				"var": "GumQuest",
 				"value": 2,
 			}
 		},

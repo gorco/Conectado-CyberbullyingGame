@@ -40,7 +40,7 @@ public class ComputerFriendRequest : EventManager
 		{
 			string fileContents = jsonFile.text;
 			jsonObj = JSONObject.Create(fileContents);
-
+			/*
 			try
 			{
 				Sequence seq = SequenceGenerator.createSimplyDialog("default", jsonObj);
@@ -48,8 +48,9 @@ public class ComputerFriendRequest : EventManager
 			}
 			catch (Exception e)
 			{
-				Debug.LogWarning(e);
+				Debug.LogError("Error in " + jsonFile.name + " file. The error is: " + e.Message);
 			}
+			*/
 		}
 	}
 
@@ -71,8 +72,20 @@ public class ComputerFriendRequest : EventManager
 			if (other != "" && other.Contains(",")) ;
 			{
 				string[] keys = other.Split(',');
-				accept = SequenceGenerator.createSimplyDialog(keys[0], jsonObj);
-				deny = SequenceGenerator.createSimplyDialog(keys[1], jsonObj);
+				try
+				{
+					if (keys.Length > 0 && keys[0]!="")
+					{
+						accept = SequenceGenerator.createSimplyDialog(keys[0], jsonObj);
+					}
+					if (keys.Length > 1 && keys[1] != "")
+					{
+						deny = SequenceGenerator.createSimplyDialog(keys[1], jsonObj);
+					}
+				} catch (Exception e)
+				{
+					Debug.LogError("Error in " + jsonFile.name + " file. The error is: " + e.Message);
+				}
 				
 			}
 		}

@@ -1,5 +1,6 @@
 ﻿using Isometra;
 using Isometra.Sequences;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,8 +50,16 @@ public class ComputerPublication : EventManager
 			string fileContents = jsonFile.text;
 			jsonObj = JSONObject.Create(fileContents);
 
-			Sequence seq = SequenceGenerator.createSimplyDialog("default", jsonObj);
-			computer.SetDefaultPublicationButtonSequence(seq);
+			try
+			{
+				Sequence seq = SequenceGenerator.createSimplyDialog("default", jsonObj);
+				computer.SetDefaultPublicationButtonSequence(seq);
+			}
+			catch (Exception e)
+			{
+				Debug.LogError("Error in " + jsonFile.name + " file. The error is: " + e.Message);
+			}
+			
 		}
 	}
 
@@ -62,8 +71,16 @@ public class ComputerPublication : EventManager
 
 	private void GenerateAndSetSequence(string jsonKey, string publicationKey)
 	{
-		Sequence seq = SequenceGenerator.createSimplyDialog(jsonKey, jsonObj);
-		computer.SetPublicationButtonSequence(seq);
+		try
+		{
+			Sequence seq = SequenceGenerator.createSimplyDialog(jsonKey, jsonObj);
+			computer.SetPublicationButtonSequence(seq);
+		}
+		catch(Exception e)
+		{
+			Debug.LogError("Error in " + jsonFile.name + " file. The error is: " + e.Message);
+		}
+		
 	}
 
 	IEnumerator ExecuteAfterTime(float time, string author, string message, string key, string other)

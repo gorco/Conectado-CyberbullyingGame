@@ -65,10 +65,6 @@ public class WakeUpManager : MonoBehaviour {
 		GlobalState.MariaQuest = 0;
 		GlobalState.AlejandroQuest = 0;
 		GlobalState.AnaQuest = 0;
-		if (GlobalState.Day != 2)
-		{
-			GlobalState.AuxQuest = 0;
-		}
 	}
 
 	// Update is called once per frame

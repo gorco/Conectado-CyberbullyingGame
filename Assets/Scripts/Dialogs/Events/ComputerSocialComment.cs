@@ -42,8 +42,16 @@ public class ComputerSocialComment : EventManager
 			string fileContents = jsonFile.text;
 			jsonObj = JSONObject.Create(fileContents);
 
-			Sequence seq = SequenceGenerator.createSimplyDialog("default", jsonObj);
-			computer.AddDefaultPublicationCommentSequence(seq);
+			try
+			{
+				Sequence seq = SequenceGenerator.createSimplyDialog("default", jsonObj);
+				computer.AddDefaultPublicationCommentSequence(seq);
+			}
+			catch (Exception e)
+			{
+				Debug.LogError("Error in " + jsonFile.name + " file. The error is: " + e.Message);
+			}
+			
 		}
 	}
 
@@ -55,8 +63,14 @@ public class ComputerSocialComment : EventManager
 
 	private void GenerateAndSetSequence(string jsonKey, string publicationKey)
 	{
-		Sequence seq = SequenceGenerator.createSimplyDialog(jsonKey, jsonObj);
-		computer.AddPublicationCommentSequence(publicationKey, seq);
+		try
+		{
+			Sequence seq = SequenceGenerator.createSimplyDialog(jsonKey, jsonObj);
+			computer.AddPublicationCommentSequence(publicationKey, seq);
+		} catch (Exception e)
+		{
+			Debug.LogError("Error in " + jsonFile.name + " file. The error is: " + e.Message);
+		}
 	}
 
 	private void RemoveSequence(string publicationKey)

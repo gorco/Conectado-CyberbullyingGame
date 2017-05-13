@@ -13,7 +13,7 @@
 			"type": "fork",
 			"options": [{
 				"next": "nodeInit",
-				"condition": "varObject('global', 'AuxQuestNonStatic') != 2"
+				"condition": "varObject('global', 'GumQuestNonStatic') != 2"
 			}]
 		},
 		"nodeInit": {
@@ -69,8 +69,8 @@
 			"next": "setter",
 			"event": {
 				"name": "change variable",
-				"var": "AuxQuest",
-				"value": 2,
+				"var": "GumQuest",
+				"value": 1,
 			}
 		},
 	}

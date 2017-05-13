@@ -5,6 +5,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "Guillermo",
+				"character": "Guille",
 				"msn": "¿Eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nuevo', 'nueva') $>? No te había visto antes por aquí"
 			}]
 		},		
@@ -12,7 +13,7 @@
 			"type": "options",
 			"options": [{
 				"next": "node1a",
-				"msn": "Si, soy <$ varObject('global', 'UserNameNonStatic') $>, encantado. ¿Y tú eres?"
+				"msn": "Si, soy <$ varObject('global', 'UserNameNonStatic') $>... ¿Y tú eres?"
 			},
 			{
 				"next": "node1b",
@@ -33,6 +34,7 @@
 			"next": "nodeFS",
 			"fragments": [{
 				"tag": "Guillermo",
+				"character": "Guille",
 				"msn": "Llamame Guille"
 			},
 			{
@@ -41,6 +43,7 @@
 			},
 			{
 				"tag": "Guillermo",
+				"character": "Guille",
 				"msn": "Deberiamos entrar ya, nos vemos"
 			}]
 		}, 
@@ -124,6 +127,7 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "Jose",
+				"character": "Jose",
 				"msn": "Has vuelto ¿querías algo más?"
 			}]
 		},
@@ -132,10 +136,12 @@
 			"next": "setter",
 			"fragments": [{
 				"tag": "Jose",
+				"character": "Jose",
 				"msn": "Eres nuevo, ¿no?"
 			},
 			{
 				"tag": "Jose",
+				"character": "Jose",
 				"msn": "¿Quieres algo?"
 			}]
 		},
@@ -178,6 +184,7 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "Jose",
+				"character": "Jose",
 				"msn": "Ya me habías dicho tu nombre"
 			}]
 		},
@@ -212,10 +219,12 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "Jose",
+				"character": "Jose",
 				"msn": "Yo soy Jose"
 			},
 			{
 				"tag": "Jose",
+				"character": "Jose",
 				"msn": "¿Quieres algo?"
 			}]
 		},
@@ -224,10 +233,12 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "Jose",
+				"character": "Jose",
 				"msn": "Esa es también mi clase, está en la primera planta, subiendo las escaleras de la derecha que encuentras nada más entrar al edificio"
 			},
 			{
 				"tag": "Jose",
+				"character": "Jose",
 				"msn": "¿Necesitas algo más?"
 			}]
 		},
@@ -235,6 +246,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Jose",
+				"character": "Jose",
 				"msn": "Adios"
 			}]
 		}
@@ -245,6 +257,7 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "¿Te conozco?"
 			}]
 		},
@@ -273,14 +286,17 @@
 			"next": "fork",
 			"fragments": [{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Encantada, yo soy Alison"
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Espero que estés agusto aquí, hay gente muy maja."
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "¿A qué curso vas?"
 			},
 			{
@@ -289,6 +305,7 @@
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Entonces te veré en clase"
 			}]
 		},
@@ -296,10 +313,12 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "No seas tan tímido, no muerdo"
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Bueno, nos vemos. Que sea un buen primer día."
 			}]
 		},
@@ -318,6 +337,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Será mejor que entremos ya, sino llegaremos tarde"
 			}]
 		},
@@ -325,10 +345,12 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "El chico de la camiseta amarilla que está cerca de la entrada al patio también va a nuestra clase"
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Es muy majo, ¿Por qué no hablas con él?"
 			}]
 		}

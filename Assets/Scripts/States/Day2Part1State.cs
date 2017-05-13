@@ -44,6 +44,8 @@ public class Day2Part1State : IState {
 			GlobalState.AlejandroFS = alejandroFS;
 			GlobalState.GuillermoFS = guillermoFS;
 			GlobalState.ParentsFS = parentFS;
+
+			GlobalState.GumQuest = 0;
 		}
 		else
 		{

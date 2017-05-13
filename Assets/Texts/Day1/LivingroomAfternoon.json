@@ -80,10 +80,12 @@
 			"next": "setter",
 			"fragments": [{
 				"tag": "Mama",
-				"msn": "Ya has vuelto <$ varObject('global', 'UserNameNonStatic') $>"
+				"character": "Mother",
+				"msn": "Ya has vuelto, <$ varObject('global', 'UserNameNonStatic') $>"
 			}, 
 			{
 				"tag": "Mama",
+				"character": "Mother",
 				"msn": "¿Qué tal te ha ido el día?"
 			}]
 		},
@@ -92,6 +94,7 @@
 			"next": "parentsFS",
 			"fragments": [{
 				"tag": "Mama",
+				"character": "Mother",
 				"msn": "¿Quieres que hablemos un rato?"
 			}]
 		},
@@ -145,7 +148,7 @@
 			},
 			{
 				"next": "maria",
-				"msn": "A clase va Maria...",
+				"msn": "A clase va María...",
 				"condition": "page == 3 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') > 0"
 			},
 			{
@@ -285,7 +288,7 @@
 			"next": "alisonUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Le ayude a buscarlo, resulta que estaba en el patio"
+				"msn": "Le ayudé a buscarlo, resulta que estaba en el patio"
 			}]
 		},
 		"alisonUpParentsFS": {
@@ -465,14 +468,17 @@
 			},
 			{
 				"tag": "Máma",
+				"character": "Mother",
 				"msn": "¿Cómo que te ha amenazado?"
 			},
 			{
 				"tag": "Máma",
+				"character": "Mother",
 				"msn": "Seguro que lo has malinterpretado"
 			},
 			{
 				"tag": "Máma",
+				"character": "Mother",
 				"msn": "¿A quién más has conocido hoy?"
 			}]
 		},
@@ -493,6 +499,7 @@
 			},
 			{
 				"tag": "Máma",
+				"character": "Mother",
 				"msn": "Deberías disculparte y no buscar problemas"
 			}]
 		},	
@@ -575,10 +582,12 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Papa",
+				"character": "Father",
 				"msn": "Habla con tu madre"
 			},
 			{
 				"tag": "Papa",
+				"character": "Father",
 				"msn": "Quiere saber que tal te ha ido el día"
 			}]
 		}
@@ -647,7 +656,7 @@
 			"next": "alisonMsn",
 			"event": {
 				"name": "computer friend",
-				"var": "Guille",
+				"var": "Jose",
 				"value": ":) ... (:",
 				"time": 3
 			}

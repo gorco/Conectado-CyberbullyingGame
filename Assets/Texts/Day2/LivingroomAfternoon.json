@@ -93,14 +93,50 @@
 		},
 		"node1": {
 			"type": "dialog",
+			"next": "gumObv",
+			"fragments": [{
+				"tag": "Papá",
+				"character": "Father",
+				"msn": "Veo que ya has llegado, <$ varObject('global', 'UserNameNonStatic') $>"
+			}]
+		},
+		"gumObv":{
+			"type": "fork",
+			"options": [{
+				"next": "gum0",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "gum1",
+				"condition": "varObject('global', 'GumQuestNonStatic') > 0"
+			}]
+		},
+		"gum0": {
+			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
 				"tag": "Papá",
-				"msn": "Ya has vuelto <$ varObject('global', 'UserNameNonStatic') $>"
-			}, 
+				"character": "Father",
+				"msn": "¿Te has fijado en el chicle que llevas en el culo?"
+			},
 			{
 				"tag": "Papá",
-				"msn": "Tu madre aún no ha vuelto, ¿Qué tal te ha ido hoy?"
+				"character": "Father",
+				"msn": "A ver si tienes más cuidado, como tú no lavas..."
+			},
+			{
+				"tag": "Papá",
+				"character": "Father",
+				"msn": "Bueno, ¿qué tal el día?"
+			}]
+		},
+		"gum1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Papá",
+				"character": "Father",
+				"msn": "¿Cómo te ha ido el día?"
 			}]
 		},
 		"node2": {
@@ -108,6 +144,7 @@
 			"next": "parentsFS",
 			"fragments": [{
 				"tag": "Papá",
+				"character": "Father",
 				"msn": "¿Quieres hablar de algo más?"
 			}]
 		},
@@ -324,20 +361,69 @@
 				"value": false
 			}
 		},	
-		"gum": {
+		"gumFork": {
+			"type": "fork",
+			"options": [{
+				"next": "gumNoWhassed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "gumWhassed",
+				"condition": "varObject('state', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "noGum",
+				"condition": "varObject('state', 'GumQuestNonStatic') == 2"
+			}]
+		},
+		"gumNoWhassed": {
 			"type": "dialog",
 			"next": "gumUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Hoy he acabado con un chicle pegado en el culo"
+				"msn": "Lo del chicle... no sé cómo ha sido."
 			},
 			{
 				"tag": "Tú",
-				"msn": "La mayoria de clase se ha reido de mi"
+				"msn": "La mayoria de clase se ha reido de mí."
 			},
 			{
 				"tag": "Papá",
+				"character": "Father",
 				"msn": "Cariño, tienes que mirar donde apoyas el culo"
+			}]
+		},
+		"gumWhassed": {
+			"type": "dialog",
+			"next": "gumUpParentsFS",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Hoy he acabado con un chicle en el culo."
+			},
+			{
+				"tag": "Tú",
+				"msn": "He intentado quitarlo con agua y jabón, pero ha sido peor"
+			},
+			{
+				"tag": "Tú",
+				"msn": "La mayoria de clase se ha reido de mí."
+			}]
+		},
+		"noGum": {
+			"type": "dialog",
+			"next": "gumUpParentsFS",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Hoy había un chicle en mi silla."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Estoy seguro de que ha sido Alex."
+			},
+			{
+				"tag": "Papá",
+				"character": "Father",
+				"msn": "Seguro que no ha sido aposta"
 			}]
 		},
 		"gumUpParentsFS": {
@@ -439,10 +525,12 @@
 			},
 			{
 				"tag": "Papá",
+				"character": "Father",
 				"msn": "Si tienes algún problema con él, no dudes en decirmelo"
 			},
 			{
 				"tag": "Papá",
+				"character": "Father",
 				"msn": "Si hace falta hablaremos con tu profesor"
 			}]
 		},
@@ -459,14 +547,17 @@
 			},
 			{
 				"tag": "Papá",
+				"character": "Father",
 				"msn": "No busques pelea"
 			},
 			{
 				"tag": "Papá",
+				"character": "Father",
 				"msn": "si hace falta que vaya a hablar con él dimelo"
 			},
 			{
 				"tag": "Papá",
+				"character": "Father",
 				"msn": "O si tienes cualquier problema, habla con tu profesor"
 			}]
 		},	

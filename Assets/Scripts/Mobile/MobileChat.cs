@@ -253,6 +253,29 @@ public class MobileChat : MonoBehaviour {
 		//ScrollChatToBottom();
 	}
 
+	private void FixedUpdate()
+	{
+		if (currentChat != null && chats.ContainsKey(currentChat))
+		{
+			lastBubble = null;
+			RectTransform lastTransform = null;
+			List<GameObject> list = chats[currentChat];
+			foreach (GameObject g in list)
+			{
+				RectTransform rectTransform = g.GetComponent<RectTransform>();
+				if (lastBubble != null)
+				{
+					rectTransform.anchoredPosition = new Vector2(0, lastTransform.anchoredPosition.y - lastTransform.sizeDelta.y - offset);
+				} else
+				{
+					rectTransform.anchoredPosition = new Vector2(0, firstBubbleY);
+				}
+				lastTransform = rectTransform;
+				lastBubble = g;
+			}
+		}
+	}
+
 	public void LoadChat(string chat, bool show = true)
 	{
 		if (chat != currentChat)

@@ -64,9 +64,8 @@ public class GlobalState
 	// Day1 -> Meet Alex [0 - sorry] [1 - threat] [2 - bad]
 	// Day2 -> Speak Alex [0 - not spoken] [1 - joke] [2 - zero] [3 - fight]
 
-	public static int AuxQuest { get; set; }
-	// Day1 -> []
-	// Day2 -> Gum [0 - not wash] [1 - wash] [2 - not gum]
+	public static int GumQuest { get; set; }
+	// Day2 -> Gum [0 - not washed] [1 - washed] [2 - not gum]
 
 	protected static GlobalState instance;
 	public static GlobalState Instance {  get { return instance == null ? instance = new GlobalState() : instance; } }
@@ -160,9 +159,9 @@ public class GlobalState
 	{
 		get { return AlejandroQuest; }
 	}
-	public int AuxQuestNonStatic
+	public int GumQuestNonStatic
 	{
-		get { return AuxQuest; }
+		get { return GumQuest; }
 	}
 
 	// SocialNet

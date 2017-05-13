@@ -18,6 +18,7 @@ public class SequenceGenerator  {
 	public const string FRAGMENTS_FIELD = "fragments";
 	public const string TAG_FIELD = "tag";
 	public const string MESSAGE_FIELD = "msn";
+	public const string CHARACTER_FIELD = "character";
 	public const string OPTIONS_FIELD = "options";
 	public const string CONDITION_FIELD = "condition";
 	public const string EVENT_FIELD = "event";
@@ -50,7 +51,7 @@ public class SequenceGenerator  {
 
 		if (!json.HasField(key))
 		{
-			throw new Exception("Not found the key " + key);
+			throw new Exception("Not found the key " + key +" in json "+json);
 		}
 
 		JSONObject jsonObj = json.GetField(key);
@@ -64,7 +65,7 @@ public class SequenceGenerator  {
 
 	internal static Sequence createSimplyDialog(string key, JSONObject json)
 	{
-		return createSimplyDialog(key, json, null);
+			return createSimplyDialog(key, json, null);
 	}
 
 	internal static void createNode(Sequence seq, JSONObject jsonObj, IState variables, string nodeId,  string key)
@@ -76,13 +77,13 @@ public class SequenceGenerator  {
 
 		if (!jsonObj.HasField(nodeId))
 		{
-			Debug.LogError(jsonObj.ToString() + " The json of "+ key + " doesn't have node with id "+ nodeId);
+			throw new Exception(jsonObj.ToString() + " The json of "+ key + " doesn't have node with id "+ nodeId);
 		}
 
 		JSONObject node = jsonObj.GetField(nodeId);
 		if (!node.HasField(TYPE_FIELD))
 		{
-			Debug.LogError("The node " + key + "->" + nodeId + "need a type field");
+			throw new Exception("The node " + key + "->" + nodeId + "need a type field");
 		}
 
 		string typeNode = node.GetField(TYPE_FIELD).ToString().Replace("\"", "");
@@ -106,8 +107,7 @@ public class SequenceGenerator  {
 				createSetterNode(seq, jsonObj, variables, nodeId, key);
 				break;
 			default:
-				Debug.LogError("The type " + typeNode + "doesn't exist in " + key + "->" + nodeId);
-				break;
+				throw new Exception ("The type " + typeNode + "doesn't exist in " + key + "->" + nodeId);
 		}		
 	}
 
@@ -117,8 +117,7 @@ public class SequenceGenerator  {
 
 		if (!node.HasField(FRAGMENTS_FIELD))
 		{
-			Debug.LogError("The node " + key + "->" + nodeId + " need a "+FRAGMENTS_FIELD+" field");
-			return;
+			throw new Exception("The node " + key + "->" + nodeId + " need a "+FRAGMENTS_FIELD+" field");
 		}
 		List<JSONObject> fragmentList = node.GetField(FRAGMENTS_FIELD).list;
 
@@ -128,11 +127,16 @@ public class SequenceGenerator  {
 		{
 			if (j.HasField(TAG_FIELD) && j.HasField(MESSAGE_FIELD))
 			{
-				fragments.Add(new Fragment(j.GetField(TAG_FIELD).ToString().Replace("\"", ""), j.GetField(MESSAGE_FIELD).ToString().Replace("\"", "")));
+				string character = "";
+				if (j.HasField(CHARACTER_FIELD))
+				{
+					character = j.GetField(CHARACTER_FIELD).ToString().Replace("\"", "");
+				}
+				fragments.Add(new Fragment(j.GetField(TAG_FIELD).ToString().Replace("\"", ""), j.GetField(MESSAGE_FIELD).ToString().Replace("\"", ""), character));
 			}
 			else
 			{
-				Debug.LogError("The node " + key + "->" + nodeId + " need a " + TAG_FIELD + " and " + MESSAGE_FIELD + " field");
+				throw new Exception("The node " + key + "->" + nodeId + " need a " + TAG_FIELD + " and " + MESSAGE_FIELD + " field");
 			}
 		}
 
@@ -166,7 +170,7 @@ public class SequenceGenerator  {
 		JSONObject node = jsonObj.GetField(nodeId);
 		if (!node.HasField(OPTIONS_FIELD))
 		{
-			Debug.LogError("The node " + key + "->" + nodeId + " need a " + OPTIONS_FIELD + " field");
+			throw new Exception("The node " + key + "->" + nodeId + " need a " + OPTIONS_FIELD + " field");
 			return;
 		}
 
@@ -182,7 +186,7 @@ public class SequenceGenerator  {
 			}
 			else
 			{
-				Debug.LogError("The node " + key + "->" + nodeId + " need a " + NEXT_FIELD + " and " + CONDITION_FIELD + " field");
+				throw new Exception("The node " + key + "->" + nodeId + " need a " + NEXT_FIELD + " and " + CONDITION_FIELD + " field");
 			}
 		}
 
@@ -213,7 +217,7 @@ public class SequenceGenerator  {
 			}
 			else
 			{
-				Debug.LogError("The node " + key + "->" + nodeId + " need a " + NEXT_FIELD + " and " + MESSAGE_FIELD + " field");
+				throw new Exception("The node " + key + "->" + nodeId + " need a " + NEXT_FIELD + " and " + MESSAGE_FIELD + " field");
 			}
 		}
 	}
@@ -224,8 +228,7 @@ public class SequenceGenerator  {
 		JSONObject node = jsonObj.GetField(nodeId);
 		if (!node.HasField(EVENT_FIELD))
 		{
-			Debug.LogError("The node " + key + "->" + nodeId + " need a " + EVENT_FIELD + " field");
-			return;
+			throw new Exception("The node " + key + "->" + nodeId + " need a " + EVENT_FIELD + " field");
 		}
 
 		SequenceNode newNode = seq[nodeId];
@@ -233,8 +236,7 @@ public class SequenceGenerator  {
 		JSONObject eventNode = node.GetField(EVENT_FIELD);
 		if (!eventNode.HasField(EVENT_NAME_FIELD))
 		{
-			Debug.LogError("The node " + key + "->" + nodeId + " event need a " + EVENT_NAME_FIELD + " field");
-			return;
+			throw new Exception("The node " + key + "->" + nodeId + " event need a " + EVENT_NAME_FIELD + " field");
 		}
 
 		GameEvent aux = new GameEvent();
@@ -262,7 +264,7 @@ public class SequenceGenerator  {
 			}
 			else
 			{
-				Debug.LogError("The field " + EVENT_STATE_FIELD + " in node " + key + "->" + nodeId + " has to be a number");
+				throw new Exception("The field " + EVENT_STATE_FIELD + " in node " + key + "->" + nodeId + " has to be a number");
 			}
 		}
 
@@ -281,7 +283,7 @@ public class SequenceGenerator  {
 			}
 			else
 			{
-				Debug.LogError("The field " + EVENT_TIME_FIELD + " in node " + key + "->" + nodeId + " has to be a number");
+				throw new Exception("The field " + EVENT_TIME_FIELD + " in node " + key + "->" + nodeId + " has to be a number");
 			}
 		}
 
@@ -290,7 +292,7 @@ public class SequenceGenerator  {
 			string variable = eventNode.GetField(EVENT_VARIABLE_FIELD).ToString().Replace("\"", "");
 			if (!eventNode.HasField(EVENT_VALUE_FIELD))
 			{
-				Debug.LogError("The event " + variable + " in node " + key + "->" + nodeId + " need a " + EVENT_VALUE_FIELD + " field");
+				throw new Exception("The event " + variable + " in node " + key + "->" + nodeId + " need a " + EVENT_VALUE_FIELD + " field");
 				return;
 			}
 			else
@@ -347,7 +349,7 @@ public class SequenceGenerator  {
 		JSONObject node = jsonObj.GetField(nodeId);
 		if (!node.HasField(OPTIONS_FIELD))
 		{
-			Debug.LogError("The node " + key + "->" + nodeId + " need a " + OPTIONS_FIELD + " field");
+			throw new Exception("The node " + key + "->" + nodeId + " need a " + OPTIONS_FIELD + " field");
 			return;
 		}
 
@@ -368,7 +370,7 @@ public class SequenceGenerator  {
 			}
 			else
 			{
-				Debug.LogError("The node " + key + "->" + nodeId + " need a " + MESSAGE_FIELD + " field");
+				throw new Exception("The node " + key + "->" + nodeId + " need a " + MESSAGE_FIELD + " field");
 			}
 		}
 
@@ -406,8 +408,7 @@ public class SequenceGenerator  {
 		JSONObject node = jsonObj.GetField(nodeId);
 		if (!node.HasField(SETTER_FIELD))
 		{
-			Debug.LogError("The node " + key + "->" + nodeId + " setter need a " + SETTER_FIELD + " field");
-			return;
+			throw new Exception("The node " + key + "->" + nodeId + " setter need a " + SETTER_FIELD + " field");
 		}
 		JSONObject setterNode = node.GetField(SETTER_FIELD);
 		SequenceNode newNode = seq[nodeId];
@@ -418,8 +419,7 @@ public class SequenceGenerator  {
 			string value = "false";
 			if (!setterNode.HasField(SETTER_VALUE_FIELD))
 			{
-				Debug.LogError("The variable " + variable + " in node " + key + "->" + nodeId + " need a " + SETTER_VALUE_FIELD + " field");
-				return;
+				throw new Exception("The variable " + variable + " in node " + key + "->" + nodeId + " need a " + SETTER_VALUE_FIELD + " field");
 			}
 			else
 			{
@@ -451,7 +451,7 @@ public class SequenceGenerator  {
 			}
 		} else
 		{
-			Debug.LogError("The node " + key + "->" + nodeId + " setter need a " + SETTER_VARIABLE_FIELD + " field");
+			throw new Exception("The node " + key + "->" + nodeId + " setter need a " + SETTER_VARIABLE_FIELD + " field");
 		}
 	}
 

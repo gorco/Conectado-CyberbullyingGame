@@ -87,6 +87,11 @@ public class Publication : MonoBehaviour {
 		computer.ThrowPublicationDialog(this.key);
 	}
 
+	private void FixedUpdate()
+	{
+		CommentsLayout();
+	}
+
 	internal void CommentsLayout()
 	{
 		float height = 0;

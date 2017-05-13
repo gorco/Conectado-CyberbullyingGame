@@ -1,0 +1,103 @@
+{
+	"schoolEnter": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Ya no tengo más clases por hoy y no queda nadie"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Será mejor que me vaya a casa"
+			}]
+		}
+	},
+	"guille":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "No les hagas caso y vete a casa, mañana será otro día"
+			}]
+		},
+	},
+	"laugh": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Voces",
+				"msn": "JaJaJaJaJa"
+			}]
+		},
+	},
+	"globalLaugh": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "wash",
+				"condition": "varObject('global', 'AuxQuestNonStatic') == 1"
+			},
+			{
+				"next": "notGum",
+				"condition": "varObject('global', 'AuxQuestNonStatic') == 2"
+			}
+			{
+				"next": "notWash",
+				"condition": "true"
+			}]
+		},
+		"notGum": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "notGum"
+			}
+		},
+		"wash": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Voces",
+				"msn": "JaJaJaJaJa"
+			},
+			{
+				"tag": "Voces",
+				"msn": "Menuda mancha <$ varObject('global', 'UserNameNonStatic') $>, parece que te hayas cagado encima"
+			}]
+		},
+		"notWash": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Voces",
+				"msn": "JaJaJaJaJa"
+			},
+			{
+				"tag": "Voces",
+				"msn": "A ver si lavas"
+			},
+			{
+				"tag": "Voces",
+				"msn": "Por mucho tiempo que lleves el chicle en el culo no vas a conseguir ponerlo de moda"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 11
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "15:00",
+			}
+		}
+	}
+}

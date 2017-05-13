@@ -15,6 +15,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "¿Qué miras? largo, ya hemos hablado todo lo que teniamos que hablar"
 			}]
 		},
@@ -31,14 +32,17 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "Eh, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nuevo', 'nueva')$>, hablemos un momento!!"
 			},
 			{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "Hoy estabas <$ if(varObject('global', 'MaleSexNonStatic')==true, 'sentado', 'sentada') $> en mi sitio, no quiero que te vuelvas a sentar ahí"
 			},
 			{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "A partir de mañana sientate en la otra mesa del final que está vacía"
 			}]
 		},
@@ -54,7 +58,7 @@
 			},
 			{
 				"next": "quest2c",
-				"msn": "¿Y quién se supone que eres para decirme donde no puedo sentarme?"
+				"msn": "¿Y quién se supone que eres para decirme dónde no puedo sentarme?"
 			}]
 		},
 		"quest2a": {
@@ -71,10 +75,12 @@
 			"next": "move",
 			"fragments": [{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "Así me gusta, obediente"
 			},
 			{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "Y ya que estamos, para compensar, dame ese bocadillo que llevas, que tengo hambre"
 			},
 			{
@@ -83,6 +89,7 @@
 			},
 			{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "Venga, fuera de mi vista"
 			}]
 		},
@@ -100,22 +107,27 @@
 			"next": "nodeFS10",
 			"fragments": [{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "Así es, es sólo un sitio, como todos los demás, pero es mi sitio"
 			},
 			{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "Así que buscate otro"
 			},
 			{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "(Con tono amenazador) Sino tendré que ayudarte yo a buscarlo"
 			},
 			{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "Y el último al que le ayude a elegir otro sitio lo que encontró fue un moratón en su cara"
 			},
 			{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "Y ahora largate"
 			}]
 		},
@@ -142,6 +154,7 @@
 			"next": "nodeFS20",
 			"fragments": [{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "¿Vas de listo?"
 			},
 			{
@@ -150,6 +163,7 @@
 			},
 			{
 				"tag": "Alejandro",
+				"character": "Alex",
 				"msn": "Que así sea, capullo"
 			},
 			{
@@ -202,22 +216,27 @@
 			"next": "quest",
 			"fragments": [{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Veo que has encontrado el pendiente"
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Muchas gracias"
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Eres genial, te debo una"
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "El recreo se va a acabar ya, deberíamos ir entrando a clase"
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Nos vemos dentro"
 			}]
 		},
@@ -250,10 +269,12 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "¿Aún no has encontrado nada?"
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Sigue buscando por favor"
 			}]
 		},
@@ -262,14 +283,17 @@
 			"next": "earing",
 			"fragments": [{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Dónde lo habré perdido..."
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Perdona <$ varObject('global', 'UserNameNonStatic') $>, no te había visto"
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Estoy buscando un pendiente, no se dónde lo he podido perder"
 			}]
 		},
@@ -304,14 +328,17 @@
 			"next": "node3",
 			"fragments": [{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "no he mirado aún"
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "¿Puedes ir tú? Mientras termino de buscar en clase..."
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Me harías un gran favor"
 			}]
 		},
@@ -320,10 +347,12 @@
 			"next": "node3",
 			"fragments": [{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "No puede ser, esta mañana los llevaba"
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "So- so- son nuevos, un re... regalo"
 			},
 			{
@@ -332,6 +361,7 @@
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Por favor, *snif* , *snif* ¿puedes ayudarme a encontrarlos?"
 			}]
 		},
@@ -350,15 +380,17 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Muchas gracias"
 			},
 			{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Además toma mi número, así podemos escribirnos"
 			},
 			{
 				"tag": "",
-				"msn": "También le das tu número"
+				"msn": "(También le das tu número)"
 			}]
 		}
 	},

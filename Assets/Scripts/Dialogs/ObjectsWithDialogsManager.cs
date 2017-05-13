@@ -49,18 +49,23 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 				String name = saveName.First().ToString().ToLower() + saveName.Substring(1);
 				if (!sequenceDict.ContainsKey(saveName))
 				{
-					Debug.Log(">>>>Reading file " + jsonFile.name);
-					if (json.HasField(name))
+					try
 					{
-						sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name, json, variablesObject));
-					}
-					else if (json.HasField(name.ToLower()))
+						if (json.HasField(name))
+						{
+							sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name, json, variablesObject));
+						}
+						else if (json.HasField(name.ToLower()))
+						{
+							sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name.ToLower(), json, variablesObject));
+						}
+						else
+						{
+							Debug.LogWarning("Dialog with key " + name + " doesn't exist in file " + fileName);
+						}
+					} catch (Exception e)
 					{
-						sequenceDict.Add(saveName, SequenceGenerator.createSimplyDialog(name.ToLower(), json, variablesObject));
-					}
-					else
-					{
-						Debug.LogWarning("Dialog with key " + name + " doesn't exist in file " + fileName);
+						Debug.LogError("Error in " + jsonFile.name + " file. The error is: " + e.Message);
 					}
 				}
 

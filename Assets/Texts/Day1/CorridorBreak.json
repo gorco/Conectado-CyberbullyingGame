@@ -18,14 +18,16 @@
 		"secondGood": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Estoy terminando el libro, hablamos en otro momento"
 			}]
 		},
 		"secondBad": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "..."
 			},{
 				"tag": "Tú",
@@ -36,7 +38,8 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "¿Quieres algo?"
 			}]
 		},
@@ -44,7 +47,7 @@
 			"type": "options",
 			"options": [{
 				"next": "setterBad",
-				"msn": "Nada, adios"
+				"msn": "Nada, adiós"
 			},
 			{
 				"next": "node2",
@@ -62,14 +65,14 @@
 			"type": "dialog",
 			"next": "node3",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Prefiero quedarme aquí tranquila leyendo"
 			}]
 		},
 		"node3": {
 			"type": "options",
 			"options": [{
-				"next": "node2",
 				"msn": "Disfruta, adios (Que chica más rara)"
 			},
 			{
@@ -99,15 +102,18 @@
 			"type": "dialog",
 			"next": "node5",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Eres un poco  <$ if(varObject('global', 'MaleSexNonStatic')==true, 'pesado', 'pesada') $> con las preguntas"
 			},
 			{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "No tengo amigos, creen que soy rara"
 			},
 			{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Ya te puedes ir"
 			}]
 		},
@@ -133,15 +139,18 @@
 				"msn": "Voy a bajar al recreo, si quieres venir estaré abajo"
 			},
 			{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Gracias, eres muy amable"
 			}, 
 			{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Pero al menos hoy me quedaré aquí, me queda poco para terminar el libro"
 			},
 			{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Pásalo muy bien en el recreo, y evita a Alex, es estúpido"
 			}]
 		},

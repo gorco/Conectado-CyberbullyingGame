@@ -4,7 +4,7 @@
 			"type": "fork",
 			"options": [{
 				"next": "nogum",
-				"condition": "varObject('global', 'AuxQuestNonStatic') == 2"
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
 			},
 			{
 				"next": "node0",
@@ -15,6 +15,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Maria",
+				"character": "Maria",
 				"msn": "Está leyendo, como siempre, mejor no la molesto"
 			}]
 		},
@@ -22,10 +23,12 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Maria",
+				"character": "Maria",
 				"msn": "No se si te has fijado, pero llevas un chicle pegado en el culo"
 			},
 			{
 				"tag": "Maria",
+				"character": "Maria",
 				"msn": "Puedes pasar por el baño a verlo en el espejo"
 			}]
 		}

@@ -35,10 +35,12 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Mama",
-				"msn": "Veo que llevas todo"
+				"character": "Mother",
+				"msn": "Veo que llevas todo",
 			}, 
 			{
 				"tag": "Mama",
+				"character": "Mother",
 				"msn": "<$ if(varObject('global', 'HourNonStatic')<8, 'vete ya o acabarás llegando tarde', 'vete ya, estás llegando tarde') $>"
 			}]
 		},
@@ -46,10 +48,12 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Mama",
+				"character": "Mother",
 				"msn": "Te dejas la mochila"
 			}, 
 			{
 				"tag": "Mama",
+				"character": "Mother",
 				"msn": "Está en tu cuarto, cogela y vete ya"
 			}]
 		},
@@ -68,14 +72,17 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Mama",
-				"msn": "Veo que ya estás listo para irte"
+				"character": "Mother",
+				"msn": "Veo que ya estás <$ if(varObject('global', 'MaleSexNonStatic')==true, 'listo', 'lista') $> para irte"
 			}, 
 			{
 				"tag": "Mama",
+				"character": "Mother",
 				"msn": "¿Llevas todo?, Acuerdate de coger la mochila"
 			},
 			{
 				"tag": "Mama",
+				"character": "Mother",
 				"msn": "Portate bien y haz muchos amigos"
 			}]
 		},		
@@ -83,14 +90,17 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Mama",
+				"character": "Mother",
 				"msn": "¿Has visto la hora que es?"
 			}, 
 			{
 				"tag": "Mama",
+				"character": "Mother",
 				"msn": "Tu primer día en el nuevo colegio y ya llegas tarde"
 			},
 			{
 				"tag": "Mama",
+				"character": "Mother",
 				"msn": "Venga, coge todo lo que necesites y vete YA!"
 			}]
 		}
