@@ -11,7 +11,7 @@
 				"type": "fork",
 				"options": [{
 					"next": "node1",
-					"condition": "varObject('global', 'MinuteNonStatic') > 0"
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
 				}]
 		},
 		"node1": {
@@ -19,29 +19,36 @@
 			"next": "node2",
 			"fragments": [{
 				"tag": "Profesor",
+				"character": "Teacher",
 				"msn": "<$ varObject('global', 'UserNameNonStatic') $> ¿verdad?"
 			},{
 				"tag": "Profesor",
+				"character": "Teacher",
 				"msn": "Llegar tarde tu primer día, no es una buena manera de empezar"
 			},
 			{
 				"tag": "Profesor",
-				"msn": "Clase, este es vuestro nuevo compañero, nuevo en el colegio, por favor, ayudadle en sus primeros días"
+				"character": "Teacher",
+				"msn": "Clase, este es vuestro nuevo compañero, es nuevo en el colegio, por favor, ayudadle en sus primeros días"
 			},
 			{
 				"tag": "Profesor",
+				"character": "Teacher",
 				"msn": "<$ varObject('global', 'UserNameNonStatic') $> Yo soy vuestro tutor, cualquier cosa que necesites dimelo"
 			},
 			{
 				"tag": "Profesor",
-				"msn": "Por favor, <$ varObject('global', 'UserNameNonStatic') $> sientate al lado de Alison"
+				"character": "Teacher",
+				"msn": "Por favor, <$ varObject('global', 'UserNameNonStatic') $> siéntate al lado de Alison"
 			},
 			{
 				"tag": "Profesor",
+				"character": "Teacher",
 				"msn": "Alison, haz el favor de resolver todas las dudas que tenga <$ varObject('global', 'UserNameNonStatic') $> sobre el colegio"
 			},
 			{
 				"tag": "Profesor",
+				"character": "Teacher",
 				"msn": "Continuemos con la clase"
 			}]
 		},
@@ -69,15 +76,16 @@
 			"next": "quest",
 			"fragments": [{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "Me parece que te has equivocado de clase"
 			}]
 		},
 		"quest": {
 			"type": "event",
-			"next": "node2",
+			"next": "node1",
 			"event": {
 				"name": "change variable",
-				"var": "AnaQuestFSNonStatic",
+				"var": "AnaQuest",
 				"value": 1,
 			}
 		},
@@ -97,20 +105,32 @@
 			"next": "node2",
 			"fragments": [{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "Oh, así que tú eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'el nuevo', 'la nueva') $>"
 			},
 			{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "Yo soy Ana, también estoy en esta clase"
 			}]
 		},
 		"node1b": {
 			"type": "dialog",
-			"next": "node2",
+			"next": "nodeFS",
 			"fragments": [{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "Subnormal..."
 			}]
+		},
+		"nodeFS":{
+			"type": "event",
+			"next": "node2",
+			"event": {
+				"name": "change friendship",
+				"var": "AnaFS",
+				"value": -20,
+			}
 		},
 		"node2": {
 			"type": "dialog",
@@ -125,6 +145,7 @@
 			"next": "nodeSit",
 			"fragments": [{
 				"tag": "Profesor",
+				"character": "Teacher",
 				"msn": "Vamos a empezar la clase, venga, pasad todos y sentaos"
 			}]
 		},
@@ -146,7 +167,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Os sentaís todos y empieza la clase"
+				"value": "Os sentáis todos y empieza la clase"
 			}
 		},
 		"node4": {
@@ -161,10 +182,12 @@
 			"next": "node3a",
 			"fragments": [{
 				"tag": "Profesor",
-				"msn": "Sientate al lado de Alison"
+				"character": "Teacher",
+				"msn": "Siéntate al lado de Alison"
 			},
 			{
 				"tag": "Profesor",
+				"character": "Teacher",
 				"msn": "Alison, haz el favor de resolver todas las dudas que tenga <$ varObject('global', 'UserNameNonStatic') $> sobre el colegio"
 			}]
 		},

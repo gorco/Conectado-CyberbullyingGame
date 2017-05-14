@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ChangeFS : EventManager
 {
-	public IState state;
+	private GlobalState state;
 
 	/// <summary>
 	/// Receive the change friendship event
@@ -37,7 +37,7 @@ public class ChangeFS : EventManager
 	// Use this for initialization
 	void Start()
 	{
-
+		state = GlobalState.Instance;
 	}
 
 	// Update is called once per frame
@@ -57,7 +57,8 @@ public class ChangeFS : EventManager
 		{
 			Type t = state.GetType();
 			var oldValue = t.GetProperty(varName).GetValue(state, null);
-			var newValue = (int)varValue + (int)oldValue;
+			var newValue = Mathf.Clamp((int)varValue + (int)oldValue, 0, 100);
+			Debug.Log("Set new friendship " + varName + " to " + newValue);
 			t.GetProperty(varName).SetValue(state, newValue, null);
 		}
 	}

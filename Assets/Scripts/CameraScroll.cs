@@ -36,15 +36,16 @@ public class CameraScroll : MonoBehaviour
 
 	void Scroll(bool position)
 	{
+		float despDelta = desp * 50 * Time.deltaTime;
 		if (position)
 		{
-			if (this.transform.localPosition.x >= (scroll_min + desp))
-				this.transform.localPosition = new Vector3(this.transform.localPosition.x - desp, this.transform.localPosition.y, initZ);
+			if (this.transform.localPosition.x >= (scroll_min + despDelta))
+				this.transform.localPosition = new Vector3(this.transform.localPosition.x - despDelta, this.transform.localPosition.y, initZ);
 		}
 		else
 		{
-			if (this.transform.localPosition.x <= (scroll_max - desp))
-				this.transform.localPosition = new Vector3(this.transform.localPosition.x + desp, this.transform.localPosition.y, initZ);
+			if (this.transform.localPosition.x <= (scroll_max - despDelta))
+				this.transform.localPosition = new Vector3(this.transform.localPosition.x + despDelta, this.transform.localPosition.y, initZ);
 		}
 	}
 

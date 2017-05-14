@@ -26,7 +26,11 @@ public class Day1Part2State : IState
 	// Use this for initialization
 	void Start()
 	{
-
+		if (GlobalState.NowIsLaterThan(8, 30))
+		{
+			bellSounded = true;
+		}
+		InitMobileGUI.InitMobileGUIObject();
 	}
 
 	// Update is called once per frame

@@ -1,0 +1,77 @@
+﻿{
+	"bathroomExit": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"mirror": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeInit",
+				"condition": "varObject('global', 'GumQuestNonStatic') != 2"
+			}]
+		},
+		"nodeInit": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "gum == false"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Ya he quitado el chicle, pero ahora la mancha es peor"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Se van a reir aún más de mi"
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"next": "nodeRepeat",
+			"set": {
+				"var": "gum",
+				"value": false
+			}
+		},
+		"node0": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Igual con agua y jabón consigo quitarlo"
+			}]
+		}, 
+		"options": {
+			"type": "options",
+			"options": [{
+				"next": "quest",
+				"msn": "(Probar con agua y jabón)"
+			},
+			{
+				"msn": "(Dejarlo como esta)"
+			}]
+		},
+		"quest": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GumQuest",
+				"value": 1,
+			}
+		},
+	}
+}

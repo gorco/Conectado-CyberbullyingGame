@@ -37,6 +37,12 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 			return;
 		}
 
+		//Init day
+		GlobalState.Day = 0;
+		GlobalState.Hour = 7;
+		GlobalState.Minute = 0;
+		GlobalState.Repeated = false;
+
 		//Save data
 		GlobalState.UserName = userName.text;
 		GlobalState.MaleSex = male.isOn;
@@ -48,6 +54,8 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 		GlobalState.AnaFS = 50;
 		GlobalState.AlisonFS = 50;
 		GlobalState.MariaFS = 50;
+		GlobalState.TeacherFS = 50;
+		GlobalState.ParentsFS = 50;
 
 		//Start game
 		SceneManager.LoadScene(2);

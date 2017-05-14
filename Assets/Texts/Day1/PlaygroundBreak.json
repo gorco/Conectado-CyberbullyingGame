@@ -4,10 +4,12 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "Hay algo raro cerca de la canasta"
 			},
 			{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "Veo algo brillar desde aquí"
 			}]
 		}
@@ -17,10 +19,12 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Guille",
+				"character": "Guille",
 				"msn": "Nuestro tutor es bastante majo"
 			},
 			{
 				"tag": "Guille",
+				"character": "Guille",
 				"msn": "Si tienes cualquier problema habla con él"
 			}]
 		}

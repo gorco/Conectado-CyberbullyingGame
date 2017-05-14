@@ -18,14 +18,16 @@
 		"secondGood": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Estoy terminando el libro, hablamos en otro momento"
 			}]
 		},
 		"secondBad": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "..."
 			},{
 				"tag": "Tú",
@@ -36,7 +38,8 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "¿Quieres algo?"
 			}]
 		},
@@ -44,7 +47,7 @@
 			"type": "options",
 			"options": [{
 				"next": "setterBad",
-				"msn": "Nada, adios"
+				"msn": "Nada, adiós"
 			},
 			{
 				"next": "node2",
@@ -62,14 +65,14 @@
 			"type": "dialog",
 			"next": "node3",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Prefiero quedarme aquí tranquila leyendo"
 			}]
 		},
 		"node3": {
 			"type": "options",
 			"options": [{
-				"next": "node2",
 				"msn": "Disfruta, adios (Que chica más rara)"
 			},
 			{
@@ -82,7 +85,7 @@
 			"next": "nodeFS2",
 			"event": {
 				"name": "change variable",
-				"var": "MariaoQuestFSNonStatic",
+				"var": "MariaoQuest",
 				"value": 1,
 			}
 		},
@@ -91,7 +94,7 @@
 			"next": "setterBad",
 			"event": {
 				"name": "change friendship",
-				"var": "MariaFSNonStatic",
+				"var": "MariaFS",
 				"value": -10,
 			}
 		},
@@ -99,15 +102,18 @@
 			"type": "dialog",
 			"next": "node5",
 			"fragments": [{
-				"tag": "Maria",
-				"msn": "Eres un poco pesado con las preguntas"
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Eres un poco  <$ if(varObject('global', 'MaleSexNonStatic')==true, 'pesado', 'pesada') $> con las preguntas"
 			},
 			{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "No tengo amigos, creen que soy rara"
 			},
 			{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Ya te puedes ir"
 			}]
 		},
@@ -133,15 +139,18 @@
 				"msn": "Voy a bajar al recreo, si quieres venir estaré abajo"
 			},
 			{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Gracias, eres muy amable"
 			}, 
 			{
-				"tag": "Maria",
-				"msn": "Pero al menos hoy me quedaré aquí, me quead poco para terminar el libro"
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Pero al menos hoy me quedaré aquí, me queda poco para terminar el libro"
 			},
 			{
-				"tag": "Maria",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Pásalo muy bien en el recreo, y evita a Alex, es estúpido"
 			}]
 		},
@@ -150,7 +159,7 @@
 			"next": "nodeFS1",
 			"event": {
 				"name": "change variable",
-				"var": "MariaQuestFSNonStatic",
+				"var": "MariaQuest",
 				"value": 1,
 			}
 		},
@@ -159,7 +168,7 @@
 			"next": "setterGood",
 			"event": {
 				"name": "change friendship",
-				"var": "MariaFSNonStatic",
+				"var": "MariaFS",
 				"value": 20,
 			}
 		},
@@ -182,11 +191,20 @@
 		},
 		"alisonMove": {
 			"type": "event",
+			"next": "changeHour",
 			"event": {
 				"name": "little move",
 				"key": "alison"
 			}
-		}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:20",
+			}
+		},
 	},
 	"maleBathroom": {
 		"root": {
@@ -254,21 +272,30 @@
 		"options": {
 			"type": "options",
 			"options": [{
+				"next": "black",
 				"msn": "(Entrar de todas formas)"
 			},
 			{
-				"next": "black",
 				"msn": "Mejor, voy a dar otra vuelta por el edificio"
 			}]
 		},
 		"black": {
 			"type": "event",
-			"next": "enter",
+			"next": "changeHour",
 			"event": {
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
 				"value": "Al entrar suena la campana y aparece el profesor. La mañana termina sin darte cuenta, es hora de volver a casa..."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "enter",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:02",
 			}
 		},
 		"enter": {

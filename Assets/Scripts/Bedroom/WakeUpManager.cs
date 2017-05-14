@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WakeUpManager : MonoBehaviour {
 
@@ -15,15 +16,17 @@ public class WakeUpManager : MonoBehaviour {
 	public float hideMobileSeconds = 2;
 	public float introTime = 5;
 
-	public int sameScene;
-	public int nextScene;
+	public int wakeUpScene;
 
 	private float offset = 1;
 
 	private float dTime = 0;
 
-	public UnityEngine.UI.Text introText;
+	public GameObject introText;
 
+	public int[] scenesPerDay = {3, 8, 3, 3, 3 };
+
+	private GlobalState g;
 	/// <summary>
 	/// state = 0 --> Wake up
 	/// state = 1 --> Take the mobile
@@ -36,23 +39,22 @@ public class WakeUpManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		g = GlobalState.Instance;
 		cameraScroll.disableScroll(true);
 		state = 0;
-		Debug.Log(GlobalState.Day + "  -  " + GlobalState.Repeated);
-		if (!GlobalState.Repeated) {
+		if (!GlobalState.NowIsLaterThan(8, 0)) {
 			if (GlobalState.Day == 0)
 			{
-				introText.enabled = true;
+				introText.SetActive(true);
 				offset = introTime;
 			}
 			GlobalState.Hour = 7;
 			GlobalState.Minute = 30;
 		} else {
-			introText.enabled = false;
-			initQuests();
+			introText.SetActive(false);
 		}
 		mobileObject.updateHour();
-
+		initQuests();
 	}
 	
 	void initQuests()
@@ -69,7 +71,7 @@ public class WakeUpManager : MonoBehaviour {
 	void Update () {
 		//Wake up (Move eyelids)
 		if (state == 0 && dTime >= offset) {
-			introText.enabled = false;
+			introText.SetActive(false);
 			state = 1;
 			eyelidsObject.wakeUp (wakeUpSeconds);
 			dTime = 0;
@@ -104,7 +106,7 @@ public class WakeUpManager : MonoBehaviour {
 		{
 			if (!mobileObject.isAlarmDelayed())
 			{
-				SceneManager.LoadScene(nextScene);
+				SceneManager.LoadScene(scenesPerDay[GlobalState.Day]);
 			} else
 			{
 				eyelidsObject.goToSleep(sleepSeconds);
@@ -118,8 +120,7 @@ public class WakeUpManager : MonoBehaviour {
 		//Go to sleep
 		else if (state == 5 && dTime > sleepSeconds)
 		{
-			GlobalState.Repeated = true;
-			SceneManager.LoadScene(sameScene);
+			SceneManager.LoadScene(wakeUpScene);
 		}
 		dTime += Time.deltaTime;
 	}

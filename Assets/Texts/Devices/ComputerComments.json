@@ -1,0 +1,24 @@
+{
+	"default":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No tengo nada que comentar por ahora, tengo mejores cosas que hacer"
+			}]
+		}
+	},
+	"earingFounded": {
+		"root":{
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": "De nada Alison",
+				"key": "Tú",
+				"other" : "empty",
+				"time": 0
+			}
+		}
+	}
+}

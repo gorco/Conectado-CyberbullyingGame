@@ -79,7 +79,10 @@ public class ChangeState : EventManager
 		{
 			that = objectToChange;
 		}
-		that.GetComponent<SpriteRenderer>().sprite = sprites[pos];
+		if (sprites.Length > 0)
+		{
+			that.GetComponent<SpriteRenderer>().sprite = sprites[pos];
+		}
 		if (changePositionWhenChange)
 		{
 			that.transform.localPosition = newPos[pos];

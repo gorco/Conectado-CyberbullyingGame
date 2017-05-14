@@ -23,7 +23,8 @@
 			"event": {
 				"name": "change scene",
 				"var": "scene",
-				"value": 7
+				"value": 7,
+				"time": 3
 			}
 		}		
 	},
@@ -50,11 +51,11 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "..."
+				"msn": "Acabo de volver"
 			},
 			{
 				"tag": "Tú",
-				"msn": "Ya tengo todo listo",
+				"msn": "No necesito la mochila para nada",
 			}]
 		}
 	},
@@ -79,12 +80,19 @@
 			}]
 		},
 		"node1a": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Tú",
-				"msn": "No se enciende..."
-			}]
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
 		}, 
+		"moveCamera": {
+			"type": "event",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
 		"node1b": {
 			"type": "dialog",
 			"fragments": [{
@@ -131,5 +139,14 @@
 				"state": 1
 			}
 		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
 	}
 }

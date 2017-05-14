@@ -77,16 +77,28 @@
 			}]
 		},
 		"node1a": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Tú",
-				"msn": "No debería encenderlo, si me entretengo llegaré tarde"
-			},
-			{
-				"tag": "Tú",
-				"msn": "Esta tarde pordré usarlo al volver"
-			}]
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
 		}, 
+		"moveCamera": {
+			"type": "event",
+			"next": "changeHour",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:10",
+			}
+		},
 		"node1b": {
 			"type": "dialog",
 			"fragments": [{
@@ -133,5 +145,14 @@
 				"state": 1
 			}
 		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
 	}
 }

@@ -11,7 +11,7 @@ public class FadeOut : EventManager
 	public string keyEvent;
 
 	private bool fade = false;
-	private SpriteRenderer sprite;
+	private SpriteRenderer[] sprites;
 	private float dTime = 0;
 
 	/// <summary>
@@ -35,7 +35,7 @@ public class FadeOut : EventManager
 	// Use this for initialization
 	void Start()
 	{
-		sprite = this.gameObject.GetComponent<SpriteRenderer>();
+		sprites = this.gameObject.GetComponentsInChildren<SpriteRenderer>(true);
 	}
 
 	// Update is called once per frame
@@ -44,7 +44,11 @@ public class FadeOut : EventManager
 		if (fade)
 		{
 			float t = dTime / duration;
-			sprite.color = new Color(1f, 1f, 1f, Mathf.SmoothStep(1, 0, t));
+			foreach (SpriteRenderer sprite in sprites)
+			{
+				Color c = sprite.color;
+				sprite.color = new Color(c.r, c.g, c.b, Mathf.SmoothStep(1, 0, t));
+			}
 			dTime += Time.deltaTime;
 		}
 	}

@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class ChangeToScene : EventManager
 {
+
+	public Eyelids eyelid;
+
 	/// <summary>
 	/// Receive the pick event
 	/// </summary>
@@ -16,8 +19,14 @@ public class ChangeToScene : EventManager
 		if (ev.Name.Replace("\"", "") == "change scene")
 		{
 			int scene = (int)ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
+			object timeObj = ev.getParameter(SequenceGenerator.EVENT_TIME_FIELD);
+			float time = timeObj != null ? (float)timeObj : 0;
 
-			this.ChangeScene(scene);
+			if (time > 0 && eyelid)
+			{
+				eyelid.goToSleep(time - 0.2f);
+			}
+			StartCoroutine(ChangeScene(time, scene));
 		}
 	}
 
@@ -42,8 +51,10 @@ public class ChangeToScene : EventManager
 	/// Change to the scene with the carValue
 	/// </summary>
 	/// <param name="varValue"></param>
-	private void ChangeScene(int varValue)
+	private IEnumerator ChangeScene(float time, int varValue)
 	{
+		yield return new WaitForSeconds(time);
+
 		SceneManager.LoadScene(varValue);
 	}
 }

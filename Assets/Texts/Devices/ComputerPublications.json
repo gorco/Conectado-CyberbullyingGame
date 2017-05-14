@@ -1,0 +1,11 @@
+{
+	"default":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No tengo ninguna nueva foto que subir"
+			}]
+		}
+	}
+}

@@ -1,0 +1,551 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Entremos a clase o llegaremos tarde"
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"node0": {
+			"type": "fork",
+			"options": [{
+				"next": "notify1",
+				"condition": "varObject('global', 'AlisonFSNonStatic') > 60"
+			},
+			{
+				"next": "normal1",
+				"condition": "true"
+			}]
+		},	
+		"notify1": {
+			"type": "dialog",
+			"next": "checkRepeat",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "¿Qué tal, <$ varObject('global', 'UserNameNonStatic') $>?"
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Por cierto, antes hablaba Alex de gastarte una broma"
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "No suele ser así, no sé qué le pasa"
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Ten cuidado, ¿vale?"
+			}]
+		},
+		"checkRepeat": {
+			"type": "fork",
+			"options": [{
+				"next": "repeatedDay1",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			},
+			{
+				"next": "notify2",
+				"condition": "true"
+			}]
+		},
+		"repeatedDay1": {
+			"type": "dialog",
+			"next": "notify2",
+			"fragments": [
+			{
+				"tag": "Tú",
+				"msn": "¿De nuevo?"
+			},{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "¿Como que de nuevo?"
+			},
+			{
+				"tag": "Tú",
+				"msn": "(No parece acordarse de que ayer también me avisó)"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Dejalo, hay que entrar a clase, hasta luego"
+			}]
+		},
+		"notify2": {
+			"type": "event",
+			"next": "quest2",
+			"event":{
+				"name": "change variable",
+				"var": "JokeAdvise",
+				"value": true,
+			}
+		},
+		"quest2": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "MariaQuest",
+				"value": 2,
+			}
+		},
+		"normal1": {
+			"type": "dialog",
+			"next": "normal2",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "¿Qué tal? <$ varObject('global', 'UserNameNonStatic') $>"
+			}]
+		},
+		"normal2": {
+			"type": "event",
+			"next": "quest1",
+			"event":{
+				"name": "change variable",
+				"var": "JokeAdvise",
+				"value": true,
+			}
+		},
+		"quest1": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "MariaQuest",
+				"value": 1,
+			}
+		}
+	},
+	"alejandro":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Me está ignorando"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"node0": {
+			"type": "fork",
+			"options": [{
+				"next": "why",
+				"condition": "varObject('state', 'JokeAdvise') == true"
+			},
+			{
+				"next": "nothing",
+				"condition": "true"
+			}]
+		},
+		"why": {
+			"type": "options",
+			"options": [{
+				"next": "why1a",
+				"msn": "Me han dicho que quieres gastarme una broma",
+				"condition": "varObject('global', 'RepeatedNonStatic') == false"
+			},
+			{
+				"next": "why1b",
+				"msn": "¿No podemos llevarnos bien?",
+				"condition": "varObject('global', 'RepeatedNonStatic') == false"
+			},
+			{
+				"next": "why1aRepeat",
+				"msn": "¿Otro día más intentando gastarme bromas?",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			},
+			{
+				"next": "why1bRepeat",
+				"msn": "Lo del chicle de ayer fue cosa tuya ¿no?",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			},
+			{
+				"next": "why1c",
+				"msn": "Conozco a los de tu tipo"
+			}]
+		},
+		"why1a": {
+			"type": "dialog",
+			"next": "quest1",
+			"fragments": [{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "Soy un poco bromista, pero tranquilo"
+			},
+			{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "Nos reiremos todos"
+			}]
+		},	
+		"quest1": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "AlexQuest",
+				"value": 1,
+			}
+		},
+		"why1b": {
+			"type": "dialog",
+			"next": "quest2",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "¿Por qué no empezamos de cero?"
+			},
+			{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "De acuerdo, entremos en clase"
+			}]
+		},	
+		"quest2": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "AlexQuest",
+				"value": 2,
+			}
+		},
+		"why1c": {
+			"type": "dialog",
+			"next": "quest3",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Eres el típico que se aprovecha de todos."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Que busca pelea con cualquier excusa"
+			},
+			{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "Si has terminado de darme la chapa, largate capullo"
+			}]
+		},	
+		"quest3": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "AlexQuest",
+				"value": 3,
+			}
+		},
+		"why1aRepeat": {
+			"type": "dialog",
+			"next": "quest1",
+			"fragments": [{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "Si lo dices por lo de mi sitio..."
+			},
+			{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "no era una broma, no quiero que te vuelvas a sentar ahí"
+			}]
+		},	
+		"why1bRepeat": {
+			"type": "dialog",
+			"next": "quest2",
+			"fragments": [{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "¿El chicle?"
+			},
+			{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "A mi no me mires"
+			},
+			{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "Te recuerdo que llegué tarde a clase"
+			}]
+		},	
+		"nothing": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "¿Sigues enfadado por lo del sitio de ayer?"
+			},
+			{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "Ya veremos, y tú, ¿Sabes ya cúal es tu sitio?"
+			}]
+		}		
+	},
+	"guillermo":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeatMatch",
+				"condition": "spoken == true && match == true"
+			},
+			{
+				"next": "nodeRepeat",
+				"condition": "spoken == true && match == false"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Entremos a clase"
+			}]
+		},
+		"nodeRepeatMatch": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Acuerdate, el sábado en mi casa, a las 6 de la tarde"
+			}]
+		},
+		"node0": {
+			"type": "fork",
+			"options": [{
+				"next": "match1",
+				"condition": "varObject('global', GuillermoFSNonStatic') > 60"
+			},
+			{
+				"next": "node1",
+				"condition": "true"
+			}]
+		},
+		"match1": {
+			"type": "dialog",
+			"next": "matchOptions",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Vamos a quedar varios de clase el sábado en mi casa para ver una peli"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "¿Quieres venir? viene gente de clase"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Y la veremos en una tele gigante que se ha comprado mi padre para ver el fútbol"
+			}]
+		},
+		"matchOptions": {
+			"type": "options",
+			"options": [{
+				"next": "match2a",
+				"msn": "Si"
+			},
+			{
+				"next": "match2b",
+				"msn": "No"
+			},
+			{
+				"next": "match2c",
+				"msn": "Tengo que preguntar antes a mis padres si puedo"
+			}]
+		},
+		"match2a": {
+			"type": "dialog",
+			"next": "questGo",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Genial, ya somos uno más entonces"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Ya te diré la dirección y los detalles"
+			}]
+		},
+		"questGo": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 1,
+			}
+		},
+		"match2b": {
+			"type": "dialog",
+			"next": "questNoGo",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Es una pena"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Bueno, hasta luego"
+			}]
+		},
+		"questNoGo": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 2,
+			}
+		},
+		"match2c": {
+			"type": "dialog",
+			"next": "questAsk",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Bueno, ya me dirás"
+			}]
+		},
+		"questAsk": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 3,
+			}
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Parece distraído"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicos"
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicas"
+			}]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		}
+	}
+}

@@ -1,0 +1,239 @@
+{
+	"default":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No tengo nada que contestar"
+			}]
+		}
+	},
+	"alisonThx":{
+		"root": {
+			"type": "options",
+			"options": [{
+				"next": "node1",
+				"msn": "No es nada"
+			},
+			{
+				"msn": "(No contestar, ya la veré luego)"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alison Clase",
+				"value": "No es nada",
+				"key": "",
+				"other": "empty",
+				"time": 0 
+			}
+		}
+	},
+	"alisonRequest":{
+		"root": {
+			"type": "options",
+			"options": [{
+				"next": "node1",
+				"msn": "Si, ahora te acepto"
+			},
+			{
+				"next": "node2",
+				"msn": "Cuando pueda lo miro"
+			},
+			{
+				"msn": "(Es un poco pesada, paso de contestar nada)"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alison Clase",
+				"value": "Si, ahora te acpeto la invitación :)",
+				"key": "",
+				"other": "empty",
+				"time": 0 
+			}
+		},
+		"node2": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alison Clase",
+				"value": "Cuando pueda lo miro, ahora mismo estoy ocupado",
+				"key": "",
+				"other": "empty",
+				"time": 0 
+			}
+		}
+	},
+	"thxClass":{
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Gracias :)",
+				"key": "",
+				"time": 0 
+			}
+		},
+	},
+	"kickClass":{
+		"root": {
+			"type": "options",
+			"options": [{
+				"next": "messageA",
+				"msn": "Me sienta mal que me trateís así"
+			},
+			{
+				"next": "messageB",
+				"msn": "Madurad"
+			},
+			{
+				"next": "messageC",
+				"msn": "¿Qué os he hecho?"
+			}]
+		},
+		"messageA": {
+			"type": "event",
+			"next": "messageA2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Acabo de llegar al colegio, y de verdad me sienta fatal que la mitad de la clase me trateís como a una mierda",
+				"key": "",
+				"time": 0 
+			}
+		},
+		"messageA2": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "No digo que os caiga bien a todos, pero lo mínimo es tratarme con respeto",
+				"key": "",
+				"time": 0.2
+			}
+		},
+		"messageB": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Madurad, teneís 2años o qué os pasa",
+				"key": "",
+				"time": 0 
+			}
+		},
+		"messageC": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "No lo entiendo, ¿Qué os he hecho para que me insulteís, gasteís bromas pesadas, me ignoreís y margineís?",
+				"key": "",
+				"time": 0 
+			}
+		},
+		"message2": {
+			"type": "event",
+			"next": "message3",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "¿Qué problema teneís con <$ varObject('global', 'UserNameNonStatic') $>?",
+				"key": "Alison",
+				"time": 2 
+			}
+		},
+		"message3": {
+			"type": "event",
+			"next": "message4",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Os estais pasando",
+				"key": "Guille",
+				"time": 4 
+			}
+		},
+		"message4": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "No os metaís donde no os llaman, también puedo hacer que Jose os eche a vosotros",
+				"key": "Alex",
+				"other": "kickClass2",
+				"time": 8 
+			}
+		},
+	},
+	"kickClass2":{
+		"root": {
+			"type": "options",
+			"options": [{
+				"next": "messageA",
+				"msn": "Ya me salgo yo del grupo"
+			},
+			{
+				"next": "messageB",
+				"msn": "Espero que Jorge tenga más cerebro"
+			},
+			{
+				"next": "messageC",
+				"msn": "Alex, para"
+			}]
+		},
+		"messageA": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Si que esté en el grupo va a ser un problema me voy yo",
+				"key": "",
+				"time": 0 
+			}
+		},
+		"messageB": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Espero que Jorge no sea tan estúpido como tú cuando lea el chat",
+				"key": "",
+				"time": 0 
+			}
+		},
+		"messageC": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Para, no te he hecho nada como para que te portes así conmigo",
+				"key": "",
+				"time": 0 
+			}
+		},
+		"message2": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Me voy a dormir, os veo mañana",
+				"key": "",
+				"other": "empty",
+				"time": 1 
+			}
+		},
+	},
+}

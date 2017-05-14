@@ -21,14 +21,4 @@ public class Day1Part1State : IState {
 		get { return chargingMobile; }
 		set { chargingMobile = value; }
 	}
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

@@ -1,0 +1,129 @@
+﻿{
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "Profesor",
+				"character": "Teacher",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> llegas tarde"
+			},{
+				"tag": "Profesor",
+				"character": "Teacher",
+				"msn": "Por favor, sientate para que podamos continuar la clase"
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Te diriges entre todas las miradas y te sientas en el primer sitio que ves libre"
+			}
+		},
+		"node3": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classFront"
+			}
+		}
+	},
+	"table":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Este sitio está libreo, ¿me siento aquí?"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"options": [{
+				"next": "node2",
+				"msn": "Si"
+			},
+			{
+				"msn": "No"
+			},
+			{
+				"next": "gum",
+				"msn": "Mirar antes la silla",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "",
+				"msn": "(Ruidos de fondo, el profesor ha llegado)"
+			}]
+		},
+		"gum": {
+			"type": "dialog",
+			"next": "noGum",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Hay un chicle pegado"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Ayer debió pasar lo mismo, será mejor que lo quite y me siente"
+			}]
+		},
+		"noGum": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "change variable",
+				"var": "GumQuest",
+				"value": 2,
+			}
+		},
+		"node3": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Os sentaís todos, para cuando te das cuenta es la hora del recreo"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 10
+			}
+		}
+	}
+}
