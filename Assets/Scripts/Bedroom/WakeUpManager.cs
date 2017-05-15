@@ -24,7 +24,7 @@ public class WakeUpManager : MonoBehaviour {
 
 	public GameObject introText;
 
-	public int[] scenesPerDay = {3, 8, 13, 3, 3 };
+	public int[] scenesPerDay = {3, 8, 13, 18, 3 };
 
 	private GlobalState g;
 	/// <summary>

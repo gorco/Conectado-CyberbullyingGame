@@ -1,0 +1,146 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Otro día más, tengo que irme, espero que se pase rápido"
+			}]
+		}		
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No hay nada útil dentro"
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Deberia ordenar un poco todo esto"
+			}]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Habrá que irse... "
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "BagPicked",
+				"value": true
+			}
+		},
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "PC",
+				"msn": "¿Quieres encender el ordenador?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"options": [{
+				"next": "node1a",
+				"msn": "Si"
+			},
+			{
+				"next": "node1b",
+				"msn": "No"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
+		}, 
+		"moveCamera": {
+			"type": "event",
+			"next": "changeHour",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:10",
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Lo mejor será que me vaya"
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "¿Dejo el móvil cargando?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"options": [{
+				"next": "node1a",
+				"msn": "Si"
+			},
+			{
+				"next": "node1b",
+				"msn": "No"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
+	}
+}
