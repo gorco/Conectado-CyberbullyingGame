@@ -1,8 +1,37 @@
 {
 	"mother" : {
 		"root": {
-		
-		}
+			"type": "fork",
+			"options": [{
+				"next": "nodeA",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "nodeB",
+				"condition": "true"
+			}]
+		},
+		"nodeA": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "Ten cuidado y mira dónde te sientas hoy."
+			},
+			{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "Portate bien, te veo esta tarde."
+			}]
+		},
+		"nodeB": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "Portate bien, te veo esta tarde."
+			}]
+		},
 	},
 	"exitDoor": {
 		"root": {
@@ -43,7 +72,7 @@
 			"event": {
 				"name": "change scene",
 				"var": "scene",
-				"value": 9
+				"value": 14
 			}
 		},
 		"dialogNode": {

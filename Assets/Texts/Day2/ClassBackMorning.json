@@ -40,8 +40,9 @@
 		"node3": {
 			"type": "event",
 			"event": {
-				"name": "move camera",
-				"key": "classFront"
+				"name": "change scene",
+				"var": "scene",
+				"value": 10
 			}
 		}
 	},
@@ -51,7 +52,7 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Este sitio está libreo, ¿me siento aquí?"
+				"msn": "Este sitio está libre, ¿me siento aquí?"
 			}]
 		},
 		"options": {
@@ -105,7 +106,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Os sentaís todos, para cuando te das cuenta es la hora del recreo"
+				"value": "Os sentáis todos, para cuando te das cuenta es la hora del recreo"
 			}
 		},
 		"changeHour": {

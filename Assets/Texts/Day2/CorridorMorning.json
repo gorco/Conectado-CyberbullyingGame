@@ -262,7 +262,7 @@
 			{
 				"tag": "Alex",
 				"character": "Alex",
-				"msn": "Si has terminado de darme la chapa, largate capullo"
+				"msn": "Si has terminado de darme la chapa, lárgate <$ if(varObject('global', 'MaleSexNonStatic')==true, 'capullo', 'estúpida') $>"
 			}]
 		},	
 		"quest3": {

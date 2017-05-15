@@ -361,7 +361,7 @@
 			"next": "mariaUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Es una chica muy rara que se pasa los recreo leyendo"
+				"msn": "Es una chica muy rara que se pasa los recreos leyendo"
 			}]
 		},
 		"mariaFriend": {
@@ -460,7 +460,7 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "Le quité sus sitio sin querer"
+				"msn": "Le quité su sitio sin querer"
 			},
 			{
 				"tag": "Tú",
@@ -588,7 +588,7 @@
 			{
 				"tag": "Papa",
 				"character": "Father",
-				"msn": "Quiere saber que tal te ha ido el día"
+				"msn": "Quiere saber qué tal te ha ido el día"
 			}]
 		}
 	},

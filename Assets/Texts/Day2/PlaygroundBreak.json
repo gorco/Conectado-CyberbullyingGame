@@ -36,7 +36,7 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "¿Has visto a Alex?"
+				"msn": "¿Has visto a Álex?"
 			},
 			{
 				"tag": "Ana",
@@ -136,12 +136,12 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Buenas  <$ varObject('global', 'UserNameNonStatic') $>"
+				"msn": "Buenas,  <$ varObject('global', 'UserNameNonStatic') $>"
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Estamos hablando de Alex"
+				"msn": "Estamos hablando de Álex"
 			},
 			{
 				"tag": "Guille",
@@ -154,7 +154,7 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "¿Dónde te has apoyado?Te has debido sentar encima de un chicle"
+				"msn": "¿Dónde te has apoyado?"
 			},
 			{
 				"tag": "Guille",

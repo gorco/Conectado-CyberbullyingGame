@@ -15,6 +15,8 @@ public class GlobalState
 
 	public static bool MaleSex { get; set; }
 
+	public static bool MessagesPending { get; set; }
+
 	public static string UserName { get; set; }
 
 	// SocialNet
@@ -43,29 +45,38 @@ public class GlobalState
 	public static int MariaQuest { get; set; }
 	// Day1 -> Meet Maria [0 - not spoken] [1 - freak] [2 - friend]
 	// Day2 -> Speak Maria [0 - spoken] [1 - joke advise]
+	// Day3 -> []
 
 	public static int AlisonQuest { get; set; }
 	// Day1 -> Found earing [0 - not found] [1 - found]
 	// Day2 -> Speak Alison [0 - not spoken] [1 - spoken] [2 - joke advise]
+	// Day3 -> []
 
 	public static int AnaQuest { get; set; }
 	// Day1 -> Meet Ana [0 - not spoken] [1 - spoken]
 	// Day2 -> Speak Ana []
+	// Day3 -> []
 
 	public static int GuillermoQuest { get; set; }
 	// Day1 -> Meet Guille [0 - not spoken] [1 - spoken] [2 - noteboard]
 	// Day2 -> Speak Guille [0 - not spoken] [1 - spoken and go] [2 - spoken and not go] [3 - spoken and quest]
+	// Day3 -> Speak Guille [0 - speak] [1 - about board]
 
 	public static int JoseQuest { get; set; }
 	// Day1 -> Meet Jose [0 - not spoken] [1 - spoken]
 	// Day2 -> Speak Jose [0 - not spoken] [1 - spoken]
+	// Day3 -> []
 
 	public static int AlejandroQuest { get; set; }
 	// Day1 -> Meet Alex [0 - sorry] [1 - threat] [2 - bad]
 	// Day2 -> Speak Alex [0 - not spoken] [1 - joke] [2 - zero] [3 - fight]
+	// Day3 -> []
 
 	public static int GumQuest { get; set; }
 	// Day2 -> Gum [0 - not washed] [1 - washed] [2 - not gum]
+
+	public static int BoardQuest { get; set; }
+	// Day3 -> Board [0 - not seen] [1 - seen]
 
 	protected static GlobalState instance;
 	public static GlobalState Instance {  get { return instance == null ? instance = new GlobalState() : instance; } }
@@ -93,6 +104,11 @@ public class GlobalState
 	public bool MaleSexNonStatic
 	{
 		get { return MaleSex; }
+	}
+
+	public bool MessagesPendingNonStatic
+	{
+		get { return MessagesPending; }
 	}
 
 	public string UserNameNonStatic
@@ -162,6 +178,10 @@ public class GlobalState
 	public int GumQuestNonStatic
 	{
 		get { return GumQuest; }
+	}
+	public int BoardQuestNonStatic
+	{
+		get { return BoardQuest; }
 	}
 
 	// SocialNet

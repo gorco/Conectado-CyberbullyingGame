@@ -157,12 +157,12 @@ public class ComputerManager : EventManager {
 				auth = true;
 				break;
 			}
-		}
+		}/*
 		if (!auth)
 		{
 			Debug.LogWarning(author + "is not a friend, ignoring the new publication...");
 			return;
-		}
+		}*/
 		float height = 0;
 		foreach(Publication child in photosContent.GetComponentsInChildren<Publication>(false))
 		{

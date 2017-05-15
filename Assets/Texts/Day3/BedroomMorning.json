@@ -21,7 +21,7 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "¿Uno de los dos días anteriores fue un sueño?"
+				"msn": "¿Ayer fue un sueño? ¿Lo fue el día anterior?"
 			},
 			{
 				"tag": "Tú",
@@ -43,7 +43,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Deberia ordenar un poco todo esto"
+				"msn": "Debería ordenar un poco todo esto"
 			}]
 		}		
 	},

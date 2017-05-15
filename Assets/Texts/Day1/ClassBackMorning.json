@@ -29,12 +29,12 @@
 			{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Clase, este es vuestro nuevo compañero, es nuevo en el colegio, por favor, ayudadle en sus primeros días"
+				"msn": "Clase, este es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'vuestro nuevo compañero', 'vuestra nueva compañera') $>, por favor, ayudadle en sus primeros días"
 			},
 			{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $> Yo soy vuestro tutor, cualquier cosa que necesites dimelo"
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, yo soy vuestro tutor, cualquier cosa que necesites dímelo"
 			},
 			{
 				"tag": "Profesor",
@@ -137,7 +137,7 @@
 			"next": "nodeTeacher",
 			"fragments": [{
 				"tag": "",
-				"msn": "(Ruidos de fondo, parece que tú nuevo profesor ha llegado)"
+				"msn": "(Ruidos de fondo, parece que tu nuevo profesor ha llegado)"
 			}]
 		},
 		"nodeTeacher": {

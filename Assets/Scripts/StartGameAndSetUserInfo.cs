@@ -42,6 +42,7 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 		GlobalState.Hour = 7;
 		GlobalState.Minute = 0;
 		GlobalState.Repeated = false;
+		GlobalState.MessagesPending = false;
 
 		//Save data
 		GlobalState.UserName = userName.text;

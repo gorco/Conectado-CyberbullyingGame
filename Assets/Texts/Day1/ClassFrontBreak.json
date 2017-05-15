@@ -43,7 +43,7 @@
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "A partir de mañana sientate en la otra mesa del final que está vacía"
+				"msn": "A partir de mañana siéntate en la otra mesa del final que está vacía"
 			}]
 		},
 		"node1": {
@@ -113,7 +113,7 @@
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "Así que buscate otro"
+				"msn": "Así que búscate otro"
 			},
 			{
 				"tag": "Alejandro",
@@ -123,12 +123,12 @@
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "Y el último al que le ayude a elegir otro sitio lo que encontró fue un moratón en su cara"
+				"msn": "Y el último al que le ayudé a elegir otro sitio lo que encontró fue un moratón en su cara"
 			},
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "Y ahora largate"
+				"msn": "Y ahora lárgate"
 			}]
 		},
 		"nodeFS10":{
@@ -155,7 +155,7 @@
 			"fragments": [{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "¿Vas de listo?"
+				"msn": "¿Vas de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'listo', 'lista') $>?"
 			},
 			{
 				"tag": "",
@@ -164,7 +164,7 @@
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "Que así sea, capullo"
+				"msn": "Que así sea, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'capullo', 'estúpida') $>"
 			},
 			{
 				"tag": "",

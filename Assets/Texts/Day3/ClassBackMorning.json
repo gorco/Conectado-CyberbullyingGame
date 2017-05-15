@@ -1,4 +1,63 @@
 ﻿{
+	"board":{
+		"root": {
+			"type": "event",
+			"next": "forkNode",
+			"event": {
+				"name": "change variable",
+				"var": "BoardQuest",
+				"value": 1,
+			}
+		},
+		"forkNode": {
+			"type": "fork",
+			"options": [{
+				"next": "gum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "washed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "nogum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			}]
+		},
+		"gum": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Hay una foto de mí, y la han retocado para que parezca que cago chicles"
+			},
+			{
+				"tag": "Tú",
+				"msn": "¿Quién quiere ridiculizarme de esta manera?"
+			}]
+		},
+		"washed": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Hay una foto mía de ayer después de haberme quitado el chicle"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Con una frase muy original... \"Un bebé ha llegado a clase\" "
+			}]
+		},
+		"nogum": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Es una foto de mi cara sobre el cuerpo de un perro y con la lengua fuera"
+			},
+			{
+				"tag": "Tú",
+				"msn": "¿Por qué? ¿Quién la ha puesto?"
+			}]
+		},
+	},
 	"class":{
 		"root": {
 				"type": "fork",
@@ -34,14 +93,24 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Te diriges entre todas las miradas y te sientas en el primer sitio que ves libre"
+				"value": "Ha sido un día aburrido, las clases han terminado y la mayoria lleva ignorandote todo el día. Una notita de papel en tu mesa dice que alguien te espera en los baños"
 			}
 		},
 		"node3": {
 			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
 			"event": {
-				"name": "move camera",
-				"key": "classFront"
+				"name": "change scene",
+				"var": "scene",
+				"value": 15
 			}
 		}
 	},
@@ -51,7 +120,7 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Este sitio está libreo, ¿me siento aquí?"
+				"msn": "Este sitio está libre, ¿me siento aquí?"
 			}]
 		},
 		"options": {
@@ -62,11 +131,6 @@
 			},
 			{
 				"msn": "No"
-			},
-			{
-				"next": "gum",
-				"msn": "Mirar antes la silla",
-				"condition": "varObject('global', 'RepeatedNonStatic') == true"
 			}]
 		},
 		"node2": {
@@ -77,27 +141,6 @@
 				"msn": "(Ruidos de fondo, el profesor ha llegado)"
 			}]
 		},
-		"gum": {
-			"type": "dialog",
-			"next": "noGum",
-			"fragments": [{
-				"tag": "Tú",
-				"msn": "Hay un chicle pegado"
-			},
-			{
-				"tag": "Tú",
-				"msn": "Ayer debió pasar lo mismo, será mejor que lo quite y me siente"
-			}]
-		},
-		"noGum": {
-			"type": "event",
-			"next": "node3",
-			"event": {
-				"name": "change variable",
-				"var": "AuxQuest",
-				"value": 2,
-			}
-		},
 		"node3": {
 			"type": "event",
 			"next": "changeHour",
@@ -105,7 +148,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Os sentaís todos, para cuando te das cuenta es la hora del recreo"
+				"value": "Ha sido un día aburrido, las clases han terminado y la mayoria lleva ignorandote todo el día. Una notita de papel en tu mesa dice que alguien te espera en los baños"
 			}
 		},
 		"changeHour": {
@@ -114,7 +157,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "11:05",
+				"value": "14:05",
 			}
 		},
 		"nextScene": {
@@ -122,7 +165,7 @@
 			"event": {
 				"name": "change scene",
 				"var": "scene",
-				"value": 10
+				"value": 15
 			}
 		}
 	}

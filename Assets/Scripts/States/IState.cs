@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class IState : MonoBehaviour {
 
+	protected GameObject mobile;
+
 	// Use this for initialization
 	void Start() { 
-		InitMobileGUI.InitMobileGUIObject();
+		mobile = InitMobileGUI.InitMobileGUIObject();
 	}
 	
 	// Update is called once per frame

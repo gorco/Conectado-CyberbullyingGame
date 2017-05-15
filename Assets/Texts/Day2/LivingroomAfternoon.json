@@ -361,7 +361,7 @@
 				"value": false
 			}
 		},	
-		"gumFork": {
+		"gum": {
 			"type": "fork",
 			"options": [{
 				"next": "gumNoWhassed",
@@ -702,7 +702,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Ya sólo falta que inviteís a la friki de María",
+				"value": "Ya sólo falta que inviteis a la friki de María",
 				"key": "Alex",
 				"other": "kickClass",
 				"time": 12 

@@ -154,7 +154,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Day",
-				"value": 3,
+				"value": 2,
 			}
 		},
 		"changeHour": {

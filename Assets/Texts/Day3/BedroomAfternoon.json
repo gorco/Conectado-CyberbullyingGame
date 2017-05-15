@@ -24,7 +24,7 @@
 				"name": "change scene",
 				"var": "scene",
 				"time": 3,
-				"value": 12
+				"value": 17
 			}
 		}		
 	},
@@ -42,7 +42,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Deberia ordenar un poco todo esto"
+				"msn": "Debería ordenar un poco todo esto"
 			}]
 		}		
 	},

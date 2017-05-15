@@ -44,7 +44,7 @@
 			{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "Deberiamos entrar ya, nos vemos"
+				"msn": "Deberíamos entrar ya, nos vemos"
 			}]
 		}, 
 		"nodeFS": {
@@ -137,7 +137,7 @@
 			"fragments": [{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Eres nuevo, ¿no?"
+				"msn": "Eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nuevo', 'nueva') $>, ¿no?"
 			},
 			{
 				"tag": "Jose",
@@ -247,7 +247,7 @@
 			"fragments": [{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Adios"
+				"msn": "Adiós"
 			}]
 		}
 	},
@@ -269,7 +269,7 @@
 			},
 			{
 				"next": "node2",
-				"msn": "No, los siento, tengo prisa. Adios."
+				"msn": "No, lo siento, tengo prisa. Adiós."
 			}]
 		},
 		"nodeFS": {
