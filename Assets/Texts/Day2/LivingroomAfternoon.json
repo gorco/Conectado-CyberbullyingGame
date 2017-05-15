@@ -369,11 +369,11 @@
 			},
 			{
 				"next": "gumWhassed",
-				"condition": "varObject('state', 'GumQuestNonStatic') == 1"
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
 			},
 			{
 				"next": "noGum",
-				"condition": "varObject('state', 'GumQuestNonStatic') == 2"
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
 			}]
 		},
 		"gumNoWhassed": {
