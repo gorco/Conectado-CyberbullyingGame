@@ -58,6 +58,18 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 		GlobalState.TeacherFS = 50;
 		GlobalState.ParentsFS = 50;
 
+		//Quests
+		GlobalState.MariaQuest = 0;
+		GlobalState.AlisonQuest = 0;
+		GlobalState.AnaQuest = 0;
+		GlobalState.GuillermoQuest = 0;
+		GlobalState.JoseQuest = 0;
+		GlobalState.AlejandroQuest = 0;
+		GlobalState.GumQuest = 0;
+		GlobalState.BoardQuest = 0;
+		GlobalState.ParentsMeetingQuest = 0;
+		GlobalState.SharedPassQuest = 0;
+
 		//Start game
 		SceneManager.LoadScene(2);
 		

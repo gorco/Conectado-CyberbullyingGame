@@ -1,73 +1,137 @@
 {
-	"guillermo":{
+	"alison":{
 		"root": {
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "Guillermo",
-				"character": "Guille",
-				"msn": "¿Eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nuevo', 'nueva') $>? No te había visto antes por aquí"
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> ¿verdad?, contigo queria hablar."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "No sé si lo sabes, pero Alex nos ha dicho a todos que no te hablemos."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Y a los que no queremos hacerle caso nos amenaza con algo."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "¿Puedo confiar en tí? No quiero dejar de ser tu amiga."
 			}]
 		},		
-		"node1": {
+		"options": {
 			"type": "options",
 			"options": [{
-				"next": "node1a",
-				"msn": "Si, soy <$ varObject('global', 'UserNameNonStatic') $>... ¿Y tú eres?"
+				"next": "friend",
+				"msn": "Muchas gracias por ser mi amiga"
 			},
 			{
-				"next": "node1b",
-				"msn": "Perdona, tengo prisa (Te vas)"
+				"next": "noFriend",
+				"msn": "No y no tengo interés en ganarme tu confianza"
 			}]
 		},
-		"node1b": {
-			"type": "event",
-			"next": "bell",
-			"event": {
-				"name": "change friendship",
-				"var": "GuillermoFS",
-				"value": -10,
-			}
-		},
-		"node1a": {
+		"noFriend": {
 			"type": "dialog",
-			"next": "nodeFS",
+			"next": "bellVar",
 			"fragments": [{
-				"tag": "Guillermo",
-				"character": "Guille",
-				"msn": "Llamame Guille"
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Entonces no me queda otra que hacer caso a Alex y dejarte de hablar."
 			},
 			{
-				"tag": "",
-				"msn": "<<La campana está sonando>>"
-			},
-			{
-				"tag": "Guillermo",
-				"character": "Guille",
-				"msn": "Deberíamos entrar ya, nos vemos"
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "No quiero correr ningún riesgo."
 			}]
-		}, 
-		"nodeFS": {
-			"type": "event",
-			"next": "quest",
-			"event": {
-				"name": "change friendship",
-				"var": "GuillermoFS",
-				"value": 10,
-			}
+		},		
+		"friend": {
+			"type": "dialog",
+			"next": "passChange",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Me alegra oír eso."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Intercambiemos contraseñas de redes sociales y del móvil."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Como muestra de amistad y confianza."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Antiguamente para gestos así se daban la mano con una herida abierta para intercambiar sangre."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Pero eso es asqueroso y puedes coger cualquier cosa."
+			}]
+		},		
+		"passChange": {
+			"type": "options",
+			"options": [{
+				"next": "change",
+				"msn": "(Aceptar el intercambio de contraseñas)"
+			},
+			{
+				"next": "noChange",
+				"msn": "(Rechazar el intercambio de contraseñas)"
+			}]
 		},
-		"quest": {
+		"noChange": {
+			"type": "dialog",
+			"next": "bellVar",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Si no confias en mí yo támpoco puedo confiar en tí."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Lo siento, pero entonces no puedo hablarte más."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "No quiero que Álex la tome conmigo."
+			}]
+		},		
+		"change": {
+			"type": "dialog",
+			"next": "changeVariable",
+			"fragments": [{
+				"tag": "Alison",
+				"msn": "Os escribís las contraseñas a través del móvil"
+			},{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Perfecto. \"Best Friends\" (sonríe de oreja a oreja)"
+			}]
+		},	
+		"changeVariable": {
 			"type": "event",
-			"next": "node2",
+			"next": "bellVar",
 			"event": {
 				"name": "change variable",
-				"var": "GuillermoQuest",
+				"var": "SharedPassQuest",
 				"value": 1,
 			}
 		},
-		"node2": {
+		"bellVar": {
 			"type": "event",
-			"next": "changeHour",
+			"next": "bell",
 			"event": {
 				"name": "change state",
 				"key": "ExitDoorByBell",
@@ -76,7 +140,16 @@
 				"state": 0
 			}
 		},
-		"changeHour": {
+		"bell": {
+			"type": "dialog",
+			"next": "hour",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<La campana está sonando>>"
+			}]
+		},
+		"hour": {
 			"type": "event",
 			"next": "fade1",
 			"event":{
@@ -90,268 +163,47 @@
 			"next": "fade2",
 			"event": {
 				"name": "fade out",
-				"key": "alison"
+				"key": "jose"
 			}
 		},
 		"fade2": {
 			"type": "event",
+			"next": "fade3",
 			"event": {
 				"name": "fade out",
 				"key": "guillermo"
 			}
 		},
-		"bell": {
-			"type": "dialog",
-			"next": "node2",
-			"fragments": [
-			{
-				"tag": "",
-				"msn": "<<La campana está sonando>>"
-			}]
-		}
+		"fade3": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "alison"
+			}
+		},
 	},
 	"jose":{
 		"root": {
-			"type": "fork",
-			"options": [{
-				"next": "nodeRepeat",
-				"condition": "spoken == true"
-			},
-			{
-				"next": "node0",
-				"condition": "true"
-			}]
-		},
-		"nodeRepeat": {
-			"type": "dialog",
-			"next": "options",
-			"fragments": [{
-				"tag": "Jose",
-				"character": "Jose",
-				"msn": "Has vuelto ¿querías algo más?"
-			}]
-		},
-		"node0": {
-			"type": "dialog",
-			"next": "setter",
-			"fragments": [{
-				"tag": "Jose",
-				"character": "Jose",
-				"msn": "Eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nuevo', 'nueva') $>, ¿no?"
-			},
-			{
-				"tag": "Jose",
-				"character": "Jose",
-				"msn": "¿Quieres algo?"
-			}]
-		},
-		"setter":{
-			"type": "setter",
-			"next": "options",
-			"set": {
-				"var": "spoken",
-				"value": true
-			}
-		},
-		"options": {
-			"type": "options",
-			"options": [{
-				"next": "introduceFork",
-				"msn": "Hola, soy <$ varObject('global', 'UserNameNonStatic') $>"
-			},
-			{
-				"next": "node2",
-				"msn": "(Preguntar dónde está tu clase)"
-			},
-			{
-				"next": "node3",
-				"msn": "No necesito nada, hasta luego"
-			}]
-		},
-		"introduceFork": {
-			"type": "fork",
-			"options": [{
-				"next": "know",
-				"condition": "introduced == true"
-			},
-			{
-				"next": "introducedSetter",
-				"condition": "true"
-			}]
-		},
-		"know": {
-			"type": "dialog",
-			"next": "options",
-			"fragments": [{
-				"tag": "Jose",
-				"character": "Jose",
-				"msn": "Ya me habías dicho tu nombre"
-			}]
-		},
-		"introducedSetter":{
-			"type": "setter",
-			"next": "nodeFS",
-			"set": {
-				"var": "introduced",
-				"value": true
-			}
-		},
-		"nodeFS": {
-			"type": "event",
-			"next": "quest",
-			"event": {
-				"name": "change friendship",
-				"var": "JoseFS",
-				"value": 10,
-			}
-		},
-		"quest": {
-			"type": "event",
-			"next": "node1",
-			"event": {
-				"name": "change variable",
-				"var": "JoseQuest",
-				"value": 1,
-			}
-		},
-		"node1": {
-			"type": "dialog",
-			"next": "options",
-			"fragments": [{
-				"tag": "Jose",
-				"character": "Jose",
-				"msn": "Yo soy Jose"
-			},
-			{
-				"tag": "Jose",
-				"character": "Jose",
-				"msn": "¿Quieres algo?"
-			}]
-		},
-		"node2": {
-			"type": "dialog",
-			"next": "options",
-			"fragments": [{
-				"tag": "Jose",
-				"character": "Jose",
-				"msn": "Esa es también mi clase, está en la primera planta, subiendo las escaleras de la derecha que encuentras nada más entrar al edificio"
-			},
-			{
-				"tag": "Jose",
-				"character": "Jose",
-				"msn": "¿Necesitas algo más?"
-			}]
-		},
-		"node3": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Adiós"
+				"msn": "(Con una sonrisa en su cara te mira fijamente y empieza a reir)"
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "JAJAJA!!"
 			}]
 		}
 	},
-	"alison":{
+	"guillermo":{
 		"root": {
 			"type": "dialog",
-			"next": "options",
 			"fragments": [{
-				"tag": "Alison",
-				"character": "Alison",
-				"msn": "¿Te conozco?"
-			}]
-		},
-		"options": {
-			"type": "options",
-			"options": [{
-				"next": "nodeFS",
-				"msn": "Soy <$ varObject('global', 'UserNameNonStatic') $> ¿Y tú eres?"
-			},
-			{
-				"next": "node2",
-				"msn": "No, lo siento, tengo prisa. Adiós."
-			}]
-		},
-		"nodeFS": {
-			"type": "event",
-			"next": "node1",
-			"event": {
-				"name": "change friendship",
-				"var": "AlisonFS",
-				"value": 10,
-			}
-		},
-		"node1": {
-			"type": "dialog",
-			"next": "fork",
-			"fragments": [{
-				"tag": "Alison",
-				"character": "Alison",
-				"msn": "Encantada, yo soy Alison"
-			},
-			{
-				"tag": "Alison",
-				"character": "Alison",
-				"msn": "Espero que estés agusto aquí, hay gente muy maja."
-			},
-			{
-				"tag": "Alison",
-				"character": "Alison",
-				"msn": "¿A qué curso vas?"
-			},
-			{
-				"tag": "Tú",
-				"msn": "(Contestas)"
-			},
-			{
-				"tag": "Alison",
-				"character": "Alison",
-				"msn": "Entonces te veré en clase"
-			}]
-		},
-		"node2": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Alison",
-				"character": "Alison",
-				"msn": "No seas tan tímido, no muerdo"
-			},
-			{
-				"tag": "Alison",
-				"character": "Alison",
-				"msn": "Bueno, nos vemos. Que sea un buen primer día."
-			}]
-		},
-		"fork": {
-			"type": "fork",
-			"options": [{
-				"next": "abierto",
-				"condition": "varObject('state', 'BellSounded') == true"
-			},
-			{
-				"next": "cerrado",
-				"condition": "varObject('state', 'BellSounded') == false"
-			}]
-		},
-		"abierto": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Alison",
-				"character": "Alison",
-				"msn": "Será mejor que entremos ya, sino llegaremos tarde"
-			}]
-		},
-		"cerrado": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Alison",
-				"character": "Alison",
-				"msn": "El chico de la camiseta amarilla que está cerca de la entrada al patio también va a nuestra clase"
-			},
-			{
-				"tag": "Alison",
-				"character": "Alison",
-				"msn": "Es muy majo, ¿Por qué no hablas con él?"
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "(El gesto de su cara cambia al verte, gira la cabeza y mira a otro lado)"
 			}]
 		}
 	},

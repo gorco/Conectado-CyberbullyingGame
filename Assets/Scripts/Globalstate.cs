@@ -85,7 +85,10 @@ public class GlobalState
 	// Day3 -> Board [0 - not seen] [1 - seen]
 
 	public static int ParentsMeetingQuest { get; set; }
-	// Day4 -> Parent [0 - No Meeting] [1 - Meeting]
+	// Day3 -> Parent [0 - No Meeting] [1 - Meeting]
+
+	public static int SharedPassQuest { get; set; }
+	// Day4 -> Alison [0 - no shared pass] [1 - shared pass]
 
 	protected static GlobalState instance;
 	public static GlobalState Instance {  get { return instance == null ? instance = new GlobalState() : instance; } }
@@ -196,7 +199,11 @@ public class GlobalState
 	{
 		get { return ParentsMeetingQuest; }
 	}
-	
+	public int SharedPassQuestNonStatic
+	{
+		get { return SharedPassQuest; }
+	}
+
 	// SocialNet
 	public int MariaNetNonStatic
 	{

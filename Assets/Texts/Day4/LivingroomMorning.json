@@ -71,7 +71,7 @@
 		},
 		"node1a": {
 			"type": "dialog",
-			"next": "repeat",
+			"next": "changeVariable",
 			"fragments": [{
 				"tag": "Mamá",
 				"character": "Mother",
@@ -82,6 +82,15 @@
 				"character": "Father",
 				"msn": "Intentaremos tener la reunión mañana como muy tarde"
 			}]
+		},
+		"changeVariable": {
+			"type": "event",
+			"next": "repeat",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 1,
+			}
 		},
 		"node1b": {
 			"type": "dialog",

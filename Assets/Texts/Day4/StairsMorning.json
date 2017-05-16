@@ -1,4 +1,176 @@
 {
+	"maria": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "friendFork",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Llegarás tarde a clase si no te vas ya."
+			}]
+		},
+		"friendFork": {
+			"type": "fork",
+			"options": [{
+				"next": "friend",
+				"condition": "varObject('global', 'AlisonFSNonStatic') > 60"
+			},
+			{
+				"next": "normal",
+				"condition": "true"
+			}]
+		},
+		"friend": {
+			"type": "dialog",
+			"next": "friendOptions",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Buenos días <$ varObject('global', 'UserNameNonStatic') $>"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Hola, Alison"
+			}]
+		},
+		"friendOptions": {
+			"type": "options",
+			"options": [{
+			"next": "friends2b",
+				"next": "setter",
+				"msn": "Ayer no viniste a clase, ¿estás bien?"
+			},
+			{
+				"next": "friends2a",
+				"msn": "¿Me hablas?"
+			},
+			{
+				"next": "friends2c",
+				"msn": "Tengo prisa, ya ha sonado el timbre. Hablamos luego."
+			}]
+		},
+		"friends2a": {
+			"type": "dialog",
+			"next": "friendOptions",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Supongo que lo dices por Álex."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Ana hizo algo parecido el año pasado para putearme."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Deberías hablar con tus padres o nuestro tutor."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Yo no lo hice cuando tuve la oportunidad, mis padres se enteraron cuando me obligaron a ir a un psicólogo."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Si necesitas que te acompañe para hablar con el profe puedes decirmelo. Pero no te quedes <$ if(varObject('global', 'MaleSexNonStatic')==true, 'callado', 'callada') $>"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Gracias, nos vemos luego."
+			}]
+		},
+		"friends2b": {
+			"type": "dialog",
+			"next": "friendOptions",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Sí, estoy bien, gracias por preguntar."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Ayer me encontraba en casa con fiebre y me quedé descansado."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Hoy ya estoy como nueva."
+			}]
+		},
+		"normal": {
+			"type": "dialog",
+			"next": "normalOptions",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Buenas, Alison"
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Hola, <$ varObject('global', 'UserNameNonStatic') $>, ¿Quieres algo?"
+			}]
+		},
+		"normalOptions": {
+			"type": "options",
+			"options": [{
+				"next": "setter",
+				"msn": "Nada, hasta luego"
+			},
+			{
+				"next": "normal2",
+				"msn": "¿Me hablas?"
+			}]
+		},
+		"normal2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "¿Por qué no lo iba a hacer?"
+			},
+			{
+				"tag": "Tú",
+				"msn": "¿No has hablado con Álex?"
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Sí, lo de que nadie te dirija la palabra..."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "A mi ya me hicieron la vida imposible entre todos el año pasado, aprendí la lección."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Lo mejor será que hables con tus padres o con tu tutor y no hagas caso a Alex ni a ´ninguno de sus perritos falderos."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+	},
 	"principalNote":{
 		"root": {
 			"type": "dialog",
