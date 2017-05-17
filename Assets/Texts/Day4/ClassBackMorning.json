@@ -1,4 +1,13 @@
 ﻿{
+	"board":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Parece que alguien ha arrancado ya la foto de ayer"
+			}]
+		}
+	},
 	"class":{
 		"root": {
 				"type": "fork",
@@ -20,176 +29,124 @@
 			"fragments": [{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $> ¿verdad?"
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> llegas tarde"
 			},{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Llegar tarde tu primer día, no es una buena manera de empezar"
-			},
-			{
-				"tag": "Profesor",
-				"character": "Teacher",
-				"msn": "Clase, este es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'vuestro nuevo compañero', 'vuestra nueva compañera') $>, por favor, ayudadle en sus primeros días"
-			},
-			{
-				"tag": "Profesor",
-				"character": "Teacher",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, yo soy vuestro tutor, cualquier cosa que necesites dímelo"
-			},
-			{
-				"tag": "Profesor",
-				"character": "Teacher",
-				"msn": "Por favor, <$ varObject('global', 'UserNameNonStatic') $> siéntate al lado de Alison"
-			},
-			{
-				"tag": "Profesor",
-				"character": "Teacher",
-				"msn": "Alison, haz el favor de resolver todas las dudas que tenga <$ varObject('global', 'UserNameNonStatic') $> sobre el colegio"
-			},
-			{
-				"tag": "Profesor",
-				"character": "Teacher",
-				"msn": "Continuemos con la clase"
+				"msn": "Por favor, sientate para que podamos continuar la clase"
 			}]
 		},
 		"node2": {
+			"type": "fork",
+			"options": [{
+				"next": "endDay",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "break",
+				"condition": "true"
+			}]
+		},
+		"break": {
 			"type": "event",
-			"next": "node3",
+			"next": "breakHour",
 			"event": {
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Te diriges entre todas las miradas a tu sitio y te sientas"
+				"value": "La campana del que marca el recreo ha sonado..."
 			}
 		},
-		"node3": {
+		"breakHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"nextScene": {
 			"type": "event",
 			"event": {
-				"name": "move camera",
-				"key": "classFront"
+				"name": "change scene",
+				"var": "scene",
+				"value": 20
+			}
+		},
+		"endDay": {
+			"type": "event",
+			"next": "breakHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Cada vez se te hacen más largas las horas de clase. Por suerte ya es hora de volver a casa"
+			}
+		},
+		"endDayHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
 			}
 		}
 	},
-	"ana":{
+	"table":{
 		"root": {
 			"type": "dialog",
-			"next": "quest",
+			"next": "options",
 			"fragments": [{
-				"tag": "Ana",
-				"character": "Ana",
-				"msn": "Me parece que te has equivocado de clase"
+				"tag": "Tú",
+				"msn": "Este sitio está libre, ¿me siento aquí?"
 			}]
 		},
-		"quest": {
-			"type": "event",
-			"next": "node1",
-			"event": {
-				"name": "change variable",
-				"var": "AnaQuest",
-				"value": 1,
-			}
-		},
-		"node1": {
+		"options": {
 			"type": "options",
 			"options": [{
-				"next": "node1a",
-				"msn": "No, es que hoy es mi primer día, soy <$ varObject('global', 'UserNameNonStatic') $>"
+				"next": "node2",
+				"msn": "Si"
 			},
 			{
-				"next": "node1b",
-				"msn": "¿Y tú quién eres? ¿La marimacho de clase?"
+				"msn": "No"
 			}]
-		},
-		"node1a": {
-			"type": "dialog",
-			"next": "node2",
-			"fragments": [{
-				"tag": "Ana",
-				"character": "Ana",
-				"msn": "Oh, así que tú eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'el nuevo', 'la nueva') $>"
-			},
-			{
-				"tag": "Ana",
-				"character": "Ana",
-				"msn": "Yo soy Ana, también estoy en esta clase"
-			}]
-		},
-		"node1b": {
-			"type": "dialog",
-			"next": "nodeFS",
-			"fragments": [{
-				"tag": "Ana",
-				"character": "Ana",
-				"msn": "Subnormal..."
-			}]
-		},
-		"nodeFS":{
-			"type": "event",
-			"next": "node2",
-			"event": {
-				"name": "change friendship",
-				"var": "AnaFS",
-				"value": -20,
-			}
 		},
 		"node2": {
 			"type": "dialog",
-			"next": "nodeTeacher",
+			"next": "node3",
 			"fragments": [{
 				"tag": "",
-				"msn": "(Ruidos de fondo, parece que tu nuevo profesor ha llegado)"
+				"msn": "(Ruidos de fondo, el profesor ha llegado)"
 			}]
 		},
-		"nodeTeacher": {
-			"type": "dialog",
-			"next": "nodeSit",
-			"fragments": [{
-				"tag": "Profesor",
-				"character": "Teacher",
-				"msn": "Vamos a empezar la clase, venga, pasad todos y sentaos"
-			}]
-		},
-		"nodeSit": {
-			"type": "options",
-			"options": [{
-				"next": "node3a",
-				"msn": "(Sentarse en última fila)"
-			},
-			{
-				"next": "node3b",
-				"msn": "(Preguntar dónde puedes sentarte)"
-			}]
-		},
-		"node3a": {
+		"node3": {
 			"type": "event",
-			"next": "node4",
+			"next": "changeHour",
 			"event": {
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Os sentáis todos y empieza la clase"
+				"value": "La campana del que marca el recreo ha sonado..."
 			}
 		},
-		"node4": {
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		},
+		"nextScene": {
 			"type": "event",
 			"event": {
-				"name": "move camera",
-				"key": "classFront"
+				"name": "change scene",
+				"var": "scene",
+				"value": 15
 			}
-		},
-		"node3b": {
-			"type": "dialog",
-			"next": "node3a",
-			"fragments": [{
-				"tag": "Profesor",
-				"character": "Teacher",
-				"msn": "Siéntate al lado de Alison"
-			},
-			{
-				"tag": "Profesor",
-				"character": "Teacher",
-				"msn": "Alison, haz el favor de resolver todas las dudas que tenga <$ varObject('global', 'UserNameNonStatic') $> sobre el colegio"
-			}]
-		},
-	}
+		}
+	},
 }

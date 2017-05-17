@@ -37,7 +37,7 @@
 		},
 		"noFriend": {
 			"type": "dialog",
-			"next": "bellVar",
+			"next": "alisonFS",
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
@@ -91,7 +91,7 @@
 		},
 		"noChange": {
 			"type": "dialog",
-			"next": "bellVar",
+			"next": "alisonFS",
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
@@ -127,6 +127,15 @@
 				"name": "change variable",
 				"var": "SharedPassQuest",
 				"value": 1,
+			}
+		},
+		"alisonFS": {
+			"type": "event",
+			"next": "bellVar",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFS",
+				"value": -50,
 			}
 		},
 		"bellVar": {
@@ -231,6 +240,15 @@
 			"fragments": [{
 				"tag": "",
 				"msn": "Parece que he llegado pronto y aún no se puede pasar. Será mejor que haga algo de tiempo."
+			}]
+		}
+	},
+	"board":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Parece que alguien ha arrancado ya la foto de ayer"
 			}]
 		}
 	},

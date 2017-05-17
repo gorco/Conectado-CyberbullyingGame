@@ -1,32 +1,43 @@
 {
-	"alison":{
+	"board":{
 		"root": {
-			"type": "fork",
-			"options": [{
-				"next": "node1",
-				"condition": "varObject('state', 'AlisonDialog') == true"
-			},
-			{
-				"next": "node2",
-				"condition": "varObject('state', 'AlisonDialog') == false"
-			}]
-		},
-		"node1": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
-				"character": "Alison",
-				"msn": "Veo que has encontrado la clase sin problemas"
+				"tag": "Tú",
+				"msn": "Parece que alguien ha arrancado ya la foto de ayer"
+			}]
+		}
+	},
+	"anaAndAlex":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "(Te han visto, pero pasan de tí, Álex y ana siguen hablando entre ellos)"
 			},
 			{
-				"tag": "Alison",
-				"character": "Alison",
-				"msn": "La chica pelirroja que está al lado de la puerta es María, también va a nuestra clase. Es bastante tímida pero buena gente"
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Creo que cabezabuque y gremlin son los más originales"
 			},
 			{
-				"tag": "Alison",
-				"character": "Alison",
-				"msn": "Y al lado del tablón de anuncios está Guille, al que ya conoces"
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "El de margi me parecía bien"
+			},
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Aunque es verdad que <$ varObject('global', 'UserNameNonStatic') $> cabezabuque suena my bien jajaja "
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Jajaja a ver que opina Jose"
+			}
+			{
+				"tag": "Tú",
+				"msn": "No os coréis, seguid ignorándome y pensando en el mote que me váis a poner"
 			}]
 		},
 		"node2": {
@@ -37,81 +48,6 @@
 				"msn": "Perdona,  tengo prisa, si no entro ya a classe voy a llegar tarde"
 			}]
 		}			
-	},
-	"maria":{
-		"root": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "María",
-				"character": "Maria",
-				"msn": "..."
-			},
-			{
-				"tag": "Tú",
-				"msn": "Parece incómoda, mejor dejarla en paz por ahora"
-			}]
-		}		
-	},
-	"guillermo":{
-		"root": {
-			"type": "fork",
-			"options": [{
-				"next": "node1",
-				"condition": "spoken == true"
-			},
-			{
-				"next": "node2",
-				"condition": "true"
-			}]
-		},
-		"node1": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Guillermo",
-				"character": "Guille",
-				"msn": "Acuérdate de mirar los corchos, a veces se encuentran cosas interesantes"
-			}]
-		},		
-		"node2": {
-			"type": "dialog",
-			"next": "quest",
-			"fragments": [{
-				"tag": "Guillermo",
-				"character": "Guille",
-				"msn": "Buenas, estaba leyendo los anuncios del corcho"
-			},
-			{
-				"tag": "Guillermo",
-				"character": "Guille",
-				"msn": "A veces hay cosas interantes, y últimamente alguien va dejando cromos, mensajes y adivinanzas"
-			},
-			{
-				"tag": "Guillermo",
-				"character": "Guille",
-				"msn": "Acostúmbrate a mirarlo una vez al día"
-			},
-			{
-				"tag": "Guillermo",
-				"character": "Guille",
-				"msn": "¿Entramos a clase?"
-			}]
-		},	
-		"quest": {
-			"type": "event",
-			"next": "setter",
-			"event": {
-				"name": "change variable",
-				"var": "GuillermoQuest",
-				"value": 2,
-			}
-		},
-		"setter":{
-			"type": "setter",
-			"set": {
-				"var": "spoken",
-				"value": true
-			}
-		}
 	},
 	"maleBathroom": {
 		"root": {
