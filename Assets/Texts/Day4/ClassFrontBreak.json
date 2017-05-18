@@ -16,26 +16,6 @@
 			}]
 		},
 	},
-	"maria":{
-		"root": {
-			"type": "dialog",
-			"next": "node1",
-			"fragments": [{
-				"tag": "Tú",
-				"msn": "¿Has visto mi móvil?"
-			},
-			{
-				"tag": "María",
-				"character": "Maria",
-				"msn": "No, ni idea, revisa bien la clase por si acaso."
-			},
-			{
-				"tag": "María",
-				"character": "María",
-				"msn": "Si veo algo te aviso"
-			}]
-		}
-	},
 	"door": {
 		"root": {
 			"next": "changeHour",

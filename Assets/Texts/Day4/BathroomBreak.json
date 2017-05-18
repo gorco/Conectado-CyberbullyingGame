@@ -7,5 +7,32 @@
 				"key": "corridor"
 			}
 		}
+	},
+	"mobile":{
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [
+			{
+				"tag": "Tú",
+				"msn": "Es mi móvil"
+			},{
+				"tag": "Tú",
+				"msn": "¿Quién me lo ha quitado y lo ha dejado en el baño de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'chicas', 'chicos') $>?"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Mierda, encima no enciende, espero que sea cosa de la batería. En cuanto llegue a casa le cambio la batería"
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"next": "initMobile",
+			"event": {
+				"name": "pick",
+				"var": "SharedPassQuest",
+				"value": 2
+			}
+		}
 	}
 }

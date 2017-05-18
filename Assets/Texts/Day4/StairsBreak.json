@@ -1,4 +1,100 @@
 {
+	"guilleAndAlison": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "found",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "lost",
+				"condition": "true"
+			}]
+		},
+		"repeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "..."
+			}]
+		},
+		"found": {
+			"type": "options",
+			"options": [{
+				"next": "node1a",
+				"msn": "¿Sabéis quién me ha quitado el móvil y lo ha dejado en el baño?",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "node1b",
+				"msn": "¿Alguno sabe dónde está mi móvil? Alguién me lo ha quitado",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "setter",
+				"msn": "Supongo que no me váis a contestar... paso de preguntaros nada",
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "No vamos a chivarnos, pero supongo que ya te imaginas quién tiene la culpa."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "*sshhhhhh*"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "*sshhhhhh*"
+			}]
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Los siento, no tenemos ni idea."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Gracias Guille."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
 	"principalNote":{
 		"root": {
 			"type": "dialog",

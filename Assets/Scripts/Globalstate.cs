@@ -46,7 +46,7 @@ public class GlobalState
 	// Day1 -> Meet Maria [0 - not spoken] [1 - freak] [2 - friend]
 	// Day2 -> Speak Maria [0 - spoken] [1 - joke advise]
 	// Day3 -> []
-	// Day4 -> []
+	// Day4 -> Maria Joke [0 - no joke] [1 - jokeIncomplete] [2 - jokeCompleted]
 
 	public static int AlisonQuest { get; set; }
 	// Day1 -> Found earing [0 - not found] [1 - found]
@@ -85,10 +85,10 @@ public class GlobalState
 	// Day3 -> Board [0 - not seen] [1 - seen]
 
 	public static int ParentsMeetingQuest { get; set; }
-	// Day3 -> Parent [0 - No Meeting] [1 - Meeting]
+	// Day3 -> Parent [0 - No Meeting] [1 - Meeting Cancel] [2 - Meeting Success]
 
 	public static int SharedPassQuest { get; set; }
-	// Day4 -> Alison [0 - no shared pass] [1 - shared pass]
+	// Day4 -> Alison [0 - no shared pass (mobile lost)] [1 - shared pass] [2 - no shared pass (mobile found)]
 
 	protected static GlobalState instance;
 	public static GlobalState Instance {  get { return instance == null ? instance = new GlobalState() : instance; } }

@@ -46,7 +46,7 @@
 		},
 		"meeting": {
 			"type": "dialog",
-			"next": "options",
+			"next": "meetingVar",
 			"fragments": [{
 				"tag": "Mamá",
 				"character": "Mother",
@@ -58,6 +58,15 @@
 				"msn": "Vamos a pedirle una cita para mañana"
 			}]
 		},		
+		"meetingVar": {
+			"type": "event",
+			"next": "options",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 1,
+			}
+		},
 		"options": {
 			"type": "options",
 			"options": [{
@@ -89,7 +98,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "ParentsMeetingQuest",
-				"value": 1,
+				"value": 2,
 			}
 		},
 		"node1b": {

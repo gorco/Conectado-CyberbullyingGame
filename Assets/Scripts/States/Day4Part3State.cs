@@ -10,6 +10,22 @@ public class Day4Part3State : IState {
 	public float x;
 	public float y;
 
+	private int mariaJoke = 0; // [0 - no joke] [1 - jodePending] [2 - jokeSuccess]
+
+	public int MariaJoke
+	{
+		get { return mariaJoke; }
+		set { mariaJoke = value; }
+	}
+
+	private bool timeEnough = false; 
+
+	public bool TimeEnough
+	{
+		get { return timeEnough; }
+		set { timeEnough = value; }
+	}
+
 	// Use this for initialization
 	void Start () {
 		if(GlobalState.SharedPassQuest == 0)

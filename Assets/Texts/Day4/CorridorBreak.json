@@ -1,200 +1,79 @@
 {
 	"maria":{
-		"root": {
+		"root" : {
 			"type": "fork",
 			"options": [{
-				"next": "secondGood",
-				"condition": "normal == true"
+				"next": "joke",
+				"condition": "varObject('state', 'MariaJoke') == 1"
 			},
 			{
-				"next": "secondBad",
-				"condition": "freak == true"
-			},
-			{
-				"next": "first",
+				"next": "node0",
 				"condition": "true"
 			}]
 		},
-		"secondGood": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "María",
-				"character": "Maria",
-				"msn": "Estoy terminando el libro, hablamos en otro momento"
-			}]
-		},
-		"secondBad": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "María",
-				"character": "Maria",
-				"msn": "..."
-			},{
-				"tag": "Tú",
-				"msn": "Parece que me está ignorando"
-			}]
-		},
-		"first": {
+		"node0": {
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "María",
-				"character": "Maria",
-				"msn": "¿Quieres algo?"
-			}]
-		},
-		"node1": {
-			"type": "options",
-			"options": [{
-				"next": "setterBad",
-				"msn": "Nada, adiós"
+				"tag": "Tú",
+				"msn": "¿Has visto mi móvil?"
 			},
 			{
-				"next": "node2",
-				"msn": "¿Por qué estás aquí sola en vez de en el patio?"
-			}]
-		},		
-		"setterBad":{
-			"type": "setter",
-			"set": {
-				"var": "freak",
-				"value": true
-			}
-		},
-		"node2": {
-			"type": "dialog",
-			"next": "node3",
-			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Prefiero quedarme aquí tranquila leyendo"
-			}]
-		},
-		"node3": {
-			"type": "options",
-			"options": [{
-				"msn": "Disfruta, adios (Que chica más rara)"
+				"msn": "No, ni idea, revisa bien la clase por si acaso."
 			},
 			{
-				"next": "node4",
-				"msn": "¿No prefieres estar en el recreo con tus amigos?"
+				"tag": "María",
+				"character": "María",
+				"msn": "Si veo algo te aviso"
 			}]
-		},	
-		"quest2": {
+		},
+		"jokeOtions": {
+			"type": "options",
+			"options": [{
+				"next": "node0",
+				"msn": "Buenas, María"
+			},
+			{
+				"next": "jokeSuccess",
+				"msn": "(Pegar el cartel con cuidado e irte sin decir nada)"
+			}]
+		},
+		"jokeSuccess":{
 			"type": "event",
-			"next": "nodeFS2",
+			"next": "mariaFS",
 			"event": {
 				"name": "change variable",
-				"var": "MariaoQuest",
-				"value": 1,
+				"var": "MariaJoke",
+				"value": 2,
 			}
 		},
-		"nodeFS2": {
+		"mariaFS": {
 			"type": "event",
-			"next": "setterBad",
+			"next": "mariaQuest",
 			"event": {
 				"name": "change friendship",
 				"var": "MariaFS",
-				"value": -10,
+				"value": -40,
 			}
 		},
-		"node4": {
-			"type": "dialog",
-			"next": "node5",
-			"fragments": [{
-				"tag": "María",
-				"character": "Maria",
-				"msn": "Eres un poco  <$ if(varObject('global', 'MaleSexNonStatic')==true, 'pesado', 'pesada') $> con las preguntas"
-			},
-			{
-				"tag": "María",
-				"character": "Maria",
-				"msn": "No tengo amigos, creen que soy rara"
-			},
-			{
-				"tag": "María",
-				"character": "Maria",
-				"msn": "Ya te puedes ir"
-			}]
-		},
-		"node5": {
-			"type": "options",
-			"options": [{
-				"next": "node6",
-				"msn": "(Quedarte)"
-			},
-			{
-				"msn": "(Irte)"
-			}]
-		},
-		"node6": {
-			"type": "dialog",
-			"next": "quest1",
-			"fragments": [{
-				"tag": "Tú",
-				"msn": "No me pareces rara"
-			},
-			{
-				"tag": "Tú",
-				"msn": "Voy a bajar al recreo, si quieres venir estaré abajo"
-			},
-			{
-				"tag": "María",
-				"character": "Maria",
-				"msn": "Gracias, eres muy amable"
-			}, 
-			{
-				"tag": "María",
-				"character": "Maria",
-				"msn": "Pero al menos hoy me quedaré aquí, me queda poco para terminar el libro"
-			},
-			{
-				"tag": "María",
-				"character": "Maria",
-				"msn": "Pásalo muy bien en el recreo, y evita a Alex, es estúpido"
-			}]
-		},
-		"quest1": {
+		"mariaQuest": {
 			"type": "event",
-			"next": "nodeFS1",
 			"event": {
 				"name": "change variable",
 				"var": "MariaQuest",
-				"value": 1,
-			}
-		},
-		"nodeFS1": {
-			"type": "event",
-			"next": "setterGood",
-			"event": {
-				"name": "change friendship",
-				"var": "MariaFS",
-				"value": 20,
-			}
-		},
-		"setterGood":{
-			"type": "setter",
-			"set": {
-				"var": "normal",
-				"value": true
+				"value": 2,
 			}
 		},
 	},
 	"doorToStairs": {
 		"root": {
 			"type": "event",
-			"next": "alisonMove",
+			"next": "changeHour",
 			"event": {
 				"name": "move camera",
 				"key": "stairs"
-			}
-		},
-		"alisonMove": {
-			"type": "event",
-			"next": "changeHour",
-			"event": {
-				"name": "little move",
-				"key": "alison"
 			}
 		},
 		"changeHour": {
@@ -227,10 +106,28 @@
 		},
 		"female": {
 			"type": "dialog",
+			"next": "femaleOptions",
 			"fragments": [{
 				"tag": "Tú",
 				"msn": "No puedo entrar ahí, es el baño de chicos"
 			}]
+		},
+		"femaleOptions": {
+			"type": "options",
+			"options": [{
+				"next": "female2",
+				"msn": "(Entrar de todas formas)"
+			},
+			{
+				"msn": "(Marcharse)"
+			}]
+		},
+		"female2": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom2"
+			}
 		}
 	},
 	"femaleBathroom": {
@@ -254,11 +151,29 @@
 		},
 		"male": {
 			"type": "dialog",
+			"next": "maleOptions",
 			"fragments": [{
 				"tag": "Tú",
 				"msn": "No puedo entrar ahí, es el baño de chicas"
 			}]
-		}
+		},
+		"maleOptions": {
+			"type": "options",
+			"options": [{
+				"next": "male2",
+				"msn": "(Entrar de todas formas)"
+			},
+			{
+				"msn": "(Marcharse)"
+			}]
+		},
+		"male2": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom2"
+			}
+		},
 	},
 	"classDoor": {
 		"root": {

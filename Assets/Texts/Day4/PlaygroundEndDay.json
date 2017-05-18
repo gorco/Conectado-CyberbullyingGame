@@ -1,4 +1,40 @@
 {
+	"init": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "varObject('global', 'SharedPassQuest') == 0"
+			}]
+		},
+		"node1":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Hay una nota en mi abrigo..."
+			},
+			{
+				"tag": "Tú",
+				"msn": "\"Alison te quitó el móvil y se lo dió a Álex y Ana. (continua por la otra cara).\""
+			},
+			{
+				"tag": "Tú",
+				"msn": "\"Tenia que darles tus contraseñas o tu móvil\" (fin de la nota)."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Ahora entiendo lo de esta mañana. ¿Con que la tendrán amenazada?"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Mierda, lo tengo sin patrón o PIN de desbloqueo. ¿Qué habrán hecho con él?"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Y ya hasta mañana no veré a Álex, Ana o Alison."
+			}]
+		}
+	},
 	"schoolEnter": {
 		"root": {
 			"type": "dialog",

@@ -236,4 +236,180 @@
 			}
 		},
 	},
+	"trollMaria": {
+		"root": {
+			"type": "options",
+			"options": [{
+				"next": "nodeA",
+				"msn": "Yo no he escrito nada"
+			},
+			{
+				"next": "nodeB",
+				"msn": "Si, he sido yo"
+			},
+			{
+				"msn": "(No contestar)"
+			}]
+		},
+		"nodeB": {
+			"type": "event",
+			"next": "mariaFS",
+			"next": "nodeA2",
+			"event": {
+				"name": "mobile message",
+				"var": "Maria",
+				"value": "si, lo escribí yo, mañana nos vemos guapa",
+				"key": "",
+				"time": 0
+			}
+		},
+		"mariaFS": {
+			"type": "event",
+			"event": {
+				"name": "change friendship",
+				"var": "MariaFS",
+				"value": -80,
+			}
+		},
+		"nodeA": {
+			"type": "event",
+			"next": "nodeA2",
+			"event": {
+				"name": "mobile message",
+				"var": "Maria",
+				"value": "perdona María, no te he escrito yo, debieron escribirte cuando me quitaron el móvil",
+				"key": "",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"nodeA2": {
+			"type": "event",
+			"next": "nodeA3",
+			"event": {
+				"name": "mobile message",
+				"var": "Maria",
+				"value": "lo siento mucho, de verdad",
+				"key": "",
+				"other": "empty",
+				"time": 0.2
+			}
+		},
+		"nodeA3": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Maria",
+				"value": "te creo, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'tranquilo', 'tranquila') $>, descansa",
+				"key": "Maria",
+				"other": "empty",
+				"time": 4
+			}
+		}
+	},
+	"trollClass": {
+		"root": {
+			"type": "options",
+			"options": [{
+				"next": "nodeA",
+				"msn": "Yo no he escrito nada"
+			},
+			{
+				"next": "nodeB",
+				"msn": "Alex, Ana, que os den"
+			},
+			{
+				"next": "nodeC",
+				"msn": "Como oís, me encanta"
+			}]
+		},
+		"nodeA": {
+			"type": "event",
+			"next": "nodeA2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "alguien ha usado mi móvil para escribir eso",
+				"key": "",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"nodeA2": {
+			"type": "event",
+			"next": "nodeA3",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "ya tenemos fotos de lo que has dicho, vamos a compartirselas a todas las clases jajaja",
+				"key": "Ana",
+				"time": 2
+			}
+		},
+		"nodeA3": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "jajaja ya es tarde para negar nada :P",
+				"key": "Alex",
+				"time": 4
+			}
+		},
+		"nodeB": {
+			"type": "event",
+			"next": "nodeB2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Álex, Ana, que os den, sé que es cosa vuestra",
+				"key": "",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"nodeB2": {
+			"type": "event",
+			"next": "nodeB3",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "quiza lo sea, y q? ya tenemos fotos de la conversacion",
+				"key": "Ana",
+				"time": 2
+			}
+		},
+		"nodeB3": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "mañana sabra todo el mundo tus gustos jajaja",
+				"key": "Alex",
+				"time": 2
+			}
+		},
+		"nodeC": {
+			"type": "event",
+			"next": "nodeC2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Como oís, me encanta, algún problema? ENVIDIOSOS!!",
+				"key": "",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"nodeC2": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "mañana sabra todo el mundo tus gustos jajaja",
+				"key": "Alex",
+				"time": 2
+			}
+		}
+	}
 }
