@@ -26,6 +26,10 @@ public class GlobalStateTest : MonoBehaviour {
 	public int guillermoQuest;
 	public int joseQuest;
 	public int alejandroQuest;
+	public int gumQuest;
+	public int boardQuest;
+	public int parentsMeetingQuest;
+	public int sharedPassQuest;
 
 	// Use this for initialization
 	void Awake () {
@@ -51,6 +55,11 @@ public class GlobalStateTest : MonoBehaviour {
 		GlobalState.GuillermoQuest = this.guillermoQuest;
 		GlobalState.JoseQuest = this.joseQuest;
 		GlobalState.AlejandroQuest = this.alejandroQuest;
+
+		GlobalState.GumQuest = this.gumQuest;
+		GlobalState.BoardQuest = this.boardQuest;
+		GlobalState.ParentsMeetingQuest = this.parentsMeetingQuest; 
+		GlobalState.SharedPassQuest = this.sharedPassQuest;
 
 		Debug.LogWarning("FIN INIT GLOBAL STATE");
 		/*
