@@ -161,7 +161,7 @@
 			"event": {
 				"name": "change scene",
 				"var": "scene",
-				"value": 18
+				"value": 19
 			}
 		},
 		"dialogNode": {

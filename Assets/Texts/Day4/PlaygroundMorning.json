@@ -2,7 +2,7 @@
 	"alison":{
 		"root": {
 			"type": "dialog",
-			"next": "node1",
+			"next": "options",
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",

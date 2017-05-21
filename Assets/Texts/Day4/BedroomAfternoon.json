@@ -23,7 +23,7 @@
 			"event": {
 				"name": "change scene",
 				"var": "scene",
-				"value": 7,
+				"value": 22,
 				"time": 3
 			}
 		}		

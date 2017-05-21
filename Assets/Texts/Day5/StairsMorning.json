@@ -1,0 +1,83 @@
+{
+	"jose":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "true"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Jajaja..."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Te tengo que dar las gracias, Álex se metía conmigo por pesar un poco de más..."
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Hasta que tú llegaste, me alegro mucho de que estés aquí <$ if(varObject('global', 'MaleSexNonStatic')==true, 'pequeño', 'pequeña') $> gremlin."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		}
+	},
+	"principalNote":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Nota",
+				"msn": "Despacho del Director"
+			}]
+		}
+	},
+	"principalDoor":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Parece que no hay nadie dentro"
+			}]
+		}
+	},
+	"stairsToCorridor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"stairsToPlayground": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Debería ir directo a clase"
+			}]
+		}
+	}
+}

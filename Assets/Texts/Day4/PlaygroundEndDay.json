@@ -55,7 +55,7 @@
 			"event": {
 				"name": "change scene",
 				"var": "scene",
-				"value": 6
+				"value": 21
 			}
 		},
 		"changeHour": {

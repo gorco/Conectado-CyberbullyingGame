@@ -24,7 +24,7 @@ public class WakeUpManager : MonoBehaviour {
 
 	public GameObject introText;
 
-	public int[] scenesPerDay = {3, 8, 13, 18, 3 };
+	public int[] scenesPerDay = {3, 8, 13, 18, 23 };
 
 	private GlobalState g;
 	/// <summary>
@@ -48,8 +48,8 @@ public class WakeUpManager : MonoBehaviour {
 				introText.SetActive(true);
 				offset = introTime;
 			}
-			GlobalState.Hour = 7;
-			GlobalState.Minute = 30;
+				GlobalState.Hour = 7;
+				GlobalState.Minute = 30;
 		} else {
 			introText.SetActive(false);
 		}

@@ -1,0 +1,34 @@
+{
+	"schoolEnter": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Ya no tengo más clases por hoy y no queda nadie"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Será mejor que me vaya a casa"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 16
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "15:00",
+			}
+		}
+	}
+}

@@ -1,0 +1,101 @@
+﻿{
+	"init":{
+		"root":{
+			"type": "dialog",
+			"next": "lightOff",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'mmm, ¿pasa algo Alex? ¿por qué no entras?', '¿Ana, estás aquí?') $>"
+			}]
+		},
+		"lightOff": {
+			"type": "event",
+			"next": "lightOn",
+			"event": {
+				"name": "active object",
+				"time": "3",
+			}
+		},
+		"lightOn": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": "30",
+			}
+		},
+	},
+	"bathroomExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "¿Qué está pasando? La puerta no se abre."
+			},
+			{
+				"tag": "Tú",
+				"msn": "¿Me han encerrado en el baño? ANA!!! ALEX!! ALGUIEN!!"
+			},
+			{
+				"tag": "Tú",
+				"msn": "¿Qué hago ahora? Tengo que conseguir salir de aquí"
+			}]
+		}
+	},
+	"light" : {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "La luz. ¿En serio?"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Tengo que salir de aquí"
+			}]
+		}
+	},
+	"door": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Este es el picaporte de la puerta, pero no se abre."
+			},
+			{
+				"tag": "Tú",
+				"msn": "¿Me han encerrado en el baño? ANA!!! ALEX!! ALGUIEN!!"
+			}]
+		}
+	},
+	"sinks": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Agh!! Me acabo de dar con los lavabos. MIERDAS!!"
+			}]
+		}
+	},
+	"floor": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Está mojado... pero esto es el suelo"
+			},
+			{
+				"tag": "Tú",
+				"msn": "PUAJ!! por favor, que no sea pis"
+			}]
+		}
+	},
+	"onAgain": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "La luz ha vuelto!! y se oye algo en el pasillo, debería poder salir ya."
+			}]
+		}
+	},
+}

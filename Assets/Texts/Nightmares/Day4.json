@@ -38,10 +38,10 @@
 				"tag": "Voz desde el portal",
 				"msn": "Ven, yo te ayudaré"
 			}, {
-				"tag": "Sombra",
+				"tag": "Voz desde el portal",
 				"msn": "Atraviesa el portal"
 			}, {
-				"tag": "Sombra",
+				"tag": "Voz desde el portal",
 				"msn": "Corre, antes de que despiertes"
 			}]
 		}
@@ -51,7 +51,11 @@
 			"type": "options",
 			"options": [{
 				"next": "node1",
-				"msn": "Pasar a través del portal"
+				"msn": "Cruzar el portal"
+			},
+			{
+				"next": "node2",
+				"msn": "No, esta vez no"
 			}]
 		},
 		"node1": {
@@ -59,13 +63,28 @@
 			"next": "variable",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Pasaré"
+				"msn": "No sé si esto está bien, no quiero repetir más días malos."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Me fiaré de la voz extraña... sí... voy a cruzar."
+			}]
+		},
+		"node2":{
+			"type": "dialog",
+			"next": "variable2",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No voy a cruzar si no me dices qúién eres."
+			}, {
+				"tag": "Voz desde el portal",
+				"msn": "No puedo, tienes que confiar en mí, te estoy dando la oportunidad de cambiar las cosas."
 			}, {
 				"tag": "Tú",
-				"msn": "Da un poco de miedo"
+				"msn": "¿Cambiar qué?"
 			}, {
-				"tag": "Tú",
-				"msn": "Pero es sólo un sueño"
+				"tag": "Voz desde el portal",
+				"msn": "Noooo!, se acaba el tiempo, estás  apunto de despertar... es tarde... te deseo suerte."
 			}]
 		},
 		"variable": {
@@ -104,6 +123,40 @@
 			}
 		},
 		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		},
+		"variable2": {
+			"type": "event",
+			"next": "changeHour2",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 4,
+			}
+		},
+		"changeHour2": {
+			"type": "event",
+			"next" : "saveMobile2",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile2": {
+			"type": "event",
+			"next": "nextScene2",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene2": {
 			"type": "event",
 			"event": {
 				"name": "change scene",
@@ -150,11 +203,20 @@
 		},
 		"variable": {
 			"type": "event",
-			"next": "changeHour",
+			"next": "repeatDay",
 			"event": {
 				"name": "change variable",
 				"var": "Day",
 				"value": 4,
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false,
 			}
 		},
 		"changeHour": {

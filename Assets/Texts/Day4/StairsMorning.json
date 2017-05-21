@@ -14,8 +14,8 @@
 		"nodeRepeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Llegarás tarde a clase si no te vas ya."
 			}]
 		},
@@ -34,13 +34,13 @@
 			"type": "dialog",
 			"next": "friendOptions",
 			"fragments": [{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Buenos días <$ varObject('global', 'UserNameNonStatic') $>"
 			},
 			{
 				"tag": "Tú",
-				"msn": "Hola, Alison"
+				"msn": "Hola, María"
 			}]
 		},
 		"friendOptions": {
@@ -55,7 +55,7 @@
 				"msn": "¿Me hablas?"
 			},
 			{
-				"next": "friends2c",
+				"next": "friends2b",
 				"msn": "Tengo prisa, ya ha sonado el timbre. Hablamos luego."
 			}]
 		},
@@ -63,28 +63,28 @@
 			"type": "dialog",
 			"next": "friendOptions",
 			"fragments": [{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Supongo que lo dices por Álex."
 			},
 			{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Ana hizo algo parecido el año pasado para putearme."
 			},
 			{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Deberías hablar con tus padres o nuestro tutor."
 			},
 			{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Yo no lo hice cuando tuve la oportunidad, mis padres se enteraron cuando me obligaron a ir a un psicólogo."
 			},
 			{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Si necesitas que te acompañe para hablar con el profe puedes decirmelo. Pero no te quedes <$ if(varObject('global', 'MaleSexNonStatic')==true, 'callado', 'callada') $>"
 			},
 			{
@@ -96,18 +96,18 @@
 			"type": "dialog",
 			"next": "friendOptions",
 			"fragments": [{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Sí, estoy bien, gracias por preguntar."
 			},
 			{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Ayer me encontraba en casa con fiebre y me quedé descansado."
 			},
 			{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Hoy ya estoy como nueva."
 			}]
 		},
@@ -116,11 +116,11 @@
 			"next": "normalOptions",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Buenas, Alison"
+				"msn": "Buenas, Maria"
 			},
 			{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Hola, <$ varObject('global', 'UserNameNonStatic') $>, ¿Quieres algo?"
 			}]
 		},
@@ -139,8 +139,8 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "¿Por qué no lo iba a hacer?"
 			},
 			{
@@ -148,18 +148,18 @@
 				"msn": "¿No has hablado con Álex?"
 			},
 			{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Sí, lo de que nadie te dirija la palabra..."
 			},
 			{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "A mi ya me hicieron la vida imposible entre todos el año pasado, aprendí la lección."
 			},
 			{
-				"tag": "Alison",
-				"character": "Alison",
+				"tag": "María",
+				"character": "Maria",
 				"msn": "Lo mejor será que hables con tus padres o con tu tutor y no hagas caso a Alex ni a ´ninguno de sus perritos falderos."
 			}]
 		},

@@ -54,7 +54,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "La campana del que marca el recreo ha sonado..."
+				"value": "La campana que marca el recreo ha sonado..."
 			}
 		},
 		"breakHour": {
@@ -128,7 +128,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "La campana del que marca el recreo ha sonado..."
+				"value": "Cada vez se te hacen más largas las horas de clase. Por suerte ya es hora de volver a casa"
 			}
 		},
 		"changeHour": {
@@ -145,7 +145,7 @@
 			"event": {
 				"name": "change scene",
 				"var": "scene",
-				"value": 15
+				"value": 20
 			}
 		}
 	},

@@ -86,13 +86,14 @@ public class Mobile : MonoBehaviour {
 
 	internal void stopAlarm(bool delayed)
 	{
-		if (!delayed || GlobalState.Hour < 8)
+		if (GlobalState.Day != 5 && !delayed || GlobalState.Hour < 8)
 		{
 			this.delayed = delayed;
 			sound = false;
 			wakeUpPanel.SetActive(false);
 		} else
 		{
+			wakeUpPanel.GetComponent<Text>().text = "Eres incapaz de volver a dormirte. Mejor que te levantes ya";
 			wakeUpPanel.SetActive(true);
 		}
 	}

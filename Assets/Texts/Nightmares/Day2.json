@@ -150,11 +150,20 @@
 		},
 		"variable": {
 			"type": "event",
-			"next": "changeHour",
+			"next": "repeatDay",
 			"event": {
 				"name": "change variable",
 				"var": "Day",
 				"value": 2,
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false,
 			}
 		},
 		"changeHour": {

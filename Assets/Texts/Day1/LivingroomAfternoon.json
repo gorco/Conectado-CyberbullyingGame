@@ -609,7 +609,7 @@
 				"condition": "repeated == true"
 			},
 			{
-				"next": "guilleFriend",
+				"next": "setter",
 				"condition": "true"
 			}]
 		},
@@ -627,6 +627,14 @@
 				"name": "change variable",
 				"var": "hour",
 				"value": "21:30",
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"next": "guilleFriend",
+			"set": {
+				"var": "repeated",
+				"value": true
 			}
 		},
 		"guilleFriend" : {
