@@ -8,7 +8,10 @@ public class SettingsApp : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		confirmExitPanel.SetActive(false);
+		if (confirmExitPanel)
+		{
+			confirmExitPanel.SetActive(false);
+		}
 	}
 	
 	// Update is called once per frame

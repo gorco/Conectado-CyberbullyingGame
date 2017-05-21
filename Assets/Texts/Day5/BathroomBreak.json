@@ -13,14 +13,14 @@
 			"next": "lightOn",
 			"event": {
 				"name": "active object",
-				"time": "3",
+				"time": 3,
 			}
 		},
 		"lightOn": {
 			"type": "event",
 			"event": {
 				"name": "deactive object",
-				"time": "30",
+				"time": 30,
 			}
 		},
 	},
@@ -359,7 +359,7 @@
 				"msn": "Vete a casa y descansa."
 			}]
 		},
-		"noMariaAndMeeting": {
+		"noMariaAndNoMeeting": {
 			"type": "dialog",
 			"next": "final2",
 			"fragments": [
@@ -419,7 +419,7 @@
 				"msn": "Si es lo que está pasando pidenos ayuda o las cosas seguirán igual."
 			}]
 		},
-		"parentsNoMeetingNoFS": {
+		"parentsNoMeetingFS": {
 			"type": "options",
 			"options": [{
 				"next": "tattle",

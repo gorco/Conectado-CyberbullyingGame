@@ -187,7 +187,6 @@
 		},
 		"changeHour": {
 			"type": "event",
-			"next": "nodeRepeat",
 			"event":{
 				"name": "change variable",
 				"var": "hour",

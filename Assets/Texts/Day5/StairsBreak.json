@@ -23,7 +23,7 @@
 				"value": true,
 			}
 		},
-		"root": {
+		"node2a": {
 			"type": "event",
 			"next": "moveEvent",
 			"event": {

@@ -89,7 +89,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Ha sido un día aburrido, las clases han terminado y la mayoria lleva ignorandote todo el día. Una notita de papel en tu mesa dice que alguien te espera en los baños"
+				"value": "Otro día más dónde todos cuchichean a tus espaldas, es hora de irse a casa."
 			}
 		},
 		"changeHour": {
@@ -106,7 +106,7 @@
 			"event": {
 				"name": "change scene",
 				"var": "scene",
-				"value": 15
+				"value": 25
 			}
 		}
 	}

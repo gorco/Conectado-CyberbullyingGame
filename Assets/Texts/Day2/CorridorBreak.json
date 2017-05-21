@@ -7,6 +7,10 @@
 				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
 			},
 			{
+				"next": "whased",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
 				"next": "node0",
 				"condition": "true"
 			}]
@@ -16,7 +20,7 @@
 			"fragments": [{
 				"tag": "Maria",
 				"character": "Maria",
-				"msn": "Está leyendo, como siempre, mejor no la molesto"
+				"msn": "Está leyendo, como siempre, mejor no la molesto."
 			}]
 		},
 		"node0": {
@@ -24,12 +28,25 @@
 			"fragments": [{
 				"tag": "Maria",
 				"character": "Maria",
-				"msn": "No se si te has fijado, pero llevas un chicle pegado en el culo"
+				"msn": "No se si te has fijado, pero llevas un chicle pegado en el culo."
 			},
 			{
 				"tag": "Maria",
 				"character": "Maria",
-				"msn": "Puedes pasar por el baño a verlo en el espejo"
+				"msn": "Puedes pasar por el baño a verlo en el espejo."
+			}]
+		},
+		"whased": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Maria",
+				"character": "Maria",
+				"msn": "¿Qué has hecho? menuda mancha."
+			},
+			{
+				"tag": "Maria",
+				"character": "Maria",
+				"msn": "pfff, parece que te hayas meado encima, o incluso cagado."
 			}]
 		}
 	},

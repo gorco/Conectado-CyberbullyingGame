@@ -60,7 +60,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "earing",
-				"value": "<$ if($MaleSex == true, 'El nuevo chico', 'La nueva chica') $> de clase lo ha encontrado y me lo ha devuelto. Muchisimas gracias $UserName",
+				"value": " <$ if(varObject('global', 'MaleSexNonStatic')==true, 'El nuevo chico', 'La nueva chica') $> de clase lo ha encontrado y me lo ha devuelto. Muchisimas gracias $UserName",
 				"key": "Alison",
 				"other" : "earingFounded",
 				"time": 0.5

@@ -1,10 +1,14 @@
 {
-	"anaGroup":{
+	"anaGroup": {
 		"root": {
 			"type": "fork",
 			"options": [{
 				"next": "nodeNoGum",
 				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			},
+			{
+				"next": "nodeWhashed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
 			},
 			{
 				"next": "nodeInit",
@@ -85,6 +89,29 @@
 				"tag": "Jose",
 				"character": "Jose",
 				"msn": "Debería tirarla a la basura directamente"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Jajajaja"
+			}]
+		},
+		"nodeWhashed": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Jajaja, ¿te has meado encima?"
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Jajajaja, no, no, mira bien, se ha cagado."
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "¿LLevas el móvil, Ana? Foto!!"
 			},
 			{
 				"tag": "Ana",

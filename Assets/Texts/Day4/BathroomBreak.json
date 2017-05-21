@@ -9,7 +9,7 @@
 		}
 	},
 	"mobile":{
-		"node1": {
+		"root": {
 			"type": "dialog",
 			"next": "node2",
 			"fragments": [
@@ -27,7 +27,6 @@
 		},
 		"node2": {
 			"type": "event",
-			"next": "initMobile",
 			"event": {
 				"name": "pick",
 				"var": "SharedPassQuest",

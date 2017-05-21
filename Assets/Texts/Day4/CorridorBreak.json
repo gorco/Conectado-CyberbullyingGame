@@ -3,7 +3,7 @@
 		"root" : {
 			"type": "fork",
 			"options": [{
-				"next": "joke",
+				"next": "jokeOtions",
 				"condition": "varObject('state', 'MariaJoke') == 1"
 			},
 			{
@@ -13,7 +13,6 @@
 		},
 		"node0": {
 			"type": "dialog",
-			"next": "node1",
 			"fragments": [{
 				"tag": "Tú",
 				"msn": "¿Has visto mi móvil?"

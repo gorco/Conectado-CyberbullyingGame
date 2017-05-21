@@ -62,7 +62,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Clase",
-				"value": "Cuando pueda lo miro, ahora mismo estoy ocupado",
+				"value": "Cuando pueda lo miro, ahora mismo estoy <$ if($MaleSex == true, 'ocupado', 'ocupada') $>",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -184,7 +184,7 @@
 			},
 			{
 				"next": "messageB",
-				"msn": "Espero que Jorge tenga más cerebro"
+				"msn": "Espero que Jose tenga más cerebro"
 			},
 			{
 				"next": "messageC",

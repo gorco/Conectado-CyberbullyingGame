@@ -9,10 +9,6 @@
 			{
 				"next": "found",
 				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
-			},
-			{
-				"next": "lost",
-				"condition": "true"
 			}]
 		},
 		"repeat": {
@@ -42,7 +38,7 @@
 			},
 			{
 				"next": "setter",
-				"msn": "Supongo que no me váis a contestar... paso de preguntaros nada",
+				"msn": "Supongo que no me váis a hablar... paso de deciros nada.",
 			}]
 		},
 		"node1a": {

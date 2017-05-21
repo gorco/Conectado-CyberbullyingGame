@@ -382,13 +382,24 @@
 		},
 		"message4": {
 			"type": "event",
-			"next": "message5",
+			"next": "message4v2",
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
 				"value": "Aire, k es lo k producen sus orejas en movimiento jaajaj",
 				"key": "Alex",
 				"time": 1.6
+			}
+		},
+		"message4v2": {
+			"type": "event",
+			"next": "message5",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "jajaj, Alex, viento, no aire",
+				"key": "Ana",
+				"time": 1.7
 			}
 		},
 		"message5": {
