@@ -90,6 +90,9 @@ public class GlobalState
 	public static int SharedPassQuest { get; set; }
 	// Day4 -> Alison [0 - no shared pass (mobile lost)] [1 - shared pass] [2 - no shared pass (mobile found)]
 
+	public static int Final { get; set; }
+	// [1 - bad end, alex win] [2 - normal end, advise] [3 - good end, bye Alex]
+
 	protected static GlobalState instance;
 	public static GlobalState Instance {  get { return instance == null ? instance = new GlobalState() : instance; } }
 
@@ -202,6 +205,11 @@ public class GlobalState
 	public int SharedPassQuestNonStatic
 	{
 		get { return SharedPassQuest; }
+	}
+
+	public int FinalNonStatic
+	{
+		get { return Final; }
 	}
 
 	// SocialNet

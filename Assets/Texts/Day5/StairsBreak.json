@@ -1,37 +1,41 @@
 {
-	"principalNote":{
+	"alex": {
 		"root": {
 			"type": "dialog",
+			"next": "changeVar",
 			"fragments": [{
-				"tag": "Nota",
-				"msn": "Despacho del Director"
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "¿De verdad? No me digas que te ibas a ir sin pasar por el baño."
+			},
+			{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "Piensa que es para arreglar todo, vamos... voy contigo."
 			}]
-		}
-	},
-	"principalDoor":{
-		"root": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Tú",
-				"msn": "Parece que no hay nadie dentro"
-			}]
-		}
-	},
-	"stairsToCorridor": {
+		},
+		"changeVar": {
+			"type": "event",
+			"next": "node2a",
+			"event": {
+				"name": "change variable",
+				"var": "Alex",
+				"value": true,
+			}
+		},
 		"root": {
 			"type": "event",
+			"next": "moveEvent",
 			"event": {
 				"name": "move camera",
 				"key": "corridor"
 			}
-		}
-	},
-	"stairsToPlayground": {
-		"root": {
+		},
+		"moveEvent": {
 			"type": "event",
 			"event": {
-				"name": "move camera",
-				"key": "endDay"
+				"name": "little move",
+				"key": "alejandro"
 			}
 		}
 	}
