@@ -18,7 +18,13 @@ public class SettingsApp : MonoBehaviour {
 
 	public void ExitButton()
 	{
-		confirmExitPanel.SetActive(true);
+		if (confirmExitPanel)
+		{
+			confirmExitPanel.SetActive(true);
+		} else
+		{
+			System.Diagnostics.Process.GetCurrentProcess().Kill();
+		}
 	}
 
 	public void ExitGameConfirmed()

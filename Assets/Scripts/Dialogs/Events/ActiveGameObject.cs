@@ -33,7 +33,7 @@ public class ActiveGameObject : EventManager
 	{
 		yield return new WaitForSeconds(time);
 
-		if (gObj == null)
+		if (gObj != null)
 		{
 			gObj.SetActive(true);
 		}

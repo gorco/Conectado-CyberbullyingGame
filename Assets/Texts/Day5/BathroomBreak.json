@@ -524,7 +524,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Vuelves a casa y hoy te duermes pronto. Como todos los días, es la hora de tu sueño"
+				"value": "Vuelves a casa y hoy te duermes pronto. Como todos los días, es la hora de tu sueño..."
 			}
 		},
 		"changeScene": {

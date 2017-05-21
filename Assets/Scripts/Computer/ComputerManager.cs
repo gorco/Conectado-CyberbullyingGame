@@ -16,6 +16,9 @@ public class ComputerManager : EventManager {
 	public GameObject friendsView;
 
 	public Text publicUserName;
+	public Image userAvatar;
+	public Sprite avatarM;
+	public Sprite avatarH;
 
 	public Text userInput;
 	public Text passInput;
@@ -225,12 +228,10 @@ public class ComputerManager : EventManager {
 		if (pass == "")
 		{
 			noteUser.text = GlobalState.UserName.ToLower();
-			string sub1 = noteUser.text.Substring(0, GlobalState.UserName.Length / 2);
-			string sub2 = noteUser.text.Substring(GlobalState.UserName.Length / 2, GlobalState.UserName.Length / 2);
-			pass = sub1 + Guid.NewGuid().ToString().Replace("-", string.Empty).Substring(0, 3).ToLower() + sub2;
-			notePass.text = pass;
+			notePass.text = GlobalState.UserPass;
 
 			publicUserName.text = GlobalState.UserName;
+			userAvatar.sprite = GlobalState.MaleSex ? avatarH : avatarM;
 		}
 		ShowLogin();
 		screen.SetActive(true);
@@ -241,14 +242,14 @@ public class ComputerManager : EventManager {
 	{
 		userInput.text = "";
 		passInput.text = "";
-		if (userInput.text.ToLower() == GlobalState.UserName.ToLower() && passInput.text == pass)
+		if (userInput.text.ToLower() == GlobalState.UserName.ToLower() && passInput.text == GlobalState.UserPass)
 		{
 			error.SetActive(false);
 			ShowPhotos();
 		} else
 		{
 			error.SetActive(true);
-			Debug.LogWarning("user " + GlobalState.UserName.ToLower() + " and pass " + pass);
+			Debug.LogWarning("user " + GlobalState.UserName.ToLower() + " and pass " + GlobalState.UserPass);
 		}
 	}
 

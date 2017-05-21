@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 1ef49910260e8b84091058f7f9d5502e
+timeCreated: 1495388700
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: AUdimat
+  fontNames:
+  - AUdimat
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class StartGameAndSetUserInfo : MonoBehaviour {
 
 	public UnityEngine.UI.InputField userName;
+	public UnityEngine.UI.InputField userPass;
 	public UnityEngine.UI.Toggle male;
 	public UnityEngine.UI.Toggle female;
 
@@ -30,7 +31,14 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 			return;
 		}
 
-		if(!male.isOn && !female.isOn)
+		if (userPass.text == "")
+		{
+			error.text = "Hace falta una contraseña";
+			error.enabled = true;
+			return;
+		}
+
+		if (!male.isOn && !female.isOn)
 		{
 			error.text = "Hace falta que selecciones tu género";
 			error.enabled = true;
@@ -46,6 +54,7 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 
 		//Save data
 		GlobalState.UserName = userName.text;
+		GlobalState.UserPass = userPass.text;
 		GlobalState.MaleSex = male.isOn;
 
 		//Friendship
