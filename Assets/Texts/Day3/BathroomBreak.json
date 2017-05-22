@@ -16,7 +16,7 @@
 				"condition": "spoken == true"
 			},
 			{
-				"next": "sexFork",
+				"next": "setter",
 				"condition": "true"
 			}]
 		},
@@ -30,6 +30,7 @@
 		}, 
 		"setter":{
 			"type": "setter",
+			"next": "sexFork",
 			"set": {
 				"var": "spoken",
 				"value": true

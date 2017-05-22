@@ -1,16 +1,40 @@
 {
 	"ana":{
 		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "earingFound",
+				"condition": "varObject('state', 'EaringFound') == true"
+			},
+			{
+				"next": "node1",
+				"condition": "true"
+			}]
+		},
+		"earingFound": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Hay algo raro cerca de la canasta"
+				"msn": "Parece que has encontrado el pendiente de Alison."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Veo algo brillar desde aquí"
+				"msn": "Veo algo brillar desde aquí."
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Hay algo raro cerca de la canasta."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Veo algo brillar desde aquí."
 			}]
 		}
 	},
@@ -20,12 +44,12 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Nuestro tutor es bastante majo"
+				"msn": "Nuestro tutor es bastante majo."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Si tienes cualquier problema habla con él"
+				"msn": "Si tienes cualquier problema habla con él."
 			}]
 		}
 	},
@@ -35,11 +59,11 @@
 			"next": "take",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Parece que es el pendiente de Alison"
+				"msn": "Parece que es el pendiente de Alison."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Será mejor que me lo lleve"
+				"msn": "Será mejor que me lo lleve."
 			}]
 		},
 		"take": {

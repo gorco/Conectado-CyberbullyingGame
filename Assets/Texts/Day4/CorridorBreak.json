@@ -2,16 +2,44 @@
 	"maria":{
 		"root" : {
 			"type": "fork",
-			"options": [{
+			"options": [
+			{
 				"next": "jokeOtions",
 				"condition": "varObject('state', 'MariaJoke') == 1"
+			},
+			{
+				"next": "mobileFound",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "mobileLost",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
 			},
 			{
 				"next": "node0",
 				"condition": "true"
 			}]
 		},
+		"mobileFound": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "¿Has visto si ha entrado alguien a los baños recientemente?"
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "No me he fijado, lo siento."
+			}]
+		},
 		"node0": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No tengo nada que decirle"
+			}]
+		},
+		"mobileLost": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",

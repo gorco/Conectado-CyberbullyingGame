@@ -353,7 +353,7 @@
 			"event": {
 				"name": "computer publication",
 				"var": "insult",
-				"value": "Buscando un mote",
+				"value": "Buscando un mote para <$ varObject('global', 'UserNameNonStatic') $>",
 				"key": "Jose",
 				"time": 1
 			}

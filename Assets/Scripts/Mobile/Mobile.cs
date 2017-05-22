@@ -93,7 +93,7 @@ public class Mobile : MonoBehaviour {
 			wakeUpPanel.SetActive(false);
 		} else
 		{
-			wakeUpPanel.GetComponent<Text>().text = "Eres incapaz de volver a dormirte. Mejor que te levantes ya";
+			wakeUpPanel.GetComponentInChildren<Text>().text = "Eres incapaz de volver a dormirte. Mejor que te levantes ya";
 			wakeUpPanel.SetActive(true);
 		}
 	}

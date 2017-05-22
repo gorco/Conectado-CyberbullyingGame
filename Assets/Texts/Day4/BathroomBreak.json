@@ -1,4 +1,4 @@
-{
+ï»¿{
 	"bathroomExit": {
 		"root": {
 			"type": "event",
@@ -14,15 +14,15 @@
 			"next": "node2",
 			"fragments": [
 			{
-				"tag": "Tú",
-				"msn": "Es mi móvil"
+				"tag": "TÃº",
+				"msn": "Es mi mÃ³vil."
 			},{
-				"tag": "Tú",
-				"msn": "¿Quién me lo ha quitado y lo ha dejado en el baño de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'chicas', 'chicos') $>?"
+				"tag": "TÃº",
+				"msn": "Â¿QuiÃ©n me lo ha quitado y lo ha dejado en el baÃ±o de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'chicas', 'chicos') $>?"
 			},
 			{
-				"tag": "Tú",
-				"msn": "Mierda, encima no enciende, espero que sea cosa de la batería. En cuanto llegue a casa le cambio la batería"
+				"tag": "TÃº",
+				"msn": "Mierda, encima no enciende, espero que sea cosa de la baterÃ­a. En cuanto llegue a casa se la cambio."
 			}]
 		},
 		"node2": {

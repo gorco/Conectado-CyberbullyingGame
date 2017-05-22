@@ -5,16 +5,18 @@
 			"next": "fade",
 			"fragments": [{
 				"tag": "Sombra",
+				"character": "Shadow",
 				"msn": "Tu primer día de clase ¿Por qué no te sientas?"
 			}, {
 				"tag": "Sombra",
+				"character": "Shadow",
 				"msn": "Escoge el sitio que más te guste"
 			}]
 		},
 		"fade": {
 			"type": "event",
 			"event": {
-				"name": "fade out",
+				"name": "little move",
 				"key": "shadow"
 			}
 		}
@@ -25,16 +27,20 @@
 			"next": "variable",
 			"fragments": [{
 				"tag": "Sombra",
+				"character": "Shadow",
 				"msn": "Me parece que te has quedado sin sitio"
 			}, {
 				"tag": "Sombra",
+				"character": "Shadow",
 				"msn": "¿Ni siquiera sabes sentarte?"
 			}, {
 				"tag": "Sombra",
+				"character": "Shadow",
 				"msn": "¿Acaso no sirves para nada?"
 			},
 			{
 				"tag": "Sombra",
+				"character": "Shadow",
 				"msn": "¿Como esperas hacer así amigos?"
 			}]
 		},
@@ -78,14 +84,17 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Sombra",
+				"character": "Shadow",
 				"msn": "Veo que has encontrado un sitio, pero... "
 			},
 			{
 				"tag": "Sombra",
+				"character": "Shadow",
 				"msn": "Ese sitio es mio, tendrás que escoger otro"
 			},
 			{
 				"tag": "Sombra",
+				"character": "Shadow",
 				"msn": "Puedes sentarte donde quieras menos ahí"
 			}]
 		}
