@@ -15,7 +15,6 @@ public class Nightmare2Manager : NightmareManager
 	// Use this for initialization
 	void Start()
 	{
-		InitMobileGUI.InitMobileGUIObject(false);
 		if (GlobalState.Repeated)
 		{
 			showPortal = false;
@@ -24,6 +23,7 @@ public class Nightmare2Manager : NightmareManager
 		{
 			showPortal = true;
 		}
+		InitMobileGUI.InitMobileGUIObject(false);
 	}
 	
 	// Update is called once per frame

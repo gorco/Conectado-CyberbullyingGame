@@ -1,5 +1,5 @@
 {
-	"AlexAndAna": {
+	"alexAndAna": {
 		"root": {
 			"type": "fork",
 			"options": [{
@@ -19,11 +19,15 @@
 				"condition": "varObject('state', 'MariaJoke') > 1 && varObject('state', 'TimeEnough') == false"
 			},
 			{
-				"next": "found",
+				"next": "lost",
 				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
 			},
 			{
 				"next": "lost",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "repeat",
 				"condition": "true"
 			}]
 		},
@@ -77,14 +81,16 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Álex",
+				"character": "Alex",
 				"msn": "Jajajaja"
 			},
 			{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "Jajajaja"
 			}]
 		},
-		"found": {
+		"lost": {
 			"type": "options",
 			"options": [{
 				"next": "node1a",
