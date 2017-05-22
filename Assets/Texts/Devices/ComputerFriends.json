@@ -8,6 +8,7 @@
 				"var": "earing",
 				"value": "Mis nuevos pendientes, I<3U :)",
 				"key": "Alison",
+				"other": "photoEaring",
 				"time": 0 
 			}
 		},
@@ -106,6 +107,7 @@
 				"var": "match",
 				"value": "Viendo el partido",
 				"key": "Guillermo",
+				"other": "photoMatch",
 				"time": 0 
 			}
 		},

@@ -95,6 +95,6 @@ public class ComputerPublication : EventManager
 			}
 		}
 
-		computer.NewPublication(author, message, key);
+		computer.NewPublication(author, message, key, other);
 	}
 }

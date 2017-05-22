@@ -134,14 +134,45 @@
 			}]
 		},
 		"gum": {
+			"type": "event",
+			"next": "gumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGum"
+			}
+		},
+		"gumDialog": {
 			"type": "dialog",
+			"next": "deactive",
 			"fragments": [{
 				"tag": "Tú",
 				"msn": "Hay una foto de mí, y la han retocado para que parezca que cago chicles"
+			},
+			{
+				"tag": "Tú",
+				"msn": "¿Quién quiere ridiculizarme de esta manera?"
 			}]
 		},
+		"deactive": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 0
+			}
+		},
 		"washed": {
+			"type": "event",
+			"next": "washedDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGumWhased"
+			}
+		},
+		"washedDialog": {
 			"type": "dialog",
+			"next": "deactive",
 			"fragments": [{
 				"tag": "Tú",
 				"msn": "Hay una foto mía de ayer después de haberme quitado el chicle"
@@ -152,7 +183,17 @@
 			}]
 		},
 		"nogum": {
+			"type": "event",
+			"next": "nogumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoDog"
+			}
+		},
+		"nogumDialog": {
 			"type": "dialog",
+			"next": "deactive",
 			"fragments": [{
 				"tag": "Tú",
 				"msn": "Es una foto de mi cara sobre el cuerpo de un perro y con la lengua fuera"

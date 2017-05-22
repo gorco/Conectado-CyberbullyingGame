@@ -10,6 +10,7 @@ public class GlobalStateTest : MonoBehaviour {
 	public bool repeated;
 	public bool maleSex;
 	public string userName;
+	public string userPass;
 
 	// Frienship
 	public int mariaFS;
@@ -41,6 +42,7 @@ public class GlobalStateTest : MonoBehaviour {
 		GlobalState.Repeated = this.repeated;
 		GlobalState.MaleSex = this.maleSex;
 		GlobalState.UserName = this.userName;
+		GlobalState.UserPass = this.userPass;
 
 		GlobalState.MariaFS = this.mariaFS;
 		GlobalState.AlisonFS = this.alisonFS;

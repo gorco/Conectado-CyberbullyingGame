@@ -33,19 +33,20 @@ public class DeactiveGameObject : EventManager
 	{
 		yield return new WaitForSeconds(time);
 
-		if (gObj == null)
+		if (gObj != null)
 		{
 			gObj.SetActive(false);
+			ThrowDialog dialog = gObj.GetComponent<ThrowDialog>();
+			if (dialog != null)
+			{
+				dialog.ThrowDialogNow();
+			}
 		}
 		foreach (GameObject g in secundaryObjects)
 		{
 			g.SetActive(false);
 		}
 
-		ThrowDialog dialog = gObj.GetComponent<ThrowDialog>();
-		if (dialog != null)
-		{
-			dialog.ThrowDialogNow();
-		}
+		
 	}
 }

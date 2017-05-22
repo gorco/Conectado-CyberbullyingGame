@@ -10,6 +10,7 @@ public class Publication : MonoBehaviour {
 	public Text comment;
 	public Text likesText;
 	public Text commentsNumber;
+	public Image photo;
 
 	private float commentN;
 
@@ -57,6 +58,11 @@ public class Publication : MonoBehaviour {
 	{
 		this.author.text = author;
 		this.comment.text = comment;
+	}
+
+	public void SetPhoto(string photoName)
+	{
+		this.photo.sprite = Resources.Load<Sprite>(photoName);
 	}
 
 	public void AddComment(string from, string text)

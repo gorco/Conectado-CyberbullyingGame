@@ -19,7 +19,7 @@
 				"var": "troll",
 				"value": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Este', 'Esta') $> soy yo, llamadme al 543-654-54-31",
 				"key": "Tú",
-				"other": "empty",
+				"other": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'photoNumberBoy', 'photoNumberGirl') $>",
 				"time": 0 
 			}
 		},

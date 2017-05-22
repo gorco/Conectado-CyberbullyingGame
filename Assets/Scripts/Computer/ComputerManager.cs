@@ -150,7 +150,7 @@ public class ComputerManager : EventManager {
 		friends.Add(sc);
 	}
 
-	public void NewPublication(string author, string title, string key)
+	public void NewPublication(string author, string title, string key, string photoPath = "")
 	{
 		bool auth = false;
 		foreach(SocialFriend sc in friends)
@@ -179,6 +179,10 @@ public class ComputerManager : EventManager {
 		Publication pb = photo.GetComponent<Publication>();
 		pb.SetAuthorAndComment(author, title);
 		pb.SetKeyAndComputerManager(key, this);
+		if (photoPath != "")
+		{
+			pb.SetPhoto(photoPath);
+		}
 		photo.transform.localScale = new Vector3(1, 1, 1);
 		photosContent.sizeDelta = new Vector2(photosContent.sizeDelta.x, photosContent.sizeDelta.y + height + 50);
 

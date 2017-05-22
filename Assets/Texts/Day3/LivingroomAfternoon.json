@@ -355,6 +355,7 @@
 				"var": "insult",
 				"value": "Buscando un mote para <$ varObject('global', 'UserNameNonStatic') $>",
 				"key": "Jose",
+				"other": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'photoForeheadBoy', 'photoForeheadGirl') $>",
 				"time": 1
 			}
 		},

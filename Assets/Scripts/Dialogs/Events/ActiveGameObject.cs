@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ActiveGameObject : EventManager
 {
@@ -20,7 +21,10 @@ public class ActiveGameObject : EventManager
 			object timeObj = ev.getParameter(SequenceGenerator.EVENT_TIME_FIELD);
 			float time = timeObj != null ? (float)timeObj : 0;
 
-			StartCoroutine(ActiveObject(time));
+			object otherObj = ev.getParameter(SequenceGenerator.EVENT_OTHER_FIELD);
+			string other = otherObj != null ? otherObj.ToString().Replace("\"", "") : "";
+
+			StartCoroutine(ActiveObject(time, other));
 		}
 	}
 
@@ -29,23 +33,28 @@ public class ActiveGameObject : EventManager
 		//throw new NotImplementedException();
 	}
 
-	private IEnumerator ActiveObject(float time)
+	private IEnumerator ActiveObject(float time, string other)
 	{
 		yield return new WaitForSeconds(time);
 
 		if (gObj != null)
 		{
 			gObj.SetActive(true);
+			ThrowDialog dialog = gObj.GetComponent<ThrowDialog>();
+			if (dialog != null)
+			{
+				dialog.ThrowDialogNow();
+			}
 		}
 		foreach(GameObject g in secundaryObjects)
 		{
 			g.SetActive(true);
 		}
 
-		ThrowDialog dialog = gObj.GetComponent<ThrowDialog>();
-		if(dialog != null)
+		Image img = gObj.GetComponent<Image>();
+		if (img != null)
 		{
-			dialog.ThrowDialogNow();
+			img.sprite = Resources.Load<Sprite>(other);
 		}
 	}
 }
