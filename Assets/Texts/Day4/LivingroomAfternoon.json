@@ -8,7 +8,7 @@
 			},
 			{
 				"next": "socialMessages",
-				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') <= 1"
 			}]
 		},
 		"socialMessages" : {
@@ -317,17 +317,17 @@
 			{
 				"next": "mobile0",
 				"msn": "Hoy he perdido el móvil",
-				"condition": "page == 2 && aboutAlison == true && varObject('global', 'SharedPassQuestNonStatic') == 0"
+				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 0"
 			},
 			{
 				"next": "mobile1",
 				"msn": "Alison, puedo confiar en ella",
-				"condition": "page == 2 && aboutAlison == true && varObject('global', 'SharedPassQuestNonStatic') == 1"
+				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 1"
 			},
 			{
 				"next": "mobile2",
 				"msn": "Alguien me ha quitado el móvil",
-				"condition": "page == 2 && aboutAlison == true && varObject('global', 'SharedPassQuestNonStatic') == 2"
+				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 2"
 			},
 			{
 				"msn": "Me voy a la habitación, ya hemos hablado suficiente",

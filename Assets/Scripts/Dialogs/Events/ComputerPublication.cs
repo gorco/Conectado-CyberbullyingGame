@@ -87,14 +87,6 @@ public class ComputerPublication : EventManager
 	{
 		yield return new WaitForSeconds(time);
 
-		if (jsonObj)
-		{
-			if (other != "")
-			{
-				GenerateAndSetSequence(other, key);
-			}
-		}
-
 		computer.NewPublication(author, message, key, other);
 	}
 }

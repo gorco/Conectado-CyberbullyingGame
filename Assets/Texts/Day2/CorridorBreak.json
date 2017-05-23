@@ -18,7 +18,7 @@
 		"nogum": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
 				"character": "Maria",
 				"msn": "Está leyendo, como siempre, mejor no la molesto."
 			}]
@@ -26,12 +26,12 @@
 		"node0": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
 				"character": "Maria",
-				"msn": "No se si te has fijado, pero llevas un chicle pegado en el culo."
+				"msn": "No sé si te has fijado, pero llevas un chicle pegado en el culo."
 			},
 			{
-				"tag": "Maria",
+				"tag": "María",
 				"character": "Maria",
 				"msn": "Puedes pasar por el baño a verlo en el espejo."
 			}]
@@ -39,12 +39,12 @@
 		"whased": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
 				"character": "Maria",
 				"msn": "¿Qué has hecho? menuda mancha."
 			},
 			{
-				"tag": "Maria",
+				"tag": "María",
 				"character": "Maria",
 				"msn": "pfff, parece que te hayas meado encima, o incluso cagado."
 			}]

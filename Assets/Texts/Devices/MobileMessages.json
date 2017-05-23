@@ -62,7 +62,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Clase",
-				"value": "Cuando pueda lo miro, ahora mismo estoy <$ if($MaleSex == true, 'ocupado', 'ocupada') $>",
+				"value": "Cuando pueda lo miro, ahora mismo estoy <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ocupado', 'ocupada') $>",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -77,6 +77,7 @@
 				"var": "Clase",
 				"value": "Gracias :)",
 				"key": "",
+				"other": "empty",
 				"time": 0 
 			}
 		},
@@ -105,6 +106,7 @@
 				"var": "Clase",
 				"value": "Acabo de llegar al colegio, y de verdad me sienta fatal que la mitad de la clase me trateís como a una mierda",
 				"key": "",
+				"other": "empty",
 				"time": 0 
 			}
 		},
@@ -127,6 +129,7 @@
 				"var": "Clase",
 				"value": "Madurad, teneís 2años o qué os pasa",
 				"key": "",
+				"other": "empty",
 				"time": 0 
 			}
 		},
@@ -138,6 +141,7 @@
 				"var": "Clase",
 				"value": "No lo entiendo, ¿Qué os he hecho para que me insulteís, gasteís bromas pesadas, me ignoreís y margineís?",
 				"key": "",
+				"other": "empty",
 				"time": 0 
 			}
 		},
@@ -260,6 +264,7 @@
 				"var": "Maria",
 				"value": "si, lo escribí yo, mañana nos vemos guapa",
 				"key": "",
+				"other": "empty",
 				"time": 0
 			}
 		},

@@ -121,7 +121,7 @@ public class MobileChat : MonoBehaviour {
 
 	private void AddBubble(GameObject bubble, string chat)
 	{
-		if(chat == "")
+		if (chat == "")
 		{
 			if(currentChat == null || currentChat == "")
 			{
@@ -160,7 +160,7 @@ public class MobileChat : MonoBehaviour {
 
 		chats[chat].Add(bubble);
 		ScrollChatToBottom();
-
+		
 		if (currentChat != chat)
 		{
 			LoadChat(chat, false);
@@ -457,6 +457,7 @@ public class MobileChat : MonoBehaviour {
 		delta = 0;
 		animate = true;
 		outPocket = false;
+		currentChat = "";
 	}
 
 	public void ThrowResponseMessage()

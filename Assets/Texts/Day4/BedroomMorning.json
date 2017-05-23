@@ -1,4 +1,28 @@
 {
+	"init":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node0",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Otra vez, otro día repetido. ¿Sigo soñando?"
+			},
+			{
+				"tag": "Tú",
+				"msn": "¿De quién es la voz que sale del portal? "
+			},
+			{
+				"tag": "Tú",
+				"msn": "¿Por qué las dos veces que he pasado el portal he repetido el día??"
+			}]
+		}
+	},
 	"bed":{
 		"root": {
 			"type": "dialog",
