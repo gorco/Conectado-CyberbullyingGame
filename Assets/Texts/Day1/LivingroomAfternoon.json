@@ -79,12 +79,12 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "Mama",
+				"tag": "Mamá",
 				"character": "Mother",
 				"msn": "Ya has vuelto, <$ varObject('global', 'UserNameNonStatic') $>"
 			}, 
 			{
-				"tag": "Mama",
+				"tag": "Mamá",
 				"character": "Mother",
 				"msn": "¿Qué tal te ha ido el día?"
 			}]
@@ -93,7 +93,7 @@
 			"type": "dialog",
 			"next": "parentsFS",
 			"fragments": [{
-				"tag": "Mama",
+				"tag": "Mamá",
 				"character": "Mother",
 				"msn": "¿Quieres que hablemos un rato?"
 			}]
@@ -228,7 +228,7 @@
 			"next": "guilleUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Además me ha aconsejado que mire los tablones de anuncions"
+				"msn": "Además me ha aconsejado que mire los tablones de anuncios"
 			},
 			{
 				"tag": "Tú",

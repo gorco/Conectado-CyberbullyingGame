@@ -624,6 +624,14 @@
 				"key": "bedroom"
 			}
 		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "21:30",
+			}
+		},
 		"setter":{
 			"type": "setter",
 			"next": "move2",
@@ -634,10 +642,19 @@
 		},
 		"move2": {
 			"type": "event",
-			"next": "message1",
+			"next": "changeHour2",
 			"event": {
 				"name": "move camera",
 				"key": "bedroom"
+			}
+		},
+		"changeHour2": {
+			"type": "event",
+			"next": "message1",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "21:30",
 			}
 		},
 		"message1": {
@@ -710,21 +727,13 @@
 		},
 		"message7": {
 			"type": "event",
-			"next": "changeHour",
+			"next": "changeHour2",
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
 				"value": "Jose es el admin, habla con él mañana, q el chat no suele leerlo",
 				"key": "Ana",
 				"time": 14
-			}
-		},
-		"changeHour": {
-			"type": "event",
-			"event":{
-				"name": "change variable",
-				"var": "hour",
-				"value": "21:30",
 			}
 		}
 	}

@@ -13,11 +13,11 @@
 			},
 			{
 				"next": "sh1",
-				"condition": "varObject('state', 'SharedPassQuestNonStatic') == 1"
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
 			},
 			{
 				"next": "sh2",
-				"condition": "varObject('state', 'SharedPassQuestNonStatic') == 2"
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
 			}]
 		},
 		"default": {

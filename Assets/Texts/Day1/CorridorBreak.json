@@ -73,7 +73,7 @@
 		"node3": {
 			"type": "options",
 			"options": [{
-				"msn": "Disfruta, adios (Que chica más rara)"
+				"msn": "Disfruta, adiós (Que chica más rara)"
 			},
 			{
 				"next": "node4",

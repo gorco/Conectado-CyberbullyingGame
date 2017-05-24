@@ -80,8 +80,8 @@
 				"tag": "Tú",
 				"msn": "¿De nuevo?"
 			},{
-				"tag": "María",
-				"character": "Maria",
+				"tag": "Alison",
+				"character": "Alison",
 				"msn": "¿Como que de nuevo?"
 			},
 			{
@@ -107,7 +107,7 @@
 			"next": "setter",
 			"event": {
 				"name": "change variable",
-				"var": "MariaQuest",
+				"var": "AlisonQuest",
 				"value": 2,
 			}
 		},
@@ -134,7 +134,7 @@
 			"next": "setter",
 			"event": {
 				"name": "change variable",
-				"var": "MariaQuest",
+				"var": "AlisonQuest",
 				"value": 1,
 			}
 		}
@@ -207,12 +207,12 @@
 			"type": "dialog",
 			"next": "quest1",
 			"fragments": [{
-				"tag": "Alex",
+				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Soy un poco bromista, pero tranquilo"
+				"msn": "Soy un poco bromista, pero <$ if(varObject('global', 'MaleSexNonStatic')==true, 'tranquilo', 'tranquila') $>"
 			},
 			{
-				"tag": "Alex",
+				"tag": "Álex",
 				"character": "Alex",
 				"msn": "Nos reiremos todos"
 			}]
@@ -234,7 +234,7 @@
 				"msn": "¿Por qué no empezamos de cero?"
 			},
 			{
-				"tag": "Alex",
+				"tag": "Álex",
 				"character": "Alex",
 				"msn": "De acuerdo, entremos en clase"
 			}]
@@ -260,7 +260,7 @@
 				"msn": "Que busca pelea con cualquier excusa"
 			},
 			{
-				"tag": "Alex",
+				"tag": "Álex",
 				"character": "Alex",
 				"msn": "Si has terminado de darme la chapa, lárgate <$ if(varObject('global', 'MaleSexNonStatic')==true, 'capullo', 'estúpida') $>"
 			}]
@@ -278,12 +278,12 @@
 			"type": "dialog",
 			"next": "quest1",
 			"fragments": [{
-				"tag": "Alex",
+				"tag": "Álex",
 				"character": "Alex",
 				"msn": "Si lo dices por lo de mi sitio..."
 			},
 			{
-				"tag": "Alex",
+				"tag": "Álex",
 				"character": "Alex",
 				"msn": "no era una broma, no quiero que te vuelvas a sentar ahí"
 			}]
@@ -292,17 +292,17 @@
 			"type": "dialog",
 			"next": "quest2",
 			"fragments": [{
-				"tag": "Alex",
+				"tag": "Álex",
 				"character": "Alex",
 				"msn": "¿El chicle?"
 			},
 			{
-				"tag": "Alex",
+				"tag": "Álex",
 				"character": "Alex",
 				"msn": "A mi no me mires"
 			},
 			{
-				"tag": "Alex",
+				"tag": "Álex",
 				"character": "Alex",
 				"msn": "Te recuerdo que llegué tarde a clase"
 			}]
@@ -315,7 +315,7 @@
 				"msn": "¿Sigues enfadado por lo del sitio de ayer?"
 			},
 			{
-				"tag": "Alex",
+				"tag": "Álex",
 				"character": "Alex",
 				"msn": "Ya veremos, y tú, ¿Sabes ya cúal es tu sitio?"
 			}]
@@ -355,7 +355,7 @@
 			"type": "fork",
 			"options": [{
 				"next": "match1",
-				"condition": "varObject('global', GuillermoFSNonStatic') > 60"
+				"condition": "varObject('global', 'GuillermoFSNonStatic') > 60"
 			},
 			{
 				"next": "node1",

@@ -13,6 +13,7 @@ public class ComputerManager : EventManager {
 
 	public GameObject loginView;
 	public GameObject publicationView;
+	public ScrollRect publicationScroll;
 	public GameObject friendsView;
 
 	public Text publicUserName;
@@ -200,6 +201,7 @@ public class ComputerManager : EventManager {
 
 	public void ShowPhotos()
 	{
+		ScrollChatToTop();
 		loginView.SetActive(false);
 		publicationView.SetActive(true);
 		friendsView.SetActive(false);
@@ -240,6 +242,11 @@ public class ComputerManager : EventManager {
 		ShowLogin();
 		screen.SetActive(true);
 		screenSqueleton.SetActive(true);
+	}
+
+	public void ScrollChatToTop()
+	{
+		publicationScroll.normalizedPosition = new Vector2(0, 1);
 	}
 
 	public void CheckLogin()

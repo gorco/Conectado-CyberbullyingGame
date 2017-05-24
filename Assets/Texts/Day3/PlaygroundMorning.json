@@ -1,4 +1,41 @@
 {
+	"init": {
+		"root": {
+			"type": "event",
+			"next": "fs2",
+			"event": {
+				"name": "change friendship",
+				"var": "AlejandroFS",
+				"value": -20,
+			}
+		},
+		"fs2": {
+			"type": "event",
+			"next": "fs3",
+			"event": {
+				"name": "change friendship",
+				"var": "AnaFS",
+				"value": -20,
+			}
+		},
+		"fs3": {
+			"type": "event",
+			"next": "fs4",
+			"event": {
+				"name": "change friendship",
+				"var": "JoseFS",
+				"value": -20,
+			}
+		},
+		"fs4": {
+			"type": "event",
+			"event": {
+				"name": "change friendship",
+				"var": "GuillermoFS",
+				"value": -10,
+			}
+		}
+	},
 	"board":{
 		"root": {
 			"type": "event",

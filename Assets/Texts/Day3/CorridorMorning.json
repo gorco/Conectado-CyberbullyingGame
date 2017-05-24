@@ -3,7 +3,7 @@
 		"root": {
 			"type": "fork",
 			"options": [{
-				"next": "node0",
+				"next": "alisonBoard",
 				"condition": "varObject('global', 'AlisonFSNonStatic') > 60"
 			},
 			{
@@ -23,6 +23,15 @@
 				"msn": "También me está ignorando... ¿Qué les he hecho?"
 			}]
 		}, 
+		"alisonBoard": {
+			"type": "event",
+			"next": "node0",
+			"event": {
+				"name": "change variable",
+				"var": "AlisonBoard",
+				"value": true,
+			}
+		},
 		"node0": {
 			"type": "fork",
 			"options": [{
@@ -39,7 +48,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Ignora lo del tablón"
+				"msn": "Ignora lo del tablón."
 			}]
 		}, 
 		"node1": {
@@ -48,12 +57,12 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Estaba mirando el tablón"
+				"msn": "Estaba mirando el tablón."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Y... Será mejor que no lo mires, ignoralo hoy"
+				"msn": "Y... Será mejor que no lo mires, ignoralo hoy."
 			}]
 		},
 		"options": {
@@ -73,12 +82,12 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Lo siento, Alex está llegando demasiado lejos"
+				"msn": "Lo siento, Alex está llegando demasiado lejos."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Igual deberias hablar con el profesor o a la directora"
+				"msn": "Igual deberias hablar con el profesor o a la directora."
 			}]
 		},
 		"node1B": {
@@ -87,17 +96,17 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Alguien ha puesto una foto tuya en los tablones de todo el colegio"
+				"msn": "Alguien ha puesto una foto tuya en los tablones de todo el colegio."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "En el patio también estaba"
+				"msn": "En el patio también estaba."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Creo que deberías hablar con algún profesor"
+				"msn": "Creo que deberías hablar con algún profesor."
 			}]
 		},
 		"setter":{
@@ -147,7 +156,7 @@
 			"next": "deactive",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Hay una foto de mí, y la han retocado para que parezca que cago chicles"
+				"msn": "Hay una foto de mí, y la han retocado para que parezca que cago chicles."
 			},
 			{
 				"tag": "Tú",
@@ -175,7 +184,7 @@
 			"next": "deactive",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Hay una foto mía de ayer después de haberme quitado el chicle"
+				"msn": "Hay una foto mía de ayer después de haberme quitado el chicle."
 			},
 			{
 				"tag": "Tú",
@@ -196,7 +205,7 @@
 			"next": "deactive",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Es una foto de mi cara sobre el cuerpo de un perro y con la lengua fuera"
+				"msn": "Es una foto de mi cara sobre el cuerpo de un perro y con la lengua fuera."
 			},
 			{
 				"tag": "Tú",
@@ -227,7 +236,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicos"
+				"msn": "No puedo entrar ahí, es el baño de chicos."
 			}]
 		}
 	},
@@ -254,7 +263,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicas"
+				"msn": "No puedo entrar ahí, es el baño de chicas."
 			}]
 		}
 	},
@@ -269,11 +278,29 @@
 	},
 	"classDoor": {
 		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "speak",
+				"condition": "varObject('global', 'AlisonFSNonStatic') > 60 &&  varObject('state', 'AlisonBoard') == false"
+			},
+			{
+				"next": "move",
+				"condition": "true"
+			},]
+		},
+		"move": {
 			"type": "event",
 			"event": {
 				"name": "move camera",
 				"key": "classBack"
 			}
+		},
+		"speak": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Debería hablar con Alison antes de entrar en clase, está rara."
+			}]
 		}
 	}
 }

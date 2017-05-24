@@ -52,7 +52,7 @@
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Antes he escuchado a Alex hablar con Ana sobre gastarte una broma"
+				"msn": "Antes he escuchado a Álex hablar con Ana sobre gastarte una broma"
 			},
 			{
 				"tag": "María",
@@ -326,7 +326,7 @@
 			},
 			{
 				"next": "bad2",
-				"msn": "Me han dicho que has hablado con Alex de hacerme una broma",
+				"msn": "Me han dicho que has hablado con Álex de hacerme una broma",
 				"condition": "varObject('state', 'JokeAdvise') == true"
 			}]
 		},
@@ -379,7 +379,7 @@
 			},
 			{
 				"next": "good2",
-				"msn": "Me han dicho que has hablado con Alex de hacerme una broma",
+				"msn": "Me han dicho que has hablado con Álex de hacerme una broma",
 				"condition": "varObject('state', 'JokeAdvise') == true"
 			}]
 		},

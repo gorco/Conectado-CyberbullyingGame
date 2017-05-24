@@ -90,7 +90,11 @@
 				"msn": "¿Cambiar qué?"
 			}, {
 				"tag": "Voz desde el portal",
-				"msn": "Noooo!, se acaba el tiempo, estás  apunto de despertar... es tarde... te deseo suerte."
+				"msn": "Noooo!, se acaba el tiempo, estás  apunto de despertar..."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Ya es tarde... te deseo suerte."
 			}]
 		},
 		"variable": {
@@ -138,11 +142,20 @@
 		},
 		"variable2": {
 			"type": "event",
-			"next": "changeHour2",
+			"next": "repeatDay2",
 			"event": {
 				"name": "change variable",
 				"var": "Day",
 				"value": 4,
+			}
+		},
+		"repeatDay2": {
+			"type": "event",
+			"next": "changeHour2",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false,
 			}
 		},
 		"changeHour2": {
@@ -156,18 +169,10 @@
 		},
 		"saveMobile2": {
 			"type": "event",
-			"next": "nextScene2",
+			"next": "nextScene",
 			"event": {
 				"name": "mobile message",
 				"other": "save"
-			}
-		},
-		"nextScene2": {
-			"type": "event",
-			"event": {
-				"name": "change scene",
-				"var": "scene",
-				"value": 2
 			}
 		}
 	},

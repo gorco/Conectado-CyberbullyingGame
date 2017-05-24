@@ -33,7 +33,7 @@
 		},
 		"node2": {
 			"type": "dialog",
-			"next": "black",
+			"next": "friendship",
 			"fragments": [{
 				"tag": "Profesor",
 				"character": "Teacher",
@@ -47,8 +47,17 @@
 			{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Su nombre es <$ varObject('global', 'UserNameNonStatic') $>. Sientate por ahora en otro lugar, he pedido a Alison que le ayude en sus primeros días"
+				"msn": "Su nombre es <$ varObject('global', 'UserNameNonStatic') $>. Siéntate por ahora en otro lugar, he pedido a Alison que le ayude en sus primeros días"
 			}]
+		},
+		"friendship": {
+			"type": "event",
+			"next": "black",
+			"event": {
+				"name": "change friendship",
+				"var": "AlejandroFS",
+				"value": -10,
+			}
 		},
 		"black": {
 			"type": "event",

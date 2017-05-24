@@ -341,10 +341,19 @@
 		},
 		"move2": {
 			"type": "event",
-			"next": "message1",
+			"next": "changeHour2",
 			"event": {
 				"name": "move camera",
 				"key": "bedroom"
+			}
+		},
+		"changeHour2": {
+			"type": "event",
+			"next": "message1",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "21:30",
 			}
 		},
 		"message1": {

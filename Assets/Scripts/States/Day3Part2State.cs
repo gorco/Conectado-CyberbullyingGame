@@ -13,12 +13,22 @@ public class Day3Part2State : IState {
 		set { bellSounded = value; }
 	}
 
+	[SerializeField]
+	private bool alisonBoard = false;
+
+	public bool AlisonBoard
+	{
+		get { return alisonBoard; }
+		set { alisonBoard = value; }
+	}
+
 	// Use this for initialization
 	void Start()
 	{
 		if (GlobalState.NowIsLaterThan(8, 30))
 		{
 			bellSounded = true;
+			alisonBoard = true;
 		}
 		InitMobileGUI.InitMobileGUIObject();
 	}
