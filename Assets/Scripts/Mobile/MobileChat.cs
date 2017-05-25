@@ -33,6 +33,7 @@ public class MobileChat : MonoBehaviour {
 	public float offset;
 
 	public Text hourText;
+	public Text dayText;
 
 	private string currentChat;
 
@@ -436,10 +437,17 @@ public class MobileChat : MonoBehaviour {
 		hourText.text += GlobalState.Minute;
 	}
 
+	private string[] daysName = { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES" };
+	private void UpdateDay()
+	{
+		dayText.text = daysName[GlobalState.Day]+" ,Día " +(GlobalState.Day+1);
+	}
+
 	public void takeMobile(float seconds)
 	{
 		locker.SetActive(true);
 		UpdateHour();
+		UpdateDay();
 		goal = showPosition;
 		start = hidePosition;
 		animationSeconds = seconds;

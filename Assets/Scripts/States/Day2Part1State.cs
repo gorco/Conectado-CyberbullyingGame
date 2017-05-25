@@ -33,8 +33,6 @@ public class Day2Part1State : IState {
 	// Use this for initialization
 	void Start () {
 
-		InitMobileGUI.InitMobileGUIObject();
-
 		if (GlobalState.Repeated)
 		{
 			GlobalState.MariaFS = mariaFS;
@@ -57,6 +55,8 @@ public class Day2Part1State : IState {
 			guillermoFS = GlobalState.GuillermoFS;
 			parentFS = GlobalState.ParentsFS;
 		}
+
+		InitMobileGUI.InitMobileGUIObject();
 	}
 	
 	// Update is called once per frame

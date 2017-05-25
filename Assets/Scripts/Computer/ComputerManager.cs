@@ -184,6 +184,14 @@ public class ComputerManager : EventManager {
 		{
 			pb.SetPhoto(photoPath);
 		}
+
+		var avatarFile = author;
+		if(author == "Tú" || author == "You")
+		{
+			avatarFile = GlobalState.MaleSex ? "Boy" : "Girl";
+		}
+		pb.SetAvatar(avatarFile + "Avatar");
+
 		photo.transform.localScale = new Vector3(1, 1, 1);
 		photosContent.sizeDelta = new Vector2(photosContent.sizeDelta.x, photosContent.sizeDelta.y + height + 50);
 
@@ -233,10 +241,10 @@ public class ComputerManager : EventManager {
 	{
 		if (pass == "")
 		{
-			noteUser.text = GlobalState.UserName.ToLower();
+			noteUser.text = GlobalState.Nick;
 			notePass.text = GlobalState.UserPass;
 
-			publicUserName.text = GlobalState.UserName;
+			publicUserName.text = GlobalState.Nick;
 			userAvatar.sprite = GlobalState.MaleSex ? avatarH : avatarM;
 		}
 		ShowLogin();
@@ -253,14 +261,14 @@ public class ComputerManager : EventManager {
 	{
 		userInput.text = "";
 		passInput.text = "";
-		if (userInput.text.ToLower() == GlobalState.UserName.ToLower() && passInput.text == GlobalState.UserPass)
+		if (userInput.text.ToLower() == GlobalState.Nick.ToLower() && passInput.text == GlobalState.UserPass)
 		{
 			error.SetActive(false);
 			ShowPhotos();
 		} else
 		{
 			error.SetActive(true);
-			Debug.LogWarning("user " + GlobalState.UserName.ToLower() + " and pass " + GlobalState.UserPass);
+			Debug.LogWarning("user " + GlobalState.Nick + " and pass " + GlobalState.UserPass);
 		}
 	}
 

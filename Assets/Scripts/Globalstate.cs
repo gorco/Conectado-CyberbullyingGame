@@ -19,6 +19,8 @@ public class GlobalState
 
 	public static string UserName { get; set; }
 
+	public static string Nick { get; set; }
+
 	public static string UserPass { get; set; }
 
 	// SocialNet
@@ -40,7 +42,7 @@ public class GlobalState
 	public static int AlejandroFS { get; set; }
 	public static int ParentsFS { get; set; }
 	public static int TeacherFS { get; set; }
-	public static int Risk{ get { return 100 - ((MariaFS + AlisonFS + AnaFS + GuillermoFS + JoseFS + AlejandroFS) / 12) - ParentsFS/4 - TeacherFS/4 ; } }
+	public static int Risk{ get { return Mathf.CeilToInt((MariaFS + AlisonFS + AnaFS + GuillermoFS + JoseFS + AlejandroFS) * 0.11f + ParentsFS * 0.2f + TeacherFS * 0.14f) ; } }
 
 	// QuestsPerDay
 

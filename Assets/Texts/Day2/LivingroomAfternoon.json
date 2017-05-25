@@ -727,7 +727,6 @@
 		},
 		"message7": {
 			"type": "event",
-			"next": "changeHour2",
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",

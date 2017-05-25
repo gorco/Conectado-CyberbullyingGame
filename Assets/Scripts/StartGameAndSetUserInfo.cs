@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class StartGameAndSetUserInfo : MonoBehaviour {
 
 	public UnityEngine.UI.InputField userName;
+	public UnityEngine.UI.InputField nick;
 	public UnityEngine.UI.InputField userPass;
 	public UnityEngine.UI.Toggle male;
 	public UnityEngine.UI.Toggle female;
@@ -26,7 +27,14 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 	{
 		if(userName.text == "")
 		{
-			error.text = "Hace falta un nombre de jugador";
+			error.text = "Hace falta tu nombre";
+			error.enabled = true;
+			return;
+		}
+
+		if (nick.text == "")
+		{
+			error.text = "Hace falta un nombre de usuario";
 			error.enabled = true;
 			return;
 		}
@@ -54,6 +62,7 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 
 		//Save data
 		GlobalState.UserName = userName.text;
+		GlobalState.Nick = nick.text;
 		GlobalState.UserPass = userPass.text;
 		GlobalState.MaleSex = male.isOn;
 

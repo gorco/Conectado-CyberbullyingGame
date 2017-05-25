@@ -34,9 +34,6 @@ public class Day4Part1State : IState
 	private static int parentsMeetingQuest;
 	void Start()
 	{
-
-		InitMobileGUI.InitMobileGUIObject();
-
 		if (GlobalState.Repeated)
 		{
 			GlobalState.MariaFS = mariaFS;
@@ -62,5 +59,7 @@ public class Day4Part1State : IState
 
 			parentsMeetingQuest = GlobalState.ParentsMeetingQuest;
 		}
+
+		InitMobileGUI.InitMobileGUIObject();
 	}
 }

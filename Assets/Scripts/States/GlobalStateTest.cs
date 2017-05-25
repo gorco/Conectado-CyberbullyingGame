@@ -34,6 +34,8 @@ public class GlobalStateTest : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+		GlobalState.Repeated = this.repeated;
+		/*
 		Debug.LogWarning("INIT GLOBAL STATE");
 
 		GlobalState.Day = this.day;
@@ -64,32 +66,34 @@ public class GlobalStateTest : MonoBehaviour {
 		GlobalState.SharedPassQuest = this.sharedPassQuest;
 
 		Debug.LogWarning("FIN INIT GLOBAL STATE");
-		/*
-		this.Day = GlobalState.Day;
-		this.Hour = GlobalState.Hour;
-		this.Minute = GlobalState.Minute;
-		this.Repeated = GlobalState.Repeated;
-		this.MaleSex = GlobalState.MaleSex;
-		this.UserName = GlobalState.UserName;
 
-		this.MariaFS = GlobalState.MariaFS;
-		this.AlisonFS = GlobalState.AlisonFS;
-		this.AnaFS = GlobalState.AnaFS;
-		this.GuillermoFS = GlobalState.GuillermoFS;
-		this.JoseFS = GlobalState.JoseFS;
-		this.AlejandroFS = GlobalState.AlejandroFS;
-
-		this.MariaQuest = GlobalState.MariaQuest;
-		this.AlisonQuest = GlobalState.AlisonQuest;
-		this.AnaQuest = GlobalState.AnaQuest;
-		this.GuillermoQuest = GlobalState.GuillermoQuest;
-		this.JoseQuest = GlobalState.JoseQuest;
-		this.AlejandroQuest = GlobalState.AlejandroQuest;
 		*/
+
+
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+		this.day = GlobalState.Day;
+		this.hour = GlobalState.Hour;
+		this.minute = GlobalState.Minute;
+		this.repeated = GlobalState.Repeated;
+		this.maleSex = GlobalState.MaleSex;
+		this.userName = GlobalState.UserName;
 
+		this.mariaFS = GlobalState.MariaFS;
+		this.alisonFS = GlobalState.AlisonFS;
+		this.anaFS = GlobalState.AnaFS;
+		this.guillermoFS = GlobalState.GuillermoFS;
+		this.joseFS = GlobalState.JoseFS;
+		this.alejandroFS = GlobalState.AlejandroFS;
+
+		this.mariaQuest = GlobalState.MariaQuest;
+		this.alisonQuest = GlobalState.AlisonQuest;
+		this.anaQuest = GlobalState.AnaQuest;
+		this.guillermoQuest = GlobalState.GuillermoQuest;
+		this.joseQuest = GlobalState.JoseQuest;
+		this.alejandroQuest = GlobalState.AlejandroQuest;
 	}
 }

@@ -274,11 +274,20 @@
 		},
 		"nodeFS": {
 			"type": "event",
-			"next": "node1",
+			"next": "alisonDialog",
 			"event": {
 				"name": "change friendship",
 				"var": "AlisonFS",
 				"value": 10,
+			}
+		},
+		"alisonDialog": {
+			"type": "event",
+			"next": "node1",
+			"event": {
+				"name": "change variable",
+				"var": "AlisonDialog",
+				"value": true,
 			}
 		},
 		"node1": {

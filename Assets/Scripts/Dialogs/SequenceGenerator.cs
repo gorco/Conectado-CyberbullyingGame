@@ -293,14 +293,13 @@ public class SequenceGenerator  {
 			if (!eventNode.HasField(EVENT_VALUE_FIELD))
 			{
 				throw new Exception("The event " + variable + " in node " + key + "->" + nodeId + " need a " + EVENT_VALUE_FIELD + " field");
-				return;
 			}
 			else
 			{
 				JSONObject value = eventNode.GetField(EVENT_VALUE_FIELD);
 				if (value.IsBool)
 				{
-					aux.setParameter(EVENT_VALUE_FIELD, (bool)value);
+					aux.setParameter(EVENT_VALUE_FIELD, value.b);
 				}
 				else if (value.IsNumber)
 				{

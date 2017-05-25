@@ -8,7 +8,7 @@
 			},
 			{
 				"next": "node2",
-				"condition": "varObject('state', 'AlisonDialog') == false"
+				"condition": "true"
 			}]
 		},
 		"node1": {
@@ -16,17 +16,17 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Veo que has encontrado la clase sin problemas"
+				"msn": "Veo que has encontrado la clase sin problemas."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "La chica pelirroja que está al lado de la puerta es María, también va a nuestra clase. Es bastante tímida pero buena gente"
+				"msn": "La chica pelirroja que está al lado de la puerta es María, también va a nuestra clase. Es bastante tímida pero buena gente."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Y al lado del tablón de anuncios está Guille, al que ya conoces"
+				"msn": "Y al lado del tablón de anuncios está Guille, al que ya conoces."
 			}]
 		},
 		"node2": {
@@ -34,7 +34,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Perdona,  tengo prisa, si no entro ya a classe voy a llegar tarde"
+				"msn": "Perdona,  tengo prisa, si no entro ya a clase voy a llegar tarde."
 			}]
 		}			
 	},
@@ -69,7 +69,7 @@
 			"fragments": [{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "Acuérdate de mirar los corchos, a veces se encuentran cosas interesantes"
+				"msn": "Acuérdate de mirar los corchos, a veces se encuentran cosas interesantes."
 			}]
 		},		
 		"node2": {
@@ -78,17 +78,17 @@
 			"fragments": [{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "Buenas, estaba leyendo los anuncios del corcho"
+				"msn": "Buenas, estaba leyendo los anuncios del corcho."
 			},
 			{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "A veces hay cosas interantes, y últimamente alguien va dejando cromos, mensajes y adivinanzas"
+				"msn": "A veces hay cosas interesantes, y últimamente alguien va dejando cromos, mensajes y adivinanzas."
 			},
 			{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "Acostúmbrate a mirarlo una vez al día"
+				"msn": "Acostúmbrate a mirarlo una vez al día."
 			},
 			{
 				"tag": "Guillermo",
