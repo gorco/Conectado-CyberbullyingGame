@@ -513,7 +513,8 @@
 			"type": "dialog",
 			"next": "upParentsFS",
 			"fragments": [{
-				"tag": "Tú",
+				"tag": "Papa",
+				"character": "Father",
 				"msn": "Más motivos para que nos reunamos con el colegio mañana y solucionemos esto."
 			}]
 		},

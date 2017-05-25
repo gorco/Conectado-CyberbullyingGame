@@ -57,7 +57,7 @@
 			"fragments": [{
 				"tag": "Mamá",
 				"character": "Mother",
-				"msn": "Buenas tardes cariño"
+				"msn": "Buenas tardes, cariño"
 			}, 
 			{
 				"tag": "Mamá",
@@ -153,11 +153,11 @@
 			"next": "guilleFork",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Guille me ha contado que Alex me odia"
+				"msn": "Guille me ha contado que Álex me odia"
 			},
 			{
 				"tag": "Tú",
-				"msn": "Alex me está haciendo la vida imposible"
+				"msn": "Álex me está haciendo la vida imposible"
 			},
 			{
 				"tag": "Tú",
@@ -180,7 +180,7 @@
 			"next": "guilleUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Y me ha contado que Ana es la primera en seguirle el juego a Alex"
+				"msn": "Y me ha contado que Ana es la primera en seguirle el juego a Álex"
 			},
 			{
 				"tag": "Tú",
@@ -407,7 +407,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "jajaj, Alex, viento, no aire",
+				"value": "jajaj, Álex, viento, no aire",
 				"key": "Ana",
 				"time": 1.7
 			}

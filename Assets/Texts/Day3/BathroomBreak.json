@@ -77,11 +77,11 @@
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "Tenía que hablar contigo, yo te pase la notita"
+				"msn": "Tenía que hablar contigo, yo te pasé la notita"
 			},
 			{
 				"tag": "Tú",
-				"msn": "¿Ahora si me hablas?"
+				"msn": "¿Ahora sí me hablas?"
 			},
 			{
 				"tag": "Tú",
@@ -99,7 +99,7 @@
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "No puedo hablar contigo mientras Alex o alguno de sus amigos pueda verme."
+				"msn": "No puedo hablar contigo mientras Álex o alguno de sus amigos pueda verme."
 			},
 			{
 				"tag": "Guille",
@@ -113,7 +113,7 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "¿Pero por qué Alex no quiere que nadie hable conmigo?."
+				"msn": "¿Pero por qué Álex no quiere que nadie hable conmigo?."
 			},
 			{
 				"tag": "Guille",
@@ -143,7 +143,7 @@
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "Bueno... sólo quería decirte que lo siento, pero hasta que a Alex se le pase el mosqueo no podré hablar contigo."
+				"msn": "Bueno... sólo quería decirte que lo siento, pero hasta que a Álex se le pase el mosqueo no podré hablar contigo."
 			},
 			{
 				"tag": "Guille",
@@ -171,11 +171,11 @@
 			"type": "options",
 			"options": [{
 				"next": "nodeAlex",
-				"msn": "¿Y ya está? ¿Alex se sale con la suya?"
+				"msn": "¿Y ya está? ¿Álex se sale con la suya?"
 			},
 			{
 				"next": "nodeBoard",
-				"msn": "¿Y mi foto en el tablón? ¿Ha sido Alex?"
+				"msn": "¿Y mi foto en el tablón? ¿Ha sido Álex?"
 			}]
 		},
 		"nodeAlex": {
@@ -202,7 +202,7 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Está muy pillada por Alex y si el te putea, ella va a hacer lo mismo."
+				"msn": "Está muy pillada por Álex y si él te putea, ella va a hacer lo mismo."
 			},
 			{
 				"tag": "Guille",

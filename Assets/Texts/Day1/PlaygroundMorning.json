@@ -13,7 +13,7 @@
 			"type": "options",
 			"options": [{
 				"next": "node1a",
-				"msn": "Si, soy <$ varObject('global', 'UserNameNonStatic') $>... ¿Y tú eres?"
+				"msn": "Sí, soy <$ varObject('global', 'UserNameNonStatic') $>... ¿Y tú eres?"
 			},
 			{
 				"next": "node1b",

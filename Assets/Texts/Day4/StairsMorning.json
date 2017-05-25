@@ -46,8 +46,7 @@
 		"friendOptions": {
 			"type": "options",
 			"options": [{
-			"next": "friends2b",
-				"next": "setter",
+				"next": "friends2b",
 				"msn": "Ayer no viniste a clase, ¿estás bien?"
 			},
 			{
@@ -55,13 +54,13 @@
 				"msn": "¿Me hablas?"
 			},
 			{
-				"next": "friends2b",
+				"next": "setter",
 				"msn": "Tengo prisa, ya ha sonado el timbre. Hablamos luego."
 			}]
 		},
 		"friends2a": {
 			"type": "dialog",
-			"next": "friendOptions",
+			"next": "setter",
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
@@ -85,7 +84,7 @@
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Si necesitas que te acompañe para hablar con el profe puedes decirmelo. Pero no te quedes <$ if(varObject('global', 'MaleSexNonStatic')==true, 'callado', 'callada') $>"
+				"msn": "Si necesitas que te acompañe para hablar con el profe puedes decírmelo. Pero no te quedes <$ if(varObject('global', 'MaleSexNonStatic')==true, 'callado', 'callada') $>"
 			},
 			{
 				"tag": "Tú",
@@ -94,7 +93,7 @@
 		},
 		"friends2b": {
 			"type": "dialog",
-			"next": "friendOptions",
+			"next": "setter",
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",

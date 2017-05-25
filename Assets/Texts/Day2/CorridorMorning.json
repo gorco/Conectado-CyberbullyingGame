@@ -48,7 +48,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Por cierto, antes hablaba Alex de gastarte una broma"
+				"msn": "Por cierto, antes hablaba Álex de gastarte una broma"
 			},
 			{
 				"tag": "Alison",
@@ -90,7 +90,7 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "Dejalo, hay que entrar a clase, hasta luego"
+				"msn": "Déjalo, hay que entrar a clase, hasta luego"
 			}]
 		},
 		"notify2": {
@@ -262,7 +262,7 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Si has terminado de darme la chapa, lárgate <$ if(varObject('global', 'MaleSexNonStatic')==true, 'capullo', 'estúpida') $>"
+				"msn": "Si has terminado de darme la chapa, lárgate, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'capullo', 'estúpida') $>"
 			}]
 		},	
 		"quest3": {
