@@ -6,11 +6,16 @@
 			"fragments": [{
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Tu primer día de clase ¿Por qué no te sientas?"
+				"msn": "Bueno... ¿ya lo hemos solucionado no?"
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Escoge el sitio que más te guste"
+				"msn": "¿Sabes dónde sentarte?"
+			},
+			{
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "Quizá deberías evitar, golpeando, que los chicles caigan en la silla o tendrás que sentarte en un chicle."
 			}]
 		},
 		"fade": {
@@ -27,19 +32,15 @@
 			"fragments": [{
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Me parece que te has quedado sin sitio"
+				"msn": "Tendrás que sentarte en un chicle."
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "¿Ni siquiera sabes sentarte?"
+				"msn": "Jajajaja, adelante, siéntate"
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "¿Acaso no sirves para nada?"
-			},{
-				"tag": "Sombra",
-				"character": "Shadow",
-				"msn": "¿Como esperas hacer así amigos?"
+				"msn": "Venga ¿a qué esperas?"
 			},{
 				"tag": "Voz desde el portal",
 				"msn": "Ven, yo te ayudaré"
@@ -118,23 +119,6 @@
 			}
 		}
 	},
-	"sit" : {
-		"root": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Sombra",
-				"msn": "Veo que has encontrado un sitio, pero... "
-			},
-			{
-				"tag": "Sombra",
-				"msn": "Ese sitio es mio, tendrás que escoger otro"
-			},
-			{
-				"tag": "Sombra",
-				"msn": "Puedes sentarte donde quieras menos ahí"
-			}]
-		}
-	},
 	"finishNightmare":{
 		"root": {
 			"type": "dialog",
@@ -142,20 +126,15 @@
 			"fragments": [{
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Me parece que te has quedado sin sitio"
+				"msn": "Tendrás que sentarte en un chicle."
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "¿Ni siquiera sabes sentarte?"
+				"msn": "Jajajaja, adelante, siéntate"
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "¿Acaso no sirves para nada?"
-			},
-			{
-				"tag": "Sombra",
-				"character": "Shadow",
-				"msn": "¿Como esperas hacer así amigos?"
+				"msn": "Venga ¿a qué esperas?"
 			}]
 		},
 		"changeDay": {
