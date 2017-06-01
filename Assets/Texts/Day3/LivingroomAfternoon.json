@@ -93,6 +93,7 @@
 		},
 		"options": {
 			"type": "options",
+			"questionId": "parentsAfternoonThirdDay",
 			"options": [{
 				"msn": "Nada a destacar",
 				"condition": "page == 1"
@@ -128,7 +129,7 @@
 				"condition": "page == 3 && aboutGuille == true"
 			},
 			{
-				"msn": "Me voy a la habitación, tengo cosas que hacer",
+				"msn": "Me voy a la habitación, tengo cosas que hacer.",
 				"condition": "page == 3"
 			}]
 		},
@@ -153,15 +154,15 @@
 			"next": "guilleFork",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Guille me ha contado que Álex me odia"
+				"msn": "Guille me ha contado que Álex me odia."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Álex me está haciendo la vida imposible"
+				"msn": "Álex me está haciendo la vida imposible."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Y tiene amenazada a media clase para que me ignoren"
+				"msn": "Y tiene amenazada a media clase para que me ignoren."
 			}]
 		},
 		"guilleFork": {
@@ -180,7 +181,7 @@
 			"next": "guilleUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Y me ha contado que Ana es la primera en seguirle el juego a Álex"
+				"msn": "Y me ha contado que Ana es la primera en seguirle el juego a Álex."
 			},
 			{
 				"tag": "Tú",
@@ -188,7 +189,7 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "Y se ha dedicado a poner fotos mías en todos los tablones"
+				"msn": "Y se ha dedicado a poner fotos mías en todos los tablones."
 			}]
 		},
 		"guilleUpParentsFS": {
@@ -213,7 +214,7 @@
 			"next": "mariaUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "A María hoy no la he visto"
+				"msn": "A María hoy no la he visto."
 			}]
 		},
 		"mariaUpParentsFS": {
@@ -238,21 +239,21 @@
 			"next": "boardUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Se han dedicado a poner fotos mías en todos los tablones"
+				"msn": "Se han dedicado a poner fotos mías en todos los tablones."
 			},
 			{
 				"tag": "Tú",
-				"msn": "No se qué he hecho mal para que se porten así conmigo"
+				"msn": "No se qué he hecho mal para que se porten así conmigo."
 			},
 			{
 				"tag": "Mamá",
 				"character": "Mother",
-				"msn": "Luego hablaré con tu padre"
+				"msn": "Luego hablaré con tu padre."
 			},
 			{
 				"tag": "Mamá",
 				"character": "Mother",
-				"msn": "Igual deberíamos ir a hablar con tu tutor a ver qué está pasando"
+				"msn": "Igual deberíamos ir a hablar con tu tutor a ver qué está pasando."
 			}]
 		},
 		"boardUpParentsFS": {
@@ -277,11 +278,11 @@
 			"next": "schoolUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Casi todos me han ignorado, pocos hablaban conmigo"
+				"msn": "Casi todos me han ignorado, pocos hablaban conmigo."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Es como si todo el mundo me evitara o me hiciera el vacío"
+				"msn": "Es como si todo el mundo me evitara o me hiciera el vacío."
 			}]
 		},
 		"schoolUpParentsFS": {
@@ -307,7 +308,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No tengo nada que hacer en la calle"
+				"msn": "No tengo nada que hacer en la calle."
 			}]
 		}
 	},

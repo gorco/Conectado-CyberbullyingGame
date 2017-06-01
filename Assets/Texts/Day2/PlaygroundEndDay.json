@@ -4,11 +4,11 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Ya no tengo más clases por hoy y no queda nadie"
+				"msn": "Ya no tengo más clases por hoy y no queda nadie."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Será mejor que me vaya a casa"
+				"msn": "Será mejor que me vaya a casa."
 			}]
 		}
 	},
@@ -18,7 +18,7 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "No les hagas caso y vete a casa, mañana será otro día"
+				"msn": "No les hagas caso y vete a casa, mañana será otro día."
 			}]
 		},
 	},
@@ -58,26 +58,26 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Voces",
-				"msn": "Jajajajaja"
+				"msn": "Jajajajaja."
 			},
 			{
 				"tag": "Voces",
-				"msn": "Menuda mancha <$ varObject('global', 'UserNameNonStatic') $>, parece que te hayas cagado encima"
+				"msn": "Menuda mancha <$ varObject('global', 'UserNameNonStatic') $>, parece que te hayas cagado encima."
 			}]
 		},
 		"notWash": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Voces",
-				"msn": "Jajajajaja"
+				"msn": "Jajajajaja."
 			},
 			{
 				"tag": "Voces",
-				"msn": "A ver si lavas"
+				"msn": "A ver si lavas."
 			},
 			{
 				"tag": "Voces",
-				"msn": "Por mucho tiempo que lleves el chicle en el culo no vas a conseguir ponerlo de moda"
+				"msn": "Por mucho tiempo que lleves el chicle en el culo no vas a conseguir ponerlo de moda."
 			}]
 		}
 	},

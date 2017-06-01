@@ -36,7 +36,7 @@
 			"fragments": [{
 				"tag": "Mamá",
 				"character": "Mother",
-				"msn": "Veo que llevas todo",
+				"msn": "Veo que llevas todo.",
 			}, 
 			{
 				"tag": "Mamá",
@@ -49,12 +49,12 @@
 			"fragments": [{
 				"tag": "Mamá",
 				"character": "Mother",
-				"msn": "Te dejas la mochila"
+				"msn": "Te dejas la mochila."
 			}, 
 			{
 				"tag": "Mama",
 				"character": "Mother",
-				"msn": "Está en tu cuarto, cogela y vete ya"
+				"msn": "Está en tu cuarto, cogela y vete ya."
 			}]
 		},
 		"checkHour": {
@@ -73,17 +73,17 @@
 			"fragments": [{
 				"tag": "Mamá",
 				"character": "Mother",
-				"msn": "Veo que ya estás <$ if(varObject('global', 'MaleSexNonStatic')==true, 'listo', 'lista') $> para irte"
+				"msn": "Veo que ya estás <$ if(varObject('global', 'MaleSexNonStatic')==true, 'listo', 'lista') $> para irte."
 			}, 
 			{
 				"tag": "Mamá",
 				"character": "Mother",
-				"msn": "¿Llevas todo?, Acuérdate de coger la mochila"
+				"msn": "¿Llevas todo?, Acuérdate de coger la mochila."
 			},
 			{
 				"tag": "Mamá",
 				"character": "Mother",
-				"msn": "Pórtate bien y haz muchos amigos"
+				"msn": "Pórtate bien y haz muchos amigos."
 			}]
 		},		
 		"motherLate": {
@@ -96,7 +96,7 @@
 			{
 				"tag": "Mamá",
 				"character": "Mother",
-				"msn": "Tu primer día en el nuevo colegio y ya llegas tarde"
+				"msn": "Tu primer día en el nuevo colegio y ya llegas tarde."
 			},
 			{
 				"tag": "Mamá",
@@ -150,7 +150,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Me dejo la mochila. Será mejor que pases por mi habitación a recogerla antes de irme"
+				"msn": "Me dejo la mochila. Será mejor que pases por mi habitación a recogerla antes de irme."
 			}]
 		}
 	},

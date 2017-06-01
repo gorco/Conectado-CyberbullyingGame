@@ -69,13 +69,14 @@
 		},
 		"options": {
 			"type": "options",
+			"questionId": "parentsMeetingMorninOption",
 			"options": [{
 				"next": "node1a",
-				"msn": "Gracias"
+				"msn": "Gracias."
 			},
 			{
 				"next": "node1b",
-				"msn": "Va a ser peor"
+				"msn": "Va a ser peor."
 			}]
 		},
 		"node1a": {

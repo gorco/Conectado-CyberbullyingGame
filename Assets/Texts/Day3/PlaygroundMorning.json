@@ -162,12 +162,13 @@
 		}, 
 		"stayOption": {
 			"type": "options",
+			"questionId": "groupIgnore",
 			"options": [{
 				"next": "stay",
-				"msn": "Esperar a ver si te hablan"
+				"msn": "Esperar a ver si te hablan."
 			},
 			{
-				"msn": "Marcharte"
+				"msn": "Marcharte."
 			}]
 		},
 		"stay": {
@@ -189,7 +190,7 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Sólo estabamos hablando"
+				"msn": "Sólo estabamos hablando."
 			},
 			{
 				"tag": "Alex",
@@ -209,6 +210,8 @@
 		}, 
 		"node1": {
 			"type": "options",
+			"questionId": "turnOnPC",
+			"questionId": "groupIgnoreAskGuille",
 			"options": [{
 				"next": "node1A",
 				"msn": "¿Qué está pasando, Guille?"
@@ -320,7 +323,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Acabo de llegar, no puedo irme aún"
+				"msn": "Acabo de llegar, no puedo irme aún."
 			}]
 		}
 	}

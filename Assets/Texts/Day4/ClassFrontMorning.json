@@ -6,12 +6,12 @@
 			"fragments": [{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "La semana pasada, si recordáis, terminamos de ver como hacer el análisis morfológico de una frase"
+				"msn": "La semana pasada, si recordáis, terminamos de ver como hacer el análisis morfológico de una frase."
 			},
 			{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Ahora toca ver como hacer el análisis sintáctico"
+				"msn": "Ahora toca ver como hacer el análisis sintáctico."
 			},
 			{
 				"tag": "Ruidos en la puerta",
@@ -37,17 +37,17 @@
 			"fragments": [{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Alejandro, llegas tarde, por favor siéntate"
+				"msn": "Alejandro, llegas tarde, por favor siéntate."
 			},
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'El nuevo', 'La nueva') $> está en mi sitio"
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'El nuevo', 'La nueva') $> está en mi sitio."
 			},
 			{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Su nombre es <$ varObject('global', 'UserNameNonStatic') $>. Sientate por ahora en otro lugar, he pedido a Alison que le ayude en sus primeros días"
+				"msn": "Su nombre es <$ varObject('global', 'UserNameNonStatic') $>. Sientate por ahora en otro lugar, he pedido a Alison que le ayude en sus primeros días."
 			}]
 		},
 		"black": {
@@ -57,7 +57,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Suena la campana que indica la hora del recreo"
+				"value": "Suena la campana que indica la hora del recreo."
 			}
 		},
 		"changeHour": {

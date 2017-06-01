@@ -41,6 +41,7 @@
 		},
 		"askOptions": {
 			"type": "options",
+			"questionId": "AnaAlexMariaJokeAskSuccess",
 			"options": [{
 				"next": "taskSuccess",
 				"msn": "Si"
@@ -63,18 +64,18 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Álex",
-				"msn": "¿A qué esperas? Venga, ve a pegar ese cartel a María"
+				"msn": "¿A qué esperas? Venga, ve a pegar ese cartel a María."
 			}]
 		},
 		"mobile": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Álex",
-				"msn": "Jajajaja, muy bien hecho"
+				"msn": "Jajajaja, muy bien hecho."
 			},
 			{
 				"tag": "Ana",
-				"msn": "Jajaja, tu móvil está en el baño de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'chicas', 'chicos') $>"
+				"msn": "Jajaja, tu móvil está en el baño de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'chicas', 'chicos') $>."
 			}]
 		},
 		"repeat": {
@@ -82,16 +83,17 @@
 			"fragments": [{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Jajajaja"
+				"msn": "Jajajaja."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Jajajaja"
+				"msn": "Jajajaja."
 			}]
 		},
 		"lost": {
 			"type": "options",
+			"questionId": "AnaAlexAskMobileLost",
 			"options": [{
 				"next": "node1a",
 				"msn": "¿Habéis sido vosotros? ¿Habéis escondido mi móvil en el baño de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'chicas', 'chicos') $>?",
@@ -99,12 +101,12 @@
 			},
 			{
 				"next": "node1b",
-				"msn": "¿Alguno de vosotros sabe dónde está mi móvil? No tiene gracia",
+				"msn": "¿Alguno de vosotros sabe dónde está mi móvil? No tiene gracia.",
 				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
 			},
 			{
 				"next": "setter",
-				"msn": "Sé que habéis sido vosotros, no tiene gracia",
+				"msn": "Sé que habéis sido vosotros, no tiene gracia.",
 			}]
 		},
 		"node1a": {
@@ -120,7 +122,7 @@
 			},
 			{
 				"tag": "Ana",
-				"msn": "Venga, pierdete, vete a llorar a otro sitio"
+				"msn": "Venga, pierdete, vete a llorar a otro sitio."
 			}]
 		},
 		"node1b": {

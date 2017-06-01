@@ -16,7 +16,7 @@
 			"next": "FadeOutAna",
 			"fragments": [{
 				"tag": "susurro",
-				"msn": "Mmm, no parece que lleve ningún chicle pegado"
+				"msn": "Mmm, no parece que lleve ningún chicle pegado."
 			},
 			{
 				"tag": "Ana",
@@ -64,7 +64,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "A ver si lavas la ropa, menudo desastre llevas en el pantalon"
+				"msn": "A ver si lavas la ropa, menudo desastre llevas en el pantalón."
 			},
 			{
 				"tag": "Ana",

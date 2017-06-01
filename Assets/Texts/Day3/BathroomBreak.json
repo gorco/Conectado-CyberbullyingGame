@@ -25,7 +25,7 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Lo siento mucho, de verdad, pero mis padres no pueden enterarse"
+				"msn": "Lo siento mucho, de verdad, pero mis padres no pueden enterarse."
 			}]
 		}, 
 		"setter":{
@@ -72,12 +72,12 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "No puedes estar aquí, vete"
+				"msn": "No puedes estar aquí, vete."
 			},
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "Tenía que hablar contigo, yo te pasé la notita"
+				"msn": "Tenía que hablar contigo, yo te pasé la notita."
 			},
 			{
 				"tag": "Tú",
@@ -169,6 +169,7 @@
 		},
 		"option": {
 			"type": "options",
+			"questionId": "GuilleBathroomDialog",
 			"options": [{
 				"next": "nodeAlex",
 				"msn": "¿Y ya está? ¿Álex se sale con la suya?"
@@ -183,7 +184,7 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "De verdad que lo siento"
+				"msn": "De verdad que lo siento."
 			},
 			{
 				"tag": "Guille",

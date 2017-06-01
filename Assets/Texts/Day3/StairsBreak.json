@@ -4,7 +4,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Nota",
-				"msn": "Despacho del Director"
+				"msn": "Despacho del Director."
 			}]
 		}
 	},
@@ -13,7 +13,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Parece que no hay nadie dentro"
+				"msn": "Parece que no hay nadie dentro."
 			}]
 		}
 	},

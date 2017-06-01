@@ -88,7 +88,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicas"
+				"msn": "No puedo entrar ahí, es el baño de chicas."
 			}]
 		}
 	},
@@ -97,7 +97,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No tengo nada que hacer dentro de clase"
+				"msn": "No tengo nada que hacer dentro de clase."
 			}]
 		}
 	}

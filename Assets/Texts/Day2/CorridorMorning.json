@@ -16,7 +16,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Entremos a clase o llegaremos tarde"
+				"msn": "Entremos a clase o llegaremos tarde."
 			}]
 		}, 
 		"setter":{
@@ -48,12 +48,12 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Por cierto, antes hablaba Álex de gastarte una broma"
+				"msn": "Por cierto, antes hablaba Álex de gastarte una broma."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "No suele ser así, no sé qué le pasa"
+				"msn": "No suele ser así, no sé qué le pasa."
 			},
 			{
 				"tag": "Alison",
@@ -90,7 +90,7 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "Déjalo, hay que entrar a clase, hasta luego"
+				"msn": "Déjalo, hay que entrar a clase, hasta luego."
 			}]
 		},
 		"notify2": {
@@ -155,7 +155,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Me está ignorando"
+				"msn": "Me está ignorando."
 			}]
 		},
 		"setter":{
@@ -178,9 +178,10 @@
 		},
 		"why": {
 			"type": "options",
+			"questionId": "AlexJokeAsk",
 			"options": [{
 				"next": "why1a",
-				"msn": "Me han dicho que quieres gastarme una broma",
+				"msn": "Me han dicho que quieres gastarme una broma.",
 				"condition": "varObject('global', 'RepeatedNonStatic') == false"
 			},
 			{
@@ -200,7 +201,7 @@
 			},
 			{
 				"next": "why1c",
-				"msn": "Conozco a los de tu tipo"
+				"msn": "Conozco a los de tu tipo."
 			}]
 		},
 		"why1a": {
@@ -214,7 +215,7 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Nos reiremos todos"
+				"msn": "Nos reiremos todos."
 			}]
 		},	
 		"quest1": {
@@ -236,7 +237,7 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "De acuerdo, entremos en clase"
+				"msn": "De acuerdo, entremos en clase."
 			}]
 		},	
 		"quest2": {
@@ -257,7 +258,7 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "Que busca pelea con cualquier excusa"
+				"msn": "Que busca pelea con cualquier excusa."
 			},
 			{
 				"tag": "Álex",
@@ -285,7 +286,7 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "no era una broma, no quiero que te vuelvas a sentar ahí"
+				"msn": "No era una broma, no quiero que te vuelvas a sentar ahí."
 			}]
 		},	
 		"why1bRepeat": {
@@ -299,12 +300,12 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "A mi no me mires"
+				"msn": "A mi no me mires."
 			},
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Te recuerdo que llegué tarde a clase"
+				"msn": "Te recuerdo que llegué tarde a clase."
 			}]
 		},	
 		"nothing": {
@@ -341,14 +342,14 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Entremos a clase"
+				"msn": "Entremos a clase."
 			}]
 		},
 		"nodeRepeatMatch": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Acuerdate, el sábado en mi casa, a las 6 de la tarde"
+				"msn": "Acuerdate, el sábado en mi casa, a las 6 de la tarde."
 			}]
 		},
 		"node0": {
@@ -368,21 +369,22 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Vamos a quedar varios de clase el sábado en mi casa para ver una peli"
+				"msn": "Vamos a quedar varios de clase el sábado en mi casa para ver una peli."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "¿Quieres venir? viene gente de clase"
+				"msn": "¿Quieres venir? viene gente de clase."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Y la veremos en una tele gigante que se ha comprado mi padre para ver el fútbol"
+				"msn": "Y la veremos en una tele gigante que se ha comprado mi padre para ver el fútbol."
 			}]
 		},
 		"matchOptions": {
 			"type": "options",
+			"questionId": "GuilleMovie",
 			"options": [{
 				"next": "match2a",
 				"msn": "Si"
@@ -402,12 +404,12 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Genial, ya somos uno más entonces"
+				"msn": "Genial, ya somos uno más entonces."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Ya te diré la dirección y los detalles"
+				"msn": "Ya te diré la dirección y los detalles."
 			}]
 		},
 		"questGo": {
@@ -425,12 +427,12 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Es una pena"
+				"msn": "Es una pena."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Bueno, hasta luego"
+				"msn": "Bueno, hasta luego."
 			}]
 		},
 		"questNoGo": {
@@ -448,7 +450,7 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Bueno, ya me dirás"
+				"msn": "Bueno, ya me dirás."
 			}]
 		},
 		"questAsk": {
@@ -465,7 +467,7 @@
 			"next": "setter",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Parece distraído"
+				"msn": "Parece distraído."
 			}]
 		},
 		"setter":{
@@ -499,7 +501,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicos"
+				"msn": "No puedo entrar ahí, es el baño de chicos."
 			}]
 		}
 	},
@@ -526,7 +528,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicas"
+				"msn": "No puedo entrar ahí, es el baño de chicas."
 			}]
 		}
 	},

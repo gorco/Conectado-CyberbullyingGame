@@ -6,18 +6,19 @@
 			"fragments": [{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "¿Eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nuevo', 'nueva') $>? No te había visto antes por aquí"
+				"msn": "¿Eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nuevo', 'nueva') $>? No te había visto antes por aquí."
 			}]
 		},		
 		"node1": {
 			"type": "options",
+			"questionId": "GuillermoMeet",
 			"options": [{
 				"next": "node1a",
 				"msn": "Sí, soy <$ varObject('global', 'UserNameNonStatic') $>... ¿Y tú eres?"
 			},
 			{
 				"next": "node1b",
-				"msn": "Perdona, tengo prisa (Te vas)"
+				"msn": "Perdona, tengo prisa (Te vas)."
 			}]
 		},
 		"node1b": {
@@ -44,7 +45,7 @@
 			{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "Deberíamos entrar ya, nos vemos"
+				"msn": "Deberíamos entrar ya, nos vemos."
 			}]
 		}, 
 		"nodeFS": {
@@ -155,17 +156,18 @@
 		},
 		"options": {
 			"type": "options",
+			"questionId": "JoseMeet",
 			"options": [{
 				"next": "introduceFork",
-				"msn": "Hola, soy <$ varObject('global', 'UserNameNonStatic') $>"
+				"msn": "Hola, soy <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
 				"next": "node2",
-				"msn": "(Preguntar dónde está tu clase)"
+				"msn": "(Preguntar dónde está tu clase)."
 			},
 			{
 				"next": "node3",
-				"msn": "No necesito nada, hasta luego"
+				"msn": "No necesito nada, hasta luego."
 			}]
 		},
 		"introduceFork": {
@@ -185,7 +187,7 @@
 			"fragments": [{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Ya me habías dicho tu nombre"
+				"msn": "Ya me habías dicho tu nombre."
 			}]
 		},
 		"introducedSetter":{
@@ -234,7 +236,7 @@
 			"fragments": [{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Esa es también mi clase, está en la primera planta, subiendo las escaleras de la derecha que encuentras nada más entrar al edificio"
+				"msn": "Esa es también mi clase, está en la primera planta, subiendo las escaleras de la derecha que encuentras nada más entrar al edificio."
 			},
 			{
 				"tag": "Jose",
@@ -263,6 +265,7 @@
 		},
 		"options": {
 			"type": "options",
+			"questionId": "AlisonMeet",
 			"options": [{
 				"next": "nodeFS",
 				"msn": "Soy <$ varObject('global', 'UserNameNonStatic') $> ¿Y tú eres?"
@@ -347,7 +350,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Será mejor que entremos ya, sino llegaremos tarde"
+				"msn": "Será mejor que entremos ya, sino llegaremos tarde."
 			}]
 		},
 		"cerrado": {
@@ -355,7 +358,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "El chico de la camiseta amarilla que está cerca de la entrada al patio también va a nuestra clase"
+				"msn": "El chico de la camiseta amarilla que está cerca de la entrada al patio también va a nuestra clase."
 			},
 			{
 				"tag": "Alison",

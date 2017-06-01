@@ -11,6 +11,7 @@
 	"alisonThx":{
 		"root": {
 			"type": "options",
+			"questionId": "AlisonEaringMobileTy",
 			"options": [{
 				"next": "node1",
 				"msn": "No es nada"
@@ -34,6 +35,7 @@
 	"alisonRequest":{
 		"root": {
 			"type": "options",
+			"questionId": "AlisonFriendRequestMobile",
 			"options": [{
 				"next": "node1",
 				"msn": "Si, ahora te acepto"
@@ -85,6 +87,7 @@
 	"kickClass":{
 		"root": {
 			"type": "options",
+			"questionId": "mobileKickMessages",
 			"options": [{
 				"next": "messageA",
 				"msn": "Me sienta mal que me tratéis así"
@@ -182,6 +185,7 @@
 	"kickClass2":{
 		"root": {
 			"type": "options",
+			"questionId": "mobileKickOptions",
 			"options": [{
 				"next": "messageA",
 				"msn": "Ya me salgo yo del grupo"
@@ -243,6 +247,7 @@
 	"trollMaria": {
 		"root": {
 			"type": "options",
+			"questionId": "mobileTrollMariaChat",
 			"options": [{
 				"next": "nodeA",
 				"msn": "Yo no he escrito nada"
@@ -315,6 +320,7 @@
 	"trollClass": {
 		"root": {
 			"type": "options",
+			"questionId": "mobileTrollClassChat",
 			"options": [{
 				"next": "nodeA",
 				"msn": "Yo no he escrito nada"

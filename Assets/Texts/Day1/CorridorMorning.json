@@ -48,7 +48,7 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "Parece incómoda, mejor dejarla en paz por ahora"
+				"msn": "Parece incómoda, mejor dejarla en paz por ahora."
 			}]
 		}		
 	},
@@ -136,7 +136,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicos"
+				"msn": "No puedo entrar ahí, es el baño de chicos."
 			}]
 		}
 	},
@@ -163,7 +163,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicas"
+				"msn": "No puedo entrar ahí, es el baño de chicas."
 			}]
 		}
 	},

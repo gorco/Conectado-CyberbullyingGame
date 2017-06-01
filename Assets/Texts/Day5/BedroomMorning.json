@@ -4,7 +4,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "He de irme"
+				"msn": "He de irme."
 			}]
 		}		
 	},
@@ -13,7 +13,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Por ahora no necesito nada que pueda estar ahí dentro"
+				"msn": "Por ahora no necesito nada que pueda estar ahí dentro."
 			}]
 		}		
 	},
@@ -22,7 +22,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Debería ordenar un poco todo esto"
+				"msn": "Debería ordenar un poco todo esto."
 			}]
 		}		
 	},
@@ -32,7 +32,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Cogeré todo para marcharme"
+				"msn": "Cogeré todo para marcharme."
 			}]
 		},
 		"node1": {
@@ -55,6 +55,7 @@
 		},		
 		"node1": {
 			"type": "options",
+			"questionId": "turnOnPC",
 			"options": [{
 				"next": "node1a",
 				"msn": "Sí"
@@ -90,6 +91,7 @@
 		},		
 		"node1": {
 			"type": "options",
+			"questionId": "plugInMobile",
 			"options": [{
 				"next": "node1a",
 				"msn": "Sí"

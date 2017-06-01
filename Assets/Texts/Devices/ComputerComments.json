@@ -24,6 +24,7 @@
 	"insultPost": {
 		"root":{
 			"type": "options",
+			"questionId": "insultPostOptions",
 			"options": [{
 				"next": "node1a",
 				"msn": "(Denunciar publicación)"
@@ -93,6 +94,7 @@
 	"trollPost": {
 		"root":{
 			"type": "options",
+			"questionId": "trollPostOptions",
 			"options": [{
 				"next": "node1a",
 				"msn": "(Borrar publicación)"
@@ -125,7 +127,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alex",
-				"value": "he visto que has borrado tu publicacion con tu nº de telefono, pero no pasa nada, tengo pantallazo y puevo resubirlo jajaja",
+				"value": "He visto que has borrado tu publicacion con tu nº de telefono, pero no pasa nada, tengo pantallazo y puevo resubirlo jajaja",
 				"key": "Alex",
 				"other": "empty",
 				"time": 0

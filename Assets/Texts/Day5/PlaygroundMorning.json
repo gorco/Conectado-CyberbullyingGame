@@ -99,12 +99,12 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Mira quién ha llegado, y yo que pensaba que hoy no vendrías"
+				"msn": "Mira quién ha llegado, y yo que pensaba que hoy no vendrías."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "¿Aún sigues sin móvil? jajaja, no era tan difícil encontrarlo si hubieras buscado bien"
+				"msn": "¿Aún sigues sin móvil? jajaja, no era tan difícil encontrarlo si hubieras buscado bien."
 			},
 			{
 				"tag": "Ana",
@@ -114,7 +114,7 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "¿De dónde has salido? jajaja"
+				"msn": "¿De dónde has salido? jajaja."
 			}]
 		},
 		"sh1": {
@@ -124,17 +124,17 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "No me creo que le dieras tu contraseña a Alison"
+				"msn": "No me creo que le dieras tu contraseña a Alison."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "¿De verdad te pensabas que iba a ser tu amiga? No me creo lo fácil que fué engañarte"
+				"msn": "¿De verdad te pensabas que iba a ser tu amiga? No me creo lo fácil que fué engañarte."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "JAJAJAJA!!! en serio, me parto contigo"
+				"msn": "JAJAJAJA!!! en serio, me parto contigo."
 			}]
 		},
 		"sh2": {
@@ -144,7 +144,7 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "JAJAJAJA!!! no me creo que no tuvieras patrón de desbloqueo en el móvil"
+				"msn": "JAJAJAJA!!! no me creo que no tuvieras patrón de desbloqueo en el móvil."
 			},
 			{
 				"tag": "Ana",
@@ -154,7 +154,7 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Que divertido va a ser el día, ahora la mayoria piensa que eres verdad <$ if(varObject('global', 'MaleSexNonStatic')==true, 'un marica vicioso que le da a todo', 'una puta viciosa') $> "
+				"msn": "Que divertido va a ser el día, ahora la mayoria piensa que eres verdad <$ if(varObject('global', 'MaleSexNonStatic')==true, 'un marica vicioso que le da a todo', 'una puta viciosa') $>."
 			}]
 		},
 		"setter":{
@@ -226,7 +226,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Acabo de llegar, no puedo irme aún"
+				"msn": "Acabo de llegar, no puedo irme aún."
 			}]
 		}
 	}

@@ -20,7 +20,7 @@
 			"next": "FadeOutAna",
 			"fragments": [{
 				"tag": "susurro",
-				"msn": "Mmm, no parece que lleve ningún chicle pegado"
+				"msn": "Mmm, no parece que lleve ningún chicle pegado."
 			},
 			{
 				"tag": "Ana",
@@ -30,12 +30,12 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Hola <$ varObject('global', 'UserNameNonStatic') $>"
+				"msn": "Hola, <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Buenas"
+				"msn": "Buenas."
 			},
 			{
 				"tag": "Ana",
@@ -45,7 +45,7 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Tenemos que hablar con él"
+				"msn": "Tenemos que hablar con él."
 			}]
 		},
 		"FadeOutAna": {
@@ -148,7 +148,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Prueba a quitarte el chicle en el baño"
+				"msn": "Prueba a quitarte el chicle en el baño."
 			}]
 		}, 
 		"setter":{
@@ -163,17 +163,17 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Buenas,  <$ varObject('global', 'UserNameNonStatic') $>"
+				"msn": "Buenas,  <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Estamos hablando de Álex"
+				"msn": "Estamos hablando de Álex."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Esta mañana estaba raro, incluso ha llegado el primero a clase"
+				"msn": "Esta mañana estaba raro, incluso ha llegado el primero a clase."
 			}]
 		}, 
 		"node0": {
@@ -186,17 +186,17 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Te has debido sentar encima de un chicle"
+				"msn": "Te has debido sentar encima de un chicle."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Menudo desastre, pasa por el baño antes de ir a clase"
+				"msn": "Menudo desastre, pasa por el baño antes de ir a clase."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Sí, igual consigues quitarlo"
+				"msn": "Sí, igual consigues quitarlo."
 			}]
 		},
 		"guilleFS": {

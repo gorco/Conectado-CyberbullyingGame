@@ -144,6 +144,7 @@
 		},
 		"sure": {
 			"type": "options",
+			"questionId": "GuilleFriendRequest",
 			"options": [{
 				"msn": "Si, lo mejor será no aceptar"
 			},

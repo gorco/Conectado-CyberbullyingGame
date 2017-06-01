@@ -170,13 +170,14 @@
 		},
 		"parentsMeetingNoFS": {
 			"type": "options",
+			"questionId": "TeacherTattle",
 			"options": [{
 				"next": "tattleAndMeeting",
 				"msn": "(Chivarse de todo lo que te ha hecho Álex)"
 			},
 			{
 				"next": "noTattleAndMeeting",
-				"msn": "No sé qué ha pasado"
+				"msn": "No sé qué ha pasado."
 			}]
 		},
 		"tattleAndMeeting": {
@@ -295,6 +296,7 @@
 		},
 		"parentsNoMeetingNoFS": {
 			"type": "options",
+			"questionId": "TeacherTattle",
 			"options": [{
 				"next": "tattleAndNoMeeting",
 				"msn": "(Chivarse de todo lo que te ha hecho Álex)"
@@ -421,6 +423,7 @@
 		},
 		"parentsNoMeetingFS": {
 			"type": "options",
+			"questionId": "TeacherTattle",
 			"options": [{
 				"next": "tattle",
 				"msn": "(Chivarse de todo lo que te ha hecho Álex)"

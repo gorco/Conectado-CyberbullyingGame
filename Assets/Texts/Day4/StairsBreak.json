@@ -26,6 +26,7 @@
 		},
 		"found": {
 			"type": "options",
+			"questionId": "GuilleAlisonAskMobile",
 			"options": [{
 				"next": "node1a",
 				"msn": "¿Sabéis quién me ha quitado el móvil y lo ha dejado en el baño?",
@@ -96,7 +97,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Nota",
-				"msn": "Despacho del Director"
+				"msn": "Despacho del Director."
 			}]
 		}
 	},
@@ -105,7 +106,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Parece que no hay nadie dentro"
+				"msn": "Parece que no hay nadie dentro."
 			}]
 		}
 	},

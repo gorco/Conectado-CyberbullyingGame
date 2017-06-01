@@ -20,7 +20,7 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Estoy terminando el libro, hablamos en otro momento"
+				"msn": "Estoy terminando el libro, hablamos en otro momento."
 			}]
 		},
 		"secondBad": {
@@ -31,7 +31,7 @@
 				"msn": "..."
 			},{
 				"tag": "Tú",
-				"msn": "Parece que me está ignorando"
+				"msn": "Parece que me está ignorando."
 			}]
 		},
 		"first": {
@@ -45,9 +45,10 @@
 		},
 		"node1": {
 			"type": "options",
+			"questionId": "MariaMeetFirstOpt",
 			"options": [{
 				"next": "setterBad",
-				"msn": "Nada, adiós"
+				"msn": "Nada, adiós."
 			},
 			{
 				"next": "node2",
@@ -67,13 +68,14 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Prefiero quedarme aquí tranquila leyendo"
+				"msn": "Prefiero quedarme aquí tranquila leyendo."
 			}]
 		},
 		"node3": {
 			"type": "options",
+			"questionId": "MariaMeetSecondOpt",
 			"options": [{
-				"msn": "Disfruta, adiós (Que chica más rara)"
+				"msn": "Disfruta, adiós (Que chica más rara)."
 			},
 			{
 				"next": "node4",
@@ -104,21 +106,22 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Eres un poco  <$ if(varObject('global', 'MaleSexNonStatic')==true, 'pesado', 'pesada') $> con las preguntas"
+				"msn": "Eres un poco  <$ if(varObject('global', 'MaleSexNonStatic')==true, 'pesado', 'pesada') $> con las preguntas."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "No tengo amigos, creen que soy rara"
+				"msn": "No tengo amigos, creen que soy rara."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Ya te puedes ir"
+				"msn": "Ya te puedes ir."
 			}]
 		},
 		"node5": {
 			"type": "options",
+			"questionId": "MariaMeetThirdOpt",
 			"options": [{
 				"next": "node6",
 				"msn": "(Quedarte)"
@@ -132,26 +135,26 @@
 			"next": "quest1",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No me pareces rara"
+				"msn": "No me pareces rara."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Voy a bajar al recreo, si quieres venir estaré abajo"
+				"msn": "Voy a bajar al recreo, si quieres venir estaré abajo."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Gracias, eres muy amable"
+				"msn": "Gracias, eres muy amable."
 			}, 
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Pero al menos hoy me quedaré aquí, me queda poco para terminar el libro"
+				"msn": "Pero al menos hoy me quedaré aquí, me queda poco para terminar el libro."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Pásalo muy bien en el recreo, y evita a Alex, es estúpido"
+				"msn": "Pásalo muy bien en el recreo, y evita a Alex, es estúpido."
 			}]
 		},
 		"quest1": {
@@ -229,7 +232,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicos"
+				"msn": "No puedo entrar ahí, es el baño de chicos."
 			}]
 		}
 	},
@@ -256,7 +259,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicas"
+				"msn": "No puedo entrar ahí, es el baño de chicas."
 			}]
 		}
 	},
@@ -266,17 +269,18 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Si entro y aparece el profesor ya no podré salir"
+				"msn": "Si entro y aparece el profesor ya no podré salir."
 			}]
 		},
 		"options": {
 			"type": "options",
+			"questionId": "endBreak",
 			"options": [{
 				"next": "black",
-				"msn": "(Entrar de todas formas)"
+				"msn": "(Entrar de todas formas)."
 			},
 			{
-				"msn": "Mejor, voy a dar otra vuelta por el edificio"
+				"msn": "Mejor, voy a dar otra vuelta por el edificio."
 			}]
 		},
 		"black": {

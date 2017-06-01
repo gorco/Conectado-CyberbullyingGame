@@ -26,13 +26,14 @@
 		},		
 		"options": {
 			"type": "options",
+			"questionId": "AlisonTrustAsk",
 			"options": [{
 				"next": "friend",
-				"msn": "Muchas gracias por ser mi amiga"
+				"msn": "Muchas gracias por ser mi amiga."
 			},
 			{
 				"next": "noFriend",
-				"msn": "No y no tengo interés en ganarme tu confianza"
+				"msn": "No y no tengo interés en ganarme tu confianza."
 			}]
 		},
 		"noFriend": {
@@ -80,6 +81,7 @@
 		},		
 		"passChange": {
 			"type": "options",
+			"questionId": "AlisonSharePass",
 			"options": [{
 				"next": "change",
 				"msn": "(Aceptar el intercambio de contraseñas)"
@@ -248,7 +250,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Parece que alguien ha arrancado ya la foto de ayer"
+				"msn": "Parece que alguien ha arrancado ya la foto de ayer."
 			}]
 		}
 	},
@@ -257,7 +259,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Acabo de llegar, no puedo irme aún"
+				"msn": "Acabo de llegar, no puedo irme aún."
 			}]
 		}
 	}

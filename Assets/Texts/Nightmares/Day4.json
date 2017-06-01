@@ -10,7 +10,7 @@
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Escoge el sitio que más te guste"
+				"msn": "Escoge el sitio que más te guste."
 			}]
 		},
 		"fade": {
@@ -27,7 +27,7 @@
 			"fragments": [{
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Me parece que te has quedado sin sitio"
+				"msn": "Me parece que te has quedado sin sitio."
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
@@ -42,26 +42,27 @@
 				"msn": "¿Como esperas hacer así amigos?"
 			},{
 				"tag": "Voz desde el portal",
-				"msn": "Ven, yo te ayudaré"
+				"msn": "Ven, yo te ayudaré."
 			}, {
 				"tag": "Voz desde el portal",
-				"msn": "Atraviesa el portal"
+				"msn": "Atraviesa el portal."
 			}, {
 				"tag": "Voz desde el portal",
-				"msn": "Corre, antes de que despiertes"
+				"msn": "Corre, antes de que despiertes."
 			}]
 		}
 	},
 	"cross": {
 		"root": {
 			"type": "options",
+			"questionId": "portalDay4",
 			"options": [{
 				"next": "node1",
-				"msn": "Cruzar el portal"
+				"msn": "Cruzar el portal."
 			},
 			{
 				"next": "node2",
-				"msn": "No, esta vez no"
+				"msn": "No, esta vez no."
 			}]
 		},
 		"node1": {

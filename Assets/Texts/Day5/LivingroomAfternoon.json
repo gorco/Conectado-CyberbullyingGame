@@ -57,7 +57,7 @@
 			"fragments": [{
 				"tag": "Mamá",
 				"character": "Mother",
-				"msn": "Buenas tardes cariño"
+				"msn": "Buenas tardes cariño."
 			}, 
 			{
 				"tag": "Mamá",
@@ -93,6 +93,7 @@
 		},
 		"options": {
 			"type": "options",
+			"questionId": "parentsAfternoonFivethDay",
 			"options": [{
 				"msn": "Nada a destacar",
 				"condition": "page == 1"
@@ -109,7 +110,7 @@
 			},
 			{
 				"next": "school",
-				"msn": "La clase",
+				"msn": "La clase...",
 				"condition": "page == 2 && aboutSchool == true"
 			},
 			{
@@ -124,11 +125,11 @@
 			},
 			{
 				"next": "guille",
-				"msn": "He hablado con Guille",
+				"msn": "He hablado con Guille.",
 				"condition": "page == 3 && aboutGuille == true"
 			},
 			{
-				"msn": "Me voy a la habitación, tengo cosas que hacer",
+				"msn": "Me voy a la habitación, tengo cosas que hacer.",
 				"condition": "page == 3"
 			}]
 		},
@@ -153,15 +154,15 @@
 			"next": "guilleFork",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Guille me ha contado que Alex me odia"
+				"msn": "Guille me ha contado que Alex me odia."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Alex me está haciendo la vida imposible"
+				"msn": "Alex me está haciendo la vida imposible."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Y tiene amenazada a media clase para que me ignoren"
+				"msn": "Y tiene amenazada a media clase para que me ignoren."
 			}]
 		},
 		"guilleFork": {

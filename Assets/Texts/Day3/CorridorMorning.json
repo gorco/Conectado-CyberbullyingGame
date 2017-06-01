@@ -67,6 +67,7 @@
 		},
 		"options": {
 			"type": "options",
+			"questionId": "AlisonNoticeBoard",
 			"options": [{
 				"next": "node1A",
 				"msn": "Ya lo he visto"

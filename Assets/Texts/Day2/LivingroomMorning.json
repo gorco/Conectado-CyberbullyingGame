@@ -49,7 +49,7 @@
 			"next": "exit",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Parece que papá y mamá se han ido ya a trabajar"
+				"msn": "Parece que papá y mamá se han ido ya a trabajar."
 			}]
 		},
 		"exitNodeRepeat": {
@@ -57,7 +57,7 @@
 			"next": "exit",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Parece que papá y mamá hoy han vuelto a irse pronto"
+				"msn": "Parece que papá y mamá hoy han vuelto a irse pronto."
 			}]
 		},
 		"exit": {
@@ -72,7 +72,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Me dejo la mochila. Será mejor que pases por mi habitación a recogerla antes de irme"
+				"msn": "Me dejo la mochila. Será mejor que pases por mi habitación a recogerla antes de irme."
 			}]
 		}
 	},

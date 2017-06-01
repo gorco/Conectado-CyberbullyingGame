@@ -295,18 +295,19 @@
 		},
 		"options": {
 			"type": "options",
+			"questionId": "parentsAfternoonFouthDay",
 			"options": [{
 				"msn": "Bien, normal, me voy a mi cuarto",
 				"condition": "page == 1"
 			},
 			{
 				"next": "maria1",
-				"msn": "Hoy Álex y Ana me han intentado chantajear",
+				"msn": "Hoy Álex y Ana me han intentado chantajear.",
 				"condition": "page == 1 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') == 1"
 			},
 			{
 				"next": "maria2",
-				"msn": "Hoy Álex y Ana me han chantajeado",
+				"msn": "Hoy Álex y Ana me han chantajeado.",
 				"condition": "page == 1 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') == 2"
 			},
 			{
@@ -316,21 +317,21 @@
 			},
 			{
 				"next": "mobile0",
-				"msn": "Hoy he perdido el móvil",
+				"msn": "Hoy he perdido el móvil.",
 				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 0"
 			},
 			{
 				"next": "mobile1",
-				"msn": "Alison, puedo confiar en ella",
+				"msn": "Alison, puedo confiar en ella.",
 				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 1"
 			},
 			{
 				"next": "mobile2",
-				"msn": "Alguien me ha quitado el móvil",
+				"msn": "Alguien me ha quitado el móvil.",
 				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 2"
 			},
 			{
-				"msn": "Me voy a la habitación, ya hemos hablado suficiente",
+				"msn": "Me voy a la habitación, ya hemos hablado suficiente.",
 				"condition": "page == 2"
 			}]
 		},
@@ -419,7 +420,7 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "Pero yo tengo sus contraseñas también, confio en ella"
+				"msn": "Pero yo tengo sus contraseñas también, confio en ella."
 			},
 			{
 				"tag": "Tú",
@@ -440,7 +441,7 @@
 			{
 				"tag": "Mamá",
 				"character": "Mother",
-				"msn": "Tienes que tener más cuidado con las cosas. No puedes dejarlas en cualquier sitio"
+				"msn": "Tienes que tener más cuidado con las cosas. No puedes dejarlas en cualquier sitio."
 			},
 			{
 				"tag": "Tú",
@@ -491,6 +492,7 @@
 		},
 		"meetOptions": {
 			"type": "options",
+			"questionId": "parentsMeetingAfternoonOption",
 			"options": [{
 				"next": "meetingVariable",
 				"msn": "Si, por favor, no puedo más"
@@ -538,7 +540,7 @@
 			{
 				"tag": "Papa",
 				"character": "Father",
-				"msn": "Quiere saber qué tal te ha ido el día"
+				"msn": "Quiere saber qué tal te ha ido el día."
 			}]
 		}
 	},
@@ -547,7 +549,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No tengo nada que hacer en la calle"
+				"msn": "No tengo nada que hacer en la calle."
 			}]
 		}
 	},

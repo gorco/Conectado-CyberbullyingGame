@@ -36,26 +36,27 @@
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Jajajaja, adelante, siéntate"
+				"msn": "Jajajaja, adelante, siéntate."
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "Venga ¿a qué esperas?"
 			},{
 				"tag": "Voz desde el portal",
-				"msn": "Ven, yo te ayudaré"
+				"msn": "Ven, yo te ayudaré."
 			}, {
 				"tag": "Voz desde el portal",
-				"msn": "Atraviesa el portal"
+				"msn": "Atraviesa el portal."
 			}, {
 				"tag": "Voz desde el portal",
-				"msn": "Corre, antes de que despiertes"
+				"msn": "Corre, antes de que despiertes."
 			}]
 		}
 	},
 	"cross": {
 		"root": {
 			"type": "options",
+			"questionId": "portalDay2",
 			"options": [{
 				"next": "node1",
 				"msn": "Pasar a través del portal"
@@ -66,13 +67,13 @@
 			"next": "variable",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Pasaré"
+				"msn": "Pasaré."
 			}, {
 				"tag": "Tú",
-				"msn": "Da un poco de miedo"
+				"msn": "Da un poco de miedo."
 			}, {
 				"tag": "Tú",
-				"msn": "Pero es sólo un sueño"
+				"msn": "Pero es sólo un sueño."
 			}]
 		},
 		"variable": {

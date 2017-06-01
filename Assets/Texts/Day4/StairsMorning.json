@@ -45,6 +45,7 @@
 		},
 		"friendOptions": {
 			"type": "options",
+			"questionId": "MariaSickAsk",
 			"options": [{
 				"next": "friends2b",
 				"msn": "Ayer no viniste a clase, ¿estás bien?"
@@ -125,9 +126,10 @@
 		},
 		"normalOptions": {
 			"type": "options",
+			"questionId": "MariaIgnoreAsk",
 			"options": [{
 				"next": "setter",
-				"msn": "Nada, hasta luego"
+				"msn": "Nada, hasta luego."
 			},
 			{
 				"next": "normal2",
@@ -175,7 +177,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Nota",
-				"msn": "Despacho del Director"
+				"msn": "Despacho del Director."
 			}]
 		}
 	},
@@ -184,7 +186,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Parece que no hay nadie dentro"
+				"msn": "Parece que no hay nadie dentro."
 			}]
 		}
 	},
@@ -202,7 +204,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Debería ir directo a clase"
+				"msn": "Debería ir directo a clase."
 			}]
 		}
 	}

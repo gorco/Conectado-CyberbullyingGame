@@ -4,7 +4,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Parece que alguien ha arrancado ya la foto de ayer"
+				"msn": "Parece que alguien ha arrancado ya la foto de ayer."
 			}]
 		}
 	},
@@ -29,11 +29,11 @@
 			"fragments": [{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $> llegas tarde"
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> llegas tarde."
 			},{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Por favor, sientate para que podamos continuar la clase"
+				"msn": "Por favor, sientate para que podamos continuar la clase."
 			}]
 		},
 		"node2": {
@@ -81,7 +81,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Cada vez se te hacen más largas las horas de clase. Por suerte ya es hora de volver a casa"
+				"value": "Cada vez se te hacen más largas las horas de clase. Por suerte ya es hora de volver a casa."
 			}
 		},
 		"endDayHour": {
@@ -105,6 +105,7 @@
 		},
 		"options": {
 			"type": "options",
+			"questionId": "sitDownClass",
 			"options": [{
 				"next": "node2",
 				"msn": "Si"
@@ -128,7 +129,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Cada vez se te hacen más largas las horas de clase. Por suerte ya es hora de volver a casa"
+				"value": "Cada vez se te hacen más largas las horas de clase. Por suerte ya es hora de volver a casa."
 			}
 		},
 		"changeHour": {

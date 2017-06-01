@@ -4,15 +4,15 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No encuentro mi móvil"
+				"msn": "No encuentro mi móvil."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Lo había dejado encima de la mesa al empezar la clase"
+				"msn": "Lo había dejado encima de la mesa al empezar la clase."
 			},
 			{
 				"tag": "Tú",
-				"msn": "¿Alguien me lo ha quitado? Será mejor que pregunte"
+				"msn": "¿Alguien me lo ha quitado? Será mejor que pregunte."
 			}]
 		},
 	},

@@ -36,7 +36,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No tengo nada que decirle"
+				"msn": "No tengo nada que decirle."
 			}]
 		},
 		"mobileLost": {
@@ -53,14 +53,15 @@
 			{
 				"tag": "María",
 				"character": "María",
-				"msn": "Si veo algo te aviso"
+				"msn": "Si veo algo te aviso."
 			}]
 		},
 		"jokeOtions": {
 			"type": "options",
+			"questionId": "JokeMariaOptions",
 			"options": [{
 				"next": "node0",
-				"msn": "Buenas, María"
+				"msn": "Buenas, María."
 			},
 			{
 				"next": "jokeSuccess",
@@ -136,11 +137,12 @@
 			"next": "femaleOptions",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicos"
+				"msn": "No puedo entrar ahí, es el baño de chicos."
 			}]
 		},
 		"femaleOptions": {
 			"type": "options",
+			"questionId": "opposedBathroom",
 			"options": [{
 				"next": "female2",
 				"msn": "(Entrar de todas formas)"
@@ -181,11 +183,12 @@
 			"next": "maleOptions",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicas"
+				"msn": "No puedo entrar ahí, es el baño de chicas."
 			}]
 		},
 		"maleOptions": {
 			"type": "options",
+			"questionId": "opposedBathroom",
 			"options": [{
 				"next": "male2",
 				"msn": "(Entrar de todas formas)"
@@ -208,17 +211,18 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Si entro y aparece el profesor ya no podré salir"
+				"msn": "Si entro y aparece el profesor ya no podré salir."
 			}]
 		},
 		"options": {
 			"type": "options",
+			"questionId": "sitDownClass",
 			"options": [{
 				"next": "black",
 				"msn": "(Entrar de todas formas)"
 			},
 			{
-				"msn": "Mejor, voy a dar otra vuelta por el edificio"
+				"msn": "Mejor, voy a dar otra vuelta por el edificio."
 			}]
 		},
 		"black": {

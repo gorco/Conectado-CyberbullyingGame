@@ -19,7 +19,7 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "¿Por qué las dos veces que he pasado el portal he repetido el día??"
+				"msn": "¿Por qué las dos veces que he pasado el portal he repetido el día?"
 			}]
 		}
 	},
@@ -28,7 +28,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Otro día más, tengo que irme, espero que se pase rápido"
+				"msn": "Otro día más, tengo que irme, espero que se pase rápido."
 			}]
 		}		
 	},
@@ -37,7 +37,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No hay nada útil dentro"
+				"msn": "No hay nada útil dentro."
 			}]
 		}		
 	},
@@ -46,7 +46,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Debería ordenar un poco todo esto"
+				"msn": "Debería ordenar un poco todo esto."
 			}]
 		}		
 	},
@@ -79,9 +79,10 @@
 		},		
 		"node1": {
 			"type": "options",
+			"questionId": "turnOnPC",
 			"options": [{
 				"next": "node1a",
-				"msn": "Si"
+				"msn": "Sí"
 			},
 			{
 				"next": "node1b",
@@ -115,7 +116,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Lo mejor será que me vaya"
+				"msn": "Lo mejor será que me vaya."
 			}]
 		}		
 	},
@@ -130,6 +131,7 @@
 		},		
 		"node1": {
 			"type": "options",
+			"questionId": "plugInMobile",
 			"options": [{
 				"next": "node1a",
 				"msn": "Si"

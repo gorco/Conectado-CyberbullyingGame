@@ -99,7 +99,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicos"
+				"msn": "No puedo entrar ahí, es el baño de chicos."
 			}]
 		}
 	},
@@ -126,7 +126,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicas"
+				"msn": "No puedo entrar ahí, es el baño de chicas."
 			}]
 		}
 	},
@@ -136,17 +136,18 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Si entro y aparece el profesor ya no podré salir"
+				"msn": "Si entro y aparece el profesor ya no podré salir."
 			}]
 		},
 		"options": {
 			"type": "options",
+			"questionId": "endBreak",
 			"options": [{
 				"next": "black",
 				"msn": "(Entrar de todas formas)"
 			},
 			{
-				"msn": "Mejor, voy a dar otra vuelta por el edificio"
+				"msn": "Mejor, voy a dar otra vuelta por el edificio."
 			}]
 		},
 		"black": {
