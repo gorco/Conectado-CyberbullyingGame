@@ -376,7 +376,8 @@ public class SequenceGenerator  {
 		Options optionsObj = Options.Create(options);
 		if (node.HasField(OPTIONS_QUESTION_ID))
 		{
-			optionsObj.QuestionID = node.GetField(OPTIONS_QUESTION_ID).ToString().Replace("\"", "");
+			//optionsObj.QuestionID = node.GetField(OPTIONS_QUESTION_ID).ToString().Replace("\"", "");
+			throw new NotImplementedException("COMENTADO");
 		}
 
 		newNode.Content = optionsObj;

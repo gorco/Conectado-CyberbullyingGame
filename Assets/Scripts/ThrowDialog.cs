@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RAGE.Analytics;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,6 +41,7 @@ public class ThrowDialog : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 
 	public void OnPointerUp(PointerEventData eventData)
 	{
+		Tracker.T.trackedGameObject.Interacted(fieldName);
 		ThrowDialogNow();
 	}
 }

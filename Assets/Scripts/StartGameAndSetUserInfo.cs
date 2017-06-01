@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using RAGE.Analytics;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -65,6 +66,10 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 		GlobalState.Nick = nick.text;
 		GlobalState.UserPass = userPass.text;
 		GlobalState.MaleSex = male.isOn;
+
+		Tracker.T.setVar("gender", male.isOn ? "male" : "female");
+		Tracker.T.setVar("pass", userPass.text);
+		Tracker.T.accessible.Accessed("StartGame");
 
 		//Friendship
 		GlobalState.AlejandroFS = 50;
