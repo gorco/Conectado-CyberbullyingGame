@@ -20,14 +20,13 @@ public class TrackerEventManager : EventManager {
 				switch (finished.Name)
 				{
 					case "show dialog options":
-						var questionID = finished.getParameter("questionId") as string;
-						var optionsQuestion = finished.getParameter("message") as string;
+						var questionID = finished.getParameter("questionID") as string;
+						//var optionsQuestion = finished.getParameter("message") as string;
 						var optionList = finished.getParameter("options") as List<Option>;
 						var optionchosen = (int)ev.getParameter("option");
 						var response = optionList[optionchosen];
 
 						Tracker.T.alternative.Selected(questionID, response.Text, AlternativeTracker.Alternative.Dialog);
-
 						break;
 				}
 				break;
@@ -80,9 +79,25 @@ public class TrackerEventManager : EventManager {
 		}
 	}
 
+	public void AddStateExtensions()
+	{
+		Tracker.T.setVar("GameDay", GlobalState.Day);
+		Tracker.T.setVar("GameHour", GlobalState.Hour + ":" + GlobalState.Minute);
+
+		Tracker.T.setVar("MariaFriendship", GlobalState.MariaFS);
+		Tracker.T.setVar("AlisonFriendship", GlobalState.AlisonFS);
+		Tracker.T.setVar("AnaFriendship", GlobalState.AnaFS);
+		Tracker.T.setVar("GuillermoFriendship", GlobalState.GuillermoFS);
+		Tracker.T.setVar("JoseFriendship", GlobalState.JoseFS);
+		Tracker.T.setVar("AlejandroFriendship", GlobalState.AlejandroFS);
+		Tracker.T.setVar("ParentsFriendship", GlobalState.ParentsFS);
+		Tracker.T.setVar("TeacherFriendship", GlobalState.TeacherFS);
+		Tracker.T.setVar("RiskFriendship", GlobalState.Risk);
+	}
+
 	public override void Tick()
 	{
-		throw new NotImplementedException();
+
 	}
 
 }

@@ -8,7 +8,7 @@
 			},
 			{
 				"next": "found",
-				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+				"condition": "true"
 			}]
 		},
 		"repeat": {

@@ -4,7 +4,10 @@
 			"type": "fork",
 			"options": [{
 				"next": "node1",
-				"condition": "varObject('global', 'SharedPassQuest') == 0"
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},{
+				"next": "node2",
+				"condition": "true"
 			}]
 		},
 		"node1":{
@@ -32,6 +35,13 @@
 			{
 				"tag": "Tú",
 				"msn": "Y ya hasta mañana no veré a Álex, Ana o Alison."
+			}]
+		},
+		"node2":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Ya han acabado las clases. Es hora de volver a casa."
 			}]
 		}
 	},

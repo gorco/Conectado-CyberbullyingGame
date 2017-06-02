@@ -109,6 +109,7 @@
 		},
 		"node1a": {
 			"type": "dialog",
+			"next": "loadPub",
 			"fragments": [{
 				"tag": "Tú",
 				"msn": "Voy a borrar el post"

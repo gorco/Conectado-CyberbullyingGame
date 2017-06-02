@@ -10,6 +10,8 @@ public class UIButtonMobile : MonoBehaviour {
 	public MobileChat mobile;
 	public bool initActive;
 
+	private int lastN;
+
 	// Use this for initialization
 	void Start () {
 		this.gameObject.SetActive(initActive);
@@ -25,6 +27,17 @@ public class UIButtonMobile : MonoBehaviour {
 		} else
 		{
 			advertisement.SetActive(false);
+		}
+
+		if(lastN != adv)
+		{
+			if(adv == 0)
+			{
+				GlobalState.MessagesPending = false;
+			} else
+			{
+				GlobalState.MessagesPending = true;
+			}
 		}
 	}
 }

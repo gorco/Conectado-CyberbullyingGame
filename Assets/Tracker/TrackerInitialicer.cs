@@ -34,7 +34,7 @@ public class TrackerInitialicer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Tracker.T.alternative.Selected("InitTracker", "start", true, RAGE.Analytics.Formats.AlternativeTracker.Alternative.Question);
+		//Tracker.T.alternative.Selected("InitTracker", "start", true, RAGE.Analytics.Formats.AlternativeTracker.Alternative.Question);
 
 	}
 	
