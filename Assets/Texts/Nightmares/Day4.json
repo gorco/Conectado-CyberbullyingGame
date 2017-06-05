@@ -6,11 +6,21 @@
 			"fragments": [{
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Tu primer día de clase ¿Por qué no te sientas?"
+				"msn": "¿No te gustan las nuevas fotos que hemos publicado?"
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Escoge el sitio que más te guste."
+				"msn": "Puedes intentar borrarlas..."
+			},
+			{
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "Vas a tener que hacer algo más a parte de borrarlas o denuncialas."
+			},
+			{
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "Venga, prueba a ver... pero todos tenemos una copia ya."
 			}]
 		},
 		"fade": {
@@ -27,28 +37,28 @@
 			"fragments": [{
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Me parece que te has quedado sin sitio."
+				"msn": "No has conseguido nada."
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "¿Ni siquiera sabes sentarte?"
+				"msn": "Jajaja"
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "¿Acaso no sirves para nada?"
+				"msn": "Las fotos siguen ahí."
 			},{
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "¿Como esperas hacer así amigos?"
+				"msn": "Una vez en Internet cualquiera podemos hacer una copia."
 			},{
-				"tag": "Voz desde el portal",
-				"msn": "Ven, yo te ayudaré."
+				"tag": "",
+				"msn": "..."
 			}, {
 				"tag": "Voz desde el portal",
-				"msn": "Atraviesa el portal."
+				"msn": "No es tú culpa, ven, pasa por el portal del nuevo."
 			}, {
 				"tag": "Voz desde el portal",
-				"msn": "Corre, antes de que despiertes."
+				"msn": "Intenta cambiar las cosas."
 			}]
 		}
 	},
@@ -177,26 +187,6 @@
 			}
 		}
 	},
-	"sit" : {
-		"root": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Sombra",
-				"character": "Shadow",
-				"msn": "Veo que has encontrado un sitio, pero... "
-			},
-			{
-				"tag": "Sombra",
-				"character": "Shadow",
-				"msn": "Ese sitio es mio, tendrás que escoger otro"
-			},
-			{
-				"tag": "Sombra",
-				"character": "Shadow",
-				"msn": "Puedes sentarte donde quieras menos ahí"
-			}]
-		}
-	},
 	"finishNightmare":{
 		"root": {
 			"type": "dialog",
@@ -204,20 +194,19 @@
 			"fragments": [{
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Me parece que te has quedado sin sitio"
+				"msn": "No has conseguido nada."
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "¿Ni siquiera sabes sentarte?"
+				"msn": "Jajaja"
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "¿Acaso no sirves para nada?"
-			},
-			{
+				"msn": "Las fotos siguen ahí."
+			},{
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "¿Como esperas hacer así amigos?"
+				"msn": "Una vez en Internet, cualquiera podemos hacer una copia."
 			}]
 		},
 		"variable": {
