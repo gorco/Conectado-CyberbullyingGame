@@ -1,5 +1,6 @@
 ﻿using RAGE.Analytics;
 using RAGE.Analytics.Storages;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,38 +39,51 @@ public class SettingsApp : MonoBehaviour {
 		//Application.Quit();
 		if (PlayerPrefs.HasKey("LimesurveyToken") && PlayerPrefs.GetString("LimesurveyToken") != "ADMIN" && PlayerPrefs.HasKey("LimesurveyPost"))
 		{
-			string path = Application.persistentDataPath;
-
-			if (!path.EndsWith("/"))
+			try
 			{
-				path += "/";
+				string path = Application.persistentDataPath;
+
+				if (!path.EndsWith("/"))
+				{
+					path += "/";
+				}
+
+				Dictionary<string, string> headers = new Dictionary<string, string>();
+
+				Net net = new Net(this);
+
+				WWWForm data = new WWWForm();
+
+				data.AddField("token", PlayerPrefs.GetString("LimesurveyToken"));
+				data.AddBinaryData("traces", System.Text.Encoding.UTF8.GetBytes(System.IO.File.ReadAllText(Tracker.T.RawFilePath)));
+
+				//d//ata.headers.Remove ("Content-Type");// = "multipart/form-data";
+
+				net.POST(PlayerPrefs.GetString("LimesurveyHost") + "classes/collector", data, new SavedTracesListener());
+
+				System.IO.File.AppendAllText(path + PlayerPrefs.GetString("LimesurveyToken") + ".csv", System.IO.File.ReadAllText(Tracker.T.RawFilePath));
+				PlayerPrefs.SetString("CurrentSurvey", "post");
+
+				//POST-TEST
+				Invoke("ChangeLevel", 2);
 			}
-
-			Dictionary<string, string> headers = new Dictionary<string, string>();
-
-			Net net = new Net(this);
-
-			WWWForm data = new WWWForm();
-
-			data.AddField("token", PlayerPrefs.GetString("LimesurveyToken"));
-			data.AddBinaryData("traces", System.Text.Encoding.UTF8.GetBytes(System.IO.File.ReadAllText(Tracker.T.RawFilePath)));
-
-			//d//ata.headers.Remove ("Content-Type");// = "multipart/form-data";
-
-			net.POST(PlayerPrefs.GetString("LimesurveyHost") + "classes/collector", data, new SavedTracesListener());
-
-			System.IO.File.AppendAllText(path + PlayerPrefs.GetString("LimesurveyToken") + ".csv", System.IO.File.ReadAllText(Tracker.T.RawFilePath));
-			PlayerPrefs.SetString("CurrentSurvey", "post");
-
-			//POST-TEST
-			Invoke("ChangeLevel", 1);
+			catch (Exception e)
+			{
+				Application.Quit();
+				System.Diagnostics.Process.GetCurrentProcess().Kill();
+				Debug.LogError(e);
+			}
 		}
 		else
-			Application.Quit();
-
-		if (Application.isWebPlayer == false && Application.isEditor == false){
-			System.Diagnostics.Process.GetCurrentProcess().Kill();
+		{
+			if (Application.isWebPlayer == false && Application.isEditor == false)
+			{
+				Application.Quit();
+				System.Diagnostics.Process.GetCurrentProcess().Kill();
+			}
 		}
+
+		
 	}
 
 	void ChangeLevel()

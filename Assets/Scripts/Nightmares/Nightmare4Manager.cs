@@ -29,12 +29,14 @@ public class Nightmare4Manager : NightmareManager
 
 	public Vector2 size;
 
+	private bool started = false;
+
 	// Use this for initialization
 	void Start()
 	{
 		dupCount = 0;
 		remainingDreamTime = totalDreamTime;
-		initDeleteButton();
+		//initDeleteButton();
 
 		xShadow = shadow.transform.localPosition.x;
 		size = this.GetComponent<Collider2D>().bounds.size;
@@ -58,6 +60,11 @@ public class Nightmare4Manager : NightmareManager
 		if (shadow.transform.localPosition.x != xShadow)
 		{
 			remainingDreamTime -= Time.deltaTime;
+			if (!started)
+			{
+				initDeleteButton();
+				started = true;
+			}
 		}
 
 		if (( remainingDreamTime < 0  || dupCount > 20 ) && !throwFinish)

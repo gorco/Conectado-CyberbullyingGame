@@ -6,18 +6,27 @@ using UnityEngine;
 
 public class Nightmare3Manager : NightmareManager
 {
+	private Nightmare3State talks;
 
-	private float time = 3;
+	public GameObject shadow;
+	private float time = 0;
 	private bool throwFinish = false;
+	private float xShadow;
 
 	// Use this for initialization
 	void Start () {
+		talks = GetComponent<Nightmare3State>();
 		InitMobileGUI.InitMobileGUIObject(false);
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if(CheckSits() == 0 && !throwFinish)
+	void Update () {		
+		if(talks.Talk >= 5)
+		{
+			time += Time.deltaTime;
+		}
+
+		if (talks.Talk >= 5 && time > 2 && !throwFinish)
 		{
 			throwFinish = true;
 			this.GetComponent<ObjectsWithDialogsManager>().startDialog("finishNightmare");
@@ -30,8 +39,8 @@ public class Nightmare3Manager : NightmareManager
 		return time;
 	}
 
-	private float CheckSits()
+	private float CheckDialogs()
 	{
-		return GetComponentsInChildren<Sit>(false).Length;
+		return GetComponentsInChildren<ThrowDialog>(false).Length;
 	}
 }

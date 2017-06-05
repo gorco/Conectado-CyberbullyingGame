@@ -70,6 +70,14 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
+				"tag": "Tú",
+				"msn": "Si lo enciendo ahora seguro que se me hace tarde."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Será mejor que me espere a por la tarde."
+			},
+			{
 				"tag": "PC",
 				"msn": "¿Quieres encender el ordenador?"
 			}]

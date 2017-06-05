@@ -6,18 +6,31 @@
 			"fragments": [{
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Tu primer día de clase ¿Por qué no te sientas?"
+				"msn": "Voy a hacer que nadie te quiera hablar."
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Escoge el sitio que más te guste"
+				"msn": "Puedes decir lo que quieras, pero no conseguirás nada."
+			},
+			{
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "Adelante, habla con la gente de clase, a ver si consigues que te hablen."
 			}]
 		},
 		"fade": {
 			"type": "event",
+			"next": "activate",
 			"event": {
 				"name": "little move",
 				"key": "shadow"
+			}
+		},
+		"activate": {
+			"type": "event",
+			"event": {
+				"name": "active object",
+				"time": 0.2,
 			}
 		}
 	},
@@ -28,20 +41,20 @@
 			"fragments": [{
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Me parece que te has quedado sin sitio"
+				"msn": "Me parece que te has quedado solo."
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "¿Ni siquiera sabes sentarte?"
+				"msn": "¿Qué tal sienta que todos te ignoren?"
 			}, {
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "¿Acaso no sirves para nada?"
+				"msn": "¿No te parece divertido que nadie te haga caso?"
 			},
 			{
 				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "¿Como esperas hacer así amigos?"
+				"msn": "Porque yo me estoy partiendo de solo verte."
 			}]
 		},
 		"variable": {
@@ -88,25 +101,219 @@
 			}
 		}
 	},
-	"sit" : {
+	"jose":{
 		"root": {
 			"type": "dialog",
+			"next": "options",
 			"fragments": [{
-				"tag": "Sombra",
-				"character": "Shadow",
-				"msn": "Veo que has encontrado un sitio, pero... "
-			},
-			{
-				"tag": "Sombra",
-				"character": "Shadow",
-				"msn": "Ese sitio es mio, tendrás que escoger otro"
-			},
-			{
-				"tag": "Sombra",
-				"character": "Shadow",
-				"msn": "Puedes sentarte donde quieras menos ahí"
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "..."
 			}]
-		}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Jose",
+			"options": [{
+				"next": "fade",
+				"msn": "¿Vas a ignorarme sin motivo? ¿Sólo porque te han dicho que lo hagas?"
+			},
+			{
+				"next": "fade",
+				"msn": "Podemos ser amigos."
+			},
+			{
+				"next": "fade",
+				"msn": "¿Tienes 3 años? Dime algo."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "jose"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	},
+	"guille":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Guille",
+			"options": [{
+				"next": "fade",
+				"msn": "Tú eres mi amigo, ¿no?"
+			},
+			{
+				"next": "fade",
+				"msn": "Guille, tú no eres como los demás."
+			},
+			{
+				"next": "fade",
+				"msn": "No dejes que te amenacen."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "guille"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	},
+	"alison":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Alison",
+			"options": [{
+				"next": "fade",
+				"msn": "Eres mi amiga, ¿no?"
+			},
+			{
+				"next": "fade",
+				"msn": "Eres maja, no me vas a dejar de hablar ¿verdad?."
+			},
+			{
+				"next": "fade",
+				"msn": "Por favor, dime algo."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "alison"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	},
+	"maria":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Maria",
+			"options": [{
+				"next": "fade",
+				"msn": "¿Tú también me vas a ignorar?"
+			},
+			{
+				"next": "fade",
+				"msn": "¿No te habían hecho lo mismo? No me ignores, sabes lo que es."
+			},
+			{
+				"next": "fade",
+				"msn": "Tú me entiendes, ¿verdad?."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "maria"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	},
+	"ana":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Ana",
+			"options": [{
+				"next": "fade",
+				"msn": "¿Qué te he hecho? ¿Por qué vas a por mi también?"
+			},
+			{
+				"next": "fade",
+				"msn": "¿Si Álex se tira de un puente también lo harás tú?."
+			},
+			{
+				"next": "fade",
+				"msn": "¿No podemos llevarnos bien?"
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "ana"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
 	}
-
 }

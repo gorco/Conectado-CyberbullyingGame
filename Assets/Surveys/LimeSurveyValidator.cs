@@ -64,7 +64,7 @@ public class LimeSurveyValidator : MonoBehaviour {
 			}else
 				PlayerPrefs.SetInt ("online", 1);
 
-			SceneManager.LoadScene ("_Scene1");
+			SceneManager.LoadScene (1);
 		}
         connection.GET(host + "surveys/validate?survey=" + survey_pre + ((token.Length>0)? "&token=" + token : ""), new ValidateListener(response, token));
     }
@@ -120,7 +120,7 @@ public class LimeSurveyValidator : MonoBehaviour {
 				PlayerPrefs.SetString ("CurrentSurvey", "pre");
 				SceneManager.LoadScene ("_Survey");
 			}else
-                SceneManager.LoadScene("_Scene1");
+                SceneManager.LoadScene(1);
         }
     }
 

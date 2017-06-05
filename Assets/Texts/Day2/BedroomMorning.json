@@ -69,6 +69,10 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
+				"tag": "Tú",
+				"msn": "Debería esperar a esta tarde o se me hará tarde."
+			},
+			{
 				"tag": "PC",
 				"msn": "¿Quieres encender el ordenador?"
 			}]
