@@ -67,6 +67,7 @@
 		},		
 		"node1": {
 			"type": "options",
+			"questionId": "turnOnPC",
 			"options": [{
 				"next": "node1a",
 				"msn": "Sí"
