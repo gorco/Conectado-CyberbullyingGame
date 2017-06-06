@@ -35,7 +35,7 @@ public class GlobalStateTest : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		GlobalState.Repeated = this.repeated;
-		/*
+		
 		Debug.LogWarning("INIT GLOBAL STATE");
 
 		GlobalState.Day = this.day;
@@ -67,7 +67,7 @@ public class GlobalStateTest : MonoBehaviour {
 
 		Debug.LogWarning("FIN INIT GLOBAL STATE");
 
-		*/
+		
 
 
 

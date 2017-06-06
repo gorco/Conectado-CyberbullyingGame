@@ -1,5 +1,7 @@
 ﻿using Isometra;
 using Isometra.Sequences;
+using RAGE.Analytics;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -368,9 +370,11 @@ public class MobileChat : MonoBehaviour {
 	{
 		if(!outPocket && !animate)
 		{
+			Interacted("takeMobile");
 			takeMobile(seconds);
 		} else if (outPocket && !animate)
 		{
+			Interacted("hideMobile");
 			hideMobile(seconds);
 		}
 	}
@@ -397,6 +401,7 @@ public class MobileChat : MonoBehaviour {
 	public void OpenChatApp()
 	{
 		Debug.LogWarning("SHOW CHATLIST");
+		Interacted("openMobileChat");
 		appsMenu.SetActive(false);
 		chatList.SetActive(true);
 		friendsApp.SetActive(false);
@@ -406,6 +411,7 @@ public class MobileChat : MonoBehaviour {
 	public void OpenFriendshipApp()
 	{
 		Debug.LogWarning("SHOW FRIENDS");
+		Interacted("openFriendsApp");
 		appsMenu.SetActive(false);
 		chatList.SetActive(false);
 		friendsApp.SetActive(true);
@@ -416,6 +422,7 @@ public class MobileChat : MonoBehaviour {
 	public void OpenSettingsApp()
 	{
 		Debug.LogWarning("SHOW SETINGS");
+		Interacted("openMobileSettings");
 		appsMenu.SetActive(false);
 		chatList.SetActive(false);
 		friendsApp.SetActive(false);
@@ -481,5 +488,15 @@ public class MobileChat : MonoBehaviour {
 		Game.main.enqueueEvent(this.gameEvent);
 	}
 
-
+	public void Interacted(string id)
+	{
+		try
+		{
+			Tracker.T.trackedGameObject.Interacted(id, RAGE.Analytics.Formats.GameObjectTracker.TrackedGameObject.Item);
+		}
+		catch (Exception e)
+		{
+			Debug.LogError(e);
+		}
+	}
 }

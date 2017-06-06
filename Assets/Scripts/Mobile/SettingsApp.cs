@@ -65,12 +65,11 @@ public class SettingsApp : MonoBehaviour {
 				PlayerPrefs.SetString("CurrentSurvey", "post");
 
 				//POST-TEST
-				Invoke("ChangeLevel", 2);
+				Invoke("ChangeLevel", 1);
 			}
 			catch (Exception e)
 			{
-				Application.Quit();
-				System.Diagnostics.Process.GetCurrentProcess().Kill();
+				Invoke("ChangeLevel", 1);
 				Debug.LogError(e);
 			}
 		}
@@ -81,9 +80,7 @@ public class SettingsApp : MonoBehaviour {
 				Application.Quit();
 				System.Diagnostics.Process.GetCurrentProcess().Kill();
 			}
-		}
-
-		
+		}	
 	}
 
 	void ChangeLevel()

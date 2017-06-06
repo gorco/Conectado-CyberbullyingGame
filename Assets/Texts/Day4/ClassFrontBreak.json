@@ -1,6 +1,13 @@
 ﻿{
 	"init":{
 		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "mobile",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') != 1"
+			}]
+		},
+		"mobile": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",

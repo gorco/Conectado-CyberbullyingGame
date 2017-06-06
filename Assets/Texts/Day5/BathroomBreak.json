@@ -150,7 +150,7 @@
 			{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Supongo que el que estuvieras <$ if(varObject('global', 'MaleSexNonStatic')==true, 'encerrado', 'encerrada') $> dentro del baño ha sido cosa e Álex."
+				"msn": "Supongo que el que estuvieras <$ if(varObject('global', 'MaleSexNonStatic')==true, 'encerrado', 'encerrada') $> dentro del baño ha sido cosa de Álex."
 			},
 			{
 				"tag": "Profesor",

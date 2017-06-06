@@ -494,12 +494,35 @@
 			"type": "options",
 			"questionId": "parentsMeetingAfternoonOption",
 			"options": [{
-				"next": "meetingVariable",
+				"next": "yesMeeting",
 				"msn": "Si, por favor, no puedo más"
 			},
 			{
-				"next": "upParentsFS",
+				"next": "noMeeting",
 				"msn": "No, la tomarán aún más conmigo"
+			}]
+		},
+		"yesMeeting": {
+			"type": "dialog",
+			"next": "meetingVariable",
+			"fragments": [{
+				"tag": "Papá",
+				"character": "Father",
+				"msn": "No te preocupes cariño, vamos a solucionar todo."
+			}]
+		},
+		"noMeeting": {
+			"type": "dialog",
+			"next": "upParentsFS",
+			"fragments": [{
+				"tag": "Papá",
+				"character": "Father",
+				"msn": "De acuerdo, por ahora no iremos al colegio."
+			},
+			{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "Pero en cuanto pase algo más grave... no nos vamos a quedar sentados."
 			}]
 		},
 		"meetingVariable": {

@@ -43,12 +43,14 @@ public class TrackerEventManager : EventManager {
 
 				if (friend != null)
 				{
+					Tracker.T.alternative.Unlocked(friend, value.ToString());
 					Tracker.T.completable.Progressed(friend, value);
 				}
 				break;
 
 			case "change scene":
 				int scene = (int)ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
+				AddStateExtensions();
 				Tracker.T.setProgress(scene / 27f);
 				Tracker.T.completable.Completed("scene"+(scene - 1));
 				break;
@@ -68,6 +70,7 @@ public class TrackerEventManager : EventManager {
 
 			case "move camera":
 				string key = ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD).ToString().Replace("\"", "");
+				AddStateExtensions();
 				Tracker.T.accessible.Accessed(key);
 				break;
 

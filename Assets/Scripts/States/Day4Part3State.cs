@@ -28,7 +28,7 @@ public class Day4Part3State : IState {
 
 	// Use this for initialization
 	void Start () {
-		if(GlobalState.SharedPassQuest == 0)
+		if(GlobalState.SharedPassQuest != 1)
 		{
 			InitMobileGUI.InitMobileGUIObject(false);
 		} else

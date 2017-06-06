@@ -1,5 +1,6 @@
 ﻿using Isometra;
 using Isometra.Sequences;
+using RAGE.Analytics;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -104,11 +105,13 @@ public class ComputerManager : EventManager {
 		friendsPending.text = ""+friendsRequests;
 		if (accepted)
 		{
+			Interacted("Accepted_" + name + "_request");
 			friendsNum++;
 			friendsCount.text = "" + friendsNum;
 		}
 		else
 		{
+			Interacted("Deny_" + name + "_request");
 			float y = friend.gameObject.GetComponent<RectTransform>().anchoredPosition.y;
 			foreach(SocialFriend sf in friends)
 			{
@@ -202,6 +205,7 @@ public class ComputerManager : EventManager {
 
 	public void ShowLogin()
 	{
+		Interacted("ShowComputerLogin");
 		loginView.SetActive(true);
 		publicationView.SetActive(false);
 		friendsView.SetActive(false);
@@ -209,6 +213,7 @@ public class ComputerManager : EventManager {
 
 	public void ShowPhotos()
 	{
+		Interacted("ShowComputerPublications");
 		ScrollChatToTop();
 		loginView.SetActive(false);
 		publicationView.SetActive(true);
@@ -226,6 +231,7 @@ public class ComputerManager : EventManager {
 
 	public void ShowFriends()
 	{
+		Interacted("ShowComputerFriends");
 		loginView.SetActive(false);
 		publicationView.SetActive(false);
 		friendsView.SetActive(true);
@@ -233,6 +239,7 @@ public class ComputerManager : EventManager {
 
 	public void OffComputer()
 	{
+		Interacted("offComputer");
 		screenSqueleton.SetActive(false);
 		screen.SetActive(false);
 	}
@@ -247,6 +254,7 @@ public class ComputerManager : EventManager {
 			publicUserName.text = GlobalState.Nick;
 			userAvatar.sprite = GlobalState.MaleSex ? avatarH : avatarM;
 		}
+		Interacted("onComputer");
 		ShowLogin();
 		screen.SetActive(true);
 		screenSqueleton.SetActive(true);
@@ -354,6 +362,18 @@ public class ComputerManager : EventManager {
 			Publication p = pub.GetComponent<Publication>();
 			publications.Remove(p.GetPublicationKey());
 			Destroy(pub);
+		}
+	}
+
+	public void Interacted(string id)
+	{
+		try
+		{
+			Tracker.T.trackedGameObject.Interacted(id, RAGE.Analytics.Formats.GameObjectTracker.TrackedGameObject.Item);
+		}
+		catch (Exception e)
+		{
+			Debug.LogError(e);
 		}
 	}
 }

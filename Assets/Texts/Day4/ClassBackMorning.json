@@ -116,13 +116,43 @@
 		},
 		"node2": {
 			"type": "dialog",
-			"next": "node3",
+			"next": "nodeFork",
 			"fragments": [{
 				"tag": "",
 				"msn": "(Ruidos de fondo, el profesor ha llegado)"
 			}]
 		},
-		"node3": {
+		"nodeFork": {
+			"type": "fork",
+			"options": [{
+				"next": "endDay",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "break",
+				"condition": "true"
+			}]
+		},
+		"break": {
+			"type": "event",
+			"next": "breakHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "La campana que marca el recreo ha sonado..."
+			}
+		},
+		"breakHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"endDay": {
 			"type": "event",
 			"next": "changeHour",
 			"event": {

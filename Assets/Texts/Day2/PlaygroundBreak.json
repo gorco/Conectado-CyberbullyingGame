@@ -128,6 +128,10 @@
 				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
 			},
 			{
+				"next": "nodeWashed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
 				"next": "nodeInit",
 				"condition": "true"
 			}]
@@ -157,6 +161,19 @@
 				"var": "spoken",
 				"value": true
 			}
+		},
+		"nodeWashed": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Menuda mancha llevas."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Bueno, no pasa nada, en un rato se secará."
+			}]
 		},
 		"nodeNoGum": {
 			"type": "dialog",

@@ -77,7 +77,7 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Los siento, no tenemos ni idea."
+				"msn": "Lo siento, no tenemos ni idea."
 			},
 			{
 				"tag": "Tú",
@@ -121,10 +121,28 @@
 	},
 	"stairsToPlayground": {
 		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "endDay",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "break",
+				"condition": "true"
+			}]
+		},
+		"break": {
 			"type": "event",
 			"event": {
 				"name": "move camera",
 				"key": "playground"
+			}
+		},
+		"endDay": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "endDay"
 			}
 		}
 	}
