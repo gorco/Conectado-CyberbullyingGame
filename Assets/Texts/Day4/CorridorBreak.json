@@ -216,7 +216,7 @@
 		},
 		"options": {
 			"type": "options",
-			"questionId": "sitDownClass",
+			"questionId": "endBreak",
 			"options": [{
 				"next": "black",
 				"msn": "(Entrar de todas formas)"
