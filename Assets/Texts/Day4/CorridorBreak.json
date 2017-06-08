@@ -36,7 +36,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No tengo nada que decirle."
+				"msn": "Me alegro de que hoy hayas venido."
 			}]
 		},
 		"mobileLost": {
@@ -88,12 +88,24 @@
 		},
 		"mariaQuest": {
 			"type": "event",
+			"next": "dialogJoke",
 			"event": {
 				"name": "change variable",
 				"var": "MariaQuest",
 				"value": 2,
 			}
 		},
+		"dialogJoke": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "(Bien, parece que no se ha dado cuenta)"
+			},
+			{
+				"tag": "Tú",
+				"msn": "(Espero que ahora me digan dónde está mi móvil)"
+			}]
+		}
 	},
 	"doorToStairs": {
 		"root": {

@@ -102,6 +102,11 @@ public class GlobalState
 	protected static GlobalState instance;
 	public static GlobalState Instance {  get { return instance == null ? instance = new GlobalState() : instance; } }
 
+	public bool NotRepeatedDaysNonStatic
+	{
+		get { return NotRepeatedDays; }
+	}
+
 	public int DayNonStatic
 	{
 		get { return Day; }

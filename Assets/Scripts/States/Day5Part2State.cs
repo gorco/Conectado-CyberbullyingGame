@@ -22,11 +22,11 @@ public class Day5Part2State : IState {
 		}
 		if (GlobalState.SharedPassQuest == 0)
 		{
-			InitMobileGUI.InitMobileGUIObject(false);
+			base.mobile = InitMobileGUI.InitMobileGUIObject(false);
 		}
 		else
 		{
-			InitMobileGUI.InitMobileGUIObject(true);
+			base.mobile = InitMobileGUI.InitMobileGUIObject(true);
 		}
 	}
 

@@ -8,11 +8,11 @@ public class Day4Part4State : IState {
 	void Start () {
 		if (GlobalState.SharedPassQuest == 0)
 		{
-			InitMobileGUI.InitMobileGUIObject(false);
+			base.mobile = InitMobileGUI.InitMobileGUIObject(false);
 		}
 		else
 		{
-			InitMobileGUI.InitMobileGUIObject(true);
+			base.mobile = InitMobileGUI.InitMobileGUIObject(true);
 		}
 	}
 	
