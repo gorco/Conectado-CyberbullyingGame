@@ -5,6 +5,7 @@ using UnityEngine;
 public class Eyelids : MonoBehaviour {
 
 	private AnimationCurve curve;
+	public GameObject block;
 
 	public AnimationCurve curveWakeUp;
 	public AnimationCurve curveGoToSleep;
@@ -59,7 +60,10 @@ public class Eyelids : MonoBehaviour {
 
 			delta += Time.deltaTime;
 			if (delta >= animationSeconds)
+			{
+				block.SetActive(false);
 				animate = false;
+			}
 		}
 	}
 
@@ -79,6 +83,7 @@ public class Eyelids : MonoBehaviour {
 
 	public void goToSleep(float seconds)
 	{
+		block.SetActive(true);
 		curve = curveGoToSleep;
 		delta = 0;
 

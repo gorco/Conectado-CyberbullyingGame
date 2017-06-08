@@ -1,0 +1,183 @@
+﻿{
+	"board":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Parece que alguien ha arrancado ya la foto de ayer."
+			}]
+		}
+	},
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "Profesor",
+				"character": "Teacher",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> llegas tarde."
+			},{
+				"tag": "Profesor",
+				"character": "Teacher",
+				"msn": "Por favor, sientate para que podamos continuar la clase."
+			}]
+		},
+		"node2": {
+			"type": "fork",
+			"options": [{
+				"next": "endDay",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "break",
+				"condition": "true"
+			}]
+		},
+		"break": {
+			"type": "event",
+			"next": "breakHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "La campana que marca el recreo ha sonado..."
+			}
+		},
+		"breakHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 20
+			}
+		},
+		"endDay": {
+			"type": "event",
+			"next": "breakHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Cada vez se te hacen más largas las horas de clase. Por suerte ya es hora de volver a casa."
+			}
+		},
+		"endDayHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		}
+	},
+	"table":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Este sitio está libre, ¿me siento aquí?"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "sitDownClass",
+			"options": [{
+				"next": "node2",
+				"msn": "Si"
+			},
+			{
+				"msn": "No"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "nodeFork",
+			"fragments": [{
+				"tag": "",
+				"msn": "(Ruidos de fondo, el profesor ha llegado)"
+			}]
+		},
+		"nodeFork": {
+			"type": "fork",
+			"options": [{
+				"next": "endDay",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "break",
+				"condition": "true"
+			}]
+		},
+		"break": {
+			"type": "event",
+			"next": "breakHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "La campana que marca el recreo ha sonado..."
+			}
+		},
+		"breakHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"endDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Cada vez se te hacen más largas las horas de clase. Por suerte ya es hora de volver a casa."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 20
+			}
+		}
+	},
+}

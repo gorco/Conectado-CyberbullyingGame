@@ -1,0 +1,80 @@
+{
+	"init": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},{
+				"next": "node2",
+				"condition": "true"
+			}]
+		},
+		"node1":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Hay una nota en mi abrigo..."
+			},
+			{
+				"tag": "Tú",
+				"msn": "\"Alison te quitó el móvil y se lo dió a Álex y Ana. (continua por la otra cara).\""
+			},
+			{
+				"tag": "Tú",
+				"msn": "\"Tenia que darles tus contraseñas o tu móvil\" (fin de la nota)."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Ahora entiendo lo de esta mañana. ¿La habrán amenazado también?"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Mierda, lo tengo sin patrón o PIN de desbloqueo. ¿Qué habrán hecho con él?"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Y ya hasta mañana no veré a Álex, Ana o Alison."
+			}]
+		},
+		"node2":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Ya han acabado las clases. Es hora de volver a casa."
+			}]
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Ya no tengo más clases por hoy y no queda nadie"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Será mejor que me vaya a casa"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 21
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "15:00",
+			}
+		}
+	}
+}

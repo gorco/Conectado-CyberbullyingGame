@@ -20,11 +20,11 @@
 			"fragments": [{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $> llegas tarde"
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> llegas tarde."
 			},{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Por favor, sientate para que podamos continuar la clase"
+				"msn": "Por favor, sientate para que podamos continuar la clase."
 			}]
 		},
 		"node2": {
@@ -34,14 +34,15 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Te diriges entre todas las miradas y te sientas en el primer sitio que ves libre"
+				"value": "Te diriges entre todas las miradas y te sientas en el primer sitio que ves libre."
 			}
 		},
 		"node3": {
 			"type": "event",
 			"event": {
-				"name": "move camera",
-				"key": "classFront"
+				"name": "change scene",
+				"var": "scene",
+				"value": 10
 			}
 		}
 	},
@@ -51,11 +52,12 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Este sitio está libreo, ¿me siento aquí?"
+				"msn": "Este sitio está libre, ¿me siento aquí?"
 			}]
 		},
 		"options": {
 			"type": "options",
+			"questionId": "sitDownClass",
 			"options": [{
 				"next": "node2",
 				"msn": "Si"
@@ -82,11 +84,11 @@
 			"next": "noGum",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Hay un chicle pegado"
+				"msn": "Hay un chicle pegado."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Ayer debió pasar lo mismo, será mejor que lo quite y me siente"
+				"msn": "Ayer debió pasar lo mismo, será mejor que lo quite y me siente."
 			}]
 		},
 		"noGum": {
@@ -105,7 +107,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Os sentaís todos, para cuando te das cuenta es la hora del recreo"
+				"value": "Os sentáis todos, para cuando te das cuenta es la hora del recreo."
 			}
 		},
 		"changeHour": {

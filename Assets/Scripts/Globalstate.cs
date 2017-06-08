@@ -15,7 +15,13 @@ public class GlobalState
 
 	public static bool MaleSex { get; set; }
 
+	public static bool MessagesPending { get; set; }
+
 	public static string UserName { get; set; }
+
+	public static string Nick { get; set; }
+
+	public static string UserPass { get; set; }
 
 	// SocialNet
 	public static int MariaNet { get; set; }
@@ -36,36 +42,60 @@ public class GlobalState
 	public static int AlejandroFS { get; set; }
 	public static int ParentsFS { get; set; }
 	public static int TeacherFS { get; set; }
-	public static int Risk{ get { return 100 - ((MariaFS + AlisonFS + AnaFS + GuillermoFS + JoseFS + AlejandroFS) / 12) - ParentsFS/4 - TeacherFS/4 ; } }
+	public static int Risk{ get { return Mathf.CeilToInt((MariaFS + AlisonFS + AnaFS + GuillermoFS + JoseFS + AlejandroFS) * 0.11f + ParentsFS * 0.2f + TeacherFS * 0.14f) ; } }
 
 	// QuestsPerDay
 
 	public static int MariaQuest { get; set; }
 	// Day1 -> Meet Maria [0 - not spoken] [1 - freak] [2 - friend]
 	// Day2 -> Speak Maria [0 - spoken] [1 - joke advise]
+	// Day3 -> []
+	// Day4 -> Maria Joke [0 - no joke] [1 - jokeIncomplete] [2 - jokeCompleted]
 
 	public static int AlisonQuest { get; set; }
 	// Day1 -> Found earing [0 - not found] [1 - found]
 	// Day2 -> Speak Alison [0 - not spoken] [1 - spoken] [2 - joke advise]
+	// Day3 -> []
+	// Day4 -> []
 
 	public static int AnaQuest { get; set; }
 	// Day1 -> Meet Ana [0 - not spoken] [1 - spoken]
 	// Day2 -> Speak Ana []
+	// Day3 -> []
+	// Day4 -> []
 
 	public static int GuillermoQuest { get; set; }
 	// Day1 -> Meet Guille [0 - not spoken] [1 - spoken] [2 - noteboard]
 	// Day2 -> Speak Guille [0 - not spoken] [1 - spoken and go] [2 - spoken and not go] [3 - spoken and quest]
+	// Day3 -> Speak Guille [0 - speak] [1 - about board]
+	// Day4 -> []
 
 	public static int JoseQuest { get; set; }
 	// Day1 -> Meet Jose [0 - not spoken] [1 - spoken]
 	// Day2 -> Speak Jose [0 - not spoken] [1 - spoken]
+	// Day3 -> []
+	// Day4 -> []
 
 	public static int AlejandroQuest { get; set; }
 	// Day1 -> Meet Alex [0 - sorry] [1 - threat] [2 - bad]
 	// Day2 -> Speak Alex [0 - not spoken] [1 - joke] [2 - zero] [3 - fight]
+	// Day3 -> []
+	// Day4 -> []
 
 	public static int GumQuest { get; set; }
 	// Day2 -> Gum [0 - not washed] [1 - washed] [2 - not gum]
+
+	public static int BoardQuest { get; set; }
+	// Day3 -> Board [0 - not seen] [1 - seen]
+
+	public static int ParentsMeetingQuest { get; set; }
+	// Day3 -> Parent [0 - No Meeting] [1 - Meeting Cancel] [2 - Meeting Success]
+
+	public static int SharedPassQuest { get; set; }
+	// Day4 -> Alison [0 - no shared pass (mobile lost)] [1 - shared pass] [2 - no shared pass (mobile found)]
+
+	public static int Final { get; set; }
+	// [1 - bad end, alex win] [2 - normal end, advise] [3 - good end, bye Alex]
 
 	protected static GlobalState instance;
 	public static GlobalState Instance {  get { return instance == null ? instance = new GlobalState() : instance; } }
@@ -93,6 +123,11 @@ public class GlobalState
 	public bool MaleSexNonStatic
 	{
 		get { return MaleSex; }
+	}
+
+	public bool MessagesPendingNonStatic
+	{
+		get { return MessagesPending; }
 	}
 
 	public string UserNameNonStatic
@@ -162,6 +197,23 @@ public class GlobalState
 	public int GumQuestNonStatic
 	{
 		get { return GumQuest; }
+	}
+	public int BoardQuestNonStatic
+	{
+		get { return BoardQuest; }
+	}
+	public int ParentsMeetingQuestNonStatic
+	{
+		get { return ParentsMeetingQuest; }
+	}
+	public int SharedPassQuestNonStatic
+	{
+		get { return SharedPassQuest; }
+	}
+
+	public int FinalNonStatic
+	{
+		get { return Final; }
 	}
 
 	// SocialNet

@@ -1,0 +1,212 @@
+{
+	"anaGroup":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeNoGum",
+				"condition": "varObject('global', 'AuxQuestNonStatic') == 2"
+			},
+			{
+				"next": "nodeInit",
+				"condition": "true"
+			}]
+		},
+		"nodeNoGum": {
+			"type": "dialog",
+			"next": "FadeOutAna",
+			"fragments": [{
+				"tag": "susurro",
+				"msn": "Mmm, no parece que lleve ningún chicle pegado."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Shhh"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Hola <$ varObject('global', 'UserNameNonStatic') $>"
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Buenas"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "¿Has visto a Alex?"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Tenemos que hablar con él"
+			}]
+		},
+		"FadeOutAna": {
+			"next": "FadeOutJose",
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "ana"
+			}
+		},
+		"FadeOutJose": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "jose"
+			}
+		},
+		"nodeInit": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "A ver si lavas la ropa, menudo desastre llevas en el pantalón."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "¿No teneís lavadora en casa?"
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Jajajaja, ¡nueva moda! chicles pegados al pantalón"
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Con lo horrorosa que es su ropa, no merece la pena que la lave"
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Debería tirarla a la basura directamente"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Jajajaja"
+			}]
+		}
+	},
+	"guilleGroup":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeNoGum",
+				"condition": "varObject('global', 'AuxQuestNonStatic') == 2"
+			},
+			{
+				"next": "nodeInit",
+				"condition": "true"
+			}]
+		},
+		"nodeInit": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Prueba a quitarte el chicle en el baño"
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"nodeNoGum": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Buenas  <$ varObject('global', 'UserNameNonStatic') $>"
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Estamos hablando de Alex"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Esta mañana estaba raro, incluso ha llegado el primero a clase"
+			}]
+		}, 
+		"node0": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "¿Dónde te has apoyado?Te has debido sentar encima de un chicle"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Te has debido sentar encima de un chicle"
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Menudo desastre, pasa por el baño antes de ir a clase"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "si, igual consigues quitarlo"
+			}]
+		},
+		"guilleFS": {
+			"type": "event",
+			"next": "joseFS",
+			"event": {
+				"name": "change friendship",
+				"var": "GuilleFS",
+				"value": 10,
+			}
+		},
+		"alisonFS": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFS",
+				"value": 10,
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Es la hora del recreo, aún me quedan clases antes de poder irme."
+			}]
+		}
+	}
+}

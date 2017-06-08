@@ -7,6 +7,10 @@
 				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
 			},
 			{
+				"next": "whased",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
 				"next": "node0",
 				"condition": "true"
 			}]
@@ -14,22 +18,35 @@
 		"nogum": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
 				"character": "Maria",
-				"msn": "Está leyendo, como siempre, mejor no la molesto"
+				"msn": "Está leyendo, como siempre, mejor no la molesto."
 			}]
 		},
 		"node0": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Maria",
+				"tag": "María",
 				"character": "Maria",
-				"msn": "No se si te has fijado, pero llevas un chicle pegado en el culo"
+				"msn": "No sé si te has fijado, pero llevas un chicle pegado en el culo."
 			},
 			{
-				"tag": "Maria",
+				"tag": "María",
 				"character": "Maria",
-				"msn": "Puedes pasar por el baño a verlo en el espejo"
+				"msn": "Puedes pasar por el baño a verlo en el espejo."
+			}]
+		},
+		"whased": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "¿Qué has hecho? menuda mancha."
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Pfff, parece que te hayas meado encima, o incluso cagado."
 			}]
 		}
 	},
@@ -82,7 +99,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicos"
+				"msn": "No puedo entrar ahí, es el baño de chicos."
 			}]
 		}
 	},
@@ -109,7 +126,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicas"
+				"msn": "No puedo entrar ahí, es el baño de chicas."
 			}]
 		}
 	},
@@ -119,17 +136,18 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Si entro y aparece el profesor ya no podré salir"
+				"msn": "Si entro y aparece el profesor ya no podré salir."
 			}]
 		},
 		"options": {
 			"type": "options",
+			"questionId": "endBreak",
 			"options": [{
 				"next": "black",
 				"msn": "(Entrar de todas formas)"
 			},
 			{
-				"msn": "Mejor, voy a dar otra vuelta por el edificio"
+				"msn": "Mejor, voy a dar otra vuelta por el edificio."
 			}]
 		},
 		"black": {

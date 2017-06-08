@@ -1,0 +1,179 @@
+{
+	"end":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "final1",
+				"condition": "varObject('global', 'FinalNonStatic') <= 1"
+			},
+			{
+				"next": "final2",
+				"condition": "varObject('global', 'FinalNonStatic') == 2"
+			},
+			{
+				"next": "final3",
+				"condition": "varObject('global', 'FinalNonStatic') == 3"
+			}]
+		},
+		"final1": {
+			"type": "dialog",
+			"next": "opt",
+			"fragments": [{
+				"tag": "Voz desde el portal",
+				"msn": "Al final todo ha acabado igual, no se puede decir que no lo haya intentado."
+			}, 
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Supongo que ya es tarde, has desaprovechado la oportunidad que te he dado."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Álex y Ana seguirán haciendo la vida imposible a otros compañeros. Tú no has sido su primera víctima, ni la última."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Tan difícil es pedir ayuda cuando uno la necesita. Olvidarse de nuestro ego. Uno no siempre tiene la culpa de lo que le pasa ni se lo merece."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "¿Por qué ese miedo a compartir lo que te sucede, lo que uno siente?"
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "¿Por qué dejamos que las personas sufran? ¿Por qué pensamos que es mejor permanecer callado, que el tiempo todo lo cura?"
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Es fácil reírse de los demás, pero qué pasa cuando el afectado eres tú."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Por qué es mejor sufrir o ver a los demás pasarlo mal que pedir ayuda, ¿acaso pedir ayuda es chivarse? ¿Es chivarse evitar que alguién lo pase mal?."
+			}]
+		},
+		"final2": {
+			"type": "dialog",
+			"next": "opt",
+			"fragments": [{
+				"tag": "Voz desde el portal",
+				"msn": "Parece que al final no he conseguido mi propósito, pero al menos han mejorado un poco las cosas."
+			}, 
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Álex ahora estará vigilado y al menos os dejará a todos un poco más en paz."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Hay que pedir ayuda cuando uno la necesita. Olvidarse de nuestro ego. Uno no siempre tiene la culpa de lo que le pasa o se lo merece."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "El tiempo no va a solucionar las cosas si sufres, no hay que dejarlo pasar."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Todos necesitamos ayuda alguna vez y espero que al menos ahora seas consciente de que al igual que hay personas que te ayudan otros necesitan que tú les ayudes a ellos"
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Acaso es mejor sufrir o ver a los demás pasarlo mal que pedir ayuda, ¿acaso pedir ayuda es chivarse? ¿Es chivarse evitar que alguién lo pase mal?."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Espero que con lo que has vicido pierdas ese miedo a contar las cosas malas que te pasan a tí y a tus compañeros."
+			}]
+		},
+		"final3": {
+			"type": "dialog",
+			"next": "opt",
+			"fragments": [{
+				"tag": "Voz desde el portal",
+				"msn": "Bien, hemos conseguido cambiar las cosas."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Aún no lo sabes, pero hemos conseguido que Álex deje en paz a sus compañeros y a ti."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Si nadie le hubiera parado los pies tu no hubieras sido la última persona en sufrir su acoso."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Es bueno contar las cosas, pedir ayuda. Nadie se merece que lo marginen, humillen o se burlen de él, sea cual sea el motivo."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Habrá gente que diga que te chivaste a tu profesor, a tus compañeros o a tus padres. Yo opino que has sido un héroe."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Espero que nunca más te quedes callado si alguien necesita ayuda o sufre. Que le des tu apoyo en vez de seguir al matón de turno."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Es fácil no hacer nada, pero has pensado que tu puedes ser su siguiente víctima como ha pasado ahora."
+			}]
+		},
+		"opt": {
+			"type": "options",
+			"options": [{
+				"next": "who",
+				"msn": "¿Quién eres?"
+			},
+			{
+				"next": "stop",
+				"msn": "Deja de decir estupideces y desaparece."
+			}]
+		},
+		"who": {
+			"type": "dialog",
+			"next": "end",
+			"fragments": [{
+				"tag": "Voz desde el portal",
+				"msn": "Me temo que eso no puedo decirtelo."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Piensa en mí como alguién que está conectado a ti por todo aquello que tenemos en común."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Quizá una voz de la conciencia."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Pero poco importa quién sea. Lo importante es que lo que has vivido te haya hecho reflexionar y ser mejor persona."
+			}]
+		},
+		"stop": {
+			"type": "dialog",
+			"next": "end",
+			"fragments": [{
+				"tag": "Voz desde el portal",
+				"msn": "Siento que mi presencia no te resulte cómoda."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Y que quizá esto no haya servido para nada..."
+			}]
+		},
+		"end": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "active object",
+				"time": 0,
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 28,
+				"time": 5,
+			}
+		}
+	},
+}

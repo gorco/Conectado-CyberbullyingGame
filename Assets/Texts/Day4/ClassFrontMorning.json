@@ -1,0 +1,81 @@
+﻿{
+	"teacher":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Profesor",
+				"character": "Teacher",
+				"msn": "La semana pasada, si recordáis, terminamos de ver como hacer el análisis morfológico de una frase."
+			},
+			{
+				"tag": "Profesor",
+				"character": "Teacher",
+				"msn": "Ahora toca ver como hacer el análisis sintáctico."
+			},
+			{
+				"tag": "Ruidos en la puerta",
+				"msn": "(Alguien está llamando a la puerta)"
+			},
+			{
+				"tag": "Profesor",
+				"character": "Teacher",
+				"msn": "Pasa"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"next": "node2",
+			"event": {
+				"name": "class entrance",
+				"synchronous": true,
+			}
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "black",
+			"fragments": [{
+				"tag": "Profesor",
+				"character": "Teacher",
+				"msn": "Alejandro, llegas tarde, por favor siéntate."
+			},
+			{
+				"tag": "Alejandro",
+				"character": "Alex",
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'El nuevo', 'La nueva') $> está en mi sitio."
+			},
+			{
+				"tag": "Profesor",
+				"character": "Teacher",
+				"msn": "Su nombre es <$ varObject('global', 'UserNameNonStatic') $>. Sientate por ahora en otro lugar, he pedido a Alison que le ayude en sus primeros días."
+			}]
+		},
+		"black": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Suena la campana que indica la hora del recreo."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 5
+			}
+		}
+	}
+}

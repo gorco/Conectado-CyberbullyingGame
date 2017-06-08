@@ -8,6 +8,7 @@
 				"var": "earing",
 				"value": "Mis nuevos pendientes, I<3U :)",
 				"key": "Alison",
+				"other": "photoEaring",
 				"time": 0 
 			}
 		},
@@ -19,7 +20,7 @@
 				"var": "earing",
 				"value": "Me encantan, sabes dónde te los compraron",
 				"key": "Alicia",
-				"time": 0 
+				"time": 0.3 
 			}
 		},
 		"comment2": {
@@ -30,7 +31,7 @@
 				"var": "earing",
 				"value": "Pfff, tía, acabo de perder uno en clase",
 				"key": "Alison",
-				"time": 0.2
+				"time": 0.6
 			}
 		},
 		"comment3": {
@@ -41,7 +42,7 @@
 				"var": "earing",
 				"value": ":( Ojala lo encuentres, busca bien x donde hayas estado",
 				"key": "Alicia",
-				"time": 0.4
+				"time": 1
 			}
 		},
 		"commentFork": {
@@ -60,10 +61,10 @@
 			"event": {
 				"name": "computer comment",
 				"var": "earing",
-				"value": "<$ if($MaleSex == true, 'El nuevo chico', 'La nueva chica') $> de clase lo ha encontrado y me lo ha devuelto. Muchisimas gracias $UserName",
+				"value": "<$ varObject('global', 'UserNameNonStatic') $> lo ha encontrado y me lo ha devuelto. Muchisimas gracias :)",
 				"key": "Alison",
 				"other" : "earingFounded",
-				"time": 0.5
+				"time": 1.5
 			}
 		},
 		"comment4Notfound": {
@@ -73,7 +74,7 @@
 				"var": "earing",
 				"value": "Ha sido imposible encontrarlo, alguien se lo habrá quedado. Muchas gracias a los que me han ayudado a buscarlo",
 				"key": "Alison",
-				"time": 0.5
+				"time": 1.5
 			}
 		},
 	},
@@ -106,6 +107,7 @@
 				"var": "match",
 				"value": "Viendo el partido",
 				"key": "Guillermo",
+				"other": "photoMatch",
 				"time": 0 
 			}
 		},
@@ -142,6 +144,7 @@
 		},
 		"sure": {
 			"type": "options",
+			"questionId": "GuilleFriendRequest",
 			"options": [{
 				"msn": "Si, lo mejor será no aceptar"
 			},

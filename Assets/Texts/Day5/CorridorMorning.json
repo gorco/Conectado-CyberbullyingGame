@@ -1,0 +1,226 @@
+{
+	"alex":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh2",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "En los baños, al final de la clase, tú ven, acuerdate."
+			},
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'estaré allí', 'Ana te esperará allí') $>."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Parece que te vas a tener que comprar un móvil nuevo, ¿no?."
+			},
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Espero que ese no lo pierdas... o te lo quiten."
+			}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Vaya cosas publicas en \"Conectado\" ¿no?."
+			},
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "No me esperaba esto de tí, es como si no lo hubieras posteado tú XD."
+			}]
+		},
+		"sh2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Vaya cosas dices por el chat ¿no?. Caratra, nos has sorprendido a todos."
+			},
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "No me esperaba esto de tí, es como si no lo hubieras escrito tú jajaja."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "end",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		},
+		"end": {
+			"type": "dialog",
+			"next": "default",
+			"fragments": [
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Bueno, creo que es suficiente."
+			},
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Hagamos una cosa. Hablemos donde nadie nos escuche, al terminar las clases."
+			},
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Hablemoslo, te disculpas y entonces te dejamos en paz."
+			},
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Ana y yo pasaremos de tí y los demás que hagan lo que quieran."
+			}]
+		},
+	},
+	"guille":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition" : "true"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "..."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "No tengo nada que hablar contigo."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		}
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicos."
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicas"
+			}]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		}
+	}
+}

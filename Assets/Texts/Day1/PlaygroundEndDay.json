@@ -4,11 +4,11 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Ya no tengo más clases por hoy y no queda nadie"
+				"msn": "Ya no tengo más clases por hoy y no queda nadie."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Será mejor que me vaya a casa"
+				"msn": "Será mejor que me vaya a casa."
 			}]
 		}
 	},

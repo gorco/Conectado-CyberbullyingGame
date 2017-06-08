@@ -9,6 +9,7 @@ public class TestComputer : MonoBehaviour {
 	public string author;
 	public string text;
 	public string key;
+	public string photo;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +28,7 @@ public class TestComputer : MonoBehaviour {
 
 	public void Publish()
 	{
-		computer.NewPublication(author, text, key);
+		computer.NewPublication(author, text, key, photo);
 	}
 
 	public void AddFriendRequest()

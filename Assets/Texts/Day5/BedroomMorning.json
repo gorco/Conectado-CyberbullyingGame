@@ -1,0 +1,155 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "He de irme."
+			}]
+		}		
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Por ahora no necesito nada que pueda estar ahí dentro."
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Debería ordenar un poco todo esto."
+			}]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Cogeré todo para marcharme."
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "BagPicked",
+				"value": true
+			}
+		},
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "PC",
+				"msn": "¿Quieres encender el ordenador?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"options": [{
+				"next": "node1a",
+				"msn": "Sí"
+			},
+			{
+				"next": "node1b",
+				"msn": "No"
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No enciende, ¿se habrá estropeado?"
+			}]
+		},	
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Mejor no, es hora de irse a clase."
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "¿Dejo el móvil cargando?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "Sí"
+			},
+			{
+				"next": "node1b",
+				"msn": "No"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"next": "fork",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		},
+		"fork": {
+			"type": "fork",
+			"options": [{
+				"next": "parentsGo",
+				"condition": "repeated == true"
+			}]
+		},
+		"parentsGo": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Papá y mamá ya se han ido, les veré esta tarde"
+			}]
+		},	
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "repeated",
+				"value": true
+			}
+		},
+	}
+}

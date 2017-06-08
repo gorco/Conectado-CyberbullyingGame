@@ -1,0 +1,256 @@
+{
+	"intro":{
+		"root": {
+			"type": "dialog",
+			"next": "fade",
+			"fragments": [{
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "¿No te gustan las nuevas fotos que hemos publicado?"
+			}, {
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "Puedes intentar borrarlas..."
+			},
+			{
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "Vas a tener que hacer algo más a parte de borrarlas o denuncialas."
+			},
+			{
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "Venga, prueba a ver... pero todos tenemos una copia ya."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "shadow"
+			}
+		}
+	},
+	"portal":{
+		"root":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "No has conseguido nada."
+			}, {
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "Jajaja"
+			}, {
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "Las fotos siguen ahí."
+			},{
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "Una vez en Internet cualquiera podemos hacer una copia."
+			},{
+				"tag": "",
+				"msn": "..."
+			}, {
+				"tag": "Voz desde el portal",
+				"msn": "No es tú culpa, ven, pasa por el portal del nuevo."
+			}, {
+				"tag": "Voz desde el portal",
+				"msn": "Intenta cambiar las cosas."
+			}]
+		}
+	},
+	"cross": {
+		"root": {
+			"type": "options",
+			"questionId": "portalDay4",
+			"options": [{
+				"next": "node1",
+				"msn": "Cruzar el portal."
+			},
+			{
+				"next": "node2",
+				"msn": "No, esta vez no."
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No sé si esto está bien, no quiero repetir más días malos."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Me fiaré de la voz extraña... sí... voy a cruzar."
+			}]
+		},
+		"node2":{
+			"type": "dialog",
+			"next": "variable2",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No voy a cruzar si no me dices qúién eres."
+			}, {
+				"tag": "Voz desde el portal",
+				"msn": "No puedo, tienes que confiar en mí, te estoy dando la oportunidad de cambiar las cosas."
+			}, {
+				"tag": "Tú",
+				"msn": "¿Cambiar qué?"
+			}, {
+				"tag": "Voz desde el portal",
+				"msn": "Noooo!, se acaba el tiempo, estás  apunto de despertar..."
+			},
+			{
+				"tag": "Voz desde el portal",
+				"msn": "Ya es tarde... te deseo suerte."
+			}]
+		},
+		"variable": {
+			"type": "event",
+			"next": "repeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 3,
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": true,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "loadMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"loadMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "load"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		},
+		"variable2": {
+			"type": "event",
+			"next": "repeatDay2",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 4,
+			}
+		},
+		"repeatDay2": {
+			"type": "event",
+			"next": "changeHour2",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false,
+			}
+		},
+		"changeHour2": {
+			"type": "event",
+			"next" : "saveMobile2",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile2": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		}
+	},
+	"finishNightmare":{
+		"root": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [{
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "No has conseguido nada."
+			}, {
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "Jajaja"
+			}, {
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "Las fotos siguen ahí."
+			},{
+				"tag": "Sombra",
+				"character": "Shadow",
+				"msn": "Una vez en Internet, cualquiera podemos hacer una copia."
+			}]
+		},
+		"variable": {
+			"type": "event",
+			"next": "repeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 4,
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	}
+}

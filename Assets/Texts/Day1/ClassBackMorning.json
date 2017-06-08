@@ -24,32 +24,32 @@
 			},{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Llegar tarde tu primer día, no es una buena manera de empezar"
+				"msn": "Llegar tarde tu primer día, no es una buena manera de empezar."
 			},
 			{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Clase, este es vuestro nuevo compañero, es nuevo en el colegio, por favor, ayudadle en sus primeros días"
+				"msn": "Clase, este es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'vuestro nuevo compañero', 'vuestra nueva compañera') $>, por favor, ayudadle en sus primeros días."
 			},
 			{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $> Yo soy vuestro tutor, cualquier cosa que necesites dimelo"
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, yo soy vuestro tutor, cualquier cosa que necesites dímelo."
 			},
 			{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Por favor, <$ varObject('global', 'UserNameNonStatic') $> siéntate al lado de Alison"
+				"msn": "Por favor, <$ varObject('global', 'UserNameNonStatic') $> siéntate al lado de Alison."
 			},
 			{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Alison, haz el favor de resolver todas las dudas que tenga <$ varObject('global', 'UserNameNonStatic') $> sobre el colegio"
+				"msn": "Alison, haz el favor de resolver todas las dudas que tenga <$ varObject('global', 'UserNameNonStatic') $> sobre el colegio."
 			},
 			{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Continuemos con la clase"
+				"msn": "Continuemos con la clase."
 			}]
 		},
 		"node2": {
@@ -59,7 +59,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Te diriges entre todas las miradas a tu sitio y te sientas"
+				"value": "Te diriges entre todas las miradas a tu sitio y te sientas."
 			}
 		},
 		"node3": {
@@ -77,7 +77,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Me parece que te has equivocado de clase"
+				"msn": "Me parece que te has equivocado de clase."
 			}]
 		},
 		"quest": {
@@ -91,6 +91,7 @@
 		},
 		"node1": {
 			"type": "options",
+			"questionId": "meetAna",
 			"options": [{
 				"next": "node1a",
 				"msn": "No, es que hoy es mi primer día, soy <$ varObject('global', 'UserNameNonStatic') $>"
@@ -106,12 +107,12 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Oh, así que tú eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'el nuevo', 'la nueva') $>"
+				"msn": "Oh, así que tú eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'el nuevo', 'la nueva') $>."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Yo soy Ana, también estoy en esta clase"
+				"msn": "Yo soy Ana, también estoy en esta clase."
 			}]
 		},
 		"node1b": {
@@ -137,7 +138,7 @@
 			"next": "nodeTeacher",
 			"fragments": [{
 				"tag": "",
-				"msn": "(Ruidos de fondo, parece que tú nuevo profesor ha llegado)"
+				"msn": "(Ruidos de fondo, parece que tu nuevo profesor ha llegado)"
 			}]
 		},
 		"nodeTeacher": {
@@ -146,11 +147,12 @@
 			"fragments": [{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Vamos a empezar la clase, venga, pasad todos y sentaos"
+				"msn": "Vamos a empezar la clase, venga, pasad todos y sentaos."
 			}]
 		},
 		"nodeSit": {
 			"type": "options",
+			"questionId": "sitFirstDay",
 			"options": [{
 				"next": "node3a",
 				"msn": "(Sentarse en última fila)"
@@ -167,7 +169,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Os sentáis todos y empieza la clase"
+				"value": "Os sentáis todos y empieza la clase."
 			}
 		},
 		"node4": {
@@ -183,12 +185,12 @@
 			"fragments": [{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Siéntate al lado de Alison"
+				"msn": "Siéntate al lado de Alison."
 			},
 			{
 				"tag": "Profesor",
 				"character": "Teacher",
-				"msn": "Alison, haz el favor de resolver todas las dudas que tenga <$ varObject('global', 'UserNameNonStatic') $> sobre el colegio"
+				"msn": "Alison, haz el favor de resolver todas las dudas que tenga <$ varObject('global', 'UserNameNonStatic') $> sobre el colegio."
 			}]
 		},
 	}

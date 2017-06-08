@@ -4,7 +4,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Ahora que me he conseguido levantar no debería volver a acostarme"
+				"msn": "Ahora que me he conseguido levantar no debería volver a acostarme."
 			}]
 		}		
 	},
@@ -13,7 +13,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No hay nada útil dentro"
+				"msn": "No hay nada útil dentro."
 			}]
 		}		
 	},
@@ -22,7 +22,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Deberia ordenar un poco todo esto"
+				"msn": "Deberia ordenar un poco todo esto."
 			}]
 		}		
 	},
@@ -32,11 +32,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Creo que tengo todo preparado"
-			},
-			{
-				"tag": "Tú",
-				"msn": "mmm...",
+				"msn": "Creo que tengo todo preparado..."
 			}]
 		},
 		"node1": {
@@ -44,7 +40,7 @@
 			"next": "node2",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Si, lo llevo todo, será mejor que coja la mochila y me marche ya"
+				"msn": "Sí, lo llevo todo, será mejor que coja la mochila y me marche ya."
 			}]
 		},
 		"node2": {
@@ -61,12 +57,21 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
+				"tag": "Tú",
+				"msn": "Si lo enciendo ahora seguro que se me hace tarde."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Será mejor que me espere a por la tarde."
+			},
+			{
 				"tag": "PC",
 				"msn": "¿Quieres encender el ordenador?"
 			}]
 		},		
 		"node1": {
 			"type": "options",
+			"questionId": "turnOnPC",
 			"options": [{
 				"next": "node1a",
 				"msn": "Si"
@@ -103,7 +108,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Lo mejor será que me vaya"
+				"msn": "Lo mejor será que me vaya."
 			}]
 		}		
 	},
@@ -118,6 +123,7 @@
 		},		
 		"node1": {
 			"type": "options",
+			"questionId": "plugInMobile",
 			"options": [{
 				"next": "node1a",
 				"msn": "Si"

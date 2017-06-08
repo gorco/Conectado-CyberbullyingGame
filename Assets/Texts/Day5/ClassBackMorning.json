@@ -1,0 +1,114 @@
+﻿{
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "Profesor",
+				"character": "Teacher",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> llegas tarde."
+			},{
+				"tag": "Profesor",
+				"character": "Teacher",
+				"msn": "Por favor, sientate para que podamos continuar la clase."
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Ya han terminado las clases, notas como durante todo el día la gente ha estado mirandote y cuchicheando a tus espaldas."
+			}
+		},
+		"node3": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 25
+			}
+		}
+	},
+	"table":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Este sitio está libre, ¿me siento aquí?"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "sitDownClass",
+			"options": [{
+				"next": "node2",
+				"msn": "Si"
+			},
+			{
+				"msn": "No"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "",
+				"msn": "(Ruidos de fondo, el profesor ha llegado)"
+			}]
+		},
+		"node3": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Otro día más dónde todos cuchichean a tus espaldas, es hora de irse a casa."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 25
+			}
+		}
+	}
+}

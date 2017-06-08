@@ -1,0 +1,185 @@
+{
+	"parents": {
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "checkFS",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"repeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "Ten cuidado y portate bien.",
+			}, 
+			{
+				"tag": "Papá",
+				"character": "Father",
+				"msn": "Y acuérdate que el domingo vamos a visitar a la abuela."
+			}]
+		},
+		"checkFS": {
+			"type": "fork",
+			"options": [{
+				"next": "meeting",
+				"condition": "varObject('global', 'ParentsFSNonStatic') >= 80"
+			},
+			{
+				"next": "repeat",
+				"condition": "true"
+			}]
+		},
+		"meeting": {
+			"type": "dialog",
+			"next": "meetingVar",
+			"fragments": [{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "Hemos decidido ir a hablar con tu tutor para ver qué está pasando en el colegio."
+			}, 
+			{
+				"tag": "Papá",
+				"character": "Father",
+				"msn": "Vamos a pedirle una cita para mañana."
+			}]
+		},		
+		"meetingVar": {
+			"type": "event",
+			"next": "options",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 1,
+			}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "parentsMeetingMorninOption",
+			"options": [{
+				"next": "node1a",
+				"msn": "Gracias."
+			},
+			{
+				"next": "node1b",
+				"msn": "Va a ser peor."
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "changeVariable",
+			"fragments": [{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "De nada cariño, queremos que estés bien."
+			}, 
+			{
+				"tag": "Papá",
+				"character": "Father",
+				"msn": "Intentaremos tener la reunión mañana como muy tarde."
+			}]
+		},
+		"changeVariable": {
+			"type": "event",
+			"next": "repeat",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 2,
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "repeat",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No quiero que vayáis, será peor."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Creerán que soy un chivato y tampoco ha sido para tanto."
+			}, 
+			{
+				"tag": "Tú",
+				"msn": "Dejadlo estar, el tiempo lo solucionará."
+			},
+			{
+				"tag": "Papá",
+				"character": "Father",
+				"msn": "Bien, pero si va a más dinoslo."
+			}]
+		}
+	},
+	"exitDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "changeHourSoon",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') < 8"
+			},{
+				"next": "changeHourLate",
+				"condition": "varObject('global', 'HourNonStatic') >= 8 && varObject('state', 'BagPicked') == true"
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"changeHourLate": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:40",
+			}
+		},
+		"changeHourSoon": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:20",
+			}
+		},
+		"exitNode": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 19
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Me dejo la mochila. Será mejor que pases por mi habitación a recogerla antes de irme."
+			}]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		}
+	}
+}

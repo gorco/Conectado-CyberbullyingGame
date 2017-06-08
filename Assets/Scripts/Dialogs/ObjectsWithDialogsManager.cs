@@ -82,7 +82,7 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 	{
 		if (!sequenceDict.ContainsKey(objectName))
 		{
-			Debug.LogError("The sequence with key " + objectName + " doesn't exit");
+			Debug.LogError("The sequence with key " + objectName + " doesn't exit (Object "+this.gameObject.name+")");
 			return;
 		}
 

@@ -1,0 +1,149 @@
+{
+	"guilleAndAlison": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "found",
+				"condition": "true"
+			}]
+		},
+		"repeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "..."
+			}]
+		},
+		"found": {
+			"type": "options",
+			"questionId": "GuilleAlisonAskMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "¿Sabéis quién me ha quitado el móvil y lo ha dejado en el baño?",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "node1b",
+				"msn": "¿Alguno sabe dónde está mi móvil? Alguién me lo ha quitado",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "setter",
+				"msn": "Supongo que no me váis a hablar... paso de deciros nada.",
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "No vamos a chivarnos, pero supongo que ya te imaginas quién tiene la culpa."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "*sshhhhhh*"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "*sshhhhhh*"
+			}]
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Lo siento, no tenemos ni idea."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Gracias Guille."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
+	"principalNote":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Nota",
+				"msn": "Despacho del Director."
+			}]
+		}
+	},
+	"principalDoor":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Parece que no hay nadie dentro."
+			}]
+		}
+	},
+	"stairsToCorridor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"stairsToPlayground": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "endDay",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "break",
+				"condition": "true"
+			}]
+		},
+		"break": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "playground"
+			}
+		},
+		"endDay": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "endDay"
+			}
+		}
+	}
+}

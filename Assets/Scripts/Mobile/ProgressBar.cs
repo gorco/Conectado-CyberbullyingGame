@@ -12,6 +12,9 @@ public class ProgressBar : MonoBehaviour
 	public float maxRight;
 	public Image progressBar;
 
+	public Color initColor = Color.red;
+	public Color endColor = Color.green;
+
 	private Type t = GlobalState.Instance.GetType();
 
 	// Use this for initialization
@@ -32,6 +35,6 @@ public class ProgressBar : MonoBehaviour
 		//Debug.LogWarning("Update Bar Valor " + name + " --->" + t.GetProperty(variableName).GetValue(GlobalState.Instance, null));
 		//Debug.LogWarning("Width Valor --->" + value * maxRight / 100 );
 		progressImage.sizeDelta = new Vector2(value * maxRight / 100 , progressImage.sizeDelta.y);
-		progressBar.color = Color.Lerp(Color.red, Color.green, value/100.0f);
+		progressBar.color = Color.Lerp(initColor, endColor, value/100.0f);
 	}
 }

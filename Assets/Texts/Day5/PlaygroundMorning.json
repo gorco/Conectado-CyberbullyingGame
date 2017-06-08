@@ -1,0 +1,233 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Vete, no tenemos de que hablar."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Si hubieras confiado en mí igual esto no habría pasado, es tu culpa."
+			}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Lo que ha pasado, pero te lo has ganado."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "¿Cómo se te ocurre darme tu contraseña?"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		}
+	},
+	"ana":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh2",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Jajajaja, margi."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Mira quién ha llegado, y yo que pensaba que hoy no vendrías."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "¿Aún sigues sin móvil? jajaja, no era tan difícil encontrarlo si hubieras buscado bien."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Hay que ser <$ if(varObject('global', 'MaleSexNonStatic')==true, 'estúpido', 'estúpida') $>"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "¿De dónde has salido? jajaja."
+			}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "No me creo que le dieras tu contraseña a Alison."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "¿De verdad te pensabas que iba a ser tu amiga? No me creo lo fácil que fué engañarte."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "JAJAJAJA!!! en serio, me parto contigo."
+			}]
+		},
+		"sh2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "JAJAJAJA!!! no me creo que no tuvieras patrón de desbloqueo en el móvil."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Pensaba que iba a ser más difícil..."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Que divertido va a ser el día, ahora la mayoria piensa que eres verdad <$ if(varObject('global', 'MaleSexNonStatic')==true, 'un marica vicioso que le da a todo', 'una puta viciosa') $>."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "bell",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "bellEvent",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<La campana está sonando>>"
+			}]
+		},
+		"bellEvent": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true" 
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "Parece que he llegado pronto y aún no se puede pasar. Será mejor que haga algo de tiempo."
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Acabo de llegar, no puedo irme aún."
+			}]
+		}
+	}
+}

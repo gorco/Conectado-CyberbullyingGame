@@ -31,11 +31,11 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Ya he quitado el chicle, pero ahora la mancha es peor"
+				"msn": "Ya he quitado el chicle, pero ahora la mancha es peor."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Se van a reir aún más de mi"
+				"msn": "Se van a reír aún más de mí."
 			}]
 		}, 
 		"setter":{
@@ -51,17 +51,18 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Igual con agua y jabón consigo quitarlo"
+				"msn": "Igual con agua y jabón consigo quitarlo."
 			}]
 		}, 
 		"options": {
 			"type": "options",
+			"questionId": "bathroomGum",
 			"options": [{
 				"next": "quest",
 				"msn": "(Probar con agua y jabón)"
 			},
 			{
-				"msn": "(Dejarlo como esta)"
+				"msn": "(Dejarlo como está)"
 			}]
 		},
 		"quest": {

@@ -4,7 +4,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Ya tendré tiempo de dormir cuando vuelva de clase"
+				"msn": "Ya tendré tiempo de dormir cuando vuelva de clase."
 			}]
 		}		
 	},
@@ -33,7 +33,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Por ahora no necesito nada que pueda estar ahí dentro"
+				"msn": "Por ahora no necesito nada que pueda estar ahí dentro."
 			}]
 		}		
 	},
@@ -42,7 +42,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Deberia ordenar un poco todo esto"
+				"msn": "Debería ordenar un poco todo esto."
 			}]
 		}		
 	},
@@ -52,7 +52,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Todo listo, vámonos"
+				"msn": "Todo listo, vámonos."
 			}]
 		},
 		"node1": {
@@ -69,12 +69,17 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
+				"tag": "Tú",
+				"msn": "Debería esperar a esta tarde o se me hará tarde."
+			},
+			{
 				"tag": "PC",
 				"msn": "¿Quieres encender el ordenador?"
 			}]
 		},		
 		"node1": {
 			"type": "options",
+			"questionId": "plugInMobile",
 			"options": [{
 				"next": "node1a",
 				"msn": "Sí"
@@ -111,7 +116,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Lo mejor será que me vaya"
+				"msn": "Lo mejor será que me vaya."
 			}]
 		}		
 	},
@@ -126,6 +131,7 @@
 		},		
 		"node1": {
 			"type": "options",
+
 			"options": [{
 				"next": "node1a",
 				"msn": "Sí"

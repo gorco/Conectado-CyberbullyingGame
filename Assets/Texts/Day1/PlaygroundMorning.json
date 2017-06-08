@@ -6,18 +6,19 @@
 			"fragments": [{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "¿Eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nuevo', 'nueva') $>? No te había visto antes por aquí"
+				"msn": "¿Eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nuevo', 'nueva') $>? No te había visto antes por aquí."
 			}]
 		},		
 		"node1": {
 			"type": "options",
+			"questionId": "GuillermoMeet",
 			"options": [{
 				"next": "node1a",
-				"msn": "Si, soy <$ varObject('global', 'UserNameNonStatic') $>... ¿Y tú eres?"
+				"msn": "Sí, soy <$ varObject('global', 'UserNameNonStatic') $>... ¿Y tú eres?"
 			},
 			{
 				"next": "node1b",
-				"msn": "Perdona, tengo prisa (Te vas)"
+				"msn": "Perdona, tengo prisa (Te vas)."
 			}]
 		},
 		"node1b": {
@@ -35,7 +36,7 @@
 			"fragments": [{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "Llamame Guille"
+				"msn": "Llámame Guille"
 			},
 			{
 				"tag": "",
@@ -44,7 +45,7 @@
 			{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "Deberiamos entrar ya, nos vemos"
+				"msn": "Deberíamos entrar ya, nos vemos."
 			}]
 		}, 
 		"nodeFS": {
@@ -137,7 +138,7 @@
 			"fragments": [{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Eres nuevo, ¿no?"
+				"msn": "Eres <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nuevo', 'nueva') $>, ¿no?"
 			},
 			{
 				"tag": "Jose",
@@ -155,17 +156,18 @@
 		},
 		"options": {
 			"type": "options",
+			"questionId": "JoseMeet",
 			"options": [{
 				"next": "introduceFork",
-				"msn": "Hola, soy <$ varObject('global', 'UserNameNonStatic') $>"
+				"msn": "Hola, soy <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
 				"next": "node2",
-				"msn": "(Preguntar dónde está tu clase)"
+				"msn": "(Preguntar dónde está tu clase)."
 			},
 			{
 				"next": "node3",
-				"msn": "No necesito nada, hasta luego"
+				"msn": "No necesito nada, hasta luego."
 			}]
 		},
 		"introduceFork": {
@@ -185,7 +187,7 @@
 			"fragments": [{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Ya me habías dicho tu nombre"
+				"msn": "Ya me habías dicho tu nombre."
 			}]
 		},
 		"introducedSetter":{
@@ -234,7 +236,7 @@
 			"fragments": [{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Esa es también mi clase, está en la primera planta, subiendo las escaleras de la derecha que encuentras nada más entrar al edificio"
+				"msn": "Esa es también mi clase, está en la primera planta, subiendo las escaleras de la derecha que encuentras nada más entrar al edificio."
 			},
 			{
 				"tag": "Jose",
@@ -247,7 +249,7 @@
 			"fragments": [{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Adios"
+				"msn": "Adiós"
 			}]
 		}
 	},
@@ -263,22 +265,32 @@
 		},
 		"options": {
 			"type": "options",
+			"questionId": "AlisonMeet",
 			"options": [{
 				"next": "nodeFS",
 				"msn": "Soy <$ varObject('global', 'UserNameNonStatic') $> ¿Y tú eres?"
 			},
 			{
 				"next": "node2",
-				"msn": "No, los siento, tengo prisa. Adios."
+				"msn": "No, lo siento, tengo prisa. Adiós."
 			}]
 		},
 		"nodeFS": {
 			"type": "event",
-			"next": "node1",
+			"next": "alisonDialog",
 			"event": {
 				"name": "change friendship",
 				"var": "AlisonFS",
 				"value": 10,
+			}
+		},
+		"alisonDialog": {
+			"type": "event",
+			"next": "node1",
+			"event": {
+				"name": "change variable",
+				"var": "AlisonDialog",
+				"value": true,
 			}
 		},
 		"node1": {
@@ -292,7 +304,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Espero que estés agusto aquí, hay gente muy maja."
+				"msn": "Espero que estés a gusto aquí, hay gente muy maja."
 			},
 			{
 				"tag": "Alison",
@@ -338,7 +350,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Será mejor que entremos ya, sino llegaremos tarde"
+				"msn": "Será mejor que entremos ya, sino llegaremos tarde."
 			}]
 		},
 		"cerrado": {
@@ -346,7 +358,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "El chico de la camiseta amarilla que está cerca de la entrada al patio también va a nuestra clase"
+				"msn": "El chico de la camiseta amarilla que está cerca de la entrada al patio también va a nuestra clase."
 			},
 			{
 				"tag": "Alison",

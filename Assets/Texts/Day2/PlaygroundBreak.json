@@ -1,10 +1,14 @@
 {
-	"anaGroup":{
+	"anaGroup": {
 		"root": {
 			"type": "fork",
 			"options": [{
 				"next": "nodeNoGum",
 				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			},
+			{
+				"next": "nodeWhashed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
 			},
 			{
 				"next": "nodeInit",
@@ -16,7 +20,7 @@
 			"next": "FadeOutAna",
 			"fragments": [{
 				"tag": "susurro",
-				"msn": "Mmm, no parece que lleve ningún chicle pegado"
+				"msn": "Mmm, no parece que lleve ningún chicle pegado."
 			},
 			{
 				"tag": "Ana",
@@ -26,22 +30,22 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Hola <$ varObject('global', 'UserNameNonStatic') $>"
+				"msn": "Hola, <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Buenas"
+				"msn": "Buenas."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "¿Has visto a Alex?"
+				"msn": "¿Has visto a Álex?"
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Tenemos que hablar con él"
+				"msn": "Tenemos que hablar con él."
 			}]
 		},
 		"FadeOutAna": {
@@ -64,7 +68,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "A ver si lavas la ropa, menudo desastre llevas en el pantalon"
+				"msn": "A ver si lavas la ropa, menudo desastre llevas en el pantalón"
 			},
 			{
 				"tag": "Ana",
@@ -91,6 +95,29 @@
 				"character": "Ana",
 				"msn": "Jajajaja"
 			}]
+		},
+		"nodeWhashed": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Jajaja, ¿te has meado encima?"
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Jajajaja, no, no, mira bien, se ha cagado."
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "¿Llevas el móvil, Ana? Foto!!"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Jajajaja"
+			}]
 		}
 	},
 	"guilleGroup":{
@@ -99,6 +126,10 @@
 			"options": [{
 				"next": "nodeNoGum",
 				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			},
+			{
+				"next": "nodeWashed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
 			},
 			{
 				"next": "nodeInit",
@@ -121,7 +152,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Prueba a quitarte el chicle en el baño"
+				"msn": "Prueba a quitarte el chicle en el baño."
 			}]
 		}, 
 		"setter":{
@@ -131,22 +162,35 @@
 				"value": true
 			}
 		},
+		"nodeWashed": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Menuda mancha llevas."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Bueno, no pasa nada, en un rato se secará."
+			}]
+		},
 		"nodeNoGum": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Buenas  <$ varObject('global', 'UserNameNonStatic') $>"
+				"msn": "Buenas,  <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Estamos hablando de Alex"
+				"msn": "Estamos hablando de Álex."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Esta mañana estaba raro, incluso ha llegado el primero a clase"
+				"msn": "Esta mañana estaba raro, incluso ha llegado el primero a clase."
 			}]
 		}, 
 		"node0": {
@@ -154,22 +198,22 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "¿Dónde te has apoyado?Te has debido sentar encima de un chicle"
+				"msn": "¿Dónde te has apoyado?"
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Te has debido sentar encima de un chicle"
+				"msn": "Te has debido sentar encima de un chicle."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Menudo desastre, pasa por el baño antes de ir a clase"
+				"msn": "Menudo desastre, pasa por el baño antes de ir a clase."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "si, igual consigues quitarlo"
+				"msn": "Sí, igual consigues quitarlo."
 			}]
 		},
 		"guilleFS": {

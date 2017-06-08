@@ -42,6 +42,7 @@ public class ChatGroup : MonoBehaviour {
 
 	public void OpenChat()
 	{
+		mobileChat.Interacted("open_"+nameChat.text);
 		mobileChat.LoadChat(nameChat.text);
 		numberNews.text = "0";
 		adventisement.SetActive(false);

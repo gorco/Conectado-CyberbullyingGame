@@ -1,0 +1,266 @@
+{
+	"alison":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> ¿verdad?, contigo queria hablar."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "No sé si lo sabes, pero Alex nos ha dicho a todos que no te hablemos."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Y a los que no queremos hacerle caso nos amenaza con algo."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "¿Puedo confiar en tí? No quiero dejar de ser tu amiga."
+			}]
+		},		
+		"options": {
+			"type": "options",
+			"questionId": "AlisonTrustAsk",
+			"options": [{
+				"next": "friend",
+				"msn": "Muchas gracias por ser mi amiga."
+			},
+			{
+				"next": "noFriend",
+				"msn": "No y no tengo interés en ganarme tu confianza."
+			}]
+		},
+		"noFriend": {
+			"type": "dialog",
+			"next": "alisonFS",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Entonces no me queda otra que hacer caso a Alex y dejarte de hablar."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "No quiero correr ningún riesgo."
+			}]
+		},		
+		"friend": {
+			"type": "dialog",
+			"next": "passChange",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Me alegra oír eso."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Intercambiemos contraseñas de redes sociales y del móvil."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Como muestra de amistad y confianza."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Antiguamente para gestos así se daban la mano con una herida abierta para intercambiar sangre."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Pero eso es asqueroso y puedes coger cualquier cosa."
+			}]
+		},		
+		"passChange": {
+			"type": "options",
+			"questionId": "AlisonSharePass",
+			"options": [{
+				"next": "change",
+				"msn": "(Aceptar el intercambio de contraseñas)"
+			},
+			{
+				"next": "noChange",
+				"msn": "(Rechazar el intercambio de contraseñas)"
+			}]
+		},
+		"noChange": {
+			"type": "dialog",
+			"next": "alisonFS",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Si no confias en mí yo támpoco puedo confiar en tí."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Lo siento, pero entonces no puedo hablarte más."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "No quiero que Álex la tome conmigo."
+			}]
+		},		
+		"change": {
+			"type": "dialog",
+			"next": "changeVariable",
+			"fragments": [{
+				"tag": "Alison",
+				"msn": "Os escribís las contraseñas a través del móvil"
+			},{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Perfecto. \"Best Friends\" (sonríe de oreja a oreja)"
+			}]
+		},	
+		"changeVariable": {
+			"type": "event",
+			"next": "bellVar",
+			"event": {
+				"name": "change variable",
+				"var": "SharedPassQuest",
+				"value": 1,
+			}
+		},
+		"alisonFS": {
+			"type": "event",
+			"next": "bellVar",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFS",
+				"value": -50,
+			}
+		},
+		"bellVar": {
+			"type": "event",
+			"next": "bell",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "hour",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<La campana está sonando>>"
+			}]
+		},
+		"hour": {
+			"type": "event",
+			"next": "fade1",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		},
+		"fade1": {
+			"type": "event",
+			"next": "fade2",
+			"event": {
+				"name": "fade out",
+				"key": "jose"
+			}
+		},
+		"fade2": {
+			"type": "event",
+			"next": "fade3",
+			"event": {
+				"name": "fade out",
+				"key": "guillermo"
+			}
+		},
+		"fade3": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "alison"
+			}
+		},
+	},
+	"jose":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "(Con una sonrisa en su cara te mira fijamente y empieza a reir)"
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "JAJAJA!!"
+			}]
+		}
+	},
+	"guillermo":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "(El gesto de su cara cambia al verte, gira la cabeza y mira a otro lado)"
+			}]
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true"
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "Parece que he llegado pronto y aún no se puede pasar. Será mejor que haga algo de tiempo."
+			}]
+		}
+	},
+	"board":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Parece que alguien ha arrancado ya la foto de ayer."
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Acabo de llegar, no puedo irme aún."
+			}]
+		}
+	}
+}

@@ -22,18 +22,16 @@ public class Day2Part1State : IState {
 		set { chargingMobile = value; }
 	}
 
-	private int mariaFS;
-	private int anaFS;
-	private int joseFS;
-	private int alisonFS;
-	private int alejandroFS;
-	private int guillermoFS;
-	private int parentFS;
+	private static int mariaFS;
+	private static int anaFS;
+	private static int joseFS;
+	private static int alisonFS;
+	private static int alejandroFS;
+	private static int guillermoFS;
+	private static int parentFS;
 
 	// Use this for initialization
 	void Start () {
-
-		InitMobileGUI.InitMobileGUIObject();
 
 		if (GlobalState.Repeated)
 		{
@@ -57,6 +55,8 @@ public class Day2Part1State : IState {
 			guillermoFS = GlobalState.GuillermoFS;
 			parentFS = GlobalState.ParentsFS;
 		}
+
+		InitMobileGUI.InitMobileGUIObject();
 	}
 	
 	// Update is called once per frame

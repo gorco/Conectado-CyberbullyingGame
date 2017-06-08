@@ -20,6 +20,7 @@ public class SequenceGenerator  {
 	public const string MESSAGE_FIELD = "msn";
 	public const string CHARACTER_FIELD = "character";
 	public const string OPTIONS_FIELD = "options";
+	public const string OPTIONS_QUESTION_ID= "questionId";
 	public const string CONDITION_FIELD = "condition";
 	public const string EVENT_FIELD = "event";
 	public const string EVENT_NAME_FIELD = "name";
@@ -171,7 +172,6 @@ public class SequenceGenerator  {
 		if (!node.HasField(OPTIONS_FIELD))
 		{
 			throw new Exception("The node " + key + "->" + nodeId + " need a " + OPTIONS_FIELD + " field");
-			return;
 		}
 
 		List<JSONObject> optionsList = node.GetField(OPTIONS_FIELD).list;
@@ -293,14 +293,13 @@ public class SequenceGenerator  {
 			if (!eventNode.HasField(EVENT_VALUE_FIELD))
 			{
 				throw new Exception("The event " + variable + " in node " + key + "->" + nodeId + " need a " + EVENT_VALUE_FIELD + " field");
-				return;
 			}
 			else
 			{
 				JSONObject value = eventNode.GetField(EVENT_VALUE_FIELD);
 				if (value.IsBool)
 				{
-					aux.setParameter(EVENT_VALUE_FIELD, (bool)value);
+					aux.setParameter(EVENT_VALUE_FIELD, value.b);
 				}
 				else if (value.IsNumber)
 				{
@@ -350,7 +349,6 @@ public class SequenceGenerator  {
 		if (!node.HasField(OPTIONS_FIELD))
 		{
 			throw new Exception("The node " + key + "->" + nodeId + " need a " + OPTIONS_FIELD + " field");
-			return;
 		}
 
 		List<JSONObject> optionsList = node.GetField(OPTIONS_FIELD).list;
@@ -375,7 +373,13 @@ public class SequenceGenerator  {
 		}
 
 		SequenceNode newNode = seq[nodeId];
-		newNode.Content = Options.Create(options);
+		Options optionsObj = Options.Create(options);
+		if (node.HasField(OPTIONS_QUESTION_ID))
+		{
+			optionsObj.QuestionID = node.GetField(OPTIONS_QUESTION_ID).ToString().Replace("\"", "");
+		}
+
+		newNode.Content = optionsObj;
 
 		if (nodeId == "root")
 		{

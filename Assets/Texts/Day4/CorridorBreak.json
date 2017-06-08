@@ -1,0 +1,255 @@
+{
+	"maria":{
+		"root" : {
+			"type": "fork",
+			"options": [
+			{
+				"next": "jokeOtions",
+				"condition": "varObject('state', 'MariaJoke') == 1"
+			},
+			{
+				"next": "mobileFound",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "mobileLost",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"mobileFound": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "¿Has visto si ha entrado alguien a los baños recientemente?"
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "No me he fijado, lo siento."
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No tengo nada que decirle."
+			}]
+		},
+		"mobileLost": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "¿Has visto mi móvil?"
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "No, ni idea, revisa bien la clase por si acaso."
+			},
+			{
+				"tag": "María",
+				"character": "María",
+				"msn": "Si veo algo te aviso."
+			}]
+		},
+		"jokeOtions": {
+			"type": "options",
+			"questionId": "JokeMariaOptions",
+			"options": [{
+				"next": "node0",
+				"msn": "Buenas, María."
+			},
+			{
+				"next": "jokeSuccess",
+				"msn": "(Pegar el cartel con cuidado e irte sin decir nada)"
+			}]
+		},
+		"jokeSuccess":{
+			"type": "event",
+			"next": "mariaFS",
+			"event": {
+				"name": "change variable",
+				"var": "MariaJoke",
+				"value": 2,
+			}
+		},
+		"mariaFS": {
+			"type": "event",
+			"next": "mariaQuest",
+			"event": {
+				"name": "change friendship",
+				"var": "MariaFS",
+				"value": -40,
+			}
+		},
+		"mariaQuest": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "MariaQuest",
+				"value": 2,
+			}
+		},
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:20",
+			}
+		},
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"next": "femaleOptions",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicos."
+			}]
+		},
+		"femaleOptions": {
+			"type": "options",
+			"questionId": "opposedBathroom",
+			"options": [{
+				"next": "female2",
+				"msn": "(Entrar de todas formas)"
+			},
+			{
+				"msn": "(Marcharse)"
+			}]
+		},
+		"female2": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom2"
+			}
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"next": "maleOptions",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicas."
+			}]
+		},
+		"maleOptions": {
+			"type": "options",
+			"questionId": "opposedBathroom",
+			"options": [{
+				"next": "male2",
+				"msn": "(Entrar de todas formas)"
+			},
+			{
+				"msn": "(Marcharse)"
+			}]
+		},
+		"male2": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom2"
+			}
+		},
+	},
+	"classDoor": {
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Si entro y aparece el profesor ya no podré salir."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "endBreak",
+			"options": [{
+				"next": "black",
+				"msn": "(Entrar de todas formas)"
+			},
+			{
+				"msn": "Mejor, voy a dar otra vuelta por el edificio."
+			}]
+		},
+		"black": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Al entrar suena la campana y aparece el profesor. La mañana termina sin darte cuenta, es hora de volver a casa..."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "enter",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:02",
+			}
+		},
+		"enter": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "endDay"
+			}
+		}
+	}
+}

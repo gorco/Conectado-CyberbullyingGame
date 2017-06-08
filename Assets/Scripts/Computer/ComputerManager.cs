@@ -1,5 +1,6 @@
 ﻿using Isometra;
 using Isometra.Sequences;
+using RAGE.Analytics;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,9 +14,13 @@ public class ComputerManager : EventManager {
 
 	public GameObject loginView;
 	public GameObject publicationView;
+	public ScrollRect publicationScroll;
 	public GameObject friendsView;
 
 	public Text publicUserName;
+	public Image userAvatar;
+	public Sprite avatarM;
+	public Sprite avatarH;
 
 	public Text userInput;
 	public Text passInput;
@@ -100,11 +105,13 @@ public class ComputerManager : EventManager {
 		friendsPending.text = ""+friendsRequests;
 		if (accepted)
 		{
+			Interacted("Accepted_" + name + "_request");
 			friendsNum++;
 			friendsCount.text = "" + friendsNum;
 		}
 		else
 		{
+			Interacted("Deny_" + name + "_request");
 			float y = friend.gameObject.GetComponent<RectTransform>().anchoredPosition.y;
 			foreach(SocialFriend sf in friends)
 			{
@@ -147,7 +154,7 @@ public class ComputerManager : EventManager {
 		friends.Add(sc);
 	}
 
-	public void NewPublication(string author, string title, string key)
+	public void NewPublication(string author, string title, string key, string photoPath = "")
 	{
 		bool auth = false;
 		foreach(SocialFriend sc in friends)
@@ -157,12 +164,12 @@ public class ComputerManager : EventManager {
 				auth = true;
 				break;
 			}
-		}
+		}/*
 		if (!auth)
 		{
 			Debug.LogWarning(author + "is not a friend, ignoring the new publication...");
 			return;
-		}
+		}*/
 		float height = 0;
 		foreach(Publication child in photosContent.GetComponentsInChildren<Publication>(false))
 		{
@@ -176,6 +183,18 @@ public class ComputerManager : EventManager {
 		Publication pb = photo.GetComponent<Publication>();
 		pb.SetAuthorAndComment(author, title);
 		pb.SetKeyAndComputerManager(key, this);
+		if (photoPath != "")
+		{
+			pb.SetPhoto(photoPath);
+		}
+
+		var avatarFile = author;
+		if(author == "Tú" || author == "You")
+		{
+			avatarFile = GlobalState.MaleSex ? "Boy" : "Girl";
+		}
+		pb.SetAvatar(avatarFile + "Avatar");
+
 		photo.transform.localScale = new Vector3(1, 1, 1);
 		photosContent.sizeDelta = new Vector2(photosContent.sizeDelta.x, photosContent.sizeDelta.y + height + 50);
 
@@ -186,6 +205,7 @@ public class ComputerManager : EventManager {
 
 	public void ShowLogin()
 	{
+		Interacted("ShowComputerLogin");
 		loginView.SetActive(true);
 		publicationView.SetActive(false);
 		friendsView.SetActive(false);
@@ -193,6 +213,8 @@ public class ComputerManager : EventManager {
 
 	public void ShowPhotos()
 	{
+		Interacted("ShowComputerPublications");
+		ScrollChatToTop();
 		loginView.SetActive(false);
 		publicationView.SetActive(true);
 		friendsView.SetActive(false);
@@ -209,6 +231,7 @@ public class ComputerManager : EventManager {
 
 	public void ShowFriends()
 	{
+		Interacted("ShowComputerFriends");
 		loginView.SetActive(false);
 		publicationView.SetActive(false);
 		friendsView.SetActive(true);
@@ -216,6 +239,7 @@ public class ComputerManager : EventManager {
 
 	public void OffComputer()
 	{
+		Interacted("offComputer");
 		screenSqueleton.SetActive(false);
 		screen.SetActive(false);
 	}
@@ -224,31 +248,35 @@ public class ComputerManager : EventManager {
 	{
 		if (pass == "")
 		{
-			noteUser.text = GlobalState.UserName.ToLower();
-			string sub1 = noteUser.text.Substring(0, GlobalState.UserName.Length / 2);
-			string sub2 = noteUser.text.Substring(GlobalState.UserName.Length / 2, GlobalState.UserName.Length / 2);
-			pass = sub1 + Guid.NewGuid().ToString().Replace("-", string.Empty).Substring(0, 3).ToLower() + sub2;
-			notePass.text = pass;
+			noteUser.text = GlobalState.Nick;
+			notePass.text = GlobalState.UserPass;
 
-			publicUserName.text = GlobalState.UserName;
+			publicUserName.text = GlobalState.Nick;
+			userAvatar.sprite = GlobalState.MaleSex ? avatarH : avatarM;
 		}
+		Interacted("onComputer");
 		ShowLogin();
 		screen.SetActive(true);
 		screenSqueleton.SetActive(true);
+	}
+
+	public void ScrollChatToTop()
+	{
+		publicationScroll.normalizedPosition = new Vector2(0, 1);
 	}
 
 	public void CheckLogin()
 	{
 		userInput.text = "";
 		passInput.text = "";
-		if (userInput.text.ToLower() == GlobalState.UserName.ToLower() && passInput.text == pass)
+		if (userInput.text.ToLower() == GlobalState.Nick.ToLower() && passInput.text == GlobalState.UserPass)
 		{
 			error.SetActive(false);
 			ShowPhotos();
 		} else
 		{
 			error.SetActive(true);
-			Debug.LogWarning("user " + GlobalState.UserName.ToLower() + " and pass " + pass);
+			Debug.LogWarning("user " + GlobalState.Nick + " and pass " + GlobalState.UserPass);
 		}
 	}
 
@@ -334,6 +362,18 @@ public class ComputerManager : EventManager {
 			Publication p = pub.GetComponent<Publication>();
 			publications.Remove(p.GetPublicationKey());
 			Destroy(pub);
+		}
+	}
+
+	public void Interacted(string id)
+	{
+		try
+		{
+			Tracker.T.trackedGameObject.Interacted(id, RAGE.Analytics.Formats.GameObjectTracker.TrackedGameObject.Item);
+		}
+		catch (Exception e)
+		{
+			Debug.LogError(e);
 		}
 	}
 }

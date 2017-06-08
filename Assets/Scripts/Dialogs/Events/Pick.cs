@@ -45,8 +45,30 @@ public class Pick : EventManager {
 	/// <param name="varValue"></param>
 	private void PickObject(string varName, System.Object varValue)
 	{
-		Type t = state.GetType();
-		t.GetProperty(varName).SetValue(state, varValue, null);
+		Type t = null;
+		if (state != null)
+		{
+			t = state.GetType();
+		}
+
+		if (t != null && t.GetProperty(varName) != null)
+		{
+			t.GetProperty(varName).SetValue(state, varValue, null);
+		}
+		else
+		{
+			GlobalState gState = GlobalState.Instance;
+			t = gState.GetType();
+			try
+			{
+				t.GetProperty(varName).SetValue(gState, varValue, null);
+			}
+			catch (Exception e)
+			{
+				Debug.Log("Error with the variable: " + varName + "\n" + e);
+			}
+		}
+
 		/*
 		 * Throw exception in IsoUnityDialogs
 		 * this.gameObject.SetActive(false);

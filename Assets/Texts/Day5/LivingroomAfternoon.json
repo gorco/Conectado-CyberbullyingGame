@@ -1,0 +1,426 @@
+{
+	"mother": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node2",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "init",
+				"condition": "true"
+			}]
+		},
+		"init":{
+			"type": "setter",
+			"next": "initSchool",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"initSchool":{
+			"type": "setter",
+			"next": "initGuille",
+			"set": {
+				"var": "aboutSchool",
+				"value": true
+			}
+		},
+		"initGuille":{
+			"type": "setter",
+			"next": "initBoard",
+			"set": {
+				"var": "aboutGuille",
+				"value": true
+			}
+		},
+		"initBoard":{
+			"type": "setter",
+			"next": "initMaria",
+			"set": {
+				"var": "aboutBoard",
+				"value": true
+			}
+		},
+		"initMaria":{
+			"type": "setter",
+			"next": "node1",
+			"set": {
+				"var": "aboutMaria",
+				"value": true
+			}
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "Buenas tardes cariño."
+			}, 
+			{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "¿Qué habéis hecho hoy?"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "parentsFS",
+			"fragments": [{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "¿Quieres hablar de algo más?"
+			}]
+		},
+		"parentsFS": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": -15,
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 1
+			}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "parentsAfternoonFivethDay",
+			"options": [{
+				"msn": "Nada a destacar",
+				"condition": "page == 1"
+			},
+			{
+				"next": "maria",
+				"msn": "María no ha venido",
+				"condition": "page == 1 && aboutMaria == true"
+			},
+			{
+				"next": "page2",
+				"msn": "(Hablar de otra cosa)",
+				"condition": "page == 1"
+			},
+			{
+				"next": "school",
+				"msn": "La clase...",
+				"condition": "page == 2 && aboutSchool == true"
+			},
+			{
+				"next": "board",
+				"msn": "(Contarle lo de la foto en los tablones)",
+				"condition": "page == 2 && aboutBoard == true && varObject('global', 'BoardQuestNonStatic') > 0"
+			},
+			{
+				"next": "page3",
+				"msn": "(Hablar de otros compañeros)",
+				"condition": "page == 2"
+			},
+			{
+				"next": "guille",
+				"msn": "He hablado con Guille.",
+				"condition": "page == 3 && aboutGuille == true"
+			},
+			{
+				"msn": "Me voy a la habitación, tengo cosas que hacer.",
+				"condition": "page == 3"
+			}]
+		},
+		"page2":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 2
+			}
+		},
+		"page3":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 3
+			}
+		},
+		"guille": {
+			"type": "dialog",
+			"next": "guilleFork",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Guille me ha contado que Alex me odia."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Alex me está haciendo la vida imposible."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Y tiene amenazada a media clase para que me ignoren."
+			}]
+		},
+		"guilleFork": {
+			"type": "fork",
+			"options": [{
+				"next": "guilleBoard",
+				"condition": "varObject('global', 'GuillermoQuestNonStatic') == 1"
+			},
+			{
+				"next": "guilleUpParentsFS",
+				"condition": "true"
+			}]
+		},
+		"guilleBoard": {
+			"type": "dialog",
+			"next": "guilleUpParentsFS",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Y me ha contado que Ana es la primera en seguirle el juego a Alex"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Está mañana ha llegado la primera..."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Y se ha dedicado a poner fotos mías en todos los tablones"
+			}]
+		},
+		"guilleUpParentsFS": {
+			"type": "event",
+			"next": "guilleSetter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 10,
+			}
+		},
+		"guilleSetter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutGuille",
+				"value": false
+			}
+		},	
+		"maria": {
+			"type": "dialog",
+			"next": "mariaUpParentsFS",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "A María hoy no la he visto"
+			}]
+		},
+		"mariaUpParentsFS": {
+			"type": "event",
+			"next": "mariaSetter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 5,
+			}
+		},
+		"mariaSetter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutMaria",
+				"value": false
+			}
+		},	
+		"board": {
+			"type": "dialog",
+			"next": "boardUpParentsFS",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Se han dedicado a poner fotos mías en todos los tablones"
+			},
+			{
+				"tag": "Tú",
+				"msn": "No se qué he hecho mal para que se porten así conmigo"
+			},
+			{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "Luego hablaré con tu padre"
+			},
+			{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "Igual deberíamos ir a hablar con tu tutor a ver qué está pasando"
+			}]
+		},
+		"boardUpParentsFS": {
+			"type": "event",
+			"next": "boardSetter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 15,
+			}
+		},
+		"boardSetter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutBoard",
+				"value": false
+			}
+		},
+		"school": {
+			"type": "dialog",
+			"next": "schoolUpParentsFS",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Casi todos me han ignorado, pocos hablaban conmigo"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Es como si todo el mundo me evitara o me hiciera el vacío"
+			}]
+		},
+		"schoolUpParentsFS": {
+			"type": "event",
+			"next": "setterSchool",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 5,
+			}
+		},
+		"setterSchool":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutSchool",
+				"value": false
+			}
+		}
+	},
+	"exitDoor": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No tengo nada que hacer en la calle"
+			}]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "move",
+				"condition": "repeated == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"move": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"next": "move2",
+			"set": {
+				"var": "repeated",
+				"value": true
+			}
+		},
+		"move2": {
+			"type": "event",
+			"next": "message1",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		},
+		"message1": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "computer publication",
+				"var": "insult",
+				"value": "Buscando un mote",
+				"key": "Jose",
+				"time": 1
+			}
+		},
+		"message2": {
+			"type": "event",
+			"next": "message3",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "mirad la frente k tiene... Cabezabuque",
+				"key": "Ana",
+				"time": 1.2 
+			}
+		},
+		"message3": {
+			"type": "event",
+			"next": "message4",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "jajaja, parece una pared de frontón. Pongamosle FRONTON",
+				"key": "Jose",
+				"time": 1.4
+			}
+		},
+		"message4": {
+			"type": "event",
+			"next": "message5",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "Aire, k es lo k producen sus orejas en movimiento jaajaj",
+				"key": "Alex",
+				"time": 1.6
+			}
+		},
+		"message5": {
+			"type": "event",
+			"next": "message6",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "no os compliqueís, podemos llamarle margi... total, ninguno le vamos a hablar...",
+				"key": "Ester",
+				"time": 2
+			}
+		},
+		"message6": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "margi es poco original... ¿Qué tal gremlin?",
+				"key": "Ana",
+				"other": "insultPost",
+				"time": 2.5
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "21:30",
+			}
+		}
+	}
+}

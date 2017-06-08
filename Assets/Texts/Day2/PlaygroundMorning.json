@@ -15,7 +15,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Ya he hablado con Alison, debería ver quién más hay por el patio esperando a que suene la campana"
+				"msn": "Ya he hablado con Alison, debería ver quién más hay por el patio esperando a que suene la campana."
 			}]
 		}, 
 		"setter":{
@@ -47,21 +47,22 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Buenos días, <$ varObject('global', 'UserNameNonStatic') $>"
+				"msn": "Buenos días, <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Antes he escuchado a Alex hablar con Ana sobre gastarte una broma"
+				"msn": "Antes he escuchado a Álex hablar con Ana sobre gastarte una broma."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "No sé qué puede ser, pero ten cuidado, no suelen ser graciosas precisamente"
+				"msn": "No sé qué puede ser, pero ten cuidado, no suelen ser graciosas precisamente."
 			}]
 		}, 
 		"notify2": {
 			"type": "options",
+			"questionId": "MariaJokeAdvise",
 			"options": [{
 				"next": "notify3",
 				"msn": "Gracias por avisar"
@@ -145,13 +146,14 @@
 		}, 
 		"normal2": {
 			"type": "options",
+			"questionId": "MariaLonely",
 			"options": [{
 				"next": "setter",
-				"msn": "No nada, adios"
+				"msn": "No nada, adiós."
 			},
 			{
 				"next": "normal3b",
-				"msn": "Saludarte, siempre te veo sola y leyendo"
+				"msn": "Saludarte, siempre te veo sola y leyendo."
 			}]
 		},
 		"normal3b": {
@@ -169,17 +171,17 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Muy amable"
+				"msn": "Muy amable."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "La gente no suele hablar conmigo"
+				"msn": "La gente no suele hablar conmigo."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Que pases un buen día"
+				"msn": "Que pases un buen día."
 			}]
 		}, 
 		"bell": {
@@ -242,17 +244,17 @@
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Te dice con quién te llevas mejor o peor de los que también tienen instalada la aplicación"
+				"msn": "Te dice con quién te llevas mejor o peor de los que también tienen instalada la aplicación."
 			},
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Dicen que es muy exacta, pero aún no se sabe como funciona"
+				"msn": "Dicen que es muy exacta, pero aún no se sabe como funciona."
 			},
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Ya he visto que tú también la tienes"
+				"msn": "Ya he visto que tú también la tienes."
 			}]
 		},
 		"setter":{
@@ -307,7 +309,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Pierdete, no tengo nada que hablar contigo"
+				"msn": "Pierdete, no tengo nada que hablar contigo."
 			}]
 		},
 		"bad1": {
@@ -321,12 +323,13 @@
 		},
 		"badOptions": {
 			"type": "options",
+			"questionId": "AnaJokeAsk",
 			"options": [{
-				"msn": "Nada (te vas)"
+				"msn": "Nada (te vas)."
 			},
 			{
 				"next": "bad2",
-				"msn": "Me han dicho que has hablado con Alex de hacerme una broma",
+				"msn": "Me han dicho que has hablado con Álex de hacerme una broma.",
 				"condition": "varObject('state', 'JokeAdvise') == true"
 			}]
 		},
@@ -336,7 +339,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Sí, ¿Y?, venga, vete"
+				"msn": "Sí, ¿Y?, venga, vete."
 			}]
 		},
 		"checkGood": {
@@ -355,7 +358,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Pierdete, no tengo nada que hablar contigo"
+				"msn": "Pierdete, no tengo nada que hablar contigo."
 			}]
 		},
 		"good1": {
@@ -374,12 +377,13 @@
 		},
 		"goodOptions": {
 			"type": "options",
+			"questionId": "AnaJokeAsk",
 			"options": [{
 				"msn": "Nada (te vas)"
 			},
 			{
 				"next": "good2",
-				"msn": "Me han dicho que has hablado con Alex de hacerme una broma",
+				"msn": "Me han dicho que has hablado con Álex de hacerme una broma",
 				"condition": "varObject('state', 'JokeAdvise') == true"
 			}]
 		},
@@ -389,12 +393,12 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Vaya, nos has pillado, era una tonteria"
+				"msn": "Vaya, nos has pillado, era una tonteria."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Pero ya no tiene gracia, no la haremos"
+				"msn": "Pero ya no tiene gracia, no la haremos."
 			}]
 		}
 	},
@@ -430,7 +434,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Acabo de llegar, no puedo irme aún"
+				"msn": "Acabo de llegar, no puedo irme aún."
 			}]
 		}
 	}

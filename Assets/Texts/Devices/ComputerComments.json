@@ -20,5 +20,130 @@
 				"time": 0
 			}
 		}
+	},
+	"insultPost": {
+		"root":{
+			"type": "options",
+			"questionId": "insultPostOptions",
+			"options": [{
+				"next": "node1a",
+				"msn": "(Denunciar publicación)"
+			},
+			{
+				"next": "node1b",
+				"msn": "Sois estúpidos"
+			},
+			{
+				"next": "node1c",
+				"msn": "Voy a acabar hablando con nuestro tutor"
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Voy a denunciar en mensaje, a ver si lo eliminan por su contenido"
+			}]
+		},
+		"node1b": {
+			"type": "event",
+			"next": "node2b",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "Sois etupidos, iros todos a tomar por culo. Pareceis niños de 3 años",
+				"key": "Tú",
+				"other" : "empty",
+				"time": 0
+			}
+		},
+		"node2b": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "Seguro que quién se mea encima por las noches eres tú jaja",
+				"key": "Ana",
+				"other" : "empty",
+				"time": 1
+			}
+		},
+		"node1c": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "Estoy hasta las narices de todos. Mañana hablaré con el tutor",
+				"key": "Tú",
+				"other" : "empty",
+				"time": 0
+			}
+		},
+		"node2b": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "Mirad, también podemos ponerle quejica o <$ if(varObject('global', 'MaleSexNonStatic')==true, 'lloron', 'llorona') $>",
+				"key": "Ana",
+				"other" : "empty",
+				"time": 1
+			}
+		}
+	},
+	"trollPost": {
+		"root":{
+			"type": "options",
+			"questionId": "trollPostOptions",
+			"options": [{
+				"next": "node1a",
+				"msn": "(Borrar publicación)"
+			},
+			{
+				"next": "node1b",
+				"msn": "Alison... para esto querias intercambiar contraseñas"
+			},
+			{
+				"msn": "(No decir nada)"
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "loadPub",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Voy a borrar el post"
+			}]
+		},
+		"loadPub": {
+			"type": "event",
+			"next": "mobileMessage",
+			"event": {
+				"name": "computer publication",
+				"other": "load"
+			}
+		},
+		"mobileMessage": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alex",
+				"value": "He visto que has borrado tu publicacion con tu nº de telefono, pero no pasa nada, tengo pantallazo y puevo resubirlo jajaja",
+				"key": "Alex",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "Alison... para esto querias intercambiar contraseñas, eres de lo peor",
+				"key": "Tú",
+				"other" : "empty",
+				"time": 0
+			}
+		}
 	}
 }

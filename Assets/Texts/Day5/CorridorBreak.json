@@ -1,0 +1,101 @@
+{
+	"doorToStairs": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "bathroom",
+				"condition": "varObject('state', 'Alex') == true"
+			},
+			{
+				"next": "move",
+				"condition": "true"
+			}]
+		},
+		"bathroom": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Venga, pasa al baño."
+			}]
+		},
+		"move": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:15",
+			}
+		},
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicos."
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicas."
+			}]
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No tengo nada que hacer dentro de clase."
+			}]
+		}
+	}
+}

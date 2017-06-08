@@ -11,7 +11,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Prácticamente todo ha sido como ayer"
+				"msn": "Prácticamente todo ha sido como ayer."
 			}, 
 			{
 				"tag": "Tú",
@@ -19,7 +19,7 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "No entiendo nada"
+				"msn": "No entiendo nada."
 			}]
 		},
 	},
@@ -97,7 +97,7 @@
 			"fragments": [{
 				"tag": "Papá",
 				"character": "Father",
-				"msn": "Veo que ya has llegado, <$ varObject('global', 'UserNameNonStatic') $>"
+				"msn": "Veo que ya has llegado, <$ varObject('global', 'UserNameNonStatic') $>."
 			}]
 		},
 		"gumObv":{
@@ -167,13 +167,14 @@
 		},
 		"options": {
 			"type": "options",
+			"questionId": "parentsAfternoonSecondDay",
 			"options": [{
 				"msn": "Como siempre",
 				"condition": "page == 1"
 			},
 			{
 				"next": "guille",
-				"msn": "Guille me ha dicho de ir a su casa el sábado",
+				"msn": "Guille me ha dicho de ir a su casa el sábado.",
 				"condition": "page == 1 && aboutGuille == true && varObject('global', 'GuillermoQuestNonStatic') > 0"
 			},
 			{
@@ -198,7 +199,7 @@
 			},
 			{
 				"next": "maria",
-				"msn": "Maria...",
+				"msn": "María...",
 				"condition": "page == 3 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') > 0"
 			},
 			{
@@ -217,7 +218,7 @@
 				"condition": "page == 4 && aboutSchool == true "
 			},
 			{
-				"msn": "Me voy a la habitación, tengo cosas que hacer",
+				"msn": "Me voy a la habitación, tengo cosas que hacer.",
 				"condition": "page == 4"
 			}]
 		},
@@ -265,7 +266,7 @@
 			"next": "guilleUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Le he dicho que iré, así que el sábado por la tarde no estaré en casa"
+				"msn": "Le he dicho que iré, así que el sábado por la tarde no estaré en casa."
 			}]
 		},
 		"guilleNoGo": {
@@ -273,7 +274,7 @@
 			"next": "guilleUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Le he dicho que no, demasiada gente con la que no tengo confianza"
+				"msn": "Le he dicho que no, demasiada gente con la que no tengo confianza."
 			}]
 		},
 		"guilleQuest": {
@@ -281,7 +282,7 @@
 			"next": "guilleUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Le he dicho que tenia que preguntar en casa"
+				"msn": "Le he dicho que tenia que preguntar en casa."
 			},
 			{
 				"tag": "Tú",
@@ -289,7 +290,7 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "En principio puedes ir, se lo comentaré a tu madre por si acaso"
+				"msn": "En principio puedes ir, se lo comentaré a tu madre por si acaso."
 			}]
 		},
 		"guilleUpParentsFS": {
@@ -325,15 +326,15 @@
 			"next": "alisonUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Alison es muy maja"
+				"msn": "Alison es muy maja."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Me ha advertido de que Alex iba a gastarme una broma"
+				"msn": "Me ha advertido de que Alex iba a gastarme una broma."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Aunque de poco ha servido"
+				"msn": "Aunque de poco ha servido."
 			}]
 		},
 		"normal": {
@@ -341,7 +342,7 @@
 			"next": "alisonUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Hoy he hablado poco con ella"
+				"msn": "Hoy he hablado poco con ella."
 			}]
 		},
 		"alisonUpParentsFS": {
@@ -361,7 +362,7 @@
 				"value": false
 			}
 		},	
-		"gumFork": {
+		"gum": {
 			"type": "fork",
 			"options": [{
 				"next": "gumNoWhassed",
@@ -369,11 +370,11 @@
 			},
 			{
 				"next": "gumWhassed",
-				"condition": "varObject('state', 'GumQuestNonStatic') == 1"
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
 			},
 			{
 				"next": "noGum",
-				"condition": "varObject('state', 'GumQuestNonStatic') == 2"
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
 			}]
 		},
 		"gumNoWhassed": {
@@ -385,12 +386,12 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "La mayoria de clase se ha reido de mí."
+				"msn": "La mayoría de clase se ha reído de mí."
 			},
 			{
 				"tag": "Papá",
 				"character": "Father",
-				"msn": "Cariño, tienes que mirar donde apoyas el culo"
+				"msn": "Cariño, tienes que mirar donde apoyas el culo."
 			}]
 		},
 		"gumWhassed": {
@@ -402,7 +403,7 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "He intentado quitarlo con agua y jabón, pero ha sido peor"
+				"msn": "He intentado quitarlo con agua y jabón, pero ha sido peor."
 			},
 			{
 				"tag": "Tú",
@@ -418,12 +419,12 @@
 			},
 			{
 				"tag": "Tú",
-				"msn": "Estoy seguro de que ha sido Alex."
+				"msn": "Estoy seguro de que ha sido Álex."
 			},
 			{
 				"tag": "Papá",
 				"character": "Father",
-				"msn": "Seguro que no ha sido aposta"
+				"msn": "Seguro que no ha sido aposta."
 			}]
 		},
 		"gumUpParentsFS": {
@@ -448,11 +449,11 @@
 			"next": "mariaUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Con María me llevo bien"
+				"msn": "Con María me llevo bien."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Aunque parece que no habla con nadie más de clase"
+				"msn": "Aunque parece que no habla con nadie más de clase."
 			}]
 		},
 		"mariaUpParentsFS": {
@@ -478,11 +479,11 @@
 			"fragments": [
 			{
 				"tag": "Tú",
-				"msn": "Diria que la tiene tomada conmigo desde el primer día"
+				"msn": "Diria que la tiene tomada conmigo desde el primer día."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Aunque no se muy bien el porqué"
+				"msn": "Aunque no se muy bien el porqué."
 			}]
 		},
 		"forkAlex": {
@@ -505,7 +506,7 @@
 			"next": "alexUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Y hoy me ha querido gastar una broma"
+				"msn": "Y hoy me ha querido gastar una broma."
 			}]
 		},
 		"alexZero": {
@@ -513,20 +514,20 @@
 			"next": "alexUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Estaba enfadado por haberme sentado en su sitio"
+				"msn": "Estaba enfadado por haberme sentado en su sitio."
 			},
 			{
 				"tag": "Tú",
-				"msn": "He intentado hacer las paces con él"
+				"msn": "He intentado hacer las paces con él."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Pero por como me ha hablado creo que va a seguir buscando pelea"
+				"msn": "Pero por como me ha hablado creo que va a seguir buscando pelea."
 			},
 			{
 				"tag": "Papá",
 				"character": "Father",
-				"msn": "Si tienes algún problema con él, no dudes en decirmelo"
+				"msn": "Si tienes algún problema con él, no dudes en decirmelo."
 			},
 			{
 				"tag": "Papá",
@@ -539,26 +540,26 @@
 			"next": "alexUpParentsFS",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Va buscando pelea"
+				"msn": "Va buscando pelea."
 			},
 			{
 				"tag": "Tú",
-				"msn": "Me dan ganas de darle dos hostias"
+				"msn": "Me dan ganas de darle dos hostias."
 			},
 			{
 				"tag": "Papá",
 				"character": "Father",
-				"msn": "No busques pelea"
+				"msn": "No busques pelea."
 			},
 			{
 				"tag": "Papá",
 				"character": "Father",
-				"msn": "si hace falta que vaya a hablar con él dimelo"
+				"msn": "si hace falta que vaya a hablar con él dimelo."
 			},
 			{
 				"tag": "Papá",
 				"character": "Father",
-				"msn": "O si tienes cualquier problema, habla con tu profesor"
+				"msn": "O si tienes cualquier problema, habla con tu profesor."
 			}]
 		},	
 		"alexUpParentsFS": {
@@ -583,7 +584,7 @@
 			"next": "setterSchool",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Empiezo a no estar a gusto"
+				"msn": "Empiezo a no estar a gusto."
 			}]
 		},
 		"setterSchool":{
@@ -600,7 +601,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No tengo nada que hacer en la calle"
+				"msn": "No tengo nada que hacer en la calle."
 			}]
 		}
 	},
@@ -624,6 +625,14 @@
 				"key": "bedroom"
 			}
 		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "21:30",
+			}
+		},
 		"setter":{
 			"type": "setter",
 			"next": "move2",
@@ -634,10 +643,19 @@
 		},
 		"move2": {
 			"type": "event",
-			"next": "message1",
+			"next": "changeHour2",
 			"event": {
 				"name": "move camera",
 				"key": "bedroom"
+			}
+		},
+		"changeHour2": {
+			"type": "event",
+			"next": "message1",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "21:30",
 			}
 		},
 		"message1": {
@@ -670,7 +688,7 @@
 				"name": "mobile message",
 				"var": "Clase",
 				"value": ":)",
-				"key": "Alsion",
+				"key": "Alison",
 				"time": 2 
 			}
 		},
@@ -702,7 +720,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Ya sólo falta que inviteís a la friki de María",
+				"value": "Ya sólo falta que inviteis a la friki de María",
 				"key": "Alex",
 				"other": "kickClass",
 				"time": 12 
@@ -710,21 +728,12 @@
 		},
 		"message7": {
 			"type": "event",
-			"next": "changeHour",
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
 				"value": "Jose es el admin, habla con él mañana, q el chat no suele leerlo",
 				"key": "Ana",
 				"time": 14
-			}
-		},
-		"changeHour": {
-			"type": "event",
-			"event":{
-				"name": "change variable",
-				"var": "hour",
-				"value": "21:30",
 			}
 		}
 	}

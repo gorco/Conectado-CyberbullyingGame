@@ -1,0 +1,124 @@
+{
+	"board":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Parece que alguien ha arrancado ya la foto de ayer"
+			}]
+		}
+	},
+	"anaAndAlex":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "(Te han visto, pero pasan de tí, Álex y ana siguen hablando entre ellos)"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Creo que cabezabuque y gremlin son los más originales"
+			},
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "El de margi me parecía bien"
+			},
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Aunque es verdad que <$ varObject('global', 'UserNameNonStatic') $> cabezabuque suena my bien jajaja "
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Jajaja a ver que opina Jose"
+			}
+			{
+				"tag": "Tú",
+				"msn": "No os coréis, seguid ignorándome y pensando en el mote que me váis a poner"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Perdona,  tengo prisa, si no entro ya a classe voy a llegar tarde"
+			}]
+		}			
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicos"
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No puedo entrar ahí, es el baño de chicas"
+			}]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		}
+	}
+}

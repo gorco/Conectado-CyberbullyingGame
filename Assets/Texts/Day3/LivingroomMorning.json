@@ -1,8 +1,37 @@
 {
 	"mother" : {
 		"root": {
-		
-		}
+			"type": "fork",
+			"options": [{
+				"next": "nodeA",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "nodeB",
+				"condition": "true"
+			}]
+		},
+		"nodeA": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "Ten cuidado y mira dónde te sientas hoy."
+			},
+			{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "Pórtate bien, te veo esta tarde."
+			}]
+		},
+		"nodeB": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Mamá",
+				"character": "Mother",
+				"msn": "Portate bien, te veo esta tarde."
+			}]
+		},
 	},
 	"exitDoor": {
 		"root": {
@@ -43,14 +72,14 @@
 			"event": {
 				"name": "change scene",
 				"var": "scene",
-				"value": 9
+				"value": 14
 			}
 		},
 		"dialogNode": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Me dejo la mochila. Será mejor que pases por mi habitación a recogerla antes de irme"
+				"msn": "Me dejo la mochila. Será mejor que pases por mi habitación a recogerla antes de irme."
 			}]
 		}
 	},

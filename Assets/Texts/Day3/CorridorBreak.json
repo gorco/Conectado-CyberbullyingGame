@@ -1,53 +1,32 @@
 {
-	"maria":{
+	"doorToStairs": {
 		"root": {
 			"type": "fork",
 			"options": [{
-				"next": "nogum",
-				"condition": "varObject('global', 'AuxQuestNonStatic') == 2"
+				"next": "bathroom",
+				"condition": "varObject('state', 'GuilleSpoke') == false"
 			},
 			{
-				"next": "node0",
-				"condition": "true"
+				"next": "move",
+				"condition": "varObject('state', 'GuilleSpoke') == true"
 			}]
 		},
-		"nogum": {
+		"bathroom": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Maria",
-				"character": "Maria",
-				"msn": "Está leyendo, como siempre, mejor no la molesto"
-			}]
-		},
-		"node0": {
-			"type": "dialog",
-			"fragments": [{
-				"tag": "Maria",
-				"character": "Maria",
-				"msn": "No se si te has fijado, pero llevas un chicle pegado en el culo"
+				"tag": "Tú",
+				"msn": "Antes de irme debería pasar por el baño."
 			},
 			{
-				"tag": "Maria",
-				"character": "Maria",
-				"msn": "Puedes pasar por el baño a verlo en el espejo"
+				"tag": "Tú",
+				"msn": "Igual la nota era importante."
 			}]
-		}
-	},
-	"doorToStairs": {
-		"root": {
+		},
+		"move": {
 			"type": "event",
-			"next": "alisonMove",
 			"event": {
 				"name": "move camera",
 				"key": "stairs"
-			}
-		},
-		"alisonMove": {
-			"type": "event",
-			"next": "changeHour",
-			"event": {
-				"name": "little move",
-				"key": "alison"
 			}
 		},
 		"changeHour": {
@@ -55,7 +34,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "11:20",
+				"value": "14:15",
 			}
 		},
 	},
@@ -109,54 +88,17 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "No puedo entrar ahí, es el baño de chicas"
+				"msn": "No puedo entrar ahí, es el baño de chicas."
 			}]
 		}
 	},
 	"classDoor": {
 		"root": {
 			"type": "dialog",
-			"next": "options",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Si entro y aparece el profesor ya no podré salir"
+				"msn": "No tengo nada que hacer dentro de clase."
 			}]
-		},
-		"options": {
-			"type": "options",
-			"options": [{
-				"next": "black",
-				"msn": "(Entrar de todas formas)"
-			},
-			{
-				"msn": "Mejor, voy a dar otra vuelta por el edificio"
-			}]
-		},
-		"black": {
-			"type": "event",
-			"next": "changeHour",
-			"event": {
-				"name": "black",
-				"synchronous": true,
-				"var": "text",
-				"value": "Al entrar suena la campana y aparece el profesor. La mañana termina sin darte cuenta, es hora de volver a casa..."
-			}
-		},
-		"changeHour": {
-			"type": "event",
-			"next": "enter",
-			"event":{
-				"name": "change variable",
-				"var": "hour",
-				"value": "14:02",
-			}
-		},
-		"enter": {
-			"type": "event",
-			"event": {
-				"name": "move camera",
-				"key": "endDay"
-			}
 		}
 	}
 }

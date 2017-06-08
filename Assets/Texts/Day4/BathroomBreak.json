@@ -1,0 +1,37 @@
+﻿{
+	"bathroomExit": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"mobile":{
+		"root": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [
+			{
+				"tag": "Tú",
+				"msn": "Es mi móvil."
+			},{
+				"tag": "Tú",
+				"msn": "¿Quién me lo ha quitado y lo ha dejado en el baño de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'chicas', 'chicos') $>?"
+			},
+			{
+				"tag": "Tú",
+				"msn": "Mierda, encima no enciende, espero que sea cosa de la batería. En cuanto llegue a casa se la cambio."
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "SharedPassQuest",
+				"value": 2
+			}
+		}
+	}
+}

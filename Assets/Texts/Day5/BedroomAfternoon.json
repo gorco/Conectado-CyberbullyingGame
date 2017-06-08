@@ -1,0 +1,155 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "¿mmm, Debería irme ya a dormir?"
+			}]
+		},
+		"node1": {
+			"type": "options",
+			"questionId": "goToSleep",
+			"options": [{
+				"next": "sleep",
+				"msn": "Sí"
+			},
+			{
+				"msn": "No"
+			}]
+		},
+		"sleep": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"time": 3,
+				"value": 17
+			}
+		}		
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "No hay nada útil dentro."
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Debería ordenar un poco todo esto."
+			}]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Acabo de volver"
+			},
+			{
+				"tag": "Tú",
+				"msn": "No necesito la mochila para nada.",
+			}]
+		}
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "PC",
+				"msn": "¿Quieres encender el ordenador?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"options": [{
+				"next": "node1a",
+				"msn": "Sí"
+			},
+			{
+				"next": "node1b",
+				"msn": "No"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
+		}, 
+		"moveCamera": {
+			"type": "event",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Lo mejor será que me vaya."
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "¿Dejo el móvil cargando?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "Sí"
+			},
+			{
+				"next": "node1b",
+				"msn": "No"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
+	}
+}
