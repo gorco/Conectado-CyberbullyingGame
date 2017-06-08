@@ -36,6 +36,7 @@ public class SettingsApp : MonoBehaviour {
 
 	public void ExitGameConfirmed()
 	{
+		//Tracker.T.RequestFlush();
 		//Application.Quit();
 		if (PlayerPrefs.HasKey("LimesurveyToken") && PlayerPrefs.GetString("LimesurveyToken") != "ADMIN" && PlayerPrefs.HasKey("LimesurveyPost"))
 		{

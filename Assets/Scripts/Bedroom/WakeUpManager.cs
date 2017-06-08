@@ -55,6 +55,8 @@ public class WakeUpManager : MonoBehaviour {
 		}
 		mobileObject.updateHour();
 		initQuests();
+
+		InitMobileGUI.InitMobileGUIObject(false);
 	}
 	
 	void initQuests()

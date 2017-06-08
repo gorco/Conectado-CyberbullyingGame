@@ -28,7 +28,7 @@ public class Nightmare2Manager : NightmareManager
 
 		xShadow = shadow.transform.localPosition.x;
 
-		if (GlobalState.Repeated)
+		if (GlobalState.Repeated || GlobalState.NotRepeatedDays)
 		{
 			showPortal = false;
 			GlobalState.Repeated = false;

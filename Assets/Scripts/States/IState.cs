@@ -15,4 +15,10 @@ public class IState : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	private void OnDestroy()
+	{
+		if(mobile)
+			mobile.GetComponentInChildren<MobileChat>().hideMobile(0);
+	}
 }

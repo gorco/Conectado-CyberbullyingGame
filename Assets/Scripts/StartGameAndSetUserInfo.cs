@@ -11,6 +11,7 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 	public UnityEngine.UI.InputField userPass;
 	public UnityEngine.UI.Toggle male;
 	public UnityEngine.UI.Toggle female;
+	public UnityEngine.UI.Toggle repeatedDays;
 
 	public UnityEngine.UI.Text error;
 
@@ -53,6 +54,8 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 			error.enabled = true;
 			return;
 		}
+
+		GlobalState.NotRepeatedDays = repeatedDays.isOn;
 
 		//Init day
 		GlobalState.Day = 0;

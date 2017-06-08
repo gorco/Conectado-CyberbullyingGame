@@ -23,6 +23,8 @@ public class GlobalState
 
 	public static string UserPass { get; set; }
 
+	public static bool NotRepeatedDays { get; set; }
+
 	// SocialNet
 	public static int MariaNet { get; set; }
 	public static int AlisonNet { get; set; }
