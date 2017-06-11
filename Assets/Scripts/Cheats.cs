@@ -16,6 +16,10 @@ public class Cheats : MonoBehaviour {
 	public InputField parentsMeeting;
 	public InputField password;
 
+	public InputField pass;
+	public InputField namePlayer;
+	public InputField nick;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -36,6 +40,10 @@ public class Cheats : MonoBehaviour {
 		GlobalState.GumQuest = genre.text == "" ? 0 : Int32.Parse(gum.text);
 		GlobalState.ParentsMeetingQuest = genre.text == "" ? 0 : Int32.Parse(parentsMeeting.text);
 		GlobalState.SharedPassQuest = genre.text == "" ? 0 : Int32.Parse(password.text);
+
+		GlobalState.UserName = namePlayer.text;
+		GlobalState.Nick = nick.text;
+		GlobalState.UserPass = pass.text;
 
 		SceneManager.LoadScene(2);
 	}
