@@ -33,10 +33,10 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 			GlobalState.Hour = PlayerPrefs.GetInt("Hour");
 			GlobalState.Minute = PlayerPrefs.GetInt("Minute");
 
-			GlobalState.Repeated = PlayerPrefs.GetString("Repeated") == "false" ? false : true;
-			GlobalState.NotRepeatedDays = PlayerPrefs.GetString("NotRepeatedDays") == "false" ? false : true;
-			GlobalState.MaleSex = PlayerPrefs.GetString("MaleSex") == "false" ? false : true;
-			GlobalState.MessagesPending = PlayerPrefs.GetString("MessagesPending") == "false" ? false : true;
+			GlobalState.Repeated = PlayerPrefs.GetString("Repeated").ToLower() == "false" ? false : true;
+			GlobalState.NotRepeatedDays = PlayerPrefs.GetString("NotRepeatedDays").ToLower() == "false" ? false : true;
+			GlobalState.MaleSex = PlayerPrefs.GetString("MaleSex").ToLower() == "false" ? false : true;
+			GlobalState.MessagesPending = PlayerPrefs.GetString("MessagesPending").ToLower() == "false" ? false : true;
 
 			GlobalState.UserName = PlayerPrefs.GetString("UserName");
 			GlobalState.Nick = PlayerPrefs.GetString("Nick");

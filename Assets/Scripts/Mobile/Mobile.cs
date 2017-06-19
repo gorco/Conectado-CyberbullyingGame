@@ -86,7 +86,7 @@ public class Mobile : MonoBehaviour {
 
 	internal void stopAlarm(bool delayed)
 	{
-		if (GlobalState.Day != 5 && !delayed || GlobalState.Hour < 8)
+		if (!delayed || (GlobalState.Hour < 8 && GlobalState.Day != 4))
 		{
 			this.delayed = delayed;
 			sound = false;
