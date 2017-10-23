@@ -10,6 +10,7 @@ public class Day4Part3State : IState {
 	public float x;
 	public float y;
 
+	[SerializeField]
 	private int mariaJoke = 0; // [0 - no joke] [1 - jodePending] [2 - jokeSuccess]
 
 	public int MariaJoke
@@ -18,6 +19,7 @@ public class Day4Part3State : IState {
 		set { mariaJoke = value; }
 	}
 
+	[SerializeField]
 	private bool timeEnough = false; 
 
 	public bool TimeEnough
@@ -30,10 +32,10 @@ public class Day4Part3State : IState {
 	void Start () {
 		if(GlobalState.SharedPassQuest != 1)
 		{
-			InitMobileGUI.InitMobileGUIObject(false);
+			base.mobile = InitMobileGUI.InitMobileGUIObject(false);
 		} else
 		{
-			InitMobileGUI.InitMobileGUIObject(true);
+			base.mobile = InitMobileGUI.InitMobileGUIObject(true);
 			CameraScroll cam = sceneCamera.GetComponent<CameraScroll>();
 			cam.scroll_min = minScroll;
 			cam.scroll_max = maxScroll;

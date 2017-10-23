@@ -30,7 +30,7 @@ public class Day2Part2State : IState
 		{
 			bellSounded = true;
 		}
-		InitMobileGUI.InitMobileGUIObject();
+		base.mobile = InitMobileGUI.InitMobileGUIObject();
 	}
 
 	// Update is called once per frame

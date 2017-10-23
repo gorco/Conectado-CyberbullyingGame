@@ -31,7 +31,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",
-				"msn": "Debería ir directo a clase."
+				"msn": "Debería ir <$ if(varObject('global', 'MaleSexNonStatic')==true, 'directo', 'directa')$> a clase."
 			}]
 		}
 	}

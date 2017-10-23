@@ -60,6 +60,6 @@ public class Day4Part1State : IState
 			parentsMeetingQuest = GlobalState.ParentsMeetingQuest;
 		}
 
-		InitMobileGUI.InitMobileGUIObject();
+		base.mobile = InitMobileGUI.InitMobileGUIObject();
 	}
 }
