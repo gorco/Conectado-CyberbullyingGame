@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class SettingsApp : MonoBehaviour {
 
 	public GameObject confirmExitPanel;
+	public bool forceExit = false;
 
 	// Use this for initialization
 	void Start () {
@@ -63,7 +64,7 @@ public class SettingsApp : MonoBehaviour {
 				net.POST(PlayerPrefs.GetString("LimesurveyHost") + "classes/collector", data, new SavedTracesListener());
 
 				System.IO.File.AppendAllText(path + PlayerPrefs.GetString("LimesurveyToken") + ".csv", System.IO.File.ReadAllText(Tracker.T.RawFilePath));
-				PlayerPrefs.SetString("CurrentSurvey", "post");
+				//PlayerPrefs.SetString("CurrentSurvey", "post");
 
 				//POST-TEST
 				Invoke("ChangeLevel", 1);
@@ -86,7 +87,13 @@ public class SettingsApp : MonoBehaviour {
 
 	void ChangeLevel()
 	{
-		SceneManager.LoadScene(31);
+		if (PlayerPrefs.GetString("CurrentSurvey").Equals("post") || forceExit)
+		{
+			SceneManager.LoadScene("_Survey");
+		} else
+		{
+			SceneManager.LoadScene(0);
+		}
 	}
 
 	public void ExitGameCanceled()

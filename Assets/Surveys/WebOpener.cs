@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class WebOpener : MonoBehaviour {
+
+	public string type = "";
+
 	void Start () {
 	}
 	void Update () {
@@ -14,16 +17,24 @@ public class WebOpener : MonoBehaviour {
 
     public void OpenSurvey()
     {
-		string survey = PlayerPrefs.GetString ("LimesurveyPre");
-		string type = "pre";
+		string survey = "";
+		if (type == "tea")
+		{
+			survey = PlayerPrefs.GetString("LimesurveyTea");
+		}
+		else
+		{
+			survey = PlayerPrefs.GetString("LimesurveyPre");
+			type = "pre";
 
-		if (PlayerPrefs.HasKey ("CurrentSurvey"))
-			type = PlayerPrefs.GetString ("CurrentSurvey");
+			if (PlayerPrefs.HasKey("CurrentSurvey"))
+				type = PlayerPrefs.GetString("CurrentSurvey");
 
-		if(type == "pre")
-			survey = PlayerPrefs.GetString ("LimesurveyPre");
-		else if(type == "post")
-			survey = PlayerPrefs.GetString ("LimesurveyPost");
+			if (type == "pre")
+				survey = PlayerPrefs.GetString("LimesurveyPre");
+			else if (type == "post")
+				survey = PlayerPrefs.GetString("LimesurveyPost");
+		}
 		
 		string url = PlayerPrefs.GetString("LimesurveyHost") + "surveys/survey/" + survey + "?token=" + PlayerPrefs.GetString("LimesurveyToken");
 		if (!url.Contains("http://") && !url.Contains("https://"))

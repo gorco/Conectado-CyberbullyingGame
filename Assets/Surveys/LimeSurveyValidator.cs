@@ -8,38 +8,17 @@ using RAGE.Analytics.Storages;
 public class LimeSurveyValidator : MonoBehaviour {
 
     Net connection;
-    string host = "localhost";
-	string survey_pre = "", survey_post = "", master_token_online = "", master_token_offline = "";
-
     public Text token, response;
-    
-	void Start () {
-        connection = new Net(this);
+	public string type;
 
-        SimpleJSON.JSONNode hostfile = new SimpleJSON.JSONClass();
+	private static int nextScene = 1;
+	private static int initScene = 0;
 
-#if !(UNITY_WEBPLAYER || UNITY_WEBGL)
-        if (!System.IO.File.Exists("host.cfg"))
-            hostfile.Add("limesurvey_host", "localhost:4000");
-        else
-            hostfile = SimpleJSON.JSON.Parse(System.IO.File.ReadAllText("host.cfg"));
-#endif
-		try{
-	        host = hostfile["limesurvey_host"];
-	        survey_pre = hostfile["limesurvey_pre"];
-			survey_post = hostfile["limesurvey_post"];
-			master_token_online = hostfile["master_token_online"];
-			master_token_offline = hostfile["master_token_offline"];
+	void Start()
+	{
+		connection = new Net(this);
 
-		}catch(Exception ex){}
-
-        PlayerPrefs.SetString("LimesurveyHost", host);
-		if(survey_pre != "")
-			PlayerPrefs.SetString("LimesurveyPre", survey_pre);
-		if(survey_post != "")
-        	PlayerPrefs.SetString("LimesurveyPost", survey_post);
-        PlayerPrefs.Save();
-    }
+	}
     
     void Update () {
 	
@@ -48,7 +27,10 @@ public class LimeSurveyValidator : MonoBehaviour {
     public void validate()
     {
         string token = "";
-        if (this.token != null)
+		string master_token_online = PlayerPrefs.GetString("MasterTokenOnline");
+		string master_token_offline = PlayerPrefs.GetString("MasterTokenOffline");
+
+		if (this.token != null)
             token = this.token.text;
         else if (PlayerPrefs.HasKey("LimesurveyToken"))
             token = PlayerPrefs.GetString("LimesurveyToken");
@@ -64,9 +46,9 @@ public class LimeSurveyValidator : MonoBehaviour {
 			}else
 				PlayerPrefs.SetInt ("online", 1);
 
-			SceneManager.LoadScene (1);
+			SceneManager.LoadScene (nextScene);
 		}
-        connection.GET(host + "surveys/validate?survey=" + survey_pre + ((token.Length>0)? "&token=" + token : ""), new ValidateListener(response, token));
+        connection.GET(PlayerPrefs.GetString("LimesurveyHost") + "surveys/validate?survey=" + PlayerPrefs.GetString("LimesurveyPre") + ((token.Length>0)? "&token=" + token : ""), new ValidateListener(response, token));
     }
 
     public void completed()
@@ -78,7 +60,7 @@ public class LimeSurveyValidator : MonoBehaviour {
             token = PlayerPrefs.GetString("LimesurveyToken");
 
 		string survey = PlayerPrefs.GetString ("LimesurveyPre");
-		string type = "pre";
+		type = type == "" ? "pre" : type;
 
 		if (PlayerPrefs.HasKey ("CurrentSurvey"))
 			type = PlayerPrefs.GetString ("CurrentSurvey");
@@ -87,9 +69,13 @@ public class LimeSurveyValidator : MonoBehaviour {
 			survey = PlayerPrefs.GetString ("LimesurveyPre");
 		else if(type == "post")
 			survey = PlayerPrefs.GetString ("LimesurveyPost");
+		else if (type == "tea")
+			survey = PlayerPrefs.GetString("LimesurveyTea");
 
-		connection.GET(host + "surveys/completed?survey=" + survey + ((token.Length > 0) ? "&token=" + token : ""), new CompleteListener(response, token));
-    }
+		Debug.Log(type);
+		connection.GET(PlayerPrefs.GetString("LimesurveyHost") + "surveys/completed?survey=" + survey + ((token.Length > 0) ? "&token=" + token : ""), new CompleteListener(response, token));
+		Debug.Log(PlayerPrefs.GetString("LimesurveyHost") + "surveys/completed?survey=" + survey + ((token.Length > 0) ? "&token=" + token : ""));
+	}
 
     public class ValidateListener : Net.IRequestListener
     {
@@ -117,10 +103,9 @@ public class LimeSurveyValidator : MonoBehaviour {
             PlayerPrefs.SetString("LimesurveyToken", token);
             PlayerPrefs.Save();
 			if (PlayerPrefs.HasKey ("LimesurveyPre")) {
-				PlayerPrefs.SetString ("CurrentSurvey", "pre");
 				SceneManager.LoadScene ("_Survey");
 			}else
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(initScene);
         }
     }
 
@@ -149,9 +134,19 @@ public class LimeSurveyValidator : MonoBehaviour {
 				type = PlayerPrefs.GetString ("CurrentSurvey");
 
 			if (type == "pre")
-				SceneManager.LoadScene (1);
+			{
+				PlayerPrefs.SetString("CurrentSurvey", "post");
+				PlayerPrefs.Save();
+				SceneManager.LoadScene(nextScene);
+			}
 			else if (type == "post")
-				Application.Quit ();
-        }
+				Application.Quit();
+			else if (type == "tea")
+			{
+				PlayerPrefs.SetString("CurrentSurvey", "post");
+				PlayerPrefs.Save();
+				SceneManager.LoadScene("_Survey");
+			}
+		}
     }
 }
