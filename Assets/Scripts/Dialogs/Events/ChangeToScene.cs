@@ -20,7 +20,7 @@ public class ChangeToScene : EventManager
 		{
 			int scene = (int)ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
 			object timeObj = ev.getParameter(SequenceGenerator.EVENT_TIME_FIELD);
-			float time = timeObj != null ? (float)timeObj : 0;
+			float time = timeObj != null ? (float)timeObj : 1f;
 
 			if (time > 0 && eyelid)
 			{

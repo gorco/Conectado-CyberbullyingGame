@@ -4,6 +4,7 @@ using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using RAGE.Analytics.Storages;
+using RAGE.Analytics;
 
 public class LimeSurveyValidator : MonoBehaviour {
 
@@ -132,6 +133,7 @@ public class LimeSurveyValidator : MonoBehaviour {
 
 			if (PlayerPrefs.HasKey ("CurrentSurvey"))
 				type = PlayerPrefs.GetString ("CurrentSurvey");
+			Tracker.T.completable.Completed(type+"Survey");
 
 			if (type == "pre")
 			{

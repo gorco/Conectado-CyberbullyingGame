@@ -38,7 +38,7 @@
 			"questionId": "AlisonFriendRequestMobile",
 			"options": [{
 				"next": "node1",
-				"msn": "Si, ahora te acepto"
+				"msn": "Sí, ahora te acepto"
 			},
 			{
 				"next": "node2",
@@ -53,7 +53,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Clase",
-				"value": "Si, ahora te acpeto la invitación :)",
+				"value": "Sí, ahora te acepto la invitación :)",
 				"key": "",
 				"other": "empty",
 				"time": 0 

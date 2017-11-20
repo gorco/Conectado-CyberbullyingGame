@@ -49,11 +49,11 @@ public class TrackerEventManager : EventManager {
 				break;
 
 			case "change scene":
-				int scene = (int)ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
+				int scene = SceneManager.GetActiveScene().buildIndex;
 				string sceneName = GetSceneName(scene);
 				AddStateExtensions();
 				Tracker.T.setProgress(scene / 27f);
-				Tracker.T.completable.Completed("scene"+(scene - 1));
+				Tracker.T.completable.Completed("scene"+ scene);
 				Tracker.T.completable.Completed(sceneName,CompletableTracker.Completable.StoryNode);
 				break;
 
