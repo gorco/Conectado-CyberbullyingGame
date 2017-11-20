@@ -93,7 +93,7 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 				return;
 			}
 
-			GlobalState.NotRepeatedDays = repeatedDays.isOn;
+			GlobalState.NotRepeatedDays = !repeatedDays.isOn;
 
 			//Init day
 			GlobalState.Day = 0;
