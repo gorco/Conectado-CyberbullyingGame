@@ -74,7 +74,7 @@ public class LimeSurveyValidator : MonoBehaviour {
 			survey = PlayerPrefs.GetString("LimesurveyTea");
 
 		Debug.Log(type);
-		connection.GET(PlayerPrefs.GetString("LimesurveyHost") + "surveys/completed?survey=" + survey + ((token.Length > 0) ? "&token=" + token : ""), new CompleteListener(response, token));
+		connection.GET(PlayerPrefs.GetString("LimesurveyHost") + "surveys/completed?survey=" + survey + ((token.Length > 0) ? "&token=" + token : ""), new CompleteListener(response, token, this.gameObject.GetComponent<SettingsApp>()));
 		Debug.Log(PlayerPrefs.GetString("LimesurveyHost") + "surveys/completed?survey=" + survey + ((token.Length > 0) ? "&token=" + token : ""));
 	}
 
@@ -114,6 +114,7 @@ public class LimeSurveyValidator : MonoBehaviour {
     {
         Text response;
         string token;
+		SettingsApp exit;
 
         public CompleteListener(Text response, string token)
         {
@@ -121,7 +122,14 @@ public class LimeSurveyValidator : MonoBehaviour {
             this.token = token;
         }
 
-        public void Error(string error)
+		public CompleteListener(Text response, string token, SettingsApp exit)
+		{
+			this.response = response;
+			this.token = token;
+			this.exit = exit;
+		}
+
+		public void Error(string error)
         {
             SimpleJSON.JSONNode result = SimpleJSON.JSON.Parse(error);
 			response.text = result["message"];
@@ -142,7 +150,9 @@ public class LimeSurveyValidator : MonoBehaviour {
 				SceneManager.LoadScene(nextScene);
 			}
 			else if (type == "post")
-				Application.Quit();
+			{
+				exit.ExitGameConfirmed();
+			}
 			else if (type == "tea")
 			{
 				PlayerPrefs.SetString("CurrentSurvey", "post");

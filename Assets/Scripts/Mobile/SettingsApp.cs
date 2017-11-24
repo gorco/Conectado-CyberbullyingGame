@@ -59,7 +59,7 @@ public class SettingsApp : MonoBehaviour {
 				data.AddField("token", PlayerPrefs.GetString("LimesurveyToken"));
 				data.AddBinaryData("traces", System.Text.Encoding.UTF8.GetBytes(System.IO.File.ReadAllText(Tracker.T.RawFilePath)));
 
-				//d//ata.headers.Remove ("Content-Type");// = "multipart/form-data";
+				//data.headers.Remove ("Content-Type");// = "multipart/form-data";
 
 				net.POST(PlayerPrefs.GetString("LimesurveyHost") + "classes/collector", data, new SavedTracesListener());
 

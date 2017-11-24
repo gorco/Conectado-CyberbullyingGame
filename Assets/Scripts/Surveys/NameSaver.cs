@@ -5,6 +5,7 @@ using RAGE.Analytics;
 
 public class NameSaver : MonoBehaviour {
     public Text t;
+	public GameObject TrackerObject;
 
 	// Use this for initialization
 	void Start () {
@@ -53,6 +54,8 @@ public class NameSaver : MonoBehaviour {
 
 		Tracker.T.host = hostfile["host"];
 		Tracker.T.trackingCode = hostfile["trackingCode"];
+
+		TrackerObject.SetActive(true);
 		//End tracker data loading
 	}
 }
