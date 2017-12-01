@@ -138,7 +138,7 @@ public class LimeSurveyValidator : MonoBehaviour {
         public void Result(string data)
         {
 			string type = "pre";
-
+			response.text = "";
 			if (PlayerPrefs.HasKey ("CurrentSurvey"))
 				type = PlayerPrefs.GetString ("CurrentSurvey");
 			Tracker.T.completable.Completed(type+"Survey");
@@ -151,6 +151,7 @@ public class LimeSurveyValidator : MonoBehaviour {
 			}
 			else if (type == "post")
 			{
+				PlayerPrefs.SetString("CurrentSurvey", "end");
 				exit.ExitGameConfirmed();
 			}
 			else if (type == "tea")

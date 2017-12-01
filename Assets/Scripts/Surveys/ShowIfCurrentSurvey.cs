@@ -13,9 +13,8 @@ public class ShowIfCurrentSurvey : MonoBehaviour {
 		Debug.Log(surveyName + " - " + PlayerPrefs.HasKey(surveyName) + " - " + PlayerPrefs.GetString(surveyName)  + " - " + PlayerPrefs.GetString("CurrentSurvey") + " - " + type);
 		if (surveyName == "" || (PlayerPrefs.HasKey(surveyName) && PlayerPrefs.GetString(surveyName) != ""))
 		{
-			if (PlayerPrefs.GetString("CurrentSurvey") == type || type == "")
+			if (PlayerPrefs.GetString("CurrentSurvey") != "pre" && PlayerPrefs.HasKey("username"))
 			{
-				
 				foreach (GameObject o in objectsToShow)
 				{
 					o.gameObject.SetActive(true);
