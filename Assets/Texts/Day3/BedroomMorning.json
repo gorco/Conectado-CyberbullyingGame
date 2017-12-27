@@ -10,6 +10,13 @@
 	},
 	"init":{
 		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node0",
+				"condition": "varObject('global', 'NotRepeatedDaysNonStatic') == false"
+			}]
+		},
+		"node0": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Tú",

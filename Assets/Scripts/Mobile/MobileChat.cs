@@ -10,6 +10,8 @@ using UnityEngine.UI;
 
 public class MobileChat : MonoBehaviour {
 
+	public GameObject exitButton;
+
 	GameObject lastBubble;
 	GameObject lastChat;
 
@@ -57,8 +59,12 @@ public class MobileChat : MonoBehaviour {
 
 	private GameEvent gameEvent;
 
+	private float exitButtonTime = 0;
+
 	// Use this for initialization
 	void Start () {
+		exitButton.SetActive(false);
+
 		locker.SetActive(false);
 		outPocket = false;
 		hidePosition = this.GetComponent<Transform>().localPosition;
@@ -364,6 +370,21 @@ public class MobileChat : MonoBehaviour {
 			}
 		}
 
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			exitButton.SetActive(!exitButton.activeInHierarchy);
+			exitButtonTime = 0;
+		}
+
+		if (exitButton.activeInHierarchy)
+		{
+			exitButtonTime += Time.deltaTime;
+			if (exitButtonTime > 5)
+			{
+				exitButton.SetActive(false);
+			}
+		}
+
 	}
 
 	public void SwitchMobilePosition(float seconds)
@@ -465,14 +486,24 @@ public class MobileChat : MonoBehaviour {
 
 	public void hideMobile(float seconds)
 	{
+
 		locker.SetActive(false);
 		goal = hidePosition;
 		start = showPosition;
 		animationSeconds = seconds;
 		delta = 0;
-		animate = true;
 		outPocket = false;
 		currentChat = "";
+		if (seconds > 0)
+		{
+			animate = true;
+		}
+		else
+		{
+			this.GetComponent<Transform>().localPosition = goal;
+			OpenMobileHome();
+		}
+
 	}
 
 	public void ThrowResponseMessage()

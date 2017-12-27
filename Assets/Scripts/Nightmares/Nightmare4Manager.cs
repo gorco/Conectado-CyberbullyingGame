@@ -41,7 +41,7 @@ public class Nightmare4Manager : NightmareManager
 		xShadow = shadow.transform.localPosition.x;
 		size = this.GetComponent<Collider2D>().bounds.size;
 
-		if (GlobalState.Repeated)
+		if (GlobalState.Repeated || GlobalState.NotRepeatedDays)
 		{
 			showPortal = false;
 			GlobalState.Repeated = false;

@@ -49,10 +49,12 @@ public class TrackerEventManager : EventManager {
 				break;
 
 			case "change scene":
-				int scene = (int)ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
+				int scene = SceneManager.GetActiveScene().buildIndex;
+				string sceneName = GetSceneName(scene);
 				AddStateExtensions();
 				Tracker.T.setProgress(scene / 27f);
-				Tracker.T.completable.Completed("scene"+(scene - 1));
+				Tracker.T.completable.Completed("scene"+ scene);
+				Tracker.T.completable.Completed(sceneName,CompletableTracker.Completable.StoryNode);
 				break;
 
 			case "change variable":
@@ -80,6 +82,44 @@ public class TrackerEventManager : EventManager {
 				Tracker.T.setVar(pickVar, pickValue.ToString());
 				break;
 		}
+	}
+
+	private string GetSceneName(int scene)
+	{
+		string s = "";
+		switch (scene)
+		{
+			case 0: s = "Title"; break;
+			case 1: s = "UserInfo"; break;
+			case 2: s = "StartDay"; break;
+			case 3: s = "Day1MorningHome"; break;
+			case 4: s = "Day1MorningSchool"; break;
+			case 5: s = "Day1BreakSchool"; break;
+			case 6: s = "Day1AfternoonHome"; break;
+			case 7: s = "Nightmare1"; break;
+			case 8: s = "Day2MorningHome"; break;
+			case 9: s = "Day2MorningSchool"; break;
+			case 10: s = "Day2BreakSchool"; break;
+			case 11: s = "Day2AfternoonHome"; break;
+			case 12: s = "Nightmare2"; break;
+			case 13: s = "Day3MorningHome"; break;
+			case 14: s = "Day3MorningSchool"; break;
+			case 15: s = "Day3BreakSchool"; break;
+			case 16: s = "Day3AfternoonHome"; break;
+			case 17: s = "Nightmare3"; break;
+			case 18: s = "Day4MorningHome"; break;
+			case 19: s = "Day4MorningSchool"; break;
+			case 20: s = "Day4BreakSchool"; break;
+			case 21: s = "Day4AfternoonHome"; break;
+			case 22: s = "Nightmare4"; break;
+			case 23: s = "Day5MorningHome"; break;
+			case 24: s = "Day5MorningSchool"; break;
+			case 25: s = "Day5BreakSchool"; break;
+			case 26: s = "Day5AfternoonHome"; break;
+			case 27: s = "End"; break;
+			case 28: s = "Credits"; break;
+		}
+		return s;
 	}
 
 	public void AddStateExtensions()

@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 public class SettingsApp : MonoBehaviour {
 
 	public GameObject confirmExitPanel;
+	public bool forceExit = false;
+	public UnityEngine.UI.Text infoPanel;
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +38,7 @@ public class SettingsApp : MonoBehaviour {
 
 	public void ExitGameConfirmed()
 	{
+		//Tracker.T.RequestFlush();
 		//Application.Quit();
 		if (PlayerPrefs.HasKey("LimesurveyToken") && PlayerPrefs.GetString("LimesurveyToken") != "ADMIN" && PlayerPrefs.HasKey("LimesurveyPost"))
 		{
@@ -57,19 +60,16 @@ public class SettingsApp : MonoBehaviour {
 				data.AddField("token", PlayerPrefs.GetString("LimesurveyToken"));
 				data.AddBinaryData("traces", System.Text.Encoding.UTF8.GetBytes(System.IO.File.ReadAllText(Tracker.T.RawFilePath)));
 
-				//d//ata.headers.Remove ("Content-Type");// = "multipart/form-data";
-
-				net.POST(PlayerPrefs.GetString("LimesurveyHost") + "classes/collector", data, new SavedTracesListener());
-
+				//data.headers.Remove ("Content-Type");// = "multipart/form-data";
 				System.IO.File.AppendAllText(path + PlayerPrefs.GetString("LimesurveyToken") + ".csv", System.IO.File.ReadAllText(Tracker.T.RawFilePath));
-				PlayerPrefs.SetString("CurrentSurvey", "post");
 
-				//POST-TEST
-				Invoke("ChangeLevel", 1);
+				net.POST(PlayerPrefs.GetString("LimesurveyHost") + "classes/collector", data, new SavedTracesListener(this, this.infoPanel));
+
+				//PlayerPrefs.SetString("CurrentSurvey", "post");
 			}
 			catch (Exception e)
 			{
-				Invoke("ChangeLevel", 1);
+				Invoke("ChangeLevel", 0);
 				Debug.LogError(e);
 			}
 		}
@@ -85,7 +85,20 @@ public class SettingsApp : MonoBehaviour {
 
 	void ChangeLevel()
 	{
-		SceneManager.LoadScene(31);
+		if (PlayerPrefs.GetString("CurrentSurvey").Equals("end") || forceExit)
+		{
+			if (Application.isWebPlayer == false && Application.isEditor == false)
+			{
+				Application.Quit();
+				System.Diagnostics.Process.GetCurrentProcess().Kill();
+			}
+		} else if (PlayerPrefs.GetString("CurrentSurvey").Equals("tea") || PlayerPrefs.GetString("CurrentSurvey").Equals("post"))
+		{
+			SceneManager.LoadScene("_Survey");
+		} else 
+		{
+			SceneManager.LoadScene(0);
+		}
 	}
 
 	public void ExitGameCanceled()
@@ -95,16 +108,26 @@ public class SettingsApp : MonoBehaviour {
 
 	class SavedTracesListener : Net.IRequestListener
 	{
+		private  UnityEngine.UI.Text infoPanel;
+		private SettingsApp app;
+
+		public SavedTracesListener(SettingsApp app, UnityEngine.UI.Text info)
+		{
+			this.infoPanel = info;
+			this.app = app;
+		}
+
 		public void Result(string data)
 		{
-			Debug.Log("------------------------");
-			Debug.Log(data);
+			app.ChangeLevel();
 		}
 
 		public void Error(string error)
 		{
-			Debug.Log("------------------------");
-			Debug.Log(error);
+			if (this.infoPanel)
+			{
+				infoPanel.text = error;
+			}
 		}
 	}
 }

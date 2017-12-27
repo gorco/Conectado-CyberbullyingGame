@@ -7,24 +7,24 @@
 				"condition": "spoken == true && varObject('state', 'MariaJoke') == 2"
 			},
 			{
-				"next": "repeat",
-				"condition": "spoken == true"
-			},
-			{
 				"next": "ask",
-				"condition": "varObject('state', 'MariaJoke') > 1 && varObject('state', 'TimeEnough') == true"
+				"condition": "varObject('state', 'MariaJoke') == 1 && varObject('state', 'TimeEnough') == true"
 			},
 			{
 				"next": "noTime",
-				"condition": "varObject('state', 'MariaJoke') > 1 && varObject('state', 'TimeEnough') == false"
+				"condition": "varObject('state', 'MariaJoke') == 1 && varObject('state', 'TimeEnough') == false"
 			},
 			{
 				"next": "lost",
 				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
 			},
 			{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
 				"next": "lost",
-				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
 			},
 			{
 				"next": "repeat",
@@ -36,6 +36,7 @@
 			"next": "askOptions",
 			"fragments": [{
 				"tag": "Álex",
+				"character": "Alex",
 				"msn": "¿Ya has pegado el cartel a María sin que se dé cuenta?"
 			}]
 		},
@@ -64,6 +65,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Álex",
+				"character": "Alex",
 				"msn": "¿A qué esperas? Venga, ve a pegar ese cartel a María."
 			}]
 		},
@@ -71,10 +73,12 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Álex",
+				"character": "Alex",
 				"msn": "Jajajaja, muy bien hecho."
 			},
 			{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "Jajaja, tu móvil está en el baño de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'chicas', 'chicos') $>."
 			}]
 		},
@@ -114,33 +118,41 @@
 			"next": "setter",
 			"fragments": [{
 				"tag": "Álex",
+				"character": "Alex",
 				"msn": "¿Y qué si hemos sido nosotros? ¿Vas a ir llorando a hablar con nuestro tutor, con tus padres...?"
 			},
 			{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "Jajaja, seguro que sí."
 			},
 			{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "Venga, pierdete, vete a llorar a otro sitio."
 			}]
 		},
 		"node1b": {
 			"type": "dialog",
+			"next": "jokeAccepted",
 			"fragments": [{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "Quizá"
 			},
 			{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "Te diremos dónde está si vas con María y le pegas este cartel en la espalda."
 			},
 			{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "(Te da un papel con celo donde se puede lee \"Soy masoca, si lees esto insúltame\")."
 			},
 			{
 				"tag": "Ana",
+				"character": "Ana",
 				"msn": "Vuelve cuando lo hayas hecho, sino no te molestes en volver."
 			}]
 		},

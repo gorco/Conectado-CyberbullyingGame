@@ -23,6 +23,8 @@ public class GlobalState
 
 	public static string UserPass { get; set; }
 
+	public static bool NotRepeatedDays { get; set; }
+
 	// SocialNet
 	public static int MariaNet { get; set; }
 	public static int AlisonNet { get; set; }
@@ -99,6 +101,11 @@ public class GlobalState
 
 	protected static GlobalState instance;
 	public static GlobalState Instance {  get { return instance == null ? instance = new GlobalState() : instance; } }
+
+	public bool NotRepeatedDaysNonStatic
+	{
+		get { return NotRepeatedDays; }
+	}
 
 	public int DayNonStatic
 	{

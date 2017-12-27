@@ -27,7 +27,7 @@ public class Day3Part1State : IState
 	void Start()
 	{
 
-		InitMobileGUI.InitMobileGUIObject();
+		base.mobile = InitMobileGUI.InitMobileGUIObject();
 	}
 
 	// Update is called once per frame

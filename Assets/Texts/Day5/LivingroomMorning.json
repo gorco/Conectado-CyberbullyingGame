@@ -37,28 +37,15 @@
 		"root": {
 			"type": "fork",
 			"options": [{
-				"next": "changeHourLate",
-				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') >= 8 "
-			},
-			{
-				"next": "changeHourSoon",
-				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') < 8"
+				"next": "changeHour",
+				"condition": "varObject('state', 'BagPicked') == true"
 			},
 			{
 				"next": "dialogNode",
 				"condition": "varObject('state', 'BagPicked') == false"
 			}]
 		},
-		"changeHourLate": {
-			"type": "event",
-			"next": "exitNode",
-			"event":{
-				"name": "change variable",
-				"var": "hour",
-				"value": "8:40",
-			}
-		},
-		"changeHourSoon": {
+		"changeHour": {
 			"type": "event",
 			"next": "exitNode",
 			"event":{

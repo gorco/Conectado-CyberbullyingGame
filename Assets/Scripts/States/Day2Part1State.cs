@@ -56,7 +56,7 @@ public class Day2Part1State : IState {
 			parentFS = GlobalState.ParentsFS;
 		}
 
-		InitMobileGUI.InitMobileGUIObject();
+		base.mobile = InitMobileGUI.InitMobileGUIObject();
 	}
 	
 	// Update is called once per frame
