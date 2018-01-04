@@ -32,12 +32,9 @@ public class NameSaver : MonoBehaviour {
 			}
 		}
         PlayerPrefs.SetString("username", t.text);
+		PlayerPrefs.SetString("password", t.text);
 		PlayerPrefs.Save();
 		//PlayerPrefs.DeleteAll();
-
-		
-		Tracker.T.username = PlayerPrefs.GetString("username");
-		Tracker.T.password = PlayerPrefs.GetString("username");
 
 		SimpleJSON.JSONNode hostfile = new SimpleJSON.JSONClass();
 
@@ -52,8 +49,9 @@ public class NameSaver : MonoBehaviour {
 			hostfile = SimpleJSON.JSON.Parse(System.IO.File.ReadAllText("host.cfg"));
 #endif
 
-		Tracker.T.host = hostfile["host"];
-		Tracker.T.trackingCode = hostfile["trackingCode"];
+		PlayerPrefs.SetString("host", hostfile["host"]);
+		PlayerPrefs.SetString("trackingCode", hostfile["trackingCode"]);
+		PlayerPrefs.Save();
 
 		TrackerObject.SetActive(true);
 		//End tracker data loading

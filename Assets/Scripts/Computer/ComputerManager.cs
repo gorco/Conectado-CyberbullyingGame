@@ -369,7 +369,7 @@ public class ComputerManager : EventManager {
 	{
 		try
 		{
-			Tracker.T.trackedGameObject.Interacted(id, RAGE.Analytics.Formats.GameObjectTracker.TrackedGameObject.Item);
+			Tracker.T.trackedGameObject.Interacted(id, GameObjectTracker.TrackedGameObject.Item);
 		}
 		catch (Exception e)
 		{

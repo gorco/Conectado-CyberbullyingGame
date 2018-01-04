@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using RAGE.Analytics.Exceptions;
+using AssetPackage.Exceptions;
 
 namespace RAGE.Analytics{
 
