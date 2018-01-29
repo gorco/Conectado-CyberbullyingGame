@@ -19,8 +19,7 @@ Los recusos gráficos han sido diseñados por [Ana Vallecillos Ruiz](https://nas
 All graphic resources of the project have a CC BY-NC-SA (Creative Commons Attribution Non-Commercial Share Alike) license.
 The graphic resources have been designed by [Ana Vallecillos Ruiz](https://nashek.artstation.com/) and [Lola González Gutiérrez](https://www.redbubble.com/es/people/lolagonzalez?asc=u).
 
-
-
+![by-nc-sa eu](https://user-images.githubusercontent.com/5657407/35526291-3ae51064-0527-11e8-8c49-b8710438dda7.png)
 
 
 ![logo e-ucm](https://user-images.githubusercontent.com/5657407/35525801-d3bbfcdc-0525-11e8-8869-411747382430.png)
