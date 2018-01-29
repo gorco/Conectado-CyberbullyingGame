@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using RAGE.Analytics.Storages;
+using RAGE.Net;
 using RAGE.Analytics;
 
 public class LimeSurveyValidator : MonoBehaviour {

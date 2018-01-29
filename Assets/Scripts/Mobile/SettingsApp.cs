@@ -1,10 +1,11 @@
-﻿using RAGE.Analytics;
-using RAGE.Analytics.Storages;
+﻿using AssetPackage;
+using RAGE.Net;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using RAGE.Analytics;
 
 public class SettingsApp : MonoBehaviour {
 
@@ -12,8 +13,17 @@ public class SettingsApp : MonoBehaviour {
 	public bool forceExit = false;
 	public UnityEngine.UI.Text infoPanel;
 
+	public string dataFile;
+
 	// Use this for initialization
 	void Start () {
+		dataFile = Application.persistentDataPath;
+		if (!dataFile.EndsWith("/"))
+		{
+			dataFile += "/";
+		}
+		dataFile += "/tracesRaw.csv";
+
 		if (confirmExitPanel)
 		{
 			confirmExitPanel.SetActive(false);
@@ -58,14 +68,16 @@ public class SettingsApp : MonoBehaviour {
 				WWWForm data = new WWWForm();
 
 				data.AddField("token", PlayerPrefs.GetString("LimesurveyToken"));
-				data.AddBinaryData("traces", System.Text.Encoding.UTF8.GetBytes(System.IO.File.ReadAllText(Tracker.T.RawFilePath)));
+				data.AddBinaryData("traces", System.Text.Encoding.UTF8.GetBytes(System.IO.File.ReadAllText(dataFile)));
 
-				//data.headers.Remove ("Content-Type");// = "multipart/form-data";
-				System.IO.File.AppendAllText(path + PlayerPrefs.GetString("LimesurveyToken") + ".csv", System.IO.File.ReadAllText(Tracker.T.RawFilePath));
+				data.headers.Remove ("Content-Type");// = "multipart/form-data";
+				System.IO.File.AppendAllText(path + PlayerPrefs.GetString("LimesurveyToken") + ".csv", System.IO.File.ReadAllText(dataFile));
 
 				net.POST(PlayerPrefs.GetString("LimesurveyHost") + "classes/collector", data, new SavedTracesListener(this, this.infoPanel));
-
-				//PlayerPrefs.SetString("CurrentSurvey", "post");
+				/*
+				if (PlayerPrefs.GetString("CurrentSurvey").Equals("post")) {
+					PlayerPrefs.SetString("CurrentSurvey", "end");
+				}*/
 			}
 			catch (Exception e)
 			{

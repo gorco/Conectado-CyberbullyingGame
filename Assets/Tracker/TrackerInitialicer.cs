@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TrackerInitialicer : MonoBehaviour {
 
-	private void Awake()
+	/*private void Awake()
 	{
 		//PlayerPrefs.DeleteAll();
 		if (PlayerPrefs.HasKey("username"))
@@ -41,5 +41,5 @@ public class TrackerInitialicer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-	}
+	}*/
 }

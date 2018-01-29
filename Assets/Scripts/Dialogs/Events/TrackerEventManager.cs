@@ -5,9 +5,8 @@ using UnityEngine;
 using Isometra;
 using System;
 using Isometra.Sequences;
-using RAGE.Analytics;
-using RAGE.Analytics.Formats;
 using UnityEngine.SceneManagement;
+using RAGE.Analytics;
 
 public class TrackerEventManager : EventManager {
 
