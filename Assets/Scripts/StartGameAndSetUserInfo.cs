@@ -65,6 +65,27 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 			SceneManager.LoadScene(PlayerPrefs.GetInt("Scene"));
 		} else
 		{
+			if (userName.text.Length > 10)
+			{
+				error.text = "Tu nombre no puede tener más de 10 caracteres";
+				error.enabled = true;
+				return;
+			}
+
+			if (nick.text.Contains(" ") || userPass.text.Contains(" "))
+			{
+				error.text = "El Usuario y la Contraseña no pueden contener espacios";
+				error.enabled = true;
+				return;
+			}
+
+			if (nick.text.Length > 16 || userPass.text.Length > 16)
+			{
+				error.text = "Usuario y Contraseña no pueden contener más de 16 caracteres";
+				error.enabled = true;
+				return;
+			}
+
 			if (userName.text == "")
 			{
 				error.text = "Hace falta tu nombre";
