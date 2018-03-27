@@ -20,6 +20,9 @@ public class NameSaver : MonoBehaviour {
     public void SaveName()
     {
 		string path = Application.persistentDataPath;
+		PlayerPrefs.SetInt("PreTestEnd", 0);
+		PlayerPrefs.SetInt("PostTestEnd", 0);
+		PlayerPrefs.SetInt("TeaTestEnd", 0);
 
 		if (!path.EndsWith ("/")) {
 			path += "/";

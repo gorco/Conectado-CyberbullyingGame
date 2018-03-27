@@ -123,8 +123,9 @@ public class TrackerEventManager : EventManager {
 
 	public void AddStateExtensions()
 	{
+		Tracker.T.setVar("Final", GlobalState.Final);
 		Tracker.T.setVar("GameDay", GlobalState.Day);
-		Tracker.T.setVar("GameHour", GlobalState.Hour + ":" + GlobalState.Minute);
+		Tracker.T.setVar("GameHour", GlobalState.Hour + ":" + (GlobalState.Minute < 10 ? "0"+GlobalState.Minute.ToString() : GlobalState.Minute.ToString()));
 
 		Tracker.T.setVar("MariaFriendship", GlobalState.MariaFS);
 		Tracker.T.setVar("AlisonFriendship", GlobalState.AlisonFS);

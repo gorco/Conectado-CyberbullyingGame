@@ -145,20 +145,27 @@ public class LimeSurveyValidator : MonoBehaviour {
 
 			if (type == "pre")
 			{
+				PlayerPrefs.SetInt("PreTestEnd", 1);
 				PlayerPrefs.SetString("CurrentSurvey", "post");
 				PlayerPrefs.Save();
 				SceneManager.LoadScene(nextScene);
 			}
 			else if (type == "post")
 			{
+				PlayerPrefs.SetInt("PostTestEnd", 1);
 				PlayerPrefs.SetString("CurrentSurvey", "end");
 				exit.ExitGameConfirmed();
 			}
 			else if (type == "tea")
 			{
+				PlayerPrefs.SetInt("TeaTestEnd", 1);
 				PlayerPrefs.SetString("CurrentSurvey", "post");
 				PlayerPrefs.Save();
 				SceneManager.LoadScene("_Survey");
+			}
+			else if (type == "end")
+			{
+				exit.ExitGameConfirmed();
 			}
 		}
     }
