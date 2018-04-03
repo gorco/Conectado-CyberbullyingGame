@@ -18,6 +18,9 @@ public class SocialFriend : MonoBehaviour {
 	public GameObject block;
 	public GameObject avatar;
 
+	public Sprite[] avatarImages;
+	public String[] namesAvatarImages;
+
 	private ComputerManager parent;
 
 	private bool accepted;
@@ -50,6 +53,17 @@ public class SocialFriend : MonoBehaviour {
 		this.parent = parent;
 		this.nameUser.text = name;
 		this.state.text = state;
+		// SET AVATAR
+		int i = 0;
+		foreach(string n in namesAvatarImages)
+		{
+			if (name.ToLower() == n.ToLower())
+			{
+				Image img = this.avatar.GetComponent<Image>();
+				img.sprite = avatarImages[i];
+			}
+			i++;
+		}
 	}
 
 	public void AcceptFriend()

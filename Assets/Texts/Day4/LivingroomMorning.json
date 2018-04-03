@@ -132,7 +132,7 @@
 				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') < 8"
 			},{
 				"next": "changeHourLate",
-				"condition": "varObject('global', 'HourNonStatic') >= 8 && varObject('state', 'BagPicked') == true"
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') >= 8 "
 			},
 			{
 				"next": "dialogNode",

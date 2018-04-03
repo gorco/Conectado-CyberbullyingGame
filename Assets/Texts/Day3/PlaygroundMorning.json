@@ -255,11 +255,30 @@
 		},
 		"setter":{
 			"type": "setter",
-			"next": "bell",
+			"next": "lateorsoon",
 			"set": {
 				"var": "spoken",
 				"value": true
 			}
+		},
+		"lateorsoon": {
+			"type": "fork",
+			"options": [{
+				"next": "bell",
+				"condition": "varObject('global', 'MinuteNonStatic') <= 30 "
+			},
+			{
+				"next": "late",
+				"condition": "varObject('global', 'MinuteNonStatic') > 30"
+			}]
+		},
+		"late": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "Tú",
+				"msn": "Vale, no digáis nada. Yo me voy a clase, que ya es suficientemente tarde"
+			}]
 		},
 		"bell": {
 			"type": "dialog",
