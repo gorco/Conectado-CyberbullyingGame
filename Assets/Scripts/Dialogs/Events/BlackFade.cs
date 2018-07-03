@@ -14,6 +14,8 @@ public class BlackFade : EventManager {
 	private int state = 0;
 	private IGameEvent gEvent;
 
+	public bool sync;
+
 	public override void ReceiveEvent(IGameEvent ev)
 	{
 		if (ev.Name.Replace("\"", "") == "black")

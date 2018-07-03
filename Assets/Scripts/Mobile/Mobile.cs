@@ -12,9 +12,9 @@ public class Mobile : MonoBehaviour {
 	private Vector2 hidePosition;
 	public Vector2 showPosition;
 
-	public TextMesh hour;
-	public TextMesh alarm;
-	public TextMesh day;
+	public Text hour;
+	public Text alarm;
+	public Text day;
 
 	public GameObject wakeUpPanel;
 	public BoxCollider2D selector;

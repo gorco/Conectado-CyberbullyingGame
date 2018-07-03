@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using RAGE.Analytics;
+using RAGE.Net;
 
 public class NameSaver : MonoBehaviour {
     public Text t;
@@ -9,7 +10,7 @@ public class NameSaver : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -17,7 +18,7 @@ public class NameSaver : MonoBehaviour {
 	
 	}
 
-    public void SaveName()
+	public void SaveName()
     {
 		string path = Application.persistentDataPath;
 		PlayerPrefs.SetInt("PreTestEnd", 0);
@@ -53,7 +54,10 @@ public class NameSaver : MonoBehaviour {
 #endif
 
 		PlayerPrefs.SetString("host", hostfile["host"]);
-		PlayerPrefs.SetString("trackingCode", hostfile["trackingCode"]);
+		if (PlayerPrefs.GetString("ActivitiesTracking") == null)
+		{
+			PlayerPrefs.SetString("trackingCode", hostfile["trackingCode"]);
+		} 
 		PlayerPrefs.Save();
 
 		TrackerObject.SetActive(true);

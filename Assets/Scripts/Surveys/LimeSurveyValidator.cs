@@ -11,6 +11,7 @@ public class LimeSurveyValidator : MonoBehaviour {
     Net connection;
     public Text token, response;
 	public string type;
+	public  NameSaver nameSaver;
 
 	private static int nextScene = 1;
 	private static int initScene = 0;
@@ -49,7 +50,7 @@ public class LimeSurveyValidator : MonoBehaviour {
 
 			SceneManager.LoadScene (nextScene);
 		}
-        connection.GET(PlayerPrefs.GetString("LimesurveyHost") + "surveys/validate?survey=" + PlayerPrefs.GetString("LimesurveyPre") + ((token.Length>0)? "&token=" + token : ""), new ValidateListener(response, token));
+        connection.GET(PlayerPrefs.GetString("LimesurveyHost") + "surveys/validate?survey=" + PlayerPrefs.GetString("LimesurveyPre") + ((token.Length>0)? "&token=" + token : ""), new ValidateListener(nameSaver, response, token));
     }
 
     public void completed()
@@ -82,11 +83,13 @@ public class LimeSurveyValidator : MonoBehaviour {
     {
         Text response;
         string token;
+		private NameSaver nameSaver;
 
-        public ValidateListener(Text response, string token)
+        public ValidateListener(NameSaver saver, Text response, string token)
         {
             this.response = response;
             this.token = token;
+			this.nameSaver = saver;
         }
 
         public void Error(string error)
@@ -103,6 +106,7 @@ public class LimeSurveyValidator : MonoBehaviour {
 			PlayerPrefs.SetString("name", token);
             PlayerPrefs.SetString("LimesurveyToken", token);
             PlayerPrefs.Save();
+			nameSaver.SaveName();
 			if (PlayerPrefs.HasKey ("LimesurveyPre")) {
 				SceneManager.LoadScene ("_Survey");
 			}else

@@ -61,17 +61,22 @@ public class ChangeToScene : EventManager
 	/// <param name="varValue"></param>
 	private IEnumerator ChangeScene(float time, int varValue)
 	{
-		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(varValue);
-		cTime = 0;
-		// Wait until the asynchronous scene fully loads
-		while (cTime < time && !asyncLoad.isDone)
+		if (loading)
 		{
-			yield return null;
+			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(varValue);
+			cTime = 0;
+			// Wait until the asynchronous scene fully loads
+			while (cTime < time && !asyncLoad.isDone)
+			{
+				yield return null;
+			}
 		}
+		else
+		{
+			yield return new WaitForSeconds(time);
 
-		//yield return new WaitForSeconds(time);
-
-		//SceneManager.LoadScene(varValue);
+			SceneManager.LoadScene(varValue);
+		}
 	}
 }
 
