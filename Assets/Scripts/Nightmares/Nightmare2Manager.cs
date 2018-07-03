@@ -44,17 +44,17 @@ public class Nightmare2Manager : NightmareManager
 	void Update()
 	{
 		time += Time.deltaTime;
+		if (throwFinish)
+		{
+			foreach(GumObject gObj in this.transform.GetComponentsInChildren<GumObject>())
+			{
+				Object.Destroy(gObj.gameObject);
+			}
+		}
 
 		if (CheckSits() == 0 && !throwFinish)
 		{
-			if (showPortal)
-			{
-				portal.SetActive(true);
-				portalCollider.SetActive(true);
-			} else
-			{
-				this.GetComponent<ObjectsWithDialogsManager>().startDialog("finishNightmare");
-			}
+			this.Invoke("ThrowFinisNightmareDialog", 2);
 			throwFinish = true;
 		} else if(time > spawnTime && xShadow != shadow.transform.localPosition.x)
 		{
@@ -68,6 +68,19 @@ public class Nightmare2Manager : NightmareManager
 				speed *= 1.1f;
 			if(spawnTime > 0.3f)
 				spawnTime *= 0.9f;
+		}
+	}
+
+	private void ThrowFinisNightmareDialog()
+	{
+		if (showPortal)
+		{
+			portal.SetActive(true);
+			portalCollider.SetActive(true);
+		}
+		else
+		{
+			this.GetComponent<ObjectsWithDialogsManager>().startDialog("finishNightmare");
 		}
 	}
 

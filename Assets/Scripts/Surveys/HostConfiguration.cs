@@ -7,6 +7,10 @@ public class HostConfiguration : MonoBehaviour {
 
 	string host = "localhost";
 	string survey_pre = "", survey_post = "", survey_tea = "", master_token_online = "", master_token_offline = "";
+    private string proxy_protocol;
+	private string activities_tracking;
+
+	public SessionStart sessionObj;
 
 	void Start()
 	{
@@ -27,6 +31,7 @@ public class HostConfiguration : MonoBehaviour {
 			master_token_online = hostfile["master_token_online"];
 			master_token_offline = hostfile["master_token_offline"];
 
+			activities_tracking = hostfile["activities_tracking"];
 		}
 		catch (Exception ex) { }
 
@@ -55,6 +60,12 @@ public class HostConfiguration : MonoBehaviour {
 			PlayerPrefs.SetString("MasterTokenOffline", master_token_offline);
 		else
 			PlayerPrefs.DeleteKey("MasterTokenOffline");
+
+		PlayerPrefs.SetString("ActivitiesTracking", activities_tracking);
+		if(activities_tracking == "" || activities_tracking == null) { 
+			sessionObj.ValidateSession();
+		}
+
 		PlayerPrefs.Save();
 	}
 

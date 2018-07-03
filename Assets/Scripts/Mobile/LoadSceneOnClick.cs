@@ -15,4 +15,21 @@ public class LoadSceneOnClick : MonoBehaviour {
 	{
 		SceneManager.LoadScene(level);
 	}
+
+	public void LoadSceneIfCnfg(int level)
+	{
+		if (System.IO.File.Exists("host.cfg"))
+		{
+			SceneManager.LoadScene(level);
+		}
+	}
+
+	public void LoadSceneIfNotCnfg(int level)
+	{
+		if (!System.IO.File.Exists("host.cfg"))
+		{
+			SceneManager.LoadScene(level);
+		}
+	}
+
 }

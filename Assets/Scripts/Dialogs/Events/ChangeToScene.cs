@@ -9,6 +9,9 @@ public class ChangeToScene : EventManager
 {
 
 	public Eyelids eyelid;
+	public GameObject loading;
+
+	private float cTime = 0;
 
 	/// <summary>
 	/// Receive the pick event
@@ -27,6 +30,11 @@ public class ChangeToScene : EventManager
 				eyelid.goToSleep(time - 0.2f);
 			}
 			StartCoroutine(ChangeScene(time, scene));
+			if (loading != null)
+			{
+				loading.SetActive(true);
+			}
+
 		}
 	}
 
@@ -44,7 +52,7 @@ public class ChangeToScene : EventManager
 	// Update is called once per frame
 	void Update()
 	{
-
+		cTime += Time.deltaTime;
 	}
 
 	/// <summary>
@@ -53,9 +61,22 @@ public class ChangeToScene : EventManager
 	/// <param name="varValue"></param>
 	private IEnumerator ChangeScene(float time, int varValue)
 	{
-		yield return new WaitForSeconds(time);
+		if (loading)
+		{
+			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(varValue);
+			cTime = 0;
+			// Wait until the asynchronous scene fully loads
+			while (cTime < time && !asyncLoad.isDone)
+			{
+				yield return null;
+			}
+		}
+		else
+		{
+			yield return new WaitForSeconds(time);
 
-		SceneManager.LoadScene(varValue);
+			SceneManager.LoadScene(varValue);
+		}
 	}
 }
 

@@ -12,14 +12,40 @@
 			"type": "options",
 			"questionId": "goToSleep",
 			"options": [{
-				"next": "sleep",
+				"next": "sleepfork",
 				"msn": "Si"
 			},
 			{
 				"msn": "No"
 			}]
 		},
+		"sleepfork": {
+			"type": "fork",
+			"options": [{
+				"next": "sleep",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},{
+				"next": "scene",
+				"condition": "true"
+			}]
+		},
 		"sleep": {
+			"type": "dialog",
+			"next": "scene",
+			"fragments": [{
+				"tag": "Tú",
+				"msn": "Pero no tengo móvil para ponerme el despertador."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Mmmm, usaré mi móvil viejo, pero al estar sin SIM y no tener nada sólo me servirá como despertador."
+			},
+			{
+				"tag": "Tú",
+				"msn": "Vale, despertador listo... Hora de dormir."
+			}]
+		},
+		"scene": {
 			"type": "event",
 			"event": {
 				"name": "change scene",

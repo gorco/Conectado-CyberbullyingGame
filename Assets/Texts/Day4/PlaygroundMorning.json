@@ -6,7 +6,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $> ¿verdad?, contigo queria hablar."
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, quiero hablar contigo."
 			},
 			{
 				"tag": "Alison",

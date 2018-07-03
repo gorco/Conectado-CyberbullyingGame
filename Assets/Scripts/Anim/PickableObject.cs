@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PickableObject : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
-
+	/*
 	private Vector3 originPosition;
 	private Quaternion originRotation;
 
@@ -35,19 +35,22 @@ public class PickableObject : MonoBehaviour, IPointerClickHandler, IPointerDownH
 	private float time_since_last_glow = 0f;
 
 	private float flashduration = 2f;
-
+	*/
 	// Use this for initialization
 	void Start()
 	{
+		/*
 		continueShine = false;
 		shader = this.GetComponent<Renderer>().material;
 		if (style == GlowingStyle.FLASH)
 			shader.SetColor("_Color", new Color(1, 1, 1, 1));
+			*/
 
 	}
 
 	void Update()
 	{
+		/*
 		if (shaking)
 		{
 			if (temp_shake_intensity > 0) {
@@ -118,7 +121,7 @@ public class PickableObject : MonoBehaviour, IPointerClickHandler, IPointerDownH
 					time_since_last_glow = 0f;
 					if(continueShine)
 						phase = GlowingPhase.GETTING_BIGGER;
-				}*/
+				}
 
 				break;
 		}
@@ -130,15 +133,18 @@ public class PickableObject : MonoBehaviour, IPointerClickHandler, IPointerDownH
 		{
 			shader.SetColor("_Color", new Color(1, 1, 1, fade));
 		}
+		*/
 	}
 
 
 	private void Shake()
 	{
+		/*
 		shaking = true;
 		originPosition = transform.position;
 		originRotation = transform.rotation;
 		temp_shake_intensity = shake_intensity;
+		*/
 
 	}
 
@@ -156,17 +162,18 @@ public class PickableObject : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{
+		/*
 		if (!shaking && shakeON)
 		{
 			Shake();
 		}
 		phase = GlowingPhase.GETTING_BIGGER;
-		continueShine = true;
+		continueShine = true;*/
 	}
 
 	public void OnPointerExit(PointerEventData eventData)
 	{
-		continueShine = false;
+		//continueShine = false;
 	}
 		
 }

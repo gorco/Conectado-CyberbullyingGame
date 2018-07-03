@@ -12,74 +12,77 @@ public class TrackerEventManager : EventManager {
 
 	public override void ReceiveEvent(IGameEvent ev)
 	{
-		switch (ev.Name)
+		if (PlayerPrefs.GetInt("online") == 1)
 		{
-			case "event finished":
-				var finished = ev.getParameter("event") as IGameEvent;
-				switch (finished.Name)
-				{
-					case "show dialog options":
-						var questionID = finished.getParameter("questionID") as string;
-						//var optionsQuestion = finished.getParameter("message") as string;
-						var optionList = finished.getParameter("options") as List<Option>;
-						var optionchosen = (int)ev.getParameter("option");
-						var response = optionList[optionchosen];
+			switch (ev.Name)
+			{
+				case "event finished":
+					var finished = ev.getParameter("event") as IGameEvent;
+					switch (finished.Name)
+					{
+						case "show dialog options":
+							var questionID = finished.getParameter("questionID") as string;
+							//var optionsQuestion = finished.getParameter("message") as string;
+							var optionList = finished.getParameter("options") as List<Option>;
+							var optionchosen = (int)ev.getParameter("option");
+							var response = optionList[optionchosen];
 
-						Tracker.T.alternative.Selected(questionID, response.Text, AlternativeTracker.Alternative.Dialog);
-						break;
-				}
-				break;
+							Tracker.T.alternative.Selected(questionID, response.Text, AlternativeTracker.Alternative.Dialog);
+							break;
+					}
+					break;
 
-			case "change friendship":
-				object vAux = ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD);
-				string friend = null;
-				if (vAux != null)
-				{
-					friend = ((String)vAux).Replace("\"", "");
-				}
+				case "change friendship":
+					object vAux = ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD);
+					string friend = null;
+					if (vAux != null)
+					{
+						friend = ((String)vAux).Replace("\"", "");
+					}
 
-				int value = (int)ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
+					int value = (int)ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
 
-				if (friend != null)
-				{
-					Tracker.T.alternative.Unlocked(friend, value.ToString());
-					Tracker.T.completable.Progressed(friend, value);
-				}
-				break;
+					if (friend != null)
+					{
+						Tracker.T.alternative.Unlocked(friend, value.ToString());
+						Tracker.T.completable.Progressed(friend, value);
+					}
+					break;
 
-			case "change scene":
-				int scene = SceneManager.GetActiveScene().buildIndex;
-				string sceneName = GetSceneName(scene);
-				AddStateExtensions();
-				Tracker.T.setProgress(scene / 27f);
-				Tracker.T.completable.Completed("scene"+ scene);
-				Tracker.T.completable.Completed(sceneName,CompletableTracker.Completable.StoryNode);
-				break;
+				case "change scene":
+					int scene = SceneManager.GetActiveScene().buildIndex;
+					string sceneName = GetSceneName(scene);
+					AddStateExtensions();
+					Tracker.T.setProgress(scene / 27f);
+					Tracker.T.completable.Completed("scene" + scene);
+					Tracker.T.completable.Completed(sceneName, CompletableTracker.Completable.StoryNode);
+					break;
 
-			case "change variable":
-				object vVar = ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD);
-				string var = null;
-				if (vVar != null)
-				{
-					var = ((String)vVar).Replace("\"", "");
-				}
+				case "change variable":
+					object vVar = ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD);
+					string var = null;
+					if (vVar != null)
+					{
+						var = ((String)vVar).Replace("\"", "");
+					}
 
-				var valueVar = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
+					var valueVar = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
 
-				Tracker.T.setVar(var, valueVar.ToString());
-				break;
+					Tracker.T.setVar(var, valueVar.ToString());
+					break;
 
-			case "move camera":
-				string key = ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD).ToString().Replace("\"", "");
-				AddStateExtensions();
-				Tracker.T.accessible.Accessed(key);
-				break;
+				case "move camera":
+					string key = ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD).ToString().Replace("\"", "");
+					AddStateExtensions();
+					Tracker.T.accessible.Accessed(key);
+					break;
 
-			case "pick":
-				string pickVar = ((String)ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD)).Replace("\"", "");
-				var pickValue = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
-				Tracker.T.setVar(pickVar, pickValue.ToString());
-				break;
+				case "pick":
+					string pickVar = ((String)ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD)).Replace("\"", "");
+					var pickValue = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
+					Tracker.T.setVar(pickVar, pickValue.ToString());
+					break;
+			}
 		}
 	}
 
