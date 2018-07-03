@@ -57,8 +57,14 @@ public class ComputerManager : EventManager {
 
 	private GameEvent gameEvent;
 
+	private bool sendTraces = false;
+
 	// Use this for initialization
 	void Start () {
+		if(PlayerPrefs.GetInt("online") == 1)
+		{
+			sendTraces = true;
+		}
 		OffComputer();
 		newFriends.SetActive(false);
 		friendsRequests = 0;
@@ -367,13 +373,16 @@ public class ComputerManager : EventManager {
 
 	public void Interacted(string id)
 	{
-		try
+		if (sendTraces)
 		{
-			Tracker.T.trackedGameObject.Interacted(id, GameObjectTracker.TrackedGameObject.Item);
-		}
-		catch (Exception e)
-		{
-			Debug.LogError(e);
+			try
+			{
+				Tracker.T.trackedGameObject.Interacted(id, GameObjectTracker.TrackedGameObject.Item);
+			}
+			catch (Exception e)
+			{
+				Debug.LogError(e);
+			}
 		}
 	}
 }

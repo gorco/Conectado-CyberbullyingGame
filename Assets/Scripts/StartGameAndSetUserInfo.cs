@@ -15,8 +15,14 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 
 	public UnityEngine.UI.Text error;
 
+	private bool sendTrace = true;
+
 	// Use this for initialization
 	void Start () {
+		if (!System.IO.File.Exists("host.cfg")) {
+			PlayerPrefs.SetInt("online", 0);
+			sendTrace = false;
+		}
 		error.enabled = false;
 	}
 	
@@ -129,9 +135,12 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 			GlobalState.UserPass = userPass.text;
 			GlobalState.MaleSex = male.isOn;
 
-			Tracker.T.setVar("gender", male.isOn ? "male" : "female");
-			Tracker.T.setVar("pass", userPass.text);
-			Tracker.T.accessible.Accessed("StartGame");
+			if (sendTrace)
+			{
+				Tracker.T.setVar("gender", male.isOn ? "male" : "female");
+				Tracker.T.setVar("pass", userPass.text);
+				Tracker.T.accessible.Accessed("StartGame");
+			}
 
 			//Friendship
 			GlobalState.AlejandroFS = 50;

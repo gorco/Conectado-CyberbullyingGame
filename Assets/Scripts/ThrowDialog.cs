@@ -11,8 +11,14 @@ public class ThrowDialog : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 	public string fieldName;
 	public bool throwAtStart = false;
 
+	private bool sendTrace = false;
+
 	// Use this for initialization
 	void Start () {
+		if(PlayerPrefs.GetInt("online") == 1)
+		{
+			sendTrace = true;
+		}
 		if (throwAtStart)
 		{
 			ThrowDialogNow();
@@ -42,16 +48,21 @@ public class ThrowDialog : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 
 	public void OnPointerUp(PointerEventData eventData)
 	{
-		try
+		if (sendTrace)
 		{
-			Tracker.T.setVar("GameDay", GlobalState.Day);
-			Tracker.T.setVar("GameHour", GlobalState.Hour + ":" + GlobalState.Minute);
-			Tracker.T.setVar("IsRepeatedDay", GlobalState.Repeated.ToString());
-			Tracker.T.setVar("MobileMessages", GlobalState.MessagesPending.ToString());
-			Tracker.T.trackedGameObject.Interacted(fieldName);
-		} catch (Exception e)
-		{
-			Debug.LogError(e);
+			try
+			{
+			
+					Tracker.T.setVar("GameDay", GlobalState.Day);
+					Tracker.T.setVar("GameHour", GlobalState.Hour + ":" + GlobalState.Minute);
+					Tracker.T.setVar("IsRepeatedDay", GlobalState.Repeated.ToString());
+					Tracker.T.setVar("MobileMessages", GlobalState.MessagesPending.ToString());
+					Tracker.T.trackedGameObject.Interacted(fieldName);
+			
+			} catch (Exception e)
+			{
+				Debug.LogWarning(e);
+			}
 		}
 		ThrowDialogNow();
 	}

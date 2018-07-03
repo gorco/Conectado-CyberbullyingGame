@@ -6,7 +6,7 @@ using UnityEngine;
 public class HostConfiguration : MonoBehaviour {
 
 	string host = "localhost";
-	string survey_pre = "", survey_post = "", survey_tea = "", master_token_online = "", master_token_offline = "", use_proxy = "", proxy_ip = "", proxy_port = "";
+	string survey_pre = "", survey_post = "", survey_tea = "", master_token_online = "", master_token_offline = "";
     private string proxy_protocol;
 	private string activities_tracking;
 
@@ -30,10 +30,6 @@ public class HostConfiguration : MonoBehaviour {
 			survey_tea = hostfile["limesurvey_tea"];
 			master_token_online = hostfile["master_token_online"];
 			master_token_offline = hostfile["master_token_offline"];
-            use_proxy = hostfile["use_proxy"];
-            proxy_protocol = hostfile["proxy_protocol"];
-            proxy_ip = hostfile["proxy_ip"];
-            proxy_port = hostfile["proxy_port"];
 
 			activities_tracking = hostfile["activities_tracking"];
 		}
@@ -64,26 +60,6 @@ public class HostConfiguration : MonoBehaviour {
 			PlayerPrefs.SetString("MasterTokenOffline", master_token_offline);
 		else
 			PlayerPrefs.DeleteKey("MasterTokenOffline");
-        
-        if (use_proxy != "")
-            PlayerPrefs.SetString("UseProxy", use_proxy);
-        else
-            PlayerPrefs.DeleteKey("UseProxy");
-
-        if (proxy_protocol != "")
-            PlayerPrefs.SetString("ProxyProtocol", proxy_protocol);
-        else
-            PlayerPrefs.DeleteKey("ProxyProtocol");
-
-        if (proxy_ip != "")
-            PlayerPrefs.SetString("ProxyIp", proxy_ip);
-        else
-            PlayerPrefs.DeleteKey("ProxyIp");
-        
-        if (proxy_port != "")
-            PlayerPrefs.SetString("ProxyPort", proxy_port);
-        else
-            PlayerPrefs.DeleteKey("ProxyPort");
 
 		PlayerPrefs.SetString("ActivitiesTracking", activities_tracking);
 		if(activities_tracking == "" || activities_tracking == null) { 

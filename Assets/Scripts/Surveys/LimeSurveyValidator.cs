@@ -47,7 +47,7 @@ public class LimeSurveyValidator : MonoBehaviour {
 				PlayerPrefs.SetInt ("online", 0);
 			}else
 				PlayerPrefs.SetInt ("online", 1);
-
+			nameSaver.SaveName();
 			SceneManager.LoadScene (nextScene);
 		}
         connection.GET(PlayerPrefs.GetString("LimesurveyHost") + "surveys/validate?survey=" + PlayerPrefs.GetString("LimesurveyPre") + ((token.Length>0)? "&token=" + token : ""), new ValidateListener(nameSaver, response, token));
@@ -103,10 +103,10 @@ public class LimeSurveyValidator : MonoBehaviour {
 
         public void Result(string data)
         {
+			nameSaver.SaveName();
 			PlayerPrefs.SetString("name", token);
             PlayerPrefs.SetString("LimesurveyToken", token);
             PlayerPrefs.Save();
-			nameSaver.SaveName();
 			if (PlayerPrefs.HasKey ("LimesurveyPre")) {
 				SceneManager.LoadScene ("_Survey");
 			}else
