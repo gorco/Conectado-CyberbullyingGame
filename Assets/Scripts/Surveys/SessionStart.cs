@@ -28,29 +28,35 @@ public class SessionStart : MonoBehaviour {
 
 	public void ValidateSession()
 	{
-		string trackings = PlayerPrefs.GetString("ActivitiesTracking");
-		if(trackings == "" || trackings == null)
+		string trackings = "";
+		if (PlayerPrefs.HasKey("ActivitiesTracking"))
+			trackings = PlayerPrefs.GetString("ActivitiesTracking");
+		if (trackings == "" || trackings == null)
 		{
 			NextStep();
 		}
-		Debug.Log(trackings);
-		trackings = trackings.Replace("\n", "").Replace("\r", "").Replace("\t", "").Replace(" ", "");
-		string[] result = trackings.Substring(1, trackings.Length-2).Split(',');
-		foreach(string tr in result)
+		else
 		{
-			if (sessionKey.text.ToLower() == tr.Substring(tr.Length-6, 6))
+			Debug.Log(trackings);
+			trackings = trackings.Replace("\n", "").Replace("\r", "").Replace("\t", "").Replace(" ", "");
+			string[] result = trackings.Substring(1, trackings.Length - 2).Split(',');
+			foreach (string tr in result)
 			{
-				trackingCode = tr;
-				break;
+				if (sessionKey.text.ToLower() == tr.Substring(tr.Length - 6, 6))
+				{
+					trackingCode = tr;
+					break;
+				}
 			}
-		}
-		if (trackingCode != "" || sessionKey.text == "none")
-		{
-			PlayerPrefs.SetString("trackingCode", trackingCode);
-			NextStep();
-		} else 
-		{
-			response.text = "Clave de Sesión Invalida";
+			if (trackingCode != "" || sessionKey.text == "none")
+			{
+				PlayerPrefs.SetString("trackingCode", trackingCode);
+				NextStep();
+			}
+			else
+			{
+				response.text = "Clave de Sesión Invalida";
+			}
 		}
 		
 	}

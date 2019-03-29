@@ -29,6 +29,7 @@ public class TrackerEventManager : EventManager {
 
 							Tracker.T.alternative.Selected(questionID, response.Text, AlternativeTracker.Alternative.Dialog);
 							break;
+						// OTHERS
 					}
 					break;
 

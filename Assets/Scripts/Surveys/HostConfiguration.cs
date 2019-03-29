@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HostConfiguration : MonoBehaviour {
 
-	string host = "localhost";
+	string host = "";
 	string survey_pre = "", survey_post = "", survey_tea = "", master_token_online = "", master_token_offline = "";
     private string proxy_protocol;
 	private string activities_tracking;

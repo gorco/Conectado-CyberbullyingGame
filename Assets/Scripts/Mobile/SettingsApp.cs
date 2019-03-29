@@ -71,29 +71,25 @@ public class SettingsApp : MonoBehaviour {
 	{
 		//Tracker.T.RequestFlush();
 		//Application.Quit();
-		if (PlayerPrefs.HasKey("LimesurveyToken") && PlayerPrefs.GetString("LimesurveyToken") != "ADMIN" && PlayerPrefs.HasKey("LimesurveyPost"))
+		if (PlayerPrefs.HasKey("LimesurveyHost") && PlayerPrefs.GetString("LimesurveyHost") != "" && PlayerPrefs.GetString("LimesurveyToken") != "ADMIN" && PlayerPrefs.HasKey("LimesurveyPost"))
 		{
 			try
 			{
 				string path = Application.persistentDataPath;
-
 				if (!path.EndsWith("/"))
 				{
 					path += "/";
 				}
-
 				Dictionary<string, string> headers = new Dictionary<string, string>();
 
 				Net net = new Net(this);
 
 				WWWForm data = new WWWForm();
-
 				data.AddField("token", PlayerPrefs.GetString("LimesurveyToken"));
 				data.AddBinaryData("traces", System.Text.Encoding.UTF8.GetBytes(System.IO.File.ReadAllText(dataFile)));
 
 				data.headers.Remove ("Content-Type");// = "multipart/form-data";
 				System.IO.File.AppendAllText(path + PlayerPrefs.GetString("LimesurveyToken") + ".csv", System.IO.File.ReadAllText(dataFile));
-
 				net.POST(PlayerPrefs.GetString("LimesurveyHost") + "classes/collector", data, new SavedTracesListener(this, this.infoPanel));
 				/*
 				if (PlayerPrefs.GetString("CurrentSurvey").Equals("post")) {
@@ -118,33 +114,33 @@ public class SettingsApp : MonoBehaviour {
 
 	void ChangeLevel()
 	{
-		if (PlayerPrefs.GetString("CurrentSurvey").Equals("end") || forceExit)
+		if ((PreToggle || PostToggle || TeaToggle) && (PlayerPrefs.GetString("CurrentSurvey").Equals("end") || forceExit))
 		{
-				if (tracesSentInfo)
+			if (tracesSentInfo)
+			{
+				if (tracesSent == false)
 				{
-					if (tracesSent == false)
-					{
-						tracesSentMsg.text = "Los datos no se han podido enviar. Avise al encargado del experimento antes de cerrar el juego.";
-						tracesSentMsg.color = Color.red;
-					}
-					else
-					{
-						tracesSentMsg.text = "Los datos se han mandado correctamente. Puede cerrar el juego.";
-						tracesSentMsg.color = Color.white;
-					}
-					token.text = "Información de "+PlayerPrefs.GetString("username");
-					PreToggle.isOn = (PlayerPrefs.HasKey("PreTestEnd") && PlayerPrefs.GetInt("PreTestEnd") == 1);
-					PostToggle.isOn = (PlayerPrefs.HasKey("PostTestEnd") && PlayerPrefs.GetInt("PostTestEnd") == 1);
-					TeaToggle.isOn = (PlayerPrefs.HasKey("TeaTestEnd") && PlayerPrefs.GetInt("TeaTestEnd") == 1);
-					tracesSentInfo.SetActive(true);
+					tracesSentMsg.text = "Los datos no se han podido enviar. Avise al encargado del experimento antes de cerrar el juego.";
+					tracesSentMsg.color = Color.red;
 				}
 				else
 				{
-					if (Application.isWebPlayer == false && Application.isEditor == false)
-					{
-						CloseAll();
-					}
+					tracesSentMsg.text = "Los datos se han mandado correctamente. Puede cerrar el juego.";
+					tracesSentMsg.color = Color.white;
 				}
+				token.text = "Información de "+PlayerPrefs.GetString("username");
+				PreToggle.isOn = (PlayerPrefs.HasKey("PreTestEnd") && PlayerPrefs.GetInt("PreTestEnd") == 1);
+				PostToggle.isOn = (PlayerPrefs.HasKey("PostTestEnd") && PlayerPrefs.GetInt("PostTestEnd") == 1);
+				TeaToggle.isOn = (PlayerPrefs.HasKey("TeaTestEnd") && PlayerPrefs.GetInt("TeaTestEnd") == 1);
+				tracesSentInfo.SetActive(true);
+			}
+			else
+			{
+				if (Application.isWebPlayer == false && Application.isEditor == false)
+				{
+					CloseAll();
+				}
+			}
 
 			
 		} else if (PlayerPrefs.GetString("CurrentSurvey").Equals("tea") || PlayerPrefs.GetString("CurrentSurvey").Equals("post"))
@@ -193,6 +189,7 @@ public class SettingsApp : MonoBehaviour {
 			{
 				infoPanel.text = error;
 			}
+			Debug.Log(error);
 		}
 	}
 }

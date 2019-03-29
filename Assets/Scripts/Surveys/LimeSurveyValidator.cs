@@ -50,7 +50,19 @@ public class LimeSurveyValidator : MonoBehaviour {
 			nameSaver.SaveName();
 			SceneManager.LoadScene (nextScene);
 		}
-        connection.GET(PlayerPrefs.GetString("LimesurveyHost") + "surveys/validate?survey=" + PlayerPrefs.GetString("LimesurveyPre") + ((token.Length>0)? "&token=" + token : ""), new ValidateListener(nameSaver, response, token));
+		if (PlayerPrefs.GetString("LimesurveyHost") == "")
+		{
+			Debug.LogError("No LimeSurveyServer");
+			PlayerPrefs.SetString("name", token);
+			PlayerPrefs.SetString("LimesurveyToken", token);
+			PlayerPrefs.Save();
+			nameSaver.SaveName();
+			SceneManager.LoadScene(nextScene);
+		}
+		else
+		{
+			connection.GET(PlayerPrefs.GetString("LimesurveyHost") + "surveys/validate?survey=" + PlayerPrefs.GetString("LimesurveyPre") + ((token.Length > 0) ? "&token=" + token : ""), new ValidateListener(nameSaver, response, token));
+		}
     }
 
     public void completed()
@@ -77,6 +89,7 @@ public class LimeSurveyValidator : MonoBehaviour {
 		Debug.Log(type);
 		connection.GET(PlayerPrefs.GetString("LimesurveyHost") + "surveys/completed?survey=" + survey + ((token.Length > 0) ? "&token=" + token : ""), new CompleteListener(response, token, this.gameObject.GetComponent<SettingsApp>()));
 		Debug.Log(PlayerPrefs.GetString("LimesurveyHost") + "surveys/completed?survey=" + survey + ((token.Length > 0) ? "&token=" + token : ""));
+		
 	}
 
     public class ValidateListener : Net.IRequestListener
