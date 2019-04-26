@@ -1,3 +1,6 @@
 [submodule "Assets/isometra-dialog-system"]
 	path = Assets/isometra-dialog-system
 	url = https://github.com/gorco/isometra-dialog-system
+[submodule "Assets/Tracker/csharp-tracker/AssetManager"]
+	path = Assets/Tracker/csharp-tracker/AssetManager
+	url = https://github.com/rageappliedgame/AssetManager
