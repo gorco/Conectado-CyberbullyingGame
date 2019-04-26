@@ -28,7 +28,7 @@ namespace AssetPackage
 	using System.Security.Cryptography.X509Certificates;
 	using UnityEngine;
 
-    public class UnityBridge : IBridge, IDataStorage, IWebServiceRequest, ILog
+    public class UnityBridge : IBridge, IDataStorage, IWebServiceRequest, ILog, IAppend
     {
 		readonly String StorageDir = Application.persistentDataPath;
         /// <summary>
