@@ -57,12 +57,12 @@ public class AlarmSelector : MonoBehaviour, IPointerClickHandler, IPointerDownHa
 		//delay alarm
 		if (this.transform.localPosition.x + this.GetComponent<Renderer>().bounds.size.x > turnOffButton.transform.localPosition.x)
 		{
-			this.GetComponentInParent<Mobile>().stopAlarm(false);
+			TurnOff();
 		}
 		//turn off alarm
 		else if (this.transform.localPosition.x < delayButton.transform.localPosition.x + delayButton.GetComponent<Renderer>().bounds.size.x)
 		{
-			this.GetComponentInParent<Mobile>().stopAlarm(true);
+			Delay();
 		}
 		this.transform.position = new Vector3(xStartPosition, transform.position.y, transform.position.z);
 	}
@@ -72,5 +72,15 @@ public class AlarmSelector : MonoBehaviour, IPointerClickHandler, IPointerDownHa
 		Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
 		Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
 		transform.position = new Vector3(Mathf.Max(Mathf.Min(cursorPosition.x, max), min), yPosition, cursorPoint.z);
+	}
+
+	public void Delay()
+	{
+		this.GetComponentInParent<Mobile>().stopAlarm(false);
+	}
+
+	public void TurnOff()
+	{
+		this.GetComponentInParent<Mobile>().stopAlarm(true);
 	}
 }

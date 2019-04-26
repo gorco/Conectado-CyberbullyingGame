@@ -84,17 +84,17 @@ public class Mobile : MonoBehaviour {
 		animate = true;
 	}
 
-	internal void stopAlarm(bool delayed)
+	internal void stopAlarm(bool stop)
 	{
-		if (!delayed || (GlobalState.Hour < 8 && GlobalState.Day != 4))
-		{
-			this.delayed = delayed;
-			sound = false;
-			wakeUpPanel.SetActive(false);
-		} else
+		if(!stop && (GlobalState.Hour >= 8 || GlobalState.Day == 4))
 		{
 			wakeUpPanel.GetComponentInChildren<Text>().text = "Eres incapaz de volver a dormirte. Mejor que te levantes ya";
 			wakeUpPanel.SetActive(true);
+		} else
+		{
+			this.delayed = !stop;
+			sound = false;
+			wakeUpPanel.SetActive(false);
 		}
 	}
 
