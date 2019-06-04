@@ -1,0 +1,263 @@
+{
+	"intro":{
+		"root": {
+			"type": "dialog",
+			"next": "fade",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				
+				"msn": "Don't you love the new photos we just published?"
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "You can try deleting them..."
+			},
+			{
+				"tag": "Shadow",
+				"character": "Shadow",
+				
+				"msn": "You're gonna have to do more than just deleting or reporting them."
+			},
+			{
+				"tag": "Shadow",
+				"character": "Shadow",
+				
+				"msn": "Go on, try... all of us have a copy already."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "shadow"
+			}
+		}
+	},
+	"portal":{
+		"root":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "You didn't accomplish anything."
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Hahaha"
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Photos' still there."
+			},{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Once online everyone can make a copy."
+			},{
+				"tag": "",
+				"msn": "..."
+			}, {
+				"tag": "Voice from the portal",
+				"msn": "It's not your fault. Come, go trough the portal again."
+			}, {
+				"tag": "Voice from the portal",
+				"msn": "Try changing things."
+			}]
+		}
+	},
+	"cross": {
+		"root": {
+			"type": "options",
+			"questionId": "portalDay4",
+			"options": [{
+				"next": "node1",
+				"msn": "Go trough the portal."
+			},
+			{
+				"next": "node2",
+				"msn": "No, not this time."
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [{
+				"tag": "You",
+				
+				"msn": "I don't know if this is alright, I don't wanna repeat any more bad days."
+			},
+			{
+				"tag": "You",
+				"msn": "I'm gonna trust the weird voice... yes... I'll go trough."
+			}]
+		},
+		"node2":{
+			"type": "dialog",
+			"next": "variable2",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I'm not gonna go across if you don't tell me who you are."
+			}, {
+				"tag": "Voice from the portal",
+				
+				"msn": "I can't, you have to trust me, I'm giving you the chance of changing things."
+			}, {
+				"tag": "You",
+				"msn": "Changing what?"
+			}, {
+				"tag": "Voice from the portal",
+				
+				"msn": "No! Time's running out, you're about to wake up..."
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "It's too late now... I wish you good luck."
+			}]
+		},
+		"variable": {
+			"type": "event",
+			"next": "repeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 3,
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": true,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "loadMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"loadMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "load"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		},
+		"variable2": {
+			"type": "event",
+			"next": "repeatDay2",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 4,
+			}
+		},
+		"repeatDay2": {
+			"type": "event",
+			"next": "changeHour2",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false,
+			}
+		},
+		"changeHour2": {
+			"type": "event",
+			"next" : "saveMobile2",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile2": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		}
+	},
+	"finishNightmare":{
+		"root": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				
+				"msn": "You didn't accomplish anything."
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Hahaha"
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Photos' still there."
+			},{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Once online everyone can make a copy."
+			}]
+		},
+		"variable": {
+			"type": "event",
+			"next": "repeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 4,
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	}
+}

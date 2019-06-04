@@ -1,0 +1,28 @@
+{
+	"playButton": "Jugar",
+    "creditsButton": "Créditos",
+    "exitButton":"Salir",
+
+    "sessionText":"Serial de Sesión",
+    "inputSession": "Introduce el serial de la Sesión",
+    
+    "userInfoTitle": "Conecta con tus amigos!",
+    "nameText":"Nombre",
+    "nameField":"Tu nombre",
+    "userText":"Usuario",
+    "userField":"Tu usuario",
+    "passText":"Contraseña",
+    "passField":"Tu contraseña",
+    "errorText":"Por favor, rellena todos los huecos antes de comenzar",
+    "nameLengthError":"Tu nombre no puede contener más de 10 caracteres",
+    "spaceError":"Tu Usuario y Contraseña no pueden contener espacios",
+    "userpasswordLengthError":"Tu Usuario y Contraseña no pueden contener más de 16 caracteres",
+    "nameError":"Necesito tu nombre",
+    "userError":"Necesito tu usuario",
+    "passwordError":"Necesito tu contraseña",
+    "genderError":"Necesitas seleccionar un género",
+    "startButton":"Empezar",
+    "backButton":"Atrás",
+    "adviseTitle":"¡IMPORTANTE!",
+    "adviseText":"No introduzcas una contraseña que ya uses. Piensa en una buena. Sólo será utilizada dentro del juego."
+}

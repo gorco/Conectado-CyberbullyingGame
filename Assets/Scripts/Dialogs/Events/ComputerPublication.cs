@@ -8,11 +8,12 @@ using UnityEngine;
 public class ComputerPublication : EventManager
 {
 
-	public ComputerManager computer;
-	private JSONObject jsonObj;
-	public TextAsset jsonFile;
+    public ComputerManager computer;
+    private JSONObject jsonObj;
+    public string fileName;
+    TextAsset jsonFile;
 
-	public override void ReceiveEvent(IGameEvent ev)
+    public override void ReceiveEvent(IGameEvent ev)
 	{
 		if (ev.Name.Replace("\"", "") == "computer publication")
 		{
@@ -45,7 +46,9 @@ public class ComputerPublication : EventManager
 	// Use this for initialization
 	void Start()
 	{
-		if (jsonFile != null)
+        jsonFile = Resources.Load<TextAsset>("Localization/" + LanguageSelector.instance.GetCurrentLanguage() + "/" + fileName);
+
+        if (jsonFile != null)
 		{
 			string fileContents = jsonFile.text;
 			jsonObj = JSONObject.Create(fileContents);

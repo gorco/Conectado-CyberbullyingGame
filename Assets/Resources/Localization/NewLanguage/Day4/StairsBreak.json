@@ -1,0 +1,149 @@
+{
+	"guilleAndAlison": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "found",
+				"condition": "true"
+			}]
+		},
+		"repeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "..."
+			}]
+		},
+		"found": {
+			"type": "options",
+			"questionId": "GuilleAlisonAskMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "Do you know who has taken my mobile phone and left it in the toilet?",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "node1b",
+				"msn": "Does anyone know where is my phone? Somebody has taken it.",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "setter",
+				"msn": "I guess you're not talking to me... i pass.",
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "We are not going to tell on them, but i guess you already imagine who was it."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "*sshhhhhh*"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "*sshhhhhh*"
+			}]
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "I'm sorry, we have no idea."
+			},
+			{
+				"tag": "You",
+				"msn": "Thanks Guille."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
+	"principalNote":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Note",
+				"msn": "Principal's office."
+			}]
+		}
+	},
+	"principalDoor":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Looks like nobody's there"
+			}]
+		}
+	},
+	"stairsToCorridor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"stairsToPlayground": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "endDay",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "break",
+				"condition": "true"
+			}]
+		},
+		"break": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "playground"
+			}
+		},
+		"endDay": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "endDay"
+			}
+		}
+	}
+}

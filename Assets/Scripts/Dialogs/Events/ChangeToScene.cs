@@ -63,7 +63,7 @@ public class ChangeToScene : EventManager
 	{
 		if (loading)
 		{
-			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(varValue);
+			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(varValue +1);
 			cTime = 0;
 			// Wait until the asynchronous scene fully loads
 			while (cTime < time && !asyncLoad.isDone)
@@ -75,7 +75,7 @@ public class ChangeToScene : EventManager
 		{
 			yield return new WaitForSeconds(time);
 
-			SceneManager.LoadScene(varValue);
+			SceneManager.LoadScene(varValue +1);
 		}
 	}
 }

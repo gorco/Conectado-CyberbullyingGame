@@ -1,0 +1,42 @@
+{
+	"alex": {
+		"root": {
+			"type": "dialog",
+			"next": "changeVar",
+			"fragments": [{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "Really? You were leaving without stopping by the toilet."
+			},
+			{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "Think it as an opportunity to fix everything, c'mon... i'll walk with you."
+			}]
+		},
+		"changeVar": {
+			"type": "event",
+			"next": "node2a",
+			"event": {
+				"name": "change variable",
+				"var": "Alex",
+				"value": true,
+			}
+		},
+		"node2a": {
+			"type": "event",
+			"next": "moveEvent",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"moveEvent": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "alejandro"
+			}
+		}
+	}
+}

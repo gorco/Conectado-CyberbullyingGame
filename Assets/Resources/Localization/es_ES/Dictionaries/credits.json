@@ -1,0 +1,18 @@
+{
+    "creditsTitle":"Créditos",
+    "Manager":"Dirección de Proyecto",
+    "Design":"Diseño y Desarrollo",
+    "ArtManager":"Dirección de Arte",
+    "ArtAndAnim":"Arte y Animación",
+    "Idea":"Idea Original",
+    "Thanks":"Agradecimientos",
+    "ThanksNames": "Victor Manuel Pérez Colado \n <size=30>por su magnífica librería de diálogos</size> \n \n Dan Cristian Rotaru \n Iván José Pérez Colado \n Lola Fernández Gutiérrez \n <size=30>por aquel hackaton que originó todo</size>",
+    "BetaTesters":"Beta Testers \n",
+    "Collaborators":"Colaboradores  \n",
+    "Schools":" Centros Educativos \n <size=6> Han colaborado en la validación del videojuego </size>",
+    "EspThanks":"Gracias también a: \n",
+    "Sponsors":"Patrocinadores",
+    "thankyouText":"¡GRACIAS!",
+
+    "homescreenButton":"Volver a la pantalla de Título"
+}

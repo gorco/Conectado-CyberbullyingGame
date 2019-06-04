@@ -34,6 +34,10 @@ public class GlobalStateTest : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+
+        //DEBUG ONLY
+        //LanguageSelector.instance.GetCurrentLanguage() = "ES"
+
 		GlobalState.Repeated = this.repeated;
 		
 		Debug.LogWarning("INIT GLOBAL STATE");

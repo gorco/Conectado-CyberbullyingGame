@@ -1,0 +1,411 @@
+{
+	"guillermo":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Guillermo",
+				"character": "Guille",
+				"msn": "Are you new? I haven't seen you around here before."
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "GuillermoMeet",
+			"options": [{
+				"next": "node1a",
+				"msn": "Yeah, i'm <$ varObject('global', 'UserNameNonStatic') $>... and who are you?"
+			},
+			{
+				"next": "node1b",
+				"msn": "Excuse me, i'm in a hurry. (You leave)."
+			}]
+		},
+		"node1b": {
+			"type": "event",
+			"next": "bell",
+			"event": {
+				"name": "change friendship",
+				"var": "GuillermoFS",
+				"value": -10,
+			}
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "nodeFS",
+			"fragments": [{
+				"tag": "Guillermo",
+				"character": "Guille",
+				"msn": "Call me Guille."
+			},
+			{
+				"tag": "",
+				"msn": "<<The bell is ringing>>"
+			},
+			{
+				"tag": "Guillermo",
+				"character": "Guille",
+				"msn": "We should get inside, see ya."
+			}]
+		}, 
+		"nodeFS": {
+			"type": "event",
+			"next": "quest",
+			"event": {
+				"name": "change friendship",
+				"var": "GuillermoFS",
+				"value": 10,
+			}
+		},
+		"quest": {
+			"type": "event",
+			"next": "node2",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 1,
+			}
+		},
+		"node2": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "fade1",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		},
+		"fade1": {
+			"type": "event",
+			"next": "fade2",
+			"event": {
+				"name": "fade out",
+				"key": "alison"
+			}
+		},
+		"fade2": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "guillermo"
+			}
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<The bell is ringing>>"
+			}]
+		}
+	},
+	"jose":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "You're back, do you need anything else?"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "You are new, aren't you?"
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Do you want something?"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "JoseMeet",
+			"options": [{
+				"next": "introduceFork",
+				"msn": "Hello, i'm <$ varObject('global', 'UserNameNonStatic') $>.."
+			},
+			{
+				"next": "node2",
+				"msn": "(Ask where the classroom is)."
+			},
+			{
+				"next": "node3",
+				"msn": "I don't need anything, see you later."
+			}]
+		},
+		"introduceFork": {
+			"type": "fork",
+			"options": [{
+				"next": "know",
+				"condition": "introduced == true"
+			},
+			{
+				"next": "introducedSetter",
+				"condition": "true"
+			}]
+		},
+		"know": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "You've already told me your name."
+			}]
+		},
+		"introducedSetter":{
+			"type": "setter",
+			"next": "nodeFS",
+			"set": {
+				"var": "introduced",
+				"value": true
+			}
+		},
+		"nodeFS": {
+			"type": "event",
+			"next": "quest",
+			"event": {
+				"name": "change friendship",
+				"var": "JoseFS",
+				"value": 10,
+			}
+		},
+		"quest": {
+			"type": "event",
+			"next": "node1",
+			"event": {
+				"name": "change variable",
+				"var": "JoseQuest",
+				"value": 1,
+			}
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "I'm Jose."
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Do you want something?"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "That's my classroom too, it's in the second floor, going to the right upstairs you find once you get inside the building."
+			}, 
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "And in the first floor is the principal's office."
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Do you need anything else?"
+			}]
+		},
+		"node3": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Bye."
+			}]
+		}
+	},
+	"alison":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Do i know you?"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "AlisonMeet",
+			"options": [{
+				"next": "nodeFS",
+				"msn": "I'm <$ varObject('global', 'UserNameNonStatic') $>, and you are...?"
+			},
+			{
+				"next": "node2",
+				"msn": "No, i'm sorry, i'm in a hurry. Bye."
+			}]
+		},
+		"nodeFS": {
+			"type": "event",
+			"next": "alisonDialog",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFS",
+				"value": 10,
+			}
+		},
+		"alisonDialog": {
+			"type": "event",
+			"next": "node1",
+			"event": {
+				"name": "change variable",
+				"var": "AlisonDialog",
+				"value": true,
+			}
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "fork",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Nice to meet ya, i'm Alison"
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "I hope you have a nice time here, people are really nice."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "What grade are you in?"
+			},
+			{
+				"tag": "You",
+				"msn": "(You answer)"
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "I'll see you in class then."
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Don't be shy, i don't bite."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Well, see ya. Have a nice first day."
+			}]
+		},
+		"fork": {
+			"type": "fork",
+			"options": [{
+				"next": "abierto",
+				"condition": "varObject('state', 'BellSounded') == true"
+			},
+			{
+				"next": "cerrado",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"abierto": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "We should get inside now, or we'll be late."
+			}]
+		},
+		"cerrado": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "The boy with the yellow shirt next to the playground entrance also is in our class."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "He's very nice, why don't you go talk to him?"
+			}]
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true"
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "Looks like i've arrived sooner and entrance is not allowed. I'll better kill some time."
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I've just arrived, i cannot leave yet."
+			}]
+		}
+	}
+}

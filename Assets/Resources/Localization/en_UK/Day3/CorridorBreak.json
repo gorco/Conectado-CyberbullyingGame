@@ -1,0 +1,104 @@
+{
+	"doorToStairs": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "bathroom",
+				"condition": "varObject('state', 'GuilleSpoke') == false"
+			},
+			{
+				"next": "move",
+				"condition": "varObject('state', 'GuilleSpoke') == true"
+			}]
+		},
+		"bathroom": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I should go to the toilet before i go home."
+			},
+			{
+				"tag": "You",
+				"msn": "Maybe the note was important."
+			}]
+		},
+		"move": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:15",
+			}
+		},
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I cannot go there, it's the boys' toilet"
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I cannot go there, it's the girls' toilet"
+			}]
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I have nothing to do in class."
+			}]
+		}
+	}
+}

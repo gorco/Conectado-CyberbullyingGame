@@ -1,0 +1,349 @@
+{
+	"init": {
+		"root": {
+			"type": "event",
+			"next": "fs2",
+			"event": {
+				"name": "change friendship",
+				"var": "AlejandroFS",
+				"value": -20,
+			}
+		},
+		"fs2": {
+			"type": "event",
+			"next": "fs3",
+			"event": {
+				"name": "change friendship",
+				"var": "AnaFS",
+				"value": -20,
+			}
+		},
+		"fs3": {
+			"type": "event",
+			"next": "fs4",
+			"event": {
+				"name": "change friendship",
+				"var": "JoseFS",
+				"value": -20,
+			}
+		},
+		"fs4": {
+			"type": "event",
+			"event": {
+				"name": "change friendship",
+				"var": "GuillermoFS",
+				"value": -10,
+			}
+		}
+	},
+	"board":{
+		"root": {
+			"type": "event",
+			"next": "forkNode",
+			"event": {
+				"name": "change variable",
+				"var": "BoardQuest",
+				"value": 1,
+			}
+		},
+		"forkNode": {
+			"type": "fork",
+			"options": [{
+				"next": "gum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "washed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "nogum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			}]
+		},
+		"gum": {
+			"type": "event",
+			"next": "gumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGum"
+			}
+		},
+		"gumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "You",
+				"msn": "It's a picture of me and it's been modified so it looks like i'm shitting chewing gums."
+			},
+			{
+				"tag": "You",
+				"msn": "Who wants to mock me this way?"
+			}]
+		},
+		"deactive": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 0
+			}
+		},
+		"washed": {
+			"type": "event",
+			"next": "washedDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGumWhased"
+			}
+		},
+		"washedDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "You",
+				"msn": "It's a picture of me yesterday right after i removed the gum."
+			},
+			{
+				"tag": "You",
+				"msn": "With a very original sentence... \"A baby arrived to class\" "
+			}]
+		},
+		"nogum": {
+			"type": "event",
+			"next": "nogumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoDog"
+			}
+		},
+		"nogumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "You",
+				"msn": "It's a picture of a dog with my face on it and sticking out the tongue."
+			},
+			{
+				"tag": "You",
+				"msn": "Why? Who put it there?"
+			}]
+		},
+	},
+	"group":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"next": "stayOption",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Are you sending me to Coventry, seriously?"
+			},
+			{
+				"tag": "You",
+				"msn": "You too, Guille?"
+			},
+			{
+				"tag": "",
+				"msn": "..."
+			}]
+		}, 
+		"stayOption": {
+			"type": "options",
+			"questionId": "groupIgnore",
+			"options": [{
+				"next": "stay",
+				"msn": "Wait to see if they speak."
+			},
+			{
+				"msn": "Leave."
+			}]
+		},
+		"stay": {
+			"type": "dialog",
+			"next": "stayOption",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "..."
+			}]
+		}, 
+		"node0": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Good morning, what are you doing here?"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "We were just talking."
+			},
+			{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "Shut up Guille, what was the deal?"
+			},
+			{
+				"tag": "Alex",
+				"character": "Alex",
+				"msn": "Or do you want your parents to know?"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "..."
+			}]
+		}, 
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"questionId": "groupIgnoreAskGuille",
+			"options": [{
+				"next": "node1A",
+				"msn": "What's going on, Guille?"
+			},
+			{
+				"next": "node1B",
+				"msn": "That sounded like a threat"
+			}]
+		},
+		"node1A": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Are you okay, Guille?"
+			},
+			{
+				"tag": "",
+				"msn": "..."
+			},
+			{
+				"tag": "You",
+				"msn": "Is anybody going to say something?"
+			}]
+		},
+		"node1B": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Do you also have it in for Guille,...Alex?"
+			},
+			{
+				"tag": "",
+				"msn": "..."
+			},
+			{
+				"tag": "You",
+				"msn": "Is anybody going to say something?"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "lateorsoon",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"lateorsoon": {
+			"type": "fork",
+			"options": [{
+				"next": "bell",
+				"condition": "varObject('global', 'MinuteNonStatic') <= 30 "
+			},
+			{
+				"next": "late",
+				"condition": "varObject('global', 'MinuteNonStatic') > 30"
+			}]
+		},
+		"late": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "You",
+				"msn": "Alright, don't say anything. I'm going to class, it's already late enough."
+			}]
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "bellEvent",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<The bell is ringing>>"
+			}]
+		},
+		"bellEvent": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nodeRepeat",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true" 
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "Looks like i've arrived sooner and entrance is not allowed. I'll better kill some time"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I've just arrived, i cannot leave yet."
+			}]
+		}
+	}
+}

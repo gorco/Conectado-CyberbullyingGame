@@ -73,54 +73,55 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 		{
 			if (userName.text.Length > 10)
 			{
-				error.text = "Tu nombre no puede tener más de 10 caracteres";
+				error.text = LanguageSelector.instance.GetName("nameLengthError");  //"Tu nombre no puede tener más de 10 caracteres";
 				error.enabled = true;
 				return;
 			}
 
 			if (nick.text.Contains(" ") || userPass.text.Contains(" "))
 			{
-				error.text = "El Usuario y la Contraseña no pueden contener espacios";
+				error.text = LanguageSelector.instance.GetName("spaceError");  //"El Usuario y la Contraseña no pueden contener espacios";
 				error.enabled = true;
 				return;
 			}
 
 			if (nick.text.Length > 16 || userPass.text.Length > 16)
 			{
-				error.text = "Usuario y Contraseña no pueden contener más de 16 caracteres";
+				error.text = LanguageSelector.instance.GetName("userpasswordLengthError");  //"Usuario y Contraseña no pueden contener más de 16 caracteres";
 				error.enabled = true;
 				return;
 			}
 
 			if (userName.text == "")
 			{
-				error.text = "Hace falta tu nombre";
+				error.text = error.text = LanguageSelector.instance.GetName("nameError"); //"Hace falta tu nombre";
 				error.enabled = true;
 				return;
 			}
 
 			if (nick.text == "")
 			{
-				error.text = "Hace falta un nombre de usuario";
+				error.text = error.text = LanguageSelector.instance.GetName("userError"); //"Hace falta un nombre de usuario";
 				error.enabled = true;
 				return;
 			}
 
 			if (userPass.text == "")
 			{
-				error.text = "Hace falta una contraseña";
+				error.text = error.text = LanguageSelector.instance.GetName("passwordError"); //"Hace falta una contraseña";
 				error.enabled = true;
 				return;
 			}
 
 			if (!male.isOn && !female.isOn)
 			{
-				error.text = "Hace falta que selecciones tu género";
+                error.text = LanguageSelector.instance.GetName("genderError");//"Hace falta que selecciones tu género";
 				error.enabled = true;
 				return;
 			}
 
 			GlobalState.NotRepeatedDays = !repeatedDays.isOn;
+            //LanguageSelector.instance.GetCurrentLanguage() = "en_UK";
 
 			//Init day
 			GlobalState.Day = 0;
@@ -165,7 +166,7 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 			GlobalState.SharedPassQuest = 0;
 
 			//Start game
-			SceneManager.LoadScene(2);
+			SceneManager.LoadScene("StartDay1");
 		}
 	}
 }

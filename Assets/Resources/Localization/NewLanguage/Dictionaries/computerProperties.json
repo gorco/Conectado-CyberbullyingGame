@@ -1,0 +1,21 @@
+{
+    "homeNote":"This is your dashboard, look what your friends have shared",   
+    "homeButton":"Dashboard",
+    "friendsButton":"Friends",
+    "photosButton":"Publish",
+
+    "newFriendsText":"You've got new friend petitions!",
+
+    "error":"User/Password introduced are incorrect",
+    "user":"User",
+    "pass":"Password",
+    "logInText":"Enter",
+    
+    "friendsText":"Friends",
+    "pendingFriendsText":"Pending petitions: ",
+    "logoText":"CONNECT WITH YOUR FRIENDS!",
+
+    "acceptButton":"Accept",
+    "denyButton":"Deny",
+    "commentsText":"Comments"
+}

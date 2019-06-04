@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEditor;
+
 
 public class ObjectsWithDialogsManager : MonoBehaviour {
 
@@ -14,17 +16,9 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 	private GameEvent gameEvent;
 
 	public string fileName;
-	public TextAsset jsonFile;
+	TextAsset jsonFile;
 	public IState variablesObject;
 
-	// Use this for initialization
-	void Start () {
-		/*
-		StreamReader sr = new StreamReader(Application.dataPath + "/Texts/" + fileName);
-
-		string fileContents = sr.ReadToEnd();
-		sr.Close();*/
-	}
 
 	private void Awake()
 	{
@@ -33,9 +27,22 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 		gameEvent = new GameEvent();
 		this.gameEvent.Name = "start sequence";
 
-		string fileContents = jsonFile.text;
+        //char[] MyChar = { '.', 'j', 's', 'o', 'n' };
+        //string newName = fileName.TrimEnd(MyChar);
+        string newName = fileName.Replace(".json", "");
+        fileName = newName;
+        
+        if(LanguageSelector.instance.GetCurrentLanguage() == null)
+        {
+            Debug.LogError("ERROR: Global Language not set up propertly. Switching to en_UK.");
+            LanguageSelector.instance.SetLanguage("en_UK");
+            jsonFile = Resources.Load<TextAsset>("Localization/" + "en_UK" + "/Dictionaries" + fileName);
+        }
+        else
+            jsonFile = Resources.Load<TextAsset>("Localization/" + LanguageSelector.instance.GetCurrentLanguage() + "/" + fileName);
 
-		JSONObject json = JSONObject.Create(fileContents);
+        string fileContents = jsonFile.text;
+        JSONObject json = JSONObject.Create(fileContents);
 		foreach (Transform child in transform)
 		{
 			if (!child.GetComponent<ThrowDialog>())
@@ -94,7 +101,7 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 #if UNITY_EDITOR
 		if (jsonFile == null && !string.IsNullOrEmpty(fileName))
 		{
-			jsonFile = UnityEditor.AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Texts/" + fileName);
+			jsonFile = UnityEditor.AssetDatabase.LoadAssetAtPath<TextAsset>("Localization/" + LanguageSelector.instance.GetCurrentLanguage() + "/" + fileName);
 			Debug.Log("JSON FILE Setted: " + fileName);
 		}
 #endif

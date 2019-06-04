@@ -1,0 +1,233 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Go away, we have nothing to talk."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Any of this would had happened if you would have trusted me, it's your fault."
+			}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "You deserve what have happened."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "What were you thinking when you gave me your password?"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		}
+	},
+	"ana":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh2",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Hahahaha, outkast."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Look who's here, and i thought you wouldn't show today."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Still without phone? Hahaha, it wasn't that hard to find if you would have looked well."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "What an asshole..."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Where did you come from? hahaha."
+			}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "I can't believe you gave Alison your password."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Do you really thought she was going to be your friend? I can't believe it was that easy."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "HAHAHAHA!!! Seriously, i'm cracking up at you."
+			}]
+		},
+		"sh2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "HAHAHAHA!!! I can't believe you didn't have a locking pattern on your mobile."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "I thought it would be harder..."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "It's going to be a funny day, now everyone thinks you're actually a <$ if(varObject('global', 'MaleSexNonStatic')==true, 'fucking poof who likes it all', 'fucking vicious whore') $>."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "bell",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "bellEvent",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<The bell is ringing>>"
+			}]
+		},
+		"bellEvent": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true" 
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "Looks like i've arrived sooner and entrance is not allowed. I'll better kill some time."
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I've just arrived, i cannot leave yet."
+			}]
+		}
+	}
+}

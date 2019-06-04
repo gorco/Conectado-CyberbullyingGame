@@ -1,0 +1,103 @@
+{
+	"schoolEnter": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "There are no more classes today and there is nobody left."			
+			},
+			{
+				"tag": "You",
+				"msn": "I'll better go gome."
+			}]
+		}
+	},
+	"guille":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Don't listen to them and go home, tomorrow will be another day."
+			}]
+		},
+	},
+	"laugh": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Voices",
+				"msn": "Hahahahaha"
+			}]
+		},
+	},
+	"globalLaugh": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "wash",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "notGum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			}
+			{
+				"next": "notWash",
+				"condition": "true"
+			}]
+		},
+		"notGum": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "notGum"
+			}
+		},
+		"wash": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Voices",
+				"msn": "Hahahahaha."
+			},
+			{
+				"tag": "Voices",
+				"msn": "What a stain <$ varObject('global', 'UserNameNonStatic') $>, looks like you've shat yourself."
+			}]
+		},
+		"notWash": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Voices",
+				"msn": "Hahahahaha."
+			},
+			{
+				"tag": "Voices",
+				"msn": "Let's see if you wash."
+			},
+			{
+				"tag": "Voices",
+				"msn": "No matter how much you wear that gum, it's not going to become fashion."
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 11
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "15:00",
+			}
+		}
+	}
+}

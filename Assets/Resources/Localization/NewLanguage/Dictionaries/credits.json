@@ -1,0 +1,18 @@
+{
+    "creditsTitle":"Credits",
+    "Manager":"Project Manager",
+    "Design":"Design and Development",
+    "ArtManager":"Art Manager",
+    "ArtAndAnim":"Art And Animation",
+    "Idea":"Original Concept",
+    "Thanks":"Acknowledgements",
+    "ThanksNames": "Victor Manuel Pérez Colado \n <size=30>for his magnificent dialog library</size> \n \n Dan Cristian Rotaru \n Iván José Pérez Colado \n Lola Fernández Gutiérrez \n <size=30>for that hackaton that started everything</size>",
+    "BetaTesters":"Beta Testers \n",
+    "Collaborators":"Collaborators \n",
+    "Schools":" Educational Institutions \n <size=6> Have collaborated in game's validation </size>",
+    "EspThanks":"Special Thanks \n",
+    "Sponsors":"Sponsors",
+    "thankyouText":"THANK YOU!",
+
+    "homescreenButton":"Back to Homescreen"
+}

@@ -1,0 +1,185 @@
+{
+	"parents": {
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "checkFS",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"repeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Mom",
+				"character": "Mother",
+				"msn": "Take care and behave.",
+			}, 
+			{
+				"tag": "Dad",
+				"character": "Father",
+				"msn": "And remember we are visiting grandma on sunday."
+			}]
+		},
+		"checkFS": {
+			"type": "fork",
+			"options": [{
+				"next": "meeting",
+				"condition": "varObject('global', 'ParentsFSNonStatic') >= 80"
+			},
+			{
+				"next": "repeat",
+				"condition": "true"
+			}]
+		},
+		"meeting": {
+			"type": "dialog",
+			"next": "meetingVar",
+			"fragments": [{
+				"tag": "Mom",
+				"character": "Mother",
+				"msn": "We've decided to go talk to your tutor and see what's going on."
+			}, 
+			{
+				"tag": "Dad",
+				"character": "Father",
+				"msn": "We're going to ask for a meeting for tomorrow."
+			}]
+		},		
+		"meetingVar": {
+			"type": "event",
+			"next": "options",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 1,
+			}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "parentsMeetingMorninOption",
+			"options": [{
+				"next": "node1a",
+				"msn": "Thanks."
+			},
+			{
+				"next": "node1b",
+				"msn": "It'll be worse..."
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "changeVariable",
+			"fragments": [{
+				"tag": "Mom",
+				"character": "Mother",
+				"msn": "Not at all darling, we want you to be fine."
+			}, 
+			{
+				"tag": "Dad",
+				"character": "Father",
+				"msn": "We'll try to have this meeting tomorrow at the latest."
+			}]
+		},
+		"changeVariable": {
+			"type": "event",
+			"next": "repeat",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 2,
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "repeat",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I don't want you to go, it'll be worse."
+			},
+			{
+				"tag": "You",
+				"msn": "They'll think i'm a snitch and it wasnt such a big deal."
+			}, 
+			{
+				"tag": "You",
+				"msn": "Let it be, time will fix it."
+			},
+			{
+				"tag": "Dad",
+				"character": "Father",
+				"msn": "Fine, but let us know if goes beyond."
+			}]
+		}
+	},
+	"exitDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "changeHourSoon",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') < 8"
+			},{
+				"next": "changeHourLate",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') >= 8 "
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"changeHourLate": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:40",
+			}
+		},
+		"changeHourSoon": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:20",
+			}
+		},
+		"exitNode": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 19
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I forgot the backpack. I'll better go to my room to take it before i leave."
+			}]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		}
+	}
+}

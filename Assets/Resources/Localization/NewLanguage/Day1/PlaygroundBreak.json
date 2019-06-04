@@ -1,0 +1,101 @@
+{
+	"ana":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "earingFound",
+				"condition": "varObject('state', 'EaringFound') == true"
+			},
+			{
+				"next": "node1",
+				"condition": "true"
+			}]
+		},
+		"earingFound": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Looks like you've found Alison's earing."
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "There's something strange near the basket."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "I see something shiny from here."
+			}]
+		}
+	},
+	"guille":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Our tutor is pretty nice."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "If you have any trouble just talk to him."
+			}]
+		}
+	},
+	"shine":{
+		"root": {
+			"type": "dialog",
+			"next": "take",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Looks like Alison's earing."
+			},
+			{
+				"tag": "You",
+				"msn": "I'll better take it to her."
+			}]
+		},
+		"take": {
+			"type": "event",
+			"next": "fade",
+			"event": {
+				"name": "change state",
+				"key": "EaringFound",
+				"var": "EaringFound",
+				"value": true,
+				"state": 0
+			}
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "earing"
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "It is break time, there are still some classes before i can go home."
+			}]
+		}
+	}
+}

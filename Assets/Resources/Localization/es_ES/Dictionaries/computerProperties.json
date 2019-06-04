@@ -1,0 +1,21 @@
+{
+    "homeNote":"Este es tu tablón, mira lo que tus amigos han compartido",   
+    "homeButton":"Tablón",
+    "friendsButton":"Amigos",
+    "photosButton":"Postear",
+
+    "newFriendsText":"¡Tienes nuevas peticiones de amistad!",
+
+    "error":"El Usuario/Contraseña introducida es incorrecta",
+    "user":"Usuario",
+    "pass":"Contraseña",
+    "logInText":"Entrar",
+    
+    "friendsText":"Amigos",
+    "pendingFriendsText":"Peticiones Pendientes: ",
+    "logoText":"¡CONECTA CON TUS AMIGOS!",
+
+    "acceptButton":"Aceptar Solicitud",
+    "denyButton":"Denegar Solicitud",
+    "commentsText":"Comentarios"
+}

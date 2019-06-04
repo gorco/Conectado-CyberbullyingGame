@@ -1,0 +1,44 @@
+﻿{
+	"init":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "mobile",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') != 1"
+			}]
+		},
+		"mobile": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I can't find my mobile phone."
+			},
+			{
+				"tag": "You",
+				"msn": "I had left it on my table when the class started."
+			},
+			{
+				"tag": "You",
+				"msn": "Did anybody take it? I'll beter ask around."
+			}]
+		},
+	},
+	"door": {
+		"root": {
+			"next": "changeHour",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:10",
+			}
+		},
+	}
+}

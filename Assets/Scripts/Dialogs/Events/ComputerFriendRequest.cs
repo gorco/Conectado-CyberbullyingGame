@@ -10,7 +10,9 @@ public class ComputerFriendRequest : EventManager
 
 	public ComputerManager computer;
 	private JSONObject jsonObj;
-	public TextAsset jsonFile;
+    public string fileName;
+    TextAsset jsonFile;
+    
 
 	public override void ReceiveEvent(IGameEvent ev)
 	{
@@ -36,7 +38,9 @@ public class ComputerFriendRequest : EventManager
 	// Use this for initialization
 	void Start()
 	{
-		if (jsonFile != null)
+        jsonFile = Resources.Load<TextAsset>("Localization/" + LanguageSelector.instance.GetCurrentLanguage() + "/" + fileName);
+
+        if (jsonFile != null)
 		{
 			string fileContents = jsonFile.text;
 			jsonObj = JSONObject.Create(fileContents);
