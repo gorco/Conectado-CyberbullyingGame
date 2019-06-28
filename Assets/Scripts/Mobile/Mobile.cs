@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class Mobile : MonoBehaviour {
 
@@ -16,11 +13,13 @@ public class Mobile : MonoBehaviour {
 	public Text alarm;
 	public Text day;
 
+
+
 	public GameObject wakeUpPanel;
 	public BoxCollider2D selector;
 
 	public string fileName;
-	public TextAsset jsonFile;
+//	public TextAsset jsonFile;
 
 	private Vector2 goal;
 	private Vector2 start;
@@ -33,20 +32,27 @@ public class Mobile : MonoBehaviour {
 	private bool sound = true;
 	private bool delayed;
 
-	private string[] daysName = { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES" };
+ //   private TextAsset daysName;
+	//private string[] days;
 	// Use this for initialization
 	void Start()
 	{
-		hidePosition = this.GetComponent<Transform>().localPosition;
+
+
+        //daysName = (TextAsset)Resources.Load("Assets/Texts/" +
+        //LanguageSelector.instance.GetCurrentLanguage() + "/mobileProperties.txt", typeof(TextAsset));
+
+        //days = daysName.text.Split(',');
+        hidePosition = this.GetComponent<Transform>().localPosition;
 		wakeUpPanel.SetActive(false);
 
 		/*
 		StreamReader sr = new StreamReader(Application.dataPath + "/Texts/" + textFile);
 		string fileContents = sr.ReadToEnd();
 		sr.Close();*/
-		string fileContents = jsonFile.text;
+		//string fileContents = jsonFile.text;
 
-		wakeUpPanel.GetComponentInChildren<Text>().text = fileContents;
+		wakeUpPanel.GetComponentInChildren<Text>().text = LanguageSelector.instance.GetName("sleepMsn");
 	}
 
 	// Update is called once per frame
@@ -88,7 +94,7 @@ public class Mobile : MonoBehaviour {
 	{
 		if(!stop && (GlobalState.Hour >= 8 || GlobalState.Day == 4))
 		{
-			wakeUpPanel.GetComponentInChildren<Text>().text = "Eres incapaz de volver a dormirte. Mejor que te levantes ya";
+			wakeUpPanel.GetComponentInChildren<Text>().text = LanguageSelector.instance.GetName("sleepMsn");
 			wakeUpPanel.SetActive(true);
 		} else
 		{
@@ -125,19 +131,21 @@ public class Mobile : MonoBehaviour {
 
 	public void updateHour()
 	{
+        alarm.text = LanguageSelector.instance.GetName("alarm");
 		setHour(GlobalState.Hour, GlobalState.Minute);
-		this.day.text = daysName[GlobalState.Day] + ", DIA "+ (GlobalState.Day+1).ToString();
+		this.day.text = LanguageSelector.instance.GetName(GlobalState.Day.ToString()) +
+            ", " + LanguageSelector.instance.GetName("day") + " " + (GlobalState.Day+1).ToString();
 	}
 
-	private void OnValidate()
-	{
-#if UNITY_EDITOR
-		if (jsonFile == null && !string.IsNullOrEmpty(fileName))
-		{
-			jsonFile = UnityEditor.AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Texts/" + fileName);
-			Debug.Log("JSON FILE Setted: " + fileName);
-		}
-#endif
-	}
+//	private void OnValidate()
+//	{
+//#if UNITY_EDITOR
+//		if (jsonFile == null && !string.IsNullOrEmpty(fileName))
+//		{
+//			jsonFile = UnityEditor.AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Texts/" + fileName);
+//			Debug.Log("JSON FILE Setted: " + fileName);
+//		}
+//#endif
+//	}
 
 }

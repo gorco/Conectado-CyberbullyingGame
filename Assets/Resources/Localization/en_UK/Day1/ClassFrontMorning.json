@@ -1,0 +1,96 @@
+﻿{
+	"teacher":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Last week, if you recall, we were learning how to do a morphologic analysis of a sentence."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Now it's syntax analysis time."
+			},
+			{
+				"tag": "Knocks at the door",
+				"msn": "(Someone knocks at the door)"
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Come in."
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"next": "node2",
+			"event": {
+				"name": "class entrance",
+				"synchronous": true,
+			}
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "friendship",
+			"fragments": [{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Alejandro, you're late, please have a seat."
+			},
+			{
+				"tag": "Alejandro",
+				"character": "Alex",
+				"msn": "The newcomer is in my spot."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "The name is <$ varObject('global', 'UserNameNonStatic') $>."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Sit in another desk for now, i've asked Alison to help <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $> during the first days."
+			}]
+		},
+		"friendship": {
+			"type": "event",
+			"next": "black",
+			"event": {
+				"name": "change friendship",
+				"var": "AlejandroFS",
+				"value": -10,
+			}
+		},
+		"black": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "The bell rings, it is break time. Your opportunity of making friends."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 5,
+				"time": 5
+			}
+		}
+	}
+}

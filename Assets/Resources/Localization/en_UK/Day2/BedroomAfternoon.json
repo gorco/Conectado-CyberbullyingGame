@@ -1,0 +1,151 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Mmm, should i go to sleep?"
+			}]
+		},
+		"node1": {
+			"type": "options",
+			"questionId": "goTosleep",
+			"options": [{
+				"next": "sleep",
+				"msn": "Yes"
+			},
+			{
+				"msn": "No"
+			}]
+		},
+		"sleep": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"time": 3,
+				"value": 12
+			}
+		}		
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "There's nothing useful."
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Today i don't have time to organize all this."
+			}]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I don't need anything from this.",
+			}]
+		}
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "PC",
+				"msn": "Do you want to turn on the computer?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"options": [{
+				"next": "node1a",
+				"msn": "Yes"
+			},
+			{
+				"next": "node1b",
+				"msn": "No"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
+		}, 
+		"moveCamera": {
+			"type": "event",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I'll better get going."
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Should i leave the mobile charging?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "Yes"
+			},
+			{
+				"next": "node1b",
+				"msn": "No"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
+	}
+}

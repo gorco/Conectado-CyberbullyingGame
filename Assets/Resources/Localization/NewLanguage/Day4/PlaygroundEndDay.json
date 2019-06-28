@@ -1,0 +1,80 @@
+{
+	"init": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},{
+				"next": "node2",
+				"condition": "true"
+			}]
+		},
+		"node1":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "There's a note in my jacket..."
+			},
+			{
+				"tag": "You",
+				"msn": "\"Alison took your phone and gave it to Alex and Ana. (continues on the backside).\""
+			},
+			{
+				"tag": "You",
+				"msn": "\"She had to give'em your password or the mobile\" (end of the note)."
+			},
+			{
+				"tag": "You",
+				"msn": "Now i get about this morning. Was she threatened too?"
+			},
+			{
+				"tag": "You",
+				"msn": "Shit, i don't have any unlocking code or pattern. What will they have done with it?"
+			},
+			{
+				"tag": "You",
+				"msn": "And i won't be able to see Alex, Ana or Alison until tomorrow."
+			}]
+		},
+		"node2":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Classes are over. Time to go back home."
+			}]
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "There are no more classes today and there is nobody left."
+			},
+			{
+				"tag": "You",
+				"msn": "I'll better go home."
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 21
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "15:00",
+			}
+		}
+	}
+}

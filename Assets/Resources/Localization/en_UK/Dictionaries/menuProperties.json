@@ -1,0 +1,28 @@
+{
+	"playButton": "Play",
+    "creditsButton": "Credits",
+    "exitButton":"Exit",
+
+    "sessionText":"Session Key",
+    "inputSession": "Enter session Key",
+    
+    "userInfoTitle": "Connect with your friends!",
+    "nameText":"Name",
+    "nameField":"Your Name",
+    "userText":"User",
+    "userField":"Your Username",
+    "passText":"Password",
+    "passField":"Your Password",
+    "errorText":"Please, fill all the gaps before you begin",
+    "nameLengthError":"Your name cannot have more than 10 characters",
+    "spaceError":"Your User and Password cannot contanin any spaces",
+    "userpasswordLengthError":"Your User and Password cannot have more than 16 characters",
+    "nameError":"Your name is required",
+    "userError":"Your username is required",
+    "passwordError":"A password is required",
+    "genderError":"You need to select your gender",
+    "startButton":"Start",
+    "backButton":"Back",
+    "adviseTitle":"IMPORTANT!",
+    "adviseText":"Don't submit a password you already use. Make up a good one. It will only be used inside the game."
+}

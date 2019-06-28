@@ -1,0 +1,33 @@
+﻿{
+	"init":{
+		"root":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I should go to the toilet before i go home."
+			},
+			{
+				"tag": "You",
+				"msn": "Maybe the note was important."
+			}]
+		}
+	},
+	"door": {
+		"root": {
+			"next": "changeHour",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:08",
+			}
+		}
+	}
+}

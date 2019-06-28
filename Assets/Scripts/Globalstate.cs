@@ -5,6 +5,8 @@ using UnityEngine;
 public class GlobalState
 {
 
+    public static string Language { get; set; }
+
 	public static int Day {	get; set; }
 
 	public static int Hour { get; set; }

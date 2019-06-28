@@ -1,0 +1,114 @@
+﻿{
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> you're late."
+			},{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Please, have a seat so we can continue the class."
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Classes are over, but people have been looking at you and whispering at your back during the whole day."
+			}
+		},
+		"node3": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 25
+			}
+		}
+	},
+	"table":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "You",
+				"msn": "This spot is available, may i sit here?"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "sitDownClass",
+			"options": [{
+				"next": "node2",
+				"msn": "Yes"
+			},
+			{
+				"msn": "No"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "",
+				"msn": "(Knocks on the back, the teacher has arrived)"
+			}]
+		},
+		"node3": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Another day of whispers at your back, it's time to go home."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 25
+			}
+		}
+	}
+}

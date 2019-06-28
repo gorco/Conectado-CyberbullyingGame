@@ -1,0 +1,57 @@
+﻿{
+	"alejandro":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alejandro",
+				"character": "Alex",
+				"msn": "We have nothing to talk about."
+			},
+			{
+				"tag": "Alejandro",
+				"character": "Alex",
+				"msn": "Why don't you go see Ana and Jose, they were in the playground waiting for you."
+			},
+			{
+				"tag": "",
+				"msn": "(Smiles and points you towards the classroom door)"
+			}]
+		}
+	},
+	"door": {
+		"root": {
+			"next": "changeHour",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "anaFS",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:10",
+			}
+		},
+		"anaFS": {
+			"type": "event",
+			"next": "joseFS",
+			"event": {
+				"name": "change friendship",
+				"var": "AnaFS",
+				"value": -10,
+			}
+		},
+		"joseFS": {
+			"type": "event",
+			"event": {
+				"name": "change friendship",
+				"var": "JoseFS",
+				"value": -10,
+			}
+		}
+	}
+}

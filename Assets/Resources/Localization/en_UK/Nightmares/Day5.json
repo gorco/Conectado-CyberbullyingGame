@@ -1,0 +1,205 @@
+{
+	"end":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "final1",
+				"condition": "varObject('global', 'FinalNonStatic') <= 1"
+			},
+			{
+				"next": "final2",
+				"condition": "varObject('global', 'FinalNonStatic') == 2"
+			},
+			{
+				"next": "final3",
+				"condition": "varObject('global', 'FinalNonStatic') == 3"
+			}]
+		},
+		"final1": {
+			"type": "dialog",
+			"next": "opt",
+			"fragments": [{
+				"tag": "Voice from the portal",
+				
+				"msn": "In the end, everything has ended the same, can't say I haven't tried."
+			}, 
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "I suppose it's too late now, you have wasted the opportunity I've given you."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Álex and Ana will continue to make life impossible to the other classmates. You haven't been their first victim, nor the last."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Is it too hard asking for help when one needs it? Forget our ego. One is not to blame for what happens to him nor deserves it."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Why that fear of sharing what is going on with yourself? What one feels?"
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Why do we let people suffer? Why do we think it's best to remain quiet, to let time heal everything?"
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "It's easy to laugh at others, but what happens when they laugh at you."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Why is it best to suffer or see other suffer than ask for help? Is it asking for help sneak up? Is sneaking up avoiding someone to have a rough time?"
+			}]
+		},
+		"final2": {
+			"type": "dialog",
+			"next": "opt",
+			"fragments": [{
+				"tag": "Voice from the portal",
+				
+				"msn": "It appears I haven't made my purpose at the end, but at least I improved things a little."
+			}, 
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Álex will be watched and will at least leave you all be at peace."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "You must ask for help when you need. Forget our ego.  One is not to blame for what happens to him nor deserves it."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Time is not gonna fix things if you suffer, you must not let it go."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "We all need help once in a while and I hope now you are aware that as there are people who help you, others need you to help them."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Maybe it's best to suffer or see other suffer than ask for help, Is it asking for help sneak up? Is sneaking up avoiding someone to have a rough time?"
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "I hope that, having passed what you have gone through, you lose that fear of telling what bad thing happens to you and your classmates."
+			}]
+		},
+		"final3": {
+			"type": "dialog",
+			"next": "opt",
+			"fragments": [{
+				"tag": "Voice from the portal",
+				
+				"msn": "Good, we've managed to change things."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "You don't know yet, but we've managed Álex to stop bullying you and your classmates."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "If no one had stopped him, you wouldn't have been the last person to suffer his bullying."
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "It is good to speak up and ask for help. Noone deserves what you've dealing with, no matter the reason."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "There will be people saying you sneak up to your professor, to your classmates or to your parents. I think you've been a hero."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "I hope you never keep quiet again if someone needs help or is suffering. That you show them your support instead of following the bully."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "It's easy to do nothing, but you've learned that you can be his next victim as it's happened now."
+			}]
+		},
+		"opt": {
+			"type": "options",
+			"options": [{
+				"next": "who",
+				"msn": "Who are you?"
+			},
+			{
+				"next": "stop",
+				"msn": "Cut the crap and go away."
+			}]
+		},
+		"who": {
+			"type": "dialog",
+			"next": "end",
+			"fragments": [{
+				"tag": "Voice from the portal",
+				"msn": "I'm afraid a can't tell you that."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Think of me as someone who is conected to you by all the things we have in common."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Maybe... a voice of conscience."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "But it doesn't matter who I am. What matters is that what you've lived made you think and be a better person."
+			}]
+		},
+		"stop": {
+			"type": "dialog",
+			"next": "end",
+			"fragments": [{
+				"tag": "Voice from the portal",
+				
+				"msn": "I'm sorry my presence doesn't make you comfortable."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "And that maybe this was for nothing..."
+			}]
+		},
+		"end": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "active object",
+				"time": 0,
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 28,
+				"time": 5,
+			}
+		}
+	},
+}

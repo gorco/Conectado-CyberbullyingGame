@@ -1,0 +1,103 @@
+{
+	"intro":{
+		"root": {
+			"type": "dialog",
+			"next": "fade",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Your first day of school. Why don't you take a seat?"			
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Pick the spot you like the most."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "shadow"
+			}
+		}
+	},
+	"finishNightmare":{
+		"root": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "I think you missed your spot."
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Don't you even know how to sit?"
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Are you even worth anything?"
+			},
+			{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "How do you expect making friends being like this?"
+			}]
+		},
+		"variable": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 1,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	},
+	"sit" : {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "I can see you've found a seat, but... "
+			},
+			{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "That seat is mine, you will have to take another one."
+			},
+			{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "You can sit wherever you like but in that one."
+			}]
+		}
+	}
+
+}

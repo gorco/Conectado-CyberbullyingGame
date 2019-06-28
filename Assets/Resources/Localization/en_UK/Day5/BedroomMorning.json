@@ -1,0 +1,155 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Gotta go."
+			}]
+		}		
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I don't need anything from here right now."
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "..."
+			}]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I'll take everything and leave."
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "BagPicked",
+				"value": true
+			}
+		},
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "PC",
+				"msn": "Do you want to turn on the PC?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"options": [{
+				"next": "node1a",
+				"msn": "Yes"
+			},
+			{
+				"next": "node1b",
+				"msn": "No"
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "It's not working, is it broken?"
+			}]
+		},	
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Better not and go to class."
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Do i leave the mobile charging?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "Yes"
+			},
+			{
+				"next": "node1b",
+				"msn": "No"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"next": "fork",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		},
+		"fork": {
+			"type": "fork",
+			"options": [{
+				"next": "parentsGo",
+				"condition": "repeated == true"
+			}]
+		},
+		"parentsGo": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Mom and Dad are already gone, i'll see them this afternoon."
+			}]
+		},	
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "repeated",
+				"value": true
+			}
+		},
+	}
+}

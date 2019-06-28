@@ -1,0 +1,210 @@
+﻿{
+	"board":{
+		"root": {
+			"type": "event",
+			"next": "forkNode",
+			"event": {
+				"name": "change variable",
+				"var": "BoardQuest",
+				"value": 1,
+			}
+		},
+		"forkNode": {
+			"type": "fork",
+			"options": [{
+				"next": "gum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "washed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "nogum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			}]
+		},
+		"gum": {
+			"type": "event",
+			"next": "gumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGum"
+			}
+		},
+		"gumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "You",
+				"msn": "There's a picture of me and it has been modified so it looks like i'm shitting chewing gums."
+			},
+			{
+				"tag": "You",
+				"msn": "Who wants to mock me this way?"
+			}]
+		},
+		"deactive": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 0
+			}
+		},
+		"washed": {
+			"type": "event",
+			"next": "washedDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGumWhased"
+			}
+		},
+		"washedDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "You",
+				"msn": "It's a picture of me yesterday right after i removed the gum."
+			},
+			{
+				"tag": "You",
+				"msn": "With a very original sentence... \"A baby arrived to class\". "
+			}]
+		},
+		"nogum": {
+			"type": "event",
+			"next": "nogumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoDog"
+			}
+		},
+		"nogumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "You",
+				"msn": "It's a picture of a dog with my face on it and sticking out the tongue."
+			},
+			{
+				"tag": "You",
+				"msn": "Why? Who put it there?"
+			}]
+		},
+	},
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> you're late."
+			},{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Please, have a seat so we can continue the class."
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "It has been boring day, classes are over and most of the people have been ignoring me the whole day. There's a paper note on your desk telling you to go to the toilet, there's somebody waiting there."
+			}
+		},
+		"node3": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 15
+			}
+		}
+	},
+	"table":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "You",
+				"msn": "This spot is free, may i sit here?"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "sitDownClass",
+			"options": [{
+				"next": "node2",
+				"msn": "Yes"
+			},
+			{
+				"msn": "No"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "",
+				"msn": "(Knocks on the back, the teacher has arrived)."
+			}]
+		},
+		"node3": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "It has been boring day, classes are over and most of the people have been ignoring me the whole day. There's a paper note on your desk telling you to go to the toilet, there's somebody waiting there."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 15
+			}
+		}
+	}
+}

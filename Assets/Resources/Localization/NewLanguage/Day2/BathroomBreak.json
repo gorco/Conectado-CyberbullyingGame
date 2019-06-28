@@ -1,0 +1,78 @@
+﻿{
+	"bathroomExit": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"mirror": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeInit",
+				"condition": "varObject('global', 'GumQuestNonStatic') != 2"
+			}]
+		},
+		"nodeInit": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "gum == false"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I've already removed the gum, but the stain is worse."
+			},
+			{
+				"tag": "You",
+				"msn": "They will laught at me even more."
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"next": "nodeRepeat",
+			"set": {
+				"var": "gum",
+				"value": false
+			}
+		},
+		"node0": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Maybe water and soap are all i need."
+			}]
+		}, 
+		"options": {
+			"type": "options",
+			"questionId": "bathroomGum",
+			"options": [{
+				"next": "quest",
+				"msn": "(Try water and soap)"
+			},
+			{
+				"msn": "(Leave as it is)"
+			}]
+		},
+		"quest": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GumQuest",
+				"value": 1,
+			}
+		},
+	}
+}

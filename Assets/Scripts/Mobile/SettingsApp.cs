@@ -104,7 +104,7 @@ public class SettingsApp : MonoBehaviour {
 		}
 		else
 		{
-			if (Application.isWebPlayer == false && Application.isEditor == false)
+			if (Application.platform != RuntimePlatform.WebGLPlayer && Application.isEditor == false)
 			{
 				Application.Quit();
 				System.Diagnostics.Process.GetCurrentProcess().Kill();
@@ -136,7 +136,9 @@ public class SettingsApp : MonoBehaviour {
 			}
 			else
 			{
-				if (Application.isWebPlayer == false && Application.isEditor == false)
+                
+
+                if (Application.platform != RuntimePlatform.WebGLPlayer && Application.isEditor == false)
 				{
 					CloseAll();
 				}
@@ -159,7 +161,7 @@ public class SettingsApp : MonoBehaviour {
 
 	public void CloseAll()
 	{
-		if (Application.isWebPlayer == false && Application.isEditor == false)
+		if (Application.platform != RuntimePlatform.WebGLPlayer && Application.isEditor == false)
 		{
 			Application.Quit();
 			System.Diagnostics.Process.GetCurrentProcess().Kill();

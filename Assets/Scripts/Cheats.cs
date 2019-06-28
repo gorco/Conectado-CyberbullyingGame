@@ -20,6 +20,8 @@ public class Cheats : MonoBehaviour {
 	public InputField namePlayer;
 	public InputField nick;
 
+    public InputField laguage;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -44,6 +46,8 @@ public class Cheats : MonoBehaviour {
 		GlobalState.UserName = namePlayer.text;
 		GlobalState.Nick = nick.text;
 		GlobalState.UserPass = pass.text;
+
+        LanguageSelector.instance.SetLanguage(laguage.text);
 
 		SceneManager.LoadScene(2);
 	}

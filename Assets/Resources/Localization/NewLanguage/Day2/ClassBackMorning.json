@@ -1,0 +1,131 @@
+﻿{
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> your're late."
+			},{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Please, have a seat and let's continue the class."
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "You go and sit in a first empty desk you see, while everyone is looking at you."
+			}
+		},
+		"node3": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 10
+			}
+		}
+	},
+	"table":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "You",
+				"msn": "This place is available, may i sit here?"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "sitDownClass",
+			"options": [{
+				"next": "node2",
+				"msn": "Yes"
+			},
+			{
+				"msn": "No"
+			},
+			{
+				"next": "gum",
+				"msn": "Look at the chair",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "",
+				"msn": "(Knocks in the back, the teacher is here)"
+			}]
+		},
+		"gum": {
+			"type": "dialog",
+			"next": "noGum",
+			"fragments": [{
+				"tag": "You",
+				"msn": "There's a gum stucked on it."
+			},
+			{
+				"tag": "You",
+				"msn": "Yesterday probably happened likewise, i'll better remove it and sit."
+			}]
+		},
+		"noGum": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "change variable",
+				"var": "GumQuest",
+				"value": 2,
+			}
+		},
+		"node3": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "You all sit down, when you realize it's already break time."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 10
+			}
+		}
+	}
+}

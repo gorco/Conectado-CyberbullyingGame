@@ -1,0 +1,228 @@
+﻿{
+	"bathroomExit": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"guille":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "I'm truly sorry, for real, but my parents cannot know about it."
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"next": "sexFork",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"sexFork": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeMale",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "nodeFemale",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"nodeMale": {
+			"type": "dialog",
+			"next": "nodeUnisex",
+			"fragments": [{
+				"tag": "You",
+				"msn": "So the guy of the note it was you, Guille."
+			},
+			{
+				"tag": "You",
+				"msn": "So now you talk to me."
+			},
+			{
+				"tag": "You",
+				"msn": "What about half of the class ignoring me?"
+			}]
+		},
+		"nodeFemale": {
+			"type": "dialog",
+			"next": "nodeUnisex",
+			"fragments": [{
+				"tag": "You",
+				"msn": "What are you doing in the girls' toilet, Guille?"
+			},
+			{
+				"tag": "You",
+				"msn": "You can't be here, go away."
+			},
+			{
+				"tag": "Guille",
+				"character" : "Guille",
+				"msn": "I need to talk to you, i'm the one who left the note."
+			},
+			{
+				"tag": "You",
+				"msn": "Now do you talk to me?"
+			},
+			{
+				"tag": "You",
+				"msn": "What about half of the class ignores me?"
+			}]
+		},
+		"nodeUnisex": {
+			"type": "dialog",
+			"next": "changeVariable",
+			"fragments": [{
+				"tag": "Guille",
+				"character" : "Guille",
+				"msn": "That's what i want to talk to you."
+			},
+			{
+				"tag": "Guille",
+				"character" : "Guille",
+				"msn": "I can't talk to you while Alex or any of his friends see us."
+			},
+			{
+				"tag": "Guille",
+				"character" : "Guille",
+				"msn": "He's threatened me to send to my parents a picture of me smoking and drinking."
+			},
+			{
+				"tag": "Guille",
+				"character" : "Guille",
+				"msn": "My parents are very strict and if they discover it i don't know what could happen...they might even send me to another high school."
+			},
+			{
+				"tag": "You",
+				"msn": "But why Alex doesn't want anybody to talk me?"
+			},
+			{
+				"tag": "Guille",
+				"character" : "Guille",
+				"msn": "We don't know, he has it in for you since the first day."
+			},
+			{
+				"tag": "Guille",
+				"character" : "Guille",
+				"msn": "Too many people does what he wants, but there're a few of us who have been threatened by him."
+			},
+			{
+				"tag": "Guille",
+				"character" : "Guille",
+				"msn": "It happened something similar last year to Maria, although it was Ana's thing."
+			},
+			{
+				"tag": "Guille",
+				"character" : "Guille",
+				"msn": "She doesn't have friends since then and when someone tries to talk to her...she ignores us."
+			},
+			{
+				"tag": "Guille",
+				"character" : "Guille",
+				"msn": "She hasn't forgiven us yet."
+			},
+			{
+				"tag": "Guille",
+				"character" : "Guille",
+				"msn": "Well...i just wanted to say sorry, but until Alex stops being upset i won't be able to talk to you."
+			},
+			{
+				"tag": "Guille",
+				"character" : "Guille",
+				"msn": "I'm really sorry <$ varObject('global', 'UserNameNonStatic') $>."
+			}]
+		},
+		"changeVariable": {
+			"type": "event",
+			"next": "boardFork",
+			"event": {
+				"name": "change variable",
+				"var": "GuilleSpoke",
+				"value": true,
+			}
+		},
+		"boardFork": {
+			"type": "fork",
+			"options": [{
+				"next": "option",
+				"condition": "varObject('global', 'BoardQuestNonStatic') == 1"
+			}]
+		},
+		"option": {
+			"type": "options",
+			"questionId": "GuilleBathroomDialog",
+			"options": [{
+				"next": "nodeAlex",
+				"msn": "And that's it? Alex gets what he wants?"
+			},
+			{
+				"next": "nodeBoard",
+				"msn": "What about my picture on the board? Was it Alex?"
+			}]
+		},
+		"nodeAlex": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "I'm deeply sorry, for real."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "But i don't want him to make my life miserable too."
+			}]
+		},
+		"nodeBoard": {
+			"type": "dialog",
+			"next": "guilleQuest",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "That was Ana's way."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "She's really into Alex and if he mess with you, she's going to do the same."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "And Jose is his lap dog, unable to think by himself."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Avoid the three of them."
+			}]
+		},
+		"guilleQuest": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 1,
+			}
+		}
+	}
+}

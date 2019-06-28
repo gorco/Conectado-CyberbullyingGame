@@ -20,8 +20,12 @@ public class Notification : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		num = (int)Mathf.Ceil(curve.Evaluate(delta/15)*110)-1;
-		delta += Time.deltaTime;
+        
+        if(LanguageSelector.instance.GetCurrentLanguage() != "NULL")
+        {
+            num = (int)Mathf.Ceil(curve.Evaluate(delta/15)*110)-1;
+		    delta += Time.deltaTime;
+        }
 	}
 
 	private void FixedUpdate()

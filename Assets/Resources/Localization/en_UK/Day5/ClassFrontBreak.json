@@ -1,0 +1,37 @@
+﻿{
+	"init":{
+		"root":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Everybody's gone."
+			},
+			{
+				"tag": "You",
+				"msn": "Should i trust Alex and go to the toilet to talk to <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'Ana') $>?"
+			},
+			{
+				"tag": "You",
+				"msn": "If i go will it be over once for all?"
+			}]
+		}
+	},
+	"door": {
+		"root": {
+			"next": "changeHour",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:08",
+			}
+		}
+	}
+}

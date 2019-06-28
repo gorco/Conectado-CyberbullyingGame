@@ -1,0 +1,307 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "alisonBoard",
+				"condition": "varObject('global', 'AlisonFSNonStatic') > 60"
+			},
+			{
+				"next": "ignore",
+				"condition": "true"
+			}]
+		},	
+		"ignore": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "You",
+				"msn": "Again ignoring me... What did i do?"
+			}]
+		}, 
+		"alisonBoard": {
+			"type": "event",
+			"next": "node0",
+			"event": {
+				"name": "change variable",
+				"var": "AlisonBoard",
+				"value": true,
+			}
+		},
+		"node0": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node1",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Ignore the board."
+			}]
+		}, 
+		"node1": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "I was looking at the board."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "And... it'll be better if you ignore it today."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "AlisonNoticeBoard",
+			"options": [{
+				"next": "node1A",
+				"msn": "I've already seen it."
+			},
+			{
+				"next": "node1B",
+				"msn": "Why? What is it?"
+			}]
+		},
+		"node1A": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "I'm sorry, Álex went too far with this."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Maybe you should talk with the teacher or the pricipal."
+			}]
+		},
+		"node1B": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Someone has posted a picture of yours in every school board."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "It was also in the playground."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "I think you should go talk to any teacher available."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+	},
+	"board":{
+		"root": {
+			"type": "event",
+			"next": "forkNode",
+			"event": {
+				"name": "change variable",
+				"var": "BoardQuest",
+				"value": 1,
+			}
+		},
+		"forkNode": {
+			"type": "fork",
+			"options": [{
+				"next": "gum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "washed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "nogum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			}]
+		},
+		"gum": {
+			"type": "event",
+			"next": "gumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGum"
+			}
+		},
+		"gumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "You",
+				"msn": "It's a picture of me and it has been modified so it looks like i'm shitting chewing gums."
+			},
+			{
+				"tag": "You",
+				"msn": "Who wants to mock me this way?"
+			}]
+		},
+		"deactive": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 0
+			}
+		},
+		"washed": {
+			"type": "event",
+			"next": "washedDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGumWhased"
+			}
+		},
+		"washedDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "You",
+				"msn": "It's a picture of me of yesterday right after i removed the gum."
+			},
+			{
+				"tag": "You",
+				"msn": "With a very original sentence... \"A baby arrived to class\"."
+			}]
+		},
+		"nogum": {
+			"type": "event",
+			"next": "nogumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoDog"
+			}
+		},
+		"nogumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "You",
+				"msn": "It's a picture of my face in a dog's body sticking out the tongue."
+			},
+			{
+				"tag": "You",
+				"msn": "Why? Who put this?"
+			}]
+		},
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I cannot go there, it's the boys' toilet."
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I cannot go there, it's the girls' toilet."
+			}]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "speak",
+				"condition": "varObject('global', 'AlisonFSNonStatic') > 60 &&  varObject('state', 'AlisonBoard') == false"
+			},
+			{
+				"next": "move",
+				"condition": "true"
+			},]
+		},
+		"move": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		},
+		"speak": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I should go talk to Alison before getting in, she's been acting odd."
+			}]
+		}
+	}
+}
