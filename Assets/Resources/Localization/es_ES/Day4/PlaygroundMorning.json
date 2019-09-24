@@ -115,16 +115,17 @@
 			"next": "changeVariable",
 			"fragments": [{
 				"tag": "Alison",
+				"character": "Alison",
 				"msn": "Os escribís las contraseñas a través del móvil"
 			},{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Perfecto. \"Best Friends\" (sonríe de oreja a oreja)"
+				"msn": "Perfecto. Best Friends (sonríe de oreja a oreja)"
 			}]
-		},	
+		},
 		"changeVariable": {
 			"type": "event",
-			"next": "bellVar",
+			"next": "checkHour",
 			"event": {
 				"name": "change variable",
 				"var": "SharedPassQuest",
@@ -133,12 +134,23 @@
 		},
 		"alisonFS": {
 			"type": "event",
-			"next": "bellVar",
+			"next": "checkHour",
 			"event": {
 				"name": "change friendship",
 				"var": "AlisonFS",
 				"value": -50,
 			}
+		},
+		"checkHour": {
+			"type": "fork",
+			"options": [{
+				"next": "bellVar",
+				"condition": "varObject('global', 'MinuteNonStatic') < 30 "
+			},
+			{
+				"next": "lateDialog",
+				"condition": "varObject('global', 'MinuteNonStatic') > 30"
+			}]
 		},
 		"bellVar": {
 			"type": "event",
@@ -158,6 +170,15 @@
 			{
 				"tag": "",
 				"msn": "<<La campana está sonando>>"
+			}]
+		},
+		"lateDialog": {
+			"type": "dialog",
+			"next": "fade3",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Me voy a clase ya, que es tarde, ya verás como nos cae bronca."
 			}]
 		},
 		"hour": {

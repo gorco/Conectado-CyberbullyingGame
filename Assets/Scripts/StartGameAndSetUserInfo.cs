@@ -1,4 +1,5 @@
 ﻿using RAGE.Analytics;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,42 +34,57 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 
 	public void StartGame()
 	{
-		if (userName.text == "" && nick.text == "*load*" && userPass.text == "")
+		if (userName.text == "" && userPass.text == "")
 		{
-			GlobalState.Day = PlayerPrefs.GetInt("Day");
-			GlobalState.Hour = PlayerPrefs.GetInt("Hour");
-			GlobalState.Minute = PlayerPrefs.GetInt("Minute");
+			if (nick.text == "*load*")
+			{
+				GlobalState.Day = PlayerPrefs.GetInt("Day");
+				GlobalState.Hour = PlayerPrefs.GetInt("Hour");
+				GlobalState.Minute = PlayerPrefs.GetInt("Minute");
 
-			GlobalState.Repeated = PlayerPrefs.GetString("Repeated").ToLower() == "false" ? false : true;
-			GlobalState.NotRepeatedDays = PlayerPrefs.GetString("NotRepeatedDays").ToLower() == "false" ? false : true;
-			GlobalState.MaleSex = PlayerPrefs.GetString("MaleSex").ToLower() == "false" ? false : true;
-			GlobalState.MessagesPending = PlayerPrefs.GetString("MessagesPending").ToLower() == "false" ? false : true;
+				GlobalState.Repeated = PlayerPrefs.GetString("Repeated").ToLower() == "false" ? false : true;
+				GlobalState.NotRepeatedDays = PlayerPrefs.GetString("NotRepeatedDays").ToLower() == "false" ? false : true;
+				GlobalState.MaleSex = PlayerPrefs.GetString("MaleSex").ToLower() == "false" ? false : true;
+				GlobalState.MessagesPending = PlayerPrefs.GetString("MessagesPending").ToLower() == "false" ? false : true;
 
-			GlobalState.UserName = PlayerPrefs.GetString("UserName");
-			GlobalState.Nick = PlayerPrefs.GetString("Nick");
-			GlobalState.UserPass = PlayerPrefs.GetString("UserPass");
+				GlobalState.UserName = PlayerPrefs.GetString("UserName");
+				GlobalState.Nick = PlayerPrefs.GetString("Nick");
+				GlobalState.UserPass = PlayerPrefs.GetString("UserPass");
 
-			GlobalState.MariaFS = PlayerPrefs.GetInt("MariaFS");
-			GlobalState.AlisonFS = PlayerPrefs.GetInt("AlisonFS");
-			GlobalState.AnaFS = PlayerPrefs.GetInt("AnaFS");
-			GlobalState.GuillermoFS = PlayerPrefs.GetInt("GuillermoFS");
-			GlobalState.JoseFS = PlayerPrefs.GetInt("JoseFS");
-			GlobalState.AlejandroFS = PlayerPrefs.GetInt("AlejandroFS");
-			GlobalState.ParentsFS = PlayerPrefs.GetInt("ParentsFS");
-			GlobalState.TeacherFS = PlayerPrefs.GetInt("TeacherFS");
-			GlobalState.MariaQuest = PlayerPrefs.GetInt("MariaQuest");
-			GlobalState.AlisonQuest = PlayerPrefs.GetInt("AlisonQuest");
-			GlobalState.AnaQuest = PlayerPrefs.GetInt("AnaQuest");
-			GlobalState.JoseQuest = PlayerPrefs.GetInt("JoseQuest");
-			GlobalState.GuillermoQuest = PlayerPrefs.GetInt("GuillermoQuest");
-			GlobalState.AlejandroQuest = PlayerPrefs.GetInt("AlejandroQuest");
-			GlobalState.GumQuest = PlayerPrefs.GetInt("GumQuest");
-			GlobalState.BoardQuest = PlayerPrefs.GetInt("BoardQuest");
-			GlobalState.ParentsMeetingQuest = PlayerPrefs.GetInt("ParentsMeetingQuest");
-			GlobalState.SharedPassQuest = PlayerPrefs.GetInt("SharedPassQuest");
-			GlobalState.Final = PlayerPrefs.GetInt("Final");
+				GlobalState.MariaFS = PlayerPrefs.GetInt("MariaFS");
+				GlobalState.AlisonFS = PlayerPrefs.GetInt("AlisonFS");
+				GlobalState.AnaFS = PlayerPrefs.GetInt("AnaFS");
+				GlobalState.GuillermoFS = PlayerPrefs.GetInt("GuillermoFS");
+				GlobalState.JoseFS = PlayerPrefs.GetInt("JoseFS");
+				GlobalState.AlejandroFS = PlayerPrefs.GetInt("AlejandroFS");
+				GlobalState.ParentsFS = PlayerPrefs.GetInt("ParentsFS");
+				GlobalState.TeacherFS = PlayerPrefs.GetInt("TeacherFS");
+				GlobalState.MariaQuest = PlayerPrefs.GetInt("MariaQuest");
+				GlobalState.AlisonQuest = PlayerPrefs.GetInt("AlisonQuest");
+				GlobalState.AnaQuest = PlayerPrefs.GetInt("AnaQuest");
+				GlobalState.JoseQuest = PlayerPrefs.GetInt("JoseQuest");
+				GlobalState.GuillermoQuest = PlayerPrefs.GetInt("GuillermoQuest");
+				GlobalState.AlejandroQuest = PlayerPrefs.GetInt("AlejandroQuest");
+				GlobalState.GumQuest = PlayerPrefs.GetInt("GumQuest");
+				GlobalState.BoardQuest = PlayerPrefs.GetInt("BoardQuest");
+				GlobalState.ParentsMeetingQuest = PlayerPrefs.GetInt("ParentsMeetingQuest");
+				GlobalState.SharedPassQuest = PlayerPrefs.GetInt("SharedPassQuest");
+				GlobalState.Final = PlayerPrefs.GetInt("Final");
 
-			SceneManager.LoadScene(PlayerPrefs.GetInt("Scene"));
+				SceneManager.LoadScene(PlayerPrefs.GetInt("Scene"));
+			} else if(nick.text.StartsWith("test."))
+			{
+				String[] values = nick.text.Split('.');
+				SceneManager.LoadScene(values[1]);
+				GlobalState.Day = (int.Parse(values[2]));
+				GlobalState.Hour = (int.Parse(values[3]));
+				GlobalState.Minute = (int.Parse(values[4]));
+				GlobalState.Repeated = false;
+
+				GlobalState.UserName = "test";
+				GlobalState.Nick = "test";
+				GlobalState.UserPass = "test";
+			}
 		} else
 		{
 			if (userName.text.Length > 10)

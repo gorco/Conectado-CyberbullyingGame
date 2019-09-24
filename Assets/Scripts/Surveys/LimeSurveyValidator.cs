@@ -13,8 +13,8 @@ public class LimeSurveyValidator : MonoBehaviour {
 	public string type;
 	public  NameSaver nameSaver;
 
-	private static int nextScene = 1;
-	private static int initScene = 0;
+	private static int nextScene = 2;
+	private static int initScene = 1;
 
 	void Start()
 	{
