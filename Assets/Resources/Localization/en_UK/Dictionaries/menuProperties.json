@@ -21,8 +21,16 @@
     "userError":"Your username is required",
     "passwordError":"A password is required",
     "genderError":"You need to select your gender",
+	"loadError":"No started game found for that user",
     "startButton":"Start",
     "backButton":"Back",
+	"continueButton":"Continue",
+	"loadButton":"Select day",
     "adviseTitle":"IMPORTANT!",
-    "adviseText":"Don't submit a password you already use. Make up a good one. It will only be used inside the game."
+    "adviseText":"Don't submit a password you already use. Make up a good one. It will only be used inside the game.",
+
+	"Day2Button":"Day 2",
+	"Day3Button":"Day 3",
+	"Day4Button":"Day 4",
+	"Day5Button":"Day 5"
 }

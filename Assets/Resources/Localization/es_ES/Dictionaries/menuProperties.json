@@ -21,8 +21,16 @@
     "userError":"Necesito tu usuario",
     "passwordError":"Necesito tu contraseña",
     "genderError":"Necesitas seleccionar un género",
+	"loadError":"No se ha encontrado partida empezada para ese usuario",
     "startButton":"Empezar",
+	"continueButton":"Continuar",
+	"loadButton":"Elegir día",
     "backButton":"Atrás",
     "adviseTitle":"¡IMPORTANTE!",
-    "adviseText":"No introduzcas una contraseña que ya uses. Piensa en una buena. Sólo será utilizada dentro del juego."
+    "adviseText":"No introduzcas una contraseña que ya uses. Piensa en una buena. Sólo será utilizada dentro del juego.",
+
+	"Day2Button":"Día 2",
+	"Day3Button":"Día 3",
+	"Day4Button":"Día 4",
+	"Day5Button":"Día 5"
 }

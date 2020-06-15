@@ -60,12 +60,16 @@ public class ComputerManager : EventManager {
 
 	private bool sendTraces = false;
 
+	private String computerStringState;
+
 	// Use this for initialization
 	void Start () {
 		if(PlayerPrefs.GetInt("online") == 1)
 		{
 			sendTraces = true;
 		}
+		computerStringState = "";
+
 		OffComputer();
 		newFriends.SetActive(false);
 		friendsRequests = 0;
@@ -84,6 +88,12 @@ public class ComputerManager : EventManager {
 		this.gameEvent = new GameEvent();
 		this.gameEvent.Name = "start sequence";
 	}
+
+	internal string GetComputerStringState()
+	{
+		return computerStringState;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if(friendsRequests > 0)
@@ -99,6 +109,7 @@ public class ComputerManager : EventManager {
 	{
 		Debug.LogWarning("añadir comentario a la publicación con KEY -> " + keyPublication);
 		publications[keyPublication].AddComment(author, comment);
+		computerStringState += "Comment:" + keyPublication + "|" + author + "|" + comment;
 	}
 
 	public void AddTmpComment(GameObject socialComment)
@@ -158,6 +169,7 @@ public class ComputerManager : EventManager {
 		friend.transform.localScale = new Vector3(1, 1, 1);
 		friendsContent.sizeDelta = new Vector2(friendsContent.sizeDelta.x, friendsContent.sizeDelta.y + hight);
 
+		computerStringState += "Friend:" + name +"|" + globalKey + "|" + state ;
 		friends.Add(sc);
 	}
 
@@ -204,6 +216,8 @@ public class ComputerManager : EventManager {
 
 		photo.transform.localScale = new Vector3(1, 1, 1);
 		photosContent.sizeDelta = new Vector2(photosContent.sizeDelta.x, photosContent.sizeDelta.y + height + 50);
+
+		computerStringState += "Publication:" + key + "|" + author + "|" + photoPath + "|" + title;
 
 		Debug.LogWarning("añadir publicación con KEY -> "+ key + " From the user" + author);
 		publications.Add(key, pb);

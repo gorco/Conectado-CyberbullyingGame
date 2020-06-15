@@ -73,6 +73,7 @@ public class Mobile : MonoBehaviour {
 
 	public void takeMobile(float seconds)
 	{
+		updateHour();
 		goal = showPosition;
 		start = hidePosition;
 		animationSeconds = seconds;
@@ -131,6 +132,7 @@ public class Mobile : MonoBehaviour {
 
 	public void updateHour()
 	{
+		Debug.LogWarning("update hour");
         alarm.text = LanguageSelector.instance.GetName("alarm");
 		setHour(GlobalState.Hour, GlobalState.Minute);
 		this.day.text = LanguageSelector.instance.GetName(GlobalState.Day.ToString()) +

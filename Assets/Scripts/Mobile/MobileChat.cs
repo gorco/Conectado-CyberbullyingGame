@@ -63,7 +63,7 @@ public class MobileChat : MonoBehaviour
 
     private float exitButtonTime = 0;
 
-
+	private string mobileStringState;
     //private TextAsset daysName;
 
     //private string[] days;
@@ -84,7 +84,9 @@ public class MobileChat : MonoBehaviour
         hidePosition = this.GetComponent<Transform>().localPosition;
         chats = new Dictionary<string, List<GameObject>>();
         tempBubbles = new List<GameObject>();
-        bubbleContent.sizeDelta = new Vector2(bubbleContent.sizeDelta.x, initContentSize);
+		mobileStringState = "";
+
+		bubbleContent.sizeDelta = new Vector2(bubbleContent.sizeDelta.x, initContentSize);
     }
 
     private void Awake()
@@ -100,6 +102,7 @@ public class MobileChat : MonoBehaviour
         GameObject bubble;
         if (from == null || from == "")
         {
+			from = "";
             bubble = Instantiate(myBubblePrefab, bubbleContent);
         }
         else
@@ -109,11 +112,17 @@ public class MobileChat : MonoBehaviour
         TextBubble script = bubble.GetComponent<TextBubble>();
         script.textPrefab = textTemplate;
         script.CreateBubble(text, from);
+		mobileStringState += "Mobile:" + chat + "|" + from + "|" + text + "\n";
         AddBubble(bubble, chat);
         tempBubbles.Add(bubble);
     }
 
-    public Sequence GetChatSequence(string chat)
+	public string GetMobileStringState()
+	{
+		return mobileStringState;
+	}
+
+	public Sequence GetChatSequence(string chat)
     {
         if (sequences.ContainsKey(chat))
         {

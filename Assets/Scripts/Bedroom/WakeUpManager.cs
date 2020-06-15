@@ -24,6 +24,7 @@ public class WakeUpManager : MonoBehaviour {
 
 	public GameObject introText;
 
+	private SaveState saver;
 
 	int[] scenesPerDay = {4, 9, 14, 19, 24 };
 
@@ -38,16 +39,35 @@ public class WakeUpManager : MonoBehaviour {
 	/// </summary>
 	private int state;
 
+	private MobileChat mobileChat;
+	private ComputerManager computer;
+
 	// Use this for initialization
 	void Start () {
 		g = GlobalState.Instance;
 		cameraScroll.disableScroll(true);
 		state = 0;
+		if(mobileChat == null)
+		{
+			mobileChat = FindObjectsOfType<MobileChat>()[0];
+		}
+		if (computer == null)
+		{
+			computer = FindObjectsOfType<ComputerManager>()[0];
+		}
+		saver = new SaveState(mobileChat, computer);
+		
 		if (!GlobalState.NowIsLaterThan(8, 0)) {
 			if (GlobalState.Day == 0)
 			{
 				introText.SetActive(true);
 				offset = introTime;
+			} else
+			{
+				Debug.Log("guardando wip");
+				// guardar día
+				saver.SaveDay(SceneManager.GetActiveScene().buildIndex);
+				Debug.Log("guardado done");
 			}
 				GlobalState.Hour = 7;
 				GlobalState.Minute = 30;
@@ -55,12 +75,12 @@ public class WakeUpManager : MonoBehaviour {
 			introText.SetActive(false);
 		}
 		mobileObject.updateHour();
-		initQuests();
+		InitQuests();
 
 		InitMobileGUI.InitMobileGUIObject(false);
 	}
 	
-	void initQuests()
+	void InitQuests()
 	{
 		GlobalState.GuillermoQuest = 0;
 		GlobalState.AlisonQuest = 0;
