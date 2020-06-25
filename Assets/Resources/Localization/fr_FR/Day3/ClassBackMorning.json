@@ -1,0 +1,223 @@
+{
+	"board":{
+		"root": {
+			"type": "event",
+			"next": "forkNode",
+			"event": {
+				"name": "change variable",
+				"var": "BoardQuest",
+				"value": 1,
+			}
+		},
+		"forkNode": {
+			"type": "fork",
+			"options": [{
+				"next": "gum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "washed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "nogum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			}]
+		},
+		"gum": {
+			"type": "event",
+			"next": "gumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGum"
+			}
+		},
+		"gumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Il y a une photo de moi et elle a été modifiée pour qu'on ait l'impression que je chie des chewing-gums."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Qui veut se moquer de moi de cette façon ?"
+				}
+			]
+		},
+		"deactive": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 0
+			}
+		},
+		"washed": {
+			"type": "event",
+			"next": "washedDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGumWhased"
+			}
+		},
+		"washedDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est une photo de moi hier, juste après que j'ai enlevé le chewing-gum."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Avec une phrase très originale... \"Un bébé est arrivé en classe \""
+				}
+			]
+		},
+		"nogum": {
+			"type": "event",
+			"next": "nogumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoDog"
+			}
+		},
+		"nogumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est une photo d'un chien avec ma tête dessus et qui tire la langue."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Pourquoi ? Qui l'a mise là ?"
+				}
+			]
+		},
+	},
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [
+				{
+					"tag": "Teacher",
+					"character": "Teacher",
+					"msn": "<$ varObject('global', 'UserNameNonStatic') $> vous êtes en retard."
+				},
+				{
+					"tag": "Teacher",
+					"character": "Teacher",
+					"msn": "S'il vous plaît, asseyez-vous pour que nous puissions continuer le cours."
+				}
+			]
+		},
+		"node2": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "La journée a été ennuyeuse, les cours sont terminés et la plupart des gens m'ont ignoré toute la journée. Il y a une note sur ton bureau qui te dit d'aller aux toilettes, il y a quelqu'un qui t'attend là-bas."
+			}
+		},
+		"node3": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 15
+			}
+		}
+	},
+	"table":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Cette place est libre, est-ce que je m'assois ici ?"
+				}
+			]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "sitDownClass",
+			"options": [{
+				"next": "node2",
+				"msn": "Oui"
+			},
+			{
+				"msn": "Non"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [
+				{
+					"tag": "",
+					"msn": "(Bruits de fond, le professeur est arrivé)"
+				}
+			]
+		},
+		"node3": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "La journée a été ennuyeuse, les cours sont terminés et la plupart des gens m'ont ignoré toute la journée. Il y a une note sur ton bureau qui te dit d'aller aux toilettes, il y a quelqu'un qui t'attend là-bas."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 15
+			}
+		}
+	}
+}

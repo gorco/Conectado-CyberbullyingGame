@@ -1,0 +1,21 @@
+{
+    "homeNote":"Ceci est ton mur, regarde ce que tes amis ont partagé.",   
+    "homeButton":"Mur",
+    "friendsButton":"Amis",
+    "photosButton":"Publier",
+
+    "newFriendsText":"Tu as eu une nouvelle demande d'ami!",
+
+    "error":"Le nom d'utilisateur/mot de passe introduit est incorrect.",
+    "user":"Nom d'utilisateur",
+    "pass":"Mot de passe",
+    "logInText":"Se connecter",
+    
+    "friendsText":"Amis",
+    "pendingFriendsText":"Demandes d'ami en attente: ",
+    "logoText":"CONNECTE-TOI AVEC TES AMIS!",
+
+    "acceptButton":"Accepter la demande",
+    "denyButton":"Refuser la demande",
+    "commentsText":"Commentaires"
+}

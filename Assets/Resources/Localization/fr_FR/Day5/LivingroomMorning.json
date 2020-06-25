@@ -1,0 +1,88 @@
+{
+	"mother" : {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeA",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "nodeB",
+				"condition": "true"
+			}]
+		},
+		"nodeA": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Fait attention à l'endroit où tu t'assois."
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Tiens-toi bien, à plus tard."
+				}
+			]
+		},
+		"nodeB": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Tiens-toi bien, à plus tard."
+				}
+			]
+		},
+	},
+	"exitDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "changeHour",
+				"condition": "varObject('state', 'BagPicked') == true"
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:20"
+			}
+		},
+		"exitNode": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 24
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "J'ai oublié le sac à dos. Je ferais mieux d'aller le prendre dans ma chambre avant de partir."
+				}
+			]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		}
+	}
+}

@@ -1,0 +1,111 @@
+{
+	"intro":{
+		"root": {
+			"type": "dialog",
+			"next": "fade",
+			"fragments": [
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Ton premier jour de lycée. Pourquoi ne pas t'asseoir ?"
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Choisis la place qui te plaît le plus."
+				}
+			]
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "shadow"
+			}
+		}
+	},
+	"finishNightmare":{
+		"root": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Je crois que tu es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'resté', 'restée') $> sans place."
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Ne saurais-tu même pas t'assoir?"
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Ne serais-tu pas <$ if(varObject('global', 'MaleSexNonStatic')==true, 'un bon', 'une bonne') $> à rien?"
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Comment espères-tu te faire des amis en étant comme ça?"
+				}
+			]
+		},
+		"variable": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 1
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30"
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	},
+	"sit" : {
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Je vois que tu as trouvé une place, mais... "
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Cette place est à moi, tu devras en prendre une autre."
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Tu peux t'asseoir où tu veux, mais pas ici."
+				}
+			]
+		}
+	}
+}

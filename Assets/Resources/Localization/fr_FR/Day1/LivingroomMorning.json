@@ -1,0 +1,176 @@
+{
+	"mother": {
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "checkBag",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "checkHour",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"checkBag": {
+			"type": "fork",
+			"options": [{
+				"next": "bye",
+				"condition": "varObject('state', 'BagPicked') == true"
+			},
+			{
+				"next": "getBag",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"bye": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "On dirait que tu as tout."
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "<$ if(varObject('global', 'HourNonStatic')<8, 'Pars maintenant ou tu seras en retard', 'Pars maintenant, tu es déjà en retard') $>\""
+				}
+			]
+		},
+		"getBag": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Tu oublies ton sac à dos."
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Il est dans ta chambre, prends-le et pars maintenant."
+				}
+			]
+		},
+		"checkHour": {
+			"type": "fork",
+			"options": [{
+				"next": "motherSoon",
+				"condition": "varObject('global', 'HourNonStatic') < 8"
+			},
+			{
+				"next": "motherLate",
+				"condition": "varObject('global', 'HourNonStatic') >= 8"
+			}]
+		},
+		"motherSoon": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "On dirait que tu es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'prêt', 'prête') $> à partir."
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Tu as tout ? N'oublie pas de prendre ton sac à dos."
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Comporte-toi bien et fais-toi beaucoup d'amis."
+				}
+			]
+		},		
+		"motherLate": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "As-tu vu l'heure qu'il est ?"
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Ton premier jour dans ton nouveau lycée et tu es déjà en retard."
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Vas-y, prends tout ce dont tu as besoin et pars MAINTENANT!"
+				}
+			]
+		}
+	},
+	"exitDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "changeHourSoon",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') < 8"
+			},{
+				"next": "changeHourLate",
+				"condition": "varObject('global', 'HourNonStatic') >= 8 && varObject('state', 'BagPicked') == true"
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"changeHourLate": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:40"
+			}
+		},
+		"changeHourSoon": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:20"
+			}
+		},
+		"exitNode": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 4
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "J'ai oublié mon sac à dos. Je ferais mieux d'aller le prendre dans ma chambre avant de partir."
+				}
+			]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		}
+	}
+}

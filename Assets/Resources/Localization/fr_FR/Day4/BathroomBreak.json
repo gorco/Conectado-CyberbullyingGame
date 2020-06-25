@@ -1,0 +1,38 @@
+{
+	"bathroomExit": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"mobile":{
+		"root": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est mon téléphone."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Qui l'a pris et l'a laissé dans les toilettes des <$ if(varObject('global', 'MaleSexNonStatic')==true, 'filles', 'garçons') $> ?"
+				},
+				{
+					"tag": "Toi",
+					"msn": "Merde, il ne s'allume pas, j'espère que c'est un problème de batterie. Dès que je rentre à la maison, je la change."
+				}]
+		},
+		"node2": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "SharedPassQuest",
+				"value": 2
+			}
+		}
+	}
+}

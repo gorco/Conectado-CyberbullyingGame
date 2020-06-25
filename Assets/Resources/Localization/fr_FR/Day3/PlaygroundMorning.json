@@ -1,0 +1,369 @@
+{
+	"init": {
+		"root": {
+			"type": "event",
+			"next": "fs2",
+			"event": {
+				"name": "change friendship",
+				"var": "AlejandroFS",
+				"value": -20
+			}
+		},
+		"fs2": {
+			"type": "event",
+			"next": "fs3",
+			"event": {
+				"name": "change friendship",
+				"var": "AnaFS",
+				"value": -20
+			}
+		},
+		"fs3": {
+			"type": "event",
+			"next": "fs4",
+			"event": {
+				"name": "change friendship",
+				"var": "JoseFS",
+				"value": -20
+			}
+		},
+		"fs4": {
+			"type": "event",
+			"event": {
+				"name": "change friendship",
+				"var": "GuillermoFS",
+				"value": -10
+			}
+		}
+	},
+	"board":{
+		"root": {
+			"type": "event",
+			"next": "forkNode",
+			"event": {
+				"name": "change variable",
+				"var": "BoardQuest",
+				"value": 1
+			}
+		},
+		"forkNode": {
+			"type": "fork",
+			"options": [{
+				"next": "gum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "washed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "nogum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			}]
+		},
+		"gum": {
+			"type": "event",
+			"next": "gumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGum"
+			}
+		},
+		"gumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est une photo de moi et elle a été modifiée pour donner l'impression que je chie des chewing-gums."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Qui veut se moquer de moi de cette façon ?"
+				}
+			]
+		},
+		"deactive": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 0
+			}
+		},
+		"washed": {
+			"type": "event",
+			"next": "washedDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGumWhased"
+			}
+		},
+		"washedDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est une photo de moi hier, juste après que j'ai enlevé le chewing-gum."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Avec une phrase très originale... \"Un bébé est arrivé en classe\""
+				}
+			]
+		},
+		"nogum": {
+			"type": "event",
+			"next": "nogumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoDog"
+			}
+		},
+		"nogumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est une photo d'un chien avec ma tête dessus et qui tire la langue."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Pourquoi ? Qui l'a mise là ?"
+				}
+			]
+		},
+	},
+	"group":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"next": "stayOption",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Tu m'ignores, sérieusement?"
+				},
+				{
+					"tag": "Toi",
+					"msn": "Toi aussi, Guille?"
+				},
+				{
+					"tag": "",
+					"msn": "..."
+				}
+			]
+		}, 
+		"stayOption": {
+			"type": "options",
+			"questionId": "groupIgnore",
+			"options": [
+				{
+					"next": "stay",
+					"msn": "Attendre de voir s'ils parlent."
+				},
+				{
+					"msn": "Partir."
+				}
+			]
+		},
+		"stay": {
+			"type": "dialog",
+			"next": "stayOption",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "..."
+			}]
+		}, 
+		"node0": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Bonjour, que fais-tu ici?"
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "On est juste en train de parler."
+				},
+				{
+					"tag": "Alex",
+					"character": "Alex",
+					"msn": "Tais-toi Guille, c'était quoi le marché?"
+				},
+				{
+					"tag": "Alex",
+					"character": "Alex",
+					"msn": "Ou est-ce que tu veux que tes parents le sache?"
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "..."
+				}
+			]
+		}, 
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"questionId": "groupIgnoreAskGuille",
+			"options": [
+				{
+					"next": "node1A",
+					"msn": "Que se passe-t-il, Guille ?"
+				},
+				{
+					"next": "node1B",
+					"msn": "Cela ressemblait à une menace."
+				}
+			]
+		},
+		"node1A": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Est-ce que ça va, Guille ?"
+				},
+				{
+					"tag": "",
+					"msn": "..."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Est-ce que quelqu'un va dire quelque chose ?"
+				}
+			]
+		},
+		"node1B": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Tu en veux aussi à Guille, Alex ?"
+				},
+				{
+					"tag": "",
+					"msn": "..."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Est-ce que quelqu'un va dire quelque chose ?"
+				}
+			]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "lateorsoon",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"lateorsoon": {
+			"type": "fork",
+			"options": [{
+				"next": "bell",
+				"condition": "varObject('global', 'MinuteNonStatic') <= 30 "
+			},
+			{
+				"next": "late",
+				"condition": "varObject('global', 'MinuteNonStatic') > 30"
+			}]
+		},
+		"late": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "D'accord, ne dites rien. Je vais en classe, il est déjà assez tard."
+				}]
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "bellEvent",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<La cloche sonne>>"
+			}]
+		},
+		"bellEvent": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nodeRepeat",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30"
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true" 
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "",
+					"msn": "On dirait que je suis <$ if(varObject('global', 'MaleSexNonStatic')==true, 'arrivé', 'arrivée') $> plus tôt et que l'entrée n'est pas autorisée. Je ferais mieux de trouver quelque chose à faire en attendant pour tuer un peu le temps."
+				}
+			]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Toi",
+				"msn": "Je viens juste d'arriver, je ne peux pas encore repartir."
+			}]
+		}
+	}
+}

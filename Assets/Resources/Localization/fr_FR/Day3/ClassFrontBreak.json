@@ -1,0 +1,35 @@
+{
+	"init":{
+		"root":{
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je devrais aller aux toilettes avant de rentrer chez moi."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Peut-être que la note était importante."
+				}
+			]
+		}
+	},
+	"door": {
+		"root": {
+			"next": "changeHour",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:08"
+			}
+		}
+	}
+}

@@ -1,0 +1,165 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Il faut y aller."
+				}
+			]
+		}		
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Toi",
+				"msn": "Je n'ai besoin de rien d'ici pour le moment."
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Toi",
+				"msn": "..."
+			}]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je vais tout prendre et partir."
+				}
+			]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "BagPicked",
+				"value": true
+			}
+		}
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "PC",
+				"msn": "Veux-tu allumer ton ordinateur?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"options": [{
+				"next": "node1a",
+				"msn": "Oui"
+			},
+			{
+				"next": "node1b",
+				"msn": "Non"
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Il ne fonctionne pas, est-il cassé?"
+				}
+			]
+		},	
+		"node1b": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Mieux vaut ne pas l'allumer et aller en classe."
+				}
+			]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Toi",
+				"msn": "Est-ce que je laisse mon portable charger?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "Oui"
+			},
+			{
+				"next": "node1b",
+				"msn": "Non"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"next": "fork",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		},
+		"fork": {
+			"type": "fork",
+			"options": [{
+				"next": "parentsGo",
+				"condition": "repeated == true"
+			}]
+		},
+		"parentsGo": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Maman et papa sont déjà partis, je les verrai cet après-midi."
+				}
+			]
+		},	
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "repeated",
+				"value": true
+			}
+		}
+	}
+}

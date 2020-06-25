@@ -1,0 +1,200 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je dois y aller."
+				}
+			]
+		}		
+	},
+	"init":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node0",
+				"condition": "varObject('global', 'NotRepeatedDaysNonStatic') == false"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Aujourd'hui, la date du mobile est correctement affichée."
+				},
+				{
+					"tag": "Toi",
+					"msn": "De quoi s'agissait-il hier ?"
+				},
+				{
+					"tag": "Toi",
+					"msn": "Était-ce un rêve ? Etait-ce la veille ?"
+				},
+				{
+					"tag": "Toi",
+					"msn": "Est-ce que je deviens <$ if(varObject('global', 'MaleSexNonStatic')==true, 'fou', 'folle') $>  ?"
+				}
+			]
+		}
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je n'ai besoin de rien d'ici pour le moment."
+				}
+			]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Maintenant, je ne suis pas d'humeur à organiser."
+				}
+			]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je vais prendre mon sac et partir."
+				}
+			]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "BagPicked",
+				"value": true
+			}
+		},
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Si je l'allume maintenant, je vais être en retard, c'est sûr."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Mieux vaut attendre l'après-midi."
+				},
+				{
+					"tag": "PC",
+					"msn": "Veux-tu allumer l'ordinateur ?"
+				}
+			]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"options": [{
+				"next": "node1a",
+				"msn": "Oui"
+			},
+			{
+				"next": "node1b",
+				"msn": "Non"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
+		}, 
+		"moveCamera": {
+			"type": "event",
+			"next": "changeHour",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:10",
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ferais mieux de partir maintenant."
+				}
+			]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Dois-je laisser le portable charger ?"
+				}
+			]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "Oui"
+			},
+			{
+				"next": "node1b",
+				"msn": "Non"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
+	}
+}

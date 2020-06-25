@@ -1,0 +1,19 @@
+{
+  "0": "Lundi",
+  "1": "Mardi",
+  "2": "Mercredi",
+  "3": "Jeudi",
+  "4": "Vendredi",
+  "day": "Jour",
+  "alarm": "Alarme",
+  "sleepMsn": "Vous êtes incapable de dormir davantage. Vous devriez vous réveiller maintenant",
+
+  "chatTextTitle": "CONVERSATIONS",
+  "riskTitle": "Risque social",
+  "friendshipTitle": "Amitiés",
+
+  "exitGameButton": "Quitter le jeu",
+  "warningText": "Le jeu va être fermé. \n Es-tu sûr?",
+  "YesText": "Oui",
+  "NoText": "Non"
+}

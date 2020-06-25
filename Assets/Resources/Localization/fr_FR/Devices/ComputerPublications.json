@@ -1,0 +1,13 @@
+{
+	"default":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je n'ai pas de nouvelles photos à mettre en ligne."
+				}
+			]
+		}
+	}
+}

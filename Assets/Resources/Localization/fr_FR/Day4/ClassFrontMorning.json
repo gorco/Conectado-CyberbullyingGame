@@ -1,0 +1,91 @@
+{
+	"teacher": {
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "La semaine dernière, si vous vous souvenez bien, nous apprenions à faire une analyse morphologique d'une phrase."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "C'est maintenant l'heure de l'analyse syntaxique."
+				},
+				{
+					"tag": "On frappe à la porte",
+					"msn": "(Quelqu'un frappe à la porte)"
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Entrez."
+				}
+			]
+		},
+		"node1": {
+			"type": "event",
+			"next": "node2",
+			"event": {
+				"name": "class entrance",
+				"synchronous": true
+			}
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "friendship",
+			"fragments": [
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Alejandro, vous êtes en retard, veuillez vous asseoir."
+				},
+				{
+					"tag": "Alejandro",
+					"character": "Alex",
+					"msn": "Le nouveau venu est à ma place."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Il s'appelle <$ varObject('global', 'UserNameNonStatic') $>."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Asseyez-vous dans un autre bureau pour l'instant, j'ai demandé à Alison de l'aider pendant les premiers jours."
+				}
+			]
+		},
+
+		"black": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "The bell rings, it's break time."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 5
+			}
+		}
+	}
+}

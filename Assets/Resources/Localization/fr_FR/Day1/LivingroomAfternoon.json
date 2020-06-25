@@ -1,0 +1,767 @@
+{
+	"mother": {
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "node2",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "init",
+				"condition": "true"
+			}]
+		},
+		"init":{
+			"type": "setter",
+			"next": "initSchool",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"initSchool":{
+			"type": "setter",
+			"next": "initGuille",
+			"set": {
+				"var": "aboutSchool",
+				"value": true
+			}
+		},
+		"initGuille":{
+			"type": "setter",
+			"next": "initAlison",
+			"set": {
+				"var": "aboutGuille",
+				"value": true
+			}
+		},
+		"initAlison":{
+			"type": "setter",
+			"next": "initJose",
+			"set": {
+				"var": "aboutAlison",
+				"value": true
+			}
+		},
+		"initJose":{
+			"type": "setter",
+			"next": "initMaria",
+			"set": {
+				"var": "aboutjose",
+				"value": true
+			}
+		},
+		"initMaria":{
+			"type": "setter",
+			"next": "initAlex",
+			"set": {
+				"var": "aboutMaria",
+				"value": true
+			}
+		},
+		"initAlex":{
+			"type": "setter",
+			"next": "initAna",
+			"set": {
+				"var": "aboutAlex",
+				"value": true
+			}
+		},
+		"initAna":{
+			"type": "setter",
+			"next": "forknode1",
+			"set": {
+				"var": "aboutAna",
+				"value": true
+			}
+		},
+		"forknode1":{
+			"type": "fork",
+			"options": [
+			{
+				"next": "node1male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "node1female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		}
+		"node1male": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Tu es rentré <$ varObject('global', 'UserNameNonStatic') $>!"
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Comment s'est passée ta journée?"
+				}
+			]
+		},
+		"node1female": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Tu es rentrée <$ varObject('global', 'UserNameNonStatic') $>!"
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Comment s'est passée ta journée?"
+				}
+			]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "parentsFS",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Est-ce que tu veux qu'on parle un peu?"
+				}
+			]
+		},
+		"parentsFS": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": -10,
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 1
+			}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "parentsAfternoonFirstDay",
+			"options": [
+				{
+					"msn": "Bien, comme d'habitude, je vais dans ma chambre.",
+					"condition": "page == 1"
+				},
+				{
+					"next": "guille",
+					"msn": "J'ai rencontré Guille...",
+					"condition": "page == 1 && aboutGuille == true && varObject('global', 'GuillermoQuestNonStatic') > 0"
+				},
+				{
+					"next": "page2",
+					"msn": "(Parler des autres camarades de classe)",
+					"condition": "page == 1"
+				},
+				{
+					"next": "alison",
+					"msn": "Il y a une fille qui s'appelle Alison...",
+					"condition": "page == 2 && aboutAlison == true"
+				},
+				{
+					"next": "jose",
+					"msn": "Jose...",
+					"condition": "page == 2 && aboutJose == true && varObject('global', 'JoseQuestNonStatic') > 0"
+				},
+				{
+					"next": "page3",
+					"msn": "(Parler des autres camarades de classe)",
+					"condition": "page == 2"
+				},
+				{
+					"next": "maria",
+					"msn": "En classe, il y a María...",
+					"condition": "page == 3 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') > 0"
+				},
+				{
+					"next": "alex",
+					"msn": "Il y a Alex...",
+					"condition": "page == 3 && aboutAlex == true"
+				},
+				{
+					"next": "page4",
+					"msn": "(Parler du lycée)",
+					"condition": "page == 3"
+				},
+				{
+					"next": "ana",
+					"msn": "Ana...",
+					"condition": "page == 4  && aboutAna == true && varObject('global', 'GuillermoQuestNonStatic') > 0"
+				},
+				{
+					"next": "school",
+					"msn": "Le lycée...",
+					"condition": "page == 4 && aboutSchool == true "
+				},
+				{
+					"msn": "Je vais dans ma chambre, nous avons assez parlé.",
+					"condition": "page == 4"
+				}
+			]
+		},
+		"page2":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 2
+			}
+		},
+		"page3":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 3
+			}
+		},
+		"page4":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 4
+			}
+		},
+		"guille": {
+			"type": "dialog",
+			"next": "forkGuille",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Aujourd'hui, j'ai rencontré Guille, il a été très gentil avec moi."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Je pense que nous serons de bons amis."
+				}
+			]
+		},
+		"forkGuille": {
+			"type": "fork",
+			"options": [{
+				"next": "guilleNtb",
+				"condition": "varObject('global', 'GuillermoQuestNonStatic') == 2"
+			},
+			{
+				"next": "guilleSetter",
+				"condition": "true"
+			}]
+		},
+		"guilleNtb": {
+			"type": "dialog",
+			"next": "guilleUpParentsFS",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Il m'a également conseillé de regarder les tableaux d'affichage."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Il y a parfois des choses intéressantes affichées."
+				}
+			]
+		},
+		"guilleUpParentsFS": {
+			"type": "event",
+			"next": "guilleSetter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 2,
+			}
+		},
+		"guilleSetter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutGuille",
+				"value": false
+			}
+		},	
+		"alison": {
+			"type": "dialog",
+			"next": "forkAlison",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Il y a une fille blonde qui s'appelle Alison."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Elle avait perdu une de ses boucles d'oreille."
+				}
+			]
+		},
+		"forkAlison": {
+			"type": "fork",
+			"options": [{
+				"next": "alisonNotEaring",
+				"condition": "varObject('global', 'AlisonQuestNonStatic') == 0"
+			},
+			{
+				"next": "alisonEaring",
+				"condition": "varObject('global', 'AlisonQuestNonStatic') == 1"
+			}]
+		},
+		"alisonNotEaring": {
+			"type": "dialog",
+			"next": "alisonUpParentsFS",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je pense qu'elle n'a finalement pas pu trouver la boucle d'oreille qu'elle avait perdu."
+				}
+			]
+		},
+		"alisonEaring": {
+			"type": "dialog",
+			"next": "alisonUpParentsFS",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je l'ai aidée à la chercher, il s'est avéré que la boucle d'oreille était dans la cour de récréation."
+				}
+			]
+		},
+		"alisonUpParentsFS": {
+			"type": "event",
+			"next": "alisonSetter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 5,
+			}
+		},
+		"alisonSetter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutAlison",
+				"value": false
+			}
+		},	
+		"jose": {
+			"type": "dialog",
+			"next": "joseUpParentsFS",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "José est un autre camarade de classe, bien qu'il semble plus timide."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Mais il a aussi l'air gentil."
+				}
+			]
+		},
+		"joseUpParentsFS": {
+			"type": "event",
+			"next": "joseSetter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 5,
+			}
+		},
+		"joseSetter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutJose",
+				"value": false
+			}
+		},	
+		"maria": {
+			"type": "dialog",
+			"next": "forkMaria",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Une autre fille de la classe s'appelle María."
+				}
+			]
+		},
+		"forkMaria": {
+			"type": "fork",
+			"options": [{
+				"next": "mariaFreak",
+				"condition": "varObject('global', 'MariaQuestNonStatic') == 1"
+			},
+			{
+				"next": "mariaFriend",
+				"condition": "varObject('global', 'MariaQuestNonStatic') == 2"
+			}]
+		},
+		"mariaFreak": {
+			"type": "dialog",
+			"next": "mariaUpParentsFS",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Elle passe toutes les pauses à lire. La classe dit qu'elle est bizarre, mieux vaut la laisser tranquille."
+				}
+			]
+		},
+		"mariaFriend": {
+			"type": "dialog",
+			"next": "mariaUpParentsFS",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Il semble que le reste de la classe pense qu'elle est bizarre."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Ils lui ont coupé les vivres."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Je lui ai parlé pendant un certain temps et elle ne m'a pas paru bizarre."
+				}
+			]
+		},
+		"mariaUpParentsFS": {
+			"type": "event",
+			"next": "mariaSetter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 5,
+			}
+		},
+		"mariaSetter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutMaria",
+				"value": false
+			}
+		},	
+		"alex": {
+			"type": "dialog",
+			"next": "forkAlex",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Il y a aussi Álex."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Il est arrivé en retard."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Il est un peu grossier et un peu effrayant."
+				}
+			]
+		},
+		"optionsAlex": {
+			"type": "options",
+			"options": [
+				{
+					"next": "forkAlex",
+					"msn": "(Parler de l'incident)"
+				},
+				{
+					"next": "setterAlex",
+					"msn": "(Changer de sujet)"
+				}
+			]
+		},
+		"forkAlex": {
+			"type": "fork",
+			"options": [{
+				"next": "alexSorry",
+				"condition": "varObject('global', 'AlejandroQuestNonStatic') == 0"
+			},
+			{
+				"next": "alexThread",
+				"condition": "varObject('global', 'AlejandroQuestNonStatic') == 1"
+			},
+			{
+				"next": "alexBad",
+				"condition": "varObject('global', 'AlejandroQuestNonStatic') == 2"
+			}]
+		},
+		"alexSorry": {
+			"type": "dialog",
+			"next": "alexUpParentsFS",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "On dirait que j'ai pris sa place quand je suis <$ if(varObject('global', 'MaleSexNonStatic')==true, 'arrivé', 'arrivée') $> en classe."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Mais je me suis <$ if(varObject('global', 'MaleSexNonStatic')==true, 'excusé', 'excusée') $> et il semble qu'il ne soit plus en colère."
+				}
+			]
+		},
+		"alexThread": {
+			"type": "dialog",
+			"next": "alexUpParentsFS",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est un enfant qui cherche à se battre pour rien."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Je me suis <$ if(varObject('global', 'MaleSexNonStatic')==true, 'assis', 'assise') $> à sa place sans le savoir."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Il m'a menacé."
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Comment t'a-t-il menacé?"
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Je suis sûr que tu as mal compris."
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Qui d'autre as-tu rencontré aujourd'hui?"
+				}
+			]
+		},
+		"alexBad": {
+			"type": "dialog",
+			"next": "alexUpParentsFS",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Il est grossier, et il cherche la bagarre."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Tout cela parce que je me suis <$ if(varObject('global', 'MaleSexNonStatic')==true, 'assis', 'assise') $>  à sa place."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Il devrait en chercher une autre."
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Tu devrais t'excuser et ne pas chercher les ennuis."
+				}
+			]
+		},	
+		"alexUpParentsFS": {
+			"type": "event",
+			"next": "alexSetter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 10,
+			}
+		},
+		"alexSetter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutAlex",
+				"value": false
+			}
+		},
+		"ana": {
+			"type": "dialog",
+			"next": "anaUpParentsFS",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Il y a aussi Ana."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Elle est un peu effrayante."
+				}
+			]
+		},
+		"anaUpParentsFS": {
+			"type": "event",
+			"next": "anaSetter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 3,
+			}
+		},
+		"anaSetter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutAna",
+				"value": false
+			}
+		},
+		"school": {
+			"type": "dialog",
+			"next": "optionsSchool",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "A propos du lycée, et bien..."
+				}
+			]
+		},
+		"optionsSchool": {
+			"type": "options",
+			"questionId": "parentsAfternoonFirstDaySchool",
+			"options": [
+				{
+					"next": "setterSchool",
+					"msn": "J'aime la façon dont le bâtiment et le terrain de jeu sont."
+				},
+				{
+					"next": "setterSchool",
+					"msn": "C'est ennuyeux, il manque des choses."
+				}
+			]
+		},
+		"setterSchool":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutSchool",
+				"value": false
+			}
+		}
+	},
+	"father": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Papa",
+				"character": "Father",
+				"msn": "Parle avec ta mère."
+			},
+				{
+					"tag": "Papa",
+					"character": "Father",
+					"msn": "Elle veut savoir comment s'est passée ta journée."
+				}]
+		}
+	},
+	"exitDoor": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Toi",
+				"msn": "Je n'ai rien à faire dans la rue."
+			}]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "move",
+				"condition": "repeated == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"move": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "21:30",
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"next": "guilleFriend",
+			"set": {
+				"var": "repeated",
+				"value": true
+			}
+		},
+		"guilleFriend" : {
+			"type": "event",
+			"next": "alisonFriend",
+			"event": {
+				"name": "computer friend",
+				"var": "Guillermo",
+				"value": "Si le plan ne fonctionne pas, changez-le, mais ne changez pas l'objectif.",
+				"time": 0,
+				"other": "guilleAccept,guilleDeny"
+			}
+		},
+		"alisonFriend" :{
+			"type": "event",
+			"next": "joseFriend",
+			"event": {
+				"name": "computer friend",
+				"var": "Alison",
+				"value": "Il y a toujours une raison d'aller de l'avant.",
+				"time": 0,
+				"other": "alisonAccept,alisonDeny"
+			}
+		},
+		"joseFriend" :{
+			"type": "event",
+			"next": "alisonMsn",
+			"event": {
+				"name": "computer friend",
+				"var": "Jose",
+				"value": ":) ... (:",
+				"time": 3
+			}
+		},
+		"alisonMsn" : {
+			"type": "event",
+			"next": "alisonMsn2",
+			"event": {
+				"name": "mobile message",
+				"var": "Alison Clase",
+				"value": "Je t'ai envoyé une demande d'ami.",
+				"key": "Alison Classe",
+				"time": 2
+			}
+		},
+		"alisonMsn2" : {
+			"type": "event",
+			"next": "move",
+			"event": {
+				"name": "mobile message",
+				"var": "Alison Clase",
+				"value": "Accepte-la à partir de l'ordinateur :)",
+				"key": "Alison Classe",
+				"other": "alisonRequest",
+				"time": 3
+			}
+		}
+	}
+}

@@ -1,0 +1,101 @@
+{
+	"mother" : {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeA",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "nodeB",
+				"condition": "true"
+			}]
+		},
+		"nodeA": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Fais attention et regarde où tu t'assois aujourd'hui."
+				},
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Tiens-toi bien, à plus tard."
+				}
+			]
+		},
+		"nodeB": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Tiens-toi bien, à plus tard."
+				}
+			]
+		},
+	},
+	"exitDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "changeHourLate",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') >= 8 "
+			},
+			{
+				"next": "changeHourSoon",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') < 8"
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"changeHourLate": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:40"
+			}
+		},
+		"changeHourSoon": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:20"
+			}
+		},
+		"exitNode": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 14
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "J'ai oublié mon sac à dos. Je ferais mieux d'aller le chercher dans ma chambre avant de partir."
+				}
+			]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		}
+	}
+}

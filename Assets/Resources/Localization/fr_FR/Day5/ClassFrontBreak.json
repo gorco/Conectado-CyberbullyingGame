@@ -1,0 +1,37 @@
+{
+	"init":{
+		"root":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Toi",
+				"msn": "Tout le monde est parti."
+			},
+				{
+					"tag": "Toi",
+					"msn": "Dois-je faire confiance à Alex et aller aux toilettes pour <$ if(varObject('global', 'MaleSexNonStatic')==true, 'lui parler', 'parler à Ana') $>?"
+				},
+				{
+					"tag": "Toi",
+					"msn": "Si j'y vais, est-ce que ce sera fini une fois pour toutes?"
+				}]
+		}
+	},
+	"door": {
+		"root": {
+			"next": "changeHour",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:08"
+			}
+		}
+	}
+}

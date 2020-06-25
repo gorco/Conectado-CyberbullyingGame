@@ -1,0 +1,86 @@
+{
+	"init": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},{
+				"next": "node2",
+				"condition": "true"
+			}]
+		},
+		"node1":{
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Il y a une note dans ma veste..."
+				},
+				{
+					"tag": "Toi",
+					"msn": "\"Alison a pris ton téléphone et l'a donné à Alex et Ana.\" (suite au verso)."
+				},
+				{
+					"tag": "Toi",
+					"msn": "\"Elle a dû leur donner ton mot de passe ou ton portable.\" (fin de la note)."
+				},
+				{
+					"tag": "Toi",
+					"msn": "J'essaye de me rappeler ce qu'il s'est passé ce matin. A-t-elle aussi été menacée?"
+				},
+				{
+					"tag": "Toi",
+					"msn": "Merde, je n'ai pas de code ou de modèle de déverrouillage. Qu'est-ce qu'ils en auront fait ?"
+				},
+				{
+					"tag": "Toi",
+					"msn": "Et je ne pourrai pas voir Alex, Ana ou Alison avant demain."
+				}
+			]
+		},
+		"node2":{
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Les cours sont terminés. Il est temps de rentrer à la maison."
+				}
+			]
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Il n'y a plus de classes aujourd'hui et il n'y a plus personne."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Je ferais mieux de rentrer chez moi."
+				}
+			]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 21
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "15:00"
+			}
+		}
+	}
+}

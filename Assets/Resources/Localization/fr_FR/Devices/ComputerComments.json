@@ -1,0 +1,159 @@
+{
+	"default":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+
+					"msn": "Je n'ai rien à poster pour l'instant, j'ai mieux à faire."
+				}
+			]
+		}
+	},
+	"earingFounded": {
+		"root":{
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": "De rien, Allison",
+				"key": "Toi",
+				"other" : "empty",
+				"time": 0
+			}
+		}
+	},
+	"insultPost": {
+		"root":{
+			"type": "options",
+			"questionId": "insultPostOptions",
+			"options": [
+				{
+					"next": "node1a",
+					"msn": "(Signaler le poste)"
+				},
+				{
+					"next": "node1b",
+					"msn": "Vous êtes des connards."
+				},
+				{
+					"next": "node1c",
+					"msn": "Je vais finir par en parler avec notre professeur."
+				}
+			]
+		},
+		"node1a": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je vais signaler le message, voir s'ils le suppriment à cause de son contenu."
+				}
+			]
+		},
+		"node1b": {
+			"type": "event",
+			"next": "node2b",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+
+				"value": "Vous êtes tous des connards, allez vous faire foutre. Vous vous comportez comme des gamins de trois ans.",
+				"key": "Toi",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"node2b": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "Je suis sûre que tu es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'celui qui s'est pissé', 'celle qui s'est pissée') $> dessus la nuit, hahaha",
+				"key": "Ana",
+				"other": "empty",
+				"time": 1
+			}
+		},
+		"node1c": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "J'en ai marre d'eux. Demain, j'en parlerai au professeur.",
+				"key": "Toi",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"node2b": {
+			"type": "event",
+			"event": {
+				"key": "Ana",
+				"name": "computer comment",
+				"other": "empty",
+				"time": 1,
+				"value": "Regardez, nous pouvons aussi dire <$ if(varObject('global', 'MaleSexNonStatic')==true, 'qu'il est râleur ou pleurnichard', 'qu'elle est râleuse ou pleurnicharde') $>",
+				"var": "insult"
+			}
+		}
+	},
+	"trollPost": {
+		"root":{
+			"type": "options",
+			"questionId": "trollPostOptions",
+			"options": [
+				{
+					"next": "node1a",
+					"msn": "(Supprimer le post)"
+				},
+				{
+					"next": "node1b",
+					"msn": "Alison... c'est pour ça que tu voulais qu'on échange nos mots de passe."
+				},
+				{
+					"msn": "(Garder le silence)"
+				}
+			]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "loadPub",
+			"fragments": [{
+				"tag": "Toi",
+				"msn": "Je vais supprimer de suite ce post."
+			}]
+		},
+		"loadPub": {
+			"type": "event",
+			"next": "mobileMessage",
+			"event": {
+				"name": "computer publication",
+				"other": "load"
+			}
+		},
+		"mobileMessage": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alex",
+				"value": "J'ai vu que tu as supprimé ton post avec ton numéro de téléphone, mais ne t'inquiétes pas, j'ai fait une capture d'écran et je peux la remettre en ligne hahaha",
+				"key": "Alex",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "Alison... c'est pour ça que tu voulais qu'on échange nos mots de passe, tu es la pire.",
+				"key": "Toi",
+				"other": "empty",
+				"time": 0
+			}
+		}
+	}
+}

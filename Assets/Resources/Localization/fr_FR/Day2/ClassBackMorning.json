@@ -1,0 +1,140 @@
+{
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "<$ varObject('global', 'UserNameNonStatic') $> vous êtes en retard."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "S'il vous plaît, asseyez-vous et continuons le cours."
+				}
+			]
+		},
+		"node2": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Tu vas t'asseoir au premier bureau vide que tu trouves, pendant que tout le monde te regarde."
+			}
+		},
+		"node3": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 10
+			}
+		}
+	},
+	"table":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Cette place est disponible, est-ce que je m'assois ici?"
+				}
+			]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "sitDownClass",
+			"options": [{
+				"next": "node2",
+				"msn": "Oui"
+			},
+			{
+				"msn": "Non"
+			},
+				{
+					"next": "gum",
+					"msn": "Regardez la chaise",
+					"condition": "varObject('global', 'RepeatedNonStatic') == true"
+				}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [
+				{
+					"tag": "",
+					"msn": "(Bruits de fonds, le professeur est là)"
+				}
+			]
+		},
+		"gum": {
+			"type": "dialog",
+			"next": "noGum",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Il y a un chewing-gum collé dessus."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Hier, cela s'est probablement passé de la même manière, je ferais mieux de l'enlever et de m'asseoir."
+				}
+			]
+		},
+		"noGum": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "change variable",
+				"var": "GumQuest",
+				"value": 2
+			}
+		},
+		"node3": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Vous vous asseyez tous, quand vous réalisez que c'est déjà la pause."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 10
+			}
+		}
+	}
+}

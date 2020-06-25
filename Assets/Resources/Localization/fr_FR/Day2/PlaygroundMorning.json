@@ -1,0 +1,469 @@
+{
+	"maria":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "J'ai déjà parlé à Alison, je devrais chercher des gens dans la cour de récréation qui attendent que la cloche sonne."
+				}
+			]
+		}, 
+		"setter":{
+			"type": "setter",
+			"next": "bell",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"node0": {
+			"type": "fork",
+			"options": [{
+				"next": "notify1",
+				"condition": "varObject('global', 'MariaFSNonStatic') > 60"
+			},
+			{
+				"next": "ignore",
+				"condition": "varObject('state', 'MariaFSNonStatic') < 50"
+			},
+			{
+				"next": "normal1",
+				"condition": "true"
+			}]
+		},	
+		"notify1": {
+			"type": "dialog",
+			"next": "notify2",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Bonjour, <$ varObject('global', 'UserNameNonStatic') $>."
+			},
+				{
+					"tag": "María",
+					"character": "Maria",
+					"msn": "J'ai entendu Alex parler à Ana de te faire une blague."
+				},
+				{
+					"tag": "María",
+					"character": "Maria",
+					"msn": "Je ne sais pas ce que ça pourrait être, mais attention, ils ne sont généralement pas très drôles."
+				}]
+		}, 
+		"notify2": {
+			"type": "options",
+			"questionId": "MariaJokeAdvise",
+			"options": [
+				{
+					"next": "notify3",
+					"msn": "Merci pour l'avertissement"
+				},
+				{
+					"next": "notify3",
+					"msn": "Je n'ai pas peur de lui"
+				},
+				{
+					"next": "repeatedDay1",
+					"msn": "Encore?",
+					"condition": "varObject('global', 'RepeatedNonStatic') == true"
+				}
+			]
+		},
+		"repeatedDay1": {
+			"type": "dialog",
+			"next": "notify3",
+			"fragments": [
+				{
+					"tag": "María",
+					"character": "Maria",
+					"msn": "Encore une fois quoi?"
+				},
+				{
+					"tag": "Toi",
+					"msn": "(Elle ne semble pas se souvenir de l'avertissement d'hier)"
+				},
+				{
+					"tag": "Toi",
+					"msn": "C'est bon, je m'en vais, en revoir."
+				}
+			]
+		},
+		"notify3": {
+			"type": "event",
+			"next": "quest",
+			"event":{
+				"name": "change variable",
+				"var": "JokeAdvise",
+				"value": true,
+			}
+		},
+		"quest": {
+			"type": "event",
+			"next": "notify4",
+			"event": {
+				"name": "change variable",
+				"var": "MariaQuest",
+				"value": 1,
+			}
+		},
+		"notify4": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "María",
+					"character": "Maria",
+					"msn": "A plus tard, bye."
+				}
+			]
+		}, 
+		"ignore": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Je suis en train de lire."
+			},
+				{
+					"tag": "María",
+					"character": "Maria",
+					"msn": "Si ça ne te dérange pas...(Elle t'ignore et continue à lire)"
+				}]
+		}, 
+		"normal1": {
+			"type": "dialog",
+			"next": "normal2",
+			"fragments": [
+				{
+					"tag": "María",
+					"character": "Maria",
+					"msn": "Veux-tu quelque chose?"
+				}
+			]
+		}, 
+		"normal2": {
+			"type": "options",
+			"questionId": "MariaLonely",
+			"options": [
+				{
+					"next": "setter",
+					"msn": "Non, rien, au revoir."
+				},
+				{
+					"next": "normal3b",
+					"msn": "Te dire bonjour, je te vois toujours seule et en train de lire."
+				}
+			]
+		},
+		"normal3b": {
+			"type": "event",
+			"next": "normal4",
+			"event": {
+				"name": "change friendship",
+				"var": "MariaFS",
+				"value": 10,
+			}
+		},
+		"normal4": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "María",
+					"character": "Maria",
+					"msn": "Très aimable."
+				},
+				{
+					"tag": "María",
+					"character": "Maria",
+					"msn": "Les gens n'ont pas l'habitude de me parler."
+				},
+				{
+					"tag": "María",
+					"character": "Maria",
+					"msn": "Passe une bonne journée."
+				}
+			]
+		}, 
+		"bell": {
+			"type": "dialog",
+			"next": "bellEvent",
+			"fragments": [
+				{
+					"tag": "",
+					"msn": "<<La cloche sonne>>"
+				}]
+		},
+		"bellEvent": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		}
+	},
+	"jose":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "A plus"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Jose",
+					"character": "Jose",
+					"msn": "As-tu vu cette application sur ton portable qui vérifie ta relation avec les gens avec qui tu parles le plus ?"
+				},
+				{
+					"tag": "Jose",
+					"character": "Jose",
+					"msn": "Il t'indique avec qui tu t'entends ou non parmi toutes les personnes qui l'ont téléchargée."
+				},
+				{
+					"tag": "Jose",
+					"character": "Jose",
+					"msn": "On dit que c'est vraiment exact, mais la façon dont ça fonctionne n'est pas claire."
+				},
+				{
+					"tag": "Jose",
+					"character": "Jose",
+					"msn": "J'ai vu que tu l'avais déjà."
+				}
+			]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "quest",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"quest": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "JoseQuest",
+				"value": 1,
+			}
+		},
+	},
+	"ana":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "checkGood",
+				"condition": "varObject('global', 'AnaFSNonStatic') >= 50"
+			},
+			{
+				"next": "checkBad",
+				"condition": "true"
+			}]
+		},	
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"checkBad": {
+			"type": "fork",
+			"options": [{
+				"next": "badSpoken",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "bad1",
+				"condition": "true"
+			}]
+		},
+		"badSpoken": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Ana",
+					"character": "Ana",
+					"msn": "Dégage, je n'ai rien à te dire."
+				}
+			]
+		},
+		"bad1": {
+			"type": "dialog",
+			"next": "badOptions",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn" : "Qu'est-ce que tu regardes ? Dis quelque chose ou pars."
+			}]
+		},
+		"badOptions": {
+			"type": "options",
+			"questionId": "AnaJokeAsk",
+			"options": [{
+				"msn": "Rien (tu pars)."
+			},
+				{
+					"next": "bad2",
+					"msn": "On m'a dit que toi et Alex aviez parlé d'une farce.",
+					"condition": "varObject('state', 'JokeAdvise') == true"
+				}]
+		},
+		"bad2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Ana",
+					"character": "Ana",
+					"msn": "Oui, et alors ? Allez, va-t'en."
+				}
+			]
+		},
+		"checkGood": {
+			"type": "fork",
+			"options": [{
+				"next": "goodSpoken",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "good1",
+				"condition": "true"
+			}]
+		},
+		"goodSpoken": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Ana",
+					"character": "Ana",
+					"msn": "Dégage, je n'ai rien à te dire."
+				}
+			]
+		},
+		"good1": {
+			"type": "dialog",
+			"next": "goodOptions",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Bonjour <$ varObject('global', 'UserNameNonStatic') $>."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Est-ce que tu veux quelque chose?"
+			}]
+		},
+		"goodOptions": {
+			"type": "options",
+			"questionId": "AnaJokeAsk",
+			"options": [{
+				"msn": "Rien (tu pars)"
+			},
+				{
+					"next": "good2",
+					"msn": "On m'a dit que toi et Alex aviez parlé d'une farce.",
+					"condition": "varObject('state', 'JokeAdvise') == true"
+				}]
+		},
+		"good2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Ana",
+					"character": "Ana",
+					"msn": "Wow, tu nous as eu, c'était une chose stupide à faire."
+				},
+				{
+					"tag": "Ana",
+					"character": "Ana",
+					"msn": "Mais ce n'est plus drôle, on ne la fera pas."
+				}
+			]
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true" 
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "",
+					"msn": "On dirait que je suis en avance et que je ne peut toujours pas rentrer. Je ferais mieux de trouver quelque chose à faire en attendant pour tuer un peu le temps."
+				}
+			]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je viens d'arriver, je ne peux pas encore partir."
+				}
+			]
+		}
+	}
+}

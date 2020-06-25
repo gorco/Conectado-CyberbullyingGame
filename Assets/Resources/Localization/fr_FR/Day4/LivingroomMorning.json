@@ -1,0 +1,195 @@
+{
+	"parents": {
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "checkFS",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"repeat": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Prends soin de toi et comporte-toi bien."
+				},
+				{
+					"tag": "Papa",
+					"character": "Father",
+					"msn": "Et n'oublie pas que nous rendons visite à grand-mère dimanche."
+				}
+			]
+		},
+		"checkFS": {
+			"type": "fork",
+			"options": [{
+				"next": "meeting",
+				"condition": "varObject('global', 'ParentsFSNonStatic') >= 80"
+			},
+			{
+				"next": "repeat",
+				"condition": "true"
+			}]
+		},
+		"meeting": {
+			"type": "dialog",
+			"next": "meetingVar",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Nous avons décidé d'aller parler à ton professeur et de voir ce qui se passe."
+				},
+				{
+					"tag": "Papa",
+					"character": "Father",
+					"msn": "Nous allons prendre rendez-vous pour demain."
+				}
+			]
+		},		
+		"meetingVar": {
+			"type": "event",
+			"next": "options",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 1
+			}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "parentsMeetingMorninOption",
+			"options": [{
+				"next": "node1a",
+				"msn": "Merci."
+			},
+			{
+				"next": "node1b",
+				"msn": "Ce sera pire..."
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "changeVariable",
+			"fragments": [
+				{
+					"tag": "Maman",
+					"character": "Mother",
+					"msn": "Pas du tout <$ if(varObject('global', 'MaleSexNonStatic')==true, 'chéri', 'chérie') $>, nous voulons que tu ailles bien."
+				},
+				{
+					"tag": "Papa",
+					"character": "Father",
+					"msn": "Nous essaierons d'avoir ce rendez-vous demain au plus tard."
+				}
+			]
+		},
+		"changeVariable": {
+			"type": "event",
+			"next": "repeat",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 2,
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "repeat",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ne veux pas que vous y ailliez, ce sera pire."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Ils vont penser que je suis une balance et que ce n'était pas si grave."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Laissez faire, le temps arrangera ça."
+				},
+				{
+					"tag": "Papa",
+					"character": "Father",
+					"msn": "Bien, mais fais-nous savoir si cela va au-delà."
+				}
+			]
+		}
+	},
+	"exitDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "changeHourSoon",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') < 8"
+			},{
+				"next": "changeHourLate",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') >= 8 "
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"changeHourLate": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:40",
+			}
+		},
+		"changeHourSoon": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:20",
+			}
+		},
+		"exitNode": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 19
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "J'ai oublié le sac à dos. Je ferais mieux d'aller le prendre dans ma chambre avant de partir."
+				}
+			]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		}
+	}
+}

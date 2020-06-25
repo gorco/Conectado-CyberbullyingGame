@@ -1,0 +1,155 @@
+{
+	"guilleAndAlison": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "found",
+				"condition": "true"
+			}]
+		},
+		"repeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "..."
+			}]
+		},
+		"found": {
+			"type": "options",
+			"questionId": "GuilleAlisonAskMobile",
+			"options": [
+				{
+					"next": "node1a",
+					"msn": "Savez-vous qui a pris mon téléphone portable et l'a laissé dans les toilettes ?",
+					"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+				},
+				{
+					"next": "node1b",
+					"msn": "Quelqu'un sait-il où se trouve mon téléphone ? Quelqu'un l'a pris.",
+					"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+				},
+				{
+					"next": "setter",
+					"msn": "Je suppose que vous ne me parlerez pas... je passe."
+				}
+			]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Nous n'allons pas les dénoncer, mais je suppose que tu imagines déjà qui c'était."
+				},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "*sshhhhhh*"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "*sshhhhhh*"
+			}]
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Je suis désolé, nous n'en avons aucune idée."
+				},
+			{
+				"tag": "Toi",
+				"msn": "Merci Guille."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
+	"principalNote":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Note",
+					"msn": "Bureau du directeur."
+				}
+			]
+		}
+	},
+	"principalDoor":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "On dirait qu'il n'y a personne ici."
+				}
+			]
+		}
+	},
+	"stairsToCorridor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"stairsToPlayground": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "endDay",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "break",
+				"condition": "true"
+			}]
+		},
+		"break": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "playground"
+			}
+		},
+		"endDay": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "endDay"
+			}
+		}
+	}
+}

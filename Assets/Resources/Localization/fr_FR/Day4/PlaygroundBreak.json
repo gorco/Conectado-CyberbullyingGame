@@ -1,0 +1,221 @@
+{
+	"alexAndAna": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "mobile",
+				"condition": "spoken == true && varObject('state', 'MariaJoke') == 2"
+			},
+			{
+				"next": "ask",
+				"condition": "varObject('state', 'MariaJoke') == 1 && varObject('state', 'TimeEnough') == true"
+			},
+			{
+				"next": "noTime",
+				"condition": "varObject('state', 'MariaJoke') == 1 && varObject('state', 'TimeEnough') == false"
+			},
+			{
+				"next": "lost",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "lost",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "repeat",
+				"condition": "true"
+			}]
+		},
+		"ask": {
+			"type": "dialog",
+			"next": "askOptions",
+			"fragments": [
+				{
+					"tag": "Álex",
+					"character": "Alex",
+					"msn": "As-tu collé l'affiche dans le dos de Maria sans qu'elle ne s'en aperçoive encore ?"
+				}
+			]
+		},
+		"askOptions": {
+			"type": "options",
+			"questionId": "AnaAlexMariaJokeAskSuccess",
+			"options": [{
+				"next": "taskSuccess",
+				"msn": "Oui"
+			},
+			{
+				"next": "noTime",
+				"msn": "Non"
+			}]
+		},
+		"taskSuccess": {
+			"type": "event",
+			"next": "mobile",
+			"event": {
+				"name": "change variable",
+				"var": "MariaJoke",
+				"value": 2,
+			}
+		},
+		"noTime": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Álex",
+					"character": "Alex",
+					"msn": "Qu'attends-tu ? Vas-y, va coller cette affiche dans le dos de Maria."
+				}
+			]
+		},
+		"mobile": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Hahahaha, bien joué."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Hahaha, ton portable est dans les toilettes des <$ if(varObject('global', 'MaleSexNonStatic')==true, 'filles', 'garçons') $>'."
+			}]
+		},
+		"repeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Hahahaha."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Hahahaha."
+			}]
+		},
+		"lost": {
+			"type": "options",
+			"questionId": "AnaAlexAskMobileLost",
+			"options": [{
+				"next": "node1a",
+				"msn": "Etait-ce toi qui as caché mon portable dans les toilettes des <$ if(varObject('global', 'MaleSexNonStatic')==true, 'filles', 'garçons') $>'?",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "node1b",
+				"msn": "Est-ce que quelqu'un sait où est mon portable ? Ce n'est pas drôle.",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "setter",
+				"msn": "Je sais que c'était toi, ce n'est pas drôle."
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Álex",
+					"character": "Alex",
+					"msn": "Et si c'était nous, que vas-tu faire ? Vas-tu pleurer et le dire à notre professeur, à tes parents...?"
+				},
+				{
+					"tag": "Ana",
+					"character": "Ana",
+					"msn": "Hahaha, je suis sûre que oui."
+				},
+				{
+					"tag": "Ana",
+					"character": "Ana",
+					"msn": "Allez, pars et va pleurer ailleurs."
+				}
+			]
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "jokeAccepted",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Peut-être"
+			},
+				{
+					"tag": "Ana",
+					"character": "Ana",
+					"msn": "Nous te le ferons savoir si tu vas coller cette affiche dans le dos de María."
+				},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "(Elle te donne un papier avec du ruban adhésif et la phrase : \"Je suis masochiste, insultez-moi si vous lisez ceci\".)."
+			},
+				{
+					"tag": "Ana",
+					"character": "Ana",
+					"msn": "Reviens quand tu l'auras fait... sinon, ne te donne pas la peine de revenir nous voir."
+				}]
+		},
+		"jokeAccepted": {
+			"type": "event",
+			"next": "mariaQuest",
+			"event": {
+				"name": "change variable",
+				"var": "MariaJoke",
+				"value": 1,
+			}
+		},
+		"mariaQuest": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "MariaQuest",
+				"value": 1,
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"next": "repeat",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "event",
+			"next": "time",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"time": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "TimeEnough",
+				"value": true,
+			}
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est la pause, il y a encore quelques cours avant que je puisse rentrer chez moi..."
+				}
+			]
+		}
+	}
+}

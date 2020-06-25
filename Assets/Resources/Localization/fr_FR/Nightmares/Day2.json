@@ -1,0 +1,203 @@
+{
+	"intro":{
+		"root": {
+			"type": "dialog",
+			"next": "fade",
+			"fragments": [
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Alors... Avons-nous résolu ce problème?"
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Est-ce que tu sais où t'assoir?"
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Peut-être devrais-tu empêcher le chewing-gum de tomber sur la chaise ou tu devras t'asseoir sur un chewing-gum."
+				}
+			]
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "shadow"
+			}
+		}
+	},
+	"portal":{
+		"root":{
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Tu devras t'assoir sur un chewing-gum."
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Hahahaha, vas-y, assis-toi!"
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Vas-y, qu'attends-tu?"
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Viens, je vais t'aider."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Traverse le portail."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Cours, avant de te réveiller."
+				}
+			]
+		}
+	},
+	"cross": {
+		"root": {
+			"type": "options",
+			"questionId": "portalDay2",
+			"options": [{
+				"next": "node1",
+				"msn": "Traverse le portail."
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je traverserais."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Ça fait un peu peur."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Mais c'est juste un rêve."
+				}
+			]
+		},
+		"variable": {
+			"type": "event",
+			"next": "repeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 1
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": true
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "loadMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30"
+			}
+		},
+		"loadMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "load"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	},
+	"finishNightmare":{
+		"root": {
+			"type": "dialog",
+			"next": "changeDay",
+			"fragments": [
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Tu devras t'assoir sur un chewing-gum."
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Hahahaha, vas-y, assis-toi"
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Vas-y, qu'attends-tu?"
+				}
+			]
+		},
+		"changeDay": {
+			"type": "event",
+			"next": "noRepeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 2
+			}
+		},
+		"noRepeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30"
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	}
+}

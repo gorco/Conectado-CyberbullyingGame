@@ -1,0 +1,570 @@
+{
+	"init":{
+		"root":{
+			"type": "dialog",
+			"next": "lightOff",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Mmm, qu\'est-ce qui se passe Alex ? Pourquoi ne rentres-tu pas ?','Ana, es-tu là ?') $>"
+				}
+			]
+		},
+		"lightOff": {
+			"type": "event",
+			"next": "lightOn",
+			"event": {
+				"name": "active object",
+				"time": 3,
+			}
+		},
+		"lightOn": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 30,
+			}
+		},
+	},
+	"bathroomExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Que se passe-t-il ? La porte ne s'ouvre pas."
+				},
+				{
+					"tag": "Toi",
+					"msn": "M'ont-ils enfermé dans les toilettes ? ANA!!! ALEX!!! N'IMPORTE QUI !!"
+				},
+				{
+					"tag": "Toi",
+					"msn": "Que dois-je faire maintenant ? Je dois partir d'ici."
+				}
+			]
+		}
+	},
+	"light" : {
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "La lumière. Sérieusement?"
+				},
+				{
+					"tag": "Toi",
+					"msn": "Je dois partir d'ici."
+				}
+			]
+		}
+	},
+	"door": {
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est le loquet, mais il ne s'ouvre pas."
+				},
+				{
+					"tag": "Toi",
+					"msn": "M'ont-ils enfermé dans les toilettes ? ANA!!! ALEX!!! N'IMPORTE QUI !!"
+				}
+			]
+		}
+	},
+	"sinks": {
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Agh !! Je viens de me prendre un coup contre le lavabo. PUTAIN !"
+				}
+			]
+		}
+	},
+	"floor": {
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est humide... mais c'est le sol."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Agh !! s'il te plaît, ne te fait pas pipi dessus..."
+				}
+			]
+		}
+	},
+	"onAgain": {
+		"root": {
+			"type": "dialog",
+			"next": "teacher",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Les lumières sont de retour ! Et je peux entendre quelque chose dans le couloir, je devrais déjà pouvoir sortir."
+				}
+			]
+		},
+		"teacher": {
+			"type": "event",
+			"next": "tDialog",
+			"event": {
+				"name": "little move",
+				"key": "teacher"
+			}
+		},
+		"tDialog": {
+			"type": "dialog",
+			"next": "forkEnd",
+			"fragments": [
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Que fais-tu ici, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'enfermé','enfermée') $> ?"
+				}
+			]
+		},
+		"forkEnd": {
+			"type": "fork",
+			"options": [{
+				"next": "goodFinalByParents",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') == 2 && varObject('global', 'ParentsFSNonStatic') >= 80"
+			},
+			{
+				"next": "parentsMeetingNoFS",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') == 2 && varObject('global', 'ParentsFSNonStatic') < 80"
+			},
+			{
+				"next": "parentsNoMeetingNoFS",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') < 2 && varObject('global', 'ParentsFSNonStatic') < 80"
+			},
+			{
+				"next": "parentsNoMeetingFS",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') < 2 && varObject('global', 'ParentsFSNonStatic') >= 80"
+			}]
+		},
+		"goodFinalByParents": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Aujourd'hui, j'ai eu une réunion avec tes parents et ils m'ont tout dit."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Tu aurais pu me le dire directement."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Je suppose que c'est Alex qui t'a enfermé dans les toilettes, n'est-ce pas ?"
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Il va être expulsé pendant 3 jours, s'il continue à te déranger à son retour, tu dois me le dire."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "S'il continue comme ça, nous pourrions le faire expulser du lycée pour de bon, ou même appeler la police et engager des poursuites contre lui."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Rentre chez toi et reposes-toi."
+				}
+			]
+		},
+		"parentsMeetingNoFS": {
+			"type": "options",
+			"questionId": "TeacherTattle",
+			"options": [
+				{
+					"next": "tattleAndMeeting",
+					"msn": "(Raconter tout ce qu'Alex t'as fait)"
+				},
+				{
+					"next": "noTattleAndMeeting",
+					"msn": "Je ne sais pas ce qui s'est passé."
+				}
+			]
+		},
+		"tattleAndMeeting": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Pourquoi ne pas me le dire plus tôt ?"
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "En outre, aujourd'hui, j'ai eu une réunion avec tes parents et nous en avons parlé."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Avec tout ce que tu m'as dit... Je vais parler au directeur pour expulser Alex pendant 3 jours."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "S'il continue à te harceler, que ce soit en personne ou par le biais des médias sociaux, fais-le moi savoir."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "S'il continue comme ça, nous pourrions le faire expulser de l'école pour de bon, ou même appeler la police et engager des poursuites contre lui."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Rentre chez toi et reposes-toi."
+				}
+			]
+		},
+		"noTattleAndMeeting": {
+			"type": "fork",
+			"options": [{
+				"next": "mariaAndMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') >= 60"
+			},
+			{
+				"next": "noMariaAndMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') < 60"
+			}]
+		},
+		"mariaAndMeeting": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [{
+				"tag": "Professeur",
+				"character": "Teacher",
+				"msn": "En es-tu sûr?"
+			},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "J'ai eu une réunion avec tes parents et il semble que tu aies eu des problèmes avec Alex."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "De plus, María et le conseiller scolaire sont venus me dire qu'Alex s'en prend à toi."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Tu n'as pas besoin de cacher quoi que ce soit et tu n'es pas une balance quand tu demandes de l'aide. Le comportement d'Alex suggère qu'une punition est nécessaire."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Nous avons décidé d'expulser Alex pour 3 jours."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "S'il continue comme ça, nous pourrions le faire expulser de l'école pour de bon, ou même appeler la police et engager des poursuites contre lui."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Rentre chez toi et reposes-toi."
+				}]
+		},
+		"noMariaAndMeeting": {
+			"type": "dialog",
+			"next": "final2",
+			"fragments": [
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Aujourd'hui, j'ai eu une réunion avec tes parents, ils sont inquiets."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Si tu as des problèmes avec l'un de tes camarades de classe, tu devrais en parler à moi ou au conseiller scolaire."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Si tu refuses notre aide, les choses risquent d'empirer."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "En tout cas, tu ne mérites pas qu'on se moque de toi et qu'on te ridiculise."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Si c'est ce qui se passe, demande de l'aide ou les choses resteront les mêmes."
+				}]
+		},
+		"parentsNoMeetingNoFS": {
+			"type": "options",
+			"questionId": "TeacherTattle",
+			"options": [
+				{
+					"next": "tattleAndNoMeeting",
+					"msn": "(Raconter tout ce qu'Alex a fait)"
+				},
+				{
+					"next": "noTattleAndNoMeeting",
+					"msn": "Je ne sais pas ce qui s'est passé"
+				}
+			]
+		},
+		"tattleAndNoMeeting": {
+			"type": "fork",
+			"options": [{
+				"next": "mariaAndNoMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') >= 60"
+			},
+			{
+				"next": "noMariaAndNoMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') < 60"
+			}]
+		},
+		"mariaAndNoMeeting": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Pourquoi ne m'en avais-tu pas parlé avant?"
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "De plus, María et le conseiller scolaire sont venus me dire ce que tu viens de dire."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Elle se soucie de toi, nous avons tous besoin d'amis comme elle."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Le comportement d'Alex mérite une punition et il est important que tu m'ai tout dit."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Ce n'est pas ta faute, et tu ne le mérites pas."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Nous avons décidé d'expulser Alex pour 3 jours."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "S'il continue comme ça, nous pourrions le faire expulser de l'école pour de bon, ou même appeler la police et engager des poursuites contre lui."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Rentre chez toi et reposes-toi."
+				}
+			]
+		},
+		"noMariaAndNoMeeting": {
+			"type": "dialog",
+			"next": "final2",
+			"fragments": [
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Je vais en parler avec tes parents."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Si tu as encore des problèmes avec Alex, viens me le dire, demain je le dénoncerai."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Il est important que tu en parles, il est temps que cela change les choses pour de bon."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "En tout cas, tu ne mérites pas qu'on se moque de toi et qu'on te ridiculise."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Les choses ne changeront pas tant que tu n'auras pas demandé de l'aide. Elles pourraient même s'aggraver."
+				}]
+		},
+		"noTattleAndNoMeeting": {
+			"type": "dialog",
+			"next": "final1",
+			"fragments": [
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Es-tu sûr que tout va bien ?"
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Alors, rentre chez toi."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Mais n'oublie pas que si tu as des problèmes avec quelqu'un et que tu ne cherches pas d'aide, c'est sûr que ton état va empirer."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "En tout cas, tu ne mérites pas qu'on se moque de toi et qu'on te ridiculise."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Les choses ne changeront pas tant que tu n'auras pas demandé de l'aide."
+				}]
+		},
+		"parentsNoMeetingFS": {
+			"type": "options",
+			"questionId": "TeacherTattle",
+			"options": [
+				{
+					"next": "tattle",
+					"msn": "(Raconter tout ce qu'Alex t'a fait)"
+				},
+				{
+					"next": "noTattle",
+					"msn": "Je ne sais pas ce qui s'est passé"
+				}
+			]
+		},
+		"tattle": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Pourquoi ne m'as-tu pas dit tout cela avant?"
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Je vais appeler tes parents pour en parler."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Et nous verrons ce que nous pouvons faire avec Alex."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Je vais essayer de le faire expulser pendant 3 jours."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Et s'il arrive quelque chose, n'hésite pas à parler avec moi ou avec le conseiller scolaire."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Rentre chez toi et reposes-toi."
+				}]
+		},
+		"noTattle": {
+			"type": "dialog",
+			"next": "final1",
+			"fragments": [
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Es-tu sûr que tout va bien ?"
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Eh bien, rentre chez toi. Mais souviens-toi de ceci..."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Si certains se moquent de toi, fais-le nous savoir, à moi ou au conseiller scolaire."
+				},
+				{
+					"tag": "Professeur",
+					"character": "Teacher",
+					"msn": "Cherche de l'aide, les choses ne vont pas changer d'elles-mêmes, elles peuvent juste empirer."
+				}]
+		},
+		"final1": {
+			"type": "event",
+			"next": "end",
+			"event": {
+				"name": "change variable",
+				"var": "Final",
+				"value": 1,
+			}
+		},
+		"final2": {
+			"type": "event",
+			"next": "end",
+			"event": {
+				"name": "change variable",
+				"var": "Final",
+				"value": 2,
+			}
+		},
+		"final3": {
+			"type": "event",
+			"next": "end",
+			"event": {
+				"name": "change variable",
+				"var": "Final",
+				"value": 3,
+			}
+		},
+		"end": {
+			"type": "event",
+			"next": "changeScene",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Tu rentres chez toi et tu vas te coucher et te reposer plus tôt dans la journée. Comme d'habitude, c'est le temps des rêves..."
+			}
+		},
+		"changeScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 27
+			}
+		}
+	},
+}

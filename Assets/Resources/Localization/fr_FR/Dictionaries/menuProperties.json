@@ -1,0 +1,28 @@
+{
+  "playButton": "Jouer",
+  "creditsButton": "Credits",
+  "exitButton": "Quitter",
+
+  "sessionText": "Clé de la session",
+  "inputSession": "Entrez la clé de la session",
+
+  "userInfoTitle": "Connecte-toi avec tes amis!",
+  "nameText": "Prénom",
+  "nameField": "Ton prénom",
+  "userText": "Nom d'utilisateur",
+  "userField": "Ton nom d'utilisateur",
+  "passText": "Mot de passe",
+  "passField": "Ton mot de passe",
+  "errorText": "Veuillez remplir tous les champs avant de commencer",
+  "nameLengthError": "Ton prénom ne doit pas comporter plus de 10 caractères",
+  "spaceError": "Ton nom d'utilisateur et ton mot de passe ne peuvent pas contenir d'espaces",
+  "userpasswordLengthError": "Ton nom d'utilisateur et ton mot de passe ne doivent pas comporter plus de 16 caractères",
+  "nameError": "Ton prénom est requis",
+  "userError": "Ton nom d'utilisateur est requis",
+  "passwordError": "Un mot de passe est requis",
+  "genderError": "Tu dois sélectionner ton genre",
+  "startButton": "Démarrer",
+  "backButton": "Retour",
+  "adviseTitle": "IMPORTANT!",
+  "adviseText": "Ne met pas un mot de passe que tu utilises déjà. Invente un bon mot de passe. Il ne sera utilisé qu'à l'intérieur du jeu."
+}

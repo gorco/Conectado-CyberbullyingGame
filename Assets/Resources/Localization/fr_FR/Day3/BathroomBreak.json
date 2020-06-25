@@ -1,0 +1,242 @@
+{
+	"bathroomExit": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"guille":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Je suis vraiment désolé, pour de vrai, mais mes parents ne doivent pas le savoir"
+				}
+			]
+		}, 
+		"setter":{
+			"type": "setter",
+			"next": "sexFork",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"sexFork": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeMale",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "nodeFemale",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"nodeMale": {
+			"type": "dialog",
+			"next": "nodeUnisex",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Donc le gars de la note, c'était toi, Guille."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Alors maintenant tu me parles."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Qu'est-ce que c'est que cette histoire qu'il y a plus de la moitié de la classe qui m'ignore ?"
+				}
+			]
+		},
+		"nodeFemale": {
+			"type": "dialog",
+			"next": "nodeUnisex",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Que fais-tu dans les toilettes des filles, Guille ?"
+				},
+				{
+					"tag": "Toi",
+					"msn": "Tu ne peux pas être ici, pars."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "J'ai besoin de te parler, c'est moi qui ai laissé le mot."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Alors maintenant tu me parles."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Qu'est-ce que c'est que cette histoire qu'il y a plus de la moitié de la classe qui m'ignore ?"
+				}
+			]
+		},
+		"nodeUnisex": {
+			"type": "dialog",
+			"next": "changeVariable",
+			"fragments": [
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "C'est ce dont je veux te parler."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Je ne peux pas te parler tant qu'Alex ou un de ses amis nous voient."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Il m'a menacé d'envoyer à mes parents une photo de moi en train de fumer et de boire."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Mes parents sont très stricts et s'ils le découvrent, je ne sais pas ce qui pourrait arriver... ils pourraient même m'envoyer dans un autre lycée."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Mais pourquoi Alex ne veut-il pas qu'on me parle ?"
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "On ne sait pas, il en a après toi depuis le premier jour."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Trop de gens font ce qu'il veut, mais nous sommes quelques-uns à avoir été menacés par lui."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Une chose semblable à la tienne est arrivée à Maria l'année dernière, bien que ce soit l'œuvre d'Anna."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Elle n'a plus d'amis depuis lors et quand quelqu'un essaie de lui parler... elle nous ignore."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Elle ne nous a pas encore pardonné."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Eh bien... je voulais juste te dire que je suis désolé, mais tant qu'Alex n'arrêtera pas de me menacer, je ne peux pas te parler."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Je suis vraiment désolé <$ varObject('global', 'UserNameNonStatic') $>."
+				}
+			]
+		},
+		"changeVariable": {
+			"type": "event",
+			"next": "boardFork",
+			"event": {
+				"name": "change variable",
+				"var": "GuilleSpoke",
+				"value": true,
+			}
+		},
+		"boardFork": {
+			"type": "fork",
+			"options": [{
+				"next": "option",
+				"condition": "varObject('global', 'BoardQuestNonStatic') == 1"
+			}]
+		},
+		"option": {
+			"type": "options",
+			"questionId": "GuilleBathroomDialog",
+			"options": [
+				{
+					"next": "nodeAlex",
+					"msn": "Et c'est tout ? Alex obtient ce qu'il veut ?"
+				},
+				{
+					"next": "nodeBoard",
+					"msn": "Et ma photo sur le tableau ? Était-ce Alex ?"
+				}
+			]
+		},
+		"nodeAlex": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Je suis profondément désolé, pour de vrai."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Mais je ne veux pas qu'il me rende la vie impossible aussi."
+				}
+			]
+		},
+		"nodeBoard": {
+			"type": "dialog",
+			"next": "guilleQuest",
+			"fragments": [
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "C'était la façon de faire d'Ana."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Elle est vraiment à fond sur Alex et s'il t'embête, elle va faire de même."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Et José est son chien de compagnie, incapable de penser par lui-même."
+				},
+				{
+					"tag": "Guille",
+					"character": "Guille",
+					"msn": "Évite les trois."
+				}
+			]
+		},
+		"guilleQuest": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 1
+			}
+		}
+	}
+}
