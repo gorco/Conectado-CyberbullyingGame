@@ -57,7 +57,7 @@ public class ThrowDialog : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 					Tracker.T.setVar("GameHour", GlobalState.Hour + ":" + GlobalState.Minute);
 					Tracker.T.setVar("IsRepeatedDay", GlobalState.Repeated.ToString());
 					Tracker.T.setVar("MobileMessages", GlobalState.MessagesPending.ToString());
-					Tracker.T.trackedGameObject.Interacted(fieldName);
+					Tracker.T.GameObject.Interacted(fieldName);
 			
 			} catch (Exception e)
 			{

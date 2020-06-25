@@ -356,7 +356,7 @@
 			"type": "fork",
 			"options": [{
 				"next": "match1",
-				"condition": "varObject('global', 'GuillermoFSNonStatic') > 60"
+				"condition": "varObject('global', 'GuillermoFSNonStatic') >= 60"
 			},
 			{
 				"next": "node1",
