@@ -29,10 +29,27 @@ public class TrackerEventManager : EventManager {
 
 							Tracker.T.alternative.Selected(questionID, response.Text, AlternativeTracker.Alternative.Dialog);
 							break;
-						// OTHERS
+
+						case "show dialog fragment":
+							Fragment dfragment = finished.getParameter("fragment") as Fragment;
+
+							string character = dfragment.Character;
+							string message = dfragment.Msg;
+							string name = dfragment.Name;
+
+							Tracker.T.Completable.Completed(character+message, CompletableTracker.Completable.StoryNode);
+							break;
 					}
 					break;
+				case "show dialog fragment":
+					Fragment dfragmentf = ev.getParameter("fragment") as Fragment;
 
+					string characterf = dfragmentf.Character;
+					string messagef = dfragmentf.Msg;
+					string namef = dfragmentf.Name;
+
+					Tracker.T.Completable.Initialized(characterf + " " + messagef, CompletableTracker.Completable.StoryNode);
+					break;
 				case "change friendship":
 					object vAux = ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD);
 					string friend = null;
