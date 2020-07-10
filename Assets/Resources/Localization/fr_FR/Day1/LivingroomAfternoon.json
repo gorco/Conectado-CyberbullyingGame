@@ -745,7 +745,7 @@
 			"next": "alisonMsn2",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
+				"var": "Alison Classe",
 				"value": "Je t'ai envoyé une demande d'ami.",
 				"key": "Alison Classe",
 				"time": 2
@@ -756,7 +756,7 @@
 			"next": "move",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
+				"var": "Alison Classe",
 				"value": "Accepte-la à partir de l'ordinateur :)",
 				"key": "Alison Classe",
 				"other": "alisonRequest",

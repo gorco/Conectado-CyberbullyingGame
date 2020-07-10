@@ -701,7 +701,7 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "<$ varObject('global', 'UserNameNonStatic') $> c'est le chat que nous utilisons avec tous nos camarades de classe",
 				"key": "Alison",
 				"other": "thxClass",
@@ -713,7 +713,7 @@
 			"next": "message3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Bienvenue",
 				"key": "Guille",
 				"time": 1 
@@ -724,7 +724,7 @@
 			"next": "message4",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": ":)",
 				"key": "Alison",
 				"time": 2 
@@ -735,7 +735,7 @@
 			"next": "message5",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Pk 7 invitation? N'en avions-nous pas parlé avec Alex ajd?",
 				"key": "Ana",
 				"time": 8 
@@ -746,7 +746,7 @@
 			"next": "message6",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Hmm, il n'a pas gagné d'être ds ce groupe. Que quelqu'un l'expulse MAINTENANT!",
 				"key": "Alex",
 				"time": 10
@@ -757,7 +757,7 @@
 			"next": "message7",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Il ne vous reste plus k inviter cette María bizarre",
 				"key": "Alex",
 				"other": "kickClass",
@@ -768,7 +768,7 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "José est l'admin, discutez avec lui 2main, il ne lit pas souvent ce chat",
 				"key": "Ana",
 				"time": 14

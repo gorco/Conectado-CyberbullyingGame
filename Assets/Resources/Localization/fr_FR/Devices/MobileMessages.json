@@ -26,7 +26,7 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
+				"var": "Alison Classe",
 				"value": "Ce n'est rien",
 				"key": "",
 				"other": "empty",
@@ -56,7 +56,7 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
+				"var": "Alison Classe",
 				"value": "Oui, j'accepte ton invitation maintenant :)",
 				"key": "",
 				"other": "empty",
@@ -67,7 +67,7 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
+				"var": "Alison Classe",
 				"value": "Je m'en occuperai quand je pourrai, je suis très occupé.",
 				"key": "",
 				"other": "empty",
@@ -80,7 +80,7 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Merci :)",
 				"key": "",
 				"other": "empty",
@@ -112,7 +112,7 @@
 			"next": "messageA2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 
 				"value": "Je viens d'arriver au lycée et c'est vraiment horrible que la moitié de la classe me traite comme de la merde.",
 				"key": "",
@@ -125,7 +125,7 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Je ne vous dis pas que vous devez tous m'aimer, mais le moins que vous puissiez faire est me traiter avec respect.",
 				"key": "",
 				"time": 0.2
@@ -136,7 +136,7 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Grandissez, vous avez 2 ans ou quoi ?",
 				"key": "",
 				"other": "empty",
@@ -148,7 +148,7 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Je ne comprends pas, qu'est-ce que je vous ai fait pour que vous m'insultiez, vous m'ignoriez et vous moquez de moi ?",
 				"key": "",
 				"other": "empty",
@@ -160,7 +160,7 @@
 			"next": "message3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Quel est votre problème avec <$ varObject('global', 'UserNameNonStatic') $>?",
 				"key": "Alison",
 				"time": 2
@@ -171,7 +171,7 @@
 			"next": "message4",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Vous dépassez les limites.",
 				"key": "Guille",
 				"time": 4
@@ -181,7 +181,7 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Ce n'est pas votre affaire, je peux obliger Jose à vous mettre dehors aussi.",
 				"key": "Alex",
 				"other": "kickClass2",
@@ -213,7 +213,7 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Si ma présence dans ce groupe de discussion est un problème, je m'en vais.",
 				"key": "",
 				"time": 0
@@ -224,7 +224,7 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "J'espère que Jorge ne sera pas aussi stupide que toi quand il lira le chat.",
 				"key": "",
 				"time": 0
@@ -235,7 +235,7 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Arrêtez, je ne vous ai rien fait qui justifie la façon dont vous me traitez",
 				"key": "",
 				"time": 0
@@ -245,7 +245,7 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Je vais dormir, à demain",
 				"key": "",
 				"other": "empty",
@@ -352,7 +352,7 @@
 			"next": "nodeA2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Quelqu'un a utilisé mon téléphone pour écrire ça.",
 				"key": "",
 				"other": "empty",
@@ -364,7 +364,7 @@
 			"next": "nodeA3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "On a déjà des photos de ce que tu as dit, on va les partager à toute les classes, hahaha",
 				"key": "Ana",
 				"time": 2
@@ -374,7 +374,7 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "hahaha c'est trop tard pour nier quoi que ce soit :P",
 				"key": "Alex",
 				"time": 4
@@ -385,7 +385,7 @@
 			"next": "nodeB2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Álex, Ana, allez vous faire foutre tous les deux, je sais que c'est vous",
 				"key": "",
 				"other": "empty",
@@ -397,7 +397,7 @@
 			"next": "nodeB3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Peut-être que c le cas, alors ? nous avons déjà des photos de la conversation",
 				"key": "Ana",
 				"time": 2
@@ -407,7 +407,7 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Demain, tout le monde connaîtra tes goûts personnels hahaha",
 				"key": "Alex",
 				"time": 2
@@ -418,7 +418,7 @@
 			"next": "nodeC2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Oui, j'aime ça, c'est un problème ? Comme vous l'entendez, j'aime ça, c'est un problème ? VOUS ÊTES JALOUX !!",
 				"key": "",
 				"other": "empty",
@@ -429,7 +429,7 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Demain, tout le monde connaîtra tes goûts personnelss hahaha",
 				"key": "Alex",
 				"time": 2

@@ -461,7 +461,7 @@
 			"next": "changeHour",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
+				"var": "Alison Classe",
 				"value": "Merci encore de m'avoir aidé",
 				"key": "Alison Classe",
 				"other": "alisonThx",

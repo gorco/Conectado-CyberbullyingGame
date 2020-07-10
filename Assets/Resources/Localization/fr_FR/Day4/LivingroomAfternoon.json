@@ -105,7 +105,7 @@
 			"next": "mobileMessage1",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "On dirait k vs ne m'avez pas viré, tks. En guise de cadeau, je vous dis que j'<3 sucer des bites :)",
 				"key": "",
 				"other": "empty",
@@ -117,7 +117,7 @@
 			"next": "mobileMessage2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "En fait, je m'occupe de tt, si qqu'un veut qu'il me le fasse savoir",
 				"key": "",
 				"time": 0.1
@@ -128,7 +128,7 @@
 			"next": "mobileMessage3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Merci 2 confesser, mais on le savais déjà, ct ékri sur tt ta face.",
 				"key": "Alex",
 				"time": 0.2
@@ -139,7 +139,7 @@
 			"next": "mobileMessage4",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "On a le surnom parfait pour toi, SUFACE, la face qui suce des bites LOL",
 				"key": "Ana",
 				"time": 0.3
@@ -150,7 +150,7 @@
 			"next": "mobileMessage5",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Pourkoi ça? Pourkoi dis-tu c choses?",
 				"key": "Alison",
 				"time": 0.3
@@ -161,7 +161,7 @@
 			"next": "mobileMessage6",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "le meilleur jour et je l'ai manqué... qu'est-ce que j'ai perdu?",
 				"key": "Jose",
 				"time": 0.4
@@ -172,7 +172,7 @@
 			"next": "mobileMessage7",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "vous franchissez déjà une ligne, qui l'a <$ if(varObject('global', 'MaleSexNonStatic')==true, 'trollé', 'trollée') $>?",
 				"key": "Guille",
 				"time": 0.5
@@ -183,7 +183,7 @@
 			"next": "mobileMessage8",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "aucun de nous, pourkoi, koi de neuf guille ? tu t'es fait sucer et tu ne veux pas que ça se sache ? hahaha",
 				"key": "Ana",
 				"other": "trollClass",
