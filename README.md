@@ -3,14 +3,22 @@
 Conectado es un videojuego que ha sido diseñado y desarrollado con el objetivo de concienciar contra el acoso escolar (bullying y ciberbullying) mediante las emociones. 
 Está enfocado a ser una herramienta de ayuda para que los  profesionales de la educación puedan educar sobre este tema de un modo más interactivo y con una mayor implicación emocional de 
 los jóvenes de 12 a 17 años de edad.
-El videojuego está siendo desarrollado dentro del grupo [eUCM](http://www.e-ucm.es/es/).
+El videojuego está siendo desarrollado dentro del grupo [eUCM](http://www.e-ucm.es/es/). Tanto el ejecutable como una guía para el docente se encuentran en [e-ucm.es](e-ucm.es/conectado).
+
+Idiomas disponibles:
+ - Español (versión original)
+ - Inglés (en proceso)
+ - Francés (en proceso)
 
 Conectado is a video game that has been designed and developed with the aim of raising awareness on bullying and cyberbullying through emotions. 
 It is aimed at being a tool to help education professionals to educate on this subject in a more interactive way and with greater emotional involvement of children and adolescents. 
 young people aged 12 to 17.
-The video game is being developed within the [eUCM](http://www.e-ucm.es/es/) group.
+The video game is being developed within the [eUCM](http://www.e-ucm.es/es/) group. Both the executable and a teacher's guide can be found on [e-ucm.es](e-ucm.es/conectado).
 
-
+Languages available:
+ - Spanish (original version)
+ - English (in progress)
+ - French (in progress)
 
 Todos los recursos gráficos del proyecto poseen una licencia CC BY-NC-SA  (Creative Commons Attribution Non-Commercial Share Alike)
 Los recusos gráficos han sido diseñados por [Ana Vallecillos Ruiz](https://nashek.artstation.com/) (Directora de Arte) y [Lola González Gutiérrez](https://www.redbubble.com/es/people/lolagonzalez?asc=u).
