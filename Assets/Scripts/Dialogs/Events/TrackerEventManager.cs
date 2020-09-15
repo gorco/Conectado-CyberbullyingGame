@@ -26,7 +26,7 @@ public class TrackerEventManager : EventManager {
 							var optionList = finished.getParameter("options") as List<Option>;
 							var optionchosen = (int)ev.getParameter("option");
 							var response = optionList[optionchosen];
-
+							Debug.Log(">>>>>>>>>>>>>>>>>>traza");
 							Tracker.T.alternative.Selected(questionID, response.Text, AlternativeTracker.Alternative.Dialog);
 							break;
 
@@ -36,7 +36,7 @@ public class TrackerEventManager : EventManager {
 							string character = dfragment.Character;
 							string message = dfragment.Msg;
 							string name = dfragment.Name;
-
+							Debug.Log(">>>>>>>>>>>>>>>>>>traza");
 							Tracker.T.Completable.Completed(character+message, CompletableTracker.Completable.StoryNode);
 							break;
 					}
@@ -47,7 +47,7 @@ public class TrackerEventManager : EventManager {
 					string characterf = dfragmentf.Character;
 					string messagef = dfragmentf.Msg;
 					string namef = dfragmentf.Name;
-
+					Debug.Log(">>>>>>>>>>>>>>>>>>traza");
 					Tracker.T.Completable.Initialized(characterf + " " + messagef, CompletableTracker.Completable.StoryNode);
 					break;
 				case "change friendship":
@@ -62,6 +62,7 @@ public class TrackerEventManager : EventManager {
 
 					if (friend != null)
 					{
+						Debug.Log(">>>>>>>>>>>>>>>>>>traza");
 						Tracker.T.alternative.Unlocked(friend, value.ToString());
 						Tracker.T.completable.Progressed(friend, value);
 					}
@@ -71,6 +72,7 @@ public class TrackerEventManager : EventManager {
 					int scene = SceneManager.GetActiveScene().buildIndex;
 					string sceneName = GetSceneName(scene);
 					AddStateExtensions();
+					Debug.Log(">>>>>>>>>>>>>>>>>>traza");
 					Tracker.T.setProgress(scene / 27f);
 					Tracker.T.completable.Completed("scene" + scene);
 					Tracker.T.completable.Completed(sceneName, CompletableTracker.Completable.StoryNode);
@@ -85,19 +87,21 @@ public class TrackerEventManager : EventManager {
 					}
 
 					var valueVar = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
-
+					Debug.Log(">>>>>>>>>>>>>>>>>>traza");
 					Tracker.T.setVar(var, valueVar.ToString());
 					break;
 
 				case "move camera":
 					string key = ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD).ToString().Replace("\"", "");
 					AddStateExtensions();
+					Debug.Log(">>>>>>>>>>>>>>>>>>traza");
 					Tracker.T.accessible.Accessed(key);
 					break;
 
 				case "pick":
 					string pickVar = ((String)ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD)).Replace("\"", "");
 					var pickValue = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
+					Debug.Log(">>>>>>>>>>>>>>>>>>traza");
 					Tracker.T.setVar(pickVar, pickValue.ToString());
 					break;
 			}

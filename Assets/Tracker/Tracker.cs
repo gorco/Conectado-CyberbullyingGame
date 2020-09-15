@@ -33,12 +33,12 @@ namespace RAGE.Analytics
 
 	public class Tracker : MonoBehaviour
 	{
-		public static DateTime START_DATE = new DateTime (1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+		public static DateTime START_DATE = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 		public bool rawCopy;
 		public static bool strictMode = true;
 		private float nextFlush;
 		private bool flushRequested = false;
-		public float flushInterval = 1;
+		public float flushInterval = 3;
 		[Range(3, int.MaxValue)]
 		public float checkInterval = 3;
 		private float nextCheck;
@@ -47,6 +47,7 @@ namespace RAGE.Analytics
 		public string host = "https://analytics.e-ucm.es/";
 		public string trackingCode;
 		public Boolean debug = false;
+		private bool allowQuitting = false;
 
 		public string username;
 		public string password;
@@ -56,46 +57,49 @@ namespace RAGE.Analytics
 			get { return TrackerAsset.Instance; }
 		}
 
-        void Awake()
-        {
-            string domain = "";
-            int port = 80;
-            bool secure = false;
+		void Awake()
+		{
+			if (TrackerAsset.Instance.Started)
+			{
+				return;
+			}
 
-			host = PlayerPrefs.GetString("host");
-			trackingCode = PlayerPrefs.GetString("trackingCode");
-			username = PlayerPrefs.GetString("username");
-			password = PlayerPrefs.GetString("password");
+			string domain = "";
+			int port = 80;
+			bool secure = false;
 
-			if (host != "") { 
-                string[] splitted = host.Split('/');
-                string[] host_splitted = splitted[2].Split(':');
-                domain = host_splitted[0];
-                port = (host_splitted.Length > 1) ? int.Parse(host_splitted[1]) : (splitted[0] == "https:" ? 443 : 80);
-                secure = splitted[0] == "https:";
-            }
+			if (host != "")
+			{
+				string[] splitted = host.Split('/');
+				string[] host_splitted = splitted[2].Split(':');
+				domain = host_splitted[0];
+				port = (host_splitted.Length > 1) ? int.Parse(host_splitted[1]) : (splitted[0] == "https:" ? 443 : 80);
+				secure = splitted[0] == "https:";
+			}
 
 			TrackerAsset.TraceFormats format;
-			switch (traceFormat) {
-			case "json":
-				format = TrackerAsset.TraceFormats.json;
-				break;
-			case "xapi":
-				format = TrackerAsset.TraceFormats.xapi;
-				break;
-			default:
-				format = TrackerAsset.TraceFormats.csv;
-				break;
+			switch (traceFormat)
+			{
+				case "json":
+					format = TrackerAsset.TraceFormats.json;
+					break;
+				case "xapi":
+					format = TrackerAsset.TraceFormats.xapi;
+					break;
+				default:
+					format = TrackerAsset.TraceFormats.csv;
+					break;
 			}
 
 			TrackerAsset.StorageTypes storage;
-			switch (storageType) {
-			case "net":
-				storage = TrackerAsset.StorageTypes.net;
-				break;
-			default:
-				storage = TrackerAsset.StorageTypes.local;
-				break;
+			switch (storageType)
+			{
+				case "net":
+					storage = TrackerAsset.StorageTypes.net;
+					break;
+				default:
+					storage = TrackerAsset.StorageTypes.local;
+					break;
 			}
 
 			TrackerAssetSettings tracker_settings = new TrackerAssetSettings()
@@ -105,59 +109,86 @@ namespace RAGE.Analytics
 				BasePath = "/api",
 				Port = port,
 				Secure = secure,
-                StorageType = storage,
+				StorageType = storage,
 				TraceFormat = format,
-				BackupStorage = rawCopy,
-				BackupFile = "tracesRaw.csv"
+				BackupStorage = rawCopy
 			};
 
 			TrackerAsset.Instance.Bridge = new UnityBridge();
 			TrackerAsset.Instance.Settings = tracker_settings;
 		}
-        
+
 		/// <summary>
 		/// DONT USE THIS METHOD. UNITY INTERNAL MONOBEHAVIOUR.
 		/// </summary>
-		public void Start ()
+		public void Start()
 		{
-			if (!String.IsNullOrEmpty (username))
-				TrackerAsset.Instance.Login (username, password);
+			if (TrackerAsset.Instance.Started)
+			{
+				return;
+			}
 
-			TrackerAsset.Instance.Start ();
 			this.nextFlush = flushInterval;
-			UnityEngine.Object.DontDestroyOnLoad (this);
+			UnityEngine.Object.DontDestroyOnLoad(this);
+
+			Action afterStart = () =>
+			{
+				UnityEngine.Debug.Log("started");
+				allowQuitting = false;
+				Application.wantsToQuit += Application_wantsToQuit;
+			};
+
+			if (!String.IsNullOrEmpty(username))
+			{
+				TrackerAsset.Instance.Login(username, password);
+			}
+			TrackerAsset.Instance.Start();
 		}
 
-		void OnApplicationQuit(){
-			// We start the thread for a final
-			ProcessThreadCollection currentThreads = Process.GetCurrentProcess().Threads;
-
-			foreach (ProcessThread thread in currentThreads)    
+		private bool Application_wantsToQuit()
+		{
+			if (!allowQuitting)
 			{
-				UnityEngine.Debug.Log ("Thread: " + thread.Id + " - " + thread.StartTime);
+				// We start the thread for a final
+				ProcessThreadCollection currentThreads = Process.GetCurrentProcess().Threads;
+
+				foreach (ProcessThread thread in currentThreads)
+				{
+					UnityEngine.Debug.Log("Thread: " + thread.Id + " - " + thread.StartTime);
+				}
+				TrackerAsset.Instance.Exit(() =>
+				{
+					UnityEngine.Debug.Log("Fin");
+					allowQuitting = true;
+					Application.Quit();
+				});
 			}
-			TrackerAsset.Instance.Exit ();
-			UnityEngine.Debug.Log ("Fin");
+
+			return allowQuitting;
 		}
 
 		// <summary>
 		// DONT USE THIS METHOD. UNITY INTERNAL MONOBEHAVIOUR.
 		/// </summary>
-		public void Update ()
+		public void Update()
 		{
 			float delta = Time.deltaTime;
-			if (flushInterval >= 0) {
-					nextFlush -= delta;
-					if (nextFlush <= 0) {
-						flushRequested = true;
-					}
-					while (nextFlush <= 0) {
-						nextFlush += flushInterval;
-					}
+			if (flushInterval >= 0)
+			{
+				nextFlush -= delta;
+				if (nextFlush <= 0)
+				{
+					flushRequested = true;
+				}
+				while (nextFlush <= 0)
+				{
+					nextFlush += flushInterval;
+				}
 			}
-			if (flushRequested) {
+			if (flushRequested)
+			{
 				flushRequested = false;
-				TrackerAsset.Instance.Flush ();
+				TrackerAsset.Instance.Flush();
 			}
 		}
 	}

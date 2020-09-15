@@ -20,7 +20,7 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (!System.IO.File.Exists("host.cfg")) {
+		if (!Simva.SimvaExtension.Instance.IsActive) {
 			PlayerPrefs.SetInt("online", 0);
 			sendTrace = false;
 		}

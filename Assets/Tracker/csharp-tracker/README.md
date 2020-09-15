@@ -79,7 +79,7 @@ TrackerAsset.Instance.Settings = tracker_settings
 
 ### Bridge Implementation
 
-As in the rest of the assets of the RAGE projects, communication is made using a repository of interfaces called Bridge. This Bridge implements interfaces for managing the File System, or for sending Web Requests, and it's made this way to provide a platform independant system. If you want your tracker to be able to connect to the Analytics server, you have to use or implement a bridge for your platform that implements the interface `IWebServiceRequest`, for being able to make Logs implement `ILog`, and for accessing File System use `IDataStorage`. For more information see https://github.com/rageappliedgame/AssetManager
+As in the rest of the assets of the RAGE projects, communication is made using a repository of interfaces called Bridge. This Bridge implements interfaces for managing the File System, or for sending Web Requests, and it's made this way to provide a platform independant system. If you want your tracker to be able to connect to the Analytics server, you have to use or implement a bridge for your platform that implements the interface `IWebServiceRequest`, for being able to make Logs implement `ILog`, and for accessing File System use `IDataStorage`. For more information see the [asset manager](https://github.com/rageappliedgame/AssetManager)
 
 Once you have a Bridge, you just need to add it to the Tracker.
 
@@ -120,9 +120,9 @@ TrackerAsset.Instance.Start();
 	1. `net`: sends data to a trace-server, such as the [rage-analytics Backend](https://github.com/e-ucm/rage-analytics-backend). If set, a hostname should be specified via the `host` property.
 	2. `local`, to store them locally for later retrieval. Un-sent traces are always persisted locally before being sent through the net, to support intermittent internet access.
 1. Different trace formats:
-	2. `csv`: allow processing in MS Excel or other spreadsheets. Also supported by many analytics environments.
-	3. `json`: especially intended for programmatic analysis, for instance using python or java/javascript or
-	4. `xapi`: an upcoming standard for student activity. Note that, if the tracker's storage type is `net` it is required to use the `xapi` trace format since the [rage-analytics Backend](https://github.com/e-ucm/rage-analytics-backend) expects xAPI Statements. The [xAPI tracking model] (https://github.com/e-ucm/xapi-seriousgames) that the backend expects is composed of [Completables](https://github.com/e-ucm/xapi-seriousgames/blob/master/README.md#1341-completable), [Reachables](https://github.com/e-ucm/xapi-seriousgames/blob/master/README.md#1341-reachable), [Variables](https://github.com/e-ucm/xapi-seriousgames/blob/master/README.md#1342-variables) and [Alternatives](https://github.com/e-ucm/xapi-seriousgames/blob/master/README.md#1343-alternatives). 
+	1. `csv`: allow processing in MS Excel or other spreadsheets. Also supported by many analytics environments.
+	2. `json`: especially intended for programmatic analysis, for instance using python or java/javascript or
+	3. `xapi`: an upcoming standard for student activity. Note that, if the tracker's storage type is `net` it is required to use the `xapi` trace format since the [rage-analytics Backend](https://github.com/e-ucm/rage-analytics-backend) expects xAPI Statements. The [xAPI tracking model](https://github.com/e-ucm/xapi-seriousgames) that the backend expects is composed of [Completables](https://github.com/e-ucm/xapi-seriousgames/blob/master/README.md#1341-completable), [Reachables](https://github.com/e-ucm/xapi-seriousgames/blob/master/README.md#1341-reachable), [Variables](https://github.com/e-ucm/xapi-seriousgames/blob/master/README.md#1342-variables) and [Alternatives](https://github.com/e-ucm/xapi-seriousgames/blob/master/README.md#1343-alternatives). 
 1. Tracker messages can be displayed in the Unity console by setting the `Debug` property
 1. Uses Unity's in-built facilities to handle connections, files and timing.
  
@@ -144,14 +144,14 @@ A **gameplay** is the flow of interactions that a player performs over these gam
 
 The main typed of game objects supported are:
 
-* [Completable](https://github.com/e-ucm/csharp-tracker/blob/master/Interfaces/CompletableTracker.cs) - for Game, Session, Level, Quest, Stage, Combat, StoryNode, Race or any other generic Completable. Methods: `Initialized`, `Progressed` and `Completed`.
-* [Accessible](https://github.com/e-ucm/csharp-tracker/blob/master/Interfaces/AccessibleTracker.cs) - for Screen, Area, Zone, Cutscene or any other generic Accessible. Methods: `Accessed` and `Skipped`.
-* [Alternative](https://github.com/e-ucm/csharp-tracker/blob/master/Interfaces/AlternativeTracker.cs) - for Question, Menu, Dialog, Path, Arena or any other generic Alternative. Methods: `Selected` and `Unlocked`.
-* [TrackedGameObject](https://github.com/e-ucm/csharp-tracker/blob/master/Interfaces/GameObjectTracker.cs) for Enemy, Npc, Item or any other generic GameObject. Methods: `Interacted` and `Used`.
+* [Completable](https://github.com/e-ucm/csharp-tracker/blob/master/TrackerAsset/Interfaces/CompletableTracker.cs) - for Game, Session, Level, Quest, Stage, Combat, StoryNode, Race or any other generic Completable. Methods: `Initialized`, `Progressed` and `Completed`.
+* [Accessible](https://github.com/e-ucm/csharp-tracker/blob/master/TrackerAsset/Interfaces/AccessibleTracker.cs) - for Screen, Area, Zone, Cutscene or any other generic Accessible. Methods: `Accessed` and `Skipped`.
+* [Alternative](https://github.com/e-ucm/csharp-tracker/blob/master/TrackerAsset/Interfaces/AlternativeTracker.cs) - for Question, Menu, Dialog, Path, Arena or any other generic Alternative. Methods: `Selected` and `Unlocked`.
+* [TrackedGameObject](https://github.com/e-ucm/csharp-tracker/blob/master/TrackerAsset/Interfaces/GameObjectTracker.cs) for Enemy, Npc, Item or any other generic GameObject. Methods: `Interacted` and `Used`.
 
 ##### Completable
 
-Usage example for the tracking of an in-game quest. We decided to use a [Completable](https://github.com/e-ucm/csharp-tracker/blob/master/Interfaces/CompletableTracker.cs) game object for this use-case as the most suitable option:
+Usage example for the tracking of an in-game quest. We decided to use a [Completable](https://github.com/e-ucm/csharp-tracker/blob/master/TrackerAsset/Interfaces/CompletableTracker.cs) game object for this use-case as the most suitable option:
 
 ```c#
 
@@ -228,10 +228,10 @@ Usage example for the tracking the player's with a NPC villager and using a heal
 	
 ```
 
-Note that in order to track other type of user interactions it is required to perform a previous analysis to identify the most suitable game objects ([Completable](https://github.com/e-ucm/csharp-tracker/blob/master/Interfaces/CompletableTracker.cs), [Accessible](https://github.com/e-ucm/csharp-tracker/blob/master/Interfaces/AccessibleTracker.cs), [Alternative](https://github.com/e-ucm/csharp-tracker/blob/master/Interfaces/AlternativeTracker.cs), [GameObject](https://github.com/e-ucm/csharp-tracker/blob/master/Interfaces/GameObjectTracker.cs)) for the given case. For instance, in order to track conversations [Alternative](https://github.com/e-ucm/csharp-tracker/blob/master/Interfaces/AlternativeTracker.cs) is the best choice
+Note that in order to track other type of user interactions it is required to perform a previous analysis to identify the most suitable game objects ([Completable](https://github.com/e-ucm/csharp-tracker/blob/master/TrackerAsset/Interfaces/CompletableTracker.cs), [Accessible](https://github.com/e-ucm/csharp-tracker/blob/master/TrackerAsset/Interfaces/AccessibleTracker.cs), [Alternative](https://github.com/e-ucm/csharp-tracker/blob/master/TrackerAsset/Interfaces/AlternativeTracker.cs), [GameObject](https://github.com/e-ucm/csharp-tracker/blob/master/TrackerAsset/Interfaces/GameObjectTracker.cs)) for the given case. For instance, in order to track conversations [alternatives](https://github.com/e-ucm/csharp-tracker/blob/master/TrackerAsset/Interfaces/AlternativeTracker.cs) are the best choice.
 
 ### Tracker and Collector Flow
 If the storage type is `net`, the tracker will try to connect to a `Collector` [endpoint](https://github.com/e-ucm/rage-analytics/wiki/Back-end-collector), exposed by the [rage-analytics Backend](https://github.com/e-ucm/rage-analytics-backend). 
 
-More information about the tracker can be found in the [official documentation of rage-analytics] (https://github.com/e-ucm/rage-analytics/wiki/Tracker).
+More information about the tracker can be found in the [official documentation of rage-analytics](https://github.com/e-ucm/rage-analytics/wiki/Tracker).
 
