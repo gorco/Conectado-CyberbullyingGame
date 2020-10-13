@@ -80,11 +80,11 @@ namespace Simva
             String[] scopes = null;
             if (scope_offline)
             {
-                scopes = new string[] { "read", "write", "scope_offline" };
+                scopes = new string[] { "offline_access" };
             }
             else
             {
-                scopes = new string[] { "read", "write" };
+                scopes = new string[] { };
             }
 
 
@@ -114,11 +114,11 @@ namespace Simva
 			String[] scopes = null;
 			if (scope_offline)
 			{
-				scopes = new string[] { "read", "write", "scope_offline" };
+				scopes = new string[] { "offline_access" };
 			}
 			else
 			{
-				scopes = new string[] { "read", "write" };
+				scopes = new string[] { };
 			}
 
 
@@ -143,7 +143,7 @@ namespace Simva
 
 		public IAsyncOperation InitOAuth(AuthorizationInfo authorizationInfo)
         {
-            var scopes = new string[] { "read", "write" };
+            var scopes = new string[] { };
 
             var tokenUrl = TokenPath ?? "https://sso.simva.e-ucm.es/auth/realms/simva/protocol/openid-connect/token";
             var authUrl = AuthPath ?? "https://sso.simva.e-ucm.es/auth/realms/simva/protocol/openid-connect/auth";
