@@ -24,14 +24,14 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
-					"msn": "Lorsque la classe est terminée, n'oublie pas de venir aux toilettes."
+					"msn": "Lorsque la classe est terminée, rendez-vous aux toilettes."
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
-					"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Je serai là', 'Ana t\'y attendra') $>."
+					"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Je serai là', 'Anna t\'y attendra') $>."
 				}
 			]
 		},
@@ -40,12 +40,12 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "On dirait que tu vas avoir besoin d'un nouveau téléphone portable, n'est-ce pas ?"
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "J'espère que tu ne le perdras pas celui-là aussi... ou qu'on ne te l'enlèvera pas."
 				}]
@@ -55,14 +55,14 @@
 			"next": "setter",
 			"fragments": [
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Tu as regardé les commentaires sur \"Conectado\", pas vrai?"
 			},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
-					"msn": "Je ne m'attendais pas à cela de ta part, c'est comme si ce n'était pas toi qui les avait écrits XD."
+					"msn": "Je ne m'attendais pas à cela de ta part, c'est comme si ce n'était pas toi qui les avais écrits XD."
 				}]
 		},
 		"sh2": {
@@ -70,12 +70,12 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Regardez tes commentaires dans le chat. Suface, tu nous as tous surpris."
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Je ne m'attendais pas à ça de ta part, c'est comme si ce n'était pas toi qui les avait écrits hahaha."
 				}]
@@ -93,24 +93,24 @@
 			"next": "default",
 			"fragments": [
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Eh bien, je pense que c'est suffisant."
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
-					"msn": "Faisons quelque chose. Quand les cours seront terminés, parlons là où personne ne peut nous entendre."
+					"msn": "Faisons quelque chose. A la fin des cours, viens me retrouver dans un endroit discret."
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
-					"msn": "Nous en parlons, nous nous excuserons et nous te laisserons en paix."
+					"msn": "Nous en reparlons, on s'excusera et on te laissera en paix."
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
-					"msn": "Ana et moi te laisserons tranquille et les autres pourront faire ce qu'ils veulent."
+					"msn": "Anna et moi, on te laissera tranquille. Et les autres, ils feront ce qu'ils voudront."
 				}]
 		},
 	},
@@ -130,7 +130,7 @@
 		"default": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guillaume",
 				"character": "Guille",
 				"msn": "..."
 			}]
@@ -140,7 +140,7 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "Je n'ai rien à te dire."
 				}]
@@ -177,7 +177,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des garçons."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
 				}
 			]
 		}
@@ -206,7 +206,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des filles."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filles."
 				}
 			]
 		}

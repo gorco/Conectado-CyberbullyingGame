@@ -19,7 +19,7 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Elle lit comme d'habitude, mieux vaut ne pas la déranger."
 				}
@@ -29,14 +29,14 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
-					"msn": "Tu n'as probablement pas remarqué, mais il y a un chewing-gum collé sur tes fesses."
+					"msn": "Tu n'as sans doute pas remarqué, mais tu as un chewing-gum collé sur les fesses."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
-					"msn": "Tu peux aller aux toilettes et le voir dans le miroir."
+					"msn": "Va aux toilettes. Regarde dans le miroir et tu le verras."
 				}
 			]
 		},
@@ -44,14 +44,14 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
-					"msn": "Qu'as-tu fait ? Quelle tâche."
+					"msn": "Qu'as-tu fait ? Quelle tache."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
-					"msn": "Oh mec, on dirait que tu t'es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'mouillé ou même chié dessus.', 'mouillée ou même chiée dessus.') $>"
+					"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Oh mec, on dirait que tu t'es pissé dessus ou même chié dessus.', 'Oh meuf, on dirait que t'es pissée dessus ou même chiée dessus.') $>"
 				}
 			]
 		}
@@ -106,7 +106,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des garçons."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
 				}
 			]
 		}
@@ -135,7 +135,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des filles."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filles."
 				}
 			]
 		}
@@ -171,7 +171,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Dès que tu entres, la cloche sonne et le professeur apparaît. Tu n'as pas remarqué mais la matinée est terminée, il est temps de rentrer..."
+				"value": "Dès que tu entres, la cloche sonne et le professeur apparaît. Le cours se déroule. Une heure plus tard, tu n'as pas remarqué mais la matinée est déjà terminée, il est temps de rentrer..."
 			}
 		},
 		"changeHour": {

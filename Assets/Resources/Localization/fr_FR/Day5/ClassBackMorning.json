@@ -37,7 +37,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Les cours sont terminés, mais les gens t'ont regardé et t'ont murmuré dans le dos pendant toute la journée."
+				"value": "Les cours sont terminés, mais les gens t'ont regardé et ont murmuré dans ton dos pendant toute la journée."
 			}
 		},
 		"node3": {
@@ -65,7 +65,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Cette place est disponible, est-ce que je m'asseois ici ?"
+					"msn": "Cette place est disponible, est-ce que je m'assois ici ?"
 				}
 			]
 		},

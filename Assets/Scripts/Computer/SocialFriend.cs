@@ -53,17 +53,32 @@ public class SocialFriend : MonoBehaviour {
 		this.parent = parent;
 		this.nameUser.text = name;
 		this.state.text = state;
-		// SET AVATAR
-		int i = 0;
-		foreach(string n in namesAvatarImages)
+
+		string avatarFile = "";
+		if (name == "Guille" || name == "Guillermo" || name == "Guillaume")
 		{
-			if (name.ToLower() == n.ToLower())
-			{
-				Image img = this.avatar.GetComponent<Image>();
-				img.sprite = avatarImages[i];
-			}
-			i++;
+			avatarFile = "Guille";
 		}
+		else if (name == "Alex" || name == "Álex" || name == "Alejandro" || name == "Alexandre")
+		{
+			avatarFile = "Alex";
+		}
+		else if (name == "Ana" || name == "Anna")
+		{
+			avatarFile = "Ana";
+		}
+		else if (name == "Alice" || name == "Alison")
+		{
+			avatarFile = "Alison";
+		}
+		else if (name == "Jose" || name == "Joseph" || name == "José")
+		{
+			avatarFile = "Jose";
+		}
+
+		// SET AVATAR
+		Image img = this.avatar.GetComponent<Image>();
+		img.sprite = Resources.Load<Sprite>(avatarFile + "Avatar");
 	}
 
 	public void AcceptFriend()

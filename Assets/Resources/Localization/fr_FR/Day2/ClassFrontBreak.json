@@ -4,14 +4,14 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
 					"msn": "Nous n'avons rien à nous dire."
 				},
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
-					"msn": "Va donc voir Ana et Jose, ils t'attendaient dans la cour de récréation."
+					"msn": "Va donc voir Anna et Joseph, ils t'attendent dans la cour de récré."
 				},
 				{
 					"tag": "",

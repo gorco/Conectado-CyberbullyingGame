@@ -5,7 +5,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Il n'y a plus de classes aujourd'hui et il n'y a plus personne."
+					"msn": "Je n'ai plus de cours aujourd'hui et il n'y a plus personne."
 				},
 				{
 					"tag": "Toi",
@@ -19,7 +19,7 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "Ne les écoute pas et rentre chez toi, demain sera un autre jour."
 				}
@@ -66,7 +66,7 @@
 			},
 				{
 					"tag": "Des voix",
-					"msn": "Quelle tâche ! <$ varObject('global', 'UserNameNonStatic') $>, on dirait que tu t'es chié dessus."
+					"msn": "Quelle tache ! <$ varObject('global', 'UserNameNonStatic') $>, on dirait que tu t'es chié dessus."
 				}]
 		},
 		"notWash": {
@@ -81,7 +81,7 @@
 				},
 				{
 					"tag": "Des voix",
-					"msn": "Peu importe combien tu portes ce chewing-gum, il ne va pas devenir à la mode."
+					"msn": "Et tu crois que ce chewing-gum collé sur ton pantalon, ça va devenir à la mode, hi, hi, hi!"
 				}]
 		}
 	},

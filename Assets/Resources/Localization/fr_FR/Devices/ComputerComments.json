@@ -5,7 +5,6 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-
 					"msn": "Je n'ai rien à poster pour l'instant, j'ai mieux à faire."
 				}
 			]
@@ -17,7 +16,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "earing",
-				"value": "De rien, Allison",
+				"value": "De rien, Alison",
 				"key": "Toi",
 				"other" : "empty",
 				"time": 0
@@ -71,8 +70,8 @@
 				"name": "computer comment",
 				"var": "insult",
 				"value": "Je suis sûre que tu es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'celui qui s'est pissé', 'celle qui s'est pissée') $> dessus la nuit, hahaha",
-				"key": "Ana",
-				"other": "empty",
+				"key": "Anna",
+				"other" : "empty",
 				"time": 1
 			}
 		},
@@ -90,7 +89,7 @@
 		"node2b": {
 			"type": "event",
 			"event": {
-				"key": "Ana",
+				"key": "Anna",
 				"name": "computer comment",
 				"other": "empty",
 				"time": 1,
@@ -138,7 +137,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alex",
-				"value": "J'ai vu que tu as supprimé ton post avec ton numéro de téléphone, mais ne t'inquiétes pas, j'ai fait une capture d'écran et je peux la remettre en ligne hahaha",
+				"value": "J'ai vu que tu as supprimé ton post avec ton numéro de téléphone, mais ne t'inquiéte pas, j'ai fait une capture d'écran et je peux la remettre en ligne hahaha",
 				"key": "Alex",
 				"other": "empty",
 				"time": 0
@@ -149,7 +148,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "troll",
-				"value": "Alison... c'est pour ça que tu voulais qu'on échange nos mots de passe, tu es la pire.",
+				"value": "Alison... c'est pour ça que tu voulais qu'on échange nos mots de passe, tu es la pire des filles que j'ai jamais connue.",
 				"key": "Toi",
 				"other": "empty",
 				"time": 0

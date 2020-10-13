@@ -84,7 +84,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "ParentsFS",
-				"value": -15,
+				"value": -15
 			}
 		},
 		"setter":{
@@ -105,7 +105,7 @@
 				},
 				{
 					"next": "maria",
-					"msn": "María n'est pas venue.",
+					"msn": "Marie n'est pas venue.",
 					"condition": "page == 1 && aboutMaria == true"
 				},
 				{
@@ -130,7 +130,7 @@
 				},
 				{
 					"next": "guille",
-					"msn": "J'ai parlé à Guille",
+					"msn": "J'ai parlé à Guillaume",
 					"condition": "page == 3 && aboutGuille == true"
 				},
 				{
@@ -161,11 +161,11 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Guille m'a dit qu'Alex me détestait."
+					"msn": "Guillaume m'a dit qu'Alex me détestait."
 				},
 				{
 					"tag": "Toi",
-					"msn": "Álex me rend la vie impossible."
+					"msn": "Alex me rend la vie impossible."
 				},
 				{
 					"tag": "Toi",
@@ -190,7 +190,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Et il m'a dit qu'Ana est la première à suivre son jeu."
+					"msn": "Et il m'a dit qu'Anna est la première à suivre son jeu."
 				},
 				{
 					"tag": "Toi",
@@ -225,7 +225,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je n'ai pas vu María aujourd'hui."
+					"msn": "Je n'ai pas vu Marie aujourd'hui."
 				}
 			]
 		},
@@ -235,7 +235,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "ParentsFS",
-				"value": 5,
+				"value": 5
 			}
 		},
 		"mariaSetter":{
@@ -266,7 +266,7 @@
 				{
 					"tag": "Maman",
 					"character": "Mother",
-					"msn": "On devrait peut-être aller parler à ton professeur et voir ce qu'il se passe."
+					"msn": "On devrait peut-être aller parler à ton professeur et voir ce qui se passe."
 				}
 			]
 		},
@@ -276,7 +276,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "ParentsFS",
-				"value": 15
+				"value": 15,
 			}
 		},
 		"boardSetter":{
@@ -372,7 +372,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "21:30",
+				"value": "21:30"
 			}
 		},
 		"message1": {
@@ -382,7 +382,7 @@
 				"name": "computer publication",
 				"var": "insult",
 				"value": "On cherche 1 surnom pr <$ varObject('global', 'UserNameNonStatic') $>",
-				"key": "Ana",
+				"key": "Anna",
 				"other": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'photoForeheadBoy', 'photoForeheadGirl') $>",
 				"time": 1
 			}
@@ -393,8 +393,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "regardez la tête k'<$ if(varObject('global', 'MaleSexNonStatic')==true, 'il', 'elle') $> a... \"Tête de lit\", qu'en dites-vous ?",
-				"key": "Ana",
+				"value": "Regardé la tête k'<$ if(varObject('global', 'MaleSexNonStatic')==true, 'il', 'elle') $> a... \"Tête de lit\", qu'en dites-vous ?",
+				"key": "Anna",
 				"time": 1.2
 			}
 		},
@@ -405,7 +405,7 @@
 				"name": "computer comment",
 				"var": "insult",
 				"value": "LOL, ressemble à 1 grand mur. Pourquoi pas TRUMP?",
-				"key": "Jose",
+				"key": "Joseph",
 				"time": 1.4
 			}
 		},
@@ -426,8 +426,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "hahaha, Álex, c'est du VENT, pas de l'R",
-				"key": "Ana",
+				"value": "hahaha, Alex, c'est du VENT, pas de l'R",
+				"key": "Anna",
 				"time": 1.7
 			}
 		},
@@ -438,7 +438,7 @@
 				"name": "computer comment",
 				"var": "insult",
 				"value": "ne vs compliquez pas la vie, nous pouvons l'appeler rejeté... de toute façon, personne ne va plus parler à celui qui est rejeté..",
-				"key": "Ester",
+				"key": "Esther",
 				"time": 2
 			}
 		},
@@ -448,7 +448,7 @@
 				"name": "computer comment",
 				"var": "insult",
 				"value": "rejeté n'est pas très original... Que diriez-vous de gremlin?",
-				"key": "Ana",
+				"key": "Anna",
 				"other": "insultPost",
 				"time": 2.5
 			}

@@ -46,7 +46,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je n'ai besoin de rien d'ici pour le moment."
+					"msn": "Je n'ai besoin de rien pour le moment."
 				}
 			]
 		}		
@@ -133,7 +133,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "8:10",
+				"value": "8:10"
 			}
 		},
 		"node1b": {
@@ -153,7 +153,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Dois-je laisser le portable charger ?"
+					"msn": "Dois-je laisser le portable à charger ?"
 				}
 			]
 		},		

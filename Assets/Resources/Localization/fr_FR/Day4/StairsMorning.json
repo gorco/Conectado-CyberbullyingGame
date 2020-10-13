@@ -15,7 +15,7 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Tu seras en retard si tu n'y vas pas maintenant."
 				}
@@ -36,13 +36,13 @@
 			"type": "dialog",
 			"next": "friendOptions",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Marie",
 				"character": "Maria",
 				"msn": "Bonjour <$ varObject('global', 'UserNameNonStatic') $>"
 			},
 			{
 				"tag": "Toi",
-				"msn": "Bonjour, María"
+				"msn": "Salut, Marie"
 			}]
 		},
 		"friendOptions": {
@@ -68,27 +68,27 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Je suppose que tu parles d'Alex."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
-					"msn": "Ana a fait quelque chose de similaire l'année dernière pour m'embéter."
+					"msn": "Anna a fait quelque chose de similaire l'année dernière pour m'embéter."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
-					"msn": "Tu devrais en parler à tes parents ou à notre professeur."
+					"msn": "Tu devrais en parler à tes parents ou à un de nos professeurs."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Je ne l'ai pas fait quand j'en ai eu l'occasion, mes parents m'ont obligée à aller voir un psychologue quand ils l'ont découvert."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Si tu as besoin que je t'accompagne pour parler avec le professeur, dis-le moi. Mais ne te tais pas."
 				},
@@ -103,17 +103,17 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Oui, je vais bien, merci de demander."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Hier, j'avais de la fièvre, alors je suis restée à la maison pour me reposer."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Aujourd'hui, je suis comme neuve."
 				}
@@ -124,12 +124,12 @@
 			"next": "normalOptions",
 			"fragments": [{
 				"tag": "Toi",
-				"msn": "Salut, Maria"
+				"msn": "Salut Marie"
 			},
 			{
-				"tag": "María",
+				"tag": "Marie",
 				"character": "Maria",
-				"msn": "Salut, <$ varObject('global', 'UserNameNonStatic') $>, est-ce que tu veux quelque chose?"
+				"msn": "Salut <$ varObject('global', 'UserNameNonStatic') $>, est-ce que tu veux quelque chose?"
 			}]
 		},
 		"normalOptions": {
@@ -149,7 +149,7 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Pourquoi ne le ferais-je pas ?"
 				},
@@ -158,17 +158,17 @@
 					"msn": "N'as-tu pas parlé à Alex?"
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Oui, à propos du traitement du silence..."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Ils m'ont rendu la vie impossible au cours de la dernière année, j'ai appris la leçon."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Il vaut mieux que tu parles à tes parents ou à notre professeur et que tu n'écoutes pas Alex ou l'un de ses \"serviteurs\"."
 				}
@@ -186,7 +186,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Note",
+				"tag": "Message",
 				"msn": "Bureau du directeur"
 			}]
 		}

@@ -94,7 +94,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "Toi",
-				"msn": "Est-ce que je laisse mon portable charger?"
+				"msn": "Est-ce que je laisse mon portable à charger?"
 			}]
 		},		
 		"node1": {
@@ -160,6 +160,6 @@
 				"var": "repeated",
 				"value": true
 			}
-		}
+		},
 	}
 }

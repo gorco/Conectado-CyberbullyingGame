@@ -20,7 +20,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "Peut-être que la note était importante."
+					"msn": "Peut-être que le message était importante."
 				}
 			]
 		},
@@ -64,7 +64,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des garçons"
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons"
 				}
 			]
 		}
@@ -93,7 +93,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des filles"
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filles"
 				}
 			]
 		}

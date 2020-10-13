@@ -16,7 +16,7 @@
 			"type": "dialog",
 			"fragments": [
 			{
-				"tag": "Jose",
+				"tag": "Joseph",
 				"character": "Jose",
 				"msn": "Hahaha..."
 			}]
@@ -26,12 +26,12 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "Je voulais te remercier, Alex s'en prenait à moi à cause de mon poids..."
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "Avant que tu arrives. Je suis vraiment content que tu sois là, petit gremlin."
 				}]
@@ -48,7 +48,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Note",
+				"tag": "Message",
 				"msn": "Bureau du directeur."
 			}]
 		}

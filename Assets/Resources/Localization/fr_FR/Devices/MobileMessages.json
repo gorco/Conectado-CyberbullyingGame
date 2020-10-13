@@ -45,10 +45,10 @@
 				},
 				{
 					"next": "node2",
-					"msn": "Je le ferrai dès que je le pourrai"
+					"msn": "Je le ferai dès que je le pourrais"
 				},
 				{
-					"msn": "(Elle est un peu lourd, je ne répondrai rien)"
+					"msn": "(Elle est agaçante, Qu'est-ce qu'elle veux celle là ? Je ne répondrai rien)"
 				}
 			]
 		},
@@ -99,7 +99,7 @@
 				},
 				{
 					"next": "messageB",
-					"msn": "Mûri!!!"
+					"msn": "Mûris!!!"
 				},
 				{
 					"next": "messageC",
@@ -149,7 +149,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Classe",
-				"value": "Je ne comprends pas, qu'est-ce que je vous ai fait pour que vous m'insultiez, vous m'ignoriez et vous moquez de moi ?",
+				"value": "Je ne comprends pas, qu'est-ce que je vous ai fait pour que vous m'insultiez, vous m'ignoriez et vous moquiez de moi ?",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -173,7 +173,7 @@
 				"name": "mobile message",
 				"var": "Classe",
 				"value": "Vous dépassez les limites.",
-				"key": "Guille",
+				"key": "Guillaume",
 				"time": 4
 			}
 		},
@@ -182,7 +182,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Classe",
-				"value": "Ce n'est pas votre affaire, je peux obliger Jose à vous mettre dehors aussi.",
+				"value": "Ce n'est pas votre affaire, je peux obliger Joseph à vous mettre dehors aussi.",
 				"key": "Alex",
 				"other": "kickClass2",
 				"time": 8
@@ -200,7 +200,7 @@
 				},
 				{
 					"next": "messageB",
-					"msn": "J'espère que José est plus intelligent."
+					"msn": "J'espère que Joseph est plus intelligent."
 				},
 				{
 					"next": "messageC",
@@ -225,7 +225,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Classe",
-				"value": "J'espère que Jorge ne sera pas aussi stupide que toi quand il lira le chat.",
+				"value": "J'espère que Joseph ne sera pas aussi stupide que toi quand il lira le chat.",
 				"key": "",
 				"time": 0
 			}
@@ -276,7 +276,7 @@
 			"next": "mariaFS",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
+				"var": "Marie",
 				"value": "Oui, je l'ai écrit, à demain <3",
 				"key": "",
 				"other": "empty",
@@ -297,8 +297,8 @@
 			"next": "nodeA2",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
-				"value": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Désolé', 'Désolée') $> María, je ne t'ai pas écrit, ils ont dû t'écrire quand ils ont volé mon téléphone",
+				"var": "Marie",
+				"value": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Désolé', 'Désolée') $> Marie, je ne t'ai pas écrit, ils ont dû t'écrire quand ils ont volé mon téléphone",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -309,7 +309,7 @@
 			"next": "nodeA3",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
+				"var": "Marie",
 				"value": "Je suis vraiment <$ if(varObject('global', 'MaleSexNonStatic')==true, 'désolé', 'désolée') $>",
 				"key": "",
 				"other": "empty",
@@ -320,9 +320,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
+				"var": "Marie",
 				"value": "Je te crois, détends-toi et repose-toi.",
-				"key": "Maria",
+				"key": "Marie",
 				"other": "empty",
 				"time": 4
 			}
@@ -339,7 +339,7 @@
 				},
 				{
 					"next": "nodeB",
-					"msn": "Alex, Ana, allez vous faire foutre."
+					"msn": "Alex, Anna, allez vous faire foutre."
 				},
 				{
 					"next": "nodeC",
@@ -366,7 +366,7 @@
 				"name": "mobile message",
 				"var": "Classe",
 				"value": "On a déjà des photos de ce que tu as dit, on va les partager à toute les classes, hahaha",
-				"key": "Ana",
+				"key": "Anna",
 				"time": 2
 			}
 		},
@@ -386,7 +386,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Classe",
-				"value": "Álex, Ana, allez vous faire foutre tous les deux, je sais que c'est vous",
+				"value": "Alex, Anna, allez vous faire foutre tous les deux, je sais que c'est vous",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -399,7 +399,7 @@
 				"name": "mobile message",
 				"var": "Classe",
 				"value": "Peut-être que c le cas, alors ? nous avons déjà des photos de la conversation",
-				"key": "Ana",
+				"key": "Anna",
 				"time": 2
 			}
 		},
@@ -419,7 +419,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Classe",
-				"value": "Oui, j'aime ça, c'est un problème ? Comme vous l'entendez, j'aime ça, c'est un problème ? VOUS ÊTES JALOUX !!",
+				"value": "Oui, j'aime ça, c'est un problème ? VOUS ENTENDEZ, j'aime ça, c'est un problème ? VOUS ÊTES JALOUX !!",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -430,7 +430,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Classe",
-				"value": "Demain, tout le monde connaîtra tes goûts personnelss hahaha",
+				"value": "Demain, tout le monde connaîtra tes goûts personnels hahaha",
 				"key": "Alex",
 				"time": 2
 			}

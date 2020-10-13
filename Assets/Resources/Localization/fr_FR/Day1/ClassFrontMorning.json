@@ -52,12 +52,12 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Alejandro, vous êtes en retard, veuillez vous asseoir."
+					"msn": "Alexandre, vous êtes en retard, veuillez vous asseoir."
 				},
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
-					"msn": "Le nouveau venu est à ma place."
+					"msn": "Le nouveau est à ma place."
 				},
 				{
 					"tag": "Professeur",
@@ -67,7 +67,7 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Asseyez-vous à un autre bureau pour l'instant, j'ai demandé à Alison de l'aider pendant les premiers jours."
+					"msn": "Asseyez-vous à un autre bureau pour l'instant. J'ai demandé à Alison de l'aider pendant les premiers jours."
 				}
 			]
 		},
@@ -78,12 +78,12 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Alejandro, vous êtes en retard, veuillez vous asseoir."
+					"msn": "Alexandre, vous êtes en retard, veuillez vous asseoir."
 				},
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
-					"msn": "La nouvelle venue est à ma place."
+					"msn": "La nouvelle est à ma place."
 				},
 				{
 					"tag": "Professeur",
@@ -93,7 +93,7 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Asseyez-vous à un autre bureau pour l'instant, j'ai demandé à Alison de l'aider pendant les premiers jours."
+					"msn": "Asseyez-vous à un autre bureau pour l'instant. J'ai demandé à Alison de l'aider pendant les premiers jours."
 				}
 			]
 		},

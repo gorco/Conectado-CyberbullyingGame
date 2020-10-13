@@ -126,7 +126,7 @@
 			"next": "nodeFork",
 			"fragments": [{
 				"tag": "",
-				"msn": "(Bruits de fonds, le professeur est arrivé)"
+				"msn": "(Bruits de fond, le professeur est arrivé)"
 			}]
 		},
 		"nodeFork": {

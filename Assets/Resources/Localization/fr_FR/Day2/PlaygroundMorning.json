@@ -16,7 +16,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "J'ai déjà parlé à Alison, je devrais chercher des gens dans la cour de récréation qui attendent que la cloche sonne."
+					"msn": "J'ai déjà parlé à Alison, je devrais chercher des gens dans la cour en attendent que la cloche sonne."
 				}
 			]
 		}, 
@@ -47,19 +47,19 @@
 			"type": "dialog",
 			"next": "notify2",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Marie",
 				"character": "Maria",
 				"msn": "Bonjour, <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
-					"msn": "J'ai entendu Alex parler à Ana de te faire une blague."
+					"msn": "J'ai entendu Alex parler à Anna de te faire une blague."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
-					"msn": "Je ne sais pas ce que ça pourrait être, mais attention, ils ne sont généralement pas très drôles."
+					"msn": "Je ne sais pas ce que ça pourrait être, mais attention, elles ne sont généralement pas très drôles."
 				}]
 		}, 
 		"notify2": {
@@ -86,7 +86,7 @@
 			"next": "notify3",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Encore une fois quoi?"
 				},
@@ -96,7 +96,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "C'est bon, je m'en vais, en revoir."
+					"msn": "C'est bon, je m'en vais, au revoir."
 				}
 			]
 		},
@@ -123,7 +123,7 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "A plus tard, bye."
 				}
@@ -133,12 +133,12 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Marie",
 				"character": "Maria",
 				"msn": "Je suis en train de lire."
 			},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Si ça ne te dérange pas...(Elle t'ignore et continue à lire)"
 				}]
@@ -148,7 +148,7 @@
 			"next": "normal2",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Veux-tu quelque chose?"
 				}
@@ -182,17 +182,17 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Très aimable."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Les gens n'ont pas l'habitude de me parler."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Passe une bonne journée."
 				}
@@ -242,7 +242,7 @@
 		"nodeRepeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Jose",
+				"tag": "Joseph",
 				"character": "Jose",
 				"msn": "A plus"
 			}]
@@ -252,24 +252,24 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
-					"msn": "As-tu vu cette application sur ton portable qui vérifie ta relation avec les gens avec qui tu parles le plus ?"
+					"msn": "Tu as vu cette appli sur ton portable qui vérifie ta relation avec les gens avec qui tu parles le plus ?"
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
-					"msn": "Il t'indique avec qui tu t'entends ou non parmi toutes les personnes qui l'ont téléchargée."
+					"msn": "Elle t'indique avec qui tu t'entends ou non parmi toutes les personnes qui l'ont téléchargée."
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
-					"msn": "On dit que c'est vraiment exact, mais la façon dont ça fonctionne n'est pas claire."
+					"msn": "On dit que c'est vrai, mais la façon dont ça fonctionne n'est pas claire."
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
-					"msn": "J'ai vu que tu l'avais déjà."
+					"msn": "J'ai vu que tu l'avais déjà téléchargée!"
 				}
 			]
 		},
@@ -324,7 +324,7 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Dégage, je n'ai rien à te dire."
 				}
@@ -334,9 +334,10 @@
 			"type": "dialog",
 			"next": "badOptions",
 			"fragments": [{
-				"tag": "Ana",
+				"tag": "Anna",
 				"character": "Ana",
-				"msn" : "Qu'est-ce que tu regardes ? Dis quelque chose ou pars."
+				"msn" : "Qu'est-ce que tu regardes ? Dis quelque chose ou va-t'en!
+				"
 			}]
 		},
 		"badOptions": {
@@ -356,7 +357,7 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Oui, et alors ? Allez, va-t'en."
 				}
@@ -377,7 +378,7 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Dégage, je n'ai rien à te dire."
 				}
@@ -387,12 +388,12 @@
 			"type": "dialog",
 			"next": "goodOptions",
 			"fragments": [{
-				"tag": "Ana",
+				"tag": "Anna",
 				"character": "Ana",
 				"msn": "Bonjour <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
-				"tag": "Ana",
+				"tag": "Anna",
 				"character": "Ana",
 				"msn": "Est-ce que tu veux quelque chose?"
 			}]
@@ -414,12 +415,12 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Wow, tu nous as eu, c'était une chose stupide à faire."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Mais ce n'est plus drôle, on ne la fera pas."
 				}
@@ -450,7 +451,7 @@
 			"fragments": [
 				{
 					"tag": "",
-					"msn": "On dirait que je suis en avance et que je ne peut toujours pas rentrer. Je ferais mieux de trouver quelque chose à faire en attendant pour tuer un peu le temps."
+					"msn": "On dirait que je suis en avance et que je ne peux toujours pas rentrer. Je ferais mieux de trouver quelque chose à faire en attendant pour tuer un peu le temps."
 				}
 			]
 		}
@@ -461,7 +462,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je viens d'arriver, je ne peux pas encore partir."
+					"msn": "Je viens d'arriver dans la cour, je ne peux pas encore partir du lycée et rentrer chez moi."
 				}
 			]
 		}

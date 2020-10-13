@@ -6,7 +6,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Mmm, qu\'est-ce qui se passe Alex ? Pourquoi ne rentres-tu pas ?','Ana, es-tu là ?') $>"
+					"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Mmm, qu\'est-ce qui se passe Alex ? Pourquoi ne rentres-tu pas ?','Anna, es-tu là ?') $>"
 				}
 			]
 		},
@@ -36,7 +36,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "M'ont-ils enfermé dans les toilettes ? ANA!!! ALEX!!! N'IMPORTE QUI !!"
+					"msn": "M'ont-ils enfermé dans les toilettes ? ANNA!!! ALEX!!! N'IMPORTE QUI !!"
 				},
 				{
 					"tag": "Toi",
@@ -51,7 +51,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "La lumière. Sérieusement?"
+					"msn": "Pourquoi est-ce qu'il n'y a plus de lumière? Mais qu'est-ce qui se passe?"
 				},
 				{
 					"tag": "Toi",
@@ -70,7 +70,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "M'ont-ils enfermé dans les toilettes ? ANA!!! ALEX!!! N'IMPORTE QUI !!"
+					"msn": "M'ont-ils enfermé dans les toilettes ? ANNA!!! ALEX!!! N'IMPORTE QUI !!"
 				}
 			]
 		}
@@ -96,7 +96,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "Agh !! s'il te plaît, ne te fait pas pipi dessus..."
+					"msn": "Agh !! s'il te plaît, ne te fais pas pipi dessus..."
 				}
 			]
 		}
@@ -108,7 +108,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Les lumières sont de retour ! Et je peux entendre quelque chose dans le couloir, je devrais déjà pouvoir sortir."
+					"msn": "Ouf la lumière est revenue ! J'entends du bruit dans le couloir, je devrais déjà pouvoir sortir."
 				}
 			]
 		},
@@ -177,12 +177,12 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "S'il continue comme ça, nous pourrions le faire expulser du lycée pour de bon, ou même appeler la police et engager des poursuites contre lui."
+					"msn": "S'il continue comme ça, nous pourrions le faire renvoyer du lycée pour de bon, ou même appeler la police et engager des poursuites contre lui."
 				},
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Rentre chez toi et reposes-toi."
+					"msn": "Rentre chez toi et repose-toi."
 				}
 			]
 		},
@@ -217,7 +217,7 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Avec tout ce que tu m'as dit... Je vais parler au directeur pour expulser Alex pendant 3 jours."
+					"msn": "Avec tout ce que tu m'as dit... Je vais parler au directeur pour renvoyer Alex pendant 3 jours."
 				},
 				{
 					"tag": "Professeur",
@@ -227,12 +227,12 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "S'il continue comme ça, nous pourrions le faire expulser de l'école pour de bon, ou même appeler la police et engager des poursuites contre lui."
+					"msn": "S'il continue comme ça, nous pourrions le renvoyer de l'école définitivement, ou même appeler la police et engager des poursuites contre lui."
 				},
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Rentre chez toi et reposes-toi."
+					"msn": "Rentre chez toi et repose-toi."
 				}
 			]
 		},
@@ -263,27 +263,27 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "De plus, María et le conseiller scolaire sont venus me dire qu'Alex s'en prend à toi."
+					"msn": "De plus, Marie et le conseiller scolaire sont venus me dire qu'Alex s'en prend à toi."
 				},
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Tu n'as pas besoin de cacher quoi que ce soit et tu n'es pas une balance quand tu demandes de l'aide. Le comportement d'Alex suggère qu'une punition est nécessaire."
+					"msn": "Tu n'as pas besoin de cacher quoi que ce soit et tu n'es pas une balance quand tu demandes de l'aide. Le comportement d'Alex est inadmissible et nécessite vraiment une punition!"
 				},
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Nous avons décidé d'expulser Alex pour 3 jours."
+					"msn": "Nous avons décidé de renvoyer Alex pour 3 jours."
 				},
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "S'il continue comme ça, nous pourrions le faire expulser de l'école pour de bon, ou même appeler la police et engager des poursuites contre lui."
+					"msn": "S'il continue comme ça, nous pourrions le renvoyer de l'école définitivement, ou même appeler la police et engager des poursuites contre lui."
 				},
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Rentre chez toi et reposes-toi."
+					"msn": "Rentre chez toi et repose-toi."
 				}]
 		},
 		"noMariaAndMeeting": {
@@ -298,12 +298,12 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Si tu as des problèmes avec l'un de tes camarades de classe, tu devrais en parler à moi ou au conseiller scolaire."
+					"msn": "Mais n'oublie pas que si tu as des problèmes avec quelqu'un, c'est très important d'en parler."
 				},
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Si tu refuses notre aide, les choses risquent d'empirer."
+					"msn": "Sinon ce sera de pire en pire."
 				},
 				{
 					"tag": "Professeur",
@@ -353,7 +353,7 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "De plus, María et le conseiller scolaire sont venus me dire ce que tu viens de dire."
+					"msn": "De plus, Marie et le conseiller scolaire sont venus me dire ce que tu viens de dire."
 				},
 				{
 					"tag": "Professeur",
@@ -363,27 +363,27 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Le comportement d'Alex mérite une punition et il est important que tu m'ai tout dit."
+					"msn": "Le comportement d'Alex mérite une punition et il est important que tu m'aies tout dit."
 				},
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Ce n'est pas ta faute, et tu ne le mérites pas."
+					"msn": "Ce n'est pas de ta faute, et tu ne le mérites pas."
 				},
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Nous avons décidé d'expulser Alex pour 3 jours."
+					"msn": "Nous avons décidé de renvoyer Alex pour 3 jours."
 				},
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "S'il continue comme ça, nous pourrions le faire expulser de l'école pour de bon, ou même appeler la police et engager des poursuites contre lui."
+					"msn": "S'il continue comme ça, nous pourrions le renvoyer de l'école définitivement, ou même appeler la police et engager des poursuites contre lui."
 				},
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Rentre chez toi et reposes-toi."
+					"msn": "Rentre chez toi et repose-toi."
 				}
 			]
 		},
@@ -404,7 +404,7 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Il est important que tu en parles, il est temps que cela change les choses pour de bon."
+					"msn": "Il est important que tu en parles, il est temps que les choses changent pour de bon."
 				},
 				{
 					"tag": "Professeur",
@@ -453,7 +453,7 @@
 			"options": [
 				{
 					"next": "tattle",
-					"msn": "(Raconter tout ce qu'Alex t'a fait)"
+					"msn": "(Accuser Alex et raconter tout ce qu'il t'a fait)"
 				},
 				{
 					"next": "noTattle",
@@ -483,7 +483,7 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Je vais essayer de le faire expulser pendant 3 jours."
+					"msn": "Je vais essayer de le renvoyer pendant 3 jours."
 				},
 				{
 					"tag": "Professeur",
@@ -493,7 +493,7 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Rentre chez toi et reposes-toi."
+					"msn": "Rentre chez toi et repose-toi."
 				}]
 		},
 		"noTattle": {
@@ -555,7 +555,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Tu rentres chez toi et tu vas te coucher et te reposer plus tôt dans la journée. Comme d'habitude, c'est le temps des rêves..."
+				"value": "Tu rentres chez toi et tu vas te coucher plus tôt ce soir. Comme d'habitude, c'est le temps des rêves..."
 			}
 		},
 		"changeScene": {

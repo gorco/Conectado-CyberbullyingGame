@@ -52,12 +52,12 @@
 				{
 					"tag": "Maman",
 					"character": "Mother",
-					"msn": "Tu oublies ton sac à dos."
+					"msn": "Es-tu <$ if(varObject('global', 'MaleSexNonStatic')==true, 'sûr', 'sûre') $> de ne rien avoir oublié dans ton sac à dos?"
 				},
 				{
 					"tag": "Maman",
 					"character": "Mother",
-					"msn": "Il est dans ta chambre, prends-le et pars maintenant."
+					"msn": "Ton sac à dos est dans ta chambre, prends-le et pars maintenant."
 				}
 			]
 		},

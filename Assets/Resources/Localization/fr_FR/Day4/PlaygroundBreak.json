@@ -36,9 +36,9 @@
 			"next": "askOptions",
 			"fragments": [
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
-					"msn": "As-tu collé l'affiche dans le dos de Maria sans qu'elle ne s'en aperçoive encore ?"
+					"msn": "As-tu collé l'affiche dans le dos de Marie sans qu'elle ne s'en aperçoive encore ?"
 				}
 			]
 		},
@@ -67,21 +67,21 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
-					"msn": "Qu'attends-tu ? Vas-y, va coller cette affiche dans le dos de Maria."
+					"msn": "Qu'attends-tu ? Vas-y, va coller cette affiche dans le dos de Marie."
 				}
 			]
 		},
 		"mobile": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Hahahaha, bien joué."
 			},
 			{
-				"tag": "Ana",
+				"tag": "Anna",
 				"character": "Ana",
 				"msn": "Hahaha, ton portable est dans les toilettes des <$ if(varObject('global', 'MaleSexNonStatic')==true, 'filles', 'garçons') $>'."
 			}]
@@ -89,12 +89,12 @@
 		"repeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Hahahaha."
 			},
 			{
-				"tag": "Ana",
+				"tag": "Anna",
 				"character": "Ana",
 				"msn": "Hahahaha."
 			}]
@@ -122,17 +122,17 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Et si c'était nous, que vas-tu faire ? Vas-tu pleurer et le dire à notre professeur, à tes parents...?"
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Hahaha, je suis sûre que oui."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Allez, pars et va pleurer ailleurs."
 				}
@@ -142,22 +142,22 @@
 			"type": "dialog",
 			"next": "jokeAccepted",
 			"fragments": [{
-				"tag": "Ana",
+				"tag": "Anna",
 				"character": "Ana",
 				"msn": "Peut-être"
 			},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
-					"msn": "Nous te le ferons savoir si tu vas coller cette affiche dans le dos de María."
+					"msn": "Nous te le ferons savoir si tu vas coller cette affiche dans le dos de Marie."
 				},
 			{
-				"tag": "Ana",
+				"tag": "Anna",
 				"character": "Ana",
 				"msn": "(Elle te donne un papier avec du ruban adhésif et la phrase : \"Je suis masochiste, insultez-moi si vous lisez ceci\".)."
 			},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Reviens quand tu l'auras fait... sinon, ne te donne pas la peine de revenir nous voir."
 				}]

@@ -15,19 +15,19 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Il y a une note dans ma veste..."
+					"msn": "Il y a un message dans ma veste..."
 				},
 				{
 					"tag": "Toi",
-					"msn": "\"Alison a pris ton téléphone et l'a donné à Alex et Ana.\" (suite au verso)."
+					"msn": "\"Alison a pris ton téléphone et l'a donné à Alex et Anna.\" (suite au verso)."
 				},
 				{
 					"tag": "Toi",
-					"msn": "\"Elle a dû leur donner ton mot de passe ou ton portable.\" (fin de la note)."
+					"msn": "\"Elle a dû leur donner ton mot de passe ou ton portable.\" (fin du message)."
 				},
 				{
 					"tag": "Toi",
-					"msn": "J'essaye de me rappeler ce qu'il s'est passé ce matin. A-t-elle aussi été menacée?"
+					"msn": "J'essaye de me rappeler ce qui s'est passé ce matin. A-t-elle aussi été menacée?"
 				},
 				{
 					"tag": "Toi",
@@ -35,7 +35,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "Et je ne pourrai pas voir Alex, Ana ou Alison avant demain."
+					"msn": "Et je ne pourrai pas voir Alex, Anna ou Alison avant demain."
 				}
 			]
 		},
@@ -55,7 +55,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Il n'y a plus de classes aujourd'hui et il n'y a plus personne."
+					"msn": "Les cours sont finis. Ils sont tous partis chez eux."
 				},
 				{
 					"tag": "Toi",

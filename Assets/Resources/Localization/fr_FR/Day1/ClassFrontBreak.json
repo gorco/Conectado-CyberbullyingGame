@@ -15,7 +15,7 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
 					"msn": "Qu'est-ce que tu regardes ? Pars, nous avons parlé de tout ce dont nous avions besoin de parler."
 				}
@@ -34,19 +34,19 @@
 			"next": "node1",
 			"fragments": [
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
-					"msn": "Hé, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'le nouveau venu', 'la nouvelle venue') $>, parlons un peu!!"
+					"msn": "Hé, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'le nouveau', 'la nouvelle') $>, on peut se parler!!"
 				},
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
 					"msn": "Aujourd'hui, tu t'es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'assis', 'assise') $> à ma place, je ne veux plus que tu t'assoies là."
 				},
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
-					"msn": "À partir de demain, tu t'assoiras à l'autre bureau vide au fond."
+					"msn": "Dès demain, t'as intérêt à t'assoir à l'autre bureau vide là-bas au fond."
 				}
 			]
 		},
@@ -64,7 +64,7 @@
 				},
 				{
 					"next": "quest2c",
-					"msn": "Et qui est <$ if(varObject('global', 'MaleSexNonStatic')==true, 'censé', 'censée') $> me dire où je ne peux pas m'asseoir?"
+					"msn": "Et qui est censé me dire où je peux m'asseoir?"
 				}
 			]
 		},
@@ -82,23 +82,23 @@
 			"next": "move",
 			"fragments": [
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
 					"msn": "C'est cela, l'obéissance."
 				},
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
-					"msn": "Et au fait, en compensation, donne-moi ce sandwich, j'ai faim."
+					"msn": "Et au fait, pour te faire pardonner, donne-moi ton sandwich, j'ai faim."
 				},
 				{
 					"tag": "Toi",
 					"msn": "(Tu lui donnes ton sandwich)"
 				},
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
-					"msn": "Vas-y, sors de ma vue."
+					"msn": "C'est bon, j'ai plus rien à te dire, tu peux y aller."
 				}
 			]
 		},
@@ -116,29 +116,29 @@
 			"next": "nodeFS10",
 			"fragments": [
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
 					"msn": "C'est ça, c'est juste une place, comme toutes les autres, mais c'est ma place."
 				},
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
 					"msn": "Alors cherche-en une autre."
 				},
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
-					"msn": "(Sur un ton menaçant) Sinon je devrai t'aider à la trouver."
+					"msn": "(Sur un ton menaçant) Sinon je devrais t'aider à la trouver."
 				},
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
-					"msn": "Et la dernière personne que j'ai aidé à trouver une place libre... eh bien, elle a trouvé un bleu sur son visage."
+					"msn": "Fais attention à toi, la dernière personne que j'ai aidé à trouver une place... eh bien, elle s'est retrouvée avec un bleu sur son visage."
 				},
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
-					"msn": "Maintenant, pars."
+					"msn": "Allez maintenant, dégage!"
 				}
 			]
 		},
@@ -165,22 +165,22 @@
 			"next": "nodeFS20",
 			"fragments": [
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
-					"msn": "Tu es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'un petit malin', 'une petite maline') $>, n'est-ce pas?"
+					"msn": "Tu es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'un petit malin', 'une petite maligne') $>, n'est-ce pas?"
 				},
 				{
 					"tag": "",
-					"msn": "(Vous êtes <$ if(varObject('global', 'MaleSexNonStatic')==true, 'poussé','poussée')$>)"
+					"msn": "(Vous vous sentez <$ if(varObject('global', 'MaleSexNonStatic')==true, 'poussé','poussée')$>)"
 				},
 				{
-					"tag": "Alejandro",
+					"tag": "Alexandre",
 					"character": "Alex",
-					"msn": "Qu'il en soit ainsi, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'imbécile','idiote')$>!"
+					"msn": "Bien fait pour toi, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'imbécile','idiote')$>!"
 				},
 				{
 					"tag": "",
-					"msn": "(Alejandro part)"
+					"msn": "(Alexandre part)"
 				}
 			]
 		},
@@ -246,12 +246,12 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "La récréation va se terminer maintenant, nous devrions aller en classe."
+					"msn": "C'est la fin de la récré, on doit aller en cours."
 				},
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "Rendez-vous à l'intérieur."
+					"msn": "Allez, on rentre?"
 				}
 			]
 		},
@@ -312,7 +312,7 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "Je cherche une boucle d'oreille, je ne sais pas où j'aurai pu la perdre."
+					"msn": "Je cherche une boucle d'oreille, je ne sais pas où j'aurais pu la perdre."
 				}
 			]
 		},
@@ -337,7 +337,7 @@
 				},
 				{
 					"next": "node2a",
-					"msn": "As-tu regardé dans la cour de récréation?"
+					"msn": "As-tu regardé dans la cour?"
 				},
 				{
 					"next": "node2b",
@@ -357,7 +357,7 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "Pourrais-tu y aller ? Pendant que je finis de chercher dans la classe..."
+					"msn": "Peux-tu m'aider à les retrouver ? Pendant que je finis de chercher dans la classe..."
 				},
 				{
 					"tag": "Alison",
@@ -387,7 +387,7 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "S'il te plait, *sniff* , *sniff* peux-tu m'aider à les trouver?"
+					"msn": "S'il te plait, *sniff* , *sniff* peux-tu m'aider à les retrouver?"
 				}
 			]
 		},
@@ -397,7 +397,7 @@
 			"options": [
 				{
 					"next": "node4",
-					"msn": "Très bien, je vais y jeter un coup d'œil."
+					"msn": "D'acc, je vais profiter de la pause pour les chercher avec toi."
 				},
 				{
 					"next": "node4",
@@ -415,7 +415,7 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "Voici également mon numéro de téléphone, pour que nous puissions nous envoyer des SMS."
+					"msn": "Tiens, je te passe aussi mon numéro de téléphone pour que nous puissions nous envoyer des SMS."
 				},
 				{
 					"tag": "",
@@ -444,7 +444,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "Je devrais lui parler pour voir ce qu'il se passe."
+					"msn": "Je devrais lui parler pour voir ce qui se passe."
 				}
 			]
 		},
@@ -462,7 +462,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Classe",
-				"value": "Merci encore de m'avoir aidé",
+				"value": "Merci encore pour ton aide!",
 				"key": "Alison Classe",
 				"other": "alisonThx",
 				"time": 3
@@ -473,7 +473,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value":"11:10"
+				"value": "11:10",
 			}
 		},
 	}

@@ -19,7 +19,7 @@
 				"msn": "..."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guillaume",
 				"character": "Guille",
 				"msn": "..."
 			}]
@@ -53,7 +53,7 @@
 				"msn": "..."
 			},
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "Nous n'allons pas les dénoncer, mais je suppose que tu imagines déjà qui c'était."
 				},
@@ -63,7 +63,7 @@
 				"msn": "*sshhhhhh*"
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guillaume",
 				"character": "Guille",
 				"msn": "*sshhhhhh*"
 			}]
@@ -77,13 +77,13 @@
 				"msn": "..."
 			},
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "Je suis désolé, nous n'en avons aucune idée."
 				},
 			{
 				"tag": "Toi",
-				"msn": "Merci Guille."
+				"msn": "Merci Guillaume."
 			}]
 		},
 		"setter":{
@@ -99,7 +99,7 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Note",
+					"tag": "Message",
 					"msn": "Bureau du directeur."
 				}
 			]

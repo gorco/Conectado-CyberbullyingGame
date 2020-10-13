@@ -56,7 +56,7 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "Il n'était pas comme ça avant, je ne sais pas ce qu'il lui arrive."
+					"msn": "Il n'était pas comme ça avant, je ne sais pas ce qui lui arrive."
 				},
 				{
 					"tag": "Alison",
@@ -104,7 +104,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "JokeAdvise",
-				"value": true
+				"value": true,
 			}
 		},
 		"quest2": {
@@ -113,7 +113,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "AlisonQuest",
-				"value": 2,
+				"value": 2
 			}
 		},
 		"normal1": {
@@ -218,12 +218,12 @@
 			"next": "quest1",
 			"fragments": [
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Je suis un peu blagueur, mais tranquille."
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Nous allons tous rire."
 				}
@@ -247,7 +247,7 @@
 					"msn": "Pourquoi ne pas tout recommencer?"
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Très bien, entrons à l'intérieur."
 				}
@@ -259,7 +259,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "AlexQuest",
-				"value": 2,
+				"value": 2
 			}
 		},
 		"why1c": {
@@ -268,14 +268,14 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Tu es le genre de personne qui exploite tout le monde autour de lui."
+					"msn": "Tu es le genre de personne qui fait chier tout le monde autour de toi."
 				},
 				{
 					"tag": "Toi",
-					"msn": "Qui cherche un combat, quelle qu'en soit la raison."
+					"msn": "Qui cherche des problèmes, même là où il n'y en a pas."
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Si tu as fini de me harceler, va-t'en, espèce de branleur."
 				}
@@ -287,7 +287,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "AlexQuest",
-				"value": 3,
+				"value": 3
 			}
 		},
 		"why1aRepeat": {
@@ -295,12 +295,12 @@
 			"next": "quest1",
 			"fragments": [
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Si tu parles de ma place..."
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Ce n'était pas une blague, je ne veux pas que tu sois encore <$ if(varObject('global', 'MaleSexNonStatic')==true, 'assis', 'assise') $> là."
 				}
@@ -311,17 +311,17 @@
 			"next": "quest2",
 			"fragments": [
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Le chewing-gum?"
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Ne me regarde pas."
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Je me souviens que j'ai été en retard."
 				}
@@ -336,7 +336,7 @@
 					"msn": "Es-tu toujours en colère à propos de la place d'hier?"
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Nous allons voir, et toi, sais-tu déjà quel est ton bureau?"
 				}
@@ -393,19 +393,19 @@
 			"next": "matchOptions",
 			"fragments": [
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
-					"msn": "Nous nous rencontrons ce samedi pour regarder un film chez moi."
+					"msn": "On va regarder un film chez moi ce samedi."
 				},
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
-					"msn": "Tu veux venir ? Des camarades de classe viennent."
+					"msn": "Tu veux venir ? J'ai aussi invité aussi des potes de la classe."
 				},
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
-					"msn": "Et nous le regarderons dans l'énorme télévision que mon père vient d'acheter pour les matchs de football."
+					"msn": "Et on le verra sur la télé écran géant que mon père vient d'acheter pour les matchs de foot."
 				}
 			]
 		},
@@ -430,14 +430,14 @@
 			"next": "questGo",
 			"fragments": [
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "Super, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'un', 'une') $> autre rejoint l'équipe alors."
 				},
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
-					"msn": "Je te communiquerai l'adresse et le reste des détails."
+					"msn": "Je te donnerai mon adresse et je te dirai comment ça va se passer."
 				}
 			]
 		},
@@ -455,12 +455,12 @@
 			"next": "questNoGo",
 			"fragments": [
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "C'est dommage.."
 				},
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "Eh bien, à plus tard."
 				}
@@ -480,9 +480,9 @@
 			"next": "questAsk",
 			"fragments": [
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
-					"msn": "Eh bien, fais-moi savoir."
+					"msn": "Eh bien, tu me donneras la réponse plus tard."
 				}
 			]
 		},
@@ -492,7 +492,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "GuillermoQuest",
-				"value": 3,
+				"value": 3
 			}
 		},
 		"node1": {
@@ -537,7 +537,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des garçons."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
 				}
 			]
 		}
@@ -566,7 +566,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des filles."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filles."
 				}
 			]
 		}

@@ -8,11 +8,11 @@
 			},
 				{
 					"tag": "Toi",
-					"msn": "Dois-je faire confiance à Alex et aller aux toilettes pour <$ if(varObject('global', 'MaleSexNonStatic')==true, 'lui parler', 'parler à Ana') $>?"
+					"msn": "Dois-je faire confiance à Alex et aller aux toilettes pour <$ if(varObject('global', 'MaleSexNonStatic')==true, 'lui parler', 'parler à Anna') $>?"
 				},
 				{
 					"tag": "Toi",
-					"msn": "Si j'y vais, est-ce que ce sera fini une fois pour toutes?"
+					"msn": "Si j'y vais, est-ce que ce sera terminé une bonne fois pour toutes?"
 				}]
 		}
 	},

@@ -55,12 +55,12 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Maman",
 				"character": "Mother",
 				"msn": "Good afternoon, darling."
 			}, 
 			{
-				"tag": "Mom",
+				"tag": "Maman",
 				"character": "Mother",
 				"msn": "What have you done today?"
 			}]
@@ -69,7 +69,7 @@
 			"type": "dialog",
 			"next": "parentsFS",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Maman",
 				"character": "Mother",
 				"msn": "Do you want to talk about anything else?"
 			}]
@@ -100,7 +100,7 @@
 			},
 			{
 				"next": "maria",
-				"msn": "María didn't come",
+				"msn": "Marie didn't come",
 				"condition": "page == 1 && aboutMaria == true"
 			},
 			{
@@ -214,7 +214,7 @@
 			"next": "mariaUpParentsFS",
 			"fragments": [{
 				"tag": "Toi",
-				"msn": "I haven't seen María today."
+				"msn": "I haven't seen Marie today."
 			}]
 		},
 		"mariaUpParentsFS": {
@@ -246,12 +246,12 @@
 				"msn": "I don't know what i've done wrong to be treated like this."
 			},
 			{
-				"tag": "Mom",
+				"tag": "Maman",
 				"character": "Mother",
 				"msn": "I'll speak with your father later about it."
 			},
 			{
-				"tag": "Mom",
+				"tag": "Maman",
 				"character": "Mother",
 				"msn": "IPerhaps we should go talk to your tutor and see what's going on."
 			}]

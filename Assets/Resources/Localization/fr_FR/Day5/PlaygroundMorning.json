@@ -87,7 +87,7 @@
 			"type": "dialog",
 			"fragments": [
 			{
-				"tag": "Ana",
+				"tag": "Anna",
 				"character": "Ana",
 				"msn": "Hahahaha, \"Suface\"."
 			}]
@@ -97,22 +97,22 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Regardez qui est là, moi qui pensais que tu ne viendrais pas aujourd'hui."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Toujours sans téléphone ? Hahaha, ce n'était pas si difficile à trouver si tu l'avais bien cherché."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Quel connard..."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "D'où viens-tu ? hahaha."
 				}]
@@ -122,17 +122,17 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
-					"msn": "Je n'arrive pas à croire que tu ai donné ton mot de passe à Alison."
+					"msn": "Je n'arrive pas à croire que tu aies donné ton mot de passe à Alison."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Tu pensais vraiment qu'elle allait devenir ton amie ? Je n'arrive pas à croire que ça ait été si facile."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "HAHAHAHA!!! Sérieusement, je craque pour toi."
 				}]
@@ -142,19 +142,19 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "HAHAHAHA!!! Je n'arrive pas à croire que tu n'avais pas de modèle de verrouillage sur ton portable."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Je pensais que ce serait plus difficile..."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
-					"msn": "Ça va être une drôle de journée, maintenant tout le monde pense que tu es en fait <$ if(varObject('global', 'MaleSexNonStatic')==vrai, 'un pédé vicieux qui aime sucer des bites', 'une pute vicieuse') $>."
+					"msn": "Ça va être une drôle de journée, maintenant tout le monde pense que tu es en fait <$ if(varObject('global', 'MaleSexNonStatic')==true, 'un pédé vicieux qui aime sucer des bites', 'une pute vicieuse') $>."
 				}]
 		},
 		"setter":{
@@ -229,7 +229,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je viens d'arriver, je ne peux pas encore partir."
+					"msn": "Je viens d'arriver dans la cour, je ne peux pas encore partir du lycée et rentrer chez moi."
 				}
 			]
 		}

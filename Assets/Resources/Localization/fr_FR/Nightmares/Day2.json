@@ -12,7 +12,7 @@
 				{
 					"tag": "Ombre",
 					"character": "Shadow",
-					"msn": "Est-ce que tu sais où t'assoir?"
+					"msn": "Est-ce que tu sais où t'asseoir?"
 				},
 				{
 					"tag": "Ombre",
@@ -36,12 +36,12 @@
 				{
 					"tag": "Ombre",
 					"character": "Shadow",
-					"msn": "Tu devras t'assoir sur un chewing-gum."
+					"msn": "Tu devras t'asseoir sur un chewing-gum."
 				},
 				{
 					"tag": "Ombre",
 					"character": "Shadow",
-					"msn": "Hahahaha, vas-y, assis-toi!"
+					"msn": "Hahahaha, vas-y, assieds-toi!"
 				},
 				{
 					"tag": "Ombre",
@@ -78,7 +78,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je traverserais."
+					"msn": "Je traverserai."
 				},
 				{
 					"tag": "Toi",
@@ -142,12 +142,12 @@
 				{
 					"tag": "Ombre",
 					"character": "Shadow",
-					"msn": "Tu devras t'assoir sur un chewing-gum."
+					"msn": "Tu devras t'asseoir sur un chewing-gum."
 				},
 				{
 					"tag": "Ombre",
 					"character": "Shadow",
-					"msn": "Hahahaha, vas-y, assis-toi"
+					"msn": "Hahahaha, vas-y, assieds-toi"
 				},
 				{
 					"tag": "Ombre",

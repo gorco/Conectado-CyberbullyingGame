@@ -17,8 +17,8 @@
 			"event": {
 				"name": "computer publication",
 				"var": "troll",
-				"value": "C'est moi, appelle-moi au 543-654-54-31",
-				"key": "Tú",
+				"value": "C'est moi, appelle-moi au 06-54-65-54-31",
+				"key": "Toi",
 				"other": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'photoNumberBoy', 'photoNumberGirl') $>",
 				"time": 0
 			}
@@ -30,7 +30,7 @@
 				"name": "computer comment",
 				"var": "troll",
 				"value": "En attendant vos appels",
-				"key": "Tú",
+				"key": "Toi",
 				"time": 0.2
 			}
 		},
@@ -41,7 +41,7 @@
 				"name": "computer comment",
 				"var": "troll",
 				"value": "nous pouvons nous rencontrer quand vous le souhaitez ;)",
-				"key": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Ana', 'Alex') $>",
+				"key": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Anna', 'Alex') $>",
 				"time": 0.2
 			}
 		},
@@ -52,7 +52,7 @@
 				"name": "computer comment",
 				"var": "troll",
 				"value": "Hahaha, regardez ce cul, il n'a pas faim",
-				"key": "Jose",
+				"key": "Joseph",
 				"time": 0.4
 			}
 		},
@@ -63,7 +63,7 @@
 				"name": "computer comment",
 				"var": "troll",
 				"value": "cela va directement sur le tableau de la classe hahaha",
-				"key": "Ana",
+				"key": "Anna",
 				"time": 0.8
 			}
 		},
@@ -96,7 +96,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "Qu'est-ce que tous ces messages?"
+					"msn": "Qu'est-ce c'est que tous ces messages?"
 				}
 			]
 		},
@@ -106,7 +106,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Classe",
-				"value": "On dirait k vs ne m'avez pas viré, tks. En guise de cadeau, je vous dis que j'<3 sucer des bites :)",
+				"value": "On dirait k vs ne m'avez pas <$ if(varObject('global', 'MaleSexNonStatic')==true, 'viré', 'virée') $>, tks. En guise de cadeau, je vous dis que j'<3 sucer des bites :)",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -129,7 +129,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Classe",
-				"value": "Merci 2 confesser, mais on le savais déjà, ct ékri sur tt ta face.",
+				"value": "Tks 2 confesser, mais on le savait déjà, ct ékri sur tt ta face.",
 				"key": "Alex",
 				"time": 0.2
 			}
@@ -141,7 +141,7 @@
 				"name": "mobile message",
 				"var": "Classe",
 				"value": "On a le surnom parfait pour toi, SUFACE, la face qui suce des bites LOL",
-				"key": "Ana",
+				"key": "Anna",
 				"time": 0.3
 			}
 		},
@@ -163,7 +163,7 @@
 				"name": "mobile message",
 				"var": "Classe",
 				"value": "le meilleur jour et je l'ai manqué... qu'est-ce que j'ai perdu?",
-				"key": "Jose",
+				"key": "Joseph",
 				"time": 0.4
 			}
 		},
@@ -174,7 +174,7 @@
 				"name": "mobile message",
 				"var": "Classe",
 				"value": "vous franchissez déjà une ligne, qui l'a <$ if(varObject('global', 'MaleSexNonStatic')==true, 'trollé', 'trollée') $>?",
-				"key": "Guille",
+				"key": "Guillaume",
 				"time": 0.5
 			}
 		},
@@ -184,8 +184,8 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Classe",
-				"value": "aucun de nous, pourkoi, koi de neuf guille ? tu t'es fait sucer et tu ne veux pas que ça se sache ? hahaha",
-				"key": "Ana",
+				"value": "aucun de nous, pourkoi, koi de neuf Guillaume ? tu t'es fait sucer et tu ne veux pas que ça se sache ? hahaha",
+				"key": "Anna",
 				"other": "trollClass",
 				"time": 0.6
 			}
@@ -195,7 +195,7 @@
 			"next": "mobileMessage9",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
+				"var": "Marie",
 				"value": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Tu es sexy <3', 'J\'suis lesbienne et j\'sais que tu l\'es aussi') $>, 2main dans les toilettes, tu sais ;)",
 				"key": "",
 				"other": "empty",
@@ -217,9 +217,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
+				"var": "Marie",
 				"value": "Cela ne te ressemble pas du tout <$ varObject('global', 'UserNameNonStatic') $>, tu t'es fait trollé, pas vrai?",
-				"key": "Maria",
+				"key": "Marie",
 				"other": "trollMaria",
 				"time": 0.3
 			}
@@ -228,9 +228,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
+				"var": "Marie",
 				"value": "Cela ne te ressemble pas du tout <$ varObject('global', 'UserNameNonStatic') $>, tu t'es fait trollée, pas vrai?",
-				"key": "Maria",
+				"key": "Marie",
 				"other": "trollMaria",
 				"time": 0.3
 			}
@@ -329,12 +329,12 @@
 				},
 				{
 					"next": "maria1",
-					"msn": "Aujourd'hui, Alex et Ana ont essayé de me faire chanter.",
+					"msn": "Aujourd'hui, Alex et Anna ont essayé de me faire chanter.",
 					"condition": "page == 1 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') == 1"
 				},
 				{
 					"next": "maria2",
-					"msn": "Aujourd'hui, Alex et Ana m'ont fait chanter",
+					"msn": "Aujourd'hui, Alex et Anna m'ont fait chanter",
 					"condition": "page == 1 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') == 2"
 				},
 				{
@@ -377,7 +377,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Ils ont essayé de me faire coller une affiche sur le dos de Maria."
+					"msn": "Ils ont essayé de me faire coller une affiche sur le dos de Marie."
 				},
 				{
 					"tag": "Toi",
@@ -391,7 +391,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Ils m'ont fait coller une affiche sur le dos de Maria..."
+					"msn": "Ils m'ont fait coller une affiche sur le dos de Marie..."
 				},
 				{
 					"tag": "Toi",
@@ -418,7 +418,7 @@
 				{
 					"tag": "Maman",
 					"character": "Mother",
-					"msn": "Tu n'auras pas de téléphone portable alors, tu devras faire plus attention à tes affaires."
+					"msn": "Tu n'auras pas d'autre téléphone portable alors, tu devras faire plus attention à tes affaires."
 				},
 				{
 					"tag": "Toi",
@@ -437,7 +437,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Alison m'a surpris. Je peux vraiment lui faire confiance."
+					"msn": "Alison m'a <$ if(varObject('global', 'MaleSexNonStatic')==true, 'surpris', 'suprise' $>. Je peux vraiment lui faire confiance."
 				},
 				{
 					"tag": "Toi",
@@ -451,7 +451,7 @@
 				{
 					"tag": "Maman",
 					"character": "Mother",
-					"msn": "Ne penses-tu pas à ce que tu fait ?"
+					"msn": "Ne penses-tu pas à ce que tu fais ?"
 				},
 				{
 					"tag": "Toi",
@@ -526,7 +526,7 @@
 				{
 					"tag": "Papa",
 					"character": "Father",
-					"msn": "Je pense que nous devrions parler avec le lycée de ce qu'il se passe."
+					"msn": "Je pense que nous devrions parler au directeur du lycée de ce qui se passe."
 				}
 			]
 		},
@@ -587,7 +587,7 @@
 				{
 					"tag": "Papa",
 					"character": "Father",
-					"msn": "Raison de plus pour aller demain au bureau du principal et régler tout ça."
+					"msn": "Raison de plus pour aller demain au bureau du directeur et régler tout ça."
 				}
 			]
 		},

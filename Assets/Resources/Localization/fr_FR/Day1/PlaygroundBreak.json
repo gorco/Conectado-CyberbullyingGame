@@ -15,7 +15,7 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "On dirait que tu as trouvé la boucle d'oreille d'Alison."
 				}
@@ -25,12 +25,12 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Il y a quelque chose d'étrange près du panier."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Je vois quelque chose de brillant d'ici."
 				}
@@ -42,14 +42,14 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "Notre professeur est plutôt sympa."
 				},
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
-					"msn": "Si tu as des problèmes, parles-lui simplement."
+					"msn": "Si tu as des problèmes, n'hésite pas à lui en parler."
 				}
 			]
 		}

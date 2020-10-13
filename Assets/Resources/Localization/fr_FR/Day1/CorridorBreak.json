@@ -19,9 +19,9 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
-					"msn": "Je suis en train de terminer de lire le livre, nous parlerons une autre fois."
+					"msn": "Je suis en train de terminer mon livre, on discutera plus tard."
 				}
 			]
 		},
@@ -29,7 +29,7 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "..."
 				},
@@ -44,7 +44,7 @@
 			"next": "node1",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Veux-tu quelque chose?"
 				}
@@ -55,11 +55,11 @@
 			"questionId": "MariaMeetFirstOpt",
 			"options": [{
 				"next": "setterBad",
-				"msn": "Rien, en revoir."
+				"msn": "Rien, salut."
 			},
 				{
 					"next": "node2",
-					"msn": "Pourquoi es-tu seule ici plutôt que dans la cour?"
+					"msn": "Pourquoi es-tu seule ici plutôt que dans la cour de récré?"
 				}]
 		},		
 		"setterBad":{
@@ -74,7 +74,7 @@
 			"next": "node3",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Je préfère rester ici à lire tranquillement."
 				}
@@ -85,11 +85,11 @@
 			"questionId": "MariaMeetSecondOpt",
 			"options": [
 				{
-					"msn": "Profite-en, en revoir (Quelle fille bizarre)."
+					"msn": "Profite-en, salut (Quelle fille bizarre)."
 				},
 				{
 					"next": "node4",
-					"msn": "Ne préféres-tu pas être dans la cour de récréation avec tes amis?"
+					"msn": "Ne préféres-tu pas être dans la cour de récré avec tes amis?"
 				}
 			]
 		},	
@@ -116,17 +116,17 @@
 			"next": "node5",
 			"fragments": [
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Tu es un peu <$ if(varObject('global', 'MaleSexNonStatic')==true, 'agaçant', 'agaçante') $> avec toutes ces questions."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Je n'ai pas d'amis, ils pensent que je suis bizarre."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Tu peux partir maintenant."
 				}
@@ -149,24 +149,24 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Tu ne me sembles pas être bizarre."
+					"msn": "Tu ne me sembles pas être bizarre pourtant."
 				},
 				{
 					"tag": "Toi",
-					"msn": "Je me dirige maintenant vers la cour de récréation, si tu veux venir, je serai en bas."
+					"msn": "Je descends dans la cour, veux-tu venir avec moi ?"
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
-					"msn": "Merci, tu es très <$ if(varObject('global', 'MaleSexNonStatic')==true, 'gentil', 'gentille') $>."
+					"msn": "Merci, tu es très sympa."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Mais aujourd'hui, je reste, je suis sur le point de finir le livre."
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Amuse-toi bien en bas, et évite Alex, il est stupide."
 				}
@@ -248,7 +248,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des garçons."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
 				}
 			]
 		}
@@ -277,7 +277,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des filles."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filles."
 				}
 			]
 		}
@@ -313,7 +313,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Dès que tu entres, la cloche sonne et le professeur apparaît. Tu n'as pas remarqué mais la matinée est terminée, il est temps de rentrer chez toi..."
+				"value": "Dès que tu entres, la cloche sonne et le professeur apparaît. Le cours se déroule. Une heure plus tard, tu n'as pas remarqué mais la matinée est déjà terminée, il est temps de rentrer chez toi..."
 			}
 		},
 		"changeHour": {

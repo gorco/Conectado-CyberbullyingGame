@@ -78,7 +78,7 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "Dans le passé, ils se serraient la main avec une blessure ouverte pour pouvoir partagé leur sang."
+					"msn": "Dans le passé, pour jurer serment de fidélité, ils se serraient la main en mêlant leurs sangs avec une blessure ouverte."
 				},
 				{
 					"tag": "Alison",
@@ -126,7 +126,7 @@
 			"fragments": [
 				{
 					"tag": "Alison",
-					"msn": "Envoyons-nous les mots de passe par le biais du téléphone portable."
+					"msn": "Envoyons-nous notre mot de passe par le biais du téléphone portable."
 				},
 				{
 					"tag": "Alison",
@@ -211,12 +211,12 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "(Avec un sourire sur le visage, il te regarde et se met à rire)"
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "HAHAHA!!"
 				}
@@ -228,7 +228,7 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "(Le geste de son visage change lorsqu'il te voit, il tourne alors la tête et regarde ailleurs)"
 				}
@@ -281,7 +281,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je viens d'arriver, je ne peux pas encore partir."
+					"msn": "Je viens d'arriver au lycée, je ne peux pas déjà repartir."
 				}
 			]
 		}

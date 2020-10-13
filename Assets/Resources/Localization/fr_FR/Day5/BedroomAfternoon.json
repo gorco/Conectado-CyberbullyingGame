@@ -108,7 +108,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ferais mieux de partir maintenant."
+					"msn": "Je ferais mieux d'aller dormir."
 				}
 			]
 		}		
@@ -119,7 +119,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "Toi",
-				"msn": "Est-ce que je laisse mon portable charger?"
+				"msn": "Est-ce que je laisse mon portable à charger?"
 			}]
 		},		
 		"node1": {

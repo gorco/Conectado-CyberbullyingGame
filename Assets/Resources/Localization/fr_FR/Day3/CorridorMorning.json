@@ -65,7 +65,7 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "Et... ce sera mieux si tu l'ignorais aujourd'hui."
+					"msn": "Et... ce serait mieux si tu ne le regardais pas aujourd'hui."
 				}
 			]
 		},
@@ -90,12 +90,12 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "Je suis désolé, Alex est allé trop loin avec ça."
+					"msn": "Je suis désolée, Alex est allé trop loin avec ça."
 				},
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "Tu devrais peut-être parler avec le professeur ou le directeur."
+					"msn": "Je crois que tu devrais en parler à un prof."
 				}
 			]
 		},
@@ -111,7 +111,7 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "C'était aussi dans la cour de récréation."
+					"msn": "C'était aussi dans la cour de récré."
 				},
 				{
 					"tag": "Alison",
@@ -254,7 +254,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des garçons."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
 				}
 			]
 		}
@@ -283,7 +283,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des filless."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filless."
 				}
 			]
 		}

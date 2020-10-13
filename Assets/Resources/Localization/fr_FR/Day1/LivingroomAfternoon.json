@@ -158,7 +158,7 @@
 				},
 				{
 					"next": "guille",
-					"msn": "J'ai rencontré Guille...",
+					"msn": "J'ai rencontré Guillaume...",
 					"condition": "page == 1 && aboutGuille == true && varObject('global', 'GuillermoQuestNonStatic') > 0"
 				},
 				{
@@ -173,7 +173,7 @@
 				},
 				{
 					"next": "jose",
-					"msn": "Jose...",
+					"msn": "Joseph...",
 					"condition": "page == 2 && aboutJose == true && varObject('global', 'JoseQuestNonStatic') > 0"
 				},
 				{
@@ -183,7 +183,7 @@
 				},
 				{
 					"next": "maria",
-					"msn": "En classe, il y a María...",
+					"msn": "En classe, il y a Marie...",
 					"condition": "page == 3 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') > 0"
 				},
 				{
@@ -198,7 +198,7 @@
 				},
 				{
 					"next": "ana",
-					"msn": "Ana...",
+					"msn": "Anna...",
 					"condition": "page == 4  && aboutAna == true && varObject('global', 'GuillermoQuestNonStatic') > 0"
 				},
 				{
@@ -242,7 +242,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Aujourd'hui, j'ai rencontré Guille, il a été très gentil avec moi."
+					"msn": "Aujourd'hui, j'ai rencontré Guillaume, il a été très gentil avec moi."
 				},
 				{
 					"tag": "Toi",
@@ -302,7 +302,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "Elle avait perdu une de ses boucles d'oreille."
+					"msn": "Elle cherchait la boucle d'oreille qu'elle avait perdue."
 				}
 			]
 		},
@@ -333,7 +333,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je l'ai aidée à la chercher, il s'est avéré que la boucle d'oreille était dans la cour de récréation."
+					"msn": "Je l'ai aidé à la chercher et finalement c'est moi qui l'ai retrouvée dans la cour de récré."
 				}
 			]
 		},
@@ -360,7 +360,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "José est un autre camarade de classe, bien qu'il semble plus timide."
+					"msn": "Joseph est un autre camarade de classe, bien qu'il semble plus timide."
 				},
 				{
 					"tag": "Toi",
@@ -391,7 +391,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Une autre fille de la classe s'appelle María."
+					"msn": "Une autre fille de la classe s'appelle Marie."
 				}
 			]
 		},
@@ -457,7 +457,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Il y a aussi Álex."
+					"msn": "Il y a aussi Alex."
 				},
 				{
 					"tag": "Toi",
@@ -465,7 +465,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "Il est un peu grossier et un peu effrayant."
+					"msn": "Alex est grossier. Il est la terreur du lycée."
 				}
 			]
 		},
@@ -503,7 +503,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "On dirait que j'ai pris sa place quand je suis <$ if(varObject('global', 'MaleSexNonStatic')==true, 'arrivé', 'arrivée') $> en classe."
+					"msn": "Apparemment j'ai pris sa place quand je suis <$ if(varObject('global', 'MaleSexNonStatic')==true, 'arrivé', 'arrivée') $> en classe."
 				},
 				{
 					"tag": "Toi",
@@ -550,7 +550,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Il est grossier, et il cherche la bagarre."
+					"msn": "On dirait qu'il cherche constamment la bagarre!"
 				},
 				{
 					"tag": "Toi",
@@ -590,11 +590,11 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Il y a aussi Ana."
+					"msn": "Il y a aussi Anna."
 				},
 				{
 					"tag": "Toi",
-					"msn": "Elle est un peu effrayante."
+					"msn": "Elle essaye de nous faire peur."
 				}
 			]
 		},
@@ -631,11 +631,11 @@
 			"options": [
 				{
 					"next": "setterSchool",
-					"msn": "J'aime la façon dont le bâtiment et le terrain de jeu sont."
+					"msn": "Le cadre est sympa... les bâtiments sont neufs et les salles de classe sont bien équipées (ordis, vidéoprojecteurs, ...). On a un terrain de foot, un terrain de basket, des tables de ping-pong... c'est super!"
 				},
 				{
 					"next": "setterSchool",
-					"msn": "C'est ennuyeux, il manque des choses."
+					"msn": " Ouaih, il est beaucoup moins bien équipé que mon ancien lycée!...même pas de salle pour étudier, ni de salle pour se retrouver entre nous, ni de MDL (Maison Des Lycéens)."
 				}
 			]
 		},
@@ -713,7 +713,7 @@
 			"next": "alisonFriend",
 			"event": {
 				"name": "computer friend",
-				"var": "Guillermo",
+				"var": "Guillaume",
 				"value": "Si le plan ne fonctionne pas, changez-le, mais ne changez pas l'objectif.",
 				"time": 0,
 				"other": "guilleAccept,guilleDeny"
@@ -735,7 +735,7 @@
 			"next": "alisonMsn",
 			"event": {
 				"name": "computer friend",
-				"var": "Jose",
+				"var": "Joseph",
 				"value": ":) ... (:",
 				"time": 3
 			}
@@ -746,7 +746,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Classe",
-				"value": "Je t'ai envoyé une demande d'ami.",
+				"value": "Je t'ai envoyé une demande d'amie.",
 				"key": "Alison Classe",
 				"time": 2
 			}
@@ -757,7 +757,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Classe",
-				"value": "Accepte-la à partir de l'ordinateur :)",
+				"value": "N'hésite pas à l'accepter sur ton ordinateur :)",
 				"key": "Alison Classe",
 				"other": "alisonRequest",
 				"time": 3

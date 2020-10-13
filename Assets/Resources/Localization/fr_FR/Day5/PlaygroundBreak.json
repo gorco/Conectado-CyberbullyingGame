@@ -26,27 +26,27 @@
 					"msn": "Mmm, il semble qu'<$ if(varObject('global', 'MaleSexNonStatic')==true, 'il', 'elle') $> n'ait pas de chewing-gum collé."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Shhhut."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
-					"msn": "Salut, <$ varObject('global', 'UserNameNonStatic') $>."
+					"msn": "Salut <$ varObject('global', 'UserNameNonStatic') $>."
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "Salut."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
-					"msn": "As-tu vu Álex?"
+					"msn": "As-tu vu Alex?"
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Nous devons lui parler."
 				}
@@ -71,32 +71,32 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Tu devrais laver tes vêtements. Ton pantalon est un tel désastre."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "N'as-tu pas de machine à laver à la maison?"
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "Hahahaha, nouvelle tendance ! Des chewing-gums collés sur le pantalon."
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "Ces horribles vêtements ne valent pas la peine d'être lavés."
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "Il devrait le jeter directement à la poubelle."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Hahahaha"
 				}
@@ -106,22 +106,22 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Hahaha, t'es-tu mouillé ?"
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "Hahahaha, non, non, regarde, il s'est chié dessus."
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
-					"msn": "Ana, as-tu ton téléphone portable ? Prends une photo !!"
+					"msn": "Anna, as-tu ton téléphone portable ? Prends une photo !!"
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Hahahaha"
 				}
@@ -185,7 +185,7 @@
 					"msn": "Quelle tache."
 				},
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "C'est bon, ce sera sec dans un petit moment."
 				}
@@ -197,7 +197,7 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "Salut,  <$ varObject('global', 'UserNameNonStatic') $>."
+					"msn": "Salut <$ varObject('global', 'UserNameNonStatic') $>."
 				},
 				{
 					"tag": "Alison",
@@ -205,7 +205,7 @@
 					"msn": "Nous parlons d'Alex."
 				},
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "Ce matin, il agissait bizarrement, il est même arrivé le premier de tous."
 				}
@@ -215,12 +215,12 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "Où t'es-tu assis ?"
 				},
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "Tu t'es probablement assis sur un chewing-gum."
 				},
@@ -230,7 +230,7 @@
 					"msn": "Quel désastre, va directement aux toilettes avant les cours."
 				},
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "Oui, tu pourras peut-être l'enlever."
 				}

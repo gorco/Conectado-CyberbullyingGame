@@ -39,7 +39,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Il y a une photo de moi et elle a été modifiée pour qu'on ait l'impression que je chie des chewing-gums."
+					"msn": "C'est une photo de moi hier et elle a été modifiée pour qu'on ait l'impression que je chie des chewing-gums."
 				},
 				{
 					"tag": "Toi",
@@ -69,7 +69,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "C'est une photo de moi hier, juste après que j'ai enlevé le chewing-gum."
+					"msn": "C'est une photo de moi hier, juste après avoir enlevé le chewing-gum que j'avais sur mon pantalon..."
 				},
 				{
 					"tag": "Toi",
@@ -121,12 +121,12 @@
 			"next": "node2",
 			"fragments": [
 				{
-					"tag": "Teacher",
+					"tag": "Professeur",
 					"character": "Teacher",
 					"msn": "<$ varObject('global', 'UserNameNonStatic') $> vous êtes en retard."
 				},
 				{
-					"tag": "Teacher",
+					"tag": "Professeur",
 					"character": "Teacher",
 					"msn": "S'il vous plaît, asseyez-vous pour que nous puissions continuer le cours."
 				}
@@ -139,7 +139,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "La journée a été ennuyeuse, les cours sont terminés et la plupart des gens m'ont ignoré toute la journée. Il y a une note sur ton bureau qui te dit d'aller aux toilettes, il y a quelqu'un qui t'attend là-bas."
+				"value": "La journée a été ennuyeuse, les cours sont terminés et la plupart des gens t'ont ignoré toute la journée. Un message sur ton bureau te dit d'aller aux toilettes, quelqu'un t'attend là-bas..."
 			}
 		},
 		"node3": {
@@ -199,7 +199,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "La journée a été ennuyeuse, les cours sont terminés et la plupart des gens m'ont ignoré toute la journée. Il y a une note sur ton bureau qui te dit d'aller aux toilettes, il y a quelqu'un qui t'attend là-bas."
+				"value": "La journée a été ennuyeuse, les cours sont terminés et la plupart des gens t'ont ignoré toute la journée. Un message sur ton bureau te dit d'aller aux toilettes, quelqu'un t'attend là-bas..."
 			}
 		},
 		"changeHour": {

@@ -16,27 +16,27 @@
 			"fragments": [
 				{
 					"tag": "",
-					"msn": "(Ils vous ont vu mais vous ignorent toujours, Alex et Ana se parlent)"
+					"msn": "(Ils vous ont vu mais vous ignorent toujours, Alex et Anna se parlent)"
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
 					"msn": "Je pense que \"tête de lit\" et Gremlin sont les plus originaux."
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "J'étais à fond sur Rejeté."
 				},
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
 					"msn": "Bien qu'il soit vrai <$ varObject('global', 'UserNameNonStatic') $> \"tête de lit\" ça sonne vraiment bien hahaha. "
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
-					"msn": "Hahaha, voyons ce que José en pense."
+					"msn": "Hahaha, voyons ce que Joseph en pense."
 				}
 				{
 					"tag": "Toi",
@@ -79,7 +79,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des garçons."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
 				}
 			]
 		}
@@ -108,7 +108,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des filles."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filles."
 				}
 			]
 		}

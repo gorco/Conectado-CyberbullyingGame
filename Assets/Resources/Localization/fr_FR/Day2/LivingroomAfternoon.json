@@ -12,7 +12,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Pratiquement tout a été comme hier."
+					"msn": "J'en ai marre! C'est tous les jours pareil."
 				},
 				{
 					"tag": "Toi",
@@ -127,7 +127,7 @@
 				{
 					"tag": "Papa",
 					"character": "Father",
-					"msn": "Il faut être plus <$ if(varObject('global', 'MaleSexNonStatic')==true, 'prudent', 'prudente') $>, vraiment surprenant que tu ne laves pas tes vêtements..."
+					"msn": "Et alors depuis combien de temps n'avais-tu pas mis ton pantalon à laver? Il faut être plus <$ if(varObject('global', 'MaleSexNonStatic')==true, 'prudent', 'prudente') $>!"
 				},
 				{
 					"tag": "Papa",
@@ -184,7 +184,7 @@
 			},
 				{
 					"next": "guille",
-					"msn": "Guille m'a parlé d'aller chez lui ce samedi.",
+					"msn": "Guillaume m'a proposé d'aller chez lui ce samedi.",
 					"condition": "page == 1 && aboutGuille == true && varObject('global', 'GuillermoQuestNonStatic') > 0"
 				},
 			{
@@ -209,7 +209,7 @@
 				},
 			{
 				"next": "maria",
-				"msn": "María...",
+				"msn": "Marie...",
 				"condition": "page == 3 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') > 0"
 			},
 				{
@@ -219,7 +219,7 @@
 				},
 				{
 					"next": "page4",
-					"msn": "(Parler du lycéee)",
+					"msn": "(Parler du lycée)",
 					"condition": "page == 3"
 				},
 				{
@@ -305,7 +305,7 @@
 				},
 				{
 					"tag": "Papa",
-					"msn": "Tu es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'autorisé', 'autorisée') $> à y aller, je vais demander à ta mère au cas où."
+					"msn": "Oui tu peux y aller, je vais voir avec ta mère au cas où."
 				}
 			]
 		},
@@ -347,11 +347,11 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "Elle m'a prévenue qu'Alex me faisait une blague."
+					"msn": "Elle m'a dit qu'Alex allait me faire une blague."
 				},
 				{
 					"tag": "Toi",
-					"msn": "Bien que cela ait été inutile."
+					"msn": "Mais ce n'était même pas nécessaire."
 				}
 			]
 		},
@@ -407,7 +407,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "La plupart de la classe se moquait de moi."
+					"msn": "Ils se sont quasiment tous moqués de moi."
 				},
 				{
 					"tag": "Papa",
@@ -430,7 +430,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "La plupart de la classe se moquait de moi."
+					"msn": "Presque toute la classe s'est moqué de moi."
 				}
 			]
 		},
@@ -444,7 +444,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "Je suis <$ if(varObject('global', 'MaleSexNonStatic')==true, 'sûr', 'sûre') $> que c'était Álex."
+					"msn": "Je suis <$ if(varObject('global', 'MaleSexNonStatic')==true, 'sûr', 'sûre') $> que c'était Alex."
 				},
 				{
 					"tag": "Papa",
@@ -476,7 +476,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je m'entends bien avec María."
+					"msn": "Je m'entends bien avec Marie."
 				},
 				{
 					"tag": "Toi",
@@ -545,7 +545,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Il était en colère contre moi pour s'être <$ if(varObject('global', 'MaleSexNonStatic')==true, 'assis', 'assise') $> sur sa chaise."
+					"msn": "Il était en colère contre moi parce que je me suis <$ if(varObject('global', 'MaleSexNonStatic')==true, 'assis', 'assise') $> sur sa chaise."
 				},
 				{
 					"tag": "Toi",
@@ -582,7 +582,7 @@
 				{
 					"tag": "Papa",
 					"character": "Father",
-					"msn": "Ne cherche pas les combats."
+					"msn": "Ne cherche pas les problèmes."
 				},
 				{
 					"tag": "Papa",
@@ -715,7 +715,7 @@
 				"name": "mobile message",
 				"var": "Classe",
 				"value": "Bienvenue",
-				"key": "Guille",
+				"key": "Guillaume",
 				"time": 1 
 			}
 		},
@@ -736,8 +736,8 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Classe",
-				"value": "Pk 7 invitation? N'en avions-nous pas parlé avec Alex ajd?",
-				"key": "Ana",
+				"value": "Pk 7 invitation? Déjà parlé avec Alex ajd?",
+				"key": "Anna",
 				"time": 8 
 			}
 		},
@@ -747,7 +747,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Classe",
-				"value": "Hmm, il n'a pas gagné d'être ds ce groupe. Que quelqu'un l'expulse MAINTENANT!",
+				"value": "Hmm, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'il', 'elle') $> n'a pas gagné d'être ds ce groupe. Que quelqu'un l'expulse MAINTENANT!",
 				"key": "Alex",
 				"time": 10
 			}
@@ -758,7 +758,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Classe",
-				"value": "Il ne vous reste plus k inviter cette María bizarre",
+				"value": "Il ne vous reste plus k inviter cette Marie bizarre ! ",
 				"key": "Alex",
 				"other": "kickClass",
 				"time": 12
@@ -769,8 +769,8 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Classe",
-				"value": "José est l'admin, discutez avec lui 2main, il ne lit pas souvent ce chat",
-				"key": "Ana",
+				"value": "Joseph est l'admin, discutez avec lui 2main, il ne lit pas souvent ce chat",
+				"key": "Anna",
 				"time": 14
 			}
 		}

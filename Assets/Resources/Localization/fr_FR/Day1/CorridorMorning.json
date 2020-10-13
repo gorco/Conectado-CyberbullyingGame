@@ -17,17 +17,17 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "Il semble que tu ai pu trouver la salle de classe."
+					"msn": "Tu as réussi à trouver la salle de classe."
 				},
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "La fille aux cheveux rouges à côté de la porte s'appelle Maria, elle est aussi dans notre classe. Elle est un peu timide mais c'est une bonne personne."
+					"msn": "La fille rousse à côté de la porte s'appelle Marie, elle est aussi dans notre classe. Elle est un peu timide mais elle est sympa!"
 				},
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "Et à côté du tableau d'affichage se trouve Guille, tu le connais déjà."
+					"msn": "A côté du tableau d'affichage c'est Guillaume, tu le connais déjà!"
 				}
 			]
 		},
@@ -37,7 +37,7 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Désolé, je suis pressée', 'Désolée, je suis pressée') $>, je vais être en retard si je n'arrive pas à entrer."
+					"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Désolé, je suis pressé', 'Désolée, je suis pressée') $>, je vais être en retard si je n'arrive pas à entrer."
 				}
 			]
 		}			
@@ -46,13 +46,13 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Marie",
 				"character": "Maria",
 				"msn": "..."
 			},
 				{
 					"tag": "Toi",
-					"msn": "Elle semble mal à l'aise, mieux vaut la laisser en paix pour l'instant."
+					"msn": "Elle ne se sens pas très à l'aise... il vaut mieux la laisser tranquille pour l'instant."
 				}]
 		}		
 	},
@@ -72,7 +72,7 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Guillermo",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "N'oublie pas de regarder les tableaux, on y trouve parfois des choses intéressantes."
 				}
@@ -83,22 +83,22 @@
 			"next": "quest",
 			"fragments": [
 				{
-					"tag": "Guillermo",
+					"tag": "Guillaume",
 					"character": "Guille",
-					"msn": "Salut, je lisais le tableau d'affichage."
+					"msn": "Tiens regarde, je lisais le tableau d'affichage."
 				},
 				{
-					"tag": "Guillermo",
+					"tag": "Guillaume",
 					"character": "Guille",
-					"msn": "Il y a des choses intéressantes parfois, et quelqu'un y laisse des messages, des autocollants et des énigmes ces derniers temps."
+					"msn": "Il y a des choses intéressantes parfois, on peut y laisser des messages, des autocollants et même des énigmes."
 				},
 				{
-					"tag": "Guillermo",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "Regarde le au moins une fois par jour, habitue-toi."
 				},
 				{
-					"tag": "Guillermo",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "Allons-nous entrer?"
 				}
@@ -145,7 +145,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des garçons."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
 				}
 			]
 		}
@@ -174,7 +174,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des filles."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filles."
 				}
 			]
 		}

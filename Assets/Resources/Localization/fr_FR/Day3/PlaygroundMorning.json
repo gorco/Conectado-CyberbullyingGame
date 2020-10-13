@@ -106,7 +106,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "C'est une photo de moi hier, juste après que j'ai enlevé le chewing-gum."
+					"msn": "C'est une photo de moi hier, juste après avoir enlevé le chewing-gum que j'avais sur mon pantalon..."
 				},
 				{
 					"tag": "Toi",
@@ -160,7 +160,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "Toi aussi, Guille?"
+					"msn": "Toi aussi, Guillaume?"
 				},
 				{
 					"tag": "",
@@ -199,22 +199,22 @@
 					"msn": "Bonjour, que fais-tu ici?"
 				},
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "On est juste en train de parler."
 				},
 				{
 					"tag": "Alex",
 					"character": "Alex",
-					"msn": "Tais-toi Guille, c'était quoi le marché?"
+					"msn": "Tais-toi Guillaume, c'était quoi le marché?"
 				},
 				{
 					"tag": "Alex",
 					"character": "Alex",
-					"msn": "Ou est-ce que tu veux que tes parents le sache?"
+					"msn": "Ou est-ce que tu veux que tes parents le sachent?"
 				},
 				{
-					"tag": "Guille",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "..."
 				}
@@ -227,7 +227,7 @@
 			"options": [
 				{
 					"next": "node1A",
-					"msn": "Que se passe-t-il, Guille ?"
+					"msn": "Que se passe-t-il, Guillaume ?"
 				},
 				{
 					"next": "node1B",
@@ -241,7 +241,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Est-ce que ça va, Guille ?"
+					"msn": "Est-ce que ça va, Guillaume ?"
 				},
 				{
 					"tag": "",
@@ -259,7 +259,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Tu en veux aussi à Guille, Alex ?"
+					"msn": "Tu en veux aussi à Guillaume, Alex ?"
 				},
 				{
 					"tag": "",
@@ -362,7 +362,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Toi",
-				"msn": "Je viens juste d'arriver, je ne peux pas encore repartir."
+				"msn": "Je viens d'arriver au lycée, je ne peux pas déjà rentrer chez moi..."
 			}]
 		}
 	}

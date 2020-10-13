@@ -15,9 +15,9 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Álex",
+					"tag": "Alex",
 					"character": "Alex",
-					"msn": "Allez, viens dans les toilettes."
+					"msn": "Rendez-vous dans les toilettes."
 				}
 			]
 		},
@@ -61,7 +61,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des garçons."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
 				}
 			]
 		}
@@ -90,7 +90,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des filles."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filles."
 				}
 			]
 		}

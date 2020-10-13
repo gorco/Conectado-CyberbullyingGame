@@ -56,7 +56,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Cette place est disponible, est-ce que je m'assois ici?"
+					"msn": "Cette place est libre, est-ce que je m'assois ici?"
 				}
 			]
 		},
@@ -82,7 +82,7 @@
 			"fragments": [
 				{
 					"tag": "",
-					"msn": "(Bruits de fonds, le professeur est là)"
+					"msn": "(Bruits de fond, le professeur est là)"
 				}
 			]
 		},
@@ -116,7 +116,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Vous vous asseyez tous, quand vous réalisez que c'est déjà la pause."
+				"value": "Vous vous asseyez tous. Après le cours, vous réalisez que c'est déjà la pause."
 			}
 		},
 		"changeHour": {

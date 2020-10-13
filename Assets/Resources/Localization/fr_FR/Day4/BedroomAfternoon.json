@@ -41,7 +41,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "Mmmm, je vais utiliser mon vieux portable, mais il n'a pas de carte SIM et ne fonctionne donc que comme un réveil."
+					"msn": "Mmmm, je vais utiliser mon vieux portable. Bon, il n'a pas de carte SIM... mais il fonctionnera bien comme un réveil!"
 				},
 				{
 					"tag": "Toi",
@@ -84,7 +84,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Toi",
-				"msn": "Je viens juste de revenir."
+				"msn": "Je viens juste de rentrer du lycée."
 			},
 				{
 					"tag": "Toi",
@@ -133,7 +133,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Toi",
-				"msn": "Je ferrais mieux d'arrêter maintenant..."
+				"msn": "Je ferais mieux d'aller dormir..."
 			}]
 		}		
 	},
@@ -143,7 +143,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "Toi",
-				"msn": "Est-ce que je laisse mon portable charger?"
+				"msn": "Est-ce que je laisse mon portable à charger?"
 			}]
 		},		
 		"node1": {

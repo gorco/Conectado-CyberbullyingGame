@@ -31,7 +31,7 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Classe, c'est votre nouveau camarade de classe, s'il vous plaît, aidez<$ if(varObject('global', 'MaleSexNonStatic')==true, '-le', '-la') $> pendant les premiers jours."
+					"msn": "Chers élèves, c'est votre nouveau camarade de classe, s'il vous plaît, aidez<$ if(varObject('global', 'MaleSexNonStatic')==true, '-le', '-la') $> pendant les premiers jours."
 				},
 				{
 					"tag": "Professeur",
@@ -46,7 +46,7 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Alison, rendez-moi service en répondant à tous les doutes que <$ varObject('global', 'UserNameNonStatic') $> pourrais avoir sur le lycée."
+					"msn": "Alison, rendez-moi service en répondant à toutes les questions que peut se poser <$ varObject('global', 'UserNameNonStatic') $> sur le lycée."
 				},
 				{
 					"tag": "Professeur",
@@ -79,9 +79,9 @@
 			"next": "quest",
 			"fragments": [
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
-					"msn": "Je pense que tu t'es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'trompé', 'trompée') $> de classe."
+					"msn": "Qu'est-ce que tu fous là, pauv' naze! Tu t'es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'planté', 'plantée') $>!"
 				}
 			]
 		},
@@ -113,14 +113,14 @@
 			"next": "node2",
 			"fragments": [
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
-					"msn": "Oh, tu es donc <$ if(varObject('global', 'MaleSexNonStatic')==true, 'le nouveau venu', 'la nouvelle venue') $>."
+					"msn": "Oh, tu es donc <$ if(varObject('global', 'MaleSexNonStatic')==true, 'le nouveau', 'la nouvelle') $>."
 				},
 				{
-					"tag": "Ana",
+					"tag": "Anna",
 					"character": "Ana",
-					"msn": "Je suis Ana, je suis aussi dans cette classe."
+					"msn": "Je m'appelle Anna, je suis aussi dans cette classe."
 				}
 			]
 		},
@@ -128,7 +128,7 @@
 			"type": "dialog",
 			"next": "nodeFS",
 			"fragments": [{
-				"tag": "Ana",
+				"tag": "Anna",
 				"character": "Ana",
 				"msn": "Imbécile de merde..."
 			}]
@@ -148,7 +148,7 @@
 			"fragments": [
 				{
 					"tag": "",
-					"msn": "(Bruits de fonds, on dirait que ton nouveau professeur est arrivé)"
+					"msn": "(Bruits de fond, on dirait que ton nouveau professeur est arrivé)"
 				}
 			]
 		},
@@ -169,7 +169,7 @@
 			"options": [
 				{
 					"next": "node3a",
-					"msn": "(S'assoir au dernier rang)"
+					"msn": "(S'asseoir au dernier rang)"
 				},
 				{
 					"next": "node3b",
@@ -205,7 +205,7 @@
 				{
 					"tag": "Professeur",
 					"character": "Teacher",
-					"msn": "Alison, rendez-moi service en répondant à tous les doutes que <$ varObject('global', 'UserNameNonStatic') $> pourrais avoir sur le lycée."
+					"msn": "Alison, rendez-moi service en répondant à toutes les questions que peut se poser <$ varObject('global', 'UserNameNonStatic') $> sur le lycée."
 				}]
 		},
 	}

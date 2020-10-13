@@ -4,7 +4,7 @@
 			"type": "dialog",
 			"fragments": [
 				{
-					"tag": "Note",
+					"tag": "Message",
 					"msn": "Bureau du directeur."
 				}
 			]

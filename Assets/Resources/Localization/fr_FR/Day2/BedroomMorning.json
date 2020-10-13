@@ -27,7 +27,7 @@
 				},
 				{
 					"tag": "Toi",
-					"msn": "Est-ce qu'il est cassé ou quelque chose?"
+					"msn": "Est-ce qu'il est cassé ? Qu'est-ce qu'il a ?"
 				}
 			]
 		}
@@ -49,7 +49,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je dois aller en classe maintenant et je n'ai pas encore organisé cela. Je dois trouver un autre moment."
+					"msn": "Je dois aller en classe maintenant et je n'ai pas encore ranger tout ça. Je dois trouver un autre moment pour le faire!"
 				}
 			]
 		}		
@@ -141,7 +141,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Est-ce que je laisse mon portable charger?"
+					"msn": "Est-ce que je mets mon portable à charger?"
 				}
 			]
 		},		

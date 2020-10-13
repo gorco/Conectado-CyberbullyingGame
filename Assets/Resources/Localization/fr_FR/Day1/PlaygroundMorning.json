@@ -5,9 +5,9 @@
 			"next": "node1",
 			"fragments": [
 				{
-					"tag": "Guillermo",
+					"tag": "Guillaume",
 					"character": "Guille",
-					"msn": "Es-tu <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nouveau', 'nouvelle') $> ? Je ne t'ai jamais vu par ici avant."
+					"msn": "Es-tu <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nouveau', 'nouvelle') $> ? Je ne t'avais jamais vu par ici auparavant."
 				}
 			]
 		},		
@@ -39,16 +39,16 @@
 			"next": "nodeFS",
 			"fragments": [
 				{
-					"tag": "Guillermo",
+					"tag": "Guillaume",
 					"character": "Guille",
-					"msn": "Appelle-moi Guille."
+					"msn": "Appelle-moi Guillaume."
 				},
 				{
 					"tag": "",
 					"msn": "<<La cloche sonne>>"
 				},
 				{
-					"tag": "Guillermo",
+					"tag": "Guillaume",
 					"character": "Guille",
 					"msn": "On devrait aller à l'intérieur, à plus tard."
 				}
@@ -69,7 +69,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "GuillermoQuest",
-				"value": 1
+				"value": 1,
 			}
 		},
 		"node2": {
@@ -134,7 +134,7 @@
 			"next": "options",
 			"fragments": [
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "Tu es de retour, as-tu besoin d'autre chose?"
 				}
@@ -145,12 +145,12 @@
 			"next": "setter",
 			"fragments": [
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "Tu es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'nouveau', 'nouvelle') $>, n'est-ce pas ?"
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "Est-ce que tu veux quelque chose?"
 				}
@@ -196,7 +196,7 @@
 			"next": "options",
 			"fragments": [
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "Tu m'a déjà dit ton nom."
 				}
@@ -225,19 +225,19 @@
 			"event": {
 				"name": "change variable",
 				"var": "JoseQuest",
-				"value": 1,
+				"value": 1
 			}
 		},
 		"node1": {
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "Jose",
+				"tag": "Joseph",
 				"character": "Jose",
-				"msn": "Je m'appelle Jose."
+				"msn": "Je m'appelle Joseph."
 			},
 			{
-				"tag": "Jose",
+				"tag": "Joseph",
 				"character": "Jose",
 				"msn": "Est-ce que tu veux quelque chose?"
 			}]
@@ -247,17 +247,17 @@
 			"next": "options",
 			"fragments": [
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
-					"msn": "C'est ma salle de classe aussi. Elle est au deuxième étage, en haut des escaliers de droite dès que tu entreras dans le bâtiment."
+					"msn": "C'est ma salle de classe aussi. Quand tu entreras dans le bâtiment, prends l'escalier de droite et monte au deuxième étage. Notre salle de classe est la première sur ta gauche."
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "Et au premier étage se trouve le bureau du directeur."
 				},
 				{
-					"tag": "Jose",
+					"tag": "Joseph",
 					"character": "Jose",
 					"msn": "As-tu besoin d'autre chose?"
 				}
@@ -266,9 +266,9 @@
 		"node3": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Jose",
+				"tag": "Joseph",
 				"character": "Jose",
-				"msn": "En revoir."
+				"msn": "Au revoir."
 			}]
 		}
 	},
@@ -386,7 +386,7 @@
 				{
 					"tag": "Alison",
 					"character": "Alison",
-					"msn": "Le garçon avec le t-shirt jaune à côté de l'entrée de la cour de récréation est également dans notre classe."
+					"msn": "Le garçon avec le tee shirt jaune à côté du panier de basket est également dans notre classe."
 				},
 				{
 					"tag": "Alison",
@@ -431,7 +431,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je viens d'arriver, je ne peux pas encore partir."
+					"msn": "Je viens d'arriver dans la cour, je ne peux pas encore partir du lycée et rentrer chez moi."
 				}
 			]
 		}

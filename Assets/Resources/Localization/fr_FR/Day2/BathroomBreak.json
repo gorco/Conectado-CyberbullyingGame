@@ -77,7 +77,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "GumQuest",
-				"value": 1,
+				"value": 1
 			}
 		},
 	}

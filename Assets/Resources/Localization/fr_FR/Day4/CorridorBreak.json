@@ -28,9 +28,9 @@
 					"msn": "As-tu vu quelqu'un entrer dans les toilettes récemment ?"
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
-					"msn": "Je n'ai pas remarqué, désolé."
+					"msn": "Je n'avais pas remarqué, désolée."
 				}
 			]
 		},
@@ -51,13 +51,13 @@
 					"msn": "As-tu vu mon téléphone portable ?"
 				},
 				{
-					"tag": "María",
+					"tag": "Marie",
 					"character": "Maria",
 					"msn": "Non, aucune idée, vérifie à nouveau dans la salle de classe au cas où."
 				},
 				{
-					"tag": "María",
-					"character": "María",
+					"tag": "Marie",
+					"character": "Maria",
 					"msn": "Si je vois quelque chose, je te le ferai savoir."
 				}
 			]
@@ -67,7 +67,7 @@
 			"questionId": "JokeMariaOptions",
 			"options": [{
 				"next": "node0",
-				"msn": "Salut, María."
+				"msn": "Salut Marie."
 			},
 				{
 					"next": "jokeSuccess",
@@ -129,7 +129,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "11:20",
+				"value": "11:20"
 			}
 		},
 	},
@@ -158,7 +158,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des garçons."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
 				}
 			]
 		},
@@ -206,7 +206,7 @@
 			"fragments": [
 				{
 					"tag": "Toi",
-					"msn": "Je ne peux pas y aller, c'est les toilettes des filles."
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filles."
 				}
 			]
 		},
@@ -258,7 +258,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Dès que tu entres, la cloche sonne et le professeur apparaît. Tu n'as pas remarqué mais la matinée est terminée, il est temps de rentrer chez toi..."
+				"value": "Dès que tu entres, la cloche sonne et le professeur apparaît. Le cours se déroule. Une heure plus tard, il est temps de rentrer chez toi..."
 			}
 		},
 		"changeHour": {
