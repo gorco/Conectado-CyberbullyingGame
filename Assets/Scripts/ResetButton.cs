@@ -16,7 +16,7 @@ public class ResetButton : MonoBehaviour
 	
     void Update()
     {
-		if (Simva.SimvaExtension.Instance.IsActive && Input.GetKeyDown(KeyCode.Escape))
+		if (Simva.SimvaExtension.Instance && Simva.SimvaExtension.Instance.IsActive && Input.GetKeyDown(KeyCode.Escape))
 		{
 			resetButton.SetActive(!resetButton.activeSelf);
 		}

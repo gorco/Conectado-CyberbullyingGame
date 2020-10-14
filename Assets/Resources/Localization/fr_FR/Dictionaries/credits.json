@@ -7,12 +7,13 @@
   "Idea": "Concept original",
   "Thanks": "Remerciement",
   "ThanksNames": "Victor Manuel Pérez Colado \n <size=30>pour sa magnifique bibliothèque de dialogues</size> \n \n Dan Cristian Rotaru \n Iván José Pérez Colado \n Lola Fernández Gutiérrez \n <size=30>pour ce hackaton qui a tout déclenché</size>",
+  "Localization": "Équipe de localisation",
   "BetaTesters": "Beta Testers \n",
   "Collaborators": "Collaborateurs \n",
   "Schools": " Les établissements d'enseignement\n <size=6> ont collaboré à la validation du jeu </size>",
   "EspThanks": "Remerciements particuliers \n",
   "Sponsors": "Sponsors",
   "thankyouText": "MERCI!",
-
+  "Frversion" : "Textes en Français",
   "homescreenButton": "Retour à l'écran d'accueil"
 }
