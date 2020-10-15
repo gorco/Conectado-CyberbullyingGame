@@ -34,7 +34,7 @@ namespace AssetPackage
             // 
             Port = 3000;
             Secure = false;
-            BatchSize = 2;
+            BatchSize = 512;
             string timestamp = Math.Round(System.DateTime.Now.ToUniversalTime().Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds).ToString();
             LogFile = timestamp + ".log";
             BackupStorage = true;

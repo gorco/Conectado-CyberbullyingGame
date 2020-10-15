@@ -33,7 +33,8 @@ namespace AssetPackage
     [Obsolete("Use TrackerAsset instead")]
     public class Tracker
     {
-        public static TrackerAsset Instance {
+        public static TrackerAsset Instance
+        {
             get { return TrackerAsset.Instance; }
         }
     }
@@ -56,11 +57,21 @@ namespace AssetPackage
         #region Fields
 
         public static DateTime START_DATE = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-		
+
         /// <summary>
-        /// True when the thread must exit.
+        /// Flag to control when the tracker is flushing.
         /// </summary>
-        private bool exit = false;
+        private bool flushing = false;
+
+        /// <summary>
+        /// True when flush is called while flushing.
+        /// </summary>
+        private bool extraFlushRequested = false;
+
+        /// <summary>
+        /// Callbacks to call when the extra flush is performed.
+        /// </summary>
+        private List<Action> callbacksForExtraFlush = new List<Action>();
 
         /// <summary>
         /// The RegEx to extract a JSON Object. Used to extract 'actor'.
@@ -123,7 +134,8 @@ namespace AssetPackage
         /// <summary>
         /// Tracker StrictMode
         /// </summary>
-        public bool StrictMode {
+        public bool StrictMode
+        {
             get { return strictMode; }
             set { strictMode = value; }
         }
@@ -162,6 +174,11 @@ namespace AssetPackage
         /// A Regex to extact the status value from JSON.
         /// </summary>
         private Regex jsonHealth = new Regex(String.Format(TokenRegEx, "status"), RegexOptions.Singleline);
+
+        /// <summary>
+        /// The queue of TrackerEvents to put in the backup.
+        /// </summary>
+        private ConcurrentQueue<TrackerEvent> backupQueue = new ConcurrentQueue<TrackerEvent>();
 
         /// <summary>
         /// The queue of TrackerEvents to Send.
@@ -243,7 +260,7 @@ namespace AssetPackage
                 settings.TrackingCode = "";
                 settings.StorageType = StorageTypes.local;
                 settings.TraceFormat = TraceFormats.csv;
-                settings.BatchSize = 10;
+                settings.BatchSize = 512;
 
                 SaveSettings(SettingsFileName);
             }
@@ -576,48 +593,48 @@ namespace AssetPackage
             get { return GameObject; }
         }
 
-		#endregion SubTracker Properties
+        #endregion SubTracker Properties
 
-		#endregion Properties
+        #endregion Properties
 
-		#region Methods
+        #region Methods
 
-		/// <summary>
-		/// Checks the health of the UCM Tracker.
-		/// </summary>
-		///
-		/// <returns>
-		/// true if it succeeds, false if it fails.
-		/// </returns>
+        /// <summary>
+        /// Checks the health of the UCM Tracker.
+        /// </summary>
+        ///
+        /// <returns>
+        /// true if it succeeds, false if it fails.
+        /// </returns>
 #if ASYNC
-		public void CheckHealth(Action<Boolean> callback)
+        public void CheckHealth(Action<Boolean> callback)
 #else
 			public Boolean CheckHealth()
 #endif
 
-		{
+        {
 #if ASYNC
-			IssueRequestAsync("health", "GET", response => {
+            IssueRequestAsync("health", "GET", response => {
 #else
 			RequestResponse response = IssueRequest("health", "GET");
 #endif
 
-			if (response.ResultAllowed)
-            {
-                if (jsonHealth.IsMatch(response.body))
+                if (response.ResultAllowed)
                 {
-                    Health = jsonHealth.Match(response.body).Groups[1].Value;
+                    if (jsonHealth.IsMatch(response.body))
+                    {
+                        Health = jsonHealth.Match(response.body).Groups[1].Value;
 
-                    Log(Severity.Information, "Health Status={0}", Health);
+                        Log(Severity.Information, "Health Status={0}", Health);
+                    }
                 }
-            }
-            else
-            {
-                Log(Severity.Error, "Request Error: {0}-{1}", response.responseCode, response.responsMessage);
-			}
+                else
+                {
+                    Log(Severity.Error, "Request Error: {0}-{1}", response.responseCode, response.responsMessage);
+                }
 #if ASYNC
-			callback(response.ResultAllowed);
-		});
+                callback(response.ResultAllowed);
+            });
 #else
 			return response.ResultAllowed;
 #endif
@@ -628,49 +645,89 @@ namespace AssetPackage
         /// </summary>
         public void Flush()
         {
-            if (!Started)
-            {
-                return;
-            }
-            ProcessQueue(() => { Log(Severity.Information, "Flushed!"); });
+            Flush(null);
         }
 
         /// <summary>
         /// Flushes the queue.
         /// </summary>
-        public void Flush(
+        public void Flush(Action callback = null)
+        {
+            if (!Started)
+            {
+                return;
+            }
+
 #if ASYNC
-                Action callback
+            if (flushing)
+            {
+                extraFlushRequested = true;
+                if (callback != null)
+                {
+                    callbacksForExtraFlush.Add(callback);
+                }
+            }
+            else
+            {
+                flushing = true;
+                if (callback == null)
+                {
+                    callback = () => { Log(Severity.Information, "Flushed!"); };
+                }
+                ProcessQueue(() =>
+                {
+                    flushing = false;
+                    callback();
+                    if (extraFlushRequested)
+                    {
+                        Flush(() =>
+                        {
+                            extraFlushRequested = false;
+                            var auxCallbacks = callbacksForExtraFlush.ToArray();
+                            callbacksForExtraFlush.Clear();
+                            foreach (var c in auxCallbacks)
+                            {
+                                c();
+                            }
+                        });
+                    }
+                }, false);
+            }
+
+
+#else
+            ProcessQueue();
+            if(callback != null)
+            {
+                callback();
+            }
 #endif
+        }
+
+#if ASYNC
+        /// <summary>
+        /// Flushes the queue.
+        /// </summary>
+        public void FlushAll(
+                Action callback
             )
         {
             if (!Started)
             {
                 return;
             }
-            ProcessQueue(
-#if ASYNC
-                callback
-#endif
-                );
+            ProcessQueue(callback, true);
         }
-		
+#endif
+
 
         /// <summary>
         /// Flushes the queue.
         /// </summary>
         [Obsolete("Use Flush instead.")]
-        public void RequestFlush(
-#if ASYNC
-                Action callback
-#endif
-            )
+        public void RequestFlush(Action done)
         {
-            Flush(
-#if ASYNC
-                callback
-#endif
-                );
+            Flush(done);
         }
 
 
@@ -686,7 +743,7 @@ namespace AssetPackage
         /// <returns>
         /// true if it succeeds, false if it fails.
         /// </returns>
-        public bool Login(string username, string password) 
+        public bool Login(string username, string password)
         {
             bool logged = false;
             Dictionary<string, string> headers = new Dictionary<string, string>();
@@ -695,8 +752,8 @@ namespace AssetPackage
             headers.Add("Accept", "application/json");
             RequestResponse response = IssueRequest(settings.LoginEndpoint, "POST", headers,
             String.Format("{{\r\n \"username\": \"{0}\",\r\n \"password\": \"{1}\"\r\n}}",
-            username, password)); 
-            
+            username, password));
+
             if (response.ResultAllowed)
             {
                 if (jsonToken.IsMatch(response.body))
@@ -720,43 +777,6 @@ namespace AssetPackage
             return logged;
         }
 
-        public void LoginAsync(string username, string password, Action<Boolean> callback)
-		{
-			bool logged = false;
-			Dictionary<string, string> headers = new Dictionary<string, string>();
-
-            headers.Add("Content-Type", "application/json");
-            headers.Add("Accept", "application/json");
-
-			IssueRequestAsync(settings.LoginEndpoint, "POST", headers,
-			String.Format("{{\r\n \"username\": \"{0}\",\r\n \"password\": \"{1}\"\r\n}}",
-			username, password), response =>
-			{
-
-			if (response.ResultAllowed)
-			{
-				if (jsonToken.IsMatch(response.body))
-				{
-					settings.UserToken = jsonToken.Match(response.body).Groups[1].Value;
-					if (settings.UserToken.StartsWith("Bearer "))
-					{
-						settings.UserToken.Remove(0, "Bearer ".Length);
-					}
-					Log(Severity.Information, "Token= {0}", settings.UserToken);
-
-					logged = true;
-				}
-			}
-			else
-			{
-				logged = false;
-				Log(Severity.Error, "Request Error: {0}-{1}", response.responseCode, response.responsMessage);
-			}
-
-				callback(logged);
-			});
-        }
-
         /// <summary>
         /// Login with an Anonymous PlayerId
         /// </summary>
@@ -773,6 +793,52 @@ namespace AssetPackage
         }
 
         /// <summary>
+        /// Login with a Username and Password.
+        ///
+        /// After this call, the Success method will extract the token from the returned and call the callback.
+        /// with true if it succeeds or false if it fails.
+        /// </summary>
+        ///
+        /// <param name="username"> The username. </param>
+        /// <param name="password"> The password. </param>
+        public void LoginAsync(string username, string password, Action<Boolean> callback)
+        {
+            bool logged = false;
+            Dictionary<string, string> headers = new Dictionary<string, string>();
+
+            headers.Add("Content-Type", "application/json");
+            headers.Add("Accept", "application/json");
+
+            IssueRequestAsync(settings.LoginEndpoint, "POST", headers,
+            String.Format("{{\r\n \"username\": \"{0}\",\r\n \"password\": \"{1}\"\r\n}}",
+            username, password), response =>
+            {
+
+                if (response.ResultAllowed)
+                {
+                    if (jsonToken.IsMatch(response.body))
+                    {
+                        settings.UserToken = jsonToken.Match(response.body).Groups[1].Value;
+                        if (settings.UserToken.StartsWith("Bearer "))
+                        {
+                            settings.UserToken.Remove(0, "Bearer ".Length);
+                        }
+                        Log(Severity.Information, "Token= {0}", settings.UserToken);
+
+                        logged = true;
+                    }
+                }
+                else
+                {
+                    logged = false;
+                    Log(Severity.Error, "Request Error: {0}-{1}", response.responseCode, response.responsMessage);
+                }
+
+                callback(logged);
+            });
+        }
+
+        /// <summary>
         /// Starts with a userToken and trackingCode.
         /// </summary>
         ///
@@ -785,29 +851,42 @@ namespace AssetPackage
             Start();
         }
 
+        /// <summary>
+        /// Asynchronously Starts with a userToken and trackingCode.
+        /// </summary>
+        ///
+        /// <param name="userToken">    The user token. </param>
+        /// <param name="trackingCode"> The tracking code. </param>
+        /// <param name="done">Async callback.</param>
         public void StartAsync(String userToken, String trackingCode, Action done)
         {
             settings.UserToken = userToken;
             settings.TrackingCode = trackingCode;
             StartAsync(done);
-		}
-
-		/// <summary>
-		/// Starts with a trackingCode (and with the already extracted UserToken).
-		/// </summary>
-		///
-		/// <param name="trackingCode"> The tracking code. </param>
-		public void Start(String trackingCode)
-        {
-            settings.TrackingCode = trackingCode;
-			Start();
         }
 
+        /// <summary>
+        /// Starts with a trackingCode (and with the already extracted UserToken).
+        /// </summary>
+        ///
+        /// <param name="trackingCode"> The tracking code. </param>
+        public void Start(String trackingCode)
+        {
+            settings.TrackingCode = trackingCode;
+            Start();
+        }
+
+        /// <summary>
+        /// Asynchronously Starts with a trackingCode (and with the already extracted UserToken).
+        /// </summary>
+        ///
+        /// <param name="trackingCode"> The tracking code. </param>
+        /// <param name="done">Async callback.</param>
         public void StartAsync(String trackingCode, Action done)
         {
-			settings.TrackingCode = trackingCode;
+            settings.TrackingCode = trackingCode;
             StartAsync(done);
-		}
+        }
 
         /// <summary>
         /// Starts Tracking with: 1) An already extracted UserToken (from Login) and
@@ -818,11 +897,21 @@ namespace AssetPackage
             StartAux(false, null);
         }
 
+        /// <summary>
+        /// Asynchronously Starts Tracking with: 1) An already extracted UserToken (from Login) and
+        /// 2) TrackingCode (Shown at Game on a2 server).
+        /// </summary>
+        /// <param name="done">Callback when its done.</param>
         public void StartAsync(Action done)
         {
             StartAux(true, done);
         }
 
+        /// <summary>
+        /// Starts the tracker.
+        /// </summary>
+        /// <param name="async">True to make the start async.</param>
+        /// <param name="done">Callback for async start (leave null otherwise).</param>
         private void StartAux(bool async, Action done)
         {
             try
@@ -852,6 +941,11 @@ namespace AssetPackage
             }
         }
 
+        /// <summary>
+        /// Connects the tracker to the LMS.
+        /// </summary>
+        /// <param name="async">True to make the connection async.</param>
+        /// <param name="done">Callback for async connection (leave null otherwise).</param>
         private void Connect(bool async, Action done)
         {
             Dictionary<string, string> headers = new Dictionary<string, string>();
@@ -970,18 +1064,9 @@ namespace AssetPackage
         /// <summary>
         /// Exit the tracker before closing to guarantee the thread closing.
         /// </summary>
-        public void Exit(
-#if ASYNC
-            Action done
-#endif     
-            )
+        public void Exit(Action done)
         {
-            exit = true;
-            Flush(
-#if ASYNC
-                done
-#endif     
-            );
+            FlushAll(done);
         }
 
         /// <summary>
@@ -1032,7 +1117,7 @@ namespace AssetPackage
             }
             //}
 
-            ActionTrace(values[0],values[1],values[2]);
+            ActionTrace(values[0], values[1], values[2]);
         }
 
         /// <summary>
@@ -1051,6 +1136,12 @@ namespace AssetPackage
                 extensions.Clear();
             }
             queue.Enqueue(trace);
+
+            // if backup requested, enqueue in the backup queue
+            if (settings.BackupStorage)
+            {
+                backupQueue.Enqueue(trace);
+            }
         }
 
         /// <summary>
@@ -1067,12 +1158,13 @@ namespace AssetPackage
 
             if (trace)
             {
-                Trace(new TrackerEvent(this){
+                Trace(new TrackerEvent(this)
+                {
                     Event = new TrackerEvent.TraceVerb(verb),
                     Target = new TrackerEvent.TraceObject(target_type, target_id)
                 });
             }
-		}
+        }
 
         /// <summary>
         /// Issue a HTTP Webrequest.
@@ -1089,10 +1181,17 @@ namespace AssetPackage
             return IssueRequest(path, method, new Dictionary<string, string>(), String.Empty);
         }
 
+        /// <summary>
+        /// Issue a HTTP Webrequest and returns the RequestResponse in the callback.
+        /// </summary>
+        ///
+        /// <param name="path">   Full pathname of the file. </param>
+        /// <param name="method"> The method. </param>
+        /// <param name="callback"> Method to be called when the request finishes. </param>
         private void IssueRequestAsync(string path, string method, Action<RequestResponse> callback)
-		{
-			IssueRequestAsync(path, method, new Dictionary<string, string>(), String.Empty, callback);
-		}
+        {
+            IssueRequestAsync(path, method, new Dictionary<string, string>(), String.Empty, callback);
+        }
 
         /// <summary>
         /// Issue a HTTP Webrequest.
@@ -1112,10 +1211,19 @@ namespace AssetPackage
             return IssueRequest(path, method, headers, body, settings.Port);
         }
 
+        /// <summary>
+        /// Issue a HTTP Webrequest and returns the RequestResponse in the callback.
+        /// </summary>
+        ///
+        /// <param name="path">    Full pathname of the file. </param>
+        /// <param name="method">  The method. </param>
+        /// <param name="headers"> The headers. </param>
+        /// <param name="body">    The body. </param>
+        /// <param name="callback"> Method to be called when the request finishes. </param>
         private void IssueRequestAsync(string path, string method, Dictionary<string, string> headers, string body, Action<RequestResponse> callback)
-		{
-			IssueRequestAsync(path, method, headers, body, settings.Port, callback);
-		}
+        {
+            IssueRequestAsync(path, method, headers, body, settings.Port, callback);
+        }
 
         /// <summary>
         /// Query if this object issue request 2.
@@ -1152,43 +1260,53 @@ namespace AssetPackage
                         requestHeaders = headers,
                         //! allowedResponsCodes,     // TODO default is ok
                         body = body, // or method.Equals("GET")?string.Empty:body
-				   }, out response);
-			}
+                    }, out response);
+            }
 
-			return response;
+            return response;
         }
 
-
+        /// <summary>
+        /// Query if this object issue request 2.
+        /// </summary>
+        ///
+        /// <param name="path">    Full pathname of the file. </param>
+        /// <param name="method">  The method. </param>
+        /// <param name="headers"> The headers. </param>
+        /// <param name="body">    The body. </param>
+        /// <param name="port">    The port. </param>
+        /// <param name="callback"> Method to be called when the request finishes. </param>
         private void IssueRequestAsync(string path, string method, Dictionary<string, string> headers, string body, Int32 port, Action<RequestResponse> callback)
         {
             IWebServiceRequest ds = getInterface<IWebServiceRequest>();
 
             RequestResponse response = new RequestResponse();
 
-			if (ds != null)
-			{
-				ds.WebServiceRequestAsync(
-					new RequestSetttings
-					{
-						method = method,
-						uri = new Uri(string.Format("http{0}://{1}{2}{3}/{4}",
-									settings.Secure ? "s" : String.Empty,
-									settings.Host,
-									port == 80 ? String.Empty : String.Format(":{0}", port),
-									String.IsNullOrEmpty(settings.BasePath.TrimEnd('/')) ? "" : settings.BasePath.TrimEnd('/'),
-									path.TrimStart('/')
-									)),
-						requestHeaders = headers,
-						//! allowedResponsCodes,     // TODO default is ok
-						body = body, // or method.Equals("GET")?string.Empty:body
-					}, callback);
-			}
-		}
+            if (ds != null)
+            {
+                ds.WebServiceRequestAsync(
+                    new RequestSetttings
+                    {
+                        method = method,
+                        uri = new Uri(string.Format("http{0}://{1}{2}{3}/{4}",
+                                    settings.Secure ? "s" : String.Empty,
+                                    settings.Host,
+                                    port == 80 ? String.Empty : String.Format(":{0}", port),
+                                    String.IsNullOrEmpty(settings.BasePath.TrimEnd('/')) ? "" : settings.BasePath.TrimEnd('/'),
+                                    path.TrimStart('/')
+                                    )),
+                        requestHeaders = headers,
+                        //! allowedResponsCodes,     // TODO default is ok
+                        body = body, // or method.Equals("GET")?string.Empty:body
+                    }, callback);
+            }
+        }
 
+#if ASYNC
         /// <summary>
         /// Process the queue.
         /// </summary>
-        private void ProcessQueue(Action done)
+        private void ProcessQueue(Action done, bool complete)
         {
             if (!Started)
             {
@@ -1201,16 +1319,24 @@ namespace AssetPackage
                 Connect(false, null);
             }
 
+            if (settings.BackupStorage)
+            {
+                TrackerEvent[] traces = backupQueue.Peek((uint)backupQueue.Count);
+                SaveTracesInBackup(traces);
+                backupQueue.Clear();
+            }
+
             Action<TrackerEvent[]> saveAndDequeue = traces =>
             {
-                // if backup requested, save a copy
-                if (settings.BackupStorage)
-                {
-                    SaveTracesInBackup(traces);
-                }
-
                 queue.Dequeue(traces.Length);
-                done();
+                if (complete && queue.Count > 0)
+                {
+                    ProcessQueue(done, complete);
+                }
+                else
+                {
+                    done();
+                }
             };
 
             if (queue.Count > 0 || tracesPending.Count > 0 || tracesUnlogged.Count > 0)
@@ -1270,12 +1396,94 @@ namespace AssetPackage
             }
         }
 
+#else
+
+        /// <summary>
+        /// Process the queue.
+        /// </summary>
+        private void ProcessQueue()
+        {
+            if (!Started)
+            {
+                Log(Severity.Warning, "Refusing to send traces without starting tracker (Active is False, should be True)");
+                return;
+            }
+            else if (!Active)
+            {
+                Connect(false, null);
+            }
+
+            if (settings.BackupStorage)
+            {
+                TrackerEvent[] traces = backupQueue.Peek((uint)backupQueue.Count);
+                SaveTracesInBackup(traces);
+                backupQueue.Clear();
+            }
+
+            if (queue.Count > 0 || tracesPending.Count > 0 || tracesUnlogged.Count > 0)
+            {
+                //Extract the traces from the queue and remove from the queue
+                TrackerEvent[] traces = CollectTraces();
+
+                //Check if it's connected now
+                if (Active)
+                {
+                    if (SendUnloggedTraces())
+                    {
+                        string data = ProcessTraces(traces, settings.TraceFormat);
+
+                        if ((!SendPendingTraces() || !(queue.Count > 0 && SendTraces(data))) && queue.Count > 0)
+                            tracesPending.Add(data);
+                    }
+                }
+                else
+                {
+                    tracesUnlogged.AddRange(traces);
+                }
+
+                // if backup requested, save a copy
+                if (settings.BackupStorage)
+                {
+                    IDataStorage storage = getInterface<IDataStorage>();
+                    IAppend append_storage = getInterface<IAppend>();
+
+                    if (queue.Count > 0)
+                    {
+                        string rawData = ProcessTraces(traces, TraceFormats.csv);
+
+                        if (append_storage != null)
+                        {
+                            append_storage.Append(settings.BackupFile, rawData);
+                        }
+                        else if (storage != null)
+                        {
+                            String previous = storage.Exists(settings.BackupFile) ? storage.Load(settings.BackupFile) : String.Empty;
+
+                            if (storage.Exists(settings.BackupFile))
+                                storage.Save(settings.BackupFile, previous + rawData);
+                            else
+                                storage.Save(settings.BackupFile, rawData);
+                        }
+                    }
+                }
+
+                queue.Dequeue(traces.Length);
+            }
+            else
+            {
+                Log(Severity.Information, "Nothing to flush");
+            }
+        }
+#endif
+        /// <summary>
+        /// Save traces in the backup file.
+        /// </summary>
         private void SaveTracesInBackup(TrackerEvent[] traces)
         {
             IDataStorage storage = getInterface<IDataStorage>();
             IAppend append_storage = getInterface<IAppend>();
 
-            if (queue.Count > 0)
+            if (backupQueue.Count > 0)
             {
                 string rawData = ProcessTraces(traces, TraceFormats.csv);
 
@@ -1295,6 +1503,9 @@ namespace AssetPackage
             }
         }
 
+        /// <summary>
+        /// Takes a configurable amount of traces from the queue.
+        /// </summary>
         TrackerEvent[] CollectTraces()
         {
             UInt32 cnt = settings.BatchSize == 0 ? UInt32.MaxValue : settings.BatchSize;
@@ -1304,6 +1515,9 @@ namespace AssetPackage
             return traces;
         }
 
+        /// <summary>
+        /// Converts TrackerEvents into an specific TraceFormat.
+        /// </summary>
         string ProcessTraces(TrackerEvent[] traces, TraceFormats format)
         {
             String data = String.Empty;
@@ -1356,35 +1570,41 @@ namespace AssetPackage
         }
 
 #if ASYNC
+        /// <summary>
+        /// Sends the traces from the pending queue, which are the ones failed being sent before.
+        /// </summary>
 		void SendPendingTraces(Action<bool> done)
-		{
-			// Try to send old traces
-			if (tracesPending.Count > 0)
-			{
-				Log(Severity.Information, "Enqueued trace-blocks detected: {0}. Processing...", tracesPending.Count);
-				String data = tracesPending[0];
-				SendTraces(data, sent =>
-				{
-					if (!sent)
-					{
-						Log(Severity.Information, "Error sending enqueued traces");
-						// does not keep sending old traces, but continues processing new traces so that get added to tracesPending
-						done(false);
-					}
-					else
-					{
-						tracesPending.RemoveAt(0);
-						Log(Severity.Information, "Sent enqueued traces OK");
-						SendPendingTraces(done);
-					}
-				});
-			}
-			else
-			{
-				done(true);
-			}
-		}
+        {
+            // Try to send old traces
+            if (tracesPending.Count > 0)
+            {
+                Log(Severity.Information, "Enqueued trace-blocks detected: {0}. Processing...", tracesPending.Count);
+                String data = tracesPending[0];
+                SendTraces(data, sent =>
+                {
+                    if (!sent)
+                    {
+                        Log(Severity.Information, "Error sending enqueued traces");
+                        // does not keep sending old traces, but continues processing new traces so that get added to tracesPending
+                        done(false);
+                    }
+                    else
+                    {
+                        tracesPending.RemoveAt(0);
+                        Log(Severity.Information, "Sent enqueued traces OK");
+                        SendPendingTraces(done);
+                    }
+                });
+            }
+            else
+            {
+                done(true);
+            }
+        }
 #else
+        /// <summary>
+        /// Sends the traces from the pending queue, which are the ones failed being sent before.
+        /// </summary>
 		bool SendPendingTraces()
         {
             // Try to send old traces
@@ -1410,27 +1630,33 @@ namespace AssetPackage
 #endif
 
 #if ASYNC
-		void SendUnloggedTraces(Action<bool> callback)
-		{
-			if (tracesUnlogged.Count > 0 && this.ActorObject != null)
-			{
-				string data = ProcessTraces(tracesUnlogged.ToArray(), settings.TraceFormat);
-				SendTraces(data, sent =>
-				{
-					tracesUnlogged.Clear();
+        /// <summary>
+        /// Sends the traces from the unlogged queue, which are traces enqueued prior to login.
+        /// </summary>
+        void SendUnloggedTraces(Action<bool> callback)
+        {
+            if (tracesUnlogged.Count > 0 && this.ActorObject != null)
+            {
+                string data = ProcessTraces(tracesUnlogged.ToArray(), settings.TraceFormat);
+                SendTraces(data, sent =>
+                {
+                    tracesUnlogged.Clear();
 
-					if (!sent)
-						tracesPending.Add(data);
+                    if (!sent)
+                        tracesPending.Add(data);
 
-					callback(sent);
-				});
+                    callback(sent);
+                });
             }
             else
             {
                 callback(tracesUnlogged.Count == 0);
             }
-		}
+        }
 #else
+        /// <summary>
+        /// Sends the traces from the unlogged queue, which are traces enqueued prior to login.
+        /// </summary>
 		bool SendUnloggedTraces()
 		{
 			if (tracesUnlogged.Count > 0 && this.ActorObject != null)
@@ -1448,7 +1674,10 @@ namespace AssetPackage
 #endif
 
 #if ASYNC
-		void SendTraces(String data, Action<bool> callback)
+        /// <summary>
+        /// Sends the trace.
+        /// </summary>
+        void SendTraces(String data, Action<bool> callback)
 #else
 		bool SendTraces(String data)
 #endif
@@ -1474,12 +1703,12 @@ namespace AssetPackage
                         }
 
                         storage.Save(settings.LogFile, previous + data);
-					}
+                    }
 #if ASYNC
-					callback(true);
+                    callback(true);
 #endif
-					break;
-                case StorageTypes.net:                    
+                    break;
+                case StorageTypes.net:
                     Dictionary<string, string> headers = new Dictionary<string, string>();
 
                     headers.Add("Content-Type", "application/json");
@@ -1495,26 +1724,25 @@ namespace AssetPackage
 
                     Log(Severity.Information, "\r\n" + data);
 #if ASYNC
-					IssueRequestAsync(String.Format(settings.TrackEndpoint, settings.TrackingCode), "POST", headers, data, response =>
-					{
+                    IssueRequestAsync(String.Format(settings.TrackEndpoint, settings.TrackingCode), "POST", headers, data, response =>
+                    {
 #else
-					RequestResponse response = IssueRequestAsync(String.Format(settings.TrackEndpoint, settings.TrackingCode), "POST", headers, data);
+					RequestResponse response = IssueRequest(String.Format(settings.TrackEndpoint, settings.TrackingCode), "POST", headers, data);
 #endif
+                        if (response.ResultAllowed)
+                        {
+                            Log(Severity.Information, "Track= {0}", response.body);
+                            Connected = true;
+                        }
+                        else
+                        {
+                            Log(Severity.Error, "Request Error: {0}-{1}", response.responseCode, response.responsMessage);
 
-						if (response.ResultAllowed)
-						{
-							Log(Severity.Information, "Track= {0}", response.body);
-							Connected = true;
-						}
-						else
-						{
-							Log(Severity.Error, "Request Error: {0}-{1}", response.responseCode, response.responsMessage);
+                            Log(Severity.Warning, "Error flushing, connection disabled temporaly");
 
-							Log(Severity.Warning, "Error flushing, connection disabled temporaly");
-
-							Connected = false;
+                            Connected = false;
 #if ASYNC
-							callback(false);
+                            callback(false);
                             return;
                         }
                         callback(true);
@@ -1524,20 +1752,20 @@ namespace AssetPackage
 						}
 #endif
 
-						break;
+                    break;
             }
 #if !ASYNC
 		return true;
 #endif
-	}
+        }
 
-#region Extension Methods
+        #region Extension Methods
 
-					/// <summary>
-					/// Sets if the following trace has been a success, including this value to the extensions.
-					/// </summary>
-					/// <param name="success">If set to <c>true</c> means it has been a success.</param>
-					public void setSuccess(bool success)
+        /// <summary>
+        /// Sets if the following trace has been a success, including this value to the extensions.
+        /// </summary>
+        /// <param name="success">If set to <c>true</c> means it has been a success.</param>
+        public void setSuccess(bool success)
         {
             setVar(Extension.Success.ToString().ToLower(), success);
         }
@@ -1621,7 +1849,7 @@ namespace AssetPackage
         /// </summary>
         /// <param name="id">Identifier.</param>
         /// <param name="value">Value.</param>
-        public void setVar(string id, Dictionary<string,bool> value) 
+        public void setVar(string id, Dictionary<string, bool> value)
         {
             addExtension(id, value);
         }
@@ -1721,11 +1949,11 @@ namespace AssetPackage
             }
         }
 
-#endregion Extension Methods
+        #endregion Extension Methods
 
-#endregion Methods
+        #endregion Methods
 
-#region Nested Types
+        #region Nested Types
 
         /// <summary>
         /// Interface that subtrackers must implement.
@@ -1750,21 +1978,21 @@ namespace AssetPackage
         /// </summary>
         public class TrackerEvent
         {
-#region Fields
-                private static Dictionary<string, string> verbIds;
+            #region Fields
+            private static Dictionary<string, string> verbIds;
 
-                private static Dictionary<string, string> objectIds;
+            private static Dictionary<string, string> objectIds;
 
-                private static Dictionary<string, string> extensionIds;
+            private static Dictionary<string, string> extensionIds;
 
-                private TraceVerb verb;
+            private TraceVerb verb;
 
-                private TraceObject target;
+            private TraceObject target;
 
-                private TraceResult result;
-#endregion Fields
+            private TraceResult result;
+            #endregion Fields
 
-#region Constructors
+            #region Constructors
 
             public TrackerEvent(TrackerAsset tracker)
             {
@@ -1773,9 +2001,9 @@ namespace AssetPackage
                 this.Result = new TraceResult();
             }
 
-#endregion Constructors
+            #endregion Constructors
 
-#region Properties
+            #region Properties
 
             private static Dictionary<string, string> VerbIDs
             {
@@ -1898,7 +2126,8 @@ namespace AssetPackage
             /// The target.
             /// </value>
             [DefaultValue("")]
-            public TraceObject Target {
+            public TraceObject Target
+            {
                 get { return target; }
                 set
                 {
@@ -1916,7 +2145,8 @@ namespace AssetPackage
             /// </value>
             [DefaultValue("")]
 
-            public TraceResult Result {
+            public TraceResult Result
+            {
                 get { return result; }
                 set
                 {
@@ -1934,9 +2164,9 @@ namespace AssetPackage
             /// </value>
             public double TimeStamp { get; private set; }
 
-#endregion Properties
+            #endregion Properties
 
-#region Methods
+            #region Methods
 
             /// <summary>
             /// Converts this object to a CSV Item.
@@ -1949,7 +2179,7 @@ namespace AssetPackage
             {
                 return this.TimeStamp
                     + "," + Event.ToCsv()
-                    + "," + Target.ToCsv() 
+                    + "," + Target.ToCsv()
                     + (this.Result == null || String.IsNullOrEmpty(this.Result.ToCsv()) ?
                        String.Empty :
                         this.Result.ToCsv());
@@ -2056,7 +2286,7 @@ namespace AssetPackage
             private bool isValid()
             {
                 bool check = true;
-                
+
                 check &= Event.isValid();
                 check &= Target.isValid();
                 check &= Result.isValid();
@@ -2064,9 +2294,9 @@ namespace AssetPackage
                 return true;
             }
 
-#endregion Methods
+            #endregion Methods
 
-#region Nested Types
+            #region Nested Types
 
             /// <summary>
             /// Class for Target storage.
@@ -2086,7 +2316,7 @@ namespace AssetPackage
                     }
                     set
                     {
-                        if(Parent == null || Parent.Tracker.Utils.check<TargetXApiException>(value, "xAPI Exception: Target Type is null or empty. Ignoring.", "xAPI Exception: Target Type can't be null or empty."))
+                        if (Parent == null || Parent.Tracker.Utils.check<TargetXApiException>(value, "xAPI Exception: Target Type is null or empty. Ignoring.", "xAPI Exception: Target Type can't be null or empty."))
                             _type = value;
                     }
                 }
@@ -2112,27 +2342,27 @@ namespace AssetPackage
 
                 public TraceObject(string type, string id)
                 {
-                    
+
                     this.Type = type;
                     this.ID = id;
                 }
 
                 public string ToCsv()
                 {
-                    return Type.Replace(",","\\,") + "," + ID.Replace(",", "\\,");
+                    return Type.Replace(",", "\\,") + "," + ID.Replace(",", "\\,");
                 }
 
                 public JSONClass ToJson()
                 {
                     string typeKey = Type;
 
-                    if(!ObjectIDs.TryGetValue(Type, out typeKey))
+                    if (!ObjectIDs.TryGetValue(Type, out typeKey))
                     {
                         typeKey = Type;
-                        if(Parent.Tracker.StrictMode)
+                        if (Parent.Tracker.StrictMode)
                             throw (new TargetXApiException("Tracker-xAPI: Unknown definition for target type: " + Type));
                         else
-                            Parent.Tracker.Log(Severity.Warning,"Tracker-xAPI: Unknown definition for target type: " + Type);
+                            Parent.Tracker.Log(Severity.Warning, "Tracker-xAPI: Unknown definition for target type: " + Type);
                     }
 
                     JSONClass obj = new JSONClass(), definition = new JSONClass();
@@ -2202,18 +2432,19 @@ namespace AssetPackage
                             sverb = value.ToLower();
                             this.vverb = v;
                         }
-                        else if(Parent != null) {
+                        else if (Parent != null)
+                        {
                             if (Parent.Tracker.StrictMode)
                                 throw (new VerbXApiException("Tracker-xAPI: Unknown definition for verb: " + value));
                             else
-                                Parent.Tracker.Log(Severity.Warning,"Tracker-xAPI: Unknown definition for verb: " + value);
+                                Parent.Tracker.Log(Severity.Warning, "Tracker-xAPI: Unknown definition for verb: " + value);
                         }
                     }
                 }
 
                 public Verb Verb
                 {
-                    get { return vverb;  }
+                    get { return vverb; }
                     set
                     {
                         sverb = value.ToString().ToLower();
@@ -2324,7 +2555,7 @@ namespace AssetPackage
                     get
                     {
                         return score;
-                    } 
+                    }
                     set
                     {
                         if (Parent == null || Parent.Tracker.Utils.check<ValueExtensionException>(value, "xAPI extension: score null or NaN. Ignoring", "xAPI extension: score can't be null or NaN."))
@@ -2333,21 +2564,21 @@ namespace AssetPackage
                 }
 
                 Dictionary<string, System.Object> extdir;
-                public Dictionary<string,System.Object> Extensions
+                public Dictionary<string, System.Object> Extensions
                 {
                     get { return extdir; }
                     set
                     {
                         extdir = new Dictionary<string, object>();
-                        foreach(KeyValuePair<string,object> extension in value)
+                        foreach (KeyValuePair<string, object> extension in value)
                         {
                             switch (extension.Key.ToLower())
                             {
-                                case "success": Success = (bool) extension.Value; break;
-                                case "completion": Completion = (bool) extension.Value; break;
-                                case "response": Response = (string) extension.Value; break;
-                                case "score": Score = (float) extension.Value; break;
-                                default: extdir.Add(extension.Key, extension.Value);  break;
+                                case "success": Success = (bool)extension.Value; break;
+                                case "completion": Completion = (bool)extension.Value; break;
+                                case "response": Response = (string)extension.Value; break;
+                                case "score": Score = (float)extension.Value; break;
+                                default: extdir.Add(extension.Key, extension.Value); break;
                             }
                         }
                     }
@@ -2356,7 +2587,7 @@ namespace AssetPackage
                 public string ToCsv()
                 {
                     string result =
-                        ((success>-1) ? ",success" + intToBoolString(success) : "")
+                        ((success > -1) ? ",success" + intToBoolString(success) : "")
                         + ((completion > -1) ? ",completion" + intToBoolString(completion) : "")
                         + ((!string.IsNullOrEmpty(Response)) ? ",response," + Response.Replace(",", "\\,") : "")
                         + ((!float.IsNaN(score)) ? ",score," + score.ToString("G", System.Globalization.CultureInfo.InvariantCulture) : "");
@@ -2365,7 +2596,7 @@ namespace AssetPackage
                         foreach (KeyValuePair<string, System.Object> extension in Extensions)
                         {
                             result += "," + extension.Key.Replace(",", "\\,") + ",";
-                            if(extension.Value != null)
+                            if (extension.Value != null)
                             {
                                 if (extension.Value.GetType() == typeof(string))
                                     result += extension.Value.ToString().Replace(",", "\\,");
@@ -2377,11 +2608,11 @@ namespace AssetPackage
                                 {
                                     result += ((double)extension.Value).ToString("G", System.Globalization.CultureInfo.InvariantCulture);
                                 }
-                                else if (extension.Value.GetType() == typeof(Dictionary<string,bool>))
+                                else if (extension.Value.GetType() == typeof(Dictionary<string, bool>))
                                 {
                                     Dictionary<string, bool> map = (Dictionary<string, bool>)extension.Value;
                                     string smap = "";
-                                    foreach(KeyValuePair<string,bool> t in map)
+                                    foreach (KeyValuePair<string, bool> t in map)
                                     {
                                         smap += t.Key + "=" + t.Value.ToString().ToLower() + "-";
                                     }
@@ -2418,10 +2649,11 @@ namespace AssetPackage
                         result.Add("score", s);
                     }
 
-                    if (Extensions != null && Extensions.Count > 0) {
+                    if (Extensions != null && Extensions.Count > 0)
+                    {
 
                         JSONClass extensions = new JSONClass();
-                        foreach(KeyValuePair <string, System.Object > extension in Extensions)
+                        foreach (KeyValuePair<string, System.Object> extension in Extensions)
                         {
                             if (extension.Value != null)
                             {
@@ -2435,11 +2667,11 @@ namespace AssetPackage
                                 }
                                 else if (extension.Value.GetType() == typeof(float))
                                 {
-                                    extensions.Add(extension.Key, new JSONData((float) extension.Value));
+                                    extensions.Add(extension.Key, new JSONData((float)extension.Value));
                                 }
                                 else if (extension.Value.GetType() == typeof(double))
                                 {
-                                    extensions.Add(extension.Key, new JSONData((double) extension.Value));
+                                    extensions.Add(extension.Key, new JSONData((double)extension.Value));
                                 }
                                 else if (extension.Value.GetType() == typeof(Dictionary<string, bool>))
                                 {
@@ -2546,11 +2778,11 @@ namespace AssetPackage
                 private static string intToBoolString(int property)
                 {
                     string ret = "";
-                    if(property >= 1)
-                    { 
+                    if (property >= 1)
+                    {
                         ret = ",true";
                     }
-                    else if( property == 0)
+                    else if (property == 0)
                     {
                         ret = ",false";
                     }
@@ -2595,9 +2827,9 @@ namespace AssetPackage
                 }
             }
 
-#endregion Nested Types
+            #endregion Nested Types
         }
 
-#endregion Nested Types
+        #endregion Nested Types
     }
 }

@@ -85,18 +85,18 @@ namespace Simva
         public string Username { get { return (string)decodedJWT["preferred_username"]; } }
     }
 
-	public class AuthorizationError
-	{
-		public AuthorizationError()	{}
+    public class AuthorizationError
+    {
+        public AuthorizationError() { }
 
-		[JsonProperty("error")]
-		public string Error { get; set; }
+        [JsonProperty("error")]
+        public string Error { get; set; }
 
-		[JsonProperty("error_description")]
-		public string ErrorDescription { get; set; }
-	}
+        [JsonProperty("error_description")]
+        public string ErrorDescription { get; set; }
+    }
 
-	public static class OpenIdUtility
+    public static class OpenIdUtility
     {
         private static System.Diagnostics.Process windowProcess;
         private static Thread httpListener;
@@ -149,7 +149,8 @@ namespace Simva
                     .Build()
                     .Run(new string[0]);
             }
-            else */if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
+            else */
+            if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
             {
                 windowProcess = new System.Diagnostics.Process();
                 if (tokenLogin)
@@ -164,7 +165,7 @@ namespace Simva
                 {
                     windowOpened = windowProcess.Start();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     windowOpened = false;
                 }
@@ -199,9 +200,13 @@ namespace Simva
                     HttpListenerRequest request = context.Request;
 
                     // Get the code
+
+                    var error = context.Request.QueryString.Get("error");
+                    var error_description = context.Request.QueryString.Get("error_description");
                     var code = context.Request.QueryString.Get("code");
                     var state = context.Request.QueryString.Get("session-state");
 
+                    Debug.Log(context.Request.Url.Query);
                     // Obtain a response object.
                     HttpListenerResponse response = context.Response;
                     // Construct a response.
@@ -221,10 +226,18 @@ namespace Simva
                         }
                         windowProcess = null;
                     }
-
-                    responseTransfer.result = true;
-                    responseTransfer.status = state;
-                    responseTransfer.code = code;
+                    if (!string.IsNullOrEmpty(error))
+                    {
+                        responseTransfer.result = false;
+                        responseTransfer.code = error;
+                        responseTransfer.status = error_description;
+                    }
+                    else
+                    {
+                        responseTransfer.result = true;
+                        responseTransfer.code = code;
+                        responseTransfer.status = state;
+                    }
                     responseTransfer.done = true;
 
                     listener.Close();
@@ -279,16 +292,21 @@ namespace Simva
 
             var redirectUri = ListenForCode(port, (logged, code, state) =>
             {
-				try
-				{ 
-					var token = GetToken(tokenUrl, clientId, code, port, codeVerifier);
-					result.SetResult(token);
-				}
-				catch (Exception ex)
-				{
-					result.SetException(ex);
-				}
-			});
+                if (!logged)
+                {
+                    result.SetException(new ApiException(500, code + ": " + state));
+                }
+                else
+                {
+                    GetToken(tokenUrl, clientId, code, port, codeVerifier)
+                    .Then(token =>
+                    {
+                        result.SetResult(token);
+                    })
+                    .Catch(ex => result.SetException(ex));
+                }
+
+            });
 
 
             url += "&redirect_uri=" + redirectUri;
@@ -306,40 +324,28 @@ namespace Simva
 
             var port = UnityEngine.Random.Range(25525, 65535);
 
-			var url = authUrl;
-			var formUrlEncoded = "grant_type=password" +
+            var url = authUrl;
+            var formUrlEncoded = "grant_type=password" +
                 "&username=" + username +
                 "&password=" + password +
                 "&client_id=" + clientId;
 
             if (!string.IsNullOrEmpty(scope))
             {
-				formUrlEncoded += "&scope=" + scope;
+                formUrlEncoded += "&scope=" + scope;
             }
 
             if (!string.IsNullOrEmpty(audience))
             {
-				formUrlEncoded += "&audience=" + audience;
+                formUrlEncoded += "&audience=" + audience;
             }
 
-			try
-			{
-				GetToken(tokenUrl, formUrlEncoded, clientId)
-                    .Then(token =>
-                    {
-                        result.SetResult(token);
-                    });
-			}
-			catch (Exception ex)
-			{
-				result.SetException(ex);
-			}
-
-			return result;
+            return GetToken(tokenUrl, formUrlEncoded, clientId);
         }
 
-        public static AuthorizationInfo GetToken(string tokenUrl, string clientId, string authCode, int port, string codeVerifier)
+        public static IAsyncOperation<AuthorizationInfo> GetToken(string tokenUrl, string clientId, string authCode, int port, string codeVerifier)
         {
+            var result = new AsyncCompletionSource<AuthorizationInfo>();
             var form = new Dictionary<string, string>()
                 {
                     { "grant_type", "authorization_code" },
@@ -348,6 +354,8 @@ namespace Simva
                     { "client_id", clientId },
                 };
 
+            Debug.Log(JsonConvert.SerializeObject(form, Formatting.Indented));
+
             if (!string.IsNullOrEmpty(codeVerifier))
             {
                 form.Add("code_verifier", codeVerifier);
@@ -355,52 +363,56 @@ namespace Simva
 
             UnityWebRequest uwr = UnityWebRequest.Post(tokenUrl, form);
 
-            uwr.SendWebRequest();
+            Observable.FromCoroutine(() => DoRequest(result, uwr)).Subscribe();
 
-            while (!uwr.isDone) { }
+            var wrapper = new AsyncCompletionSource<AuthorizationInfo>();
 
-			ThrowErrors(uwr);
+            result.Then(authInfo =>
+            {
+                authInfo.ClientId = clientId;
+                wrapper.SetResult(authInfo);
+            }).Catch(ex => wrapper.SetException(ex));
 
-			var authInfo = JsonConvert.DeserializeObject<AuthorizationInfo>(uwr.downloadHandler.text);
-            authInfo.ClientId = clientId;
-            return authInfo;
+            return wrapper;
         }
 
-		public static IAsyncOperation<AuthorizationInfo> GetToken(string tokenUrl, string formUrlEncoded, string clientId)
+        public static IAsyncOperation<AuthorizationInfo> GetToken(string tokenUrl, string formUrlEncoded, string clientId)
         {
             var result = new AsyncCompletionSource<AuthorizationInfo>();
             UnityWebRequest uwr = UnityWebRequest.Post(tokenUrl, "");
-			byte[] bytes = Encoding.UTF8.GetBytes(formUrlEncoded);
-			UploadHandlerRaw uH = new UploadHandlerRaw(bytes);
-			uH.contentType = "application/x-www-form-urlencoded";
-			uwr.uploadHandler = uH;
+            byte[] bytes = Encoding.UTF8.GetBytes(formUrlEncoded);
+            UploadHandlerRaw uH = new UploadHandlerRaw(bytes);
+            uH.contentType = "application/x-www-form-urlencoded";
+            uwr.uploadHandler = uH;
 
-			uwr.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            uwr.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
             Observable.FromCoroutine(() => DoRequest(result, uwr)).Subscribe();
 
-            return result.Then(authInfo =>
+            var wrapper = new AsyncCompletionSource<AuthorizationInfo>();
+
+            result.Then(authInfo =>
             {
-                var wrapper = new AsyncCompletionSource<AuthorizationInfo>();
                 authInfo.ClientId = clientId;
                 wrapper.SetResult(authInfo);
-                return wrapper;
-            });
+            }).Catch(ex => wrapper.SetException(ex));
+
+            return wrapper;
         }
 
-		public static AuthorizationInfo RefreshToken(string tokenUrl, string clientId, string refresh_token)
-		{
-			UnityWebRequest uwr = UnityWebRequest.Post(tokenUrl,
-				new Dictionary<string, string>()
-				{
-					{ "grant_type", "refresh_token" },
-					{ "refresh_token", refresh_token },
-					{ "client_id", clientId }
-				});
+        public static AuthorizationInfo RefreshToken(string tokenUrl, string clientId, string refresh_token)
+        {
+            UnityWebRequest uwr = UnityWebRequest.Post(tokenUrl,
+                new Dictionary<string, string>()
+                {
+                    { "grant_type", "refresh_token" },
+                    { "refresh_token", refresh_token },
+                    { "client_id", clientId }
+                });
 
             uwr.SendWebRequest();
 
-            while(!uwr.isDone) { }
+            while (!uwr.isDone) { }
 
             ThrowErrors(uwr);
 
@@ -433,19 +445,112 @@ namespace Simva
         }
 
         private static void ThrowErrors(UnityWebRequest uwr)
-		{
-			if (uwr.isHttpError)
-			{
-				var error = uwr.downloadHandler.text;
-				try
-				{
-					var authError = JsonConvert.DeserializeObject<AuthorizationError>(uwr.downloadHandler.text);
-					error = authError.ErrorDescription;
-				}
-				catch { }
-				throw new ApiException((int)uwr.responseCode, error);
-			}
-		}
+        {
+            if (uwr.isHttpError)
+            {
+                var error = uwr.downloadHandler.text;
+                try
+                {
+                    var authError = JsonConvert.DeserializeObject<AuthorizationError>(uwr.downloadHandler.text);
+                    error = authError.ErrorDescription;
+                }
+                catch { }
+                throw new ApiException((int)uwr.responseCode, error);
+            }
+        }
+
+        /// <summary>
+        /// Web service request.
+        /// </summary>
+        ///
+        /// <param name="requestSettings">Options for controlling the operation. </param>
+        ///
+        /// <returns>
+        /// A RequestResponse.
+        /// </returns>
+        private static RequestResponse WebServiceRequest(RequestSetttings requestSettings)
+        {
+            RequestResponse result = new RequestResponse(requestSettings);
+
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(requestSettings.uri);
+
+                request.Method = requestSettings.method;
+
+                // Both Accept and Content-Type are not allowed as Headers in a HttpWebRequest.
+                // They need to be assigned to a matching property.
+
+                if (requestSettings.requestHeaders.ContainsKey("Accept"))
+                {
+                    request.Accept = requestSettings.requestHeaders["Accept"];
+                }
+
+                if (!String.IsNullOrEmpty(requestSettings.body))
+                {
+                    byte[] data = Encoding.UTF8.GetBytes(requestSettings.body);
+
+                    if (requestSettings.requestHeaders.ContainsKey("Content-Type"))
+                    {
+                        request.ContentType = requestSettings.requestHeaders["Content-Type"];
+                    }
+
+                    foreach (KeyValuePair<string, string> kvp in requestSettings.requestHeaders)
+                    {
+                        if (kvp.Key.Equals("Accept") || kvp.Key.Equals("Content-Type"))
+                        {
+                            continue;
+                        }
+                        request.Headers.Add(kvp.Key, kvp.Value);
+                    }
+
+                    request.ContentLength = data.Length;
+
+                    // See https://msdn.microsoft.com/en-us/library/system.net.servicepoint.expect100continue(v=vs.110).aspx
+                    // A2 currently does not support this 100-Continue response for POST requets.
+                    request.ServicePoint.Expect100Continue = false;
+
+                    Stream stream = request.GetRequestStream();
+                    stream.Write(data, 0, data.Length);
+                    stream.Close();
+                }
+                else
+                {
+                    foreach (KeyValuePair<string, string> kvp in requestSettings.requestHeaders)
+                    {
+                        if (kvp.Key.Equals("Accept") || kvp.Key.Equals("Content-Type"))
+                        {
+                            continue;
+                        }
+                        request.Headers.Add(kvp.Key, kvp.Value);
+                    }
+                }
+
+                WebResponse response = request.GetResponse();
+                if (response.Headers.HasKeys())
+                {
+                    foreach (string key in response.Headers.AllKeys)
+                    {
+                        result.responseHeaders.Add(key, response.Headers.Get(key));
+                    }
+                }
+
+                result.responseCode = (int)(response as HttpWebResponse).StatusCode;
+
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    result.body = reader.ReadToEnd();
+                }
+            }
+            catch (Exception e)
+            {
+                result.responsMessage = e.Message;
+
+                Debug.Log(String.Format("{0} - {1}", e.GetType().Name, e.Message));
+            }
+
+            return result;
+        }
 
         private static IEnumerator DoRequest<T>(IAsyncCompletionSource<T> op, UnityWebRequest webRequest)
         {

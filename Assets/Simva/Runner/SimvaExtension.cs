@@ -529,7 +529,7 @@ namespace Simva
 				flushRequested = false;
 				flushing = true;
 				Debug.Log("Flushing...");
-				TrackerAsset.Instance.Flush(() =>
+				TrackerAsset.Instance.FlushAll(() =>
 				{
 					flushing = false;
 					Debug.Log("Flush done!");
