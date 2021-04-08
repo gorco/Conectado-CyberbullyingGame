@@ -139,7 +139,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "La journée a été ennuyeuse, les cours sont terminés et la plupart des gens t'ont ignoré toute la journée. Un message sur ton bureau te dit d'aller aux toilettes, quelqu'un t'attend là-bas..."
+				"value": "La journée a été ennuyeuse, les cours sont terminés et la plupart des gens t'ont ignoré toute la journée. Un message sur ton table te dit d'aller aux toilettes, quelqu'un t'attend là-bas..."
 			}
 		},
 		"node3": {
@@ -199,7 +199,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "La journée a été ennuyeuse, les cours sont terminés et la plupart des gens t'ont ignoré toute la journée. Un message sur ton bureau te dit d'aller aux toilettes, quelqu'un t'attend là-bas..."
+				"value": "La journée a été ennuyeuse, les cours sont terminés et la plupart des gens t'ont ignoré toute la journée. Un message sur ton table te dit d'aller aux toilettes, quelqu'un t'attend là-bas..."
 			}
 		},
 		"changeHour": {

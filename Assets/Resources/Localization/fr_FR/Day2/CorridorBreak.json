@@ -7,7 +7,7 @@
 				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
 			},
 			{
-				"next": "whased",
+				"next": "whasedfork",
 				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
 			},
 			{
@@ -40,7 +40,18 @@
 				}
 			]
 		},
-		"whased": {
+		"whasedfork": {
+			"type": "fork",
+			"options": [{
+				"next": "whasedmale",
+				"condition": "varObject('global', 'MaleSexNonStatic')== true"
+			},
+			{
+				"next": "whasedfemale",
+				"condition": "varObject('global', 'MaleSexNonStatic')== false"
+			}]
+		},
+		"whasedmale": {
 			"type": "dialog",
 			"fragments": [
 				{
@@ -51,7 +62,22 @@
 				{
 					"tag": "Marie",
 					"character": "Maria",
-					"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Oh mec, on dirait que tu t'es pissé dessus ou même chié dessus.', 'Oh meuf, on dirait que t'es pissée dessus ou même chiée dessus.') $>"
+					"msn": "Oh mec, on dirait que tu t'es pissé dessus ou même chié dessus."
+				}
+			]
+		},
+		"whasedfemale": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Qu'as-tu fait ? Quelle tache."
+				},
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Oh meuf, on dirait que t'es pissée dessus ou même chiée dessus."
 				}
 			]
 		}

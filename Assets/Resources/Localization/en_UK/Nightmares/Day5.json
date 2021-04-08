@@ -21,7 +21,7 @@
 			"fragments": [{
 				"tag": "Voice from the portal",
 				
-				"msn": "In the end, everything has ended the same, can't say I haven't tried."
+				"msn": "In the end, everything has ended the same. Cannot say I haven't tried."
 			}, 
 			{
 				"tag": "Voice from the portal",
@@ -36,27 +36,27 @@
 			{
 				"tag": "Voice from the portal",
 				
-				"msn": "Is it too hard asking for help when one needs it? Forget our ego. One is not to blame for what happens to him nor deserves it."
+				"msn": "Is it too hard asking for help when needed? Forget your ego. You are not always to blame for what happens to you, nor do you deserve it."
 			},
 			{
 				"tag": "Voice from the portal",
 				
-				"msn": "Why that fear of sharing what is going on with yourself? What one feels?"
+				"msn": "Why that fear of sharing what is going on with yourself? What do you feel?"
 			},
 			{
 				"tag": "Voice from the portal",
 				
-				"msn": "Why do we let people suffer? Why do we think it's best to remain quiet, to let time heal everything?"
+				"msn": "Why do we let people suffer? Why do we think it's best to remain silent, to let time heal everything?"
 			},
 			{
 				"tag": "Voice from the portal",
 				
-				"msn": "It's easy to laugh at others, but what happens when they laugh at you."
+				"msn": "It's easy to laugh at others, but what happens when they laugh at you?."
 			},
 			{
 				"tag": "Voice from the portal",
 				
-				"msn": "Why is it best to suffer or see other suffer than ask for help? Is it asking for help sneak up? Is sneaking up avoiding someone to have a rough time?"
+				"msn": "Why is it best to suffer or see other suffer than asking for help? Is it asking for help sneak up? Is sneaking up avoiding someone to have a rough time?"
 			}]
 		},
 		"final2": {
@@ -65,7 +65,7 @@
 			"fragments": [{
 				"tag": "Voice from the portal",
 				
-				"msn": "It appears I haven't made my purpose at the end, but at least I improved things a little."
+				"msn": "It seems that I haven't made my purpose at the end, but at least I improved things a little."
 			}, 
 			{
 				"tag": "Voice from the portal",
@@ -75,7 +75,7 @@
 			{
 				"tag": "Voice from the portal",
 				
-				"msn": "You must ask for help when you need. Forget our ego.  One is not to blame for what happens to him nor deserves it."
+				"msn": "You must ask for help when you need it. Forget your ego. You are not always to blame for what happens to you, nor do you deserve it."
 			},
 			{
 				"tag": "Voice from the portal",
@@ -90,12 +90,12 @@
 			{
 				"tag": "Voice from the portal",
 				
-				"msn": "Maybe it's best to suffer or see other suffer than ask for help, Is it asking for help sneak up? Is sneaking up avoiding someone to have a rough time?"
+				"msn": "Maybe it's best to suffer or see other suffer than asking for help, Is it asking for help sneak up? Is sneaking up avoiding someone to have a rough time?"
 			},
 			{
 				"tag": "Voice from the portal",
 				
-				"msn": "I hope that, having passed what you have gone through, you lose that fear of telling what bad thing happens to you and your classmates."
+				"msn": "I hope that, having passed what you have gone through, you lose that fear of telling the bad thing that happens to you and your classmates."
 			}]
 		},
 		"final3": {
@@ -118,7 +118,7 @@
 			},
 			{
 				"tag": "Voice from the portal",
-				"msn": "It is good to speak up and ask for help. Noone deserves what you've dealing with, no matter the reason."
+				"msn": "It is good to speak up and ask for help. No one deserves what you've dealt with, no matter the reason."
 			},
 			{
 				"tag": "Voice from the portal",
@@ -128,12 +128,12 @@
 			{
 				"tag": "Voice from the portal",
 				
-				"msn": "I hope you never keep quiet again if someone needs help or is suffering. That you show them your support instead of following the bully."
+				"msn": "I hope you never stay silent again if someone needs help or is suffering. You should show them your support instead of following the bully."
 			},
 			{
 				"tag": "Voice from the portal",
 				
-				"msn": "It's easy to do nothing, but you've learned that you can be his next victim as it's happened now."
+				"msn": "It's easy to do nothing, but you've learned that you can be his next victim."
 			}]
 		},
 		"opt": {
@@ -152,12 +152,12 @@
 			"next": "end",
 			"fragments": [{
 				"tag": "Voice from the portal",
-				"msn": "I'm afraid a can't tell you that."
+				"msn": "I'm afraid I can't tell you that."
 			},
 			{
 				"tag": "Voice from the portal",
 				
-				"msn": "Think of me as someone who is conected to you by all the things we have in common."
+				"msn": "Think of me as someone who is connected to you by all the things we have in common."
 			},
 			{
 				"tag": "Voice from the portal",
@@ -176,12 +176,12 @@
 			"fragments": [{
 				"tag": "Voice from the portal",
 				
-				"msn": "I'm sorry my presence doesn't make you comfortable."
+				"msn": "I'm sorry if my presence doesn't make you comfortable."
 			},
 			{
 				"tag": "Voice from the portal",
 				
-				"msn": "And that maybe this was for nothing..."
+				"msn": "And maybe this was for nothing..."
 			}]
 		},
 		"end": {

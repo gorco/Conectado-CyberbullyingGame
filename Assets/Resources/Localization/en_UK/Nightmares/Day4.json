@@ -11,7 +11,7 @@
 			}, {
 				"tag": "Shadow",
 				"character": "Shadow",
-				"msn": "You can try deleting them..."
+				"msn": "You can try and delete them..."
 			},
 			{
 				"tag": "Shadow",
@@ -40,7 +40,7 @@
 			"fragments": [{
 				"tag": "Shadow",
 				"character": "Shadow",
-				"msn": "You didn't accomplish anything."
+				"msn": "You didn't get anything."
 			}, {
 				"tag": "Shadow",
 				"character": "Shadow",
@@ -48,7 +48,7 @@
 			}, {
 				"tag": "Shadow",
 				"character": "Shadow",
-				"msn": "Photos' still there."
+				"msn": "Photos are still there."
 			},{
 				"tag": "Shadow",
 				"character": "Shadow",
@@ -61,7 +61,7 @@
 				"msn": "It's not your fault. Come, go trough the portal again."
 			}, {
 				"tag": "Voice from the portal",
-				"msn": "Try changing things."
+				"msn": "Try to change things."
 			}]
 		}
 	},
@@ -201,7 +201,7 @@
 				"tag": "Shadow",
 				"character": "Shadow",
 				
-				"msn": "You didn't accomplish anything."
+				"msn": "You didn't get anything."
 			}, {
 				"tag": "Shadow",
 				"character": "Shadow",

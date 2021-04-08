@@ -17,5 +17,7 @@
 
     "acceptButton":"Accept",
     "denyButton":"Deny",
-    "commentsText":"Comments"
+    "commentsText":"Comments",
+	"ReportButton": "Report\n Photo",
+	"ReportButton(Clone)": "Report\n Foto"
 }

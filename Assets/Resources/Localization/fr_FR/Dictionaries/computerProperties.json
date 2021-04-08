@@ -17,5 +17,7 @@
 
     "acceptButton":"Accepter la demande",
     "denyButton":"Refuser la demande",
-    "commentsText":"Commentaires"
+    "commentsText":"Commentaires",
+	"ReportButton": "Signaler\n Photo",
+	"ReportButton(Clone)": "Signaler\n Photo"
 }

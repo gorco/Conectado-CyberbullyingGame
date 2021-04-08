@@ -1,0 +1,213 @@
+{
+	"alexAndAna": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "mobile",
+				"condition": "spoken == true && varObject('state', 'MariaJoke') == 2"
+			},
+			{
+				"next": "ask",
+				"condition": "varObject('state', 'MariaJoke') == 1 && varObject('state', 'TimeEnough') == true"
+			},
+			{
+				"next": "noTime",
+				"condition": "varObject('state', 'MariaJoke') == 1 && varObject('state', 'TimeEnough') == false"
+			},
+			{
+				"next": "lost",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "lost",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "repeat",
+				"condition": "true"
+			}]
+		},
+		"ask": {
+			"type": "dialog",
+			"next": "askOptions",
+			"fragments": [{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Have you stuck the poster in María's back without her noticing it?"
+			}]
+		},
+		"askOptions": {
+			"type": "options",
+			"questionId": "AnaAlexMariaJokeAskSuccess",
+			"options": [{
+				"next": "taskSuccess",
+				"msn": "Yes"
+			},
+			{
+				"next": "noTime",
+				"msn": "No"
+			}]
+		},
+		"taskSuccess": {
+			"type": "event",
+			"next": "mobile",
+			"event": {
+				"name": "change variable",
+				"var": "MariaJoke",
+				"value": 2,
+			}
+		},
+		"noTime": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "What are you waiting for? C'mon, go stick that poster in María's back."
+			}]
+		},
+		"mobile": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Hahahaha, well done."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Hahaha, your mobile is in the <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' bathroom."
+			}]
+		},
+		"repeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Hahahaha."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Hahahaha."
+			}]
+		},
+		"lost": {
+			"type": "options",
+			"questionId": "AnaAlexAskMobileLost",
+			"options": [{
+				"next": "node1a",
+				"msn": "Was it you? Have you hidden my mobile phone in the <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' bathroom?",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "node1b",
+				"msn": "Does anyone know where my phone is? It's not funny.",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "setter",
+				"msn": "I know it was you, it's not funny.",
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "What if we were the ones? Are you going to go crying to speak with our tutor, or your parents...?"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Hahaha, I'm sure he will."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "C'mon, get lost, go cry elsewhere."
+			}]
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "jokeAccepted",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Maybe"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "We'll let you know where it is if you go and stick this poster in María's back."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "(She gives you a paper with tape on it and the sentence \"I'm a masochist, insult me if you read this\")."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Come back when you've done it... otherwise, don't bother."
+			}]
+		},
+		"jokeAccepted": {
+			"type": "event",
+			"next": "mariaQuest",
+			"event": {
+				"name": "change variable",
+				"var": "MariaJoke",
+				"value": 1,
+			}
+		},
+		"mariaQuest": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "MariaQuest",
+				"value": 1,
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"next": "repeat",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "event",
+			"next": "time",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"time": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "TimeEnough",
+				"value": true,
+			}
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "It is break time, there are still some classes before I can go home.."
+			}]
+		}
+	}
+}
