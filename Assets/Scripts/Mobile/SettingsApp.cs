@@ -52,55 +52,54 @@ public class SettingsApp : MonoBehaviour {
 
 	public void ExitGameConfirmed()
 	{
-		if (!Simva.SimvaExtension.Instance || Simva.SimvaExtension.Instance.OnGameFinished())
+		try
 		{
-			if (Application.platform != RuntimePlatform.WebGLPlayer && Application.isEditor == false)
+			if (!Simva.SimvaExtension.Instance || Simva.SimvaExtension.Instance.OnGameFinished())
 			{
-				Application.Quit();
-				System.Diagnostics.Process.GetCurrentProcess().Kill();
-			}
-		}	
-	}
-
-	void ChangeLevel()
-	{
-		if ((PreToggle || PostToggle || TeaToggle) && (PlayerPrefs.GetString("CurrentSurvey").Equals("end") || forceExit))
-		{
-			if (tracesSentInfo)
-			{
-				if (tracesSent == false)
-				{
-					tracesSentMsg.text = "Los datos no se han podido enviar. Avise al encargado del experimento antes de cerrar el juego.";
-					tracesSentMsg.color = Color.red;
-				}
-				else
-				{
-					tracesSentMsg.text = "Los datos se han mandado correctamente. Puede cerrar el juego.";
-					tracesSentMsg.color = Color.white;
-				}
-				token.text = "Información de "+PlayerPrefs.GetString("username");
-				PreToggle.isOn = (PlayerPrefs.HasKey("PreTestEnd") && PlayerPrefs.GetInt("PreTestEnd") == 1);
-				PostToggle.isOn = (PlayerPrefs.HasKey("PostTestEnd") && PlayerPrefs.GetInt("PostTestEnd") == 1);
-				TeaToggle.isOn = (PlayerPrefs.HasKey("TeaTestEnd") && PlayerPrefs.GetInt("TeaTestEnd") == 1);
-				tracesSentInfo.SetActive(true);
+				CloseAll();
 			}
 			else
 			{
-                
-
-                if (Application.platform != RuntimePlatform.WebGLPlayer && Application.isEditor == false)
+				if (SceneManager.GetActiveScene().name == "Title")
 				{
 					CloseAll();
 				}
+				else
+				{
+					SceneManager.LoadScene("Title");
+				}
 			}
+		} catch (Exception e)
+		{
+			if (SceneManager.GetActiveScene().name == "Title")
+			{
+				CloseAll();
+			}
+			else
+			{
+				SceneManager.LoadScene("Title");
+			}
+		}
+	}
 
-			
-		} else if (PlayerPrefs.GetString("CurrentSurvey").Equals("tea") || PlayerPrefs.GetString("CurrentSurvey").Equals("post"))
+	public void ReturnHomeAfterEnd()
+	{
+		try
 		{
-			SceneManager.LoadScene("_Survey");
-		} else 
+			if (!Simva.SimvaExtension.Instance || Simva.SimvaExtension.Instance.OnGameFinished())
+			{
+				if (Application.platform != RuntimePlatform.WebGLPlayer && Application.isEditor == false)
+				{
+					SceneManager.LoadScene("Title");
+				}
+			}
+			else
+			{
+				SceneManager.LoadScene("Title");
+			}
+		} catch (Exception e)
 		{
-			SceneManager.LoadScene(0);
+			SceneManager.LoadScene("Title");
 		}
 	}
 

@@ -179,7 +179,7 @@ namespace Simva
             NotifyLoading(true);
 			NotifyManagers("");
 			OpenIdUtility.tokenLogin = true;
-            SimvaApi<IStudentsApi>.LoginWithToken(token)
+            SimvaApi<IStudentsApi>.LoginWithToken(token.ToLower())
                 .Then(simvaController =>
                 {
                     this.auth = simvaController.AuthorizationInfo;
