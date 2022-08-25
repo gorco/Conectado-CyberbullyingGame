@@ -1,12 +1,9 @@
-﻿using AssetPackage;
-using RAGE.Net;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using RAGE.Analytics;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class SettingsApp : MonoBehaviour {
 

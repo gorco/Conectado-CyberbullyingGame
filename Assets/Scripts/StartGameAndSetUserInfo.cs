@@ -1,9 +1,10 @@
-﻿using RAGE.Analytics;
+﻿using Xasu;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Xasu.HighLevel;
 
 public class StartGameAndSetUserInfo : MonoBehaviour {
 
@@ -154,9 +155,12 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 
 			if (sendTrace)
 			{
-				Tracker.T.setVar("gender", male.isOn ? "male" : "female");
-				Tracker.T.setVar("pass", userPass.text);
-				Tracker.T.accessible.Accessed("StartGame");
+				var statementPromise = AccessibleTracker.Instance.Accessed("StartGame");
+                statementPromise.WithResultExtensions(new Dictionary<string, object>
+                {
+                    { "gender", male.isOn ? "male" : "female" },
+                    { "pass", userPass.text }
+                });
 			}
 
 			//Friendship

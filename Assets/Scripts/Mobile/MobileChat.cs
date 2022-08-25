@@ -1,6 +1,6 @@
 ﻿using Isometra;
 using Isometra.Sequences;
-using RAGE.Analytics;
+using Xasu;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +8,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
+using Xasu.HighLevel;
 
 public class MobileChat : MonoBehaviour
 {
@@ -548,7 +549,7 @@ public class MobileChat : MonoBehaviour
     {
         try
         {
-            Tracker.T.GameObject.Interacted(id, GameObjectTracker.TrackedGameObject.Item);
+            GameObjectTracker.Instance.Interacted(id, GameObjectTracker.TrackedGameObject.Item);
         }
         catch (Exception e)
         {
