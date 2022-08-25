@@ -1,5 +1,4 @@
-﻿using RAGE.Net;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +6,6 @@ using UnityEngine.UI;
 
 public class SessionStart : MonoBehaviour {
 
-	Net connection;
 	public Text sessionKey, response;
 	private String trackingCode = "";
 	public GameObject startButton;
@@ -16,11 +14,6 @@ public class SessionStart : MonoBehaviour {
 	public GameObject TokenObj;
 
 	private bool check = true;
-
-	// Use this for initialization
-	void Start () {
-		connection = new Net(this);
-	}
 	
 	// Update is called once per frame
 	void Update () {

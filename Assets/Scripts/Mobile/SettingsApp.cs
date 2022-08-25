@@ -1,12 +1,9 @@
-﻿using AssetPackage;
-using RAGE.Net;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using RAGE.Analytics;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class SettingsApp : MonoBehaviour {
 
@@ -82,7 +79,6 @@ public class SettingsApp : MonoBehaviour {
 				}
 				Dictionary<string, string> headers = new Dictionary<string, string>();
 
-				Net net = new Net(this);
 
 				WWWForm data = new WWWForm();
 				data.AddField("token", PlayerPrefs.GetString("LimesurveyToken"));
@@ -90,7 +86,12 @@ public class SettingsApp : MonoBehaviour {
 
 				data.headers.Remove ("Content-Type");// = "multipart/form-data";
 				System.IO.File.AppendAllText(path + PlayerPrefs.GetString("LimesurveyToken") + ".csv", System.IO.File.ReadAllText(dataFile));
-				net.POST(PlayerPrefs.GetString("LimesurveyHost") + "classes/collector", data, new SavedTracesListener(this, this.infoPanel));
+
+                UnityWebRequest net = UnityWebRequest.Post(PlayerPrefs.GetString("LimesurveyHost") + "classes/collector", data);
+
+                var asyncHandler = net.SendWebRequest();
+                asyncHandler.completed += SavedTracesEvent;
+
 				/*
 				if (PlayerPrefs.GetString("CurrentSurvey").Equals("post")) {
 					PlayerPrefs.SetString("CurrentSurvey", "end");
@@ -112,7 +113,41 @@ public class SettingsApp : MonoBehaviour {
 		}	
 	}
 
-	void ChangeLevel()
+    private void SavedTracesEvent(AsyncOperation obj)
+    {
+        var uwrAsyncOp = (UnityWebRequestAsyncOperation)obj;
+        var unityWebRequest = uwrAsyncOp.webRequest;
+
+        if(unityWebRequest.isHttpError)
+        {
+            Error(unityWebRequest.downloadHandler.text);
+        }
+        else if (unityWebRequest.isNetworkError)
+        {
+            Error(unityWebRequest.error);
+        }
+        else
+        {
+            Result(unityWebRequest.downloadHandler.text);
+        }
+    }
+
+    public void Result(string data)
+    {
+        tracesSent = true;
+        ChangeLevel();
+    }
+
+    public void Error(string error)
+    {
+        if (this.infoPanel)
+        {
+            infoPanel.text = error;
+        }
+        Debug.Log(error);
+    }
+
+    void ChangeLevel()
 	{
 		if ((PreToggle || PostToggle || TeaToggle) && (PlayerPrefs.GetString("CurrentSurvey").Equals("end") || forceExit))
 		{
@@ -165,33 +200,6 @@ public class SettingsApp : MonoBehaviour {
 		{
 			Application.Quit();
 			System.Diagnostics.Process.GetCurrentProcess().Kill();
-		}
-	}
-
-	class SavedTracesListener : Net.IRequestListener
-	{
-		private  UnityEngine.UI.Text infoPanel;
-		private SettingsApp app;
-
-		public SavedTracesListener(SettingsApp app, UnityEngine.UI.Text info)
-		{
-			this.infoPanel = info;
-			this.app = app;
-		}
-
-		public void Result(string data)
-		{
-			app.tracesSent = true;
-			app.ChangeLevel();
-		}
-
-		public void Error(string error)
-		{
-			if (this.infoPanel)
-			{
-				infoPanel.text = error;
-			}
-			Debug.Log(error);
 		}
 	}
 }

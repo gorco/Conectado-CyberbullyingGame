@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,24 +15,24 @@ public class HostConfiguration : MonoBehaviour {
 
 	void Start()
 	{
-		SimpleJSON.JSONNode hostfile = new SimpleJSON.JSONClass();
+		JObject hostfile = new JObject();
 
 #if !(UNITY_WEBPLAYER || UNITY_WEBGL)
 		if (!System.IO.File.Exists("host.cfg"))
 			hostfile.Add("limesurvey_host", "localhost:4000");
 		else
-			hostfile = SimpleJSON.JSON.Parse(System.IO.File.ReadAllText("host.cfg"));
+			hostfile = JObject.Parse(System.IO.File.ReadAllText("host.cfg"));
 #endif
 		try
 		{
-			host = hostfile["limesurvey_host"];
-			survey_pre = hostfile["limesurvey_pre"];
-			survey_post = hostfile["limesurvey_post"];
-			survey_tea = hostfile["limesurvey_tea"];
-			master_token_online = hostfile["master_token_online"];
-			master_token_offline = hostfile["master_token_offline"];
+			host = hostfile.Value<string>("limesurvey_host");
+			survey_pre = hostfile.Value<string>("limesurvey_pre");
+			survey_post = hostfile.Value<string>("limesurvey_post");
+			survey_tea = hostfile.Value<string>("limesurvey_tea");
+			master_token_online = hostfile.Value<string>("master_token_online");
+			master_token_offline = hostfile.Value<string>("master_token_offline");
 
-			activities_tracking = hostfile["activities_tracking"];
+			activities_tracking = hostfile.Value<string>("activities_tracking");
 		}
 		catch (Exception ex) { }
 

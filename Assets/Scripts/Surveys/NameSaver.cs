@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using RAGE.Analytics;
-using RAGE.Net;
+using Xasu;
+using Newtonsoft.Json.Linq;
 
 public class NameSaver : MonoBehaviour {
     public Text t;
@@ -40,23 +40,23 @@ public class NameSaver : MonoBehaviour {
 		PlayerPrefs.Save();
 		//PlayerPrefs.DeleteAll();
 
-		SimpleJSON.JSONNode hostfile = new SimpleJSON.JSONClass();
+		JObject hostfile = new JObject();
 
 #if !(UNITY_WEBPLAYER || UNITY_WEBGL)
 		if (!System.IO.File.Exists("host.cfg"))
 		{
-			hostfile.Add("host", new SimpleJSON.JSONData("http://192.168.175.117:3000/api/proxy/gleaner/collector/"));
-			hostfile.Add("trackingCode", new SimpleJSON.JSONData("57d81d5585b094006eab04d6ndecvjlvjss8aor"));
+			hostfile.Add("host", "http://192.168.175.117:3000/api/proxy/gleaner/collector/");
+			hostfile.Add("trackingCode", "57d81d5585b094006eab04d6ndecvjlvjss8aor");
 			System.IO.File.WriteAllText("host.cfg", hostfile.ToString());
 		}
 		else
-			hostfile = SimpleJSON.JSON.Parse(System.IO.File.ReadAllText("host.cfg"));
+			hostfile = JObject.Parse(System.IO.File.ReadAllText("host.cfg"));
 #endif
 
-		PlayerPrefs.SetString("host", hostfile["host"]);
+		PlayerPrefs.SetString("host", hostfile.Value<string>("host"));
 		if (PlayerPrefs.GetString("ActivitiesTracking") == null)
 		{
-			PlayerPrefs.SetString("trackingCode", hostfile["trackingCode"]);
+			PlayerPrefs.SetString("trackingCode", hostfile.Value<string>("trackingCode"));
 		} 
 		PlayerPrefs.Save();
 
