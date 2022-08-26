@@ -150,19 +150,19 @@ public class TrackerEventManager : EventManager {
 	public static Dictionary<string, object> GetStateExtensions()
 	{
         return new Dictionary<string, object> {
-            { "Final", GlobalState.Final},
-            { "GameDay", GlobalState.Day},
-            { "GameHour", GlobalState.Hour + ":" + (GlobalState.Minute < 10 ? "0" + GlobalState.Minute.ToString() : GlobalState.Minute.ToString())},
+            { "conectado://Final", GlobalState.Final},
+            { "conectado://GameDay", GlobalState.Day},
+            { "conectado://GameHour", GlobalState.Hour + ":" + (GlobalState.Minute < 10 ? "0" + GlobalState.Minute.ToString() : GlobalState.Minute.ToString())},
 
-            { "MariaFriendship", GlobalState.MariaFS},
-            { "AlisonFriendship", GlobalState.AlisonFS},
-            { "AnaFriendship", GlobalState.AnaFS},
-            { "GuillermoFriendship", GlobalState.GuillermoFS},
-            { "JoseFriendship", GlobalState.JoseFS},
-            { "AlejandroFriendship", GlobalState.AlejandroFS},
-            { "ParentsFriendship", GlobalState.ParentsFS},
-            { "TeacherFriendship", GlobalState.TeacherFS},
-            { "RiskFriendship", GlobalState.Risk}
+            { "conectado://MariaFriendship", GlobalState.MariaFS},
+            { "conectado://AlisonFriendship", GlobalState.AlisonFS},
+            { "conectado://AnaFriendship", GlobalState.AnaFS},
+            { "conectado://GuillermoFriendship", GlobalState.GuillermoFS},
+            { "conectado://JoseFriendship", GlobalState.JoseFS},
+            { "conectado://AlejandroFriendship", GlobalState.AlejandroFS},
+            { "conectado://ParentsFriendship", GlobalState.ParentsFS},
+            { "conectado://TeacherFriendship", GlobalState.TeacherFS},
+            { "conectado://RiskFriendship", GlobalState.Risk}
         };
     }
 

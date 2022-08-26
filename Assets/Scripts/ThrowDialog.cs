@@ -56,10 +56,10 @@ public class ThrowDialog : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 			    var interactedPromise = GameObjectTracker.Instance.Interacted(fieldName);
                 interactedPromise.WithResultExtensions(new Dictionary<string, object>
                 {
-                    { "GameDay", GlobalState.Day },
-                    { "GameHour", GlobalState.Hour + ":" + GlobalState.Minute },
-                    { "IsRepeatedDay", GlobalState.Repeated.ToString() },
-                    { "MobileMessages", GlobalState.MessagesPending.ToString() }
+                    { "conectado://GameDay", GlobalState.Day },
+                    { "conectado://GameHour", GlobalState.Hour + ":" + GlobalState.Minute },
+                    { "conectado://IsRepeatedDay", GlobalState.Repeated.ToString() },
+                    { "conectado://MobileMessages", GlobalState.MessagesPending.ToString() }
                 });
 			
 			} catch (Exception e)

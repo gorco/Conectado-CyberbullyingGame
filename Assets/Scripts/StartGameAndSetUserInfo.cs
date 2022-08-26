@@ -157,8 +157,8 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 				var statementPromise = AccessibleTracker.Instance.Accessed("StartGame");
                 statementPromise.WithResultExtensions(new Dictionary<string, object>
                 {
-                    { "gender", male.isOn ? "male" : "female" },
-                    { "pass", userPass.text }
+                    { "conectado://gender", male.isOn ? "male" : "female" },
+                    { "conectado://pass", userPass.text }
                 });
 			}
 
