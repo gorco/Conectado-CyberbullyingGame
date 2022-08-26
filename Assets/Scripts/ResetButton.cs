@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Simva;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,7 +17,7 @@ public class ResetButton : MonoBehaviour
 	
     void Update()
     {
-		if (Simva.SimvaExtension.Instance && Simva.SimvaExtension.Instance.IsActive && Input.GetKeyDown(KeyCode.Escape))
+		if (SimvaManager.Instance && SimvaManager.Instance.IsActive && Input.GetKeyDown(KeyCode.Escape))
 		{
 			resetButton.SetActive(!resetButton.activeSelf);
 		}
@@ -24,19 +25,19 @@ public class ResetButton : MonoBehaviour
 
 	public void OnReset()
 	{
-		if (!Simva.SimvaExtension.Instance.IsActive)
+		if (!SimvaManager.Instance.IsActive)
 		{
 			return;
 		}
 
 		resetButton.SetActive(false);
 
-		var gameplay = Simva.SimvaExtension.Instance.Schedule.Activities
+		var gameplay = SimvaManager.Instance.Schedule.Activities
 			.Where(kv => kv.Value.Type == "gameplay")
 			.Select(kv => kv.Key)
 			.FirstOrDefault();
 
-		Simva.SimvaExtension.Instance.API.Api.SetCompletion(gameplay, Simva.SimvaExtension.Instance.API.AuthorizationInfo.Username, false)
+        SimvaManager.Instance.API.Api.SetCompletion(gameplay, SimvaManager.Instance.API.Authorization.Agent.name, false)
 			.Then(() => 
 			{
 				SceneManager.LoadScene("Title");

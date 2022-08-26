@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using Simva;
+using UnityFx.Async.Promises;
 
 public class SettingsApp : MonoBehaviour {
 
@@ -49,56 +51,19 @@ public class SettingsApp : MonoBehaviour {
 
 	public void ExitGameConfirmed()
 	{
-		try
-		{
-			if (!Simva.SimvaExtension.Instance || Simva.SimvaExtension.Instance.OnGameFinished())
-			{
-				CloseAll();
-			}
-			else
-			{
-				if (SceneManager.GetActiveScene().name == "Title")
-				{
-					CloseAll();
-				}
-				else
-				{
-					SceneManager.LoadScene("Title");
-				}
-			}
-		} catch (Exception e)
-		{
-			if (SceneManager.GetActiveScene().name == "Title")
-			{
-				CloseAll();
-			}
-			else
-			{
-				SceneManager.LoadScene("Title");
-			}
-		}
-	}
+        if (!SimvaManager.Instance.IsActive || ((Simva.SimvaPlugin)SimvaManager.Instance.Bridge).WantsToQuit())
+        {
+            CloseAll();
+        }
+    }
 
 	public void ReturnHomeAfterEnd()
-	{
-		try
-		{
-			if (!Simva.SimvaExtension.Instance || Simva.SimvaExtension.Instance.OnGameFinished())
-			{
-				if (Application.platform != RuntimePlatform.WebGLPlayer && Application.isEditor == false)
-				{
-					SceneManager.LoadScene("Title");
-				}
-			}
-			else
-			{
-				SceneManager.LoadScene("Title");
-			}
-		} catch (Exception e)
-		{
-			SceneManager.LoadScene("Title");
-		}
-	}
+    {
+        if (!SimvaManager.Instance.IsActive || ((Simva.SimvaPlugin)SimvaManager.Instance.Bridge).WantsToQuit())
+        {
+            SceneManager.LoadScene("Title");
+        }
+    }
 
 	public void ExitGameCanceled()
 	{

@@ -6,16 +6,17 @@ using Isometra;
 using System;
 using Isometra.Sequences;
 using UnityEngine.SceneManagement;
-using Xasu;
+using Simva;
 using Xasu.HighLevel;
+using Xasu.Util;
 
 public class TrackerEventManager : EventManager {
 
-    private Dictionary<string, object> storedExtension = new Dictionary<string, object>();
+    private float lastSceneChangeTime;
 
 	public override void ReceiveEvent(IGameEvent ev)
 	{
-		if (PlayerPrefs.GetInt("online") == 1)
+		if (PlayerPrefs.GetInt("online") == 1 || SimvaManager.Instance.IsActive)
 		{
 			switch (ev.Name)
 			{
@@ -30,8 +31,7 @@ public class TrackerEventManager : EventManager {
 							var optionchosen = (int)ev.getParameter("option");
 							var response = optionList[optionchosen];
 
-							AlternativeTracker.Instance.Selected(questionID, response.Text, AlternativeTracker.AlternativeType.Dialog)
-                                .AddPendingExtensions(storedExtension);
+                            AlternativeTracker.Instance.Selected(questionID, response.Text, AlternativeTracker.AlternativeType.Dialog);
 							break;
 
 						case "show dialog fragment":
@@ -40,7 +40,7 @@ public class TrackerEventManager : EventManager {
 							string character = dfragment.Character;
 							string message = dfragment.Msg;
 							string name = dfragment.Name;
-							Tracker.T.Completable.Completed(character+message, CompletableTracker.Completable.StoryNode);
+                            CompletableTracker.Instance.Completed(character + " " + message, CompletableTracker.CompletableType.StoryNode);
 							break;
 					}
 					break;
@@ -50,7 +50,7 @@ public class TrackerEventManager : EventManager {
 					string characterf = dfragmentf.Character;
 					string messagef = dfragmentf.Msg;
 					string namef = dfragmentf.Name;
-					Tracker.T.Completable.Initialized(characterf + " " + messagef, CompletableTracker.Completable.StoryNode);
+                    CompletableTracker.Instance.Initialized(characterf + " " + messagef, CompletableTracker.CompletableType.StoryNode);
 					break;
 				case "change friendship":
 					object vAux = ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD);
@@ -64,8 +64,7 @@ public class TrackerEventManager : EventManager {
 
 					if (friend != null)
 					{
-						AlternativeTracker.Instance.Unlocked(friend, value.ToString())
-                            .AddPendingExtensions(storedExtension);
+                        AlternativeTracker.Instance.Unlocked(friend, value.ToString());
                         CompletableTracker.Instance.Progressed(friend, value);
 					}
 					break;
@@ -73,14 +72,14 @@ public class TrackerEventManager : EventManager {
                 case "change scene":
                     int scene = SceneManager.GetActiveScene().buildIndex;
                     string sceneName = GetSceneName(scene);
-                    CompletableTracker.Instance.Completed("scene" + scene)
+                    CompletableTracker.Instance.Completed("scene" + scene, Time.realtimeSinceStartup - lastSceneChangeTime)
                         .WithResultExtensions(GetStateExtensions())
                         .WithResultExtensions(new Dictionary<string, object>
                         {
-                            {"progress", scene / 27f}
-                        })
-                        .AddPendingExtensions(storedExtension);
-                    CompletableTracker.Instance.Completed(sceneName, CompletableTracker.CompletableType.StoryNode);
+                            {"https://w3id.org/xapi/seriousgames/extensions/progress", scene / 27f}
+                        });
+                    CompletableTracker.Instance.Completed(sceneName, CompletableTracker.CompletableType.StoryNode, Time.realtimeSinceStartup - lastSceneChangeTime);
+                    lastSceneChangeTime = Time.realtimeSinceStartup;
                     break;
 
                 case "change variable":
@@ -92,21 +91,19 @@ public class TrackerEventManager : EventManager {
 					}
 
 					var valueVar = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
-                    storedExtension.Add(var, valueVar.ToString());
+                    ExtensionsPool.AddResultExtension("conectado://"+var, valueVar.ToString());
                     break;
 
 				case "move camera":
 					string key = ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD).ToString().Replace("\"", "");
-
-					AccessibleTracker.Instance.Accessed(key)
-                        .WithResultExtensions(GetStateExtensions())
-                        .AddPendingExtensions(storedExtension);
+                    AccessibleTracker.Instance.Accessed(key)
+                        .WithResultExtensions(GetStateExtensions());
                     break;
 
 				case "pick":
 					string pickVar = ((String)ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD)).Replace("\"", "");
 					var pickValue = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
-                    storedExtension.Add(pickVar, pickValue.ToString());
+                    ExtensionsPool.AddResultExtension("conectado://" + pickVar, pickValue.ToString());
                     break;
 			}
 		}

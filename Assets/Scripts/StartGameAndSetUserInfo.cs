@@ -1,10 +1,9 @@
-﻿using Xasu;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Xasu.HighLevel;
+using Simva;
 
 public class StartGameAndSetUserInfo : MonoBehaviour {
 
@@ -21,7 +20,7 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (!Simva.SimvaExtension.Instance.IsActive) {
+		if (!SimvaManager.Instance.IsActive) {
 			PlayerPrefs.SetInt("online", 0);
 			sendTrace = false;
 		}

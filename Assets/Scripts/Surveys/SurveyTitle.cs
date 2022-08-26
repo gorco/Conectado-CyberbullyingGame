@@ -8,7 +8,7 @@ public class SurveyTitle : MonoBehaviour {
 	private void Start ()
 	{
 		Text title = this.gameObject.GetComponent<Text>();
-		var schedule = Simva.SimvaExtension.Instance.Schedule;
+		var schedule = Simva.SimvaManager.Instance.Schedule;
 		var activity = schedule.Activities[schedule.Next];
 		title.text = activity.Name;
 	}
