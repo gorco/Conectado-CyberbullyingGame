@@ -61,6 +61,12 @@ public class ChangeToScene : EventManager
 	/// <param name="varValue"></param>
 	private IEnumerator ChangeScene(float time, int varValue)
 	{
+        if(varValue + 1 == 29 && Simva.SimvaManager.Instance.IsActive) // Wants to load the credits
+        {
+            ((Simva.SimvaPlugin)Simva.SimvaManager.Instance.Bridge).WantsToQuit();
+            yield break;
+        }
+
 		if (loading)
 		{
 			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(varValue +1);

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Simva;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,14 +14,23 @@ public class LoadSceneOnClick : MonoBehaviour {
 
 	public void LoadScene (int level)
 	{
-		SceneManager.LoadScene(level);
+        if(level == 31)
+        {
+            var simvaPlugin = GameObject.FindObjectOfType<Simva.SimvaPlugin>();
+            if (simvaPlugin)
+            {
+                DestroyImmediate(simvaPlugin.gameObject);
+                SimvaManager.Instance.Bridge = null;
+            }
+        }
+        SceneManager.LoadScene(level);
 	}
 
-	public void LoadSceneIfCnfg(int level)
+    public void LoadSceneIfCnfg(int level)
 	{
 		if (System.IO.File.Exists("host.cfg"))
 		{
-			SceneManager.LoadScene(level);
+			LoadScene(level);
 		}
 	}
 
@@ -28,7 +38,7 @@ public class LoadSceneOnClick : MonoBehaviour {
 	{
 		if (!System.IO.File.Exists("host.cfg"))
 		{
-			SceneManager.LoadScene(level);
+			LoadScene(level);
 		}
 	}
 
