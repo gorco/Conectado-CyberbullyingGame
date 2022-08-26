@@ -7,6 +7,13 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.editorcoroutines": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
@@ -87,6 +94,16 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "es.e-ucm.simva-unity-plugin": {
+      "version": "https://github.com/e-ucm/simva-unity-plugin.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.unity.editorcoroutines": "1.0.0"
+      },
+      "hash": "64c66a51e4d3a670bf6372a8f26160798b8db651"
+    },
     "es.e-ucm.xasu": {
       "version": "https://github.com/e-ucm/xasu.git",
       "depth": 0,
@@ -94,7 +111,7 @@
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "26c97d41e5ee26bf0d31f3b527a64e39b6df6ead"
+      "hash": "afd3cf59d8ff00138cfee032e9bd37c6b9b53079"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
