@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using Simva;
-using UnityFx.Async.Promises;
 
 public class SettingsApp : MonoBehaviour {
 
@@ -49,6 +48,14 @@ public class SettingsApp : MonoBehaviour {
 		}
 	}
 
+	public void ExitIngame()
+	{
+		if (!SimvaManager.Instance.IsActive || ((Simva.SimvaPlugin)SimvaManager.Instance.Bridge).WantsToQuit())
+		{
+			SceneManager.LoadScene("Credits");
+		}
+	}
+
 	public void ExitGameConfirmed()
 	{
         if (!SimvaManager.Instance.IsActive || ((Simva.SimvaPlugin)SimvaManager.Instance.Bridge).WantsToQuit())
@@ -77,6 +84,12 @@ public class SettingsApp : MonoBehaviour {
 			Application.Quit();
 			System.Diagnostics.Process.GetCurrentProcess().Kill();
 		}
+#if UNITY_EDITOR
+        if (Application.isEditor)
+        {
+			UnityEditor.EditorApplication.ExitPlaymode();
+        }
+#endif
 	}
 }
 
