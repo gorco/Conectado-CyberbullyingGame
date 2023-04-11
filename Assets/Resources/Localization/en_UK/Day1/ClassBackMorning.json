@@ -24,7 +24,7 @@
 			},{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "Getting late on your first day, not the best way to start."
+				"msn": "Getting late on your first day is not the best way to start."
 			},
 			{
 				"tag": "Teacher",
@@ -34,7 +34,7 @@
 			{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, i am your tutor, anything you need just let me know."
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, I am your tutor, just let me know if you need anything."
 			},
 			{
 				"tag": "Teacher",
@@ -49,7 +49,7 @@
 			{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "Let's continue the class."
+				"msn": "Let's continue with the lesson."
 			}]
 		},
 		"node2": {
@@ -94,11 +94,11 @@
 			"questionId": "meetAna",
 			"options": [{
 				"next": "node1a",
-				"msn": "No, it's just my first day, i am <$ varObject('global', 'UserNameNonStatic') $>."
+				"msn": "No, it's just my first day, I am <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
 				"next": "node1b",
-				"msn": "And who you are? The butch woman of the class?"
+				"msn": "And who are you? The class' tomboy?"
 			}]
 		},
 		"node1a": {
@@ -138,7 +138,7 @@
 			"next": "nodeTeacher",
 			"fragments": [{
 				"tag": "",
-				"msn": "(Knocks on the back, it seems like your new teacher has arrived)"
+				"msn": "(Background noises, it seems that your new teacher has arrived)"
 			}]
 		},
 		"nodeTeacher": {
@@ -147,7 +147,7 @@
 			"fragments": [{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "C'mon everyone, class is about to start, come in and sit."
+				"msn": "C'mon everyone, the lesson is about to start, come in and sit."
 			}]
 		},
 		"nodeSit": {
@@ -169,7 +169,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Everyone sits down and the class starts."
+				"value": "Everyone sits down, the lesson is starting."
 			}
 		},
 		"node4": {
@@ -185,7 +185,7 @@
 			"fragments": [{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "Sit next to Alison.."
+				"msn": "Sit next to Alison."
 			},
 			{
 				"tag": "Teacher",

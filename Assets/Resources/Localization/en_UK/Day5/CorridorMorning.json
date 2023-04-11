@@ -25,7 +25,7 @@
 			"fragments": [{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "When the class is over, remember to come to the toilets."
+				"msn": "When the class is over, remember to come to the bathrooms."
 			},
 			{
 				"tag": "Álex",
@@ -75,7 +75,7 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "I didn't expect that from you, it's like it wasn't you writing hahaha."
+				"msn": "I didn't expect that from you. It's like it wasn't you writing hahaha."
 			}]
 		},
 		"setter":{
@@ -93,7 +93,7 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Well, i think it's enough."
+				"msn": "Well, I think it's enough."
 			},
 			{
 				"tag": "Álex",
@@ -108,7 +108,7 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Ana and i will leave you alone and the rest can do what they want."
+				"msn": "Ana and I will leave you alone and the rest can do what they want."
 			}]
 		},
 	},
@@ -174,7 +174,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the boys' toilet"
+				"msn": "I cannot go there, it's the boys' bathroom"
 			}]
 		}
 	},
@@ -201,7 +201,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the girls' toilet"
+				"msn": "I cannot go there, it's the girls' bathroom"
 			}]
 		}
 	},

@@ -52,7 +52,7 @@
 			{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "Sit in another desk for now, i've asked Alison to help <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $> during the first days."
+				"msn": "Sit in another desk for now, I've asked Alison to help <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $> during the first days."
 			}]
 		},
 		"friendship": {
@@ -71,7 +71,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "The bell rings, it is break time. Your opportunity of making friends."
+				"value": "The bell rings, it is recess time. Your opportunity to make friends."
 			}
 		},
 		"changeHour": {

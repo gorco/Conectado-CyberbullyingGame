@@ -32,16 +32,16 @@
 			}, {
 				"tag": "Shadow",
 				"character": "Shadow",
-				"msn": "Don't you even know how to sit?"
+				"msn": "Don't you even know how to sit down?"
 			}, {
 				"tag": "Shadow",
 				"character": "Shadow",
-				"msn": "Are you even worth anything?"
+				"msn": "Do you even worth anything?"
 			},
 			{
 				"tag": "Shadow",
 				"character": "Shadow",
-				"msn": "How do you expect making friends being like this?"
+				"msn": "How do you expect to make friends acting like this?"
 			}]
 		},
 		"variable": {
@@ -90,7 +90,7 @@
 			{
 				"tag": "Shadow",
 				"character": "Shadow",
-				"msn": "That seat is mine, you will have to take another one."
+				"msn": "That seat is mine, you will have to pick another one."
 			},
 			{
 				"tag": "Shadow",

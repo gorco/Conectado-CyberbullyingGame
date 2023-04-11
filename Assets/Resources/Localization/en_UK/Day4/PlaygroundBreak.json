@@ -37,7 +37,7 @@
 			"fragments": [{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Have you stuck the poster in María's back without her noticing it yet?"
+				"msn": "Have you stuck the poster in María's back without her noticing it?"
 			}]
 		},
 		"askOptions": {
@@ -79,7 +79,7 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Hahaha, your mobile is the <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' toilet."
+				"msn": "Hahaha, your mobile is in the <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' bathroom."
 			}]
 		},
 		"repeat": {
@@ -100,7 +100,7 @@
 			"questionId": "AnaAlexAskMobileLost",
 			"options": [{
 				"next": "node1a",
-				"msn": "Was it you? Have you hidden my mobile phone in the <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' toilet?",
+				"msn": "Was it you? Have you hidden my mobile phone in the <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' bathroom?",
 				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
 			},
 			{
@@ -119,12 +119,12 @@
 			"fragments": [{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "What if we were the ones? Are you going to go crying to speak with our tutor, with your parents...?"
+				"msn": "What if we were the ones? Are you going to go crying to speak with our tutor, or your parents...?"
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Hahaha, i'm sure he will."
+				"msn": "Hahaha, I'm sure he will."
 			},
 			{
 				"tag": "Ana",
@@ -148,7 +148,7 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "(She gives you a paper with tape on it and the sentence \"i'm masochist, insult me if you read this\")."
+				"msn": "(She gives you a paper with tape on it and the sentence \"I'm a masochist, insult me if you read this\")."
 			},
 			{
 				"tag": "Ana",
@@ -206,7 +206,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "It is break time, there are still some classes before i can go home.."
+				"msn": "It is break time, there are still some classes before I can go home.."
 			}]
 		}
 	}

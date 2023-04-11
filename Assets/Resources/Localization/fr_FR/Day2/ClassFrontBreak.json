@@ -1,0 +1,59 @@
+{
+	"alejandro":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Alexandre",
+					"character": "Alex",
+					"msn": "Nous n'avons rien à nous dire."
+				},
+				{
+					"tag": "Alexandre",
+					"character": "Alex",
+					"msn": "Va donc voir Anna et Joseph, ils t'attendent dans la cour de récré."
+				},
+				{
+					"tag": "",
+					"msn": "(Il sourit et t'indique la direction de la porte.)"
+				}
+			]
+		}
+	},
+	"door": {
+		"root": {
+			"next": "changeHour",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "anaFS",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:10"
+			}
+		},
+		"anaFS": {
+			"type": "event",
+			"next": "joseFS",
+			"event": {
+				"name": "change friendship",
+				"var": "AnaFS",
+				"value": -10
+			}
+		},
+		"joseFS": {
+			"type": "event",
+			"event": {
+				"name": "change friendship",
+				"var": "JoseFS",
+				"value": -10
+			}
+		}
+	}
+}

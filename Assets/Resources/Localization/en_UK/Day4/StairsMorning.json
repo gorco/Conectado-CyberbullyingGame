@@ -48,7 +48,7 @@
 			"questionId": "MariaSickAsk",
 			"options": [{
 				"next": "friends2b",
-				"msn": "You didn't come yesterday, are you alright?"
+				"msn": "You didn't come yesterday. Are you alright?"
 			},
 			{
 				"next": "friends2a",
@@ -56,7 +56,7 @@
 			},
 			{
 				"next": "setter",
-				"msn": "I'm in a hurry, the bell's already rung. Talk to you later."
+				"msn": "I'm in a hurry, the bell already rung. Talk to you later."
 			}]
 		},
 		"friends2a": {
@@ -80,7 +80,7 @@
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "I didn't do it when i got the chance, my parents forced me to go see a psychologist when they found out."
+				"msn": "I didn't do it when I got the chance. My parents forced me to go and see a psychologist when they found out."
 			},
 			{
 				"tag": "María",
@@ -98,17 +98,17 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Yeah, i'm fine, thanks for asking."
+				"msn": "Yeah, I'm fine. Thanks for asking."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Yesterday i had fever so i stayed home resting."
+				"msn": "Yesterday I had fever so I stayed home resting."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Today i'm good as new."
+				"msn": "Today I'm good as new."
 			}]
 		},
 		"normal": {
@@ -121,7 +121,7 @@
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Hello, <$ varObject('global', 'UserNameNonStatic') $>, do you want anything?"
+				"msn": "Hello, <$ varObject('global', 'UserNameNonStatic') $>. Do you want anything?"
 			}]
 		},
 		"normalOptions": {
@@ -142,7 +142,7 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Why wouldn't i?"
+				"msn": "Why wouldn't I?"
 			},
 			{
 				"tag": "You",
@@ -156,7 +156,7 @@
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "They made my life miserable during the last year, lesson learnt."
+				"msn": "They made my life miserable last year. Lesson learnt."
 			},
 			{
 				"tag": "María",
@@ -186,7 +186,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Looks like nobody's there."
+				"msn": "Looks like nobody's in there."
 			}]
 		}
 	},

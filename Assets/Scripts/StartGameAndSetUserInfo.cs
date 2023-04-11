@@ -1,9 +1,9 @@
-﻿using RAGE.Analytics;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Xasu.HighLevel;
+using Simva;
 
 public class StartGameAndSetUserInfo : MonoBehaviour {
 
@@ -20,7 +20,7 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (!System.IO.File.Exists("host.cfg")) {
+		if (!SimvaManager.Instance.IsActive) {
 			PlayerPrefs.SetInt("online", 0);
 			sendTrace = false;
 		}
@@ -154,9 +154,12 @@ public class StartGameAndSetUserInfo : MonoBehaviour {
 
 			if (sendTrace)
 			{
-				Tracker.T.setVar("gender", male.isOn ? "male" : "female");
-				Tracker.T.setVar("pass", userPass.text);
-				Tracker.T.accessible.Accessed("StartGame");
+				var statementPromise = AccessibleTracker.Instance.Accessed("StartGame");
+                statementPromise.WithResultExtensions(new Dictionary<string, object>
+                {
+                    { "conectado://gender", male.isOn ? "male" : "female" },
+                    { "conectado://pass", userPass.text }
+                });
 			}
 
 			//Friendship

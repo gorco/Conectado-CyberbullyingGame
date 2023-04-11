@@ -15,7 +15,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I've already talked to Alison, i should look for people in the playground waiting the bell to ring."
+				"msn": "I've already talked to Alison. I should look for people in the playground waiting for the bell to ring."
 			}]
 		}, 
 		"setter":{
@@ -91,7 +91,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "It's okay, i'm leaving, bye."
+				"msn": "It's okay. I'm leaving, bye."
 			}]
 		},
 		"notify3": {
@@ -153,7 +153,7 @@
 			},
 			{
 				"next": "normal3b",
-				"msn": "Say hello, i always see you alone and reading."
+				"msn": "Say hello. I always see you alone and reading."
 			}]
 		},
 		"normal3b": {
@@ -176,7 +176,7 @@
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "People don't use to talk with me."
+				"msn": "People don't use to talk to me."
 			},
 			{
 				"tag": "María",
@@ -239,7 +239,7 @@
 			"fragments": [{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Have you seen that mobile app that checks your relationship with the people to talk more?"
+				"msn": "Have you seen that mobile app that checks your relationship with the people you talk more?"
 			},
 			{
 				"tag": "Jose",
@@ -249,7 +249,7 @@
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "It's said it is really exact, but how it works isn't clear."
+				"msn": "It's said it is really accurate, but how it works isn't clear."
 			},
 			{
 				"tag": "Jose",
@@ -309,7 +309,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Get lost, i don't have anything to talk with you."
+				"msn": "Get lost. I don't have anything to talk with you."
 			}]
 		},
 		"bad1": {
@@ -358,7 +358,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Get lost, i don't have anything to talk with you."
+				"msn": "Get lost. I don't have anything to talk with you."
 			}]
 		},
 		"good1": {
@@ -393,7 +393,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Damn, you caught us, it was silliness."
+				"msn": "Damn, you caught us, it was silly."
 			},
 			{
 				"tag": "Ana",
@@ -425,7 +425,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "",
-				"msn": "Looks like i've arrived sooner and entrance is not allowed. I'll better kill some time"
+				"msn": "Looks like I've arrived sooner and entrance is not allowed. I'll better kill some time"
 			}]
 		}
 	},
@@ -434,7 +434,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I've just arrived, i cannot leave yet."
+				"msn": "I've just arrived, I cannot leave yet."
 			}]
 		}
 	}

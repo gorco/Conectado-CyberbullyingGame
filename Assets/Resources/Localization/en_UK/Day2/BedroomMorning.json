@@ -4,7 +4,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I'll sleep later once i come back from school."
+				"msn": "I'll sleep later once I come back from school."
 			}]
 		}		
 	},
@@ -20,7 +20,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Is it me... or was the phone showing yesterdays' date????"
+				"msn": "Is it me?... or the phone was showing yesterdays' date????"
 			},
 			{
 				"tag": "You",
@@ -70,7 +70,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I should wait for the afternoon or i´ll be late."
+				"msn": "I should wait until the afternoon or I´ll be late."
 			},
 			{
 				"tag": "PC",
@@ -126,7 +126,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Do i leave the mobile charging?"
+				"msn": "Do I leave the mobile charging?"
 			}]
 		},		
 		"node1": {

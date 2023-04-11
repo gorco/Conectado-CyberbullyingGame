@@ -162,7 +162,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "And he's threatening half the class to ignore me."
+				"msn": "And he's threatening half of the class to ignore me."
 			}]
 		},
 		"guilleFork": {
@@ -181,7 +181,7 @@
 			"next": "guilleUpParentsFS",
 			"fragments": [{
 				"tag": "You",
-				"msn": "And he told me Ana is the first one following his game."
+				"msn": "And he told me that Ana is the first one following his game."
 			},
 			{
 				"tag": "You",
@@ -243,7 +243,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "I don't know what i've done wrong to be treated like this."
+				"msn": "I don't know what I've done wrong to be treated like this."
 			},
 			{
 				"tag": "Mamá",
@@ -253,7 +253,7 @@
 			{
 				"tag": "Mamá",
 				"character": "Mother",
-				"msn": "Perhaps we should go talk to your tutor and see what's going on."
+				"msn": "Perhaps we should go and talk to your tutor and see what's going on."
 			}]
 		},
 		"boardUpParentsFS": {
@@ -282,7 +282,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "It's like everyone was avoiding me or gave me the silent treatment."
+				"msn": "It's like everyone was avoiding me or gaving me the silent treatment."
 			}]
 		},
 		"schoolUpParentsFS": {
@@ -397,7 +397,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Air, what your ears make when they move LOL",
+				"value": "Air. What your ears make when they move LOL",
 				"key": "Alex",
 				"time": 1.6
 			}
@@ -408,7 +408,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "hahaha, Álex, it's WIND, not air",
+				"value": "Hahaha, Álex, it's WIND, not air",
 				"key": "Ana",
 				"time": 1.7
 			}
@@ -419,7 +419,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "dont get complicated, we can call <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $> outkast ... anyway, no more speaking to the outkast...",
+				"value": "Don't get complicated, we can call <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $> outkast ... anyway, no more speaking to the outkast...",
 				"key": "Ester",
 				"time": 2
 			}

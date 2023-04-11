@@ -50,7 +50,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Now i'm not in the mood for organizing."
+				"msn": "Now I'm not in the mood for organizing."
 			}]
 		}		
 	},
@@ -78,7 +78,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "If i turn it on now, i will be late for sure."
+				"msn": "If I turn it on now, I will be late for sure."
 			},
 			{
 				"tag": "You",
@@ -138,7 +138,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Do i leave the mobile charging?"
+				"msn": "Do I leave the mobile charging?"
 			}]
 		},		
 		"node1": {

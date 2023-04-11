@@ -64,7 +64,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Clase",
-				"value": "I'll look into it when I can, I'm busy right know",
+				"value": "I'll look into it when I can. I'm busy right know",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -90,7 +90,7 @@
 			"questionId": "mobileKickMessages",
 			"options": [{
 				"next": "messageA",
-				"msn": "You treat me awful, It makes me feel bad"
+				"msn": "You treat me awful. It makes me feel bad"
 			},
 			{
 				"next": "messageB",
@@ -177,7 +177,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "This is not your bussiness, i can make Jose to kick you out too.",
+				"value": "This is not your bussiness. I can make Jose to kick you out too.",
 				"key": "Alex",
 				"other": "kickClass2",
 				"time": 8 

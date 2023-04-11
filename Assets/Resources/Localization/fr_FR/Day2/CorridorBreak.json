@@ -1,0 +1,220 @@
+{
+	"maria":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nogum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			},
+			{
+				"next": "whasedfork",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nogum": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Elle lit comme d'habitude, mieux vaut ne pas la déranger."
+				}
+			]
+		},
+		"node0": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Tu n'as sans doute pas remarqué, mais tu as un chewing-gum collé sur les fesses."
+				},
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Va aux toilettes. Regarde dans le miroir et tu le verras."
+				}
+			]
+		},
+		"whasedfork": {
+			"type": "fork",
+			"options": [{
+				"next": "whasedmale",
+				"condition": "varObject('global', 'MaleSexNonStatic')== true"
+			},
+			{
+				"next": "whasedfemale",
+				"condition": "varObject('global', 'MaleSexNonStatic')== false"
+			}]
+		},
+		"whasedmale": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Qu'as-tu fait ? Quelle tache."
+				},
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Oh mec, on dirait que tu t'es pissé dessus ou même chié dessus."
+				}
+			]
+		},
+		"whasedfemale": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Qu'as-tu fait ? Quelle tache."
+				},
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Oh meuf, on dirait que t'es pissée dessus ou même chiée dessus."
+				}
+			]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"next": "alisonMove",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"alisonMove": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "little move",
+				"key": "alison"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:20"
+			}
+		},
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
+				}
+			]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filles."
+				}
+			]
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Si j'entre et que le professeur se présente, je ne pourrai pas sortir."
+				}
+			]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "endBreak",
+			"options": [
+				{
+					"next": "black",
+					"msn": "(Entrez quand même)"
+				},
+				{
+					"msn": "Je vais plutôt faire un autre tour dans le lycée à la place."
+				}
+			]
+		},
+		"black": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Dès que tu entres, la cloche sonne et le professeur apparaît. Le cours se déroule. Une heure plus tard, tu n'as pas remarqué mais la matinée est déjà terminée, il est temps de rentrer..."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "enter",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:02",
+			}
+		},
+		"enter": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "endDay"
+			}
+		}
+	}
+}

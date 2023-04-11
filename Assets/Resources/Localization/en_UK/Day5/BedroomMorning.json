@@ -86,7 +86,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Do i leave the mobile charging?"
+				"msn": "Do I leave the mobile charging?"
 			}]
 		},		
 		"node1": {
@@ -141,7 +141,7 @@
 			"next": "setter",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Mom and Dad are already gone, i'll see them this afternoon."
+				"msn": "Mom and Dad are already gone. I'll see them this afternoon."
 			}]
 		},	
 		"setter":{

@@ -96,7 +96,7 @@
 			"fragments": [{
 				"tag": "Mom",
 				"character": "Mother",
-				"msn": "Do you want to talk for a while?"
+				"msn": "Do you want to chat a little?"
 			}]
 		},
 		"parentsFS": {
@@ -120,7 +120,7 @@
 			"type": "options",
 			"questionId": "parentsAfternoonFirstDay",
 			"options": [{
-				"msn": "Good, the usual, i'm going to my room.",
+				"msn": "Good, the usual, I'm going to my room.",
 				"condition": "page == 1"
 			},
 			{
@@ -207,7 +207,7 @@
 			"next": "forkGuille",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Today i've met Guille, he was very nice with me."
+				"msn": "Today I've met Guille, he was very nice with me."
 			},
 			{
 				"tag": "You",
@@ -263,7 +263,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "She had lost one of her earings."
+				"msn": "She had lost one of her earrings."
 			}]
 		},
 		"forkAlison": {
@@ -282,7 +282,7 @@
 			"next": "alisonUpParentsFS",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I think she finally couldn't find it."
+				"msn": "I think she couldn't find it."
 			}]
 		},
 		"alisonEaring": {
@@ -446,11 +446,11 @@
 			"next": "alexUpParentsFS",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Looks like i took his spot when i got in class."
+				"msn": "Looks like I took his spot when I got in class."
 			},
 			{
 				"tag": "You",
-				"msn": "But i apologized and it looks like he's no longer angry."
+				"msn": "But I apologized and it looks like he's no longer angry."
 			}]
 		},
 		"alexThread": {
@@ -493,7 +493,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "All because i've sat in his spot."
+				"msn": "All because I've sat in his spot."
 			},
 			{
 				"tag": "You",
@@ -568,7 +568,7 @@
 			},
 			{
 				"next": "setterSchool",
-				"msn": "It's boring, there're nothing to do."
+				"msn": "It's boring, there's nothing to do."
 			}]
 		},
 		"setterSchool":{
@@ -591,7 +591,7 @@
 			{
 				"tag": "Dad",
 				"character": "Father",
-				"msn": "She wants to know how your day was."
+				"msn": "She wants to know how was your day."
 			}]
 		}
 	},
@@ -600,7 +600,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I have nothing to do in the street."
+				"msn": "I have nothing to do outside."
 			}]
 		}
 	},
@@ -646,7 +646,7 @@
 			"event": {
 				"name": "computer friend",
 				"var": "Guillermo",
-				"value": "If the plan doesn't work change it, but don't change the goal.",
+				"value": "If the plan doesn't work, change it but don't change the goal.",
 				"time": 0,
 				"other": "guilleAccept,guilleDeny"
 			}

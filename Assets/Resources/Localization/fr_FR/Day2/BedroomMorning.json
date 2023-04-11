@@ -1,0 +1,188 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je dormirai plus tard quand je reviendrai de l'école."
+				}
+			]
+		}		
+	},
+	"init":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node0",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est moi... ou le téléphone indique la date d'hier????"
+				},
+				{
+					"tag": "Toi",
+					"msn": "Est-ce qu'il est cassé ? Qu'est-ce qu'il a ?"
+				}
+			]
+		}
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je n'ai besoin de rien de tout cela pour l'instant."
+				}
+			]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je dois aller en classe maintenant et je n'ai pas encore ranger tout ça. Je dois trouver un autre moment pour le faire!"
+				}
+			]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Tout est prêt, allons-y."
+				}
+			]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "BagPicked",
+				"value": true
+			}
+		},
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je devrais attendre l'après-midi ou je serai en retard."
+				},
+				{
+					"tag": "PC",
+					"msn": "Veux-tu allumer l'ordinateur?"
+				}
+			]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "Oui"
+			},
+			{
+				"next": "node1b",
+				"msn": "Non"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
+		}, 
+		"moveCamera": {
+			"type": "event",
+			"next": "changeHour",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:10",
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ferais mieux de partir."
+				}
+			]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Est-ce que je mets mon portable à charger?"
+				}
+			]
+		},		
+		"node1": {
+			"type": "options",
+
+			"options": [{
+				"next": "node1a",
+				"msn": "Oui"
+			},
+			{
+				"next": "node1b",
+				"msn": "Non"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
+	}
+}

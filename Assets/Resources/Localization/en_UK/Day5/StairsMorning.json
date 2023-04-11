@@ -33,7 +33,7 @@
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Until you arrived, i'm really glad that you're here, little gremlin."
+				"msn": "Until you arrived. I'm really glad that you're here, little gremlin."
 			}]
 		},
 		"setter":{
@@ -58,7 +58,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Looks like nobody's there."
+				"msn": "Looks like nobody's in there."
 			}]
 		}
 	},

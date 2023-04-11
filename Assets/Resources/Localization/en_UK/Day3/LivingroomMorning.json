@@ -21,7 +21,7 @@
 			{
 				"tag": "Mom",
 				"character": "Mother",
-				"msn": "Behave, see you later."
+				"msn": "Behave. See you later."
 			}]
 		},
 		"nodeB": {
@@ -29,7 +29,7 @@
 			"fragments": [{
 				"tag": "Mom",
 				"character": "Mother",
-				"msn": "Behave, see you later."
+				"msn": "Behave. See you later."
 			}]
 		},
 	},
@@ -79,7 +79,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I forgot the backpack. I'll better go to my room to take it before i leave."
+				"msn": "I forgot the backpack. I'll better go to my room and take it before I leave."
 			}]
 		}
 	},

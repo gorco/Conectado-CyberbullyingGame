@@ -1,0 +1,84 @@
+{
+	"bathroomExit": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"mirror": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeInit",
+				"condition": "varObject('global', 'GumQuestNonStatic') != 2"
+			}]
+		},
+		"nodeInit": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "gum == false"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "J'ai déjà enlevé le chewing-gum, mais la tache est pire."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Ils se moqueront encore plus de moi."
+				}
+			]
+		}, 
+		"setter":{
+			"type": "setter",
+			"next": "nodeRepeat",
+			"set": {
+				"var": "gum",
+				"value": false
+			}
+		},
+		"node0": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Peut-être que de l'eau et du savon sont tout ce dont j'ai besoin."
+				}
+			]
+		}, 
+		"options": {
+			"type": "options",
+			"questionId": "bathroomGum",
+			"options": [
+				{
+					"next": "quest",
+					"msn": "(Essayer l'eau et le savon)"
+				},
+				{
+					"msn": "(Laisser les choses telles qu'elles sont)"
+				}
+			]
+		},
+		"quest": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GumQuest",
+				"value": 1
+			}
+		},
+	}
+}

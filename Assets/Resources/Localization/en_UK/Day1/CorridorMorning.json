@@ -21,7 +21,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "The redhair girl next to the door is María, she's in our class too. She's a bit shy but good guy."
+				"msn": "The red hair girl next to the door is María, she's in our class too. She's a bit shy, but a good girl."
 			},
 			{
 				"tag": "Alison",
@@ -48,7 +48,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "She seems uncomfortable, better leave her in peace for now."
+				"msn": "She seems uncomfortable, better leave her alone for now."
 			}]
 		}		
 	},
@@ -69,7 +69,7 @@
 			"fragments": [{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "Remember to look at the boards, sometimes intresting things can be found."
+				"msn": "Remember to look at the boards, sometimes you can find intresting things."
 			}]
 		},		
 		"node2": {
@@ -78,12 +78,12 @@
 			"fragments": [{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "Hi, i was reading the bulletin board."
+				"msn": "Hi, I was reading the bulletin board."
 			},
 			{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "There're intresting stuff sometimes, and someone is leaving messages, stickers and riddles lately."
+				"msn": "There're intresting stuff sometimes, and someone has been leaving messages, stickers and riddles lately."
 			},
 			{
 				"tag": "Guillermo",
@@ -136,7 +136,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the boys' toilet."
+				"msn": "I cannot go there, it's the boys' restroom."
 			}]
 		}
 	},
@@ -163,7 +163,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the girls' toilet.."
+				"msn": "I cannot go there, it's the girls' restroom."
 			}]
 		}
 	},

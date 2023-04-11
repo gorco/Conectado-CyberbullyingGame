@@ -22,7 +22,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I have to organize all this eventually, but now i have to go to school."
+				"msn": "I have to clean all this up eventually, but now i have to go to school."
 			}]
 		}		
 	},
@@ -32,7 +32,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I think i got everything prepared..."
+				"msn": "I think I have everything ready..."
 			}]
 		},
 		"node1": {
@@ -40,7 +40,7 @@
 			"next": "node2",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Aye, i got everything, better take the backpack and leave now."
+				"msn": "Aye, I have everything. Better take the backpack and leave now."
 			}]
 		},
 		"node2": {
@@ -58,11 +58,11 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "If i turn it on now, i will be late for sure."
+				"msn": "If I turn it on now, I will be late for sure."
 			},
 			{
 				"tag": "You",
-				"msn": "Better to wait for the afternoon."
+				"msn": "Better to wait till afternoon."
 			},
 			{
 				"tag": "PC",
@@ -118,7 +118,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Do i leave the mobile charging?"
+				"msn": "Should I leave the cell charging?"
 			}]
 		},		
 		"node1": {

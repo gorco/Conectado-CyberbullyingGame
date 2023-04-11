@@ -61,7 +61,7 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "You",
-				"msn": "This spot is available, may i sit here?"
+				"msn": "This spot is available. May I sit here?"
 			}]
 		},
 		"options": {
@@ -80,7 +80,7 @@
 			"next": "node3",
 			"fragments": [{
 				"tag": "",
-				"msn": "(Knocks on the back, the teacher has arrived)"
+				"msn": "(Taps on the back, the teacher has arrived)"
 			}]
 		},
 		"node3": {
@@ -90,7 +90,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Another day of whispers at your back, it's time to go home."
+				"value": "Another day of whispers at your back. It's time to go home."
 			}
 		},
 		"changeHour": {

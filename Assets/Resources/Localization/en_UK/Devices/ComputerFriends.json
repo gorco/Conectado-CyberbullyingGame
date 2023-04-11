@@ -18,7 +18,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "earing",
-				"value": "I love them, you know where they bought them",
+				"value": "I love them, you know where they bought them?",
 				"key": "Alicia",
 				"time": 0.3 
 			}
@@ -118,7 +118,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "match",
-				"value": "What a game dude! we should hang out to watch the next one, my father bought a new tv and is huuuge",
+				"value": "What a game dude! we should hang out to watch the next one. My father bought a new tv and is huuuge",
 				"key": "Jesus",
 				"time": 0 
 			}
@@ -140,7 +140,7 @@
 			"next": "sure",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I have no reason to reject his invitation, do I really wanna reject it?"
+				"msn": "I have no reason to reject his invitation. Do I really wanna reject it?"
 			}]
 		},
 		"sure": {

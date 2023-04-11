@@ -5,7 +5,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Mmm, should i go to sleep now?"
+				"msn": "Mmm, should I go to sleep now?"
 			}]
 		},
 		"node1": {
@@ -34,7 +34,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "There is nothing useful."
+				"msn": "There is nothing useful inside."
 			}]
 		}		
 	},
@@ -43,7 +43,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I am not in the mood to organize all this."
+				"msn": "I am not in the mood to clean this mess."
 			}]
 		}		
 	},
@@ -99,7 +99,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I'll better leave now."
+				"msn": "I better leave now."
 			}]
 		}		
 	},
@@ -109,7 +109,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Do i leave the mobile charging?"
+				"msn": "Should I leave the cell charging?"
 			}]
 		},		
 		"node1": {

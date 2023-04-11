@@ -18,11 +18,11 @@
 				"msn": "It's my phone."
 			},{
 				"tag": "You",
-				"msn": "Who has taken it and left it on the <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' toilet?"
+				"msn": "Who has taken it and left it in the <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' bathroom?"
 			},
 			{
 				"tag": "You",
-				"msn": "Shit, it's not turning on, i hope it's a battery thing. As soon as i get home i'll change it."
+				"msn": "Shit, it's not turning on. I hope it's a battery thing. As soon as I get home I'll change it."
 			}]
 		},
 		"node2": {

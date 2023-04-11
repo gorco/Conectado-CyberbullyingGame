@@ -1,0 +1,278 @@
+{
+	"anaGroup": {
+		"root": {
+			"type": "fork",
+			"options": [
+				{
+					"next": "nodeNoGum",
+					"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+				},
+				{
+					"next": "nodeWhashed",
+					"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+				},
+				{
+					"next": "nodeInit",
+					"condition": "true"
+				}
+			]
+		},
+		"nodeNoGum": {
+			"type": "dialog",
+			"next": "FadeOutAna",
+			"fragments": [
+				{
+					"tag": "Chuchotements",
+					"msn": "Mmm, il semble qu'<$ if(varObject('global', 'MaleSexNonStatic')==true, 'il', 'elle') $> n'ait pas de chewing-gum collé."
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Shhhut."
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Salut <$ varObject('global', 'UserNameNonStatic') $>."
+				},
+				{
+					"tag": "Joseph",
+					"character": "Jose",
+					"msn": "Salut."
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "As-tu vu Alex?"
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Nous devons lui parler."
+				}
+			]
+		},
+		"FadeOutAna": {
+			"next": "FadeOutJose",
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "ana"
+			}
+		},
+		"FadeOutJose": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "jose"
+			}
+		},
+		"nodeInit": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Tu devrais laver tes vêtements. Ton pantalon est un tel désastre."
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "N'as-tu pas de machine à laver à la maison?"
+				},
+				{
+					"tag": "Joseph",
+					"character": "Jose",
+					"msn": "Hahahaha, nouvelle tendance ! Des chewing-gums collés sur le pantalon."
+				},
+				{
+					"tag": "Joseph",
+					"character": "Jose",
+					"msn": "Ces horribles vêtements ne valent pas la peine d'être lavés."
+				},
+				{
+					"tag": "Joseph",
+					"character": "Jose",
+					"msn": "Il devrait le jeter directement à la poubelle."
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Hahahaha"
+				}
+			]
+		},
+		"nodeWhashed": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Hahaha, t'es-tu mouillé ?"
+				},
+				{
+					"tag": "Joseph",
+					"character": "Jose",
+					"msn": "Hahahaha, non, non, regarde, il s'est chié dessus."
+				},
+				{
+					"tag": "Joseph",
+					"character": "Jose",
+					"msn": "Anna, as-tu ton téléphone portable ? Prends une photo !!"
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Hahahaha"
+				}
+			]
+		}
+	},
+	"guilleGroup": {
+		"root": {
+			"type": "fork",
+			"options": [
+				{
+					"next": "nodeNoGum",
+					"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+				},
+				{
+					"next": "nodeWashed",
+					"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+				},
+				{
+					"next": "nodeInit",
+					"condition": "true"
+				}
+			]
+		},
+		"nodeInit": {
+			"type": "fork",
+			"options": [
+				{
+					"next": "nodeRepeat",
+					"condition": "spoken == true"
+				},
+				{
+					"next": "node0",
+					"condition": "true"
+				}
+			]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Essayez d'enlever ce chewing-gum dans les toilettes."
+				}
+			]
+		},
+		"setter": {
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"nodeWashed": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Quelle tache."
+				},
+				{
+					"tag": "Guillaume",
+					"character": "Guille",
+					"msn": "C'est bon, ce sera sec dans un petit moment."
+				}
+			]
+		},
+		"nodeNoGum": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Salut <$ varObject('global', 'UserNameNonStatic') $>."
+				},
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Nous parlons d'Alex."
+				},
+				{
+					"tag": "Guillaume",
+					"character": "Guille",
+					"msn": "Ce matin, il agissait bizarrement, il est même arrivé le premier de tous."
+				}
+			]
+		},
+		"node0": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Guillaume",
+					"character": "Guille",
+					"msn": "Où t'es-tu assis ?"
+				},
+				{
+					"tag": "Guillaume",
+					"character": "Guille",
+					"msn": "Tu t'es probablement assis sur un chewing-gum."
+				},
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Quel désastre, va directement aux toilettes avant les cours."
+				},
+				{
+					"tag": "Guillaume",
+					"character": "Guille",
+					"msn": "Oui, tu pourras peut-être l'enlever."
+				}
+			]
+		},
+		"guilleFS": {
+			"type": "event",
+			"next": "joseFS",
+			"event": {
+				"name": "change friendship",
+				"var": "GuilleFS",
+				"value": 10
+			}
+		},
+		"alisonFS": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFS",
+				"value": 10
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est la pause, il y a encore quelques cours avant que je puisse rentrer chez moi."
+				}
+			]
+		}
+	}
+}

@@ -16,7 +16,7 @@
 			"fragments": [{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "What at you looking at? go away, we've talked everything we needed to talk."
+				"msn": "What at you looking at? go away, we've talked everything we needed."
 			}]
 		},
 		"setter":{
@@ -38,12 +38,12 @@
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "Today you were sat in my spot, i don't want you to sit there again."
+				"msn": "Today you were sat in my spot, I don't want you to sit there again."
 			},
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "From tomorrow you will sit in the other empty desk at the back."
+				"msn": "Starting tomorrow you will sit in the empty desk at the back."
 			}]
 		},
 		"node1": {
@@ -59,7 +59,7 @@
 			},
 			{
 				"next": "quest2c",
-				"msn": "And who is supposed to tell me where i can not sit?"
+				"msn": "And who are you to tell me where I can or cannot sit?"
 			}]
 		},
 		"quest2a": {
@@ -109,27 +109,27 @@
 			"fragments": [{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "That's it, it's just a spot, as everyone else, but it's my spot."
+				"msn": "That's it, it's just a spot but it's my spot."
 			},
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "So look for another one."
+				"msn": "So go and find another one."
 			},
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "(In a threatening tone) Or i'll have to help you find it."
+				"msn": "(In a threatening tone) Or i'll have to help you find one."
 			},
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "And the last one i helped finding a free spot...well, he found a bruise in his face."
+				"msn": "And the last one I helped find a spot...well, he also found a bruise in his face."
 			},
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "Now get away."
+				"msn": "Now go away."
 			}]
 		},
 		"nodeFS10":{
@@ -218,7 +218,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "I see you found the earing."
+				"msn": "I see you found the earring."
 			},
 			{
 				"tag": "Alison",
@@ -228,12 +228,12 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "You are great, i owe you one."
+				"msn": "You are great, I owe you one."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "The recess is about to end, we should be walking into class."
+				"msn": "The recess is about to end, we should be walking to class."
 			},
 			{
 				"tag": "Alison",
@@ -285,17 +285,17 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Where did i lose it..."
+				"msn": "Where did I lose it..."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Sorry <$ varObject('global', 'UserNameNonStatic') $>, i did not see you."
+				"msn": "Sorry <$ varObject('global', 'UserNameNonStatic') $>, I did not see you."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "I'm looking for a earing, i don't know where i could lose it."
+				"msn": "I'm looking for an earring, I don't know where I could have lose it."
 			}]
 		},
 		"earing": {
@@ -314,7 +314,7 @@
 			"questionId": "AlisonEaringAsk",
 			"options": [{
 				"next": "node2a",
-				"msn": "Have you looked in the corridor?"
+				"msn": "Have you looked in the hallway?"
 			},
 			{
 				"next": "node2a",
@@ -336,7 +336,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Can you go there? While i finish searching in the classroom..."
+				"msn": "Can you go there? While I finish searching in the classroom..."
 			},
 			{
 				"tag": "Alison",
@@ -350,7 +350,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "It can´t be, i was wearing them this morning."
+				"msn": "It can´t be, I was wearing them this morning."
 			},
 			{
 				"tag": "Alison",
@@ -376,7 +376,7 @@
 			},
 			{
 				"next": "node4",
-				"msn": "Yes (I will enjoy the break and tell her i have not found anything)."
+				"msn": "Yes (I will enjoy the recess and tell her I have not found anything)."
 			}]
 		},
 		"node4": {

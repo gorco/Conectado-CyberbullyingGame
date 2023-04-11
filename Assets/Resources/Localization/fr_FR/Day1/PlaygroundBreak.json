@@ -1,0 +1,111 @@
+{
+	"ana":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "earingFound",
+				"condition": "varObject('state', 'EaringFound') == true"
+			},
+			{
+				"next": "node1",
+				"condition": "true"
+			}]
+		},
+		"earingFound": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "On dirait que tu as trouvé la boucle d'oreille d'Alison."
+				}
+			]
+		},
+		"node1": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Il y a quelque chose d'étrange près du panier."
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Je vois quelque chose de brillant d'ici."
+				}
+			]
+		}
+	},
+	"guille":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Guillaume",
+					"character": "Guille",
+					"msn": "Notre professeur est plutôt sympa."
+				},
+				{
+					"tag": "Guillaume",
+					"character": "Guille",
+					"msn": "Si tu as des problèmes, n'hésite pas à lui en parler."
+				}
+			]
+		}
+	},
+	"shine":{
+		"root": {
+			"type": "dialog",
+			"next": "take",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "On dirait la boucle d'oreilles d'Alison."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Je ferais mieux de la lui apporter."
+				}
+			]
+		},
+		"take": {
+			"type": "event",
+			"next": "fade",
+			"event": {
+				"name": "change state",
+				"key": "EaringFound",
+				"var": "EaringFound",
+				"value": true,
+				"state": 0
+			}
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "earing"
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est la pause, il y a encore quelques cours avant que je puisse rentrer chez moi."
+				}
+			]
+		}
+	}
+}

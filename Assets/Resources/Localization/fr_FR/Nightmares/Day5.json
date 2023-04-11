@@ -1,0 +1,191 @@
+{
+	"end":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "final1",
+				"condition": "varObject('global', 'FinalNonStatic') <= 1"
+			},
+			{
+				"next": "final2",
+				"condition": "varObject('global', 'FinalNonStatic') == 2"
+			},
+			{
+				"next": "final3",
+				"condition": "varObject('global', 'FinalNonStatic') == 3"
+			}]
+		},
+		"final1": {
+			"type": "dialog",
+			"next": "opt",
+			"fragments": [
+				{
+					"tag": "Voix du portail",
+					"msn": "Au final, tout s'est terminé de la même façon, je ne peux même pas dire que tu aies essayé quoi que ce soit."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Je suppose que c'est trop tard maintenant, tu as gâché l'occasion que je t'ai donnée."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Alex et Anna continueront à rendre la vie impossible aux autres camarades de classe. Tu n'as pas été leur première victime, et tu ne seras pas la dernière."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Est-il si difficile de demander de l'aide quand on en a besoin? Oublie ton ego. Une personne n'est pas à blâmer pour ce qui lui arrive et on ne le mérite pas."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Pourquoi cette peur de partager ce qui t'arrive, ce que tu ressens?"
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Pourquoi est-ce que tu souffres? Pourquoi est-ce que tu ne veux rien dire? Penses-tu que le temps va tout guérir?",
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "C'est facile de rire des autres, mais que se passe-il quand cela t'affecte?"
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Pourquoi préfères-tu souffrir ou voir souffrir quelqu'un plutôt que de demander de l'aide ? Ou cela te permettra au contraire de calmer toutes tes souffrances? Est-ce que demander de l'aide c'est peut-être dénoncer ? Tu ne crois pas que si tu dénonces Alex, cela t'évitera de passer d'autres moments difficiles?"
+				}
+			]
+		},
+		"final2": {
+			"type": "dialog",
+			"next": "opt",
+			"fragments": [
+				{
+					"tag": "Voix du portail",
+					"msn": "Il semble qu'en fin de compte, je n'ai pas atteint mon but, mais au moins les choses se sont un peu améliorées."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Alexandre sera maintenant surveillé et vous laissera au moins un petit peu plus tranquilles."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Tu dois demander de l'aide quand tu en a besoin. Oublie ton ego. Une personne n'est pas à blâmer pour ce qui lui arrive et on ne le mérite pas."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Le temps ne va pas arranger les choses si tu souffres, tu ne dois pas le laisser s'écouler."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Nous avons tous besoin d'aide un jour ou l'autre et j'espère qu'au moins maintenant tu es concient que tout comme il y a des gens qui t'aident, d'autres ont besoin de toi pour les aider."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Pourquoi est-ce que tu souffres? Pourquoi est-ce que tu ne veux rien dire? Penses-tu que le temps va tout guérir?"
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "J'espère qu'après avoir surmonté ce que tu as vécu, tu n'auras plus peur de dire ce qui t'arrive de mal, à toi et à tes camarades de classe."
+				}
+			]
+		},
+		"final3": {
+			"type": "dialog",
+			"next": "opt",
+			"fragments": [{
+				"tag": "Voix du portail",
+				
+				"msn": "Bien, nous avons réussi à changer les choses."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Tu ne le sais pas encore, mais nous avons réussi à ce qu'Alex arrête de vous intimider, toi et tes camarades de classe."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Si personne ne l'avait arrêté, tu n'aurais pas été la dernière personne à subir son intimidation."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Il est bon de prendre la parole et de demander de l'aide. Personne ne mérite d'être <$ if(varObject('global', 'MaleSexNonStatic')==true, 'marginalisé, humilié ou bafoué', 'marginalisée, humiliée ou bafouée')$>, quelle que soit la raison."
+				},
+				{
+					"tag": "Voix du portail",
+
+					"msn": "Il y aura des gens qui diront que tu l'as balancé à ton professeur, à tes camarades de classe ou à tes parents. Je pense que tu as été <$ if(varObject('global', 'MaleSexNonStatic')==true, 'un héros', 'une héroïne')$>."
+				},
+				{
+					"tag": "Voix du portail",
+
+					"msn": "J'espère que tu ne te tairas plus jamais si quelqu'un a besoin d'aide ou souffre. Montre-lui ton soutien au lieu de suivre le tyran."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "C'est facile de ne rien faire, mais as-tu pensé que tu pouvais être sa prochaine victime comme cela vient de se dérouler."
+				}
+			]
+		},
+		"opt": {
+			"type": "options",
+			"options": [{
+				"next": "who",
+				"msn": "Qui es-tu?"
+			},
+			{
+				"next": "stop",
+				"msn": "Arrête de dire des bêtises et disparais."
+			}]
+		},
+		"who": {
+			"type": "dialog",
+			"next": "end",
+			"fragments": [
+				{
+					"tag": "Voix du portail",
+					"msn": "J'ai bien peur que je ne puisse pas te le dire."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Considère-moi comme quelqu'un qui t'es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'lié', 'liée') $> par toutes les choses que nous avons en commun."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Peut-être... une voix de ta conscience."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Mais peu importe qui je suis. Ce qui compte, c'est que ce que tu as vécu t'as permis de réfléchir et devenir une meilleure personne."
+				}
+			]
+		},
+		"stop": {
+			"type": "dialog",
+			"next": "end",
+			"fragments": [
+				{
+					"tag": "Voix du portail",
+					"msn": "Je suis désolée que ma présence ne te mette pas à l'aise."
+				},
+				{
+					"tag": "Voix du portail",
+					"msn": "Et que cela n'a peut-être servi à rien..."
+				}
+			]
+		},
+		"end": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "active object",
+				"time": 0
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 28,
+				"time": 5
+			}
+		}
+	},
+}

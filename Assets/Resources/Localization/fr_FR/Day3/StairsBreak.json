@@ -1,0 +1,42 @@
+{
+	"principalNote":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Message",
+					"msn": "Bureau du directeur."
+				}
+			]
+		}
+	},
+	"principalDoor":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "On dirait qu'il n'y a personne."
+				}
+			]
+		}
+	},
+	"stairsToCorridor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"stairsToPlayground": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "endDay"
+			}
+		}
+	}
+}

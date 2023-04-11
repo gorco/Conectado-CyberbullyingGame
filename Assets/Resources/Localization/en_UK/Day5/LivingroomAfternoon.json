@@ -129,7 +129,7 @@
 				"condition": "page == 3 && aboutGuille == true"
 			},
 			{
-				"msn": "I'm going to my room, i have stuff to do",
+				"msn": "I'm going to my room, I have stuff to do",
 				"condition": "page == 3"
 			}]
 		},
@@ -243,7 +243,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "I don't know what i've done wrong to be treated like this."
+				"msn": "I don't know what I've done wrong to be treated like this."
 			},
 			{
 				"tag": "Mom",
@@ -253,7 +253,7 @@
 			{
 				"tag": "Mom",
 				"character": "Mother",
-				"msn": "IPerhaps we should go talk to your tutor and see what's going on."
+				"msn": "Perhaps we should go talk to your tutor and see what's going on."
 			}]
 		},
 		"boardUpParentsFS": {
@@ -365,7 +365,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "ook at that forehead...Shiphead",
+				"value": "Look at that forehead...Shiphead",
 				"key": "Ana",
 				"time": 1.2 
 			}

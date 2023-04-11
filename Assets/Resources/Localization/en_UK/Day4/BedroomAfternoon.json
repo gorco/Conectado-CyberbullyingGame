@@ -5,7 +5,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Mmm, should i go to sleep now?"
+				"msn": "Mmm, should I go to sleep now?"
 			}]
 		},
 		"node1": {
@@ -34,11 +34,11 @@
 			"next": "scene",
 			"fragments": [{
 				"tag": "You",
-				"msn": "But i can't use the mobile's alarm clock."
+				"msn": "But I can't use the mobile's alarm clock."
 			},
 			{
 				"tag": "You",
-				"msn": "Mmmm, i'll use my old mobile, but it doesn't have a SIM card so it only works as an alarm clock."
+				"msn": "Mmmm, I'll use my old mobile, but it doesn't have a SIM card so it only works as an alarm clock."
 			},
 			{
 				"tag": "You",
@@ -135,7 +135,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Do i leave the mobile charging?"
+				"msn": "Do I leave the mobile charging?"
 			}]
 		},		
 		"node1": {

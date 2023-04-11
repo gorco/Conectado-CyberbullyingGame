@@ -1,0 +1,200 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "varObject('state', 'AlisonDialog') == true"
+			},
+			{
+				"next": "node2",
+				"condition": "true"
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Tu as réussi à trouver la salle de classe."
+				},
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "La fille rousse à côté de la porte s'appelle Marie, elle est aussi dans notre classe. Elle est un peu timide mais elle est sympa!"
+				},
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "A côté du tableau d'affichage c'est Guillaume, tu le connais déjà!"
+				}
+			]
+		},
+		"node2": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Désolé, je suis pressé', 'Désolée, je suis pressée') $>, je vais être en retard si je n'arrive pas à entrer."
+				}
+			]
+		}			
+	},
+	"maria":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Marie",
+				"character": "Maria",
+				"msn": "..."
+			},
+				{
+					"tag": "Toi",
+					"msn": "Elle ne se sent pas très à l'aise... il vaut mieux la laisser tranquille pour l'instant."
+				}]
+		}		
+	},
+	"guillermo":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node2",
+				"condition": "true"
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Guillaume",
+					"character": "Guille",
+					"msn": "N'oublie pas de regarder les tableaux, on y trouve parfois des choses intéressantes."
+				}
+			]
+		},		
+		"node2": {
+			"type": "dialog",
+			"next": "quest",
+			"fragments": [
+				{
+					"tag": "Guillaume",
+					"character": "Guille",
+					"msn": "Tiens regarde, je lisais le tableau d'affichage."
+				},
+				{
+					"tag": "Guillaume",
+					"character": "Guille",
+					"msn": "Il y a des choses intéressantes parfois, on peut y laisser des messages, des autocollants et même des énigmes."
+				},
+				{
+					"tag": "Guillaume",
+					"character": "Guille",
+					"msn": "Regarde le au moins une fois par jour, habitue-toi."
+				},
+				{
+					"tag": "Guillaume",
+					"character": "Guille",
+					"msn": "Allons-nous entrer?"
+				}
+			]
+		},	
+		"quest": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 2,
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
+				}
+			]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filles."
+				}
+			]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		}
+	}
+}

@@ -52,7 +52,7 @@
 			"next": "nodeUnisex",
 			"fragments": [{
 				"tag": "You",
-				"msn": "So the guy of the note it was you, Guille."
+				"msn": "So the guy of the note... it was you, Guille."
 			},
 			{
 				"tag": "You",
@@ -68,7 +68,7 @@
 			"next": "nodeUnisex",
 			"fragments": [{
 				"tag": "You",
-				"msn": "What are you doing in the girls' toilet, Guille?"
+				"msn": "What are you doing in the girls' bathroom, Guille?"
 			},
 			{
 				"tag": "You",
@@ -77,7 +77,7 @@
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "I need to talk to you, i'm the one who left the note."
+				"msn": "I need to talk to you. I'm the one who left the note."
 			},
 			{
 				"tag": "You",
@@ -85,7 +85,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "What about half of the class ignores me?"
+				"msn": "What about half of the class ignoring me?"
 			}]
 		},
 		"nodeUnisex": {
@@ -94,12 +94,12 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "That's what i want to talk to you."
+				"msn": "That's what I want to talk to you."
 			},
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "I can't talk to you while Alex or any of his friends see us."
+				"msn": "I can't talk to you where Alex or any of his friends see us."
 			},
 			{
 				"tag": "Guille",
@@ -109,7 +109,7 @@
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "My parents are very strict and if they discover it i don't know what could happen...they might even send me to another high school."
+				"msn": "My parents are very strict and if they discover it I don't know what could happen...they might even send me to another high school."
 			},
 			{
 				"tag": "You",
@@ -143,7 +143,7 @@
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "Well...i just wanted to say sorry, but until Alex stops being upset i won't be able to talk to you."
+				"msn": "Well...I just wanted to say sorry, but until Alex stops being upset I won't be able to talk to you."
 			},
 			{
 				"tag": "Guille",
@@ -189,7 +189,7 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "But i don't want him to make my life miserable too."
+				"msn": "But I don't want him to make my life miserable too."
 			}]
 		},
 		"nodeBoard": {
@@ -203,7 +203,7 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "She's really into Alex and if he mess with you, she's going to do the same."
+				"msn": "She's really into Alex and if he messes with you, she's going to do the same."
 			},
 			{
 				"tag": "Guille",

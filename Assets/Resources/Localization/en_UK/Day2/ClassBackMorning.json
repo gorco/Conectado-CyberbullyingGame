@@ -24,7 +24,7 @@
 			},{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "Please, have a seat and let's continue the class."
+				"msn": "Please, have a seat and let's continue with the class."
 			}]
 		},
 		"node2": {
@@ -34,7 +34,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "You go and sit in a first empty desk you see, while everyone is looking at you."
+				"value": "You go and sit in the first empty desk you see, while everyone is looking at you."
 			}
 		},
 		"node3": {
@@ -52,7 +52,7 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "You",
-				"msn": "This place is available, may i sit here?"
+				"msn": "This place is available, may I sit here?"
 			}]
 		},
 		"options": {
@@ -88,7 +88,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "Yesterday probably happened likewise, i'll better remove it and sit."
+				"msn": "Probably happened likewise yesterday, I'll better remove it and sit."
 			}]
 		},
 		"noGum": {
@@ -107,7 +107,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "You all sit down, when you realize it's already break time."
+				"value": "You all sit down and when you realize it's already break time."
 			}
 		},
 		"changeHour": {

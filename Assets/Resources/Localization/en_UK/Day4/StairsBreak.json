@@ -29,7 +29,7 @@
 			"questionId": "GuilleAlisonAskMobile",
 			"options": [{
 				"next": "node1a",
-				"msn": "Do you know who has taken my mobile phone and left it in the toilet?",
+				"msn": "Do you know who took my phone and left it in the toilet?",
 				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
 			},
 			{
@@ -39,7 +39,7 @@
 			},
 			{
 				"next": "setter",
-				"msn": "I guess you're not talking to me... i pass.",
+				"msn": "I guess you're not talking to me... I pass.",
 			}]
 		},
 		"node1a": {
@@ -53,7 +53,7 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "We are not going to tell on them, but i guess you already imagine who was it."
+				"msn": "We are not going to tell on them, but I guess you already imagine who was it."
 			},
 			{
 				"tag": "Alison",
@@ -106,7 +106,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Looks like nobody's there"
+				"msn": "Looks like nobody's in there"
 			}]
 		}
 	},

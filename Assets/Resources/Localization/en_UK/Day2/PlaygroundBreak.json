@@ -20,7 +20,7 @@
 			"next": "FadeOutAna",
 			"fragments": [{
 				"tag": "whisper",
-				"msn": "Mmm, it appears he doesn't have any gum stucked."
+				"msn": "Mmm, It seems that he doesn't have any gum stucked."
 			},
 			{
 				"tag": "Ana",
@@ -68,7 +68,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "You should wash your clothes, your trousers are a real mess."
+				"msn": "You should wash your clothes, your pants are a real mess."
 			},
 			{
 				"tag": "Ana",
@@ -78,7 +78,7 @@
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Hahahaha, new trend! Chewing gums stucked on the trousers."
+				"msn": "Hahahaha, new trend! Chewing gums stucked on the pants."
 			},
 			{
 				"tag": "Jose",
@@ -152,7 +152,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Try to take off that gum in the toilet."
+				"msn": "Try to take off that gum in the bathroom."
 			}]
 		}, 
 		"setter":{
@@ -208,7 +208,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "What a mess, go straight to the toilet before class."
+				"msn": "What a mess, go straight to the bathroom before class."
 			},
 			{
 				"tag": "Guille",
@@ -249,7 +249,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "It is break time, there are still some classes before i can go home."
+				"msn": "It is break time, there are still some classes before I can go home."
 			}]
 		}
 	}

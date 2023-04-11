@@ -13,7 +13,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Looks like nobody's there."
+				"msn": "Looks like nobody's in there."
 			}]
 		}
 	},

@@ -75,7 +75,7 @@
 			"next": "deactive",
 			"fragments": [{
 				"tag": "You",
-				"msn": "It's a picture of me and it's been modified so it looks like i'm shitting chewing gums."
+				"msn": "It's a picture of me and it's been modified so it looks like I'm shitting chewing gums."
 			},
 			{
 				"tag": "You",
@@ -103,7 +103,7 @@
 			"next": "deactive",
 			"fragments": [{
 				"tag": "You",
-				"msn": "It's a picture of me yesterday right after i removed the gum."
+				"msn": "It's a picture of me from yesterday, right after I removed the gum."
 			},
 			{
 				"tag": "You",
@@ -333,7 +333,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "",
-				"msn": "Looks like i've arrived sooner and entrance is not allowed. I'll better kill some time"
+				"msn": "Looks like I've arrived sooner and entrance is not allowed. I'll better kill some time"
 			}]
 		}
 	},
@@ -342,7 +342,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I've just arrived, i cannot leave yet."
+				"msn": "I've just arrived, I cannot leave yet."
 			}]
 		}
 	}

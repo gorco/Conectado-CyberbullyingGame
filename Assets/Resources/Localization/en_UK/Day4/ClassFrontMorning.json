@@ -52,7 +52,7 @@
 			{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "Sit in another desk for now, i've asked Alison to help <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $> during the first days"
+				"msn": "Sit in another desk for now. I've asked Alison to help <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $> during the first days"
 			}]
 		},
 		"black": {

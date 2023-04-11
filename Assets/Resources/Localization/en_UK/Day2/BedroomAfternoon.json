@@ -5,7 +5,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Mmm, should i go to sleep?"
+				"msn": "Mmm, should I go to sleep?"
 			}]
 		},
 		"node1": {
@@ -43,7 +43,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Today i don't have time to organize all this."
+				"msn": "I don't have time to organize all this today."
 			}]
 		}		
 	},
@@ -105,7 +105,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Should i leave the mobile charging?"
+				"msn": "Should I leave the mobile charging?"
 			}]
 		},		
 		"node1": {

@@ -279,7 +279,7 @@ public class SequenceGenerator  {
 			JSONObject time = eventNode.GetField(EVENT_TIME_FIELD);
 			if (time.IsNumber)
 			{
-				aux.setParameter(EVENT_TIME_FIELD, float.Parse(time.ToString().Replace("\"", "")));
+				aux.setParameter(EVENT_TIME_FIELD, time.n);
 			}
 			else
 			{

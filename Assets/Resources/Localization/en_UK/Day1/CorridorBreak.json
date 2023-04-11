@@ -20,7 +20,7 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "I'm finishing the book, let's talk another time."
+				"msn": "I'm finishing my book, let's talk another time."
 			}]
 		},
 		"secondBad": {
@@ -52,7 +52,7 @@
 			},
 			{
 				"next": "node2",
-				"msn": "Why are you alone here instead of the playground?"
+				"msn": "Why are you alone here instead of in the playground?"
 			}]
 		},		
 		"setterBad":{
@@ -68,7 +68,7 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "I'd rather stay here quietly reading."
+				"msn": "I'd rather stay here peacefully reading."
 			}]
 		},
 		"node3": {
@@ -111,7 +111,7 @@
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "I don't have friends, they think i'm a freak."
+				"msn": "I don't have friends, they think I'm a freak."
 			},
 			{
 				"tag": "María",
@@ -139,22 +139,22 @@
 			},
 			{
 				"tag": "You",
-				"msn": "I'm heading now to the playground, if you want to come i'll be downstairs."
+				"msn": "I'm heading to the playground now, if you want to come I'll be downstairs."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Cheers, you're very kind."
+				"msn": "Thanks, you're very kind."
 			}, 
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "But today i´ll stay, i'm about to finish the book."
+				"msn": "But today I´ll stay here, I'm about to finish my book."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Have fun down there, and avoid Alex, he's a plonker."
+				"msn": "Have fun down there, and avoid Alex, he's a jackass."
 			}]
 		},
 		"quest1": {
@@ -232,7 +232,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the boys' toilet."
+				"msn": "I cannot go there, It's the boys' restroom."
 			}]
 		}
 	},
@@ -259,7 +259,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the girls' toilet."
+				"msn": "I cannot go there, it's the girls' restroom."
 			}]
 		}
 	},
@@ -269,7 +269,7 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "You",
-				"msn": "If i get in and the teacher shows up, i won't be able to come out."
+				"msn": "If I get in and the teacher shows up, I won't be able to come out."
 			}]
 		},
 		"options": {
@@ -280,7 +280,7 @@
 				"msn": "(Get in anyway)."
 			},
 			{
-				"msn": "I'll have another walk instead."
+				"msn": "I'll go for another walk instead."
 			}]
 		},
 		"black": {

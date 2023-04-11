@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using RAGE.Analytics;
+using Xasu;
+using Xasu.HighLevel;
 
 public class WebOpener : MonoBehaviour {
 
@@ -40,7 +41,7 @@ public class WebOpener : MonoBehaviour {
 		if (!url.Contains("http://") && !url.Contains("https://"))
 			url = "http://" + url;
 
-		Tracker.T.accessible.Accessed(type+"Survey");
+		AccessibleTracker.Instance.Accessed(type+"Survey");
 		Application.OpenURL(url);
     }
 }

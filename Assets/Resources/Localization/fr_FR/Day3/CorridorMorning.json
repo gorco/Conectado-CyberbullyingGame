@@ -1,0 +1,329 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "alisonBoard",
+				"condition": "varObject('global', 'AlisonFSNonStatic') > 60"
+			},
+			{
+				"next": "ignore",
+				"condition": "true"
+			}]
+		},	
+		"ignore": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+				{
+					"tag": "Toi",
+					"msn": "Encore une fois, tu m'ignores... Qu'est-ce que j'ai fait ?"
+				}]
+		}, 
+		"alisonBoard": {
+			"type": "event",
+			"next": "node0",
+			"event": {
+				"name": "change variable",
+				"var": "AlisonBoard",
+				"value": true
+			}
+		},
+		"node0": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node1",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Ignore le tableau."
+				}
+			]
+		}, 
+		"node1": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Je regardais le tableau."
+				},
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Et... ce serait mieux si tu ne le regardais pas aujourd'hui."
+				}
+			]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "AlisonNoticeBoard",
+			"options": [
+				{
+					"next": "node1A",
+					"msn": "Je l'ai déjà vu."
+				},
+				{
+					"next": "node1B",
+					"msn": "Pourquoi ? Qu'est-ce qu'il y a?"
+				}
+			]
+		},
+		"node1A": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Je suis désolée, Alex est allé trop loin avec ça."
+				},
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Je crois que tu devrais en parler à un prof."
+				}
+			]
+		},
+		"node1B": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Quelqu'un a collé une photo de toi sur chaque tableau du lycée."
+				},
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "C'était aussi dans la cour de récré."
+				},
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Je pense que tu devrais aller parler à n'importe quel professeur disponible."
+				}
+			]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+	},
+	"board":{
+		"root": {
+			"type": "event",
+			"next": "forkNode",
+			"event": {
+				"name": "change variable",
+				"var": "BoardQuest",
+				"value": 1,
+			}
+		},
+		"forkNode": {
+			"type": "fork",
+			"options": [{
+				"next": "gum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "washed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "nogum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			}]
+		},
+		"gum": {
+			"type": "event",
+			"next": "gumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGum"
+			}
+		},
+		"gumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est une photo de moi et elle a été modifiée pour qu'on ait l'impression que je chie des chewing-gums."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Qui veut se moquer de moi de cette façon ?"
+				}
+			]
+		},
+		"deactive": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 0
+			}
+		},
+		"washed": {
+			"type": "event",
+			"next": "washedDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGumWhased"
+			}
+		},
+		"washedDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est une photo de moi hier, juste après avoir enlevé le chewing-gum."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Avec une phrase très originale... \"Un bébé est arrivé en classe\"."
+				}
+			]
+		},
+		"nogum": {
+			"type": "event",
+			"next": "nogumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoDog"
+			}
+		},
+		"nogumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "C'est une image de mon visage dans le corps d'un chien qui tire la langue."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Pourquoi ? Qui a mis ça ?"
+				}
+			]
+		},
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
+				}
+			]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filless."
+				}
+			]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "speak",
+				"condition": "varObject('global', 'AlisonFSNonStatic') > 60 &&  varObject('state', 'AlisonBoard') == false"
+			},
+			{
+				"next": "move",
+				"condition": "true"
+			},]
+		},
+		"move": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		},
+		"speak": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je devrais aller parler à Alison avant d'entrer, elle se comporte bizarrement."
+				}
+			]
+		}
+	}
+}

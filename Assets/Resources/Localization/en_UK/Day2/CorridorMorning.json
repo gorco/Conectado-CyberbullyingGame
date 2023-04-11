@@ -53,7 +53,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "He didn't use to be like that, i don't know what's going on with him."
+				"msn": "He didn't use to be like that, I don't know what's going on with him."
 			},
 			{
 				"tag": "Alison",
@@ -86,7 +86,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "(She doesn't seem to remember yesterday i also got a gum stucked on me)"
+				"msn": "(She doesn't seem to remember that yesterday I also got a gum stucked on me)"
 			},
 			{
 				"tag": "You",
@@ -201,7 +201,7 @@
 			},
 			{
 				"next": "why1c",
-				"msn": "I know your kind."
+				"msn": "I know the type of guy you are."
 			}]
 		},
 		"why1a": {
@@ -254,7 +254,7 @@
 			"next": "quest3",
 			"fragments": [{
 				"tag": "You",
-				"msn": "You're the kind that exploits all around."
+				"msn": "You are the type of guy that exploits everyone."
 			},
 			{
 				"tag": "You",
@@ -263,7 +263,7 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "If you finished pestering me, get away you tosser."
+				"msn": "If you are done pestering me, get away you tosser."
 			}]
 		},	
 		"quest3": {
@@ -286,7 +286,7 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "It wasn't a joke, i don't want you sitting there again."
+				"msn": "It wasn't a joke, i don't want you to sit there again."
 			}]
 		},	
 		"why1bRepeat": {
@@ -305,7 +305,7 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "I recall that i got late."
+				"msn": "I recall that I got late."
 			}]
 		},	
 		"nothing": {
@@ -318,7 +318,7 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "We'll see, and you, do you already know which is your desk?"
+				"msn": "We'll see. And you, Do you already know which is your desk?"
 			}]
 		}		
 	},
@@ -349,14 +349,14 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Remember, saturday afternoon at 6, my place."
+				"msn": "Remember, Saturday afternoon at 6, my place."
 			}]
 		},
 		"node0": {
 			"type": "fork",
 			"options": [{
 				"next": "match1",
-				"condition": "varObject('global', 'GuillermoFSNonStatic') > 60"
+				"condition": "varObject('global', 'GuillermoFSNonStatic') >= 60"
 			},
 			{
 				"next": "node1",
@@ -379,7 +379,7 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "And we'll watch it in the huge TV my father's just bought for football matches."
+				"msn": "And we'll watch it in the huge TV that my father's just bought for football matches."
 			}]
 		},
 		"matchOptions": {
@@ -395,7 +395,7 @@
 			},
 			{
 				"next": "match2c",
-				"msn": "I have to ask first to my parents if i can."
+				"msn": "I have to ask first to my parents if I can."
 			}]
 		},
 		"match2a": {
@@ -409,7 +409,7 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "I'll let you know the address and rest of the details."
+				"msn": "I'll let you know the address and the rest of the details."
 			}]
 		},
 		"questGo": {
@@ -501,7 +501,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the boys' toilet."
+				"msn": "I cannot go there, it's the boys' bathroom."
 			}]
 		}
 	},
@@ -528,7 +528,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the girls' toilet."
+				"msn": "I cannot go there, it's the girls' bathroom."
 			}]
 		}
 	},

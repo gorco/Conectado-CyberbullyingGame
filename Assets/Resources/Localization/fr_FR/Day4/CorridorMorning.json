@@ -1,0 +1,134 @@
+{
+	"board":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "On dirait que quelqu'un a retiré la photo d'hier."
+				}
+			]
+		}
+	},
+	"anaAndAlex":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "",
+					"msn": "(Ils vous ont vu mais vous ignorent toujours, Alex et Anna se parlent)"
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Je pense que \"tête de lit\" et Gremlin sont les plus originaux."
+				},
+				{
+					"tag": "Alex",
+					"character": "Alex",
+					"msn": "J'étais à fond sur Rejeté."
+				},
+				{
+					"tag": "Alex",
+					"character": "Alex",
+					"msn": "Bien qu'il soit vrai <$ varObject('global', 'UserNameNonStatic') $> \"tête de lit\" ça sonne vraiment bien hahaha. "
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Hahaha, voyons ce que Joseph en pense."
+				}
+				{
+					"tag": "Toi",
+					"msn": "Ne soyez pas timide, continuez à m'ignorer et à réfléchir à la façon de me nommer."
+				}
+			]
+		},
+		"node2": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Désolé, je suis pressée, je vais être en retard si je n'arrive pas à entrer."
+				}
+			]
+		}			
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
+				}
+			]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filles."
+				}
+			]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		}
+	}
+}

@@ -30,7 +30,7 @@
 			{
 				"tag": "Dad",
 				"character": "Father",
-				"msn": "And remember we are visiting grandma on sunday."
+				"msn": "And remember we are visiting grandma on Sunday."
 			}]
 		},
 		"checkFS": {
@@ -50,7 +50,7 @@
 			"fragments": [{
 				"tag": "Mom",
 				"character": "Mother",
-				"msn": "We've decided to go talk to your tutor and see what's going on."
+				"msn": "We've decided to go and talk to your tutor and see what's going on."
 			}, 
 			{
 				"tag": "Dad",
@@ -107,11 +107,11 @@
 			"next": "repeat",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I don't want you to go, it'll be worse."
+				"msn": "I don't want you to go. It'll be worse."
 			},
 			{
 				"tag": "You",
-				"msn": "They'll think i'm a snitch and it wasnt such a big deal."
+				"msn": "They'll think I'm a snitch and it wasn't such a big deal."
 			}, 
 			{
 				"tag": "You",
@@ -169,7 +169,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I forgot the backpack. I'll better go to my room to take it before i leave."
+				"msn": "I forgot the backpack. I'll better go to my room to take it before I leave."
 			}]
 		}
 	},

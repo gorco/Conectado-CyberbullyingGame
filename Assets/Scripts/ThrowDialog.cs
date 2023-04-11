@@ -1,9 +1,10 @@
-﻿using RAGE.Analytics;
+﻿using Xasu;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Xasu.HighLevel;
 
 public class ThrowDialog : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
@@ -52,12 +53,14 @@ public class ThrowDialog : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 		{
 			try
 			{
-			
-					Tracker.T.setVar("GameDay", GlobalState.Day);
-					Tracker.T.setVar("GameHour", GlobalState.Hour + ":" + GlobalState.Minute);
-					Tracker.T.setVar("IsRepeatedDay", GlobalState.Repeated.ToString());
-					Tracker.T.setVar("MobileMessages", GlobalState.MessagesPending.ToString());
-					Tracker.T.trackedGameObject.Interacted(fieldName);
+			    var interactedPromise = GameObjectTracker.Instance.Interacted(fieldName);
+                interactedPromise.WithResultExtensions(new Dictionary<string, object>
+                {
+                    { "conectado://GameDay", GlobalState.Day },
+                    { "conectado://GameHour", GlobalState.Hour + ":" + GlobalState.Minute },
+                    { "conectado://IsRepeatedDay", GlobalState.Repeated.ToString() },
+                    { "conectado://MobileMessages", GlobalState.MessagesPending.ToString() }
+                });
 			
 			} catch (Exception e)
 			{

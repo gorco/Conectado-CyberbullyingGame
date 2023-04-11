@@ -1,0 +1,336 @@
+{
+	"maria":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "secondGood",
+				"condition": "normal == true"
+			},
+			{
+				"next": "secondBad",
+				"condition": "freak == true"
+			},
+			{
+				"next": "first",
+				"condition": "true"
+			}]
+		},
+		"secondGood": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Je suis en train de terminer mon livre, on discutera plus tard."
+				}
+			]
+		},
+		"secondBad": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "..."
+				},
+				{
+					"tag": "Toi",
+					"msn": "On dirait qu'elle m'ignore."
+				}
+			]
+		},
+		"first": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Veux-tu quelque chose?"
+				}
+			]
+		},
+		"node1": {
+			"type": "options",
+			"questionId": "MariaMeetFirstOpt",
+			"options": [{
+				"next": "setterBad",
+				"msn": "Rien, salut."
+			},
+				{
+					"next": "node2",
+					"msn": "Pourquoi es-tu seule ici plutôt que dans la cour de récré?"
+				}]
+		},		
+		"setterBad":{
+			"type": "setter",
+			"set": {
+				"var": "freak",
+				"value": true
+			}
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Je préfère rester ici à lire tranquillement."
+				}
+			]
+		},
+		"node3": {
+			"type": "options",
+			"questionId": "MariaMeetSecondOpt",
+			"options": [
+				{
+					"msn": "Profite-en, salut (Quelle fille bizarre)."
+				},
+				{
+					"next": "node4",
+					"msn": "Ne préféres-tu pas être dans la cour de récré avec tes amis?"
+				}
+			]
+		},	
+		"quest2": {
+			"type": "event",
+			"next": "nodeFS2",
+			"event": {
+				"name": "change variable",
+				"var": "MariaoQuest",
+				"value": 1,
+			}
+		},
+		"nodeFS2": {
+			"type": "event",
+			"next": "setterBad",
+			"event": {
+				"name": "change friendship",
+				"var": "MariaFS",
+				"value": -10,
+			}
+		},
+		"node4": {
+			"type": "dialog",
+			"next": "node5",
+			"fragments": [
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Tu es un peu <$ if(varObject('global', 'MaleSexNonStatic')==true, 'agaçant', 'agaçante') $> avec toutes ces questions."
+				},
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Je n'ai pas d'amis, ils pensent que je suis bizarre."
+				},
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Tu peux partir maintenant."
+				}
+			]
+		},
+		"node5": {
+			"type": "options",
+			"questionId": "MariaMeetThirdOpt",
+			"options": [{
+				"next": "node6",
+				"msn": "(Rester)"
+			},
+			{
+				"msn": "(Partir)"
+			}]
+		},
+		"node6": {
+			"type": "dialog",
+			"next": "quest1",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Tu ne me sembles pas être bizarre pourtant."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Je descends dans la cour, veux-tu venir avec moi ?"
+				},
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Merci, tu es très sympa."
+				},
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Mais aujourd'hui, je reste, je suis sur le point de finir le livre."
+				},
+				{
+					"tag": "Marie",
+					"character": "Maria",
+					"msn": "Amuse-toi bien en bas, et évite Alex, il est stupide."
+				}
+			]
+		},
+		"quest1": {
+			"type": "event",
+			"next": "nodeFS1",
+			"event": {
+				"name": "change variable",
+				"var": "MariaQuest",
+				"value": 1,
+			}
+		},
+		"nodeFS1": {
+			"type": "event",
+			"next": "setterGood",
+			"event": {
+				"name": "change friendship",
+				"var": "MariaFS",
+				"value": 20,
+			}
+		},
+		"setterGood":{
+			"type": "setter",
+			"set": {
+				"var": "normal",
+				"value": true
+			}
+		},
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"next": "alisonMove",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"alisonMove": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "little move",
+				"key": "alison"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:20",
+			}
+		},
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des garçons."
+				}
+			]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ne peux pas y aller, ce sont les toilettes des filles."
+				}
+			]
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Si j'entre et que le professeur se présente, je ne pourrai pas sortir."
+				}
+			]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "endBreak",
+			"options": [
+				{
+					"next": "black",
+					"msn": "(Entrez quand même)."
+				},
+				{
+					"msn": "Je vais plutôt faire un autre tour dans le lycée à la place."
+				}
+			]
+		},
+		"black": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Dès que tu entres, la cloche sonne et le professeur apparaît. Le cours se déroule. Une heure plus tard, tu n'as pas remarqué mais la matinée est déjà terminée, il est temps de rentrer chez toi..."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "enter",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:02",
+			}
+		},
+		"enter": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "endDay"
+			}
+		}
+	}
+}

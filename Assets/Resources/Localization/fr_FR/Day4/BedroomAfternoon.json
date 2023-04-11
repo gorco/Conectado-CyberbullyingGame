@@ -1,0 +1,189 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Mmm, dois-je aller dormir maintenant ?"
+				}
+			]
+		},
+		"node1": {
+			"type": "options",
+			"questionId": "goToSleep",
+			"options": [{
+				"next": "sleepfork",
+				"msn": "Oui"
+			},
+			{
+				"msn": "Non"
+			}]
+		},
+		"sleepfork": {
+			"type": "fork",
+			"options": [{
+				"next": "sleep",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},{
+				"next": "scene",
+				"condition": "true"
+			}]
+		},
+		"sleep": {
+			"type": "dialog",
+			"next": "scene",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Mais je ne peux pas utiliser le portable pour mettre une alarme."
+				},
+				{
+					"tag": "Toi",
+					"msn": "Mmmm, je vais utiliser mon vieux portable. Bon, il n'a pas de carte SIM... mais il fonctionnera bien comme un réveil!"
+				},
+				{
+					"tag": "Toi",
+					"msn": "Très bien, réveil réglé... L'heure de dormir."
+				}
+			]
+		},
+		"scene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 22,
+				"time": 3
+			}
+		}		
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Toi",
+				"msn": "Il n'y a rien d'utile ici."
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je n'ai besoin de rien d'ici."
+				}
+			]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Toi",
+				"msn": "Je viens juste de rentrer du lycée."
+			},
+				{
+					"tag": "Toi",
+					"msn": "Je n'ai pas du tout besoin du sac à dos."
+				}]
+		}
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [
+				{
+					"tag": "PC",
+					"msn": "Veux-tu allumer l'ordinateur ?"
+				}
+			]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"options": [{
+				"next": "node1a",
+				"msn": "Oui"
+			},
+			{
+				"next": "node1b",
+				"msn": "Non"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
+		}, 
+		"moveCamera": {
+			"type": "event",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Toi",
+				"msn": "Je ferais mieux d'aller dormir..."
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Toi",
+				"msn": "Est-ce que je laisse mon portable à charger?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "Oui"
+			},
+			{
+				"next": "node1b",
+				"msn": "Non"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
+	}
+}

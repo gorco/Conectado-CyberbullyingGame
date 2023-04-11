@@ -6,13 +6,17 @@ using Isometra;
 using System;
 using Isometra.Sequences;
 using UnityEngine.SceneManagement;
-using RAGE.Analytics;
+using Simva;
+using Xasu.HighLevel;
+using Xasu.Util;
 
 public class TrackerEventManager : EventManager {
 
+    private float lastSceneChangeTime;
+
 	public override void ReceiveEvent(IGameEvent ev)
 	{
-		if (PlayerPrefs.GetInt("online") == 1)
+		if (PlayerPrefs.GetInt("online") == 1 || SimvaManager.Instance.IsActive)
 		{
 			switch (ev.Name)
 			{
@@ -27,12 +31,27 @@ public class TrackerEventManager : EventManager {
 							var optionchosen = (int)ev.getParameter("option");
 							var response = optionList[optionchosen];
 
-							Tracker.T.alternative.Selected(questionID, response.Text, AlternativeTracker.Alternative.Dialog);
+                            AlternativeTracker.Instance.Selected(questionID, response.Text, AlternativeTracker.AlternativeType.Dialog);
 							break;
-						// OTHERS
+
+						case "show dialog fragment":
+							Fragment dfragment = finished.getParameter("fragment") as Fragment;
+
+							string character = dfragment.Character;
+							string message = dfragment.Msg;
+							string name = dfragment.Name;
+                            CompletableTracker.Instance.Completed(character + " " + message, CompletableTracker.CompletableType.StoryNode);
+							break;
 					}
 					break;
+				case "show dialog fragment":
+					Fragment dfragmentf = ev.getParameter("fragment") as Fragment;
 
+					string characterf = dfragmentf.Character;
+					string messagef = dfragmentf.Msg;
+					string namef = dfragmentf.Name;
+                    CompletableTracker.Instance.Initialized(characterf + " " + messagef, CompletableTracker.CompletableType.StoryNode);
+					break;
 				case "change friendship":
 					object vAux = ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD);
 					string friend = null;
@@ -45,21 +64,25 @@ public class TrackerEventManager : EventManager {
 
 					if (friend != null)
 					{
-						Tracker.T.alternative.Unlocked(friend, value.ToString());
-						Tracker.T.completable.Progressed(friend, value);
+                        AlternativeTracker.Instance.Unlocked(friend, value.ToString());
+                        CompletableTracker.Instance.Progressed(friend, value);
 					}
 					break;
 
-				case "change scene":
-					int scene = SceneManager.GetActiveScene().buildIndex;
-					string sceneName = GetSceneName(scene);
-					AddStateExtensions();
-					Tracker.T.setProgress(scene / 27f);
-					Tracker.T.completable.Completed("scene" + scene);
-					Tracker.T.completable.Completed(sceneName, CompletableTracker.Completable.StoryNode);
-					break;
+                case "change scene":
+                    int scene = SceneManager.GetActiveScene().buildIndex;
+                    string sceneName = GetSceneName(scene);
+                    CompletableTracker.Instance.Completed("scene" + scene, Time.realtimeSinceStartup - lastSceneChangeTime)
+                        .WithResultExtensions(GetStateExtensions())
+                        .WithResultExtensions(new Dictionary<string, object>
+                        {
+                            {"https://w3id.org/xapi/seriousgames/extensions/progress", scene / 27f}
+                        });
+                    CompletableTracker.Instance.Completed(sceneName, CompletableTracker.CompletableType.StoryNode, Time.realtimeSinceStartup - lastSceneChangeTime);
+                    lastSceneChangeTime = Time.realtimeSinceStartup;
+                    break;
 
-				case "change variable":
+                case "change variable":
 					object vVar = ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD);
 					string var = null;
 					if (vVar != null)
@@ -68,26 +91,25 @@ public class TrackerEventManager : EventManager {
 					}
 
 					var valueVar = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
-
-					Tracker.T.setVar(var, valueVar.ToString());
-					break;
+                    ExtensionsPool.AddResultExtension("conectado://"+var, valueVar.ToString());
+                    break;
 
 				case "move camera":
 					string key = ev.getParameter(SequenceGenerator.EVENT_KEY_FIELD).ToString().Replace("\"", "");
-					AddStateExtensions();
-					Tracker.T.accessible.Accessed(key);
-					break;
+                    AccessibleTracker.Instance.Accessed(key)
+                        .WithResultExtensions(GetStateExtensions());
+                    break;
 
 				case "pick":
 					string pickVar = ((String)ev.getParameter(SequenceGenerator.EVENT_VARIABLE_FIELD)).Replace("\"", "");
 					var pickValue = ev.getParameter(SequenceGenerator.EVENT_VALUE_FIELD);
-					Tracker.T.setVar(pickVar, pickValue.ToString());
-					break;
+                    ExtensionsPool.AddResultExtension("conectado://" + pickVar, pickValue.ToString());
+                    break;
 			}
 		}
 	}
 
-	private string GetSceneName(int scene)
+    private string GetSceneName(int scene)
 	{
 		string s = "";
 		switch (scene)
@@ -125,22 +147,24 @@ public class TrackerEventManager : EventManager {
 		return s;
 	}
 
-	public void AddStateExtensions()
+	public static Dictionary<string, object> GetStateExtensions()
 	{
-		Tracker.T.setVar("Final", GlobalState.Final);
-		Tracker.T.setVar("GameDay", GlobalState.Day);
-		Tracker.T.setVar("GameHour", GlobalState.Hour + ":" + (GlobalState.Minute < 10 ? "0"+GlobalState.Minute.ToString() : GlobalState.Minute.ToString()));
+        return new Dictionary<string, object> {
+            { "conectado://Final", GlobalState.Final},
+            { "conectado://GameDay", GlobalState.Day},
+            { "conectado://GameHour", GlobalState.Hour + ":" + (GlobalState.Minute < 10 ? "0" + GlobalState.Minute.ToString() : GlobalState.Minute.ToString())},
 
-		Tracker.T.setVar("MariaFriendship", GlobalState.MariaFS);
-		Tracker.T.setVar("AlisonFriendship", GlobalState.AlisonFS);
-		Tracker.T.setVar("AnaFriendship", GlobalState.AnaFS);
-		Tracker.T.setVar("GuillermoFriendship", GlobalState.GuillermoFS);
-		Tracker.T.setVar("JoseFriendship", GlobalState.JoseFS);
-		Tracker.T.setVar("AlejandroFriendship", GlobalState.AlejandroFS);
-		Tracker.T.setVar("ParentsFriendship", GlobalState.ParentsFS);
-		Tracker.T.setVar("TeacherFriendship", GlobalState.TeacherFS);
-		Tracker.T.setVar("RiskFriendship", GlobalState.Risk);
-	}
+            { "conectado://MariaFriendship", GlobalState.MariaFS},
+            { "conectado://AlisonFriendship", GlobalState.AlisonFS},
+            { "conectado://AnaFriendship", GlobalState.AnaFS},
+            { "conectado://GuillermoFriendship", GlobalState.GuillermoFS},
+            { "conectado://JoseFriendship", GlobalState.JoseFS},
+            { "conectado://AlejandroFriendship", GlobalState.AlejandroFS},
+            { "conectado://ParentsFriendship", GlobalState.ParentsFS},
+            { "conectado://TeacherFriendship", GlobalState.TeacherFS},
+            { "conectado://RiskFriendship", GlobalState.Risk}
+        };
+    }
 
 	public override void Tick()
 	{

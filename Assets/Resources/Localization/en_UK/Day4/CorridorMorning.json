@@ -13,7 +13,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "",
-				"msn": "(They've seen you but still ignore you, Alex and Ana are talking to each other)"
+				"msn": "(They've seen you but still ignore you. Alex and Ana are talking to each other)"
 			},
 			{
 				"tag": "Ana",
@@ -45,7 +45,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Sorry, i'm in a hurry, i'll be late if i don't get in."
+				"msn": "Sorry, I'm in a hurry.I'll be late if I don't get in."
 			}]
 		}			
 	},
@@ -72,7 +72,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the boys' toilet."
+				"msn": "I cannot go there, it's the boys' bathroom."
 			}]
 		}
 	},
@@ -99,7 +99,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the girls' toilet"
+				"msn": "I cannot go there, it's the girls' bathroom"
 			}]
 		}
 	},

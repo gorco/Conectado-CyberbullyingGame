@@ -20,7 +20,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "Again ignoring me... What did i do?"
+				"msn": "Again ignoring me... What did I do wrong?"
 			}]
 		}, 
 		"alisonBoard": {
@@ -97,7 +97,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Someone has posted a picture of yours in every school board."
+				"msn": "Someone has posted a picture of you in every school board."
 			},
 			{
 				"tag": "Alison",
@@ -107,7 +107,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "I think you should go talk to any teacher available."
+				"msn": "I think you should go and talk to any teacher available."
 			}]
 		},
 		"setter":{
@@ -157,7 +157,7 @@
 			"next": "deactive",
 			"fragments": [{
 				"tag": "You",
-				"msn": "It's a picture of me and it has been modified so it looks like i'm shitting chewing gums."
+				"msn": "It's a picture of me and it has been modified so it looks like I'm shitting chewing gums."
 			},
 			{
 				"tag": "You",
@@ -185,7 +185,7 @@
 			"next": "deactive",
 			"fragments": [{
 				"tag": "You",
-				"msn": "It's a picture of me of yesterday right after i removed the gum."
+				"msn": "It's a picture of me of yesterday right after I removed the gum."
 			},
 			{
 				"tag": "You",
@@ -237,7 +237,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the boys' toilet."
+				"msn": "I cannot go there, it's the boys' bathroom."
 			}]
 		}
 	},
@@ -264,7 +264,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the girls' toilet."
+				"msn": "I cannot go there, it's the girls' bathroom."
 			}]
 		}
 	},

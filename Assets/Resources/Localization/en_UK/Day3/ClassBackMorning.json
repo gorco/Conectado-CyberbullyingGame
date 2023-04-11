@@ -38,7 +38,7 @@
 			"next": "deactive",
 			"fragments": [{
 				"tag": "You",
-				"msn": "There's a picture of me and it has been modified so it looks like i'm shitting chewing gums."
+				"msn": "There's a picture of me and it has been modified so it looks like I'm shitting chewing gums."
 			},
 			{
 				"tag": "You",
@@ -66,7 +66,7 @@
 			"next": "deactive",
 			"fragments": [{
 				"tag": "You",
-				"msn": "It's a picture of me yesterday right after i removed the gum."
+				"msn": "It's a picture of me yesterday right after I removed the gum."
 			},
 			{
 				"tag": "You",
@@ -130,7 +130,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "It has been boring day, classes are over and most of the people have been ignoring me the whole day. There's a paper note on your desk telling you to go to the toilet, there's somebody waiting there."
+				"value": "It has been a boring day. Classes are over and most of the people have been ignoring me the whole day. There's a paper note on your desk telling you to go to the toilet, there's someone waiting there."
 			}
 		},
 		"node3": {
@@ -157,7 +157,7 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "You",
-				"msn": "This spot is free, may i sit here?"
+				"msn": "This spot is free, may I sit here?"
 			}]
 		},
 		"options": {
@@ -176,7 +176,7 @@
 			"next": "node3",
 			"fragments": [{
 				"tag": "",
-				"msn": "(Knocks on the back, the teacher has arrived)."
+				"msn": "(Taps on the back, the teacher has arrived)."
 			}]
 		},
 		"node3": {
@@ -186,7 +186,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "It has been boring day, classes are over and most of the people have been ignoring me the whole day. There's a paper note on your desk telling you to go to the toilet, there's somebody waiting there."
+				"value": "It has been a boring day. Classes are over and most of the people have been ignoring me the whole day. There's a paper note on your desk telling you to go to the toilet, there's someone waiting there."
 			}
 		},
 		"changeHour": {

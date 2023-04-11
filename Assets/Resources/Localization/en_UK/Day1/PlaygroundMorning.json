@@ -14,11 +14,11 @@
 			"questionId": "GuillermoMeet",
 			"options": [{
 				"next": "node1a",
-				"msn": "Yeah, i'm <$ varObject('global', 'UserNameNonStatic') $>... and who are you?"
+				"msn": "Yeah, I'm <$ varObject('global', 'UserNameNonStatic') $>...  who are you?"
 			},
 			{
 				"next": "node1b",
-				"msn": "Excuse me, i'm in a hurry. (You leave)."
+				"msn": "Excuse me, I'm in a hurry. (You leave)."
 			}]
 		},
 		"node1b": {
@@ -143,7 +143,7 @@
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Do you want something?"
+				"msn": "Do you want anything?"
 			}]
 		},
 		"setter":{
@@ -159,7 +159,7 @@
 			"questionId": "JoseMeet",
 			"options": [{
 				"next": "introduceFork",
-				"msn": "Hello, i'm <$ varObject('global', 'UserNameNonStatic') $>.."
+				"msn": "Hello, I'm <$ varObject('global', 'UserNameNonStatic') $>.."
 			},
 			{
 				"next": "node2",
@@ -227,7 +227,7 @@
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Do you want something?"
+				"msn": "Do you want anything?"
 			}]
 		},
 		"node2": {
@@ -236,7 +236,7 @@
 			"fragments": [{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "That's my classroom too, it's in the second floor, going to the right upstairs you find once you get inside the building."
+				"msn": "That's my classroom too, it's in the second floor.Go upstairs on your right once you get inside the building."
 			}, 
 			{
 				"tag": "Jose",
@@ -265,7 +265,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Do i know you?"
+				"msn": "Do I know you?"
 			}]
 		},
 		"options": {
@@ -277,7 +277,7 @@
 			},
 			{
 				"next": "node2",
-				"msn": "No, i'm sorry, i'm in a hurry. Bye."
+				"msn": "No, I'm sorry, I'm in a hurry. Bye."
 			}]
 		},
 		"nodeFS": {
@@ -304,7 +304,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Nice to meet ya, i'm Alison"
+				"msn": "Nice to meet ya, I'm Alison"
 			},
 			{
 				"tag": "Alison",
@@ -331,7 +331,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Don't be shy, i don't bite."
+				"msn": "Don't be shy, I don't bite."
 			},
 			{
 				"tag": "Alison",
@@ -355,7 +355,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "We should get inside now, or we'll be late."
+				"msn": "We should get inside now or we'll be late."
 			}]
 		},
 		"cerrado": {
@@ -363,12 +363,12 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "The boy with the yellow shirt next to the playground entrance also is in our class."
+				"msn": "The boy with the yellow shirt next to the playground entrance is also in our class."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "He's very nice, why don't you go talk to him?"
+				"msn": "He's very nice, why don't you go and talk to him?"
 			}]
 		}
 	},
@@ -395,7 +395,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "",
-				"msn": "Looks like i've arrived sooner and entrance is not allowed. I'll better kill some time."
+				"msn": "Looks like I've arrived soon and entrance is not allowed. I'll hang around."
 			}]
 		}
 	},
@@ -404,7 +404,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I've just arrived, i cannot leave yet."
+				"msn": "I've just arrived, I cannot leave yet."
 			}]
 		}
 	}

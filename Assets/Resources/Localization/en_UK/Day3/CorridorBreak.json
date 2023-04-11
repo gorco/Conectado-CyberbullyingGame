@@ -15,7 +15,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I should go to the toilet before i go home."
+				"msn": "I should go to the bathroom before going home."
 			},
 			{
 				"tag": "You",
@@ -61,7 +61,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the boys' toilet"
+				"msn": "I cannot go there, it's the boys' bathroom"
 			}]
 		}
 	},
@@ -88,7 +88,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the girls' toilet"
+				"msn": "I cannot go there, it's the girls' bathroom"
 			}]
 		}
 	},

@@ -1,0 +1,237 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Pars, nous n'avons rien à dire."
+				}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Tout cela ne serait pas arrivé si tu m'avais fait confiance, c'est ta faute."
+				}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "Tu mérites ce qui s'est passé."
+				},
+				{
+					"tag": "Alison",
+					"character": "Alison",
+					"msn": "À quoi pensais-tu lorsque tu m'as donné ton mot de passe?"
+				}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		}
+	},
+	"ana":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh2",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "Anna",
+				"character": "Ana",
+				"msn": "Hahahaha, \"Suface\"."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Regardez qui est là, moi qui pensais que tu ne viendrais pas aujourd'hui."
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Toujours sans téléphone ? Hahaha, ce n'était pas si difficile à trouver si tu l'avais bien cherché."
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Quel connard..."
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "D'où viens-tu ? hahaha."
+				}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Je n'arrive pas à croire que tu aies donné ton mot de passe à Alison."
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Tu pensais vraiment qu'elle allait devenir ton amie ? Je n'arrive pas à croire que ça ait été si facile."
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "HAHAHAHA!!! Sérieusement, je craque pour toi."
+				}]
+		},
+		"sh2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "HAHAHAHA!!! Je n'arrive pas à croire que tu n'avais pas de modèle de verrouillage sur ton portable."
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Je pensais que ce serait plus difficile..."
+				},
+				{
+					"tag": "Anna",
+					"character": "Ana",
+					"msn": "Ça va être une drôle de journée, maintenant tout le monde pense que tu es en fait <$ if(varObject('global', 'MaleSexNonStatic')==true, 'un pédé vicieux qui aime sucer des bites', 'une pute vicieuse') $>."
+				}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "bell",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "bellEvent",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<La cloche sonne>>"
+			}]
+		},
+		"bellEvent": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30"
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true" 
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "",
+					"msn": "On dirait que je suis <$ if(varObject('global', 'MaleSexNonStatic')==true, 'arrivé', 'arrivée') $> plus tôt et que l'entrée n'est pas autorisée. Je ferais mieux de trouver quelque chose à faire en attendant pour tuer un peu le temps."
+				}
+			]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je viens d'arriver dans la cour, je ne peux pas encore partir du lycée et rentrer chez moi."
+				}
+			]
+		}
+	}
+}

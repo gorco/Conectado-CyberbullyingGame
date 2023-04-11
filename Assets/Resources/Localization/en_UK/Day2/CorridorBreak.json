@@ -46,7 +46,7 @@
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Oh mate, looks like you've wet, or even shat yourself."
+				"msn": "Oh mate, looks like you're wet, or even shat yourself."
 			}]
 		}
 	},
@@ -99,7 +99,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the boys' toilet."
+				"msn": "I cannot go there, it's the boys' bathroom."
 			}]
 		}
 	},
@@ -126,7 +126,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I cannot go there, it's the girls' toilet."
+				"msn": "I cannot go there, it's the girls' bathroom."
 			}]
 		}
 	},
@@ -136,7 +136,7 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "You",
-				"msn": "If i get in and the teacher shows up, i won't be able to come out."
+				"msn": "If I get in and the teacher shows up, I won't be able to come out."
 			}]
 		},
 		"options": {

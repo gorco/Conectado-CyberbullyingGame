@@ -174,7 +174,7 @@
 			},
 			{
 				"next": "guille",
-				"msn": "Guille told me about going to his place this saturday.",
+				"msn": "Guille invited me to go to his place this Saturday.",
 				"condition": "page == 1 && aboutGuille == true && varObject('global', 'GuillermoQuestNonStatic') > 0"
 			},
 			{
@@ -266,7 +266,7 @@
 			"next": "guilleUpParentsFS",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I've told him i'll go, so i wont't be home on saturaday afternoon."
+				"msn": "I've told him I'll go, so I wont't be home on Saturaday afternoon."
 			}]
 		},
 		"guilleNoGo": {
@@ -274,7 +274,7 @@
 			"next": "guilleUpParentsFS",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I've told him no, too many people i don't trust."
+				"msn": "I've told him no, too many people I don't trust."
 			}]
 		},
 		"guilleQuest": {
@@ -282,7 +282,7 @@
 			"next": "guilleUpParentsFS",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I've told him i needed to ask you first."
+				"msn": "I've told him I needed to ask you first."
 			},
 			{
 				"tag": "You",
@@ -290,7 +290,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "You are allowed to go, i'll ask your mother just in case."
+				"msn": "You are allowed to go, I'll ask your mother just in case."
 			}]
 		},
 		"guilleUpParentsFS": {
@@ -382,7 +382,7 @@
 			"next": "gumUpParentsFS",
 			"fragments": [{
 				"tag": "You",
-				"msn": "About the gum... i don't know how it happened."
+				"msn": "About the gum... I don't know how it happened."
 			},
 			{
 				"tag": "You",
@@ -399,7 +399,7 @@
 			"next": "gumUpParentsFS",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Today i've ended up with a gum stuck on my ass."
+				"msn": "Today I've ended up with a gum stuck on my ass."
 			},
 			{
 				"tag": "You",
@@ -479,11 +479,11 @@
 			"fragments": [
 			{
 				"tag": "You",
-				"msn": "I'll say he has it in for me since the first day."
+				"msn": "I would say he has a problem with me since the first day."
 			},
 			{
 				"tag": "You",
-				"msn": "Although i don't know exactly why."
+				"msn": "Although I don't know exactly why."
 			}]
 		},
 		"forkAlex": {
@@ -514,7 +514,7 @@
 			"next": "alexUpParentsFS",
 			"fragments": [{
 				"tag": "You",
-				"msn": "He was upset with me for having sat on his chair."
+				"msn": "He was upset with me for seating on his chair."
 			},
 			{
 				"tag": "You",
@@ -522,7 +522,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "But looking how he talked to me i think he's going to keep looking for trouble."
+				"msn": "But as how he talked to me I think he's going to keep looking for trouble."
 			},
 			{
 				"tag": "Dad",
@@ -554,12 +554,12 @@
 			{
 				"tag": "Dad",
 				"character": "Father",
-				"msn": "If i need to go and talk to him let me know."
+				"msn": "If I need to go and talk to him let me know."
 			},
 			{
 				"tag": "Dad",
 				"character": "Father",
-				"msn": "Or if you have any trouble, just talk to your teacher."
+				"msn": "Or if you are in trouble, just talk to your teacher."
 			}]
 		},	
 		"alexUpParentsFS": {
@@ -709,7 +709,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Hmm, hasnt earned 2be in this group. Someone kick <$ if(varObject('global', 'MaleSexNonStatic')==true, 'his', 'her') $> out NOW!",
+				"value": "Hmm, hasn't earned 2be in this group. Someone kick <$ if(varObject('global', 'MaleSexNonStatic')==true, 'his', 'her') $> out NOW!",
 				"key": "Alex",
 				"time": 10 
 			}

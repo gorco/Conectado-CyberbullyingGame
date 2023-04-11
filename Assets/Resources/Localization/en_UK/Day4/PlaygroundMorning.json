@@ -6,7 +6,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, i'd like to talk to you."
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, I'd like to talk to you."
 			},
 			{
 				"tag": "Alison",
@@ -21,7 +21,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Can i trust you? I don't want us to stop being friends."
+				"msn": "Can I trust you? I don't want us to stop being friends."
 			}]
 		},		
 		"options": {
@@ -33,7 +33,7 @@
 			},
 			{
 				"next": "noFriend",
-				"msn": "No and i have no interest in gaining your trust."
+				"msn": "No, and I have no interest in gaining your trust."
 			}]
 		},
 		"noFriend": {
@@ -42,7 +42,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "I don't have a choice then so i'll stop talking to you."
+				"msn": "I don't have a choice then so I'll stop talking to you."
 			},
 			{
 				"tag": "Alison",
@@ -61,7 +61,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Let's exchange our mobile phone and social media passwords."
+				"msn": "Let's exchange our phones and social media passwords."
 			},
 			{
 				"tag": "Alison",
@@ -97,12 +97,12 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "If you don't trust me i can't trust you either."
+				"msn": "If you don't trust me I can't trust you either."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "I'm sorry, but i can't talk to you then."
+				"msn": "I'm sorry, but I can't talk to you then."
 			},
 			{
 				"tag": "Alison",
@@ -214,7 +214,7 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "(His face gesture changes once he sees you, turns his head and looks other way)"
+				"msn": "(His face gesture changes once he sees you. Turns his head and looks other way)"
 			}]
 		}
 	},
@@ -241,7 +241,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "",
-				"msn": "Looks like i've arrived sooner and entrance is not allowed. I'll better kill some time."
+				"msn": "Looks like I've arrived sooner and entrance is not allowed. I'll better kill some time."
 			}]
 		}
 	},
@@ -259,7 +259,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I've just arrived, i cannot leave yet."
+				"msn": "I've just arrived. I cannot leave yet."
 			}]
 		}
 	}

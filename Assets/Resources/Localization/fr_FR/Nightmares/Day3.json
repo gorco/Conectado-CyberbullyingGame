@@ -1,0 +1,330 @@
+{
+	"intro":{
+		"root": {
+			"type": "dialog",
+			"next": "fade",
+			"fragments": [
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Je m'assurerai que personne ne te parle."
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Tu peux dire tout ce que tu veux, mais tu n'arriveras à rien."
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Vas-y, parle aux gens de ta classe, voyons si tu arrives à les faire parler."
+				}
+			]
+		},
+		"fade": {
+			"type": "event",
+			"next": "activate",
+			"event": {
+				"name": "little move",
+				"key": "shadow"
+			}
+		},
+		"activate": {
+			"type": "event",
+			"event": {
+				"name": "active object",
+				"time": 0.2,
+			}
+		}
+	},
+	"finishNightmare":{
+		"root": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Je crois que tu es <$ if(varObject('global', 'MaleSexNonStatic')==true, 'resté seul', 'restée seule') $>."
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Comment te sens-tu quand tout le monde t'ignore?"
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Ne trouves-tu pas ça drôle que personne ne t'écoutes?"
+				},
+				{
+					"tag": "Ombre",
+					"character": "Shadow",
+					"msn": "Parce que je me marre en te regardant."
+				}
+			]
+		},
+		"variable": {
+			"type": "event",
+			"next": "repeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 3
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30"
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	},
+	"jose":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Joseph",
+				"character": "Jose",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Jose",
+			"options": [{
+				"next": "fade",
+				"msn": "Vas-tu continuer à m'ignorer comme ça sans aucun motif? Juste parce qu'ils t'ont dit que tu devais le faire?"
+			},
+			{
+				"next": "fade",
+				"msn": "On peut être amis."
+			},
+			{
+				"next": "fade",
+				"msn": "Est-ce que tu as 3 ans? Parle-moi."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "jose"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1
+			}
+		},
+	},
+	"guille":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Guillaume",
+				"character": "Guille",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Guille",
+			"options": [{
+				"next": "fade",
+				"msn": "Tu es mon ami, n'est-ce pas?"
+			},
+			{
+				"next": "fade",
+				"msn": "Guillaume, tu n'es pas comme les autres."
+			},
+			{
+				"next": "fade",
+				"msn": "Ne laisse personne te menacer."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "guille"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1
+			}
+		},
+	},
+	"alison":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Alison",
+			"options": [
+				{
+					"next": "fade",
+					"msn": "Tu es mon amie, n'est-ce pas?"
+				},
+				{
+					"next": "fade",
+					"msn": "Tu as l'air gentille, tu ne vas pas commencer à m'ignorer, n'est-ce pas?"
+				},
+				{
+					"next": "fade",
+					"msn": "S'il te plait, parle-moi."
+				}
+			]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "alison"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1
+			}
+		},
+	},
+	"maria":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Marie",
+				"character": "Maria",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Maria",
+			"options": [{
+				"next": "fade",
+				"msn": "Toi aussi tu vas m'ignorer?"
+			},
+			{
+				"next": "fade",
+				"msn": "Ne t'ont-ils pas fait la même chose? Ne m'ignore pas, tu sais ce que l'on ressens."
+			},
+			{
+				"next": "fade",
+				"msn": "Tu me comprends, n'est-ce pas?"
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "maria"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1
+			}
+		},
+	},
+	"ana":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Anna",
+				"character": "Ana",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Ana",
+			"options": [
+				{
+					"next": "fade",
+					"msn": "Qu'est-ce que je t'ai fait? Pourquoi vous en prendre à moi aussi?"
+				},
+				{
+					"next": "fade",
+					"msn": "Si Alex saute d'un pont, est-ce que tu le ferais toi aussi?"
+				},
+				{
+					"next": "fade",
+					"msn": "Ne pouvons-nous pas simplement nous entendre?"
+				}
+			]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "ana"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1
+			}
+		},
+	}
+}

@@ -100,7 +100,7 @@
 			"next": "options",
 			"fragments": [{
 				"tag": "You",
-				"msn": "This place is available, may i sit here?"
+				"msn": "This place is available. May I sit here?"
 			}]
 		},
 		"options": {
@@ -119,7 +119,7 @@
 			"next": "nodeFork",
 			"fragments": [{
 				"tag": "",
-				"msn": "(Knocks in the back, the teacher is here)"
+				"msn": "(Taps in the back, the teacher is here)"
 			}]
 		},
 		"nodeFork": {

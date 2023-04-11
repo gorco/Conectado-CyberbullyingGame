@@ -10,7 +10,7 @@
 			}, {
 				"tag": "Shadow",
 				"character": "Shadow",
-				"msn": "You can do whatever you want, but you won't accomplish anything."
+				"msn": "You can do whatever you want, but you won't get anything."
 			},
 			{
 				"tag": "Shadow",
@@ -117,7 +117,7 @@
 			"questionId": "nightmare3Jose",
 			"options": [{
 				"next": "fade",
-				"msn": "Are you gonna ignore me without reason? Just because you were told to do so?"
+				"msn": "Are you gonna ignore me without a reason? Just because you were told to do so?"
 			},
 			{
 				"next": "fade",
@@ -250,7 +250,7 @@
 			},
 			{
 				"next": "fade",
-				"msn": "Didn't they do the same to you? Don't ignore me, you know how it feels like."
+				"msn": "Didn't they do the same to you? Don't ignore me, you know how it feels."
 			},
 			{
 				"next": "fade",
@@ -293,7 +293,7 @@
 			},
 			{
 				"next": "fade",
-				"msn": "What if Alex jumps off a bridge? Would you do the same?"
+				"msn": "If Alex jumps off a bridge? Would you do the same?"
 			},
 			{
 				"next": "fade",

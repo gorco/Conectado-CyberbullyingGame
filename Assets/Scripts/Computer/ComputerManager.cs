@@ -1,12 +1,13 @@
 ﻿using Isometra;
 using Isometra.Sequences;
-using RAGE.Analytics;
+using Xasu;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
+using Xasu.HighLevel;
 
 public class ComputerManager : EventManager {
 
@@ -196,9 +197,29 @@ public class ComputerManager : EventManager {
 		}
 
 		var avatarFile = author;
-		if(author == "Tú" || author == "You")
+		if(author == "Tú" || author == "Toi"|| author == "You")
 		{
 			avatarFile = GlobalState.MaleSex ? "Boy" : "Girl";
+		}
+		else if (author == "Guille" || author == "Guillermo" || author == "Guillaume")
+		{
+			avatarFile = "Guille";
+		}
+		else if (author == "Alex" || author == "Álex" || author == "Alejandro" || author == "Alexandre")
+		{
+			avatarFile = "Alex";
+		}
+		else if (author == "Ana" || author == "Anna")
+		{
+			avatarFile = "Ana";
+		}
+		else if (author == "Alice" || author == "Alison")
+		{
+			avatarFile = "Alison";
+		}
+		else if (author == "Jose" || author == "Joseph" || author == "José")
+		{
+			avatarFile = "Jose";
 		}
 		pb.SetAvatar(avatarFile + "Avatar");
 
@@ -378,7 +399,7 @@ public class ComputerManager : EventManager {
 		{
 			try
 			{
-				Tracker.T.trackedGameObject.Interacted(id, GameObjectTracker.TrackedGameObject.Item);
+				GameObjectTracker.Instance.Interacted(id, GameObjectTracker.TrackedGameObject.Item);
 			}
 			catch (Exception e)
 			{

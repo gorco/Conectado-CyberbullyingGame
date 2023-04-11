@@ -17,7 +17,19 @@ public class GetStringName : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponentInChildren<Text>().text = LanguageSelector.instance.GetName(gameObject.name);
+			Text textobject = gameObject.GetComponentInChildren<Text>();
+			if (textobject != null)
+			{
+				textobject.text = LanguageSelector.instance.GetName(gameObject.name);
+			} else
+			{
+				TextMesh textmesh = gameObject.GetComponentInChildren<TextMesh>();
+				if (textmesh != null)
+				{
+					textmesh.text = LanguageSelector.instance.GetName(gameObject.name);
+				}
+			}
+			
         }
-    }
+	}
 }

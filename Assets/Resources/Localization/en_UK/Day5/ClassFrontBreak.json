@@ -8,11 +8,11 @@
 			},
 			{
 				"tag": "You",
-				"msn": "Should i trust Alex and go to the toilet to talk to <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'Ana') $>?"
+				"msn": "Should I trust Alex and go to the bathroom to talk to <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'Ana') $>?"
 			},
 			{
 				"tag": "You",
-				"msn": "If i go will it be over once for all?"
+				"msn": "If I go, Will it be over once for all?"
 			}]
 		}
 	},

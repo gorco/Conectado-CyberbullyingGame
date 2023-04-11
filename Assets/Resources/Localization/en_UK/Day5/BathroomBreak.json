@@ -33,11 +33,11 @@
 			},
 			{
 				"tag": "You",
-				"msn": "Have they locked me in the toilet? ANA!!! ALEX!! ANYONE!!"
+				"msn": "Have they locked me in the bathroom? ANA!!! ALEX!! ANYONE!!"
 			},
 			{
 				"tag": "You",
-				"msn": "What do i do now? I have to get out of here."
+				"msn": "What do I do now? I have to get out of here."
 			}]
 		}
 	},
@@ -95,7 +95,7 @@
 			"next": "teacher",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Lights are back!! And i can hear something in the corridor, i should be able to get out already."
+				"msn": "Lights are back!! And I can hear something in the corridor. I should have been able to get out already."
 			}]
 		},
 		"teacher": {
@@ -140,7 +140,7 @@
 			"fragments": [{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "Today i had a meeting with your parents and they've told me everything."
+				"msn": "Today I had a meeting with your parents and they've told me everything."
 			},
 			{
 				"tag": "Teacher",
@@ -155,7 +155,7 @@
 			{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "He's going to be expelled for 3 days, if he keeps troubling you when he's back, you must tell me."
+				"msn": "He's going to be expelled for 3 days. If he keeps troubling you when he's back, you must tell me."
 			},
 			{
 				"tag": "Teacher",
@@ -186,12 +186,12 @@
 			"fragments": [{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "Why don't you tell me earlier?"
+				"msn": "Why didn't you tell me earlier?"
 			},
 			{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "Besides, today i had a meeting with your parents and we've talked about it."
+				"msn": "Besides, today I had a meeting with your parents and we've talked about it."
 			},
 			{
 				"tag": "Teacher",
@@ -246,12 +246,12 @@
 			{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "You don't need to hide anything and you're not snitch when you ask for help. Alex behaviour suggests a punishment is needed."
+				"msn": "You don't need to hide anything and you're not snitch when you ask for help. Alex behaviour suggests that a punishment is needed."
 			},
 			{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "We've decided expelling Alex for 3 days."
+				"msn": "We've decided to expel Alex for 3 days."
 			},
 			{
 				"tag": "Teacher",
@@ -271,7 +271,7 @@
 			{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "Today i had a meeting with your parents, They're worried."
+				"msn": "Today I had a meeting with your parents, They're worried."
 			},
 			{
 				"tag": "Teacher",
@@ -281,7 +281,7 @@
 			{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "If you reject our help things might go worse."
+				"msn": "If you reject our help things might get worse."
 			},
 			{
 				"tag": "Teacher",
@@ -348,7 +348,7 @@
 			{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "We've decided expelling Alex for 3 days."
+				"msn": "We've decided to expel Alex for 3 days."
 			},
 			{
 				"tag": "Teacher",
@@ -373,7 +373,7 @@
 			{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "If you still have troubles with Alex come and tell me, tomorrow i'll tell him off."
+				"msn": "If you still have troubles with Alex come and tell me, tomorrow I'll tell him off."
 			},
 			{
 				"tag": "Teacher",
@@ -408,7 +408,7 @@
 			{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "But remember this, if you're having any trouble with anyone and don't look for help, I'll get worse for sure."
+				"msn": "But remember this: if you're having any trouble with anyone and don't look for help, it will get worse for sure."
 			},
 			{
 				"tag": "Teacher",
@@ -527,7 +527,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "You go back home and sleep earlier today. As usual, it's the dream time..."
+				"value": "You go back home and sleep earlier today. As usual, it's dream time..."
 			}
 		},
 		"changeScene": {

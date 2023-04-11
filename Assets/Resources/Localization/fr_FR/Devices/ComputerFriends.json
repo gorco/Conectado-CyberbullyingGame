@@ -1,0 +1,196 @@
+{
+	"alisonAccept":{
+		"root": {
+			"type": "event",
+			"next": "comment1",
+			"event": {
+				"name": "computer publication",
+				"var": "earing",
+				"value": "Mes nouvelles boucles d'oreilles, I<3U :)",
+				"key": "Alison",
+				"other": "photoEaring",
+				"time": 0
+			}
+		},
+		"comment1": {
+			"type": "event",
+			"next": "comment2",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": "Je les aime beaucoup, est-ce que tu sais où ils te les ont achetées ?",
+				"key": "Alison",
+				"time": 0.3
+			}
+		},
+		"comment2": {
+			"type": "event",
+			"next": "comment3",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": "Pff, je viens d'en perdre une en classe, meuf.",
+				"key": "Alison",
+				"time": 0.6
+			}
+		},
+		"comment3": {
+			"type": "event",
+			"next": "commentFork",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": ":( J'espère que tu la retrouveras, cherche bien dans tous les endroits où tu es allée.",
+				"key": "Alison",
+				"time": 1
+			}
+		},
+		"commentFork": {
+			"type": "fork",
+			"options": [{
+				"next": "comment4found",
+				"condition": "varObject('global', 'AlisonQuestNonStatic') == 1"
+			},
+			{
+				"next": "comment4Notfound",
+				"condition": "varObject('global', 'AlisonQuestNonStatic') == 0"
+			}]
+		},
+		"comment4found": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "comment4foundmale",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "comment4foundfemale",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"comment4foundmale": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": "<$ varObject('global', 'UserNameNonStatic') $> l'a trouvée et me l'a rendue. Merci beaucoup. :)",
+				"key": "Alison",
+				"other": "earingFounded",
+				"time": 1.5
+			}
+		},
+		"comment4foundfemale": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": "<$ varObject('global', 'UserNameNonStatic') $> l'a trouvée et me l'a rendue. Merci beaucoup. :)",
+				"key": "Alison",
+				"other" : "earingFounded",
+				"time": 1.5
+			}
+		},
+		"comment4Notfound": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": "Elle était impossible à trouver, quelqu'un a pu la garder. Merci beaucoup à toutes les personnes qui m'ont aidées à la chercher",
+				"key": "Alison",
+				"time": 1.5
+			}
+		}
+	},
+	"alisonDeny":{
+		"root": {
+			"type": "dialog",
+			"next": "resend",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je ne peux pas rejeter l'invitation, c'est la première personne qui semble intéressée à être mon amie."
+				}
+			]
+		},
+		"resend":{
+			"type": "event",
+			"event": {
+				"name": "computer friend",
+				"var": "Alison",
+				"value": "Il y a toujours une raison de continuer",
+				"time": 0,
+				"other": "alisonAccept,alisonDeny"
+			}
+		}
+	},
+	"guilleAccept":{
+		"root": {
+			"type": "event",
+			"next": "comment1",
+			"event": {
+				"name": "computer publication",
+				"var": "match",
+				"value": "Regardant le match",
+				"key": "Guillaume",
+				"other": "photoMatch",
+				"time": 0
+			}
+		},
+		"comment1": {
+			"type": "event",
+			"next": "comment2",
+			"event": {
+				"name": "computer comment",
+				"var": "match",
+				"value": "Super match, mec. On se retrouve pour le prochain. Mon père a acheté une nouvelle télé écran géant et elle est géniale.",
+				"key": "Jean",
+				"time": 0
+			}
+		},
+		"comment2": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "match",
+				"value": "Dites-le moi pour que je me joigne à vous. :)",
+				"key": "Michel",
+				"time": 0.5
+			}
+		}
+	},
+	"guilleDeny":{
+		"root": {
+			"type": "dialog",
+			"next": "sure",
+			"fragments": [
+				{
+					"tag": "Toi",
+					"msn": "Je n'ai aucune raison de refuser son invitation, est-ce que je veux vraiment la refuser?"
+				}
+			]
+		},
+		"sure": {
+			"type": "options",
+			"questionId": "GuilleFriendRequest",
+			"options": [
+				{
+					"msn": "Oui, il est préférable que je ne l'accepte pas."
+				},
+				{
+					"next": "resend",
+					"msn": "Non, je ferais mieux d'y réfléchir."
+				}
+			]
+		},
+		"resend":{
+			"type": "event",
+			"event": {
+				"name": "computer friend",
+				"var": "Guillaume",
+				"value": "Si le plan ne fonctionne pas, changez le plan, mais ne change pas l'objectif.",
+				"time": 0,
+				"other": "guilleAccept,guilleDeny"
+			}
+		}
+	}
+}

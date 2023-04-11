@@ -87,7 +87,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "I think i had one in the entrance's table...third drawer..."
+				"msn": "I think I had one in the entrance's table...third drawer..."
 			},
 			{
 				"tag": "You",
@@ -104,7 +104,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "looks like u didnt kickme out, cheers. as a gift ill tell you i love sucking penises :)",
+				"value": "looks like u didnt kickme out, cheers. as a gift ill tell you I love sucking penises :)",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -116,7 +116,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "actually im into everything, if anyone wants lemme know",
+				"value": "actually i'm into everything, if anyone wants lemme know",
 				"key": "",
 				"time": 0.1
 			}
@@ -297,7 +297,7 @@
 			"type": "options",
 			"questionId": "parentsAfternoonFouthDay",
 			"options": [{
-				"msn": "Good, the usual, i'm going to my room.",
+				"msn": "Good, the usual, I'm going to my room.",
 				"condition": "page == 1"
 			},
 			{
@@ -307,7 +307,7 @@
 			},
 			{
 				"next": "maria2",
-				"msn": "Today Alex and Ana have blackmailed me",
+				"msn": "Today Alex and Ana blackmailed me",
 				"condition": "page == 1 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') == 2"
 			},
 			{
@@ -322,7 +322,7 @@
 			},
 			{
 				"next": "mobile1",
-				"msn": "Alison, i can trust her.",
+				"msn": "Alison, I can trust her.",
 				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 1"
 			},
 			{
@@ -364,7 +364,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "I had no other chance if i wanted my mobile back."
+				"msn": "I had no other chance if I wanted my mobile back."
 			}]
 		},
 		"mariaSetter":{
@@ -380,12 +380,12 @@
 			"next": "mobileSetter",
 			"fragments": [{
 				"tag": "You",
-				"msn": "They took my phone away and i couldn't get it back."
+				"msn": "They took my phone away and I couldn't get it back."
 			},
 			{
 				"tag": "Mom",
 				"character": "Mother",
-				"msn": "Well you won't have a mobile phone then, you have to be more careful with your belongings."
+				"msn": "Well you won't have a mobile phone then. You have to be more careful with your belongings."
 			},
 			{
 				"tag": "You",
@@ -420,7 +420,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "But i have her passwords too, i trust her."
+				"msn": "But I have her passwords too. I trust her."
 			},
 			{
 				"tag": "You",
@@ -436,7 +436,7 @@
 			},
 			{
 				"tag": "You",
-				"msn": "And someone left it on the <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' toilet."
+				"msn": "And someone left it on the <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' bathroom."
 			},
 			{
 				"tag": "Mom",
@@ -495,7 +495,7 @@
 			"questionId": "parentsMeetingAfternoonOption",
 			"options": [{
 				"next": "yesMeeting",
-				"msn": "Yes, please, i can't take it any longer."
+				"msn": "Yes, please, I can't take it any longer."
 			},
 			{
 				"next": "noMeeting",

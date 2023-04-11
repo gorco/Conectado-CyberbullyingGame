@@ -36,7 +36,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Any of this would had happened if you would have trusted me, it's your fault."
+				"msn": "Nothing of this would had happened if you would have trusted me. It's your fault."
 			}]
 		},
 		"sh1": {
@@ -99,7 +99,7 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Look who's here, and i thought you wouldn't show today."
+				"msn": "Look who's here, and I thought you wouldn't show today."
 			},
 			{
 				"tag": "Ana",
@@ -134,7 +134,7 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "HAHAHAHA!!! Seriously, i'm cracking up at you."
+				"msn": "HAHAHAHA!!! Seriously, I'm cracking up at you."
 			}]
 		},
 		"sh2": {
@@ -154,7 +154,7 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "It's going to be a funny day, now everyone thinks you're actually a <$ if(varObject('global', 'MaleSexNonStatic')==true, 'fucking poof who likes it all', 'fucking vicious whore') $>."
+				"msn": "It's going to be a funny day. Now everyone thinks you're actually a <$ if(varObject('global', 'MaleSexNonStatic')==true, 'fucking poof who likes it all', 'fucking vicious whore') $>."
 			}]
 		},
 		"setter":{
@@ -217,7 +217,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "",
-				"msn": "Looks like i've arrived sooner and entrance is not allowed. I'll better kill some time."
+				"msn": "Looks like I've arrived sooner and entrance is not allowed. I'll better kill some time."
 			}]
 		}
 	},
@@ -226,7 +226,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "I've just arrived, i cannot leave yet."
+				"msn": "I've just arrived. I cannot leave yet."
 			}]
 		}
 	}
