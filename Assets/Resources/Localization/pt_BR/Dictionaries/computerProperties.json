@@ -1,0 +1,23 @@
+{
+    "homeNote":"Este é o seu painel, veja o que seus amigos compartilharam",   
+    "homeButton":"Painel",
+    "friendsButton":"Amigos",
+    "photosButton":"Publicar",
+
+    "newFriendsText":"Você tem novas solicitações de amizade!",
+
+    "error":"Usuário/Senha introduzidos estão incorretos",
+    "user":"Usuário",
+    "pass":"Senha",
+    "logInText":"Entrar",
+    
+    "friendsText":"Amigos",
+    "pendingFriendsText":"Solicitações pendentes: ",
+    "logoText":"CONECTE-SE COM SEUS AMIGOS!",
+
+    "acceptButton":"Aceitar",
+    "denyButton":"Negar",
+    "commentsText":"Comentários",
+	"ReportButton": "Reportar\n Foto",
+	"ReportButton(Clone)": "Reportar\n Foto"
+}

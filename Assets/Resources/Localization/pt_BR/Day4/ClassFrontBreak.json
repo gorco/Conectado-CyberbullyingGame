@@ -1,0 +1,44 @@
+﻿{
+	"init":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "mobile",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') != 1"
+			}]
+		},
+		"mobile": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não consigo encontrar meu celular."
+			},
+			{
+				"tag": "You",
+				"msn": "Deixei ele na minha mesa quando a aula começou."
+			},
+			{
+				"tag": "You",
+				"msn": "Será que alguém pegou? Melhor perguntar por aí."
+			}]
+		},
+	},
+	"door": {
+		"root": {
+			"next": "changeHour",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:10",
+			}
+		},
+	}
+}

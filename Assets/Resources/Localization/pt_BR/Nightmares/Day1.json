@@ -1,0 +1,103 @@
+{
+	"intro":{
+		"root": {
+			"type": "dialog",
+			"next": "fade",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "É seu primeiro dia de aula. Por que não escolhe um lugar para sentar?"			
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Escolha o lugar que você mais gosta."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "shadow"
+			}
+		}
+	},
+	"finishNightmare":{
+		"root": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Acho que você perdeu o seu lugar."
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Você ao menos sabe como se sentar?"
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Você ao menos presta para alguma coisa?"
+			},
+			{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Como espera fazer amigos agindo assim?"
+			}]
+		},
+		"variable": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 1,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	},
+	"sit" : {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Vejo que você encontrou um lugar, mas... "
+			},
+			{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Esse lugar é meu, você terá que escolher outro."
+			},
+			{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Você pode sentar onde quiser, menos nesse."
+			}]
+		}
+	}
+
+}

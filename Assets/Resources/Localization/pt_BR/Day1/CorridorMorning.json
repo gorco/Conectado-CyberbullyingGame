@@ -1,0 +1,188 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "varObject('state', 'AlisonDialog') == true"
+			},
+			{
+				"next": "node2",
+				"condition": "true"
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Parece que você conseguiu encontrar a sala de aula."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "A menina de cabelo vermelho ao lado da porta é a Maria, ela também está na nossa turma. Ela é um pouco tímida, mas é uma boa garota."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "E ao lado do mural está o Guille, você já conheceu ele."
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Desculpe, estou com pressa, vou me atrasar se não entrar."
+			}]
+		}			
+	},
+	"maria":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "..."
+			},
+			{
+				"tag": "You",
+				"msn": "Ela parece desconfortável, é melhor deixá-la sozinha por enquanto."
+			}]
+		}		
+	},
+	"guillermo":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node2",
+				"condition": "true"
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Guillermo",
+				"character": "Guille",
+				"msn": "Não esquece de olhar o mural, às vezes você encontra coisas interessantes nele."
+			}]
+		},		
+		"node2": {
+			"type": "dialog",
+			"next": "quest",
+			"fragments": [{
+				"tag": "Guillermo",
+				"character": "Guille",
+				"msn": "Oi, eu estava lendo o mural."
+			},
+			{
+				"tag": "Guillermo",
+				"character": "Guille",
+				"msn": "Às vezes tem coisas interessantes, e alguém tem deixado mensagens, adesivos e enigmas ultimamente."
+			},
+			{
+				"tag": "Guillermo",
+				"character": "Guille",
+				"msn": "Dê uma olhada pelo menos uma vez por dia, é importante se acostumar com isso."
+			},
+			{
+				"tag": "Guillermo",
+				"character": "Guille",
+				"msn": "Vamos entrar?"
+			}]
+		},	
+		"quest": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 2,
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não posso entrar lá, é o banheiro dos meninos."
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não posso entrar lá, é o banheiro das meninas."
+			}]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		}
+	}
+}

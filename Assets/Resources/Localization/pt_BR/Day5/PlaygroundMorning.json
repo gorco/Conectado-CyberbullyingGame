@@ -1,0 +1,233 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Some daqui, não temos nada para conversar."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Nada disso teria acontecido se você tivesse confiado em mim. É sua culpa."
+			}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Você merece o que aconteceu."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "O que você estava pensando quando me deu sua senha?"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		}
+	},
+	"ana":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh2",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Hahahaha, pária."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Olha só quem apareceu, e eu pensava que você não iria aparecer hoje."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Ainda sem telefone? Hahaha, não seria tão difícil de encontrar se você tivesse procurado direito."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Que idiota..."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "De onde você veio? hahaha."
+			}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Não acredito que você deu sua senha para a Alison."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Você realmente achou que ela ia ser sua amiga? Não acredito que foi tão fácil assim."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "HAHAHAHA!!! Sério, estou rindo muito de você."
+			}]
+		},
+		"sh2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "HAHAHAHA!!! Não acredito que você não tinha um padrão de bloqueio no seu celular."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Pensei que ia ser mais difícil..."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Vai ser um dia engraçado. Agora todo mundo pensa que você é na verdade um <$ if(varObject('global', 'MaleSexNonStatic')==true, 'um tarado sem vergonha que faz de tudo', 'uma tarada sem vergonha que faz de tudo') $>."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "bell",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "bellEvent",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<O sinal está tocando>>"
+			}]
+		},
+		"bellEvent": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true" 
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "Parece que cheguei muito cedo e ainda não posso entrar. É melhor eu ir passar tempo em outro lugar."
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Acabei de chegar. Não posso sair ainda."
+			}]
+		}
+	}
+}

@@ -1,0 +1,80 @@
+{
+	"init": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},{
+				"next": "node2",
+				"condition": "true"
+			}]
+		},
+		"node1":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Há um bilhete no meu casaco..."
+			},
+			{
+				"tag": "You",
+				"msn": "\"Alison pegou seu celular e deu para o Alex e a Ana. (continua no verso).\""
+			},
+			{
+				"tag": "You",
+				"msn": "\"Ela teve que dar a senha ou o celular\" (fim do bilhete)."
+			},
+			{
+				"tag": "You",
+				"msn": "Agora entendi o que aconteceu nessa manhã. Será que ela também foi ameaçada?"
+			},
+			{
+				"tag": "You",
+				"msn": "Droga, eu não tenho nenhum código ou padrão de desbloqueio. O que será que eles fizeram com ele?"
+			},
+			{
+				"tag": "You",
+				"msn": "E eu não vou poder ver Alex, Ana ou Alison até amanhã."
+			}]
+		},
+		"node2":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "As aulas acabaram. Hora de voltar para casa."
+			}]
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não tenho mais aulas hoje e todo mundo já foi embora."
+			},
+			{
+				"tag": "You",
+				"msn": "É melhor eu ir para casa."
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 21
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "15:00",
+			}
+		}
+	}
+}

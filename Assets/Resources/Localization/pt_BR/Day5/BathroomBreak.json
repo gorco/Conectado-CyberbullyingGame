@@ -1,0 +1,542 @@
+﻿{
+	"init":{
+		"root":{
+			"type": "dialog",
+			"next": "lightOff",
+			"fragments": [{
+				"tag": "You",
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Mmm, o que está acontecendo Alex? Por que você ainda está aqui?', 'Ana, você está aqui?') $>"
+			}]
+		},
+		"lightOff": {
+			"type": "event",
+			"next": "lightOn",
+			"event": {
+				"name": "active object",
+				"time": 3,
+			}
+		},
+		"lightOn": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 30,
+			}
+		},
+	},
+	"bathroomExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "O que está acontecendo? A porta não abre."
+			},
+			{
+				"tag": "You",
+				"msn": "Eles me trancaram no banheiro?! ANA!!! ALEX!! ALGUÉM!!"
+			},
+			{
+				"tag": "You",
+				"msn": "O que eu faço agora? Eu preciso sair daqui."
+			}]
+		}
+	},
+	"light" : {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "A luz. Sério?"
+			},
+			{
+				"tag": "You",
+				"msn": "Eu preciso sair daqui."
+			}]
+		}
+	},
+	"door": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Este é o trinco, mas não abre."
+			},
+			{
+				"tag": "You",
+				"msn": "Eles me trancaram no banheiro?! ANA!!! ALEX!! ALGUÉM!!"
+			}]
+		}
+	},
+	"sinks": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Agh!! Eu acabei de bater na pia. PORCARIA!!"
+			}]
+		}
+	},
+	"floor": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Está molhado... mas este é o chão."
+			},
+			{
+				"tag": "You",
+				"msn": "Agh!! Por favor, que não seja xixi..."
+			}]
+		}
+	},
+	"onAgain": {
+		"root": {
+			"type": "dialog",
+			"next": "teacher",
+			"fragments": [{
+				"tag": "You",
+				"msn": "As luzes voltaram!! E eu posso ouvir algo no corredor. Eu já deveria ter conseguido sair."
+			}]
+		},
+		"teacher": {
+			"type": "event",
+			"next": "tDialog",
+			"event": {
+				"name": "little move",
+				"key": "teacher"
+			}
+		},
+		"tDialog": {
+			"type": "dialog",
+			"next": "forkEnd",
+			"fragments": [{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "O que você está fazendo trancado aqui?"
+			}]
+		},
+		"forkEnd": {
+			"type": "fork",
+			"options": [{
+				"next": "goodFinalByParents",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') == 2 && varObject('global', 'ParentsFSNonStatic') >= 80"
+			},
+			{
+				"next": "parentsMeetingNoFS",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') == 2 && varObject('global', 'ParentsFSNonStatic') < 80"
+			},
+			{
+				"next": "parentsNoMeetingNoFS",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') < 2 && varObject('global', 'ParentsFSNonStatic') < 80"
+			},
+			{
+				"next": "parentsNoMeetingFS",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') < 2 && varObject('global', 'ParentsFSNonStatic') >= 80"
+			}]
+		},
+		"goodFinalByParents": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Hoje eu tive uma reunião com seus pais e eles me contaram tudo."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Você poderia ter me contado diretamente."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Eu acho que foi o Alex que te trancou no banheiro, certo?"
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Ele será suspenso por 3 dias. Se ele continuar te incomodando quando voltar, você deve me contar."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Se ele continuar assim, podemos expulsá-lo da escola definitivamente, ou até chamar a polícia e tomar medidas legais contra ele."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Vá para casa e descanse."
+			}]
+		},
+		"parentsMeetingNoFS": {
+			"type": "options",
+			"questionId": "TeacherTattle",
+			"options": [{
+				"next": "tattleAndMeeting",
+				"msn": "(Contar tudo o que Alex fez)"
+			},
+			{
+				"next": "noTattleAndMeeting",
+				"msn": "Eu não sei o que aconteceu."
+			}]
+		},
+		"tattleAndMeeting": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Por que você não me contou antes?"
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Além disso, hoje tive uma reunião com seus pais e conversamos sobre isso."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Com tudo que você me contou... Vou falar com o diretor para suspender o Alex por 3 dias."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Se ele continuar te assediando, tanto pessoalmente quanto nas redes sociais, me avise."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Se ele continuar assim, podemos expulsá-lo da escola definitivamente, ou até chamar a polícia e tomar medidas legais contra ele."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Vá para casa e descanse."
+			}]
+		},
+		"noTattleAndMeeting": {
+			"type": "fork",
+			"options": [{
+				"next": "mariaAndMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') >= 60"
+			},
+			{
+				"next": "noMariaAndMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') < 60"
+			}]
+		},
+		"mariaAndMeeting": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Você tem certeza?"
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Eu tive uma reunião com seus pais e parece que você teve problemas com o Alex.."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Além disso, a Maria e o coordenador vieram me contar que o Alex está te provocando."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Você não precisa esconder nada e você não é um dedo-duro por pedir ajuda. O comportamento de Alex sugere que uma punição é necessária."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Vou suspender o Alex por 3 dias."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Se ele continuar assim, podemos expulsá-lo da escola definitivamente, ou até chamar a polícia e tomar medidas legais contra ele."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Vá para casa e descanse."
+			}]
+		},
+		"noMariaAndMeeting": {
+			"type": "dialog",
+			"next": "final2",
+			"fragments": [
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Hoje eu tive uma reunião com seus pais. Eles estão preocupados."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Se você está tendo problemas com algum dos seus colegas, deveria falar comigo ou com o coordenador."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Se você rejeitar nossa ajuda, as coisas podem piorar."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "De qualquer forma, você não merece ser zombado e ridicularizado."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Se isso está acontecendo, peça ajuda ou as coisas continuarão as mesmas."
+			}]
+		},
+		"parentsNoMeetingNoFS": {
+			"type": "options",
+			"questionId": "TeacherTattle",
+			"options": [{
+				"next": "tattleAndNoMeeting",
+				"msn": "(Contar tudo o que o Alex fez)"
+			},
+			{
+				"next": "noTattleAndNoMeeting",
+				"msn": "Eu não sei o que aconteceu"
+			}]
+		},
+		"tattleAndNoMeeting": {
+			"type": "fork",
+			"options": [{
+				"next": "mariaAndNoMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') >= 60"
+			},
+			{
+				"next": "noMariaAndNoMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') < 60"
+			}]
+		},
+		"mariaAndNoMeeting": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Por que você não me contou antes?"
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Além disso, Maria e o coordenador vieram me contar o que você acabou de dizer."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Ela se preocupa com você, todos precisamos de amigos assim."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "O comportamento do Alex merece uma punição e é importante que você tenha me contado tudo."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Isso não é sua culpa, você não merece isso."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Decidimos suspender o Alex por 3 dias."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Se ele continuar assim, poderíamos expulsá-lo da escola definitivamente, ou até chamar a polícia e tomar medidas legais contra ele."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Vá para casa e descanse."
+			}]
+		},
+		"noMariaAndNoMeeting": {
+			"type": "dialog",
+			"next": "final2",
+			"fragments": [
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Vou falar com seus pais sobre isso."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Se você ainda tiver problemas com o Alex, venha me contar. Amanhã vou chamá-lo atenção."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "É importante que você fale sobre isso, o tempo não vai mudar as coisas para melhor por conta própria."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "De qualquer forma, você não merece ser zombado e ridicularizado."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "As coisas não vão mudar até que você peça ajuda, ou podem até piorar."
+			}]
+		},
+		"noTattleAndNoMeeting": {
+			"type": "dialog",
+			"next": "final1",
+			"fragments": [
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Você tem certeza de que está tudo bem?"
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Bem, então vá para casa."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Mas lembre-se disso: se você está tendo algum problema com alguém e não procurar ajuda, isso com certeza vai piorar."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "De qualquer forma, você não merece ser zombado e ridicularizado."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "As coisas não vão mudar até que você peça ajuda."
+			}]
+		},
+		"parentsNoMeetingFS": {
+			"type": "options",
+			"questionId": "TeacherTattle",
+			"options": [{
+				"next": "tattle",
+				"msn": "(Contar tudo o que o Alex fez com você)"
+			},
+			{
+				"next": "noTattle",
+				"msn": "Eu não sei o que aconteceu"
+			}]
+		},
+		"tattle": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Por que você não me contou tudo isso antes?"
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Vou ligar para seus pais para falar sobre isso."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "E veremos o que podemos fazer com o Alex."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Vou tentar suspender ele por 3 dias."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "E se algo acontecer, não hesite em falar comigo ou com o conselheiro escolar."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Vá para casa e descanse."
+			}]
+		},
+		"noTattle": {
+			"type": "dialog",
+			"next": "final1",
+			"fragments": [
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Você tem certeza de que está tudo bem?"
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Bem, vá para casa. Mas lembre-se disso..."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Se alguém te provocar, apenas avise a mim ou ao coordenador."
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Procure ajuda, as coisas não vão mudar por conta própria, só podem piorar."
+			}]
+		},
+		"final1": {
+			"type": "event",
+			"next": "end",
+			"event": {
+				"name": "change variable",
+				"var": "Final",
+				"value": 1,
+			}
+		},
+		"final2": {
+			"type": "event",
+			"next": "end",
+			"event": {
+				"name": "change variable",
+				"var": "Final",
+				"value": 2,
+			}
+		},
+		"final3": {
+			"type": "event",
+			"next": "end",
+			"event": {
+				"name": "change variable",
+				"var": "Final",
+				"value": 3,
+			}
+		},
+		"end": {
+			"type": "event",
+			"next": "changeScene",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Você vai para casa e dorme mais cedo hoje. Como de costume, é hora de sonhar..."
+			}
+		},
+		"changeScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 27
+			}
+		}
+	},
+}

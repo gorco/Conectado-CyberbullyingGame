@@ -1,0 +1,88 @@
+{
+	"exitDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "changeHourLate",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') >= 8 "
+			},
+			{
+				"next": "changeHourSoon",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') < 8"
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"changeHourLate": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:40",
+			}
+		},
+		"changeHourSoon": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:20",
+			}
+		},
+		"exitNode": {
+			"type": "fork",
+			"options": [{
+				"next": "exitNodeRepeat",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			},
+			{
+				"next": "exitNodeNoRepeat",
+				"condition": "true"
+			}]
+		},
+		"exitNodeNoRepeat": {
+			"type": "dialog",
+			"next": "exit",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Parece que mamãe e papai já foram trabalhar."
+			}]
+		},
+		"exitNodeRepeat": {
+			"type": "dialog",
+			"next": "exit",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Parece que mamãe e papai saíram cedo hoje."
+			}]
+		},
+		"exit": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 9
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Esqueci a mochila. Melhor eu voltar para o meu quarto e pegá-la antes de sair."
+			}]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		}
+	}
+}

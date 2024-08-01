@@ -1,0 +1,78 @@
+﻿{
+	"bathroomExit": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"mirror": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeInit",
+				"condition": "varObject('global', 'GumQuestNonStatic') != 2"
+			}]
+		},
+		"nodeInit": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "gum == false"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Eu já tirei o chiclete, mas ficou uma mancha pior do que ele."
+			},
+			{
+				"tag": "You",
+				"msn": "Eles agora vão rir de mim ainda mais."
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"next": "nodeRepeat",
+			"set": {
+				"var": "gum",
+				"value": false
+			}
+		},
+		"node0": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Talvez água e sabão seja tudo o que eu preciso."
+			}]
+		}, 
+		"options": {
+			"type": "options",
+			"questionId": "bathroomGum",
+			"options": [{
+				"next": "quest",
+				"msn": "(Tentar água e sabão)"
+			},
+			{
+				"msn": "(Deixar como está)"
+			}]
+		},
+		"quest": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GumQuest",
+				"value": 1,
+			}
+		},
+	}
+}

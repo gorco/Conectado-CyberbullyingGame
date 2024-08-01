@@ -1,0 +1,101 @@
+{
+	"ana":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "earingFound",
+				"condition": "varObject('state', 'EaringFound') == true"
+			},
+			{
+				"next": "node1",
+				"condition": "true"
+			}]
+		},
+		"earingFound": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Parece que você encontrou o brinco perdido da Alison."
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Tem alguma coisa estranha ali perto da cesta de basquete."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Eu estou vendo algo brilhante daqui."
+			}]
+		}
+	},
+	"guille":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Nosso professor é bem legal."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Se você tiver algum problema, fale com ele."
+			}]
+		}
+	},
+	"shine":{
+		"root": {
+			"type": "dialog",
+			"next": "take",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Parece que é o brinco perdido da Alison."
+			},
+			{
+				"tag": "You",
+				"msn": "Acho que é melhor eu entregar ele para ela."
+			}]
+		},
+		"take": {
+			"type": "event",
+			"next": "fade",
+			"event": {
+				"name": "change state",
+				"key": "EaringFound",
+				"var": "EaringFound",
+				"value": true,
+				"state": 0
+			}
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "earing"
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "É hora do recreio, ainda faltam algumas aulas antes de eu poder ir para casa."
+			}]
+		}
+	}
+}

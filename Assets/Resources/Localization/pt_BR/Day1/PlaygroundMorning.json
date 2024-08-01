@@ -1,0 +1,411 @@
+{
+	"guillermo":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Guillermo",
+				"character": "Guille",
+				"msn": "Você é novo aqui? Acho que nunca tinha te visto antes."
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "GuillermoMeet",
+			"options": [{
+				"next": "node1a",
+				"msn": "Sim, me chamo <$ varObject('global', 'UserNameNonStatic') $>...  Quem é você?"
+			},
+			{
+				"next": "node1b",
+				"msn": "Desculpe, estou com pressa. (Você sai)."
+			}]
+		},
+		"node1b": {
+			"type": "event",
+			"next": "bell",
+			"event": {
+				"name": "change friendship",
+				"var": "GuillermoFS",
+				"value": -10,
+			}
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "nodeFS",
+			"fragments": [{
+				"tag": "Guillermo",
+				"character": "Guille",
+				"msn": "Pode me chamar de Guille."
+			},
+			{
+				"tag": "",
+				"msn": "<<<O sinal está tocando>>"
+			},
+			{
+				"tag": "Guillermo",
+				"character": "Guille",
+				"msn": "Vamos entrar, até mais."
+			}]
+		}, 
+		"nodeFS": {
+			"type": "event",
+			"next": "quest",
+			"event": {
+				"name": "change friendship",
+				"var": "GuillermoFS",
+				"value": 10,
+			}
+		},
+		"quest": {
+			"type": "event",
+			"next": "node2",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 1,
+			}
+		},
+		"node2": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "fade1",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		},
+		"fade1": {
+			"type": "event",
+			"next": "fade2",
+			"event": {
+				"name": "fade out",
+				"key": "alison"
+			}
+		},
+		"fade2": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "guillermo"
+			}
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<O sinal está tocando>>"
+			}]
+		}
+	},
+	"jose":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Você voltou, precisa de mais alguma coisa?"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Você é <$ if(varObject('global', 'MaleSexNonStatic')==true, 'novo', 'nova') $>, não é?"
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Você quer alguma coisa?"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "JoseMeet",
+			"options": [{
+				"next": "introduceFork",
+				"msn": "Oi, me chamo <$ varObject('global', 'UserNameNonStatic') $>.."
+			},
+			{
+				"next": "node2",
+				"msn": "(Perguntar onde fica a sala de aula)."
+			},
+			{
+				"next": "node3",
+				"msn": "Não preciso de nada, até mais."
+			}]
+		},
+		"introduceFork": {
+			"type": "fork",
+			"options": [{
+				"next": "know",
+				"condition": "introduced == true"
+			},
+			{
+				"next": "introducedSetter",
+				"condition": "true"
+			}]
+		},
+		"know": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Você já me disse o seu nome."
+			}]
+		},
+		"introducedSetter":{
+			"type": "setter",
+			"next": "nodeFS",
+			"set": {
+				"var": "introduced",
+				"value": true
+			}
+		},
+		"nodeFS": {
+			"type": "event",
+			"next": "quest",
+			"event": {
+				"name": "change friendship",
+				"var": "JoseFS",
+				"value": 10,
+			}
+		},
+		"quest": {
+			"type": "event",
+			"next": "node1",
+			"event": {
+				"name": "change variable",
+				"var": "JoseQuest",
+				"value": 1,
+			}
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Eu sou o Jose."
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Você quer alguma coisa?"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Essa também é a minha sala, fica no segundo andar. Suba as escadas à sua direita assim que entrar no prédio."
+			}, 
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "E no primeiro andar fica a sala do diretor."
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Você precisa de mais alguma coisa?"
+			}]
+		},
+		"node3": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Tchau."
+			}]
+		}
+	},
+	"alison":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Te conheço?"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "AlisonMeet",
+			"options": [{
+				"next": "nodeFS",
+				"msn": "Eu sou <$ varObject('global', 'UserNameNonStatic') $>, e você é...?"
+			},
+			{
+				"next": "node2",
+				"msn": "Não, desculpe, estou com pressa. Tchau."
+			}]
+		},
+		"nodeFS": {
+			"type": "event",
+			"next": "alisonDialog",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFS",
+				"value": 10,
+			}
+		},
+		"alisonDialog": {
+			"type": "event",
+			"next": "node1",
+			"event": {
+				"name": "change variable",
+				"var": "AlisonDialog",
+				"value": true,
+			}
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "fork",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Prazer em te conhecer, eu sou a Alison"
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Tomara que você goste daqui, as pessoas são super bacanas."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Em que série você está?"
+			},
+			{
+				"tag": "You",
+				"msn": "(Você responde)"
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Te vejo na sala então."
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Não seja <$ if(varObject('global', 'MaleSexNonStatic')==true, 'tímido', 'tímida') $>, eu não mordo."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Bem, até mais. Tenha um bom primeiro dia."
+			}]
+		},
+		"fork": {
+			"type": "fork",
+			"options": [{
+				"next": "abierto",
+				"condition": "varObject('state', 'BellSounded') == true"
+			},
+			{
+				"next": "cerrado",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"abierto": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Devemos entrar agora ou vamos nos atrasar."
+			}]
+		},
+		"cerrado": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "O menino de camiseta amarela perto da entrada do pátio também está na nossa turma."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Ele é muito legal, por que você não vai falar com ele?"
+			}]
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true"
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "Parece que cheguei cedo e a sala ainda está fechada. Vou dar uma volta."
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Acabei de chegar, não posso sair ainda."
+			}]
+		}
+	}
+}

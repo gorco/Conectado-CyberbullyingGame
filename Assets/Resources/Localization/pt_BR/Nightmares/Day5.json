@@ -1,0 +1,185 @@
+{
+	"end":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "final1",
+				"condition": "varObject('global', 'FinalNonStatic') <= 1"
+			},
+			{
+				"next": "final2",
+				"condition": "varObject('global', 'FinalNonStatic') == 2"
+			},
+			{
+				"next": "final3",
+				"condition": "varObject('global', 'FinalNonStatic') == 3"
+			}]
+		},
+		"final1": {
+			"type": "dialog",
+			"next": "opt",
+			"fragments": [{
+				"tag": "Voice from the portal",	
+				"msn": "No final, tudo acabou da mesma forma. Não posso dizer que não tentei."
+			}, 
+			{
+				"tag": "Voice from the portal",	
+				"msn": "Suponho que agora é tarde demais, você desperdiçou a oportunidade que lhe dei."
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "Alex e Ana vão continuar tornando a vida impossível para os outros colegas. Você não foi a primeira vítima deles, nem será a última."
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "Por que é tão difícil pedir ajuda quando necessário? Esqueça o seu ego. Nem sempre você é culpado ou merece o que acontece com você."
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "Por que temos tanto medo de compartilhar o que está acontecendo conosco? O que você sente?"
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "Por que deixamos as pessoas sofrerem? Por que achamos que é melhor ficar em silêncio, deixar o tempo curar tudo?"
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "É fácil rir dos outros, mas o que acontece quando riem de você?"
+			},
+			{
+				"tag": "Voice from the portal",	
+				"msn": "Por que é melhor sofrer ou ver os outros sofrerem do que pedir ajuda? Pedir ajuda é ser dedo-duro? Ser dedo-duro é evitar que alguém passe por um momento difícil?"
+			}]
+		},
+		"final2": {
+			"type": "dialog",
+			"next": "opt",
+			"fragments": [{
+				"tag": "Voice from the portal",
+				"msn": "Parece que não alcancei meu propósito no final, mas pelo menos melhorei um pouco as coisas."
+			}, 
+			{
+				"tag": "Voice from the portal",
+				"msn": "Alex será vigiado e, pelo menos, deixará vocês em paz."
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "Você deve pedir ajuda quando precisar. Esqueça o seu ego. Nem sempre você é culpado ou merece o que acontece com você."
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "O tempo não vai resolver as coisas se você estiver sofrendo, você não deve deixar tudo para lá"
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "Todos nós precisamos de ajuda de vez em quando e espero que agora você esteja ciente de que, assim como há pessoas que o ajudam, outros precisam que você os ajude."
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "Talvez seja melhor sofrer ou ver os outros sofrerem do que pedir ajuda. Pedir ajuda é ser dedo-duro? Ser dedo-duro é evitar que alguém passe por um momento difícil?"
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "Espero que, tendo passado pelo que passou, você perca o medo de contar o que acontece de ruim com você e seus colegas."
+			}]
+		},
+		"final3": {
+			"type": "dialog",
+			"next": "opt",
+			"fragments": [{
+				"tag": "Voice from the portal",
+				
+				"msn": "Bom, conseguimos mudar as coisas."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Você ainda não sabe, mas conseguimos fazer com que Álex pare de intimidar você e seus colegas."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Se ninguém o tivesse impedido, você não teria sido a última pessoa a sofrer com o bullying dele."
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "É bom falar e pedir ajuda. Ninguém merece passar pelo o que você passou, não importa o motivo."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Haverá pessoas dizendo que você foi um dedo-duro ao falar para o seu professor, para seus colegas ou para seus pais. Eu acho que você foi um herói."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "Espero que você nunca mais fique em silêncio se alguém precisar de ajuda ou estiver sofrendo. Você deve mostrar seu apoio a eles em vez de seguir o agressor."
+			},
+			{
+				"tag": "Voice from the portal",
+				
+				"msn": "É fácil não fazer nada, mas você aprendeu que você sempre pode ser a próxima vítima."
+			}]
+		},
+		"opt": {
+			"type": "options",
+			"options": [{
+				"next": "who",
+				"msn": "Quem é você?"
+			},
+			{
+				"next": "stop",
+				"msn": "Pare com esse papinho e vá embora."
+			}]
+		},
+		"who": {
+			"type": "dialog",
+			"next": "end",
+			"fragments": [{
+				"tag": "Voice from the portal",
+				"msn": "Sinto muito, não posso te dizer isso."
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "Pense em mim como alguém que está conectado a você por todas as coisas que temos em comum."
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "Talvez... uma voz da consciência."
+			},
+			{
+				"tag": "Voice from the portal",	
+				"msn": "Mas não importa quem eu sou. O que importa é que o que você viveu fez você refletir e se tornar uma pessoa melhor."
+			}]
+		},
+		"stop": {
+			"type": "dialog",
+			"next": "end",
+			"fragments": [{
+				"tag": "Voice from the portal",
+				"msn": "Desculpe se minha presença não te deixa confortável."
+			},
+			{
+				"tag": "Voice from the portal",
+				"msn": "E talvez isso tenha sido em vão..."
+			}]
+		},
+		"end": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "active object",
+				"time": 0,
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 28,
+				"time": 5,
+			}
+		}
+	},
+}

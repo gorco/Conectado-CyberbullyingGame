@@ -1,0 +1,181 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Mmm, devo ir dormir agora?"
+			}]
+		},
+		"node1": {
+			"type": "options",
+			"questionId": "goToSleep",
+			"options": [{
+				"next": "sleepfork",
+				"msn": "Sim"
+			},
+			{
+				"msn": "Não"
+			}]
+		},
+		"sleepfork": {
+			"type": "fork",
+			"options": [{
+				"next": "sleep",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},{
+				"next": "scene",
+				"condition": "true"
+			}]
+		},
+		"sleep": {
+			"type": "dialog",
+			"next": "scene",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Mas não posso usar o despertador do celular."
+			},
+			{
+				"tag": "You",
+				"msn": "Mmmm, vou usar meu celular antigo, mas ele não tem um cartão SIM, então só funciona como despertador."
+			},
+			{
+				"tag": "You",
+				"msn": "Ok, despertador ajustado... Hora de dormir."
+			}]
+		},
+		"scene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 22,
+				"time": 3
+			}
+		}		
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não tem nada de útil aqui."
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não preciso de nada daqui."
+			}]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Acabei de voltar."
+			},
+			{
+				"tag": "You",
+				"msn": "Não preciso da mochila mesmo.",
+			}]
+		}
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "PC",
+				"msn": "Você quer ligar o computador?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"options": [{
+				"next": "node1a",
+				"msn": "Sim"
+			},
+			{
+				"next": "node1b",
+				"msn": "Não"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
+		}, 
+		"moveCamera": {
+			"type": "event",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Melhor eu sair agora.."
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Deixo o celular carregando?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "Sim"
+			},
+			{
+				"next": "node1b",
+				"msn": "Não"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
+	}
+}

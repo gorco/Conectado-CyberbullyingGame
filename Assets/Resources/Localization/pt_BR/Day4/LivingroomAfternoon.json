@@ -1,0 +1,597 @@
+{
+	"init": {
+		"root":{
+			"type": "fork",
+			"options": [{
+				"next": "mobile",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "socialMessages",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') <= 1"
+			}]
+		},
+		"socialMessages" : {
+			"type": "event",
+			"next": "social1",
+			"event": {
+				"name": "computer publication",
+				"var": "troll",
+				"value": "Sou eu, me liga 543-654-54-31",
+				"key": "Tú",
+				"other": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'photoNumberBoy', 'photoNumberGirl') $>",
+				"time": 0 
+			}
+		},
+		"social1": {
+			"type": "event",
+			"next": "social2",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "estou esperando suas ligações",
+				"key": "Tú",
+				"time": 0.2
+			}
+		},
+		"social2": {
+			"type": "event",
+			"next": "social3",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "podemos nos encontrar se você quiser ;)",
+				"key": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Ana', 'Alex') $>",
+				"time": 0.2
+			}
+		},
+		"social3": {
+			"type": "event",
+			"next": "social4",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "tá me ligando sem querer? porque sei que lá no fundo você me quer de verdade HAHAHA",
+				"key": "Jose",
+				"time": 0.4
+			}
+		},
+		"social4": {
+			"type": "event",
+			"next": "social5",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "isso vai tudo direto pro mural da sala hahaha",
+				"key": "Ana",
+				"time": 0.8
+			}
+		},
+		"social5": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "você aceita pagamento em dinheiro?",
+				"key": "Alex",
+				"other": "trollPost",
+				"time": 1.2
+			}
+		},
+		"mobile": {
+			"type": "dialog",
+			"next": "mobileMessage0",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Estou trocando a bateria do telefone."
+			},
+			{
+				"tag": "You",
+				"msn": "Acho que tinha um na mesa de entrada... Terceira gaveta..."
+			},
+			{
+				"tag": "You",
+				"msn": "Aqui está... funciona?... Yeeeaaah, beleza."
+			},
+			{
+				"tag": "You",
+				"msn": "O que são todas essas mensagens?"
+			}]
+		},
+		"mobileMessage0": {
+			"type": "event",
+			"next": "mobileMessage1",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "parece que você não me expulsou, valeu, de brinde te conto umas safadezas que amo fazer :)",
+				"key": "",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"mobileMessage1": {
+			"type": "event",
+			"next": "mobileMessage2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "na verdade, eu curto de tudo, se alguém quiser fazer algo "especial", me avisa",
+				"key": "",
+				"time": 0.1
+			}
+		},
+		"mobileMessage2": {
+			"type": "event",
+			"next": "mobileMessage3",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "valeu por confessar, mas a gente já sabia, tá escrito na sua cara",
+				"key": "Alex",
+				"time": 0.2
+			}
+		},
+		"mobileMessage3": {
+			"type": "event",
+			"next": "mobileMessage4",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "achamos o nome perfeito, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ROSADO', 'ROSADA') $>, o rosto de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'safado', 'safada') $>",
+				"key": "Ana",
+				"time": 0.3
+			}
+		},
+		"mobileMessage4": {
+			"type": "event",
+			"next": "mobileMessage5",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "o que é isso? por que você está dizendo essas coisas?",
+				"key": "Alison",
+				"time": 0.3
+			}
+		},
+		"mobileMessage5": {
+			"type": "event",
+			"next": "mobileMessage6",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "o melhor dia e eu perdi... o que foi que eu perdi?",
+				"key": "Jose",
+				"time": 0.4
+			}
+		},
+		"mobileMessage6": {
+			"type": "event",
+			"next": "mobileMessage7",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "você está passando dos limites, quem trollou <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $>?",
+				"key": "Guille",
+				"time": 0.5
+			}
+		},
+		"mobileMessage7": {
+			"type": "event",
+			"next": "mobileMessage8",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "ninguém, e aí guille? tu é safado e não quer que todos saibam? hahaha",
+				"key": "Ana",
+				"other": "trollClass",
+				"time": 0.6
+			}
+		},
+		"mobileMessage8": {
+			"type": "event",
+			"next": "mobileMessage9",
+			"event": {
+				"name": "mobile message",
+				"var": "Maria",
+				"value": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'você é gostosa', 'sou mulher e sei que você também gosta de mulher') $>, amanhã no banheiro, fechou ;)",
+				"key": "",
+				"other": "empty",
+				"time": 0.1
+			}
+		},
+		"mobileMessage9": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Maria",
+				"value": "isso não parece com você <$ varObject('global', 'UserNameNonStatic') $>, você foi trolado, né?",
+				"key": "Maria",
+				"other": "trollMaria",
+				"time": 0.3
+			}
+		}
+	},
+	"parents": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node2",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "init",
+				"condition": "true"
+			}]
+		},
+		"init":{
+			"type": "setter",
+			"next": "initMaria",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"initMaria":{
+			"type": "setter",
+			"next": "initMobile",
+			"set": {
+				"var": "aboutMaria",
+				"value": true
+			}
+		},
+		"initMobile":{
+			"type": "setter",
+			"next": "node1",
+			"set": {
+				"var": "aboutMobile",
+				"value": true
+			}
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "Mom",
+				"character": "Mother",
+				"msn": "Você voltou, <$ varObject('global', 'UserNameNonStatic') $>"
+			}, 
+			{
+				"tag": "Mom",
+				"character": "Mother",
+				"msn": "Como foi o seu dia?"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "parentsFS",
+			"fragments": [{
+				"tag": "Mom",
+				"character": "Mother",
+				"msn": "Quer conversar um pouco?"
+			},
+			{
+				"tag": "Dad",
+				"character": "Father",
+				"msn": "Como foi o seu dia?"
+			}]
+		},
+		"parentsFS": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": -10,
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 1
+			}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "parentsAfternoonFouthDay",
+			"options": [{
+				"msn": "Bom, foi o de sempre, vou para o meu quarto.",
+				"condition": "page == 1"
+			},
+			{
+				"next": "maria1",
+				"msn": "Hoje Alex e Ana tentaram me chantagear.",
+				"condition": "page == 1 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') == 1"
+			},
+			{
+				"next": "maria2",
+				"msn": "Hoje Alex e Ana me chantagearam.",
+				"condition": "page == 1 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') == 2"
+			},
+			{
+				"next": "page2",
+				"msn": "(Mudar de assunto)",
+				"condition": "page == 1"
+			},
+			{
+				"next": "mobile0",
+				"msn": "Perdi o celular hoje.",
+				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "mobile1",
+				"msn": "Alison, posso confiar nela.",
+				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "mobile2",
+				"msn": "Alguém pegou meu celular.",
+				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"msn": "Vou para o meu quarto, já conversamos muito.",
+				"condition": "page == 2"
+			}]
+		},
+		"page2":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 2
+			}
+		},
+		"maria1": {
+			"type": "dialog",
+			"next": "mariaSetter",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Eles tentaram me convencer a colar um cartaz na Maria."
+			},
+			{
+				"tag": "You",
+				"msn": "Se chamam de os reis da escola ou algo assim."
+			}]
+		},
+		"maria2": {
+			"type": "dialog",
+			"next": "mariaSetter",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Eles me obrigaram a colar um cartaz da Maria..."
+			},
+			{
+				"tag": "You",
+				"msn": "Não tive outra escolha se queria meu celular de volta."
+			}]
+		},
+		"mariaSetter":{
+			"type": "setter",
+			"next": "forkMeeting",
+			"set": {
+				"var": "aboutMaria",
+				"value": false
+			}
+		},
+		"mobile0": {
+			"type": "dialog",
+			"next": "mobileSetter",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Pegaram meu celular e não consegui recuperá-lo."
+			},
+			{
+				"tag": "Mom",
+				"character": "Mother",
+				"msn": "Então você não terá um celular. Tem que cuidar melhor das suas coisas."
+			},
+			{
+				"tag": "You",
+				"msn": "Não foi culpa minha."
+			},
+			{
+				"tag": "Dad",
+				"character": "Father",
+				"msn": "Isso não é motivo para deixar suas coisas desprotegidas. De qualquer jeito..."
+			}]
+		},
+		"mobile1": {
+			"type": "dialog",
+			"next": "mobileSetter2",
+			"fragments": [{
+				"tag": "You",
+				"msn": "A Alison me surpreendeu. Posso realmente confiar nela."
+			},
+			{
+				"tag": "You",
+				"msn": "Hoje trocamos nossas senhas."
+			},
+			{
+				"tag": "Mom",
+				"character": "Mother",
+				"msn": "Como você se atreve!? E se ela compartilhar ou se passar por você."
+			},
+			{
+				"tag": "Mom",
+				"character": "Mother",
+				"msn": "Você não pensa no que faz?"
+			},
+			{
+				"tag": "You",
+				"msn": "Mas eu tenho as senhas dela também. Eu confio nela."
+			},
+			{
+				"tag": "You",
+				"msn": "Ela é a única que quer ser minha amiga."
+			}]
+		},
+		"mobile2": {
+			"type": "dialog",
+			"next": "mobileSetter",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Hoje levaram meu celular."
+			},
+			{
+				"tag": "You",
+				"msn": "E alguém deixou ele no banheiro <$ if(varObject('global', 'MaleSexNonStatic')==true, 'das meninas', 'dos meninos') $>'."
+			},
+			{
+				"tag": "Mom",
+				"character": "Mother",
+				"msn": "Você tem que cuidar melhor das suas coisas. Não pode deixá-las em qualquer lugar."
+			},
+			{
+				"tag": "You",
+				"msn": "Não foi culpa minha."
+			},
+			{
+				"tag": "Dad",
+				"character": "Father",
+				"msn": "Isso não é motivo para deixar suas coisas desprotegidas. De qualquer forma..."
+			}]
+		},
+		"mobileSetter":{
+			"type": "setter",
+			"next": "forkMeeting",
+			"set": {
+				"var": "aboutMobile",
+				"value": false
+			}
+		},
+		"mobileSetter2":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutMobile",
+				"value": false
+			}
+		},
+		"forkMeeting": {
+			"type": "fork",
+			"next": "options",
+			"options": [{
+				"next": "meetSuccess",
+				"condition": "varObject('global', 'ParentsMeetingQuest') == 2"
+			},
+			{
+				"next": "noMeet",
+				"condition": "true"
+			}]
+		},
+		"noMeet": {
+			"type": "dialog",
+			"next": "meetOptions",
+			"fragments": [{
+				"tag": "Dad",
+				"character": "Father",
+				"msn": "Acho que devemos falar com a escola sobre o que está acontecendo. Eles precisam saber."
+			}]
+		},
+		"meetOptions": {
+			"type": "options",
+			"questionId": "parentsMeetingAfternoonOption",
+			"options": [{
+				"next": "yesMeeting",
+				"msn": "Sim, por favor, eu não aguento mais."
+			},
+			{
+				"next": "noMeeting",
+				"msn": "Não, vai ser pior."
+			}]
+		},
+		"yesMeeting": {
+			"type": "dialog",
+			"next": "meetingVariable",
+			"fragments": [{
+				"tag": "Dad",
+				"character": "Father",
+				"msn": "Não se preocupe, vai ficar tudo bem, vamos consertar tudo."
+			}]
+		},
+		"noMeeting": {
+			"type": "dialog",
+			"next": "upParentsFS",
+			"fragments": [{
+				"tag": "Dad",
+				"character": "Father",
+				"msn": "Tudo bem, não iremos por enquanto."
+			},
+			{
+				"tag": "Mom",
+				"character": "Mother",
+				"msn": "Mas se algo sério acontecer... Nós iremos lá de qualquer jeito."
+			}]
+		},
+		"meetingVariable": {
+			"type": "event",
+			"next": "upParentsFS",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 2,
+			}
+		},
+		"meetSuccess": {
+			"type": "dialog",
+			"next": "upParentsFS",
+			"fragments": [{
+				"tag": "Dad",
+				"character": "Father",
+				"msn": "Mais um motivo para irmos amanhã até a sala do diretor para resolver tudo isso."
+			}]
+		},
+		"upParentsFS": {
+			"type": "event",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 10,
+			}
+		}	
+	},
+	"father": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Dad",
+				"character": "Father",
+				"msn": "Converse com sua mãe."
+			},
+			{
+				"tag": "Dad",
+				"character": "Father",
+				"msn": "Ela quer saber como foi o seu dia."
+			}]
+		}
+	},
+	"exitDoor": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não tenho nada para fazer na rua."
+			}]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "21:30",
+			}
+		},
+	}
+}

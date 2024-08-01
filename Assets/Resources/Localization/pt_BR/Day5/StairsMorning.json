@@ -1,0 +1,83 @@
+{
+	"jose":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "true"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Hahaha..."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Eu queria te agradecer, o Alex vivia implicando comigo por causa do meu peso..."
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Até você chegar. Estou realmente feliz que você esteja aqui, duende."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		}
+	},
+	"principalNote":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Note",
+				"msn": "Sala do Diretor."
+			}]
+		}
+	},
+	"principalDoor":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Parece que não tem ninguém lá dentro."
+			}]
+		}
+	},
+	"stairsToCorridor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"stairsToPlayground": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Melhor eu ir direto para a sala de aula."
+			}]
+		}
+	}
+}

@@ -1,0 +1,212 @@
+{
+	"anaGroup":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeNoGum",
+				"condition": "varObject('global', 'AuxQuestNonStatic') == 2"
+			},
+			{
+				"next": "nodeInit",
+				"condition": "true"
+			}]
+		},
+		"nodeNoGum": {
+			"type": "dialog",
+			"next": "FadeOutAna",
+			"fragments": [{
+				"tag": "whisper",
+				"msn": "Hmm, parece que ele não tem um chiclete grudado nele."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Shhh"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Ei, <$ varObject('global', 'UserNameNonStatic') $>"
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Olá"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Você viu o Alex?"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Precisamos falar com ele."
+			}]
+		},
+		"FadeOutAna": {
+			"next": "FadeOutJose",
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "ana"
+			}
+		},
+		"FadeOutJose": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "jose"
+			}
+		},
+		"nodeInit": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Você deveria lavar suas roupas, suas calças estão sujas."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Você não tem máquina de lavar em casa?"
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Hahahaha, nova tendência! Chicletes grudados na calça."
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Aquela roupa horrível nem vale a pena lavar."
+			},
+			{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "Ele deveria jogá-la direto na lixeira."
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Hahahaha"
+			}]
+		}
+	},
+	"guilleGroup":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeNoGum",
+				"condition": "varObject('global', 'AuxQuestNonStatic') == 2"
+			},
+			{
+				"next": "nodeInit",
+				"condition": "true"
+			}]
+		},
+		"nodeInit": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Tente tirar aquele chiclete no banheiro."
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"nodeNoGum": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Ei  <$ varObject('global', 'UserNameNonStatic') $>"
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Estávamos falando sobre o Alex."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Ele estava estranho esta manhã e foi até o primeiro que chegou aqui."
+			}]
+		}, 
+		"node0": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Onde você sentou?"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Você provavelmente sentou em um chiclete."
+			},
+			{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Que sujeira, vá direto ao banheiro antes da aula."
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "Sim, talvez você consiga removê-lo"
+			}]
+		},
+		"guilleFS": {
+			"type": "event",
+			"next": "joseFS",
+			"event": {
+				"name": "change friendship",
+				"var": "GuilleFS",
+				"value": 10,
+			}
+		},
+		"alisonFS": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFS",
+				"value": 10,
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "É hora do intervalo, ainda tenho mais algumas aulas antes de eu poder ir para casa."
+			}]
+		}
+	}
+}

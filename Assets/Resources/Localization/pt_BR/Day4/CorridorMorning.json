@@ -1,0 +1,124 @@
+{
+	"board":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Parece que alguém pegou a foto de ontem."
+			}]
+		}
+	},
+	"anaAndAlex":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "(Eles te viram, mas ainda te ignoram. Alex e Ana estão conversando entre si)"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Acho que Outdoor e Duende são os mais originais."
+			},
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Eu ainda prefiro Pária."
+			},
+			{
+				"tag": "Álex",
+				"character": "Alex",
+				"msn": "Ainda que eu concorde que <$ varObject('global', 'UserNameNonStatic') $> Outdoor soa muito bom hahaha. "
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "Hahaha vamos ver o que José pensa."
+			}
+			{
+				"tag": "You",
+				"msn": "Não seja tímido, continue ignorando e pensando em como me chamar."
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "Desculpe, estou com pressa. Vou me atrasar se não entrar."
+			}]
+		}			
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não posso ir lá, é o banheiro dos meninos."
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não posso ir lá, é o banheiro das meninas."
+			}]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		}
+	}
+}

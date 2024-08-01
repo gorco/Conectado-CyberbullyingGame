@@ -1,0 +1,131 @@
+﻿{
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, você está <$ if(varObject('global', 'MaleSexNonStatic')==true, 'atrasado', 'atrasada') $>."
+			},{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "Por favor, sente-se logo e vamos continuar com a aula."
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Você se senta na primeira cadeira vazia que vê, enquanto todos os alunos estão olhando para você."
+			}
+		},
+		"node3": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 10
+			}
+		}
+	},
+	"table":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Este lugar está livre, posso sentar aqui?"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "sitDownClass",
+			"options": [{
+				"next": "node2",
+				"msn": "Sim"
+			},
+			{
+				"msn": "Não"
+			},
+			{
+				"next": "gum",
+				"msn": "Olhar para a cadeira",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "",
+				"msn": "(Você escuta passos, o professor está aqui)"
+			}]
+		},
+		"gum": {
+			"type": "dialog",
+			"next": "noGum",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Tem um chiclete grudado na cadeira."
+			},
+			{
+				"tag": "You",
+				"msn": "Aconteceu a mesma coisa ontem, é melhor eu tirar o chiclete e me sentar."
+			}]
+		},
+		"noGum": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "change variable",
+				"var": "GumQuest",
+				"value": 2,
+			}
+		},
+		"node3": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Todos vocês se sentam e quando percebem já é hora do recreio."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 10
+			}
+		}
+	}
+}

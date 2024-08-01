@@ -1,0 +1,313 @@
+{
+	"maria":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "secondGood",
+				"condition": "normal == true"
+			},
+			{
+				"next": "secondBad",
+				"condition": "freak == true"
+			},
+			{
+				"next": "first",
+				"condition": "true"
+			}]
+		},
+		"secondGood": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Estou terminando de ler meu livro, vamos conversar outra hora."
+			}]
+		},
+		"secondBad": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "..."
+			},{
+				"tag": "You",
+				"msn": "Parece que ela está me ignorando."
+			}]
+		},
+		"first": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Você quer alguma coisa?"
+			}]
+		},
+		"node1": {
+			"type": "options",
+			"questionId": "MariaMeetFirstOpt",
+			"options": [{
+				"next": "setterBad",
+				"msn": "Não é nada não, tchau."
+			},
+			{
+				"next": "node2",
+				"msn": "Por que você está sozinha por aqui em vez de estar lá no pátio?"
+			}]
+		},		
+		"setterBad":{
+			"type": "setter",
+			"set": {
+				"var": "freak",
+				"value": true
+			}
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Eu prefiro ficar lendo tranquilamente por aqui mesmo."
+			}]
+		},
+		"node3": {
+			"type": "options",
+			"questionId": "MariaMeetSecondOpt",
+			"options": [{
+				"msn": "Entendi, boa leitura então, tchau (Que esquisita)."
+			},
+			{
+				"next": "node4",
+				"msn": "Você não prefere ir lá no pátio com seus amigos?"
+			}]
+		},	
+		"quest2": {
+			"type": "event",
+			"next": "nodeFS2",
+			"event": {
+				"name": "change variable",
+				"var": "MariaoQuest",
+				"value": 1,
+			}
+		},
+		"nodeFS2": {
+			"type": "event",
+			"next": "setterBad",
+			"event": {
+				"name": "change friendship",
+				"var": "MariaFS",
+				"value": -10,
+			}
+		},
+		"node4": {
+			"type": "dialog",
+			"next": "node5",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Você está ficando um pouco chato fazendo todas essas perguntas."
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Eu não tenho amigos, eles acham que sou esquisita."
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Você já pode ir agora."
+			}]
+		},
+		"node5": {
+			"type": "options",
+			"questionId": "MariaMeetThirdOpt",
+			"options": [{
+				"next": "node6",
+				"msn": "(Ficar)"
+			},
+			{
+				"msn": "(Ir embora)"
+			}]
+		},
+		"node6": {
+			"type": "dialog",
+			"next": "quest1",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Você não parece esquisita para mim."
+			},
+			{
+				"tag": "You",
+				"msn": "Estou indo para o pátio, se quiser vir, estarei lá embaixo."
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Obrigada, você é muito gentil."
+			}, 
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Mas hoje vou ficar aqui, estou quase terminando o livro."
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Divirta-se lá embaixo, e evite o Alex, ele é um idiota."
+			}]
+		},
+		"quest1": {
+			"type": "event",
+			"next": "nodeFS1",
+			"event": {
+				"name": "change variable",
+				"var": "MariaQuest",
+				"value": 1,
+			}
+		},
+		"nodeFS1": {
+			"type": "event",
+			"next": "setterGood",
+			"event": {
+				"name": "change friendship",
+				"var": "MariaFS",
+				"value": 20,
+			}
+		},
+		"setterGood":{
+			"type": "setter",
+			"set": {
+				"var": "normal",
+				"value": true
+			}
+		},
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"next": "alisonMove",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"alisonMove": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "little move",
+				"key": "alison"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:20",
+			}
+		},
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não posso entrar lá, é o banheiro dos meninos."
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não posso entrar lá, é o banheiro das meninas."
+			}]
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Se eu entrar e o professor aparecer, não vou conseguir mais sair."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "endBreak",
+			"options": [{
+				"next": "black",
+				"msn": "(Entrar mesmo assim)."
+			},
+			{
+				"msn": "Vou dar mais uma volta."
+			}]
+		},
+		"black": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Assim que você entra, o sinal toca e o professor aparece. Você nem viu o tempo passando, a manhã logo acaba e é hora de ir para casa..."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "enter",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:02",
+			}
+		},
+		"enter": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "endDay"
+			}
+		}
+	}
+}

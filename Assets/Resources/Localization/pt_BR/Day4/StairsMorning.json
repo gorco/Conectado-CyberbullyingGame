@@ -1,0 +1,211 @@
+{
+	"maria": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "friendFork",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Você vai se atrasar se não sair agora."
+			}]
+		},
+		"friendFork": {
+			"type": "fork",
+			"options": [{
+				"next": "friend",
+				"condition": "varObject('global', 'AlisonFSNonStatic') > 60"
+			},
+			{
+				"next": "normal",
+				"condition": "true"
+			}]
+		},
+		"friend": {
+			"type": "dialog",
+			"next": "friendOptions",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Bom dia <$ varObject('global', 'UserNameNonStatic') $>"
+			},
+			{
+				"tag": "You",
+				"msn": "Oi, Maria"
+			}]
+		},
+		"friendOptions": {
+			"type": "options",
+			"questionId": "MariaSickAsk",
+			"options": [{
+				"next": "friends2b",
+				"msn": "Você não veio ontem. Está tudo bem?"
+			},
+			{
+				"next": "friends2a",
+				"msn": "Você está falando comigo?"
+			},
+			{
+				"next": "setter",
+				"msn": "Estou com pressa, o sinal já tocou. A gente conversa depois."
+			}]
+		},
+		"friends2a": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Acho que você está falando do Alex."
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Ana fez algo parecido ano passado para me sacanear."
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Você deveria falar com seus pais ou com nosso coordenador."
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Eu não fiz isso quando tive a chance. Meus pais me obrigaram a ir ver um psicólogo quando descobriram."
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Se precisar que eu vá com você falar com o professor, é só me chamar. Mas não se cale."
+			},
+			{
+				"tag": "You",
+				"msn": "Valeu, até mais tarde."
+			}]
+		},
+		"friends2b": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Sim, estou bem. Obrigada por perguntar."
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Ontem eu estava com febre, então fiquei em casa descansando."
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Hoje estou nova em folha."
+			}]
+		},
+		"normal": {
+			"type": "dialog",
+			"next": "normalOptions",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Oi, Maria"
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Olá, <$ varObject('global', 'UserNameNonStatic') $>. Você precisa de alguma coisa?"
+			}]
+		},
+		"normalOptions": {
+			"type": "options",
+			"questionId": "MariaIgnoreAsk",
+			"options": [{
+				"next": "setter",
+				"msn": "Não, até mais tarde."
+			},
+			{
+				"next": "normal2",
+				"msn": "Você está falando comigo?"
+			}]
+		},
+		"normal2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Por que não estaria?"
+			},
+			{
+				"tag": "You",
+				"msn": "Você não falou com o Alex?"
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Sim, sobre o negócio de não falar com você..."
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Eles tornaram minha vida um inferno ano passado. Aprendi minha lição."
+			},
+			{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "Será melhor se você falar com seus pais ou seu coordenador e não der atenção para o Alex ou qualquer um dos capangas dele."
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+	},
+	"principalNote":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Note",
+				"msn": "Sala do Diretor"
+			}]
+		}
+	},
+	"principalDoor":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Parece que não tem ninguém aqui."
+			}]
+		}
+	},
+	"stairsToCorridor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"stairsToPlayground": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Melhor eu ir direto para a sala de aula."
+			}]
+		}
+	}
+}

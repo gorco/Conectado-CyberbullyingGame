@@ -1,0 +1,319 @@
+{
+	"intro":{
+		"root": {
+			"type": "dialog",
+			"next": "fade",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Eu vou garantir que ninguém fale com você."
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Você pode fazer o que quiser, mas não conseguirá nada."
+			},
+			{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Vá em frente, fale com as pessoas da turma, vamos ver se elas falam com você."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "activate",
+			"event": {
+				"name": "little move",
+				"key": "shadow"
+			}
+		},
+		"activate": {
+			"type": "event",
+			"event": {
+				"name": "active object",
+				"time": 0.2,
+			}
+		}
+	},
+	"finishNightmare":{
+		"root": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Eu acho que você está sozinho."
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Como se sente ao ser ignorado por todos?"
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",	
+				"msn": "Não é engraçado que ninguém preste atenção em você?"
+			},
+			{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Porque eu estou rindo muito só de olhar para você."
+			}]
+		},
+		"variable": {
+			"type": "event",
+			"next": "repeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 3,
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	},
+	"jose":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Jose",
+				"character": "Jose",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Jose",
+			"options": [{
+				"next": "fade",
+				"msn": "Você vai me ignorar sem motivo? Só porque te disseram para fazer isso?"
+			},
+			{
+				"next": "fade",
+				"msn": "Nós podemos ser amigos."
+			},
+			{
+				"next": "fade",
+				"msn": "Quantos anos você tem? Três? Fale comigo."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "jose"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	},
+	"guille":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Guille",
+			"options": [{
+				"next": "fade",
+				"msn": "Você é meu amigo, não é?"
+			},
+			{
+				"next": "fade",
+				"msn": "Guille, você não é como os outros."
+			},
+			{
+				"next": "fade",
+				"msn": "Não deixe que eles te ameacem."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "guille"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	},
+	"alison":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Alison",
+			"options": [{
+				"next": "fade",
+				"msn": "Você é minha amiga, certo??"
+			},
+			{
+				"next": "fade",
+				"msn": "Você parece legal, você não vai começar a me ignorar, certo?"
+			},
+			{
+				"next": "fade",
+				"msn": "Por favor, fale comigo."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "alison"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	},
+	"maria":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "María",
+				"character": "Maria",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Maria",
+			"options": [{
+				"next": "fade",
+				"msn": "Você vai me ignorar também?"
+			},
+			{
+				"next": "fade",
+				"msn": "Eles não fizeram o mesmo com você? Não me ignore, você sabe como é."
+			},
+			{
+				"next": "fade",
+				"msn": "Você me entende, certo?"
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "maria"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	},
+	"ana":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Ana",
+			"options": [{
+				"next": "fade",
+				"msn": "O que eu fiz para você? Por que está vindo atrás de mim também?"
+			},
+			{
+				"next": "fade",
+				"msn": "Se o Alex pular de uma ponte? Você pularia também?"
+			},
+			{
+				"next": "fade",
+				"msn": "Por que a gente não pode se dar bem?"
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "ana"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	}
+}

@@ -1,0 +1,167 @@
+{
+	"alisonAccept":{
+		"root": {
+			"type": "event",
+			"next": "comment1",
+			"event": {
+				"name": "computer publication",
+				"var": "earing",
+				"value": "Meus novos brincos, eu <3 você:)",
+				"key": "Alison",
+				"other": "photoEaring",
+				"time": 0 
+			}
+		},
+		"comment1": {
+			"type": "event",
+			"next": "comment2",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": "Eu adorei, você sabe onde compraram?",
+				"key": "Alicia",
+				"time": 0.3 
+			}
+		},
+		"comment2": {
+			"type": "event",
+			"next": "comment3",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": "Pff, eu acabei de perder um durante a aula",
+				"key": "Alison",
+				"time": 0.6
+			}
+		},
+		"comment3": {
+			"type": "event",
+			"next": "commentFork",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": ":( espero que você consiga encontrar, procure bem onde você esteve"",
+				"key": "Alicia",
+				"time": 1
+			}
+		},
+		"commentFork": {
+			"type": "fork",
+			"options": [{
+				"next": "comment4found",
+				"condition": "varObject('global', 'AlisonQuestNonStatic') == 1"
+			},
+			{
+				"next": "comment4Notfound",
+				"condition": "varObject('global', 'AlisonQuestNonStatic') == 0"
+			}]
+		},
+		"comment4found": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": "<$ varObject('global', 'UserNameNonStatic') $> encontrou e me devolveu. Muito obrigada :)",
+				"key": "Alison",
+				"other" : "earingFounded",
+				"time": 1.5
+			}
+		},
+		"comment4Notfound": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": "Foi impossível encontrar, alguém deve ter pegado. Muito obrigada a todas as pessoas que me ajudaram a procurar.",
+				"key": "Alison",
+				"time": 1.5
+			}
+		}
+	},
+	"alisonDeny":{
+		"root": {
+			"type": "dialog",
+			"next": "resend",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não posso rejeitar o convite, ela é a primeira pessoa que parece querer ser minha amiga."
+			}]
+		},
+		"resend":{
+			"type": "event",
+			"event": {
+				"name": "computer friend",
+				"var": "Alison",
+				"value": "Sempre há uma razão para continuar em frente",
+				"time": 0,
+				"other": "alisonAccept,alisonDeny"
+			}
+		}
+	},
+	"guilleAccept":{
+		"root": {
+			"type": "event",
+			"next": "comment1",
+			"event": {
+				"name": "computer publication",
+				"var": "match",
+				"value": "Assistindo o jogo",
+				"key": "Guillermo",
+				"other": "photoMatch",
+				"time": 0 
+			}
+		},
+		"comment1": {
+			"type": "event",
+			"next": "comment2",
+			"event": {
+				"name": "computer comment",
+				"var": "match",
+				"value": "Que jogo, cara! Devíamos nos encontrar para assistir ao próximo. Meu pai comprou uma nova TV e é enorme!",
+				"key": "Jesus",
+				"time": 0 
+			}
+		},
+		"comment2": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "match",
+				"value": "Tô dentro, galera, me avisem quando quiserem",
+				"key": "Miguel",
+				"time": 0.5 
+			}
+		}
+	},
+	"guilleDeny":{
+		"root": {
+			"type": "dialog",
+			"next": "sure",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não tenho motivo para rejeitar o convite dele. Será que realmente quero rejeitá-lo?"
+			}]
+		},
+		"sure": {
+			"type": "options",
+			"questionId": "GuilleFriendRequest",
+			"options": [{
+				"msn": "Sim, é melhor eu não aceitar."
+			},
+			{
+				"next": "resend",
+				"msn": "Não, é melhor eu pensar sobre isso."
+			}]
+		},
+		"resend":{
+			"type": "event",
+			"event": {
+				"name": "computer friend",
+				"var": "Guillermo",
+				"value": "Se o plano não funcionar, mude o plano, mas não mude o objetivo.",
+				"time": 0,
+				"other": "guilleAccept,guilleDeny"
+			}
+		}
+	}
+}

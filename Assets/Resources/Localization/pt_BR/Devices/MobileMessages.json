@@ -1,0 +1,427 @@
+{
+	"default":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "Não tenho nada para responder."
+			}]
+		}
+	},
+	"alisonThx":{
+		"root": {
+			"type": "options",
+			"questionId": "AlisonEaringMobileTy",
+			"options": [{
+				"next": "node1",
+				"msn": "Não foi nada."
+			},
+			{
+				"msn": "(Não vou responder, vou ver o que respondo mais tarde)"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alison Clase",
+				"value": "Não é nada",
+				"key": "",
+				"other": "empty",
+				"time": 0 
+			}
+		}
+	},
+	"alisonRequest":{
+		"root": {
+			"type": "options",
+			"questionId": "AlisonFriendRequestMobile",
+			"options": [{
+				"next": "node1",
+				"msn": "Sim, eu vou aceitar agora"
+			},
+			{
+				"next": "node2",
+				"msn": "Eu vou dar uma olhada nisso quando puder"
+			},
+			{
+				"msn": "(Ela é muito chata, não vou responder)"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alison Clase",
+				"value": "Sim, eu aceito seu convite agora :)",
+				"key": "",
+				"other": "empty",
+				"time": 0 
+			}
+		},
+		"node2": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alison Clase",
+				"value": "Vou ver isso quando puder. Estou ocupado agora",
+				"key": "",
+				"other": "empty",
+				"time": 0 
+			}
+		}
+	},
+	"thxClass":{
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Obrigado :)",
+				"key": "",
+				"other": "empty",
+				"time": 0 
+			}
+		}
+	},
+	"kickClass":{
+		"root": {
+			"type": "options",
+			"questionId": "mobileKickMessages",
+			"options": [{
+				"next": "messageA",
+				"msn": "Você me trata terrivelmente. Isso me faz sentir mal."
+			},
+			{
+				"next": "messageB",
+				"msn": "Cresça"
+			},
+			{
+				"next": "messageC",
+				"msn": "O que eu fiz para você?"
+			}]
+		},
+		"messageA": {
+			"type": "event",
+			"next": "messageA2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				
+				"value": "Acabei de chegar na escola e é realmente horrível que vocês me tratem como lixo.",
+				"key": "",
+				"other": "empty",
+				"time": 0 
+			}
+		},
+		"messageA2": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Não estou dizendo que todos precisam gostar de mim, mas o mínimo que vocês poderiam fazer é me tratar com algum respeito.",
+				"key": "",
+				"time": 0.2
+			}
+		},
+		"messageB": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Cresçam, quantos anos vocês têm?",
+				"key": "",
+				"other": "empty",
+				"time": 0 
+			}
+		},
+		"messageC": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Eu não entendo, o que eu fiz para vocês me insultarem, ignorarem e fazerem piadas sobre mim?",
+				"key": "",
+				"other": "empty",
+				"time": 0 
+			}
+		},
+		"message2": {
+			"type": "event",
+			"next": "message3",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Qual é o seu problema com <$ varObject('global', 'UserNameNonStatic') $>?",
+				"key": "Alison",
+				"time": 2 
+			}
+		},
+		"message3": {
+			"type": "event",
+			"next": "message4",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Vocês estão passando dos limites",
+				"key": "Guille",
+				"time": 4 
+			}
+		},
+		"message4": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Isso não é da sua conta. Eu posso fazer com que o José expulse você também.",
+				"key": "Alex",
+				"other": "kickClass2",
+				"time": 8 
+			}
+		}
+	},
+	"kickClass2":{
+		"root": {
+			"type": "options",
+			"questionId": "mobileKickOptions",
+			"options": [{
+				"next": "messageA",
+				"msn": "Não se preocupe, estou saindo"
+			},
+			{
+				"next": "messageB",
+				"msn": "Espero que José seja mais inteligente."
+			},
+			{
+				"next": "messageC",
+				"msn": "Alex, pare"
+			}]
+		},
+		"messageA": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Se eu estar nesse grupo é um problema, eu mesmo vou sair",
+				"key": "",
+				"time": 0 
+			}
+		},
+		"messageB": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Espero que o Jorge não seja tão idiota quanto você quando ler a conversa",
+				"key": "",
+				"time": 0 
+			}
+		},
+		"messageC": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Pare, eu não fiz nada a você que justifique a maneira como você está me tratando",
+				"key": "",
+				"time": 0 
+			}
+		},
+		"message2": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Vou para a cama, até amanhã",
+				"key": "",
+				"other": "empty",
+				"time": 1 
+			}
+		},
+	},
+	"trollMaria": {
+		"root": {
+			"type": "options",
+			"questionId": "mobileTrollMariaChat",
+			"options": [{
+				"next": "nodeA",
+				"msn": "Não escrevi nada"
+			},
+			{
+				"next": "nodeB",
+				"msn": "Sim, fui eu"
+			},
+			{
+				"msn": "(Não responder)"
+			}]
+		},
+		"nodeB": {
+			"type": "event",
+			"next": "mariaFS",
+			"next": "nodeA2",
+			"event": {
+				"name": "mobile message",
+				"var": "Maria",
+				"value": "Sim, fui eu que escrevi, te vejo amanhã <3",
+				"key": "",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"mariaFS": {
+			"type": "event",
+			"event": {
+				"name": "change friendship",
+				"var": "MariaFS",
+				"value": -80
+			}
+		},
+		"nodeA": {
+			"type": "event",
+			"next": "nodeA2",
+			"event": {
+				"name": "mobile message",
+				"var": "Maria",
+				"value": "Desculpe María, eu não escrevi isso, eles podem ter escrito quando roubaram meu telefone",
+				"key": "",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"nodeA2": {
+			"type": "event",
+			"next": "nodeA3",
+			"event": {
+				"name": "mobile message",
+				"var": "Maria",
+				"value": "sinto muito, de verdade",
+				"key": "",
+				"other": "empty",
+				"time": 0.2
+			}
+		},
+		"nodeA3": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Maria",
+				"value": "eu acredito em você, relaxa, descanse um pouco",
+				"key": "Maria",
+				"other": "empty",
+				"time": 4
+			}
+		}
+	},
+	"trollClass": {
+		"root": {
+			"type": "options",
+			"questionId": "mobileTrollClassChat",
+			"options": [{
+				"next": "nodeA",
+				"msn": "Eu não escrevi nada"
+			},
+			{
+				"next": "nodeB",
+				"msn": "Alex, Ana, vão se lascar."
+			},
+			{
+				"next": "nodeC",
+				"msn": "Como você ouviu, eu amo isso"
+			}]
+		},
+		"nodeA": {
+			"type": "event",
+			"next": "nodeA2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "alguém usou meu telefone para escrever isso",
+				"key": "",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"nodeA2": {
+			"type": "event",
+			"next": "nodeA3",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Temos fotos do que você disse, vamos compartilhá-las com todas as outras turmas, hahaha",
+				"key": "Ana",
+				"time": 2
+			}
+		},
+		"nodeA3": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "hahaha agora é tarde demais para negar qualquer coisa :P",
+				"key": "Alex",
+				"time": 4
+			}
+		},
+		"nodeB": {
+			"type": "event",
+			"next": "nodeB2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Alex, Ana, vão se ferrar os dois, eu sei que foi coisa de vocês",
+				"key": "",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"nodeB2": {
+			"type": "event",
+			"next": "nodeB3",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "talvez seja, e daí? já temos fotos da conversa",
+				"key": "Ana",
+				"time": 2
+			}
+		},
+		"nodeB3": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "amanhã todo mundo vai saber sobre seus gostos pessoais hahaha",
+				"key": "Alex",
+				"time": 2
+			}
+		},
+		"nodeC": {
+			"type": "event",
+			"next": "nodeC2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "Sim, eu adoro, algum problema com isso? Como ouviram, eu amo, algum problema? VOCÊS ESTÃO COM CIÚMES!!",
+				"key": "",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"nodeC2": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "amanhã todo mundo vai saber sobre seus gostos pessoais hahaha",
+				"key": "Alex",
+				"time": 2
+			}
+		}
+	}
+}
