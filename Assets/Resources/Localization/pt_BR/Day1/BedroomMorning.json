@@ -3,8 +3,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Agora que já levantei é melhor eu não deitar de novo."
+				"tag": "Você",
+				"msn": "Agora que já levantei é melhor eu não me deitar de novo."
 			}]
 		}		
 	},
@@ -12,7 +12,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não tem nada de útil aqui."
 			}]
 		}		
@@ -21,8 +21,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Alguma hora vou ter que arrumar isso tudo, mas agora tenho que ir pra escola."
+				"tag": "Você",
+				"msn": "Alguma hora vou ter que arruma tudo isso, mas agora tenho que ir pra escola."
 			}]
 		}		
 	},
@@ -31,7 +31,7 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Acho que já estou com tudo pronto..."
 			}]
 		},
@@ -39,8 +39,8 @@
 			"type": "dialog",
 			"next": "node2",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Sim, estou com tudo o que preciso. Melhor eu pegar a mochila e sair."
+				"tag": "Você",
+				"msn": "Sim, estou com tudo o que preciso. Melhor eu pegar a minha mochila e sair."
 			}]
 		},
 		"node2": {
@@ -57,11 +57,11 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Se eu ligar o computador, com certeza vou me atrasar."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Melhor esperar até de tarde."
 			},
 			{
@@ -107,7 +107,7 @@
 		"node1b": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Melhor eu sair."
 			}]
 		}		
@@ -117,8 +117,8 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Devo deixar meu celular carregando?"
+				"tag": "Você",
+				"msn": "Será que devo deixar meu celular carregando?"
 			}]
 		},		
 		"node1": {

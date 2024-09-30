@@ -19,8 +19,8 @@
 			"type": "dialog",
 			"next": "FadeOutAna",
 			"fragments": [{
-				"tag": "whisper",
-				"msn": "Mmm, parece que ele não tem um chiclete grudado nas calças."
+				"tag": "Sussuro",
+				"msn": "Mmm, parece que ele não tá com um chiclete grudado nas calças."
 			},
 			{
 				"tag": "Ana",
@@ -35,7 +35,7 @@
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Olá."
+				"msn": "E aí."
 			},
 			{
 				"tag": "Ana",
@@ -73,22 +73,22 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Você não tem uma máquina de lavar em casa?"
+				"msn": "Não tem uma máquina de lavar em casa?"
 			},
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Hahahaha, uma nova moda! Chicletes grudados nas calças."
+				"msn": "Hahahaha, nova moda! Chicletes grudados nas calças."
 			},
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Essas roupas horríveis não valem a pena lavar."
+				"msn": "Essas roupas feias não valem a pena lavar."
 			},
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Ele deveria jogar tudo direto no lixo."
+				"msn": "Deveria jogar tudo no lixo."
 			},
 			{
 				"tag": "Ana",
@@ -101,17 +101,17 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Hahaha, você molhou as calças?"
+				"msn": "Hahaha, você se molhou?"
 			},
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Hahahaha, não, não, olha só, ele se sujou."
+				"msn": "Hahahaha, não, não! Olha só, ele se sujou todo."
 			},
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Ana, você está com o seu celular? Tire uma foto!!"
+				"msn": "Ana, você está com o seu celular? Tira uma foto!"
 			},
 			{
 				"tag": "Ana",
@@ -152,7 +152,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Tente tirar o chiclete lá no banheiro."
+				"msn": "Tente tirar o chiclete no banheiro."
 			}]
 		}, 
 		"setter":{
@@ -172,7 +172,7 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Bem, está tudo bem, vai secar em pouco tempo."
+				"msn": "Está tudo bem, isso vai secar rápido."
 			}]
 		},
 		"nodeNoGum": {
@@ -180,7 +180,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Ei,  <$ varObject('global', 'UserNameNonStatic') $>."
+				"msn": "Ei,  <$ varObject('global', 'UserNameNonStatic') $>!"
 			},
 			{
 				"tag": "Alison",
@@ -190,7 +190,7 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Esta manhã ele estava agindo estranho, até foi o primeiro a chegar."
+				"msn": "Hoje de manhã, ele estava agindo estranho, até foi o primeiro a chegar."
 			}]
 		}, 
 		"node0": {
@@ -203,17 +203,17 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Você provavelmente sentou em um chiclete."
+				"msn": "Acho que você sentou em um chiclete."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Que bagunça, vá direto para o banheiro antes da aula."
+				"msn": "Que confusão! Vá direto para o banheiro antes da aula."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Sim, talvez você consiga remover."
+				"msn": "Sim, talvez você consiga tirar."
 			}]
 		},
 		"guilleFS": {
@@ -248,8 +248,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "É hora do intervalo, ainda tenho algumas aulas antes de poder ir para casa."
+				"tag": "Você",
+				"msn": "É hora do intervalo, mas ainda tenho algumas aulas antes de poder ir para casa."
 			}]
 		}
 	}

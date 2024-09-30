@@ -14,10 +14,10 @@
 			"questionId": "AlisonEaringMobileTy",
 			"options": [{
 				"next": "node1",
-				"msn": "Não foi nada."
+				"msn": "Não é nada."
 			},
 			{
-				"msn": "(Não vou responder, vou ver o que respondo mais tarde)"
+				"msn": "(Não vou responder, vou pensar no que dizer depois)"
 			}]
 		},
 		"node1": {
@@ -38,11 +38,11 @@
 			"questionId": "AlisonFriendRequestMobile",
 			"options": [{
 				"next": "node1",
-				"msn": "Sim, eu vou aceitar agora"
+				"msn": "Sim, vou aceitar agora"
 			},
 			{
 				"next": "node2",
-				"msn": "Eu vou dar uma olhada nisso quando puder"
+				"msn": "Vou ver isso quando puder"
 			},
 			{
 				"msn": "(Ela é muito chata, não vou responder)"
@@ -53,7 +53,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Clase",
-				"value": "Sim, eu aceito seu convite agora :)",
+				"value": "Sim, aceito seu convite agora :)",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -64,7 +64,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Clase",
-				"value": "Vou ver isso quando puder. Estou ocupado agora",
+				"value": "Vou olhar isso quando puder. Estou ocupado agora.",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -90,11 +90,11 @@
 			"questionId": "mobileKickMessages",
 			"options": [{
 				"next": "messageA",
-				"msn": "Você me trata terrivelmente. Isso me faz sentir mal."
+				"msn": "Você me trata mal. Isso me deixa triste."
 			},
 			{
 				"next": "messageB",
-				"msn": "Cresça"
+				"msn": "Cresça!"
 			},
 			{
 				"next": "messageC",
@@ -106,9 +106,8 @@
 			"next": "messageA2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				
-				"value": "Acabei de chegar na escola e é realmente horrível que vocês me tratem como lixo.",
+				"var": "Clase",	
+				"value": "Acabei de chegar na escola e é muito ruim que vocês me tratem como lixo.",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -120,7 +119,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Não estou dizendo que todos precisam gostar de mim, mas o mínimo que vocês poderiam fazer é me tratar com algum respeito.",
+				"value": "Não estou dizendo que vocês precisam gostar de mim, mas poderiam me tratar com um pouco mais de respeito.",
 				"key": "",
 				"time": 0.2
 			}
@@ -176,7 +175,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Isso não é da sua conta. Eu posso fazer com que o José expulse você também.",
+				"value": "Isso não é da sua conta. Eu posso fazer o José te expulsar também.",
 				"key": "Alex",
 				"other": "kickClass2",
 				"time": 8 
@@ -193,7 +192,7 @@
 			},
 			{
 				"next": "messageB",
-				"msn": "Espero que José seja mais inteligente."
+				"msn": "Espero que o José seja mais inteligente."
 			},
 			{
 				"next": "messageC",
@@ -217,7 +216,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Espero que o Jorge não seja tão idiota quanto você quando ler a conversa",
+				"value": "Espero que o Jorge não seja tão burro quanto você quando ler o chat",
 				"key": "",
 				"time": 0 
 			}
@@ -228,7 +227,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Pare, eu não fiz nada a você que justifique a maneira como você está me tratando",
+				"value": "Pare, eu não fiz nada para você que justifique a maneira como você está me tratando",
 				"key": "",
 				"time": 0 
 			}
@@ -238,12 +237,12 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Vou para a cama, até amanhã",
+				"value": "Vou para a cama, vejo você amanhã.",
 				"key": "",
 				"other": "empty",
 				"time": 1 
 			}
-		},
+		}
 	},
 	"trollMaria": {
 		"root": {
@@ -251,11 +250,11 @@
 			"questionId": "mobileTrollMariaChat",
 			"options": [{
 				"next": "nodeA",
-				"msn": "Não escrevi nada"
+				"msn": "Não escrevi nada."
 			},
 			{
 				"next": "nodeB",
-				"msn": "Sim, fui eu"
+				"msn": "Sim, fui eu."
 			},
 			{
 				"msn": "(Não responder)"
@@ -268,7 +267,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Maria",
-				"value": "Sim, fui eu que escrevi, te vejo amanhã <3",
+				"value": "Sim, fui eu que escrevi. Até amanhã <3",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -288,7 +287,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Maria",
-				"value": "Desculpe María, eu não escrevi isso, eles podem ter escrito quando roubaram meu telefone",
+				"value": "Desculpe Maria, eu não escrevi isso, eles podem ter escrito quando roubaram meu telefone",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -311,7 +310,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Maria",
-				"value": "eu acredito em você, relaxa, descanse um pouco",
+				"value": "eu acredito em você, relaxa, descansa um pouco",
 				"key": "Maria",
 				"other": "empty",
 				"time": 4
@@ -332,7 +331,7 @@
 			},
 			{
 				"next": "nodeC",
-				"msn": "Como você ouviu, eu amo isso"
+				"msn": "Como vocês ouviram, eu amo isso!"
 			}]
 		},
 		"nodeA": {
@@ -341,7 +340,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "alguém usou meu telefone para escrever isso",
+				"value": "Alguém usou meu telefone para escrever isso",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -353,7 +352,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Temos fotos do que você disse, vamos compartilhá-las com todas as outras turmas, hahaha",
+				"value": "Temos fotos do que você disseram, vamos compartilhá-las com todas as outras turmas, hahaha",
 				"key": "Ana",
 				"time": 2
 			}
@@ -374,7 +373,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Alex, Ana, vão se ferrar os dois, eu sei que foi coisa de vocês",
+				"value": "Alex, Ana, vão se ferrar os dois! Eu sei que foi vocês.",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -407,7 +406,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Sim, eu adoro, algum problema com isso? Como ouviram, eu amo, algum problema? VOCÊS ESTÃO COM CIÚMES!!",
+				"value": "Sim, eu gosto mesmo, algum problema com isso? Vocês ouviram, eu amo, algum problema? VOCÊS ESTÃO COM CIÚMES!!",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -418,7 +417,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "amanhã todo mundo vai saber sobre seus gostos pessoais hahaha",
+				"value": "amanhã todo mundo vai saber sobre as coisas que você gosta hahaha",
 				"key": "Alex",
 				"time": 2
 			}

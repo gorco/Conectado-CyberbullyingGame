@@ -25,12 +25,12 @@
 			"fragments": [{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Quando a aula acabar, não esquece de passar lá nos banheiros."
+				"msn": "Quando a aula acabar, não esquece de ir até os banheiros."
 			},
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Eu estarei lá', 'Ana estará te esperando lá') $>."
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Eu estarei lá', 'Ana vai estar esperando lá') $>."
 			}]
 		},
 		"sh0": {
@@ -40,12 +40,12 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Parece que você vai precisar de um novo celular, né?."
+				"msn": "Parece que você vai precisar de um celular novo, né?"
 			},
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Espero que você não perca ele também... ou que ele seja tirado de você."
+				"msn": "Espero que você não perca esse também... ou que não te tirem ele."
 			}]
 		},
 		"sh1": {
@@ -55,12 +55,12 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Olhou suas postagens no \"Conectado\", né?"
+				"msn": "Dá uma olhada nos seus posts no \"Conectado\", ok?"
 			},
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Eu não esperava isso de você, até parece que não foi você que escreveu XD."
+				"msn": "Não esperava isso de você, é como se não fosse você escrevendo XD."
 			}]
 		},
 		"sh2": {
@@ -70,12 +70,12 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Olha as mensagens no bate papo. Você surpreendeu todo mundo."
+				"msn": "Olha seus comentários no chat. Superou nossas expectativas."
 			},
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Eu não esperava isso de você. Nem parece que foi você que escreveu hahaha."
+				"msn": "Não esperava isso de você. É como se não fosse você escrevendo hahaha."
 			}]
 		},
 		"setter":{
@@ -98,19 +98,19 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Vamos fazer o seguinte. Quando as aulas acabarem, vamos conversar onde ninguém pode nos ouvir."
+				"msn": "Vamos fazer o seguinte. Quando as aulas acabarem, vamos conversar onde ninguém possa nos ouvir."
 			},
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Conversamos sobre isso, você pede desculpas e te deixamos em paz."
+				"msn": "A gente fala sobre isso, você se desculpa e te deixamos em paz."
 			},
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Ana e eu vamos te deixar em paz e o resto pode fazer o que quiser."
+				"msn": "A Ana e eu vamos te deixar tranquilo e o resto pode fazer o que quiser."
 			}]
-		},
+		}
 	},
 	"guille":{
 		"root": {
@@ -140,7 +140,7 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Não tenho nada para falar com você."
+				"msn": "Não tenho nada pra falar com você."
 			}]
 		},
 		"setter":{
@@ -173,8 +173,8 @@
 		"female": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Eu não posso entrar lá, é o banheiro dos meninos."
+				"tag": "Você",
+				"msn": "Eu não posso ir lá, é o banheiro dos meninos."
 			}]
 		}
 	},
@@ -200,8 +200,8 @@
 		"male": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Eu não posso entrar lá, é o banheiro das meninas."
+				"tag": "Você",
+				"msn": "Eu não posso ir lá, é o banheiro das meninas."
 			}]
 		}
 	},

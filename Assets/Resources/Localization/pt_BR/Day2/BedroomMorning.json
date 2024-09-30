@@ -3,7 +3,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Vou dormir mais tarde, quando voltar da escola."
 			}]
 		}		
@@ -19,11 +19,11 @@
 		"node0": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Será que sou eu?... Ou o telefone estava mostrando a data de ontem????"
+				"tag": "Você",
+				"msn": "Será que sou eu? Ou o telefone estava mostrando a data de ontem?"
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Está quebrado ou algo assim?"
 			}]
 		}
@@ -32,7 +32,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não preciso me preocupar com isso agora."
 			}]
 		}		
@@ -41,8 +41,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Tenho que ir para a aula agora e ainda não organizei isso tudo. Vou ter que arrumar  em algum outro momento."
+				"tag": "Você",
+				"msn": "Preciso ir para a aula agora e ainda não organizei isso. Vou ter que arrumar depois."
 			}]
 		}		
 	},
@@ -51,8 +51,8 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Está tudo pronto, vamos."
+				"tag": "Você",
+				"msn": "Está tudo pronto. Vamos!"
 			}]
 		},
 		"node1": {
@@ -69,8 +69,8 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Devo esperar até a tarde ou vou me atrasar."
+				"tag": "Você",
+				"msn": "Devo esperar até a tarde ou vou acabar me atrasando."
 			},
 			{
 				"tag": "PC",
@@ -115,7 +115,7 @@
 		"node1b": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "É melhor eu ir logo."
 			}]
 		}		
@@ -125,8 +125,8 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Deixo o celular carregando?"
+				"tag": "Você",
+				"msn": "Deixo meu celular carregando?"
 			}]
 		},		
 		"node1": {

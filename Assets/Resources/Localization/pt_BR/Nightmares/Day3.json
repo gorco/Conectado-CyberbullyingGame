@@ -4,18 +4,18 @@
 			"type": "dialog",
 			"next": "fade",
 			"fragments": [{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "Eu vou garantir que ninguém fale com você."
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Você pode fazer o que quiser, mas não conseguirá nada."
+				"msn": "Você pode fazer o que quiser, mas não vai conseguir nada."
 			},
 			{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Vá em frente, fale com as pessoas da turma, vamos ver se elas falam com você."
+				"msn": "Vai lá, converse com as pessoas da sala, vamos ver se elas falam com você."
 			}]
 		},
 		"fade": {
@@ -30,7 +30,7 @@
 			"type": "event",
 			"event": {
 				"name": "active object",
-				"time": 0.2,
+				"time": 0.2
 			}
 		}
 	},
@@ -39,22 +39,22 @@
 			"type": "dialog",
 			"next": "variable",
 			"fragments": [{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Eu acho que você está sozinho."
+				"msn": "Acho que você está sozinho."
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Como se sente ao ser ignorado por todos?"
+				"msn": "Como é ser ignorado por todos?"
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",	
-				"msn": "Não é engraçado que ninguém preste atenção em você?"
+				"msn": "Não é engraçado como ninguém presta atenção em você?"
 			},
 			{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Porque eu estou rindo muito só de olhar para você."
+				"msn": "Porque estou rindo muito só de te olhar para você."
 			}]
 		},
 		"variable": {
@@ -63,7 +63,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Day",
-				"value": 3,
+				"value": 3
 			}
 		},
 		"repeatDay": {
@@ -72,7 +72,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Repeated",
-				"value": false,
+				"value": false
 			}
 		},
 		"changeHour": {
@@ -81,7 +81,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "7:30",
+				"value": "7:30"
 			}
 		},
 		"saveMobile": {
@@ -120,7 +120,7 @@
 			},
 			{
 				"next": "fade",
-				"msn": "Nós podemos ser amigos."
+				"msn": "Podemos ser amigos."
 			},
 			{
 				"next": "fade",
@@ -140,9 +140,9 @@
 			"event": {
 				"name": "change variable",
 				"var": "Talk",
-				"value": 1,
+				"value": 1
 			}
-		},
+		}
 	},
 	"guille":{
 		"root": {
@@ -183,9 +183,9 @@
 			"event": {
 				"name": "change variable",
 				"var": "Talk",
-				"value": 1,
+				"value": 1
 			}
-		},
+		}
 	},
 	"alison":{
 		"root": {
@@ -206,11 +206,11 @@
 			},
 			{
 				"next": "fade",
-				"msn": "Você parece legal, você não vai começar a me ignorar, certo?"
+				"msn": "Você parece legal, você não vai começar a me ignorar, vai?"
 			},
 			{
 				"next": "fade",
-				"msn": "Por favor, fale comigo."
+				"msn": "Por favor, fala comigo."
 			}]
 		},
 		"fade": {
@@ -226,9 +226,9 @@
 			"event": {
 				"name": "change variable",
 				"var": "Talk",
-				"value": 1,
+				"value": 1
 			}
-		},
+		}
 	},
 	"maria":{
 		"root": {
@@ -253,7 +253,7 @@
 			},
 			{
 				"next": "fade",
-				"msn": "Você me entende, certo?"
+				"msn": "Você me entende, né?"
 			}]
 		},
 		"fade": {
@@ -269,9 +269,9 @@
 			"event": {
 				"name": "change variable",
 				"var": "Talk",
-				"value": 1,
+				"value": 1
 			}
-		},
+		}
 	},
 	"ana":{
 		"root": {
@@ -288,15 +288,15 @@
 			"questionId": "nightmare3Ana",
 			"options": [{
 				"next": "fade",
-				"msn": "O que eu fiz para você? Por que está vindo atrás de mim também?"
+				"msn": "O que eu fiz para você? Por que você também está me perseguindo?"
 			},
 			{
 				"next": "fade",
-				"msn": "Se o Alex pular de uma ponte? Você pularia também?"
+				"msn": "Se o Alex pular de uma ponte, você pularia também?"
 			},
 			{
 				"next": "fade",
-				"msn": "Por que a gente não pode se dar bem?"
+				"msn": "Não podemos nos entender?"
 			}]
 		},
 		"fade": {
@@ -312,8 +312,8 @@
 			"event": {
 				"name": "change variable",
 				"var": "Talk",
-				"value": 1,
+				"value": 1
 			}
-		},
+		}
 	}
 }

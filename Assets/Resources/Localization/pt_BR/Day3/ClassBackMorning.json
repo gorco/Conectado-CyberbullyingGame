@@ -6,7 +6,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "BoardQuest",
-				"value": 1,
+				"value": 1
 			}
 		},
 		"forkNode": {
@@ -37,12 +37,12 @@
 			"type": "dialog",
 			"next": "deactive",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Tem uma foto minha ali e foi editada para parecer que estou cheio de chicletes no meu traseiro."
+				"tag": "Você",
+				"msn": "Tem uma foto minha e editaram para parecer que estou com chicletes colados no meu traseiro."
 			},
 			{
-				"tag": "You",
-				"msn": "Quem iria querer me ridicularizar assim?"
+				"tag": "Você",
+				"msn": "Quem iria querer me humilhar desse jeito?"
 			}]
 		},
 		"deactive": {
@@ -65,12 +65,12 @@
 			"type": "dialog",
 			"next": "deactive",
 			"fragments": [{
-				"tag": "You",
-				"msn": "É uma foto minha de ontem logo após eu ter limpado o chiclete."
+				"tag": "Você",
+				"msn": "É uma foto minha de ontem, logo depois que eu tirei o chiclete."
 			},
 			{
-				"tag": "You",
-				"msn": "Escreveram uma frase muito original... \"Um bebê chegou à aula\"."
+				"tag": "Você",
+				"msn": "Escreveram uma frase super original... \"Um bebê chegou à aula\"."
 			}]
 		},
 		"nogum": {
@@ -86,14 +86,14 @@
 			"type": "dialog",
 			"next": "deactive",
 			"fragments": [{
-				"tag": "You",
-				"msn": "É uma foto de um cachorro com meu rosto e com a língua para fora."
+				"tag": "Você",
+				"msn": "É uma foto de um cachorro com meu rosto e a língua de fora."
 			},
 			{
-				"tag": "You",
-				"msn": "Por quê? Quem foi que colocou isso aqui?"
+				"tag": "Você",
+				"msn": "Por que fizeram isso? Quem colocou isso aqui?"
 			}]
-		},
+		}
 	},
 	"class":{
 		"root": {
@@ -114,13 +114,13 @@
 			"type": "dialog",
 			"next": "node2",
 			"fragments": [{
-				"tag": "Teacher",
+				"tag": "Professor",
 				"character": "Teacher",
 				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, você está <$ if(varObject('global', 'MaleSexNonStatic')==true, 'atrasado', 'atrasada') $>."
 			},{
-				"tag": "Teacher",
+				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Por favor, sente-se para que possamos continuar a aula."
+				"msn": "Por favor, sente-se para continuarmos a aula."
 			}]
 		},
 		"node2": {
@@ -130,7 +130,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Foi um dia chato. As aulas acabaram e a maioria das pessoas te ignorou o dia todo. Há um bilhete de papel na sua mesa dizendo para você ir ao banheiro, há alguém te esperando lá."
+				"value": "O dia foi chato. As aulas terminaram e a maioria das pessoas te ignorou o tempo todo. Tem um bilhete na sua mesa dizendo para você ir ao banheiro, alguém está te esperando por lá."
 			}
 		},
 		"node3": {
@@ -156,8 +156,8 @@
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Este lugar está vazio, posso sentar aqui?"
+				"tag": "Você",
+				"msn": "Este lugar está livre, posso me sentar?"
 			}]
 		},
 		"options": {
@@ -176,7 +176,7 @@
 			"next": "node3",
 			"fragments": [{
 				"tag": "",
-				"msn": "(Você escuta passos se aproximando, o professor chegou)."
+				"msn": "(Você ouve passos se aproximando, o professor chegou.)"
 			}]
 		},
 		"node3": {
@@ -186,7 +186,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Foi um dia chato. As aulas acabaram e a maioria das pessoas te ignorou o dia todo. Há um bilhete de papel na sua mesa dizendo para você ir ao banheiro, há alguém te esperando lá."
+				"value": "O dia foi chato. As aulas terminaram e a maioria das pessoas te ignorou o tempo todo. Tem um bilhete na sua mesa dizendo para você ir ao banheiro, alguém está te esperando por lá."
 			}
 		},
 		"changeHour": {
@@ -195,7 +195,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "14:05",
+				"value": "14:05"
 			}
 		},
 		"nextScene": {

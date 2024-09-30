@@ -12,8 +12,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Parece que não tem ninguém ali dentro."
+				"tag": "Você",
+				"msn": "Parece que não tem ninguém lá dentro."
 			}]
 		}
 	},

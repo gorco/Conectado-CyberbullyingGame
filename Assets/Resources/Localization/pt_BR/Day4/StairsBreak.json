@@ -39,7 +39,7 @@
 			},
 			{
 				"next": "setter",
-				"msn": "Acho que você não está falando comigo... Eu passo.",
+				"msn": "Acho que você não está falando comigo...",
 			}]
 		},
 		"node1a": {
@@ -53,7 +53,7 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Não vamos dedurar eles, mas acho que você já imagina quem foi."
+				"msn": "Não vamos dedurar eles, mas acho que você já sabe quem foi."
 			},
 			{
 				"tag": "Alison",
@@ -77,10 +77,10 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Desculpe, mas não fazemos ideia."
+				"msn": "Desculpe, não fazemos ideia."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Obrigado, Guille."
 			}]
 		},
@@ -96,7 +96,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Note",
+				"tag": "Nota",
 				"msn": "Sala do Diretor"
 			}]
 		}
@@ -105,8 +105,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Parece que não tem ninguém aqui"
+				"tag": "Você",
+				"msn": "Parece que não tem ninguém lá dentro"
 			}]
 		}
 	},

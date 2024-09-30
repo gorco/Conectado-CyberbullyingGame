@@ -14,12 +14,12 @@
 		"nodeA": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
 				"msn": "Toma cuidado e hoje preste mais atenção onde você vai se sentar."
 			},
 			{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
 				"msn": "Se comporte. Te vejo mais tarde."
 			}]
@@ -27,11 +27,11 @@
 		"nodeB": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
 				"msn": "Se comporte. Te vejo mais tarde."
 			}]
-		},
+		}
 	},
 	"exitDoor": {
 		"root": {
@@ -55,7 +55,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "8:40",
+				"value": "8:40"
 			}
 		},
 		"changeHourSoon": {
@@ -64,7 +64,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "8:20",
+				"value": "8:20"
 			}
 		},
 		"exitNode": {
@@ -78,8 +78,8 @@
 		"dialogNode": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Esqueci a minha mochila. Melhor eu voltar e pegar ela no meu quarto antes de sair."
+				"tag": "Você",
+				"msn": "Esqueci a mochila. Melhor voltar e pegar ela no meu quarto antes de sair."
 			}]
 		}
 	},

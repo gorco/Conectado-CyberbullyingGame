@@ -10,15 +10,15 @@
 		"node0": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Novamente, outro dia repetido... Será que ainda estou sonhando?"
+				"tag": "Você",
+				"msn": "De novo, outro dia repetido... Será que ainda estou sonhando?"
 			},
 			{
-				"tag": "You",
-				"msn": "De quem é essa voz do portal? "
+				"tag": "Você",
+				"msn": "De quem é essa voz vindo do portal? "
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Por que o dia se repete toda vez que cruzo aquele portal?"
 			}]
 		}
@@ -27,8 +27,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Outro dia. Tenho que ir, espero que acabe rápido."
+				"tag": "Você",
+				"msn": "Outro dia... Preciso ir, espero que passe rápido."
 			}]
 		}		
 	},
@@ -36,8 +36,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Não há nada útil."
+				"tag": "Você",
+				"msn": "Não tem nada útil aqui."
 			}]
 		}		
 	},
@@ -45,8 +45,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Talvez eu possa organizar isso agora em vez de ir para a escola... Minha mãe vai ficar brava."
+				"tag": "Você",
+				"msn": "Talvez eu devesse organizar isso agora, em vez de ir para a escola... Minha mãe vai ficar brava."
 			}]
 		}		
 	},
@@ -55,8 +55,8 @@
 			"type": "dialog",
 			"next": "node2",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Tenho que ir... "
+				"tag": "Você",
+				"msn": "Preciso ir... "
 			}]
 		},
 		"node2": {
@@ -66,19 +66,19 @@
 				"var": "BagPicked",
 				"value": true
 			}
-		},
+		}
 	},
 	"computer":{
 		"root": {
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Se eu ligar agora, com certeza vou me atrasar."
+				"tag": "Você",
+				"msn": "Se eu ligar agora, vou me atrasar."
 			},
 			{
-				"tag": "You",
-				"msn": "É sempre a mesma coisa, melhor esperar até à tarde."
+				"tag": "Você",
+				"msn": "É sempre a mesma história, melhor esperar até mais tarde."
 			},
 			{
 				"tag": "PC",
@@ -117,14 +117,14 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "8:10",
+				"value": "8:10"
 			}
 		},
 		"node1b": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Melhor eu sair agora."
+				"tag": "Você",
+				"msn": "Acho melhor eu sair agora."
 			}]
 		}		
 	},
@@ -133,8 +133,8 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Deixo o celular carregando?"
+				"tag": "Você",
+				"msn": "Devo deixar o celular carregando?"
 			}]
 		},		
 		"node1": {

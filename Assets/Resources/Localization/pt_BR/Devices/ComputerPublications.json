@@ -3,7 +3,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Eu não tenho nenhuma foto nova para enviar."
 			}]
 		}

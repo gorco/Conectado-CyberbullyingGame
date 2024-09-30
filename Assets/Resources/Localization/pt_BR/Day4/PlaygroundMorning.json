@@ -11,7 +11,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Não sei se você está ciente, mas o Alex disse para todos nós não falarmos com você."
+				"msn": "Não sei se você já está sabendo, mas o Alex disse para todos nós não conversarmos com você."
 			},
 			{
 				"tag": "Alison",
@@ -21,7 +21,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Posso confiar em você? Não quero que deixemos de ser amigos."
+				"msn": "Posso confiar em você? Não quero que a gente pare de ser amigos."
 			}]
 		},		
 		"options": {
@@ -47,7 +47,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Não quero correr nenhum risco."
+				"msn": "Não quero correr riscos."
 			}]
 		},		
 		"friend": {
@@ -56,12 +56,12 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Fico feliz em ouvir isso."
+				"msn": "Que bom ouvir isso."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Vamos trocar nossos telefones e senhas das redes sociais."
+				"msn": "Vamos trocar nossas senhas de celular e redes sociais."
 			},
 			{
 				"tag": "Alison",
@@ -71,12 +71,12 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "No passado, eles apertariam as mãos com uma ferida aberta para compartilhar sangue um com o outro."
+				"msn": "No passado, as pessoas apertavam as mãos sobre feridas abertas para compartilhar sangue."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Mas isso é nojento e não é nada saudável."
+				"msn": "Mas isso é nojento e nem um pouco saudável."
 			}]
 		},		
 		"passChange": {
@@ -119,7 +119,7 @@
 			},{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Perfeito. \"Melhores amigos\" (ela dá um grande sorriso)""
+				"msn": "Perfeito. \"Melhores amigos\" (sorrindo de orelha a orelha)"
 			}]
 		},	
 		"changeVariable": {
@@ -128,7 +128,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "SharedPassQuest",
-				"value": 1,
+				"value": 1
 			}
 		},
 		"alisonFS": {
@@ -137,7 +137,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "AlisonFS",
-				"value": -50,
+				"value": -50
 			}
 		},
 		"bellVar": {
@@ -166,7 +166,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "8:30",
+				"value": "8:30"
 			}
 		},
 		"fade1": {
@@ -191,7 +191,7 @@
 				"name": "fade out",
 				"key": "alison"
 			}
-		},
+		}
 	},
 	"jose":{
 		"root": {
@@ -199,7 +199,7 @@
 			"fragments": [{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "(Com um sorriso no rosto, ele olha para você e começa a rir)"
+				"msn": "(Com um sorriso no rosto, ele te olha e começa a rir)"
 			},
 			{
 				"tag": "Jose",
@@ -214,7 +214,7 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "(A expressão facial dele muda quando ele te vê. Ele vira a cabeça e olha para o outro lado)"
+				"msn": "(A expressão do rosto dele muda ao te ver. Ele vira a cabeça e olha para o outro lado)"
 			}]
 		}
 	},
@@ -249,7 +249,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Parece que alguém pegou a foto de ontem."
 			}]
 		}
@@ -258,7 +258,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Eu acabei de chegar. Ainda não posso ir embora."
 			}]
 		}

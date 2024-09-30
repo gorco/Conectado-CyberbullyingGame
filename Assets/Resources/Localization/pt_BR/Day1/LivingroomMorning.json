@@ -34,12 +34,12 @@
 		"bye": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
 				"msn": "Parece que você pegou tudo."
 			}, 
 			{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
 				"msn": "<$ if(varObject('global', 'HourNonStatic')<8, 'Vá agora ou você vai se atrasar.', 'Vá agora, você já está <$ if(varObject('global', 'MaleSexNonStatic')==true, 'atrasado', 'atrasada') $>.') $>."
 			}]
@@ -47,14 +47,14 @@
 		"getBag": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Você esqueceu sua mochila."
+				"msn": "Você esqueceu a sua mochila."
 			}, 
 			{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Está no seu quarto, pegue ela e vá agora para escola."
+				"msn": "Está no seu quarto. Pegue-a e vá para escola agora!"
 			}]
 		},
 		"checkHour": {
@@ -71,35 +71,35 @@
 		"motherSoon": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
 				"msn": "Parece que você está <$ if(varObject('global', 'MaleSexNonStatic')==true, 'pronto', 'pronta') $> para ir."
 			}, 
 			{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Você pegou tudo? Lembre-se de levar a sua mochila."
+				"msn": "Você pegou tudo? Lembre-se da sua mochila."
 			},
 			{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Comporte-se e faça muitos amigos."
+				"msn": "Comporte-se e faça muitos amigos!"
 			}]
 		},		
 		"motherLate": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
 				"msn": "Você viu que horas são?"
 			}, 
 			{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
 				"msn": "Seu primeiro dia na nova escola e você já está <$ if(varObject('global', 'MaleSexNonStatic')==true, 'atrasado', 'atrasada') $>."
 			},
 			{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
 				"msn": "Vamos, pegue tudo o que precisa e saia AGORA!"
 			}]
@@ -149,8 +149,8 @@
 		"dialogNode": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Esqueci a mochila. Melhor ir ao meu quarto para pegá-la antes de sair."
+				"tag": "Você",
+				"msn": "Esqueci a mochila! Melhor voltar ao meu quarto para pegá-la antes de sair."
 			}]
 		}
 	},

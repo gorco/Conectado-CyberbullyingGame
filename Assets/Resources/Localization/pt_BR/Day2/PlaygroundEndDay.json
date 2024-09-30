@@ -3,12 +3,12 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não tenho mais aulas hoje e todo mundo já foi embora."			
 			},
 			{
-				"tag": "You",
-				"msn": "Melhor eu ir para casa."
+				"tag": "Você",
+				"msn": "É melhor eu ir para casa."
 			}]
 		}
 	},
@@ -18,7 +18,7 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Não dê ouvidos a eles e vá para casa, amanhã é um novo dia."
+				"msn": "Não dê ouvidos a eles. Vá para casa, amanhã é um novo dia."
 			}]
 		},
 	},
@@ -26,7 +26,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Voices",
+				"tag": "Vozes",
 				"msn": "Hahahahaha"
 			}]
 		},
@@ -57,26 +57,26 @@
 		"wash": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Voices",
+				"tag": "Vozes",
 				"msn": "Hahahahaha."
 			},
 			{
-				"tag": "Voices",
-				"msn": "Que sujeira, <$ varObject('global', 'UserNameNonStatic') $>, parece que você sujou as calças."
+				"tag": "Vozes",
+				"msn": "Que sujeira, <$ varObject('global', 'UserNameNonStatic') $>! Parece que você sujou as calças."
 			}]
 		},
 		"notWash": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Voices",
-				"msn": "Hahahahaha."
+				"tag": "Vozes",
+				"msn": "Hahaha!"
 			},
 			{
-				"tag": "Voices",
+				"tag": "Vozes",
 				"msn": "Você deveria lavar suas roupas."
 			},
 			{
-				"tag": "Voices",
+				"tag": "Vozes",
 				"msn": "Não importa o quanto você use aquele chiclete nas calças, ele não vai se tornar moda."
 			}]
 		}

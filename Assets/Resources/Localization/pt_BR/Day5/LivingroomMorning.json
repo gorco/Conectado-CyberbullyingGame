@@ -14,24 +14,24 @@
 		"nodeA": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Cuide-se e preste atenção onde você senta."
+				"msn": "Se cuide e presta atenção onde você senta."
 			},
 			{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Comporte-se, até mais tarde."
+				"msn": "Se comporte, até mais tarde."
 			}]
 		},
 		"nodeB": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Comporte-se, até mais tarde."
+				"msn": "Se comporte, até mais tarde."
 			}]
-		},
+		}
 	},
 	"exitDoor": {
 		"root": {
@@ -51,7 +51,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "8:20",
+				"value": "8:20"
 			}
 		},
 		"exitNode": {
@@ -65,8 +65,8 @@
 		"dialogNode": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Esqueci a mochila. É melhor eu ir para meu quarto pegá-la antes de sair."
+				"tag": "Você",
+				"msn": "Esqueci a mochila. Vou voltar ao meu quarto para pegá-la antes de sair."
 			}]
 		}
 	},

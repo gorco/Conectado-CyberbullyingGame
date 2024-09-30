@@ -4,7 +4,7 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Mmm, devo ir dormir agora?"
 			}]
 		},
@@ -33,15 +33,15 @@
 			"type": "dialog",
 			"next": "scene",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Mas não posso usar o despertador do celular."
+				"tag": "Você",
+				"msn": "Não posso usar o despertador do celular."
 			},
 			{
-				"tag": "You",
-				"msn": "Mmmm, vou usar meu celular antigo, mas ele não tem um cartão SIM, então só funciona como despertador."
+				"tag": "Você",
+				"msn": "Mmmm, vou usar meu celular antigo. Ele não tem um cartão SIM, então só serve como despertador."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Ok, despertador ajustado... Hora de dormir."
 			}]
 		},
@@ -59,8 +59,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Não tem nada de útil aqui."
+				"tag": "Você",
+				"msn": "Não tem nada útil aqui."
 			}]
 		}		
 	},
@@ -68,7 +68,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não preciso de nada daqui."
 			}]
 		}		
@@ -77,12 +77,12 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Acabei de voltar."
 			},
 			{
-				"tag": "You",
-				"msn": "Não preciso da mochila mesmo.",
+				"tag": "Você",
+				"msn": "Não preciso da mochila."
 			}]
 		}
 	},
@@ -124,8 +124,8 @@
 		"node1b": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Melhor eu sair agora.."
+				"tag": "Você",
+				"msn": "Acho melhor eu sair agora."
 			}]
 		}		
 	},
@@ -134,8 +134,8 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Deixo o celular carregando?"
+				"tag": "Você",
+				"msn": "Devo deixar o celular carregando?"
 			}]
 		},		
 		"node1": {

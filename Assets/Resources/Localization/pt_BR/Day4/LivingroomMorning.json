@@ -23,14 +23,14 @@
 		"repeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Cuide-se e comporte-se.",
+				"msn": "Se cuida e se comporte bem."
 			}, 
 			{
 				"tag": "Dad",
-				"character": "Father",
-				"msn": "E lembre-se que vamos visitar a vovó no domingo."
+				"character": "Pai",
+				"msn": "E não esqueça que vamos visitar a vovó no domingo."
 			}]
 		},
 		"checkFS": {
@@ -48,14 +48,14 @@
 			"type": "dialog",
 			"next": "meetingVar",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Decidimos ir conversar com seu coordenador e ver o que está acontecendo."
+				"msn": "Decidimos ir conversar com seu professor para entender o que está acontecendo."
 			}, 
 			{
-				"tag": "Dad",
+				"tag": "Pai",
 				"character": "Father",
-				"msn": "Vamos marcar uma reunião para amanhã."
+				"msn": "Vamos pedir uma reunião para amanhã."
 			}]
 		},		
 		"meetingVar": {
@@ -64,7 +64,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "ParentsMeetingQuest",
-				"value": 1,
+				"value": 1
 			}
 		},
 		"options": {
@@ -83,14 +83,14 @@
 			"type": "dialog",
 			"next": "changeVariable",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "De jeito nenhum <$ if(varObject('global', 'MaleSexNonStatic')==true, 'querido', 'querida') $>, queremos que você fique bem."
+				"msn": "De jeito nenhum, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'querido', 'querida') $>. Queremos que você fique bem."
 			}, 
 			{
-				"tag": "Dad",
+				"tag": "Pai",
 				"character": "Father",
-				"msn": "Vamos tentar marcar essa reunião até amanhã no máximo."
+				"msn": "Vamos tentar marcar essa reunião para amanhã, no máximo."
 			}]
 		},
 		"changeVariable": {
@@ -99,28 +99,28 @@
 			"event": {
 				"name": "change variable",
 				"var": "ParentsMeetingQuest",
-				"value": 2,
+				"value": 2
 			}
 		},
 		"node1b": {
 			"type": "dialog",
 			"next": "repeat",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Eu não quero que vocês vão. Vai piorar tudo."
 			},
 			{
-				"tag": "You",
-				"msn": "Eles vão pensar que sou um dedo-duro e que não foi nada tão grave assim."
+				"tag": "Você",
+				"msn": "Eles vão pensar que sou um dedo-duro, e não era tão grave assim."
 			}, 
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Deixa pra lá, o tempo vai resolver."
 			},
 			{
-				"tag": "Dad",
+				"tag": "Pai",
 				"character": "Father",
-				"msn": "Tudo bem, mas nos avise se algo mudar."
+				"msn": "Tudo bem, mas nos avise se a situação piorar."
 			}]
 		}
 	},
@@ -145,7 +145,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "8:40",
+				"value": "8:40"
 			}
 		},
 		"changeHourSoon": {
@@ -154,7 +154,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "8:20",
+				"value": "8:20"
 			}
 		},
 		"exitNode": {
@@ -168,8 +168,8 @@
 		"dialogNode": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Esqueci a mochila. Melhor eu ir até meu quarto pegá-la antes de sair."
+				"tag": "Você",
+				"msn": "Esqueci a mochila. É melhor eu ir ao meu quarto pegar antes de sair."
 			}]
 		}
 	},

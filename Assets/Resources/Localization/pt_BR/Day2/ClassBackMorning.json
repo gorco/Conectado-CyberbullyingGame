@@ -24,7 +24,7 @@
 			},{
 				"tag": "Teacher",
 				"character": "Teacher",
-				"msn": "Por favor, sente-se logo e vamos continuar com a aula."
+				"msn": "Por favor, sente-se rápido para podermos continuar a aula."
 			}]
 		},
 		"node2": {
@@ -34,7 +34,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Você se senta na primeira cadeira vazia que vê, enquanto todos os alunos estão olhando para você."
+				"value": "Você se senta na primeira cadeira vazia que encontra, enquanto todos os alunos olham para você."
 			}
 		},
 		"node3": {
@@ -51,8 +51,8 @@
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Este lugar está livre, posso sentar aqui?"
+				"tag": "Você",
+				"msn": "Este lugar está livre. Posso me sentar aqui?"
 			}]
 		},
 		"options": {
@@ -76,19 +76,19 @@
 			"next": "node3",
 			"fragments": [{
 				"tag": "",
-				"msn": "(Você escuta passos, o professor está aqui)"
+				"msn": "(Você ouve passos. O professor está chegando.)"
 			}]
 		},
 		"gum": {
 			"type": "dialog",
 			"next": "noGum",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Tem um chiclete grudado na cadeira."
 			},
 			{
-				"tag": "You",
-				"msn": "Aconteceu a mesma coisa ontem, é melhor eu tirar o chiclete e me sentar."
+				"tag": "Você",
+				"msn": "A mesma coisa aconteceu ontem. Melhor eu tirar o chiclete e me sentar."
 			}]
 		},
 		"noGum": {
@@ -107,7 +107,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Todos vocês se sentam e quando percebem já é hora do recreio."
+				"value": "Todos se sentam e, quando percebem, já é hora do intervalo."
 			}
 		},
 		"changeHour": {

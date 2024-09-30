@@ -30,12 +30,12 @@
 		"nodeRepeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Eu já tirei o chiclete, mas ficou uma mancha pior do que ele."
+				"tag": "Você",
+				"msn": "Eu já tirei o chiclete, mas agora ficou uma mancha ainda pior."
 			},
 			{
-				"tag": "You",
-				"msn": "Eles agora vão rir de mim ainda mais."
+				"tag": "Você",
+				"msn": "Agora eles vão rir de mim ainda mais."
 			}]
 		}, 
 		"setter":{
@@ -50,8 +50,8 @@
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Talvez água e sabão seja tudo o que eu preciso."
+				"tag": "Você",
+				"msn": "Talvez água e sabão sejam tudo que eu preciso."
 			}]
 		}, 
 		"options": {
@@ -62,7 +62,7 @@
 				"msn": "(Tentar água e sabão)"
 			},
 			{
-				"msn": "(Deixar como está)"
+				"msn": "(Melhor deixar como está)"
 			}]
 		},
 		"quest": {

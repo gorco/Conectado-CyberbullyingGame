@@ -10,18 +10,18 @@
 		"mobile": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não consigo encontrar meu celular."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Deixei ele na minha mesa quando a aula começou."
 			},
 			{
-				"tag": "You",
-				"msn": "Será que alguém pegou? Melhor perguntar por aí."
+				"tag": "Você",
+				"msn": "Será que alguém pegou? Melhor perguntar para ver."
 			}]
-		},
+		}
 	},
 	"door": {
 		"root": {
@@ -37,8 +37,8 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "11:10",
+				"value": "11:10"
 			}
-		},
+		}
 	}
 }

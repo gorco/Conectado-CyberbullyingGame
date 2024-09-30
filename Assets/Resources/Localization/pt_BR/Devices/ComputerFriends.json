@@ -6,7 +6,7 @@
 			"event": {
 				"name": "computer publication",
 				"var": "earing",
-				"value": "Meus novos brincos, eu <3 você:)",
+				"value": "Meus novos brincos, eu <3 você :)",
 				"key": "Alison",
 				"other": "photoEaring",
 				"time": 0 
@@ -40,7 +40,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "earing",
-				"value": ":( espero que você consiga encontrar, procure bem onde você esteve"",
+				"value": ":( espero que você consiga encontrar, procure bem onde esteve",
 				"key": "Alicia",
 				"time": 1
 			}
@@ -72,7 +72,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "earing",
-				"value": "Foi impossível encontrar, alguém deve ter pegado. Muito obrigada a todas as pessoas que me ajudaram a procurar.",
+				"value": "Foi impossível encontrar, alguém deve ter pegado. Muito obrigada a todos que me ajudaram a procurar.",
 				"key": "Alison",
 				"time": 1.5
 			}
@@ -83,7 +83,7 @@
 			"type": "dialog",
 			"next": "resend",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não posso rejeitar o convite, ela é a primeira pessoa que parece querer ser minha amiga."
 			}]
 		},
@@ -117,7 +117,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "match",
-				"value": "Que jogo, cara! Devíamos nos encontrar para assistir ao próximo. Meu pai comprou uma nova TV e é enorme!",
+				"value": "Que jogo, hein! Precisamos  nos encontrar para assistir ao próximo. Meu pai comprou uma TV nova e é enorme!",
 				"key": "Jesus",
 				"time": 0 
 			}
@@ -138,7 +138,7 @@
 			"type": "dialog",
 			"next": "sure",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não tenho motivo para rejeitar o convite dele. Será que realmente quero rejeitá-lo?"
 			}]
 		},

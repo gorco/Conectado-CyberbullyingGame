@@ -14,12 +14,12 @@
 		"bathroom": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Eu deveria ir ao banheiro antes de ir para casa."
+				"tag": "Você",
+				"msn": "Acho que deveria passar no banheiro antes de ir para casa."
 			},
 			{
-				"tag": "You",
-				"msn": "Talvez o bilhete fosse importante."
+				"tag": "Você",
+				"msn": "Pode ser que o bilhete fosse importante."
 			}]
 		},
 		"move": {
@@ -34,9 +34,9 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "14:15",
+				"value": "14:15"
 			}
-		},
+		}
 	},
 	"maleBathroom": {
 		"root": {
@@ -60,7 +60,7 @@
 		"female": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não posso ir lá, é o banheiro dos meninos."
 			}]
 		}
@@ -87,7 +87,7 @@
 		"male": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não posso ir lá, é o banheiro das meninas."
 			}]
 		}
@@ -96,7 +96,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não tenho nada para fazer na sala de aula."
 			}]
 		}

@@ -4,8 +4,8 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Mmm, deveria ir dormir agora?"
+				"tag": "Você",
+				"msn": "Será que já devo ir dormir?"
 			}]
 		},
 		"node1": {
@@ -13,10 +13,10 @@
 			"questionId": "goToSleep",
 			"options": [{
 				"next": "sleep",
-				"msn": "Yes"
+				"msn": "Sim"
 			},
 			{
-				"msn": "No"
+				"msn": "Não"
 			}]
 		},
 		"sleep": {
@@ -33,8 +33,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Não tem nada útil."
+				"tag": "Você",
+				"msn": "Não tem nada de útil aqui."
 			}]
 		}		
 	},
@@ -42,8 +42,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Eu deveria organizar tudo isso."
+				"tag": "Você",
+				"msn": "Eu devia arrumar isso."
 			}]
 		}		
 	},
@@ -51,12 +51,12 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Acabei de voltar"
+				"tag": "Você",
+				"msn": "Acabei de chegar"
 			},
 			{
-				"tag": "You",
-				"msn": "Não preciso mais da mochila.",
+				"tag": "Você",
+				"msn": "Não preciso mais da mochila."
 			}]
 		}
 	},
@@ -66,7 +66,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "PC",
-				"msn": "Você quer ligar o computador?"
+				"msn": "Quer ligar o computador?"
 			}]
 		},		
 		"node1": {
@@ -98,8 +98,8 @@
 		"node1b": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "É melhor eu sair agora."
+				"tag": "Você",
+				"msn": "Melhor eu sair agora."
 			}]
 		}		
 	},
@@ -108,7 +108,7 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Deixo o celular carregando?"
 			}]
 		},		

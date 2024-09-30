@@ -4,11 +4,11 @@
 			"type": "dialog",
 			"next": "fade",
 			"fragments": [{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "É seu primeiro dia de aula. Por que não escolhe um lugar para sentar?"			
+				"msn": "É seu primeiro dia de aula. Que tal escolher um lugar para se sentar?"			
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "Escolha o lugar que você mais gosta."
 			}]
@@ -26,20 +26,20 @@
 			"type": "dialog",
 			"next": "variable",
 			"fragments": [{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Acho que você perdeu o seu lugar."
+				"msn": "Parece que você perdeu seu lugar."
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Você ao menos sabe como se sentar?"
+				"msn": "Você sabe ao menos como se sentar?"
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Você ao menos presta para alguma coisa?"
+				"msn": "Você serve pra alguma coisa?"
 			},
 			{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "Como espera fazer amigos agindo assim?"
 			}]
@@ -50,7 +50,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Day",
-				"value": 1,
+				"value": 1
 			}
 		},
 		"changeHour": {
@@ -59,7 +59,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "7:30",
+				"value": "7:30"
 			}
 		},
 		"saveMobile": {
@@ -83,19 +83,19 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "Vejo que você encontrou um lugar, mas... "
 			},
 			{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "Esse lugar é meu, você terá que escolher outro."
 			},
 			{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Você pode sentar onde quiser, menos nesse."
+				"msn": "Você pode sentar onde quiser, menos aqui."
 			}]
 		}
 	}

@@ -16,7 +16,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Vamos entrar ou chegaremos tarde."
+				"msn": "Vamos entrar ou vamos chegar tarde."
 			}]
 		}, 
 		"setter":{
@@ -43,17 +43,17 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Como você está, <$ varObject('global', 'UserNameNonStatic') $>?"
+				"msn": "Oi, <$ varObject('global', 'UserNameNonStatic') $>! Como você está?"
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "A propósito, o Alex estava falando antes sobre fazer uma pegadinha com você."
+				"msn": "A propósito, o Alex comentou antes que queria fazer uma pegadinha com você."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Sabe, ele não costumava ser assim, não sei o que está acontecendo com ele."
+				"msn": "Sabe, ele não costumava ser assim, não sei o que está acontecendo."
 			},
 			{
 				"tag": "Alison",
@@ -77,20 +77,20 @@
 			"next": "notify2",
 			"fragments": [
 			{
-				"tag": "You",
-				"msn": "De novo?"
+				"tag": "Você",
+				"msn": "De novo, é?"
 			},{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "O que que tem?"
+				"msn": "E daí?"
 			},
 			{
-				"tag": "You",
-				"msn": "(Ela não parece lembrar que ontem também fiquei com um chiclete grudado)"
+				"tag": "Você",
+				"msn": "(Ela não parece lembrar que ontem eu também fiquei com um chiclete grudado)"
 			},
 			{
-				"tag": "You",
-				"msn": "Esquece, temos que entrar, até mais."
+				"tag": "Você",
+				"msn": "Esquece, temos que entrar. Até mais."
 			}]
 		},
 		"notify2": {
@@ -117,7 +117,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Como você está, <$ varObject('global', 'UserNameNonStatic') $>?"
+				"msn": "Oi, <$ varObject('global', 'UserNameNonStatic') $>! Como você está?"
 			}]
 		},
 		"normal2": {
@@ -154,7 +154,7 @@
 		"nodeRepeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Ele está me ignorando."
 			}]
 		},
@@ -181,17 +181,17 @@
 			"questionId": "AlexJokeAsk",
 			"options": [{
 				"next": "why1a",
-				"msn": "Fiquei sabendo que quer fazer uma pegadinha comigo.",
+				"msn": "Fiquei sabendo que você quer fazer uma pegadinha comigo.",
 				"condition": "varObject('global', 'RepeatedNonStatic') == false"
 			},
 			{
 				"next": "why1b",
-				"msn": "Podemos tentar nos dar bem?",
+				"msn": "Podemos tentar nos entender?",
 				"condition": "varObject('global', 'RepeatedNonStatic') == false"
 			},
 			{
 				"next": "why1aRepeat",
-				"msn": "Outro dia de pegadinhas?",
+				"msn": "Mais um dia de pegadinhas, é?",
 				"condition": "varObject('global', 'RepeatedNonStatic') == true"
 			},
 			{
@@ -201,7 +201,7 @@
 			},
 			{
 				"next": "why1c",
-				"msn": "Eu sei o tipo de pessoa que você é."
+				"msn": "Eu conheço bem o tipo de pessoa que você é."
 			}]
 		},
 		"why1a": {
@@ -210,12 +210,12 @@
 			"fragments": [{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Sou meio brincalhão, mas fique tranquilo."
+				"msn": "Sou meio brincalhão, mas fica tranquilo."
 			},
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Todos nós vamos rir juntos."
+				"msn": "Vamos todos rir juntos."
 			}]
 		},	
 		"quest1": {
@@ -231,13 +231,13 @@
 			"type": "dialog",
 			"next": "quest2",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Por que não começamos de novo?"
 			},
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Tudo bem, vamos entrar."
+				"msn": "Tudo certo, vamos entrar."
 			}]
 		},	
 		"quest2": {
@@ -253,17 +253,17 @@
 			"type": "dialog",
 			"next": "quest3",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Você é do tipo que se aproveita de todo mundo."
+				"tag": "Você",
+				"msn": "Você é do tipo que se aproveita dos outros."
 			},
 			{
-				"tag": "You",
-				"msn": "Procurando briga por qualquer motivo."
+				"tag": "Você",
+				"msn": "Sempre procurando briga por qualquer motivo."
 			},
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Se terminou de me incomodar, saia logo daqui."
+				"msn": "Se já terminou de me incomodar, sai logo daqui."
 			}]
 		},	
 		"quest3": {
@@ -286,7 +286,7 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Não foi brincadeira, eu não quero que você se sente lá de novo."
+				"msn": "Não é brincadeira, não quero que se sente lá de novo."
 			}]
 		},	
 		"why1bRepeat": {
@@ -300,20 +300,20 @@
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Não olhe para mim."
+				"msn": "Não olhe pra mim."
 			},
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Eu lembro que cheguei tarde."
+				"msn": "Lembro que cheguei tarde."
 			}]
 		},	
 		"nothing": {
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Você ainda está chateado com a coisa do lugar?"
+				"tag": "Você",
+				"msn": "Você ainda está chateado com a história do lugar?"
 			},
 			{
 				"tag": "Álex",
@@ -341,15 +341,15 @@
 		"nodeRepeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Vamos entrar."
 			}]
 		},
 		"nodeRepeatMatch": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Lembre-se, sábado à tarde às 6, na minha casa."
+				"tag": "Você",
+				"msn": "Não esquece. Sábado à tarde, às 6, na minha casa."
 			}]
 		},
 		"node0": {
@@ -374,12 +374,12 @@
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Você quer vir? Alguns colegas da turma estão vindo."
+				"msn": "Você quer vir? Alguns colegas da turma vão estar lá."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "E vamos assistir na TV enorme que meu pai acabou de comprar para ver futebol."
+				"msn": "E vamos assistir na TV enorme que meu pai acabou de comprar pra ver futebol."
 			}]
 		},
 		"matchOptions": {
@@ -395,7 +395,7 @@
 			},
 			{
 				"next": "match2c",
-				"msn": "Eu preciso perguntar aos meus pais se eu posso."
+				"msn": "Preciso perguntar aos meus pais se posso."
 			}]
 		},
 		"match2a": {
@@ -404,12 +404,12 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Ótimo, mais um para o nosso time então."
+				"msn": "Ótimo, mais um para o nosso time!"
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Vou te passar o endereço e o resto dos detalhes."
+				"msn": "Vou te passar o endereço e os detalhes."
 			}]
 		},
 		"questGo": {
@@ -427,12 +427,12 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Que pena."
+				"msn": "Que pena..."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Bom, até mais."
+				"msn": "Bom, até mais!"
 			}]
 		},
 		"questNoGo": {
@@ -450,7 +450,7 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Bom, me avise."
+				"msn": "Então me avise."
 			}]
 		},
 		"questAsk": {
@@ -466,8 +466,8 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Parece distraído."
+				"tag": "Você",
+				"msn": "Você parece distraído."
 			}]
 		},
 		"setter":{
@@ -501,7 +501,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "You",
-				"msn": "Eu não posso ir lá, é o banheiro dos meninos."
+				"msn": "Não posso ir lá, é o banheiro dos meninos."
 			}]
 		}
 	},
@@ -527,8 +527,8 @@
 		"male": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Eu não posso ir lá, é o banheiro das meninas."
+				"tag": "Você",
+				"msn": "Não posso ir lá, é o banheiro das meninas."
 			}]
 		}
 	},

@@ -25,7 +25,7 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Sinto muito, de verdade, mas meus pais não podem saber disso."
+				"msn": "Desculpa, mas meus pais não podem saber disso."
 			}]
 		}, 
 		"setter":{
@@ -51,41 +51,41 @@
 			"type": "dialog",
 			"next": "nodeUnisex",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Então quem escreveu o bilhete... Foi você, Guille."
+				"tag": "Você",
+				"msn": "Então, quem escreveu o bilhete foi você, Guille."
 			},
 			{
-				"tag": "You",
-				"msn": "Então agora você fala comigo."
+				"tag": "Você",
+				"msn": "Então agora você resolve falar comigo."
 			},
 			{
-				"tag": "You",
-				"msn": "E quanto à metade da classe me ignorando?"
+				"tag": "Você",
+				"msn": "E a metade da classe me ignorando, como fica?"
 			}]
 		},
 		"nodeFemale": {
 			"type": "dialog",
 			"next": "nodeUnisex",
 			"fragments": [{
-				"tag": "You",
-				"msn": "O que você está fazendo no banheiro das meninas, Guille?"
+				"tag": "Você",
+				"msn": "O que você está fazendo no banheiro das meninas?"
 			},
 			{
-				"tag": "You",
-				"msn": "Você não pode estar aqui, vá embora."
+				"tag": "Você",
+				"msn": "Você não pode estar aqui. Sai fora!"
 			},
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "Eu preciso falar com você. Fui eu que escrevi o bilhete."
+				"msn": "Eu preciso falar com você. Fui eu quem escreveu o bilhete."
 			},
 			{
-				"tag": "You",
-				"msn": "Agora você fala comigo?"
+				"tag": "Você",
+				"msn": "Agora você decide falar comigo?"
 			},
 			{
-				"tag": "You",
-				"msn": "E quanto à metade da classe me ignorando?"
+				"tag": "Você",
+				"msn": "E a metade da classe me ignorando, como fica?"
 			}]
 		},
 		"nodeUnisex": {
@@ -94,46 +94,46 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "É sobre isso que eu quero falar com você."
+				"msn": "É disso que eu quero falar com você."
 			},
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "Eu não posso falar com você onde Alex ou qualquer um dos amigos dele nos vejam."
+				"msn": "Não posso falar com você aqui, onde o Alex ou os amigos dele podem nos ver."
 			},
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "Ele ameaçou enviar para meus pais uma foto minha fumando e bebendo."
+				"msn": "Ele ameaçou mostrar uma foto minha fumando e bebendo pros meus pais."
 			},
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "Meus pais são muito rígidos e se descobrirem, não sei o que pode acontecer... Talvez até me mandem para outra escola."
+				"msn": "Meus pais são muito rigorosos e, se descobrirem, não sei o que pode acontecer... Talvez até me mandem pra outra escola."
 			},
 			{
-				"tag": "You",
-				"msn": "Mas por que Alex não quer que ninguém fale comigo?"
-			},
-			{
-				"tag": "Guille",
-				"character" : "Guille",
-				"msn": "Nós não sabemos, ele pegou no seu pé desde o primeiro dia."
+				"tag": "Você",
+				"msn": "Mas por que o Alex não quer que ninguém fale comigo?"
 			},
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "Muitas pessoas fazem o que ele quer, mas alguns de nós que foram ameaçados por ele."
+				"msn": "A gente não sabe. Ele te implicou desde o primeiro dia."
 			},
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "No ano passado a Ana fez algo semelhante com a Maria."
+				"msn": "Muita gente faz o que ele quer, mas alguns de nós já foram ameaçados por ele."
 			},
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "Ela não tem amigos desde então e quando alguém tenta falar com ela... Ela nos ignora."
+				"msn": "No ano passado, a Ana fez algo parecido com a Maria."
+			},
+			{
+				"tag": "Guille",
+				"character" : "Guille",
+				"msn": "Ela não tem amigos desde então e, quando alguém tenta falar com ela, acaba ignorando."
 			},
 			{
 				"tag": "Guille",
@@ -143,12 +143,12 @@
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "Bem... Eu só queria pedir desculpas, mas enquanto Alex continuar chateado, não poderei falar com você."
+				"msn": "Olha, eu só queria pedir desculpas, mas enquanto o Alex estiver assim, não poderei falar com você."
 			},
 			{
 				"tag": "Guille",
 				"character" : "Guille",
-				"msn": "Sinto muito mesmo, <$ varObject('global', 'UserNameNonStatic') $>."
+				"msn": "Desculpa mesmo, <$ varObject('global', 'UserNameNonStatic') $>."
 			}]
 		},
 		"changeVariable": {
@@ -172,11 +172,11 @@
 			"questionId": "GuilleBathroomDialog",
 			"options": [{
 				"next": "nodeAlex",
-				"msn": "E é isso então? Alex consegue o que quer?"
+				"msn": "E é isso então? O Alex sempre consegue o que quer?"
 			},
 			{
 				"next": "nodeBoard",
-				"msn": "E quanto aquela minha foto no mural? Foi o Alex?"
+				"msn": "E aquela minha foto no mural? Foi o Alex quem fez isso?"
 			}]
 		},
 		"nodeAlex": {
@@ -184,12 +184,12 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Sinto muito mesmo."
+				"msn": "Desculpa mesmo."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Mas eu não quero que ele torne minha vida miserável também."
+				"msn": "Mas não quero que ele torne minha vida um inferno também."
 			}]
 		},
 		"nodeBoard": {
@@ -198,17 +198,17 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Isso foi coisa da Ana."
+				"msn": "Isso foi a Ana quem fez."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Ela realmente gosta do Alex e se ele mexer com você, ela vai fazer o mesmo."
+				"msn": "Ela realmente gosta do Alex e, se ele te implicar, ela vai fazer o mesmo."
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "E o José é o capacho dele, não consegue pensar sozinho."
+				"msn": "E o José é o capacho dele, não consegue pensar por si mesmo."
 			},
 			{
 				"tag": "Guille",

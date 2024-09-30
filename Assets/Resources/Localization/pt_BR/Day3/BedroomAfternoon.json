@@ -4,8 +4,8 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Hmm, devo dormir agora?"
+				"tag": "Você",
+				"msn": "Hmm, será que já é hora de ir dormir?"
 			}]
 		},
 		"node1": {
@@ -33,7 +33,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não há nada útil aqui."
 			}]
 		}		
@@ -42,8 +42,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Na verdade, não está tão desorganizado assim."
+				"tag": "Você",
+				"msn": "Na verdade, não está tão bagunçado assim."
 			}]
 		}		
 	},
@@ -51,12 +51,12 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Acabei de voltar."
 			},
 			{
-				"tag": "You",
-				"msn": "Não preciso da mochila.",
+				"tag": "Você",
+				"msn": "Não preciso da mochila no momento.",
 			}]
 		}
 	},
@@ -98,8 +98,8 @@
 		"node1b": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Melhor eu sair agora."
+				"tag": "Você",
+				"msn": "Acho melhor eu sair agora."
 			}]
 		}		
 	},
@@ -108,8 +108,8 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Será que deixo o meu celular carregando?"
+				"tag": "Você",
+				"msn": "Devo deixar o meu celular carregando?"
 			}]
 		},		
 		"node1": {

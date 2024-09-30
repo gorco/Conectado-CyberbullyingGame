@@ -14,8 +14,8 @@
 		"nodeRepeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Já falei com a Alison. Melhor eu procurar por pessoas lá no pátio."
+				"tag": "Você",
+				"msn": "Já falei com a Alison. Melhor eu dar uma olhada no pátio."
 			}]
 		}, 
 		"setter":{
@@ -45,17 +45,17 @@
 			"type": "dialog",
 			"next": "notify2",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Bom dia, <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Ouvi o Alex falando com a Ana sobre fazer uma pegadinha com você."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Não sei do que se trata, mas cuidado, elas geralmente não são muito engraçadas."
 			}]
@@ -81,17 +81,17 @@
 			"type": "dialog",
 			"next": "notify3",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "De novo o que?"
 			},
 			{
-				"tag": "You",
-				"msn": "(Ela parece não lembrar do aviso de ontem)"
+				"tag": "Você",
+				"msn": "(Ela parece não lembrar do que aconteceu ontem.)"
 			},
 			{
-				"tag": "You",
-				"msn": "Está bem. Estou indo embora, tchau."
+				"tag": "Você",
+				"msn": "Tudo bem. Estou indo embora, tchau!"
 			}]
 		},
 		"notify3": {
@@ -118,7 +118,7 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Até mais, tchau."
+				"msn": "Até mais, tchau!"
 			}]
 		}, 
 		"ignore": {
@@ -132,7 +132,7 @@
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Se não se importa... (Ela te ignora e continua lendo)"
+				"msn": "Se não se importa... (Ela te ignora e continua lendo.)"
 			}]
 		}, 
 		"normal1": {
@@ -141,7 +141,7 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Você precisa de alguma coisa?"
+				"msn": "Você precisa de algo?"
 			}]
 		}, 
 		"normal2": {
@@ -153,7 +153,7 @@
 			},
 			{
 				"next": "normal3b",
-				"msn": "Diga olá. Sempre te vejo sozinha e lendo."
+				"msn": "Oi! Sempre te vejo sozinha e lendo."
 			}]
 		},
 		"normal3b": {
@@ -171,12 +171,12 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Muito gentil."
+				"msn": "Que gentil."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "As pessoas não costumam falar comigo."
+				"msn": "Ninguém costuma falar comigo."
 			},
 			{
 				"tag": "María",
@@ -239,22 +239,22 @@
 			"fragments": [{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Já viu aquele aplicativo que verifica seu relacionamento com as pessoas com quem você mais conversa?"
+				"msn": "Você já viu aquele aplicativo que analisa seu relacionamento com as pessoas com quem mais conversa?"
 			},
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Ele diz com quem você se dá bem ou não entre todas as pessoas que o baixaram."
+				"msn": "Ele mostra com quem você se dá bem ou não entre todos que baixaram."
 			},
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Dizem que é muito preciso, mas não sei explicar direito como ele funciona."
+				"msn": "Dizem que é bem preciso, mas não sei explicar exatamente como funciona."
 			},
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Vi que você já tem."
+				"msn": "Vi que você já baixou ele."
 			}]
 		},
 		"setter":{
@@ -309,7 +309,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Sai fora. Não tenho nada para falar com você."
+				"msn": "Sai fora! Não tenho nada pra conversar com você."
 			}]
 		},
 		"bad1": {
@@ -318,7 +318,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "O que você está olhando? Diz alguma coisa ou sai logo daqui"
+				"msn": "O que você está fazendo? Fala alguma coisa ou sai logo daqui"
 			}]
 		},
 		"badOptions": {
@@ -329,7 +329,7 @@
 			},
 			{
 				"next": "bad2",
-				"msn": "Me contaram sobre você e Alex falando de uma brincadeira.",
+				"msn": "Ouvi falar que você e o Alex estavam falando de uma pegadinha.",
 				"condition": "varObject('state', 'JokeAdvise') == true"
 			}]
 		},
@@ -339,7 +339,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "É, e daí? Saia daqui."
+				"msn": "É daí? Sai daqui."
 			}]
 		},
 		"checkGood": {
@@ -358,7 +358,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Sai fora. Não tenho nada para falar com você."
+				"msn": "Sai fora! Não tenho nada pra conversar com você."
 			}]
 		},
 		"good1": {
@@ -367,23 +367,23 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Bom dia, <$ varObject('global', 'UserNameNonStatic') $>."
+				"msn": "Bom dia, <$ varObject('global', 'UserNameNonStatic') $>!"
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Você precisa de alguma coisa?"
+				"msn": "Precisa de alguma coisa?"
 			}]
 		},
 		"goodOptions": {
 			"type": "options",
 			"questionId": "AnaJokeAsk",
 			"options": [{
-				"msn": "Nada (você sai)"
+				"msn": "Nada (você sai)."
 			},
 			{
 				"next": "good2",
-				"msn": "Me contaram que você e o Alex falando de uma pegadinha.",
+				"msn": "Ouvi que você e o Alex estavam falando de uma pegadinha.",
 				"condition": "varObject('state', 'JokeAdvise') == true"
 			}]
 		},
@@ -393,12 +393,12 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Poxa, você nos pegou, foi algo bobo."
+				"msn": "Poxa, você nos pegou! Foi só uma bobeira."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Mas não é mais engraçado, não vamos fazer isso."
+				"msn": "Mas não é mais engraçado, vamos deixar pra lá."
 			}]
 		}
 	},
@@ -425,7 +425,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "",
-				"msn": "Parece que cheguei cedo e ainda não posso entrar. Melhor eu passar um tempo em outro lugar."
+				"msn": "Parece que cheguei cedo e ainda não posso entrar. Melhor eu ficar por aqui um tempo."
 			}]
 		}
 	},
@@ -433,8 +433,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Acabei de chegar, não posso sair ainda."
+				"tag": "Você",
+				"msn": "Acabei de chegar, não posso sair agora."
 			}]
 		}
 	}

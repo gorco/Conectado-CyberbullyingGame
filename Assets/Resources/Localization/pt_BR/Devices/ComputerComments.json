@@ -3,9 +3,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				
-				"msn": "Eu não tenho nada para postar agora, tenho coisas mais imporantes para fazer."
+				"tag": "Você",			
+				"msn": "Não tenho nada para postar agora, tenho coisas melhores pra fazer."
 			}]
 		}
 	},
@@ -16,7 +15,7 @@
 				"name": "computer comment",
 				"var": "earing",
 				"value": "De nada, Allison",
-				"key": "You",
+				"key": "Você",
 				"other" : "empty",
 				"time": 0
 			}
@@ -32,18 +31,18 @@
 			},
 			{
 				"next": "node1b",
-				"msn": "Você é um idiota"
+				"msn": "Você é um idiota."
 			},
 			{
 				"next": "node1c",
-				"msn": "Eu vou acabar precisando ir falar com seu tutor"
+				"msn": "Vou acabar falando com seu professor."
 			}]
 		},
 		"node1a": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Vou denunciar a mensagem, ver se eles a excluem por causa de seu conteúdo."
+				"tag": "Você",
+				"msn": "Vou denunciar a mensagem e ver se eles a excluem por causa do conteúdo."
 			}]
 		},
 		"node1b": {
@@ -53,8 +52,8 @@
 				"name": "computer comment",
 				"var": "insult",
 				
-				"value": "Vocês são todos uns babacas, vão se ferrar. Vocês agem como crianças de três anos.",
-				"key": "You",
+				"value": "Vocês são todos idiotas, vão se ferrar. Agem como criancinhas de três anos.",
+				"key": "Você",
 				"other" : "empty",
 				"time": 0
 			}
@@ -64,7 +63,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Tenho certeza que foi você quem se molhou à noite, hahaha",
+				"value": "Tenho certeza de que é você quem se mijou à noite, hahaha",
 				"key": "Ana",
 				"other" : "empty",
 				"time": 1
@@ -76,8 +75,8 @@
 				"name": "computer comment",
 				"var": "insult",
 				
-				"value": "Estou cansado deles. Amanhã vou falar com o coordenador.",
-				"key": "You",
+				"value": "Já me cansei deles. Amanhã vou falar com o coordenador.",
+				"key": "Você",
 				"other" : "empty",
 				"time": 0
 			}
@@ -115,7 +114,7 @@
 			"type": "dialog",
 			"next": "loadPub",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Vou excluir a postagem"
 			}]
 		},
@@ -131,9 +130,8 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Alex",
-				
-				"value": "Eu vi que você deletou a postagem com seu número de telefone, mas não se preocupe, eu fiz uma captura de tela e posso upar novamente hahaha",
+				"var": "Alex",				
+				"value": "Vi que você excluiu a postagem com seu número de telefone, mas não se preocupe, tirei um print e posso repostar hahaha",
 				"key": "Alex",
 				"other": "empty",
 				"time": 0
@@ -145,7 +143,7 @@
 				"name": "computer comment",
 				"var": "troll",
 				"value": "Alison... é por isso que você queria trocar senhas, você é a pior.",
-				"key": "You",
+				"key": "Você",
 				"other" : "empty",
 				"time": 0
 			}

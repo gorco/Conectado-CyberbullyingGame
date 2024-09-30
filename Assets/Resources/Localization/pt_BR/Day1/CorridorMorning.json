@@ -16,12 +16,12 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Parece que você conseguiu encontrar a sala de aula."
+				"msn": "Você conseguiu encontrar a sala de aula."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "A menina de cabelo vermelho ao lado da porta é a Maria, ela também está na nossa turma. Ela é um pouco tímida, mas é uma boa garota."
+				"msn": "A menina de cabelo vermelho ao lado da porta é a Maria. Ela também está na nossa turma. Ela é um pouco tímida, mas é legal."
 			},
 			{
 				"tag": "Alison",
@@ -34,7 +34,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Desculpe, estou com pressa, vou me atrasar se não entrar."
+				"msn": "Desculpe, estou com pressa e vou me atrasar se não entrar agora."
 			}]
 		}			
 	},
@@ -42,13 +42,13 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "..."
 			},
 			{
-				"tag": "You",
-				"msn": "Ela parece desconfortável, é melhor deixá-la sozinha por enquanto."
+				"tag": "Você",
+				"msn": "Ela parece desconfortável. É melhor deixá-la sozinha por enquanto."
 			}]
 		}		
 	},
@@ -69,7 +69,7 @@
 			"fragments": [{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "Não esquece de olhar o mural, às vezes você encontra coisas interessantes nele."
+				"msn": "Não se esqueça de olhar o mural. Às vezes, tem coisas interessantes lá."
 			}]
 		},		
 		"node2": {
@@ -78,17 +78,17 @@
 			"fragments": [{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "Oi, eu estava lendo o mural."
+				"msn": "Oi, eu estava lendo o mural agora."
 			},
 			{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "Às vezes tem coisas interessantes, e alguém tem deixado mensagens, adesivos e enigmas ultimamente."
+				"msn": "Tem algumas mensagens e adesivos bem legais por lá."
 			},
 			{
 				"tag": "Guillermo",
 				"character": "Guille",
-				"msn": "Dê uma olhada pelo menos uma vez por dia, é importante se acostumar com isso."
+				"msn": "É bom dar uma olhada pelo menos uma vez por dia, é importante se acostumar a fazer isso."
 			},
 			{
 				"tag": "Guillermo",
@@ -162,7 +162,7 @@
 		"male": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não posso entrar lá, é o banheiro das meninas."
 			}]
 		}

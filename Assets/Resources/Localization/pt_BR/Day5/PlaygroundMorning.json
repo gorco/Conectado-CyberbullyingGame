@@ -51,7 +51,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "O que você estava pensando quando me deu sua senha?"
+				"msn": "O que você estava pensando ao me dar sua senha?"
 			}]
 		},
 		"setter":{
@@ -89,7 +89,7 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Hahahaha, pária."
+				"msn": "Hahahaha, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'excluído', 'excluída') $>."
 			}]
 		},
 		"sh0": {
@@ -99,12 +99,12 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Olha só quem apareceu, e eu pensava que você não iria aparecer hoje."
+				"msn": "Olha quem chegou, e eu pensei que você não viria hoje."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Ainda sem telefone? Hahaha, não seria tão difícil de encontrar se você tivesse procurado direito."
+				"msn": "Ainda sem celular? Hahaha, não foi tão difícil de encontrar se você tivesse procurado direito."
 			},
 			{
 				"tag": "Ana",
@@ -124,17 +124,17 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Não acredito que você deu sua senha para a Alison."
+				"msn": "Não consigo acreditar que você deu sua senha para a Alison."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Você realmente achou que ela ia ser sua amiga? Não acredito que foi tão fácil assim."
+				"msn": "Você realmente achou que ela seria sua amiga? Não consigo acreditar que foi tão fácil."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "HAHAHAHA!!! Sério, estou rindo muito de você."
+				"msn": "HAHAHAHA!!! Sério, estou morrendo de rir de você."
 			}]
 		},
 		"sh2": {
@@ -144,17 +144,17 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "HAHAHAHA!!! Não acredito que você não tinha um padrão de bloqueio no seu celular."
+				"msn": "HAHAHAHA!!! Não consigo acreditar que você não tinha um padrão de bloqueio no celular."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Pensei que ia ser mais difícil..."
+				"msn": "Pensei que seria mais difícil..."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Vai ser um dia engraçado. Agora todo mundo pensa que você é na verdade um <$ if(varObject('global', 'MaleSexNonStatic')==true, 'um tarado sem vergonha que faz de tudo', 'uma tarada sem vergonha que faz de tudo') $>."
+				"msn": "ai ser um dia engraçado. Agora todo mundo acha que você é <$ if(varObject('global', 'MaleSexNonStatic')==true, 'um viado que gosta de tudo', 'uma vadia que não tem limites') $>."
 			}]
 		},
 		"setter":{
@@ -225,7 +225,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Acabei de chegar. Não posso sair ainda."
 			}]
 		}

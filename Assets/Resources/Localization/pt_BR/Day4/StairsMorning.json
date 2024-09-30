@@ -16,7 +16,7 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Você vai se atrasar se não sair agora."
+				"msn": "Você vai se atrasar se não for agora."
 			}]
 		},
 		"friendFork": {
@@ -36,10 +36,10 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Bom dia <$ varObject('global', 'UserNameNonStatic') $>"
+				"msn": "Bom dia, <$ varObject('global', 'UserNameNonStatic') $>"
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Oi, Maria"
 			}]
 		},
@@ -88,7 +88,7 @@
 				"msn": "Se precisar que eu vá com você falar com o professor, é só me chamar. Mas não se cale."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Valeu, até mais tarde."
 			}]
 		},
@@ -115,13 +115,13 @@
 			"type": "dialog",
 			"next": "normalOptions",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Oi, Maria"
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Olá, <$ varObject('global', 'UserNameNonStatic') $>. Você precisa de alguma coisa?"
+				"msn": "Olá, <$ varObject('global', 'UserNameNonStatic') $>. Precisa de algo?"
 			}]
 		},
 		"normalOptions": {
@@ -129,7 +129,7 @@
 			"questionId": "MariaIgnoreAsk",
 			"options": [{
 				"next": "setter",
-				"msn": "Não, até mais tarde."
+				"msn": "Não, até mais."
 			},
 			{
 				"next": "normal2",
@@ -145,7 +145,7 @@
 				"msn": "Por que não estaria?"
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Você não falou com o Alex?"
 			},
 			{
@@ -156,12 +156,12 @@
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Eles tornaram minha vida um inferno ano passado. Aprendi minha lição."
+				"msn": "Eles tornaram minha vida um inferno no ano passado. Aprendi a lição."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Será melhor se você falar com seus pais ou seu coordenador e não der atenção para o Alex ou qualquer um dos capangas dele."
+				"msn": "É melhor você conversar com seus pais ou o professor e ignorar o Alex e seus 'minions'."
 			}]
 		},
 		"setter":{
@@ -170,13 +170,13 @@
 				"var": "spoken",
 				"value": true
 			}
-		},
+		}
 	},
 	"principalNote":{
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Note",
+				"tag": "Nota",
 				"msn": "Sala do Diretor"
 			}]
 		}
@@ -185,8 +185,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Parece que não tem ninguém aqui."
+				"tag": "Você",
+				"msn": "Parece que não tem ninguém lá dentro."
 			}]
 		}
 	},
@@ -203,8 +203,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Melhor eu ir direto para a sala de aula."
+				"tag": "Você",
+				"msn": "Melhor eu ir direto para a sala."
 			}]
 		}
 	}

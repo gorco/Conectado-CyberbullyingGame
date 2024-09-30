@@ -23,37 +23,37 @@
 		"mobileFound": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Você viu alguém entrando nos banheiros recentemente?"
+				"tag": "Você",
+				"msn": "Você viu alguém entrando no banheiro recentemente?"
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Não vi, desculpe."
+				"msn": "Não, desculpe."
 			}]
 		},
 		"node0": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Que bom que você veio hoje."
 			}]
 		},
 		"mobileLost": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Você viu meu celular?"
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Não, nenhuma ideia, verifique novamente com o resto da turma só para garantir."
+				"msn": "Não, não faço ideia. Fale novamente com o resto da turma, só para garantir."
 			},
 			{
 				"tag": "María",
 				"character": "María",
-				"msn": "Se eu ver algo, te aviso."
+				"msn": "Se eu encontrar, te aviso."
 			}]
 		},
 		"jokeOtions": {
@@ -61,11 +61,11 @@
 			"questionId": "JokeMariaOptions",
 			"options": [{
 				"next": "node0",
-				"msn": "Ei, Maria."
+				"msn": "Oi, Maria."
 			},
 			{
 				"next": "jokeSuccess",
-				"msn": "(Cole o pôster com cuidado e saia sem dizer nada)"
+				"msn": "(Cole o pôster com cuidado e saia sem dizer nada.)"
 			}]
 		},
 		"jokeSuccess":{
@@ -74,7 +74,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "MariaJoke",
-				"value": 2,
+				"value": 2
 			}
 		},
 		"mariaFS": {
@@ -83,7 +83,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "MariaFS",
-				"value": -40,
+				"value": -40
 			}
 		},
 		"mariaQuest": {
@@ -92,17 +92,17 @@
 			"event": {
 				"name": "change variable",
 				"var": "MariaQuest",
-				"value": 2,
+				"value": 2
 			}
 		},
 		"dialogJoke": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "(Bom, parece que ela não percebeu)"
+				"tag": "Você",
+				"msn": "(Parece que ela não percebeu)"
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "(Espero que agora me digam onde está meu celular)"
 			}]
 		}
@@ -121,9 +121,9 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "11:20",
+				"value": "11:20"
 			}
-		},
+		}
 	},
 	"maleBathroom": {
 		"root": {
@@ -148,7 +148,7 @@
 			"type": "dialog",
 			"next": "femaleOptions",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Eu não posso entrar lá, é o banheiro dos meninos."
 			}]
 		},
@@ -194,7 +194,7 @@
 			"type": "dialog",
 			"next": "maleOptions",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Eu não posso entrar lá, é o banheiro das meninas."
 			}]
 		},
@@ -215,14 +215,14 @@
 				"name": "move camera",
 				"key": "bathroom2"
 			}
-		},
+		}
 	},
 	"classDoor": {
 		"root": {
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Se eu entrar e o professor aparecer, não poderei sair."
 			}]
 		},
@@ -253,7 +253,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "14:02",
+				"value": "14:02"
 			}
 		},
 		"enter": {

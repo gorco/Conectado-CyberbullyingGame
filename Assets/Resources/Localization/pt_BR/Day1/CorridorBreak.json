@@ -18,15 +18,15 @@
 		"secondGood": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
-				"msn": "Estou terminando de ler meu livro, vamos conversar outra hora."
+				"msn": "Estou terminando de ler meu livro. Vamos conversar depois?"
 			}]
 		},
 		"secondBad": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "..."
 			},{
@@ -38,7 +38,7 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Você quer alguma coisa?"
 			}]
@@ -48,11 +48,11 @@
 			"questionId": "MariaMeetFirstOpt",
 			"options": [{
 				"next": "setterBad",
-				"msn": "Não é nada não, tchau."
+				"msn": "Ah, não é nada. Tchau."
 			},
 			{
 				"next": "node2",
-				"msn": "Por que você está sozinha por aqui em vez de estar lá no pátio?"
+				"msn": "Por que você está sozinha aqui em vez de estar lá no pátio?"
 			}]
 		},		
 		"setterBad":{
@@ -66,20 +66,20 @@
 			"type": "dialog",
 			"next": "node3",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
-				"msn": "Eu prefiro ficar lendo tranquilamente por aqui mesmo."
+				"msn": "Eu prefiro ficar lendo tranquilamente por aqui."
 			}]
 		},
 		"node3": {
 			"type": "options",
 			"questionId": "MariaMeetSecondOpt",
 			"options": [{
-				"msn": "Entendi, boa leitura então, tchau (Que esquisita)."
+				"msn": "Entendi, boa leitura então. Tchau (Que esquisita)."
 			},
 			{
 				"next": "node4",
-				"msn": "Você não prefere ir lá no pátio com seus amigos?"
+				"msn": "Você não prefere ir lá para o pátio com seus amigos?"
 			}]
 		},	
 		"quest2": {
@@ -104,17 +104,17 @@
 			"type": "dialog",
 			"next": "node5",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
-				"msn": "Você está ficando um pouco chato fazendo todas essas perguntas."
+				"msn": "Você está sendo um pouco chato fazendo tantas perguntas."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
-				"msn": "Eu não tenho amigos, eles acham que sou esquisita."
+				"msn": "Eu não tenho amigos. Eles acham que sou esquisita."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Você já pode ir agora."
 			}]
@@ -134,27 +134,27 @@
 			"type": "dialog",
 			"next": "quest1",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Você não parece esquisita para mim."
 			},
 			{
-				"tag": "You",
-				"msn": "Estou indo para o pátio, se quiser vir, estarei lá embaixo."
+				"tag": "Você",
+				"msn": "Estou indo para o pátio. Se quiser, estarei lá embaixo."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Obrigada, você é muito gentil."
 			}, 
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
-				"msn": "Mas hoje vou ficar aqui, estou quase terminando o livro."
+				"msn": "Mas hoje vou ficar aqui. Estou quase terminando o livro."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
-				"msn": "Divirta-se lá embaixo, e evite o Alex, ele é um idiota."
+				"msn": "Divirta-se lá embaixo e evite o Alex. Ele é um idiota."
 			}]
 		},
 		"quest1": {
@@ -231,7 +231,7 @@
 		"female": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não posso entrar lá, é o banheiro dos meninos."
 			}]
 		}
@@ -258,7 +258,7 @@
 		"male": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não posso entrar lá, é o banheiro das meninas."
 			}]
 		}
@@ -268,8 +268,8 @@
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Se eu entrar e o professor aparecer, não vou conseguir mais sair."
+				"tag": "Você",
+				"msn": "Se eu entrar e o professor aparecer, não vou conseguir sair."
 			}]
 		},
 		"options": {
@@ -290,7 +290,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Assim que você entra, o sinal toca e o professor aparece. Você nem viu o tempo passando, a manhã logo acaba e é hora de ir para casa..."
+				"value": "Assim que você entra, o sinal toca e o professor aparece. Você nem percebeu o tempo passar, a manhã logo acaba e é hora de ir para casa..."
 			}
 		},
 		"changeHour": {

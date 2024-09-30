@@ -3,11 +3,11 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Não tenho mais aulas hoje e todo mundo já foi embora."
+				"tag": "Você",
+				"msn": "Não há mais aulas hoje e não tem ninguém aqui."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "É melhor eu ir para casa."
 			}]
 		}
@@ -27,7 +27,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "15:00",
+				"value": "15:00"
 			}
 		}
 	}

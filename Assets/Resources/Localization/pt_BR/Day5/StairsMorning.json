@@ -28,12 +28,12 @@
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Eu queria te agradecer, o Alex vivia implicando comigo por causa do meu peso..."
+				"msn": "Queria te agradecer, o Alex estava me zoando por causa do meu peso..."
 			},
 			{
 				"tag": "Jose",
 				"character": "Jose",
-				"msn": "Até você chegar. Estou realmente feliz que você esteja aqui, duende."
+				"msn": "Até você chegar. Fico muito feliz que você esteja aqui, troll."
 			}]
 		},
 		"setter":{
@@ -57,7 +57,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Parece que não tem ninguém lá dentro."
 			}]
 		}
@@ -75,8 +75,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Melhor eu ir direto para a sala de aula."
+				"tag": "Você",
+				"msn": "Deveria ir direto para a aula."
 			}]
 		}
 	}

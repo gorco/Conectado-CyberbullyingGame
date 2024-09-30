@@ -18,13 +18,13 @@
 			"type": "dialog",
 			"next": "node2",
 			"fragments": [{
-				"tag": "Teacher",
+				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, você se atrasou."
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, você está atrasado."
 			},{
-				"tag": "Teacher",
+				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Por favor, sente-se para que possamos continuar a aula."
+				"msn": "Por favor, sente-se para podermos continuar a aula."
 			}]
 		},
 		"node2": {
@@ -34,7 +34,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "As aulas acabaram, mas as pessoas ficaram te olhando e cochichando durante todo o dia."
+				"value": "As aulas acabaram, mas as pessoas têm te olhado e cochichado nas suas costas durante todo o dia."
 			}
 		},
 		"node3": {
@@ -43,7 +43,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "14:05",
+				"value": "14:05"
 			}
 		},
 		"nextScene": {
@@ -60,8 +60,8 @@
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Este lugar está disponível. Posso sentar aqui?"
+				"tag": "Você",
+				"msn": "Este lugar está vazio. Posso me sentar aqui?"
 			}]
 		},
 		"options": {
@@ -90,7 +90,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Mais um dia cercado de cochichos dos outros alunos. É hora de ir para casa."
+				"value": "Mais um dia de cochichos dos outros alunos. É hora de ir para casa."
 			}
 		},
 		"changeHour": {
@@ -99,7 +99,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "14:05",
+				"value": "14:05"
 			}
 		},
 		"nextScene": {

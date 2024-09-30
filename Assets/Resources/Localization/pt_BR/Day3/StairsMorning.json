@@ -3,7 +3,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Note",
+				"tag": "Nota",
 				"msn": "Sala do Diretor"
 			}]
 		}
@@ -12,8 +12,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Parece que ninguém está lá dentro."
+				"tag": "Você",
+				"msn": "Parece que não tem ninguém lá dentro."
 			}]
 		}
 	},
@@ -30,7 +30,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Melhor eu ir direto para a minha sala."
 			}]
 		}

@@ -14,15 +14,15 @@
 			"next": "node2",
 			"fragments": [
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "É meu celular."
 			},{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Quem pegou e deixou no banheiro <$ if(varObject('global', 'MaleSexNonStatic')==true, 'das meninas', 'dos meninos') $>'?"
 			},
 			{
-				"tag": "You",
-				"msn": "Puxa, ele não está ligando. Espero que seja só a bateria. Assim que chegar em casa vou trocá-la."
+				"tag": "Você",
+				"msn": "Puxa, ele não está ligando. Espero que seja só a bateria. Assim que chegar em casa, vou trocá-la."
 			}]
 		},
 		"node2": {

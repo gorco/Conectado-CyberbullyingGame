@@ -3,7 +3,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Parece que alguém pegou a foto de ontem."
 			}]
 		}
@@ -18,25 +18,25 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Acho que Outdoor e Duende são os mais originais."
+				"msn": "Acho que Outdoor e Troll são os mais originais."
 			},
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Eu ainda prefiro Pária."
+				"msn": "Eu ainda prefiro <$ if(varObject('global', 'MaleSexNonStatic')==true, 'Excluído', 'Excluída') $>."
 			},
 			{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Ainda que eu concorde que <$ varObject('global', 'UserNameNonStatic') $> Outdoor soa muito bom hahaha. "
+				"msn": "Ainda assim, eu concordo que '<$ varObject('global', 'UserNameNonStatic') $> Outdoor' soa muito bom hahaha. "
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Hahaha vamos ver o que José pensa."
-			}
+				"msn": "Hahaha, vamos ver o que José pensa."
+			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não seja tímido, continue ignorando e pensando em como me chamar."
 			}]
 		},
@@ -45,7 +45,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Desculpe, estou com pressa. Vou me atrasar se não entrar."
+				"msn": "Desculpe, estou com pressa. Vou me atrasar se não entrar agora."
 			}]
 		}			
 	},
@@ -71,7 +71,7 @@
 		"female": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não posso ir lá, é o banheiro dos meninos."
 			}]
 		}
@@ -98,7 +98,7 @@
 		"male": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não posso ir lá, é o banheiro das meninas."
 			}]
 		}

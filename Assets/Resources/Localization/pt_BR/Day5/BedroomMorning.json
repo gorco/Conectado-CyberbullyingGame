@@ -3,7 +3,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Tenho que ir."
 			}]
 		}		
@@ -12,8 +12,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Não preciso de nada daqui agora."
+				"tag": "Você",
+				"msn": "Não preciso de nada daqui."
 			}]
 		}		
 	},
@@ -21,7 +21,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "..."
 			}]
 		}		
@@ -31,7 +31,7 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Vou pegar tudo e sair."
 			}]
 		},
@@ -42,7 +42,7 @@
 				"var": "BagPicked",
 				"value": true
 			}
-		},
+		}
 	},
 	"computer":{
 		"root": {
@@ -50,7 +50,7 @@
 			"next": "node1",
 			"fragments": [{
 				"tag": "PC",
-				"msn": "Você quer ligar o PC?"
+				"msn": "Você quer ligar o computador?"
 			}]
 		},		
 		"node1": {
@@ -68,14 +68,14 @@
 		"node1a": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não está funcionando, está quebrado?"
 			}]
 		},	
 		"node1b": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Melhor não, vou para a aula."
 			}]
 		}		
@@ -85,7 +85,7 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Deixo o celular carregando?"
 			}]
 		},		
@@ -140,8 +140,8 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Mamãe e Papai já sairam. Vou vê-los à tarde."
+				"tag": "Você",
+				"msn": "Meus pais já sairam. Vou vê-los de tarde."
 			}]
 		},	
 		"setter":{
@@ -150,6 +150,6 @@
 				"var": "repeated",
 				"value": true
 			}
-		},
+		}
 	}
 }

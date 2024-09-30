@@ -24,12 +24,12 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Tem alguma coisa estranha ali perto da cesta de basquete."
+				"msn": "Tem algo estranho ali perto da cesta de basquete."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Eu estou vendo algo brilhante daqui."
+				"msn": "Consigo ver algo brilhante daqui."
 			}]
 		}
 	},
@@ -39,12 +39,12 @@
 			"fragments": [{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Nosso professor é bem legal."
+				"msn": "Nosso professor é bem legal!"
 			},
 			{
 				"tag": "Guille",
 				"character": "Guille",
-				"msn": "Se você tiver algum problema, fale com ele."
+				"msn": "Se você tiver algum problema, é só falar com ele."
 			}]
 		}
 	},
@@ -53,12 +53,12 @@
 			"type": "dialog",
 			"next": "take",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Parece que é o brinco perdido da Alison."
+				"tag": "Você",
+				"msn": "Parece que é o brinco perdido da Alison!"
 			},
 			{
-				"tag": "You",
-				"msn": "Acho que é melhor eu entregar ele para ela."
+				"tag": "Você",
+				"msn": "Acho que é melhor eu o entregar para ela."
 			}]
 		},
 		"take": {
@@ -93,8 +93,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "É hora do recreio, ainda faltam algumas aulas antes de eu poder ir para casa."
+				"tag": "Você",
+				"msn": "É hora do recreio, mas ainda faltam algumas aulas antes de eu poder ir para casa."
 			}]
 		}
 	}

@@ -31,9 +31,9 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "14:15",
+				"value": "14:15"
 			}
-		},
+		}
 	},
 	"maleBathroom": {
 		"root": {
@@ -57,7 +57,7 @@
 		"female": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Eu não posso entrar lá. É o banheiro dos meninos."
 			}]
 		}
@@ -84,7 +84,7 @@
 		"male": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Eu não posso entrar lá, é o banheiro das meninas."
 			}]
 		}
@@ -93,7 +93,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não tenho nada para fazer na sala de aula."
 			}]
 		}

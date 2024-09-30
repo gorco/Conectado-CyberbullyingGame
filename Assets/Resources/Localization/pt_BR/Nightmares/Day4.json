@@ -4,21 +4,21 @@
 			"type": "dialog",
 			"next": "fade",
 			"fragments": [{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "Você não ama as novas fotos que acabamos de publicar?"
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "Você pode tentar deletá-las..."
 			},
 			{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "Você vai ter que fazer mais do que apenas deletar ou reportar elas."
 			},
 			{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",	
 				"msn": "Vá em frente, tente... todos nós já temos uma cópia."
 			}]
@@ -35,29 +35,29 @@
 		"root":{
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "Você não conseguiu nada."
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "Hahaha"
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "As fotos ainda estão lá."
 			},{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Uma vez online, todos podem fazer uma cópia."
+				"msn": "Uma vez online, todo mundo pode fazer uma cópia."
 			},{
 				"tag": "",
 				"msn": "..."
 			}, {
-				"tag": "Voice from the portal",
+				"tag": "Voz do portal",
 				"msn": "Não é sua culpa. Venha, passe pelo portal novamente."
 			}, {
-				"tag": "Voice from the portal",
+				"tag": "Voz do portal",
 				"msn": "Tente mudar as coisas."
 			}]
 		}
@@ -72,39 +72,39 @@
 			},
 			{
 				"next": "node2",
-				"msn": "Não, de novo não."
+				"msn": "Não, não desta vez."
 			}]
 		},
 		"node1": {
 			"type": "dialog",
 			"next": "variable",
 			"fragments": [{
-				"tag": "You",	
-				"msn": "Eu não sei se isso está certo, eu não quero repetir mais esses dias ruins."
+				"tag": "Você",	
+				"msn": "Não sei se isso é certo, eu não quero repetir mais dias ruins."
 			},
 			{
-				"tag": "You",
-				"msn": "Eu vou confiar na voz estranha... sim... eu vou passar."
+				"tag": "Você",
+				"msn": "Vou confiar na voz estranha... sim... vou passar pelo portal."
 			}]
 		},
 		"node2":{
 			"type": "dialog",
 			"next": "variable2",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Eu não vou atravessar se você não me disser quem você é."
 			}, {
-				"tag": "Voice from the portal",		
+				"tag": "Voz do portal",		
 				"msn": "Eu não posso, você tem que confiar em mim, estou te dando a chance de mudar as coisas."
 			}, {
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Mudar o quê?"
 			}, {
-				"tag": "Voice from the portal",		
-				"msn": "Não! O tempo está se esgotando, você está prestes a acordar..."
+				"tag": "Voz do portal",		
+				"msn": "Não! O tempo está acabando, você está prestes a acordar..."
 			},
 			{
-				"tag": "Voice from the portal",
+				"tag": "Voz do portal",
 				"msn": "Agora é tarde demais... Eu te desejo boa sorte."
 			}]
 		},
@@ -114,7 +114,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Day",
-				"value": 3,
+				"value": 3
 			}
 		},
 		"repeatDay": {
@@ -123,7 +123,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Repeated",
-				"value": true,
+				"value": true
 			}
 		},
 		"changeHour": {
@@ -132,7 +132,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "7:30",
+				"value": "7:30"
 			}
 		},
 		"loadMobile": {
@@ -157,7 +157,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Day",
-				"value": 4,
+				"value": 4
 			}
 		},
 		"repeatDay2": {
@@ -166,7 +166,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Repeated",
-				"value": false,
+				"value": false
 			}
 		},
 		"changeHour2": {
@@ -175,7 +175,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "7:30",
+				"value": "7:30"
 			}
 		},
 		"saveMobile2": {
@@ -192,21 +192,21 @@
 			"type": "dialog",
 			"next": "variable",
 			"fragments": [{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",	
 				"msn": "Você não conseguiu nada."
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Hahaha"
+				"msn": "Hahaha!"
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "As fotos ainda estão lá."
 			},{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Uma vez online, todos podem fazer uma cópia."
+				"msn": "Uma vez online, todo mundo pode fazer uma cópia."
 			}]
 		},
 		"variable": {
@@ -215,7 +215,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Day",
-				"value": 4,
+				"value": 4
 			}
 		},
 		"repeatDay": {
@@ -224,7 +224,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Repeated",
-				"value": false,
+				"value": false
 			}
 		},
 		"changeHour": {
@@ -233,7 +233,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "7:30",
+				"value": "7:30"
 			}
 		},
 		"saveMobile": {

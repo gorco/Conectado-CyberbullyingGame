@@ -3,7 +3,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Parece que alguém pegou a foto de ontem."
 			}]
 		}
@@ -27,11 +27,11 @@
 			"type": "dialog",
 			"next": "node2",
 			"fragments": [{
-				"tag": "Teacher",
+				"tag": "Professor",
 				"character": "Teacher",
 				"msn": "<$ varObject('global', 'UserNameNonStatic') $> você está <$ if(varObject('global', 'MaleSexNonStatic')==true, 'atrasado', 'atrasada') $>."
 			},{
-				"tag": "Teacher",
+				"tag": "Professor",
 				"character": "Teacher",
 				"msn": "Por favor, sente-se e vamos continuar a aula"
 			}]
@@ -63,7 +63,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "11:05",
+				"value": "11:05"
 			}
 		},
 		"nextScene": {
@@ -81,7 +81,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Parece que as aulas estão durando cada vez mais... Que bom que já é hora de ir para casa."
+				"value": "As aulas estão durando cada vez mais... Que bom que já é hora de ir para casa."
 			}
 		},
 		"endDayHour": {
@@ -90,7 +90,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "14:05",
+				"value": "14:05"
 			}
 		}
 	},
@@ -99,8 +99,8 @@
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Este lugar está disponível. Posso sentar aqui?"
+				"tag": "Você",
+				"msn": "Este lugar está livre. Posso sentar aqui?"
 			}]
 		},
 		"options": {
@@ -119,7 +119,7 @@
 			"next": "nodeFork",
 			"fragments": [{
 				"tag": "",
-				"msn": "(Você escuta passos, o professor está aqui)"
+				"msn": "(Você escuta passos, o professor está chegando)"
 			}]
 		},
 		"nodeFork": {
@@ -140,7 +140,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "O sinal indica que é hora do recreio..."
+				"value": "O sinal está tocando, é hora do recreio..."
 			}
 		},
 		"breakHour": {
@@ -149,7 +149,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "11:05",
+				"value": "11:05"
 			}
 		},
 		"endDay": {
@@ -159,7 +159,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Parece que as aulas estão durando cada vez mais... Que bom que já é hora de ir para casa."
+				"value": "As aulas parecem estar durando cada vez mais... Que bom que já é hora de ir para casa."
 			}
 		},
 		"changeHour": {
@@ -168,7 +168,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "14:05",
+				"value": "14:05"
 			}
 		},
 		"nextScene": {

@@ -4,18 +4,18 @@
 			"type": "dialog",
 			"next": "fade",
 			"fragments": [{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Então... Nós estamos resolvidos?"
+				"msn": "Então... conseguimos resolver isso?"
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
 				"msn": "Você sabe onde se sentar?"
 			},
 			{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",				
-				"msn": "Talvez você devesse evitar que esses chicletes grudem nas cadeiras ao acertá-las, ou terá que sentar em uma delas."
+				"msn": "Talvez você devesse evitar que os chicletes grudem nas cadeiras. Caso contrário, vai ter que se sentar em um deles."
 			}]
 		},
 		"fade": {
@@ -30,26 +30,26 @@
 		"root":{
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Você terá que sentar em um chiclete."
+				"msn": "Você vai ter que sentar em um chiclete."
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Hahaha, vá em frente, sente-se."
+				"msn": "Hahaha, vai em frente, sente-se."
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Vamos, o que você está esperando?"
+				"msn": "Vamos lá, o que você está esperando?"
 			},{
-				"tag": "Voice from the portal",
+				"tag": "Voz do portal",
 				"msn": "Venha, eu vou te ajudar."
 			}, {
-				"tag": "Voice from the portal",
+				"tag": "Voz do portal",
 				"msn": "Passe pelo portal."
 			}, {
-				"tag": "Voice from the portal",
-				"msn": "Corra, antes de acordar."
+				"tag": "Voz do portal",
+				"msn": "Corra, antes que você acorde."
 			}]
 		}
 	},
@@ -66,13 +66,13 @@
 			"type": "dialog",
 			"next": "variable",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Eu vou."
 			}, {
-				"tag": "You",
+				"tag": "Você",
 				"msn": "É um pouco assustador."
 			}, {
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Mas é só um sonho."
 			}]
 		},
@@ -82,7 +82,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Day",
-				"value": 1,
+				"value": 1
 			}
 		},
 		"repeatDay": {
@@ -91,7 +91,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Repeated",
-				"value": true,
+				"value": true
 			}
 		},
 		"changeHour": {
@@ -100,7 +100,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "7:30",
+				"value": "7:30"
 			}
 		},
 		"loadMobile": {
@@ -125,17 +125,17 @@
 			"type": "dialog",
 			"next": "changeDay",
 			"fragments": [{
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Você terá que sentar em um chiclete."
+				"msn": "Você vai ter que se sentar em um chiclete."
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Hahaha, vá em frente, sente-se."
+				"msn": "Hahaha, vai em frente, sente-se."
 			}, {
-				"tag": "Shadow",
+				"tag": "Sombra",
 				"character": "Shadow",
-				"msn": "Vamos, o que você está esperando?"
+				"msn": "Vamos lá, o que você está esperando?"
 			}]
 		},
 		"changeDay": {
@@ -144,7 +144,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Day",
-				"value": 2,
+				"value": 2
 			}
 		},
 		"noRepeatDay": {
@@ -153,7 +153,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Repeated",
-				"value": false,
+				"value": false
 			}
 		},
 		"changeHour": {
@@ -162,7 +162,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "7:30",
+				"value": "7:30"
 			}
 		},
 		"saveMobile": {

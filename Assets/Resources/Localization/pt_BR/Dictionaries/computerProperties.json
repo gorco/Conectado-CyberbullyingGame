@@ -6,7 +6,7 @@
 
     "newFriendsText":"Você tem novas solicitações de amizade!",
 
-    "error":"Usuário/Senha introduzidos estão incorretos",
+    "error":"Usuário/Senha incorretos.",
     "user":"Usuário",
     "pass":"Senha",
     "logInText":"Entrar",
@@ -18,6 +18,6 @@
     "acceptButton":"Aceitar",
     "denyButton":"Negar",
     "commentsText":"Comentários",
-	"ReportButton": "Reportar\n Foto",
-	"ReportButton(Clone)": "Reportar\n Foto"
+	"ReportButton": "Denunciar\n Foto",
+	"ReportButton(Clone)": "Denunciar\n Foto"
 }

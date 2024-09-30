@@ -3,16 +3,16 @@
 		"root":{
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Todos foram embora."
+				"tag": "Você",
+				"msn": "Todo mundo foi embora."
 			},
 			{
-				"tag": "You",
-				"msn": "Devo confiar no Alex e ir ao banheiro para falar com <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'a Ana') $>?"
+				"tag": "Você",
+				"msn": "Devo confiar no Alex e ir ao banheiro conversar com <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'a Ana') $>?"
 			},
 			{
-				"tag": "You",
-				"msn": "Se eu for, isso vai acabar de uma vez por todas?"
+				"tag": "Você",
+				"msn": "Se eu for, será que isso tudo vai acabar de uma vez por todas?"
 			}]
 		}
 	},
@@ -30,7 +30,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "14:08",
+				"value": "14:08"
 			}
 		}
 	}

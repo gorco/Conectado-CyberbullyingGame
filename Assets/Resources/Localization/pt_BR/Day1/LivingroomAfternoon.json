@@ -80,23 +80,23 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Você está de volta, <$ varObject('global', 'UserNameNonStatic') $>"
+				"msn": "Oi, você voltou, <$ varObject('global', 'UserNameNonStatic') $>."
 			}, 
 			{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Como foi o dia hoje?"
+				"msn": "Como foi o seu dia?"
 			}]
 		},
 		"node2": {
 			"type": "dialog",
 			"next": "parentsFS",
 			"fragments": [{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Você quer conversar um pouco?"
+				"msn": "Quer conversar um pouco?"
 			}]
 		},
 		"parentsFS": {
@@ -120,7 +120,7 @@
 			"type": "options",
 			"questionId": "parentsAfternoonFirstDay",
 			"options": [{
-				"msn": "Bom, foi o de sempre, vou para o meu quarto.",
+				"msn": "Ah, foi o de sempre. Vou para o meu quarto agora.",
 				"condition": "page == 1"
 			},
 			{
@@ -140,7 +140,7 @@
 			},
 			{
 				"next": "jose",
-				"msn": "Jose...",
+				"msn": "Tem o José...",
 				"condition": "page == 2 && aboutJose == true && varObject('global', 'JoseQuestNonStatic') > 0"
 			},
 			{
@@ -150,7 +150,7 @@
 			},
 			{
 				"next": "maria",
-				"msn": "Também tem a Maria...",
+				"msn": "E a Maria também...",
 				"condition": "page == 3 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') > 0"
 			},
 			{
@@ -165,16 +165,16 @@
 			},
 			{
 				"next": "ana",
-				"msn": "Ana...",
+				"msn": "A Ana é uma colega também...",
 				"condition": "page == 4  && aboutAna == true && varObject('global', 'GuillermoQuestNonStatic') > 0"
 			},
 			{
 				"next": "school",
-				"msn": "A escola...",
+				"msn": "Sobre a escola...",
 				"condition": "page == 4 && aboutSchool == true "
 			},
 			{
-				"msn": "Agora vou para o quarto, já conversamos muito.",
+				"msn": "Agora vou para o quarto, já conversamos bastante.",
 				"condition": "page == 4"
 			}]
 		},
@@ -206,12 +206,12 @@
 			"type": "dialog",
 			"next": "forkGuille",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Hoje eu conheci o Guille, ele foi muito legal comigo."
+				"tag": "Você",
+				"msn": "Hoje conheci o Guille, ele foi muito legal comigo."
 			},
 			{
-				"tag": "You",
-				"msn": "Acho que vamos ser bons amigos."
+				"tag": "Você",
+				"msn": "Acho que vamos nos dar bem."
 			}]
 		},
 		"forkGuille": {
@@ -229,12 +229,12 @@
 			"type": "dialog",
 			"next": "guilleUpParentsFS",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Ele também me aconselhou a olhar os murais da escola."
+				"tag": "Você",
+				"msn": "Ele me aconselhou a olhar os murais da escola."
 			},
 			{
-				"tag": "You",
-				"msn": "Às vezes tem coisas interessantes neles."
+				"tag": "Você",
+				"msn": "Às vezes, tem coisas interessantes neles."
 			}]
 		},
 		"guilleUpParentsFS": {
@@ -258,12 +258,12 @@
 			"type": "dialog",
 			"next": "forkAlison",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Tem uma garota loira chamada Alison."
 			},
 			{
-				"tag": "You",
-				"msn": "Ela perdeu um dos brincos dela."
+				"tag": "Você",
+				"msn": "Ela perdeu um dos brincos."
 			}]
 		},
 		"forkAlison": {
@@ -281,15 +281,15 @@
 			"type": "dialog",
 			"next": "alisonUpParentsFS",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Acho que ela não conseguiu encontrar."
+				"tag": "Você",
+				"msn": "Acho que ela não conseguiu encontrar o brinco."
 			}]
 		},
 		"alisonEaring": {
 			"type": "dialog",
 			"next": "alisonUpParentsFS",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Eu a ajudei a procurar, ela havia perdido ele no pátio."
 			}]
 		},
@@ -314,11 +314,11 @@
 			"type": "dialog",
 			"next": "joseUpParentsFS",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "José é outro dos meus colegas, ele parece mais tímido."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Mas também parece ser bem legal!"
 			}]
 		},
@@ -343,7 +343,7 @@
 			"type": "dialog",
 			"next": "forkMaria",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Outra menina da turma é a Maria."
 			}]
 		},
@@ -362,24 +362,24 @@
 			"type": "dialog",
 			"next": "mariaUpParentsFS",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Ela passa todos os intervalos lendo. A turma diz que ela é uma esquisita, melhor eu deixar ela em paz."
+				"tag": "Você",
+				"msn": "Ela passa todos os intervalos lendo. A turma diz que ela é uma esquisita, acho melhor deixar ela em paz."
 			}]
 		},
 		"mariaFriend": {
 			"type": "dialog",
 			"next": "mariaUpParentsFS",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Parece que o resto da turma acha que ela é esquisita."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Eles a excluíram."
 			},
 			{
-				"tag": "You",
-				"msn": "Eu conversei um pouco com ela e não me pareceu esquisita."
+				"tag": "Você",
+				"msn": "Conversei um pouco com ela e não me pareceu esquisita."
 			}]
 		},
 		"mariaUpParentsFS": {
@@ -403,16 +403,16 @@
 			"type": "dialog",
 			"next": "forkAlex",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Também tem o Alex."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Ele chegou atrasado."
 			},
 			{
-				"tag": "You",
-				"msn": "Ele é meio mal educado e um pouco assustador."
+				"tag": "Você",
+				"msn": "Ele é meio mal-educado e um pouco assustador."
 			}]
 		},
 		"optionsAlex": {
@@ -445,11 +445,11 @@
 			"type": "dialog",
 			"next": "alexUpParentsFS",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Parece que eu sentei no lugar dele quando entrei na sala."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Mas eu pedi desculpas e parece que ele não está mais bravo."
 			}]
 		},
@@ -457,29 +457,29 @@
 			"type": "dialog",
 			"next": "alexUpParentsFS",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Ele é um encrenqueiro."
 			},
 			{
-				"tag": "You",
-				"msn": "Sentei no lugar dele sem saber."
+				"tag": "Você",
+				"msn": "Sentei no lugar dele sem querer."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Ele me ameaçou."
 			},
 			{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
 				"msn": "Ele ameaçou você?"
 			},
 			{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Tenho certeza que você entendeu errado."
+				"msn": "Tenho certeza que você deve ter entendido errado."
 			},
 			{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
 				"msn": "Quem mais conheceu hoje?"
 			}]
@@ -488,21 +488,21 @@
 			"type": "dialog",
 			"next": "alexUpParentsFS",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Ele é rude e encrenqueiro."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Só porque eu sentei no lugar dele."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Ele deveria ter procurado outro lugar para sentar."
 			},
 			{
-				"tag": "Mom",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Você deveria se desculpar e não procurar confusão."
+				"msn": "Você deveria se desculpar e evitar confusão."
 			}]
 		},	
 		"alexUpParentsFS": {
@@ -526,11 +526,11 @@
 			"type": "dialog",
 			"next": "anaUpParentsFS",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Também tem a Ana."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Ela é um pouco assustadora."
 			}]
 		},
@@ -555,7 +555,7 @@
 			"type": "dialog",
 			"next": "optionsSchool",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "E a escola, bem..."
 			}]
 		},
@@ -584,12 +584,12 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Dad",
+				"tag": "Pai",
 				"character": "Father",
 				"msn": "Converse com sua mãe."
 			},
 			{
-				"tag": "Dad",
+				"tag": "Pai",
 				"character": "Father",
 				"msn": "Ela quer saber como foi seu dia."
 			}]
@@ -599,7 +599,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não tenho nada para fazer lá fora."
 			}]
 		}
@@ -646,7 +646,7 @@
 			"event": {
 				"name": "computer friend",
 				"var": "Guillermo",
-				"value": "Se o plano não funcionar, mude-o, mas não mude o objetivo.",
+				"value": "Se o plano não der certo, mude-o, mas não mude o objetivo.",
 				"time": 0,
 				"other": "guilleAccept,guilleDeny"
 			}
@@ -689,7 +689,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Clase",
-				"value": "Aceita ele pelo computador :)",
+				"value": "Aceita pelo computador :)",
 				"key": "Alison Clase",
 				"other": "alisonRequest",
 				"time": 3 

@@ -3,12 +3,12 @@
 		"root":{
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Eu deveria ir ao banheiro antes de ir para casa."
+				"tag": "Você",
+				"msn": "Acho que deveria passar no banheiro antes de ir para casa."
 			},
 			{
-				"tag": "You",
-				"msn": "Talvez o bilhete fosse importante."
+				"tag": "Você",
+				"msn": "Pode ser que o bilhete fosse importante."
 			}]
 		}
 	},
@@ -26,7 +26,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "14:08",
+				"value": "14:08"
 			}
 		}
 	}

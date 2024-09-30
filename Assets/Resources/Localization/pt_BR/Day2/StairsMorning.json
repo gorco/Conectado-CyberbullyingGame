@@ -12,7 +12,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Parece que não tem ninguém lá dentro."
 			}]
 		}
@@ -30,8 +30,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Acho melhor eu ir direto para a sala de aula."
+				"tag": "Você",
+				"msn": "Acho melhor ir direto pra sala de aula."
 			}]
 		}
 	}

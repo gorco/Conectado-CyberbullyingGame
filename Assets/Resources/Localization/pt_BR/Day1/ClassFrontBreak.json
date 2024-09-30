@@ -16,7 +16,7 @@
 			"fragments": [{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "O que você está olhando? Vá embora, já conversamos tudo o que precisávamos."
+				"msn": "O que você está olhando? Vai embora, já falamos tudo o que precisávamos."
 			}]
 		},
 		"setter":{
@@ -33,12 +33,12 @@
 			"fragments": [{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "Ei, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'novato', 'novata') $>, vamos conversar um pouco!!"
+				"msn": "Ei, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'novato', 'novata') $>, vamos conversar um pouco!"
 			},
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "Hoje você se sentou no meu lugar, não quero que sente lá de novo."
+				"msn": "Hoje você se sentou no meu lugar. Não quero que faça isso de novo."
 			},
 			{
 				"tag": "Alejandro",
@@ -82,10 +82,10 @@
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "E mais, pra me compensar pelo o que fez, vou pegar esse seu sanduíche também, estou com fome."
+				"msn": "E mais, pra me compensar pelo o que fez, vou pegar seu sanduíche também. Estou com fome."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "(Você dá a ele o seu sanduíche)"
 			},
 			{
@@ -109,12 +109,12 @@
 			"fragments": [{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "É isso aí, é só um lugar, mas é o meu lugar."
+				"msn": "É isso aí, é só uma cadeira, mas é o meu lugar."
 			},
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "Então vá encontrar outro pra você."
+				"msn": "Então, vá encontrar outro pra você."
 			},
 			{
 				"tag": "Alejandro",
@@ -124,7 +124,7 @@
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "E o último que ajudei a encontrar um lugar... Bem, ele acabou encontrando foi minha mão no rosto dele!"
+				"msn": "E o último que ajudei a encontrar um lugar... Bem, ele acabou encontrando a minha mão na cara dele!"
 			},
 			{
 				"tag": "Alejandro",
@@ -218,12 +218,12 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Vejo que achou o meu brinco."
+				"msn": "Vejo que você achou meu brinco."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Muito obrigada."
+				"msn": "Muito obrigada!"
 			},
 			{
 				"tag": "Alison",
@@ -233,12 +233,12 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "O recreio está quase acabando, vamos voltar para a sala."
+				"msn": "O recreio está quase acabando, vamos voltar pra sala."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Te vejo lá dentro."
+				"msn": "Te vejo lá dentro!"
 			}]
 		},
 		"quest": {
@@ -285,7 +285,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Onde foi que eu o perdi..."
+				"msn": "Onde será que eu perdi isso..."
 			},
 			{
 				"tag": "Alison",
@@ -295,7 +295,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Estou procurando meu brinco, mas não sei onde posso ter perdido ele."
+				"msn": "Estou procurando meu brinco, mas não sei onde posso ter deixado."
 			}]
 		},
 		"earing": {
@@ -355,7 +355,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "E-e-eles são novos, foi um p-presente."
+				"msn": "E-e-eles são novos, ganhei de p-presente."
 			},
 			{
 				"tag": "",
@@ -364,7 +364,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Por favor, sniff, sniff, você pode me ajudar a encontrá-lo?"
+				"msn": "Por favor, sniff, sniff, você pode me ajudar a encontrá-los?"
 			}]
 		},
 		"node3": {
@@ -389,7 +389,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Aqui está também o meu número de telefone, para gente poder trocar mensagens."
+				"msn": "Aqui está meu número de telefone, assim podemos trocar mensagens."
 			},
 			{
 				"tag": "",
@@ -412,12 +412,12 @@
 		"alison": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Alison parece preocupada."
 			},
 			{
-				"tag": "You",
-				"msn": "Eu deveria ir falar com ela para ver o que está acontecendo."
+				"tag": "Você",
+				"msn": "Devo ir falar com ela pra ver o que está acontecendo."
 			}]
 		},
 		"corridor": {

@@ -4,12 +4,12 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "Teacher",
+				"tag": "Professor",
 				"character": "Teacher",
 				"msn": "Na semana passada, se vocês se lembram, estávamos aprendendo como fazer uma análise morfológica de uma frase."
 			},
 			{
-				"tag": "Teacher",
+				"tag": "Professor",
 				"character": "Teacher",
 				"msn": "Agora é hora de analisar a sintaxe."
 			},
@@ -18,7 +18,7 @@
 				"msn": "(Alguém bate à porta)"
 			},
 			{
-				"tag": "Teacher",
+				"tag": "Professor",
 				"character": "Teacher",
 				"msn": "Pode entrar."
 			}]
@@ -35,9 +35,9 @@
 			"type": "dialog",
 			"next": "friendship",
 			"fragments": [{
-				"tag": "Teacher",
+				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Alejandro, você está atrasado, por favor, sente-se."
+				"msn": "Alejandro, você está atrasado. Por favor, sente-se."
 			},
 			{
 				"tag": "Alejandro",
@@ -45,14 +45,14 @@
 				"msn": "O novato está no meu lugar."
 			},
 			{
-				"tag": "Teacher",
+				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "O nome é <$ varObject('global', 'UserNameNonStatic') $>."
+				"msn": "O nome dele é <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
-				"tag": "Teacher",
+				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Sente-se em outra cadeira por enquanto, eu pedi para Alison ajudar <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> nos primeiros dias."
+				"msn": "Sente-se em outra cadeira por enquanto. Pedi para a Alison ajudar <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> nos primeiros dias."
 			}]
 		},
 		"friendship": {
@@ -71,7 +71,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "O sinal toca, é hora do recreio. É a sua chance de fazer novos amigos."
+				"value": "O sinal toca, é hora do intervalo. É a sua chance de fazer novos amigos."
 			}
 		},
 		"changeHour": {

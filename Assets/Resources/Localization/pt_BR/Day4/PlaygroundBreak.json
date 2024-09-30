@@ -37,7 +37,7 @@
 			"fragments": [{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Você colocou o cartaz nas costas da Maria sem ela perceber?"
+				"msn": "Você conseguiu colar o cartaz na Maria sem ela perceber?"
 			}]
 		},
 		"askOptions": {
@@ -58,7 +58,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "MariaJoke",
-				"value": 2,
+				"value": 2
 			}
 		},
 		"noTime": {
@@ -66,7 +66,7 @@
 			"fragments": [{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "O que você está esperando? Vamos, vai logo colar ele nas costas da Maria.."
+				"msn": "O que você tá esperando? Vai logo colar ele nas costas dela..."
 			}]
 		},
 		"mobile": {
@@ -79,7 +79,7 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Hahaha, seu celular está no banheiro <$ if(varObject('global', 'MaleSexNonStatic')==true, 'das garotas', 'dos garotos') $>'."
+				"msn": "Hahaha, seu celular tá no banheiro <$ if(varObject('global', 'MaleSexNonStatic')==true, 'dos meninos', 'das meninas') $>'."
 			}]
 		},
 		"repeat": {
@@ -87,12 +87,12 @@
 			"fragments": [{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "Hahahaha."
+				"msn": "Hahaha."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Hahahaha."
+				"msn": "Hahaha."
 			}]
 		},
 		"lost": {
@@ -100,17 +100,17 @@
 			"questionId": "AnaAlexAskMobileLost",
 			"options": [{
 				"next": "node1a",
-				"msn": "Foi você? Você escondeu meu celular no banheiro <$ if(varObject('global', 'MaleSexNonStatic')==true, 'das meninas', 'dos meninos') $>?",
+				"msn": "Foi você? Escondeu meu celular no banheiro <$ if(varObject('global', 'MaleSexNonStatic')==true, 'das meninas', 'dos meninos') $>?",
 				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
 			},
 			{
 				"next": "node1b",
-				"msn": "Alguém sabe onde está meu celular? Isso não é engraçado.",
+				"msn": "Alguém sabe onde está meu celular? Não é engraçado.",
 				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
 			},
 			{
 				"next": "setter",
-				"msn": "Eu sei que foi você, isso não tem graça.",
+				"msn": "Eu sei que foi você, isso não tem graça."
 			}]
 		},
 		"node1a": {
@@ -119,17 +119,17 @@
 			"fragments": [{
 				"tag": "Álex",
 				"character": "Alex",
-				"msn": "E se fôssemos nós? Você vai correr chorando para falar com o coordenador, ou com seus pais...?"
+				"msn": "E se tivesse sido a gente? Você vai correr para contar para seus pais ou pro professor...?"
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Hahaha, tenho certeza que sim."
+				"msn": "Hahaha, certeza que <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $>? vai."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Vai embora, vá chorar em outro lugar."
+				"msn": "Ah, vai se lascar, vai chorar em outro lugar."
 			}]
 		},
 		"node1b": {
@@ -138,22 +138,22 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Talvez"
+				"msn": "Talvez."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Vamos te dizer onde está se você for colocar esse cartaz nas costas da Maria."
+				"msn": "A gente te conta onde está se você colar esse cartaz nas costas da Maria."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "(Ela te entrega um papel com fita adesiva e a frase \"Gosto de ser xingada, me xingue se você ler isso\")."
+				"msn": "(Ela te entrega um papel com fita e a frase \"Gosto de ser xingada, me xingue se você ler isso\")."
 			},
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Volte quando tiver feito isso... Senão, nem volte aqui."
+				"msn": "Volte quando tiver feito isso... Senão, não me enche."
 			}]
 		},
 		"jokeAccepted": {
@@ -162,7 +162,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "MariaJoke",
-				"value": 1,
+				"value": 1
 			}
 		},
 		"mariaQuest": {
@@ -171,7 +171,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "MariaQuest",
-				"value": 1,
+				"value": 1
 			}
 		},
 		"setter":{
@@ -197,7 +197,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "TimeEnough",
-				"value": true,
+				"value": true
 			}
 		}
 	},
@@ -205,8 +205,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "É hora do recreio, ainda tenho algumas aulas antes de poder ir para casa.."
+				"tag": "Você",
+				"msn": "É hora do intervalo, ainda tenho algumas aulas antes de poder ir para casa..."
 			}]
 		}
 	}

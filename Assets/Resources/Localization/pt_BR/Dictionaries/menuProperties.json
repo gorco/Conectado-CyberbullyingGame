@@ -21,8 +21,8 @@
     "userError":"Seu nome de usuário é obrigatório",
     "passwordError":"Uma senha é obrigatória",
     "genderError":"Você precisa selecionar seu gênero",
-    "startButton":"Iniciar",
+    "startButton":"Começar",
     "backButton":"Voltar",
     "adviseTitle":"IMPORTANTE!",
-    "adviseText":"Não use uma senha que você já utiliza. Crie uma nova. Ela será utilizada apenas dentro do jogo."
+    "adviseText":"Não use uma senha que você já utiliza. Crie uma nova. Ela será usada apenas dentro do jogo."
 }

@@ -20,7 +20,7 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Ela está lendo como sempre, é melhor não incomodá-la."
+				"msn": "Ela está sempre lendo, é melhor não incomodá-la."
 			}]
 		},
 		"node0": {
@@ -28,7 +28,7 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Provavelmente você não percebeu, mas tem um chiclete grudado nas suas calças."
+				"msn": "Acho que você não percebeu, mas tem um chiclete grudado na sua calça."
 			},
 			{
 				"tag": "María",
@@ -41,12 +41,12 @@
 			"fragments": [{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "O que você fez? Que sujeira."
+				"msn": "O que aconteceu? Que bagunça."
 			},
 			{
 				"tag": "María",
 				"character": "Maria",
-				"msn": "Oh, meu amigo, parece até que você se molhou, ou até que se sujou."
+				"msn": "Oh, meu amigo, parece que você molhou suas calças ou que "sujou" elas."
 			}]
 		}
 	},
@@ -98,7 +98,7 @@
 		"female": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Eu não posso entrar lá, é o banheiro dos meninos."
 			}]
 		}
@@ -125,7 +125,7 @@
 		"male": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Eu não posso entrar lá, é o banheiro das meninas."
 			}]
 		}
@@ -135,8 +135,8 @@
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Se eu entrar e o professor aparecer, eu não vou conseguir sair."
+				"tag": "Você",
+				"msn": "Se eu entrar e o professor aparecer, não vou conseguir sair."
 			}]
 		},
 		"options": {
@@ -157,7 +157,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Assim que você entra, o sinal toca e o professor aparece. Você não notou o tempo passando, a manhã acabou e chegou a hora de ir para casa..."
+				"value": "Assim que você entra, o sinal toca e o professor aparece. Você não percebeu o tempo passar. A manhã acabou, e é hora de ir para casa..."
 			}
 		},
 		"changeHour": {

@@ -13,35 +13,35 @@
 		"node1":{
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Há um bilhete no meu casaco..."
+				"tag": "Você",
+				"msn": "Tem um bilhete na minha jaqueta..."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "\"Alison pegou seu celular e deu para o Alex e a Ana. (continua no verso).\""
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "\"Ela teve que dar a senha ou o celular\" (fim do bilhete)."
 			},
 			{
-				"tag": "You",
-				"msn": "Agora entendi o que aconteceu nessa manhã. Será que ela também foi ameaçada?"
+				"tag": "Você",
+				"msn": "Agora entendi sobre essa manhã. Será que também ameaçaram ela?"
 			},
 			{
-				"tag": "You",
-				"msn": "Droga, eu não tenho nenhum código ou padrão de desbloqueio. O que será que eles fizeram com ele?"
+				"tag": "Você",
+				"msn": "Droga, eu não tenho nenhum código ou padrão de desbloqueio. O que será que eles fizeram?"
 			},
 			{
-				"tag": "You",
-				"msn": "E eu não vou poder ver Alex, Ana ou Alison até amanhã."
+				"tag": "Você",
+				"msn": "E eu não vou poder ver o Alex, a Ana ou a Alison até amanhã."
 			}]
 		},
 		"node2":{
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "As aulas acabaram. Hora de voltar para casa."
+				"tag": "Você",
+				"msn": "As aulas terminaram. Hora de voltar para casa."
 			}]
 		}
 	},
@@ -49,11 +49,11 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não tenho mais aulas hoje e todo mundo já foi embora."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "É melhor eu ir para casa."
 			}]
 		}
@@ -73,7 +73,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "15:00",
+				"value": "15:00"
 			}
 		}
 	}

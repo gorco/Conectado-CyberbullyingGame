@@ -19,8 +19,8 @@
 				"msn": "..."
 			},
 			{
-				"tag": "You",
-				"msn": "Novamente me ignorando... O que eu fiz de errado?"
+				"tag": "Você",
+				"msn": "Está me ignorando de novo... O que eu fiz de errado?"
 			}]
 		}, 
 		"alisonBoard": {
@@ -29,7 +29,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "AlisonBoard",
-				"value": true,
+				"value": true
 			}
 		},
 		"node0": {
@@ -48,7 +48,7 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Ignore o mural."
+				"msn": "Esquece o mural."
 			}]
 		}, 
 		"node1": {
@@ -62,7 +62,7 @@
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "E... Será melhor se você ignorá-lo hoje."
+				"msn": "E... Acho que é melhor você ignorá-lo hoje."
 			}]
 		},
 		"options": {
@@ -74,7 +74,7 @@
 			},
 			{
 				"next": "node1B",
-				"msn": "Por quê? O que é?"
+				"msn": "Por quê? O que tem lá?"
 			}]
 		},
 		"node1A": {
@@ -83,12 +83,12 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Desculpe, Alex passou dos limites com isso."
+				"msn": "Desculpa, o Alex foi longe demais com isso."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Talvez você devesse falar com o coordenador ou o diretor."
+				"msn": "Acho que você deveria falar com o coordenador ou o diretor."
 			}]
 		},
 		"node1B": {
@@ -97,17 +97,17 @@
 			"fragments": [{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Alguém colocou uma foto sua em todos os murais da escola."
+				"msn": "Colocaram uma foto sua em todos os murais da escola."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Também estava no pátio."
+				"msn": "Também colocaram no pátio."
 			},
 			{
 				"tag": "Alison",
 				"character": "Alison",
-				"msn": "Acho que você deveria procurar qualquer professor disponível para conversar."
+				"msn": "Acho que você deveria falar com qualquer professor que encontrar."
 			}]
 		},
 		"setter":{
@@ -116,7 +116,7 @@
 				"var": "spoken",
 				"value": true
 			}
-		},
+		}
 	},
 	"board":{
 		"root": {
@@ -125,7 +125,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "BoardQuest",
-				"value": 1,
+				"value": 1
 			}
 		},
 		"forkNode": {
@@ -156,11 +156,11 @@
 			"type": "dialog",
 			"next": "deactive",
 			"fragments": [{
-				"tag": "You",
-				"msn": "É uma foto minha e foi editada para parecer que estou cheio de chicletes no meu traseiro."
+				"tag": "Você",
+				"msn": "É uma foto minha editada para parecer que estou com chicletes no traseiro."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Quem será que quer me fazer de idiota desse jeito?"
 			}]
 		},
@@ -184,11 +184,11 @@
 			"type": "dialog",
 			"next": "deactive",
 			"fragments": [{
-				"tag": "You",
-				"msn": "É uma foto minha de ontem logo após eu limpar o chiclete."
+				"tag": "Você",
+				"msn": "É uma foto minha de ontem logo depois de eu limpar o chiclete."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Com uma frase muito original... \"Um bebê chegou na sala\"."
 			}]
 		},
@@ -205,14 +205,14 @@
 			"type": "dialog",
 			"next": "deactive",
 			"fragments": [{
-				"tag": "You",
-				"msn": "É uma foto do meu rosto em um corpo de cachorro com a língua para fora."
+				"tag": "Você",
+				"msn": "É uma foto do meu rosto no corpo de um cachorro com a língua de fora."
 			},
 			{
-				"tag": "You",
-				"msn": "Por quê? Quem colocou isso?"
+				"tag": "Você",
+				"msn": "Por quê? Quem fez isso?"
 			}]
-		},
+		}
 	},
 	"maleBathroom": {
 		"root": {
@@ -236,7 +236,7 @@
 		"female": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não posso ir lá, é o banheiro dos meninos."
 			}]
 		}
@@ -263,7 +263,7 @@
 		"male": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não posso ir lá, é o banheiro das meninas."
 			}]
 		}
@@ -287,7 +287,7 @@
 			{
 				"next": "move",
 				"condition": "true"
-			},]
+			}]
 		},
 		"move": {
 			"type": "event",
@@ -299,8 +299,8 @@
 		"speak": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Eu deveria falar com a Alison antes de entrar, ela tem agido de forma estranha."
+				"tag": "Você",
+				"msn": "Eu deveria falar com a Alison antes de entrar. Ela está agindo estranho."
 			}]
 		}
 	}

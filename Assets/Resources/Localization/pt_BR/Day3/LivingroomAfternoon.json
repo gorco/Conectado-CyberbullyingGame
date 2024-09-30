@@ -55,23 +55,23 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "Mamá",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Boa tarde, meu bem."
+				"msn": "Oi, meu bem. Boa tarde."
 			}, 
 			{
-				"tag": "Mamá",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Como foi seu dia hoje?"
+				"msn": "Como foi seu dia na escola?"
 			}]
 		},
 		"node2": {
 			"type": "dialog",
 			"next": "parentsFS",
 			"fragments": [{
-				"tag": "Mamá",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Quer falar sobre mais alguma coisa?"
+				"msn": "Você quer falar sobre mais alguma coisa?"
 			}]
 		},
 		"parentsFS": {
@@ -80,7 +80,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "ParentsFS",
-				"value": -15,
+				"value": -15
 			}
 		},
 		"setter":{
@@ -95,12 +95,12 @@
 			"type": "options",
 			"questionId": "parentsAfternoonThirdDay",
 			"options": [{
-				"msn": "Não tenho muito para falar na verdade.",
+				"msn": "Na verdade, não tenho muito o que falar.",
 				"condition": "page == 1"
 			},
 			{
 				"next": "maria",
-				"msn": "A Maria não foi hoje.",
+				"msn": "A Maria não apareceu hoje.",
 				"condition": "page == 1 && aboutMaria == true"
 			},
 			{
@@ -110,26 +110,26 @@
 			},
 			{
 				"next": "school",
-				"msn": "A turma",
+				"msn": "Sobre a turma",
 				"condition": "page == 2 && aboutSchool == true"
 			},
 			{
 				"next": "board",
-				"msn": "(Falar sobre a foto no quadro de avisos)",
+				"msn": "(Falar sobre a foto no mural)",
 				"condition": "page == 2 && aboutBoard == true && varObject('global', 'BoardQuestNonStatic') > 0"
 			},
 			{
 				"next": "page3",
-				"msn": "(Falar sobre outros colegas de sala)",
+				"msn": "(Falar sobre outros colegas)",
 				"condition": "page == 2"
 			},
 			{
 				"next": "guille",
-				"msn": "Eu conversei com o Guille",
+				"msn": "Conversei com o Guille hoje",
 				"condition": "page == 3 && aboutGuille == true"
 			},
 			{
-				"msn": "Já vou para o meu quarto, tenho minhas coisas para fazer.",
+				"msn": "Vou para o meu quarto, tenho coisas para fazer.",
 				"condition": "page == 3"
 			}]
 		},
@@ -153,16 +153,16 @@
 			"type": "dialog",
 			"next": "guilleFork",
 			"fragments": [{
-				"tag": "You",
-				"msn": "O Guille me disse que o Alex me odeia."
+				"tag": "Você",
+				"msn": "O Guille disse que o Alex me odeia."
 			},
 			{
-				"tag": "You",
-				"msn": "O Alex tem me atormentado muito."
+				"tag": "Você",
+				"msn": "O Alex tem me infernizado."
 			},
 			{
-				"tag": "You",
-				"msn": "E ele está ameaçando metade da sala para que todos me ignorem."
+				"tag": "Você",
+				"msn": "Ele está ameaçando metade da turma para que todos me ignorem."
 			}]
 		},
 		"guilleFork": {
@@ -180,16 +180,16 @@
 			"type": "dialog",
 			"next": "guilleUpParentsFS",
 			"fragments": [{
-				"tag": "You",
-				"msn": "E ele me disse que a Ana é a primeira a sempre obedecer ele."
+				"tag": "Você",
+				"msn": "Ele disse que a Ana é a primeira a sempre obedecer."
 			},
 			{
-				"tag": "You",
-				"msn": "Ela chegou cedo essa manhã..."
+				"tag": "Você",
+				"msn": "Ela chegou cedo hoje de manhã..."
 			},
 			{
-				"tag": "You",
-				"msn": "E decidiu colocar fotos minhas em quadros da escola toda."
+				"tag": "Você",
+				"msn": "E decidiu espalhar fotos minhas nos murais da escola."
 			}]
 		},
 		"guilleUpParentsFS": {
@@ -198,7 +198,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "ParentsFS",
-				"value": 10,
+				"value": 10
 			}
 		},
 		"guilleSetter":{
@@ -213,8 +213,8 @@
 			"type": "dialog",
 			"next": "mariaUpParentsFS",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Eu não vi a Maria hoje."
+				"tag": "Você",
+				"msn": "Não vi a Maria hoje."
 			}]
 		},
 		"mariaUpParentsFS": {
@@ -223,7 +223,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "ParentsFS",
-				"value": 5,
+				"value": 5
 			}
 		},
 		"mariaSetter":{
@@ -238,22 +238,22 @@
 			"type": "dialog",
 			"next": "boardUpParentsFS",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Eles decidiram postar fotos minhas em todos os murais da escola."
+				"tag": "Você",
+				"msn": "Decidiram colocar fotos minhas em todos os murais da escola."
 			},
 			{
-				"tag": "You",
-				"msn": "Eu não sei o que fiz de errado para ser tratado assim."
+				"tag": "Você",
+				"msn": "Não sei o que fiz para merecer ser tratado assim."
 			},
 			{
-				"tag": "Mamá",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Vou falar com seu pai sobre isso mais tarde."
+				"msn": "Vou  conversar com seu pai sobre isso mais tarde."
 			},
 			{
-				"tag": "Mamá",
+				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "Talvez devêssemos ir conversar com seu coordenador e ver o que está acontecendo."
+				"msn": "Talvez devêssemos falar com o coordenador e entender o que está acontecendo."
 			}]
 		},
 		"boardUpParentsFS": {
@@ -262,7 +262,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "ParentsFS",
-				"value": 15,
+				"value": 15
 			}
 		},
 		"boardSetter":{
@@ -277,12 +277,12 @@
 			"type": "dialog",
 			"next": "schoolUpParentsFS",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Quase todo mundo me ignorou, mal falaram comigo."
+				"tag": "Você",
+				"msn": "Quase todo mundo me ignorou, mal falaram comigo hoje."
 			},
 			{
-				"tag": "You",
-				"msn": "É como se todos estivessem me evitando ou me dando um tratamento de silêncio."
+				"tag": "Você",
+				"msn": "Parece que todos estão me evitando ou me tratando com silêncio."
 			}]
 		},
 		"schoolUpParentsFS": {
@@ -291,7 +291,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "ParentsFS",
-				"value": 5,
+				"value": 5
 			}
 		},
 		"setterSchool":{
@@ -307,8 +307,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Não tenho nada para fazer na rua."
+				"tag": "Você",
+				"msn": "Não tenho nada para fazer lá fora."
 			}]
 		}
 	},
@@ -354,7 +354,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "21:30",
+				"value": "21:30"
 			}
 		},
 		"message1": {
@@ -386,7 +386,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "HAHA, parece uma grande parede. Que tal MURALHA?",
+				"value": "HAHAHA, parece uma parede enorme. Que tal MURALHA?",
 				"key": "Jose",
 				"time": 1.4
 			}
@@ -408,7 +408,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Hahaha, Alex, seria melhor VENTANIA, não ar",
+				"value": "Hahaha, Alex, VENTANIA combina mais do que ar",
 				"key": "Ana",
 				"time": 1.7
 			}
@@ -419,7 +419,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Não complique, podemos chamar <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> de pária... de qualquer forma, agora ninguém mais fala com <$ if(varObject('global', 'MaleSexNonStatic')==true, 'o', 'a') $> pária...",
+				"value": "Não complique muito, podemos chamar <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'EXCLUÍDO', 'EXCLUÍDA') $>... de qualquer forma, agora ninguém mais fala com <$ if(varObject('global', 'MaleSexNonStatic')==true, 'o Excluído', 'a Excluída') $>...",
 				"key": "Ester",
 				"time": 2
 			}
@@ -429,7 +429,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "pária não é muito original... que tal duende?",
+				"value": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'excluído', 'excluída') $> não é muito original... que tal troll?",
 				"key": "Ana",
 				"other": "insultPost",
 				"time": 2.5
@@ -440,7 +440,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "21:30",
+				"value": "21:30"
 			}
 		}
 	}

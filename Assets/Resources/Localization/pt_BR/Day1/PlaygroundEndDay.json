@@ -3,11 +3,11 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Não tem mais aulas hoje e todo mundo já foi embora."
+				"tag": "Você",
+				"msn": "Não tem mais aulas hoje, e todo mundo já foi embora."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "É melhor eu ir para casa."
 			}]
 		}

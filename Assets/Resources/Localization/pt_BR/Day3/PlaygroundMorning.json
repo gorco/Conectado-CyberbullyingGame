@@ -6,7 +6,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "AlejandroFS",
-				"value": -20,
+				"value": -20
 			}
 		},
 		"fs2": {
@@ -15,7 +15,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "AnaFS",
-				"value": -20,
+				"value": -20
 			}
 		},
 		"fs3": {
@@ -24,7 +24,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "JoseFS",
-				"value": -20,
+				"value": -20
 			}
 		},
 		"fs4": {
@@ -32,7 +32,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "GuillermoFS",
-				"value": -10,
+				"value": -10
 			}
 		}
 	},
@@ -43,7 +43,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "BoardQuest",
-				"value": 1,
+				"value": 1
 			}
 		},
 		"forkNode": {
@@ -74,12 +74,12 @@
 			"type": "dialog",
 			"next": "deactive",
 			"fragments": [{
-				"tag": "You",
-				"msn": "É uma foto minha e foi editada para parecer que estou com chicletes no traseiro."
+				"tag": "Você",
+				"msn": "É uma foto minha, editada para parecer que estou com chicletes no traseiro."
 			},
 			{
-				"tag": "You",
-				"msn": "Quem quer me zoar desse jeito?"
+				"tag": "Você",
+				"msn": "Quem teve a ideia de me zoar assim?"
 			}]
 		},
 		"deactive": {
@@ -102,11 +102,11 @@
 			"type": "dialog",
 			"next": "deactive",
 			"fragments": [{
-				"tag": "You",
-				"msn": "É uma foto minha de ontem, logo depois que tirei o chiclete."
+				"tag": "Você",
+				"msn": "É uma foto minha de ontem, logo após tirar o chiclete."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Com uma frase muito original... \"Um bebê chegou na classe\" "
 			}]
 		},
@@ -123,14 +123,14 @@
 			"type": "dialog",
 			"next": "deactive",
 			"fragments": [{
-				"tag": "You",
-				"msn": "É uma foto de um cachorro com meu rosto e com a língua para fora."
+				"tag": "Você",
+				"msn": "É uma foto de um cachorro com meu rosto e a língua para fora."
 			},
 			{
-				"tag": "You",
-				"msn": "Por quê? Quem colocou isso aqui?"
+				"tag": "Você",
+				"msn": "Por que isso? Quem colocou isso aqui?"
 			}]
-		},
+		}
 	},
 	"group":{
 		"root": {
@@ -148,11 +148,11 @@
 			"type": "dialog",
 			"next": "stayOption",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Você está me ignorando mesmo?"
+				"tag": "Você",
+				"msn": "Vocês realmente estão me ignorando?"
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Até você, Guille?"
 			},
 			{
@@ -165,7 +165,7 @@
 			"questionId": "groupIgnore",
 			"options": [{
 				"next": "stay",
-				"msn": "Esperar para ver se eles falam alguma coisa."
+				"msn": "Vou esperar para ver se eles falam alguma coisa."
 			},
 			{
 				"msn": "Sair."
@@ -184,8 +184,8 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Bom dia, o que você está fazendo aqui?"
+				"tag": "Você",
+				"msn": "Bom dia! O que você estão fazendo aqui?"
 			},
 			{
 				"tag": "Guille",
@@ -195,7 +195,7 @@
 			{
 				"tag": "Alex",
 				"character": "Alex",
-				"msn": "Cala a boca, Guille, o que foi que combinamos hein?"
+				"msn": "Cala a boca, Guille! O que foi que combinamos, hein?"
 			},
 			{
 				"tag": "Alex",
@@ -218,14 +218,14 @@
 			},
 			{
 				"next": "node1B",
-				"msn": "Aquilo pareceu uma ameaça"
+				"msn": "Aquilo pareceu como uma ameaça"
 			}]
 		},
 		"node1A": {
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Você está bem, Guille?"
 			},
 			{
@@ -233,7 +233,7 @@
 				"msn": "..."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Alguém vai dizer alguma coisa?"
 			}]
 		},
@@ -241,15 +241,15 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Você também tem algo contra o Guille... Alex?"
+				"tag": "Você",
+				"msn": "Você também tem algo contra o Guille, Alex?"
 			},
 			{
 				"tag": "",
 				"msn": "..."
 			},
 			{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Alguém vai dizer alguma coisa?"
 			}]
 		},
@@ -276,8 +276,8 @@
 			"type": "dialog",
 			"fragments": [
 			{
-				"tag": "You",
-				"msn": "Tudo bem, não digam nada. Vou para a aula, já está tarde."
+				"tag": "Você",
+				"msn": "Tudo bem, não precisam dizer nada. Vou para a aula, já está tarde."
 			}]
 		},
 		"bell": {
@@ -333,7 +333,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "",
-				"msn": "Parece que cheguei muito cedo e ainda não posso entrar. Melhor eu ir passar o tempo em outro lugar."
+				"msn": "Parece que cheguei muito cedo e ainda não posso entrar. Melhor ir passar o tempo em outro lugar."
 			}]
 		}
 	},
@@ -341,7 +341,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Acabei de chegar, não posso sair ainda."
 			}]
 		}

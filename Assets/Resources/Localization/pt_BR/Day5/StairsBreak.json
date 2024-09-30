@@ -6,13 +6,13 @@
 			"fragments": [{
 				"tag": "Alex",
 				"character": "Alex",
-				"msn": "Sério? Você ia sair sem passar no banheiro."
+				"msn": "Sério? Você estava saindo sem passar no banheiro."
 			},
 			{
 				"tag": "Alex",
 				"character": "Alex",
-				"msn": "Pense nisso como uma oportunidade para resolvermos tudo, vamos lá... Eu vou com você."
-			}]z
+				"msn": "Vê isso como uma oportunidade para resolver tudo, vamos lá... Eu vou com você."
+			}]
 		},
 		"changeVar": {
 			"type": "event",
@@ -20,7 +20,7 @@
 			"event": {
 				"name": "change variable",
 				"var": "Alex",
-				"value": true,
+				"value": true
 			}
 		},
 		"node2a": {
