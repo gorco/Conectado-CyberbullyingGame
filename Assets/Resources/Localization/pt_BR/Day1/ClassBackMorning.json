@@ -1,4 +1,4 @@
-﻿{
+{
 	"class":{
 		"root": {
 				"type": "fork",
@@ -24,12 +24,12 @@
 			},{
 				"tag": "Professor",
 				"character": "Professor",
-				"msn": "Chegar atrasado no primeiro dia não é a melhor maneira de começar."
+				"msn": "Se atrasar no primeiro dia não é a melhor maneira de começar."
 			},
 			{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Pessoal, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'este é o novo', 'esta é a nova') $> colega de vocês. Por favor, ajudem <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> nesses primeiros dias."
+				"msn": "Pessoal, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'este é o novo', 'esta é a nova') $> colega de vocês. Por favor, ajudem com qualquer duvida que tiver nesses primeiros dias."
 			},
 			{
 				"tag": "Professor",
@@ -98,7 +98,7 @@
 			},
 			{
 				"next": "node1b",
-				"msn": "E quem é você? A menina da turma que se acha um menino?"
+				"msn": "E quem é você? A sapatona da turma?"
 			}]
 		},
 		"node1a": {
@@ -130,7 +130,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "AnaFS",
-				"value": -20,
+				"value": -20
 			}
 		},
 		"node2": {

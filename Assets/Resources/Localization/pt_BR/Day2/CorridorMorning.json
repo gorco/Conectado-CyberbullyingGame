@@ -467,7 +467,7 @@
 			"next": "setter",
 			"fragments": [{
 				"tag": "Você",
-				"msn": "Você parece distraído."
+				"msn": "Parece estar distraído."
 			}]
 		},
 		"setter":{
@@ -500,7 +500,7 @@
 		"female": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não posso ir lá, é o banheiro dos meninos."
 			}]
 		}

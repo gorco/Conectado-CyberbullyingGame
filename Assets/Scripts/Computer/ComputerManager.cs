@@ -197,7 +197,7 @@ public class ComputerManager : EventManager {
 		}
 
 		var avatarFile = author;
-		if(author == "Tú" || author == "Toi"|| author == "You")
+		if(author == "Tú" || author == "Toi"|| author == "You" || author == "Você")
 		{
 			avatarFile = GlobalState.MaleSex ? "Boy" : "Girl";
 		}

@@ -14,7 +14,7 @@
 				"msn": "Agora é hora de analisar a sintaxe."
 			},
 			{
-				"tag": "Knocks at the door",
+				"tag": "Batidas na porta",
 				"msn": "(Alguém bate à porta)"
 			},
 			{
@@ -42,12 +42,12 @@
 			{
 				"tag": "Alejandro",
 				"character": "Alex",
-				"msn": "O novato está no meu lugar."
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'O novato', 'A novata') $> está no meu lugar."
 			},
 			{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "O nome dele é <$ varObject('global', 'UserNameNonStatic') $>."
+				"msn": "O nome <$ if(varObject('global', 'MaleSexNonStatic')==true, 'dele', 'dela') $> é <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
 				"tag": "Professor",
@@ -61,7 +61,7 @@
 			"event": {
 				"name": "change friendship",
 				"var": "AlejandroFS",
-				"value": -10,
+				"value": -10
 			}
 		},
 		"black": {
@@ -80,7 +80,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "11:05",
+				"value": "11:05"
 			}
 		},
 		"nextScene": {

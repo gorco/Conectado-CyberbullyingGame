@@ -4,11 +4,11 @@
 			"type": "dialog",
 			"next": "fade",
 			"fragments": [{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "É seu primeiro dia de aula. Que tal escolher um lugar para se sentar?"			
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Escolha o lugar que você mais gosta."
 			}]
@@ -26,20 +26,20 @@
 			"type": "dialog",
 			"next": "variable",
 			"fragments": [{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Parece que você perdeu seu lugar."
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
-				"msn": "Você sabe ao menos como se sentar?"
+				"msn": "O que?! Você nem sabe como se sentar?"
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Você serve pra alguma coisa?"
 			},
 			{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Como espera fazer amigos agindo assim?"
 			}]
@@ -83,17 +83,17 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Vejo que você encontrou um lugar, mas... "
 			},
 			{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Esse lugar é meu, você terá que escolher outro."
 			},
 			{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Você pode sentar onde quiser, menos aqui."
 			}]

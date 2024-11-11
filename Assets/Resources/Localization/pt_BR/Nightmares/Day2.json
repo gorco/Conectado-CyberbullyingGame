@@ -4,16 +4,16 @@
 			"type": "dialog",
 			"next": "fade",
 			"fragments": [{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Então... conseguimos resolver isso?"
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Você sabe onde se sentar?"
 			},
 			{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",				
 				"msn": "Talvez você devesse evitar que os chicletes grudem nas cadeiras. Caso contrário, vai ter que se sentar em um deles."
 			}]
@@ -30,15 +30,15 @@
 		"root":{
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Você vai ter que sentar em um chiclete."
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Hahaha, vai em frente, sente-se."
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Vamos lá, o que você está esperando?"
 			},{
@@ -125,15 +125,15 @@
 			"type": "dialog",
 			"next": "changeDay",
 			"fragments": [{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Você vai ter que se sentar em um chiclete."
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Hahaha, vai em frente, sente-se."
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Vamos lá, o que você está esperando?"
 			}]

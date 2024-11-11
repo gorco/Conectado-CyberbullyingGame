@@ -135,7 +135,7 @@
 		"female": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "Você",
 				"msn": "Não posso entrar lá, é o banheiro dos meninos."
 			}]
 		}

@@ -4,16 +4,16 @@
 			"type": "dialog",
 			"next": "fade",
 			"fragments": [{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Eu vou garantir que ninguém fale com você."
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Você pode fazer o que quiser, mas não vai conseguir nada."
 			},
 			{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Vai lá, converse com as pessoas da sala, vamos ver se elas falam com você."
 			}]
@@ -39,20 +39,20 @@
 			"type": "dialog",
 			"next": "variable",
 			"fragments": [{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Acho que você está sozinho."
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Como é ser ignorado por todos?"
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",	
 				"msn": "Não é engraçado como ninguém presta atenção em você?"
 			},
 			{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Porque estou rindo muito só de te olhar para você."
 			}]

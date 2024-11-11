@@ -29,7 +29,7 @@
 			"questionId": "AlisonTrustAsk",
 			"options": [{
 				"next": "friend",
-				"msn": "Muito obrigado por ser meu amigo."
+				"msn": "Muito obrigado por ser minha amiga."
 			},
 			{
 				"next": "noFriend",

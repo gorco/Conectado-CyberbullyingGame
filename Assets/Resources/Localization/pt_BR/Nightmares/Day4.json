@@ -4,21 +4,21 @@
 			"type": "dialog",
 			"next": "fade",
 			"fragments": [{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Você não ama as novas fotos que acabamos de publicar?"
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Você pode tentar deletá-las..."
 			},
 			{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Você vai ter que fazer mais do que apenas deletar ou reportar elas."
 			},
 			{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",	
 				"msn": "Vá em frente, tente... todos nós já temos uma cópia."
 			}]
@@ -35,19 +35,19 @@
 		"root":{
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Você não conseguiu nada."
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Hahaha"
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "As fotos ainda estão lá."
 			},{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Uma vez online, todo mundo pode fazer uma cópia."
 			},{
@@ -192,19 +192,19 @@
 			"type": "dialog",
 			"next": "variable",
 			"fragments": [{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",	
 				"msn": "Você não conseguiu nada."
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Hahaha!"
 			}, {
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "As fotos ainda estão lá."
 			},{
-				"tag": "Sombra",
+				"tag": "Vulto",
 				"character": "Shadow",
 				"msn": "Uma vez online, todo mundo pode fazer uma cópia."
 			}]

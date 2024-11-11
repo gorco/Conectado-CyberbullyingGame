@@ -709,7 +709,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Hmm, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> não merece estar neste grupo. Alguém tira <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> AGORA!",
+				"value": "Hmm, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele não merece estar neste grupo. Alguém tira ele AGORA!', 'ela não merece estar neste grupo. Alguém tira ela AGORA!') $>",
 				"key": "Alex",
 				"time": 10 
 			}

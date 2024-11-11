@@ -419,7 +419,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Não complique muito, podemos chamar <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'EXCLUÍDO', 'EXCLUÍDA') $>... de qualquer forma, agora ninguém mais fala com <$ if(varObject('global', 'MaleSexNonStatic')==true, 'o Excluído', 'a Excluída') $>...",
+				"value": "Não complique muito, podemos chamar só de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'EXCLUÍDO... de qualquer forma, agora ninguém mais fala com o Excluído...', 'EXCLUÍDA... de qualquer forma, agora ninguém mais fala com o Excluída...') $> ",
 				"key": "Ester",
 				"time": 2
 			}

@@ -1,4 +1,4 @@
-﻿{
+{
 	"board":{
 		"root": {
 			"type": "event",
@@ -116,7 +116,7 @@
 			"fragments": [{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, você está <$ if(varObject('global', 'MaleSexNonStatic')==true, 'atrasado', 'atrasada') $>."
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, você não chegou no horário."
 			},{
 				"tag": "Professor",
 				"character": "Teacher",
@@ -139,7 +139,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "14:05",
+				"value": "14:05"
 			}
 		},
 		"nextScene": {
