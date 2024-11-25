@@ -1,0 +1,80 @@
+{
+	"init": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},{
+				"next": "node2",
+				"condition": "true"
+			}]
+		},
+		"node1":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我嘅外套入面有張字條⋯"
+			},
+			{
+				"tag": "你",
+				"msn": "愛莉攞咗你部電話，然後交俾阿歷同安娜（詳情見後面）"
+			},
+			{
+				"tag": "你",
+				"msn": "佢一係交密碼，一係交電話（字條結束）。"
+			},
+			{
+				"tag": "你",
+				"msn": "我而家明白今朝發生咩事。佢係咪都俾人威脅？"
+			},
+			{
+				"tag": "你",
+				"msn": "大鑊，我冇設解鎖密碼或圖案。佢哋會點搞我部電話呢？"
+			},
+			{
+				"tag": "你",
+				"msn": "我要到聽日先見到阿歷、安娜或者愛莉。"
+			}]
+		},
+		"node2":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "落堂，夠鐘返屋企。"
+			}]
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "今日冇其他堂上，學校已經冇人。"
+			},
+			{
+				"tag": "你",
+				"msn": "最好係番屋企先。"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 21
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "15:00",
+			}
+		}
+	}
+}

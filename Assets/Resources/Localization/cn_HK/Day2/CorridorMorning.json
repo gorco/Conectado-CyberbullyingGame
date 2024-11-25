@@ -1,0 +1,553 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我們進去吧，不然我們就要遲到了。"
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"node0": {
+			"type": "fork",
+			"options": [{
+				"next": "notify1",
+				"condition": "varObject('global', 'AlisonFSNonStatic') > 60"
+			},
+			{
+				"next": "normal1",
+				"condition": "true"
+			}]
+		},	
+		"notify1": {
+			"type": "dialog",
+			"next": "checkRepeat",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "你好嗎，<$ varObject('global', 'UserNameNonStatic') $>？"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "順帶一提，阿歷之前說想對你開個惡作劇。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "他以前不是這樣的，我不知道他現在怎麼樣了。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "保重，好嗎？"
+			}]
+		},
+		"checkRepeat": {
+			"type": "fork",
+			"options": [{
+				"next": "repeatedDay1",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			},
+			{
+				"next": "notify2",
+				"condition": "true"
+			}]
+		},
+		"repeatedDay1": {
+			"type": "dialog",
+			"next": "notify2",
+			"fragments": [
+			{
+				"tag": "你",
+				"msn": "又來一次？"
+			},{
+				"tag": "你",
+				"character": "Alison",
+				"msn": "那又怎樣呢？"
+			},
+			{
+				"tag": "你",
+				"msn": "她似乎不記得昨天我身上也黏了香口膠"
+			},
+			{
+				"tag": "你",
+				"msn": "算了，我們要進去了，再見。"
+			}]
+		},
+		"notify2": {
+			"type": "event",
+			"next": "quest2",
+			"event":{
+				"name": "change variable",
+				"var": "JokeAdvise",
+				"value": true,
+			}
+		},
+		"quest2": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "AlisonQuest",
+				"value": 2,
+			}
+		},
+		"normal1": {
+			"type": "dialog",
+			"next": "normal2",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "你怎麼樣<$ varObject('global', 'UserNameNonStatic') $>？"
+			}]
+		},
+		"normal2": {
+			"type": "event",
+			"next": "quest1",
+			"event":{
+				"name": "change variable",
+				"var": "JokeAdvise",
+				"value": true,
+			}
+		},
+		"quest1": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "AlisonQuest",
+				"value": 1,
+			}
+		}
+	},
+	"alejandro":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "他在無視我。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"node0": {
+			"type": "fork",
+			"options": [{
+				"next": "why",
+				"condition": "varObject('state', 'JokeAdvise') == true"
+			},
+			{
+				"next": "nothing",
+				"condition": "true"
+			}]
+		},
+		"why": {
+			"type": "options",
+			"questionId": "AlexJokeAsk",
+			"options": [{
+				"next": "why1a",
+				"msn": "我聽說你想對我開個惡作劇。",
+				"condition": "varObject('global', 'RepeatedNonStatic') == false"
+			},
+			{
+				"next": "why1b",
+				"msn": "我們可以好好相處嗎？",
+				"condition": "varObject('global', 'RepeatedNonStatic') == false"
+			},
+			{
+				"next": "why1aRepeat",
+				"msn": "又一天跟我開玩笑嗎？",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			},
+			{
+				"next": "why1bRepeat",
+				"msn": "昨天的香口膠是你幹的吧？",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			},
+			{
+				"next": "why1c",
+				"msn": "我知道你是什麼樣的人。"
+			}]
+		},
+		"why1a": {
+			"type": "dialog",
+			"next": "quest1",
+			"fragments": [{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "我有點喜歡開玩笑，但放輕鬆點。"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "我們都會笑一笑的。"
+			}]
+		},	
+		"quest1": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "AlexQuest",
+				"value": 1,
+			}
+		},
+		"why1b": {
+			"type": "dialog",
+			"next": "quest2",
+			"fragments": [{
+				"tag": "你",
+				"msn": "為什麼我們不重新開始呢？"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "好啦，我們進去吧。"
+			}]
+		},	
+		"quest2": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "AlexQuest",
+				"value": 2,
+			}
+		},
+		"why1c": {
+			"type": "dialog",
+			"next": "quest3",
+			"fragments": [{
+				"tag": "你",
+				"msn": "你就是那種會利用他人的人。"
+			},
+			{
+				"tag": "你",
+				"msn": "不管什麼理由，都想找人打架。"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "如果你說完了，滾吧，你這個廢物。"
+			}]
+		},	
+		"quest3": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "AlexQuest",
+				"value": 3,
+			}
+		},
+		"why1aRepeat": {
+			"type": "dialog",
+			"next": "quest1",
+			"fragments": [{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "如果你說的是我的坐位..."
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "這不是玩笑，我不想讓你再坐在那裡。"
+			}]
+		},	
+		"why1bRepeat": {
+			"type": "dialog",
+			"next": "quest2",
+			"fragments": [{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "香口膠？"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "別看著我。"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "我記得我那時遲到了。"
+			}]
+		},	
+		"nothing": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "你",
+				"msn": "你還在為座位的事情生氣嗎？"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "我們走著瞧。你已經知道哪一張桌子是你的嗎？"
+			}]
+		}		
+	},
+	"guillermo":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeatMatch",
+				"condition": "spoken == true && match == true"
+			},
+			{
+				"next": "nodeRepeat",
+				"condition": "spoken == true && match == false"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我們進去吧。"
+			}]
+		},
+		"nodeRepeatMatch": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "記住，週六下午6點，在我家。"
+			}]
+		},
+		"node0": {
+			"type": "fork",
+			"options": [{
+				"next": "match1",
+				"condition": "varObject('global', 'GuillermoFSNonStatic') >= 60"
+			},
+			{
+				"next": "node1",
+				"condition": "true"
+			}]
+		},
+		"match1": {
+			"type": "dialog",
+			"next": "matchOptions",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "這週六我們要在我家看電影。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "你想來嗎？有同學會來。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "我們會在我父親剛買的大電視上看，他是為了看足球比賽買的。"
+			}]
+		},
+		"matchOptions": {
+			"type": "options",
+			"questionId": "GuilleMovie",
+			"options": [{
+				"next": "match2a",
+				"msn": "係"
+			},
+			{
+				"next": "match2b",
+				"msn": "唔係"
+			},
+			{
+				"next": "match2c",
+				"msn": "我要先問問我的父母。"
+			}]
+		},
+		"match2a": {
+			"type": "dialog",
+			"next": "questGo",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "太好了，又有一個人加入了。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "我會把地址和其他細節告訴你。"
+			}]
+		},
+		"questGo": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 1,
+			}
+		},
+		"match2b": {
+			"type": "dialog",
+			"next": "questNoGo",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "好可惜。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "那麼，再見。"
+			}]
+		},
+		"questNoGo": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 2,
+			}
+		},
+		"match2c": {
+			"type": "dialog",
+			"next": "questAsk",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "那麼，告訴我吧。"
+			}]
+		},
+		"questAsk": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 3,
+			}
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "你",
+				"msn": "看起來心不在焉。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我唔可以入去，呢度係男仔廁所。"
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我唔可以入去，呢度係女仔廁所。"
+			}]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		}
+	}
+}

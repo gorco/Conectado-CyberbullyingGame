@@ -1,0 +1,228 @@
+﻿{
+	"bathroomExit": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"guille":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "我真的很抱歉，真的，但我的父母不能知道這件事。"
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"next": "sexFork",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"sexFork": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeMale",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "nodeFemale",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"nodeMale": {
+			"type": "dialog",
+			"next": "nodeUnisex",
+			"fragments": [{
+				"tag": "你",
+				"msn": "所以這張紙條上的人…就是你，吉耶。"
+			},
+			{
+				"tag": "你",
+				"msn": "現在你跟我談。"
+			},
+			{
+				"tag": "你",
+				"msn": "那麼班上有一半人不理我呢？"
+			}]
+		},
+		"nodeFemale": {
+			"type": "dialog",
+			"next": "nodeUnisex",
+			"fragments": [{
+				"tag": "你",
+				"msn": "你係女廁做乜野呀，吉耶？"
+			},
+			{
+				"tag": "你",
+				"msn": "你唔可以係度呀，走啦。"
+			},
+			{
+				"tag": "吉耶",
+				"character" : "Guille",
+				"msn": "我要同你傾，我係留低紙條既人。"
+			},
+			{
+				"tag": "你",
+				"msn": "現在你跟不跟我談？"
+			},
+			{
+				"tag": "你",
+				"msn": "那麼班上有一半人不理我呢？"
+			}]
+		},
+		"nodeUnisex": {
+			"type": "dialog",
+			"next": "changeVariable",
+			"fragments": [{
+				"tag": "吉耶",
+				"character" : "Guille",
+				"msn": "這就是我想跟你說的話。"
+			},
+			{
+				"tag": "吉耶",
+				"character" : "Guille",
+				"msn": "我無法在阿歷或他的任何朋友看到我們的地方與你交談。"
+			},
+			{
+				"tag": "吉耶",
+				"character" : "Guille",
+				"msn": "他威脅我要把我吸煙飲酒的照片傳給父母。"
+			},
+			{
+				"tag": "吉耶",
+				"character" : "Guille",
+				"msn": "我的父母對我非常嚴格，如果他們發現了，我不知道會發生什麼事…他們甚至可能會把我送到另一間高中。"
+			},
+			{
+				"tag": "你",
+				"msn": "但為什麼阿歷不想讓任何人跟我說話呢？"
+			},
+			{
+				"tag": "吉耶",
+				"character" : "Guille",
+				"msn": "我們不知道，他從第一天起就看中你。"
+			},
+			{
+				"tag": "吉耶",
+				"character" : "Guille",
+				"msn": "太多人按照他的意願行事，但我們當中有些人曾經受到他的威脅。"
+			},
+			{
+				"tag": "吉耶",
+				"character" : "Guille",
+				"msn": "去年在瑪莉亞也發生過類似的事情，儘管那是安娜的事。"
+			},
+			{
+				"tag": "吉耶",
+				"character" : "Guille",
+				"msn": "從那時起她就沒有朋友，當有人試圖和她談話時…她不理會我們。"
+			},
+			{
+				"tag": "吉耶",
+				"character" : "Guille",
+				"msn": "她還沒有原諒我們。"
+			},
+			{
+				"tag": "吉耶",
+				"character" : "Guille",
+				"msn": "嗯…我只是想說抱歉，但在阿歷不再憤怒之前我無法和你說話。"
+			},
+			{
+				"tag": "吉耶",
+				"character" : "Guille",
+				"msn": "我真的很抱歉  <$ varObject('global', 'UserNameNonStatic') $>。"
+			}]
+		},
+		"changeVariable": {
+			"type": "event",
+			"next": "boardFork",
+			"event": {
+				"name": "change variable",
+				"var": "GuilleSpoke",
+				"value": true,
+			}
+		},
+		"boardFork": {
+			"type": "fork",
+			"options": [{
+				"next": "option",
+				"condition": "varObject('global', 'BoardQuestNonStatic') == 1"
+			}]
+		},
+		"option": {
+			"type": "options",
+			"questionId": "GuilleBathroomDialog",
+			"options": [{
+				"next": "nodeAlex",
+				"msn": "就這樣嗎？阿歷得到他想要的嗎？"
+			},
+			{
+				"next": "nodeBoard",
+				"msn": "那麼我在黑板上的照片呢？是阿歷嗎？"
+			}]
+		},
+		"nodeAlex": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "我真的很抱歉，真的。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "但我不想讓他令我的生活變得悲慘。"
+			}]
+		},
+		"nodeBoard": {
+			"type": "dialog",
+			"next": "guilleQuest",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "那是安娜做的。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "她對阿歷真的很感興趣。如果阿歷招惹你，她將會做出一樣的事情。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "還有荷西，他是阿歷的走狗，沒有辦法自己思考。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "要盡量避開他們三個。"
+			}]
+		},
+		"guilleQuest": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 1,
+			}
+		}
+	}
+}

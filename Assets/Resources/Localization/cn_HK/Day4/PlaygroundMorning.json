@@ -1,0 +1,266 @@
+{
+	"alison":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $>,我想同你傾一傾。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "唔知你知唔知喇，阿歷叫咗我哋唔好同你講嘢。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "佢而家威脅所有唔跟佢指示嘅人。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我可以信你？我唔想我哋唔再係朋友。"
+			}]
+		},		
+		"options": {
+			"type": "options",
+			"questionId": "AlisonTrustAsk",
+			"options": [{
+				"next": "friend",
+				"msn": "好多謝你做我嘅朋友。"
+			},
+			{
+				"next": "noFriend",
+				"msn": "唔喇，我對獲得你嘅信任冇興趣。"
+			}]
+		},
+		"noFriend": {
+			"type": "dialog",
+			"next": "alisonFS",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "咁我冇其他選擇，唯有唔再同你講嘢。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我唔想冒任何風險。"
+			}]
+		},		
+		"friend": {
+			"type": "dialog",
+			"next": "passChange",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "聽到你咁講我好開心。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "不如我哋交換電話同社交媒體嘅密碼。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "作為表達友誼同信任。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "以前啲人會割開手掌握手以示結拜。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "但咁做好核突又唔健康。"
+			}]
+		},		
+		"passChange": {
+			"type": "options",
+			"questionId": "AlisonSharePass",
+			"options": [{
+				"next": "change",
+				"msn": "（接受交換密碼）"
+			},
+			{
+				"next": "noChange",
+				"msn": "（拒絕交換密碼）"
+			}]
+		},
+		"noChange": {
+			"type": "dialog",
+			"next": "alisonFS",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "如果你唔信我，我都唔可以信你。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "對唔住，我唔會再同你講嘢。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我唔想阿歷對我有偏見。"
+			}]
+		},		
+		"change": {
+			"type": "dialog",
+			"next": "changeVariable",
+			"fragments": [{
+				"tag": "愛莉",
+				"msn": "你喺部電話入密碼。"
+			},{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "好\"好朋友\" (露出滿足笑容)"
+			}]
+		},	
+		"changeVariable": {
+			"type": "event",
+			"next": "bellVar",
+			"event": {
+				"name": "change variable",
+				"var": "SharedPassQuest",
+				"value": 1,
+			}
+		},
+		"alisonFS": {
+			"type": "event",
+			"next": "bellVar",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFS",
+				"value": -50,
+			}
+		},
+		"bellVar": {
+			"type": "event",
+			"next": "bell",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "hour",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<學校鐘聲響起>>"
+			}]
+		},
+		"hour": {
+			"type": "event",
+			"next": "fade1",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		},
+		"fade1": {
+			"type": "event",
+			"next": "fade2",
+			"event": {
+				"name": "fade out",
+				"key": "jose"
+			}
+		},
+		"fade2": {
+			"type": "event",
+			"next": "fade3",
+			"event": {
+				"name": "fade out",
+				"key": "guillermo"
+			}
+		},
+		"fade3": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "alison"
+			}
+		},
+	},
+	"jose":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "(面帶笑容望住你，開始大笑)"
+			},
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "哈哈哈!!"
+			}]
+		}
+	},
+	"guillermo":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "(見到你後神情轉變，擰轉頭望其他地方)"
+			}]
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true"
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "睇嚟我太早嚟，仲未入得去。我搵啲嘢消磨下時間先。"
+			}]
+		}
+	},
+	"board":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "好似有人影咗尋日嘅相。"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我啱啱先到，未走得住。"
+			}]
+		}
+	}
+}

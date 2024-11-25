@@ -1,0 +1,103 @@
+{
+	"intro":{
+		"root": {
+			"type": "dialog",
+			"next": "fade",
+			"fragments": [{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "你第一日返學。點解你唔搵張座位坐呢?"			
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "你揀個最鐘意既位。"
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "shadow"
+			}
+		}
+	},
+	"finishNightmare":{
+		"root": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "我覺得你漏咗個位。"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "你依家知唔知點樣坐低?"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "你甚至值唔值任何野?"
+			},
+			{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "你如何同咁樣既人做朋友呢?"
+			}]
+		},
+		"variable": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 1,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	},
+	"sit" : {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "我睇到你已經搵到張座位，但係…"
+			},
+			{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "個個座位係我，你要搵另一個。"
+			},
+			{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "除咗呢個位之外，你可以周圍坐。"
+			}]
+		}
+	}
+
+}

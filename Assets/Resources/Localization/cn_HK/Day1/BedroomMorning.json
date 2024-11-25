@@ -1,0 +1,164 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "既然我已經起床了，就不應該再躺下。"
+			}]
+		}		
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "這裡沒有什麼有用的東西。"
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我最終必須把這裏清理乾淨，但現在我必須返學。"
+			}]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我想我一切都準備好了……"
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "你",
+				"msn": "好的，我已拿齊所有東西。現在帶上背包，趕緊出發。"
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "BagPicked",
+				"value": true
+			}
+		},
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "如果我現在開機，我肯定會遲到。"
+			},
+			{
+				"tag": "你",
+				"msn": "最好等到下午再開。"
+			},
+			{
+				"tag": "個人電腦",
+				"msn": "你係咪想開電腦？"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"options": [{
+				"next": "node1a",
+				"msn": "係"
+			},
+			{
+				"next": "node1b",
+				"msn": "唔係"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
+		}, 
+		"moveCamera": {
+			"type": "event",
+			"next": "changeHour",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:10",
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我最好就現在離開吧。"
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我好唔好留低手提電話叉電?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "好"
+			},
+			{
+				"next": "node1b",
+				"msn": "唔好"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
+	}
+}

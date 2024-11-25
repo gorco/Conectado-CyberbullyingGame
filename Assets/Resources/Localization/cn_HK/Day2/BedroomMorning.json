@@ -1,0 +1,342 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "等我放學回來再睡一會。"
+			}]
+		}		
+	},
+	"init":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node0",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "是我眼花了…還是手機顯示的是昨天的日期？"
+			},
+			{
+				"tag": "你",
+				"msn": "是壞了還是怎麼了？"
+			}]
+		}
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我現在不需要這裡的任何東西。"
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我現在要去上課了，但還沒收拾好。看來我要另外再找個時間去做。"
+			}]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "一切都準備就緒，我們出發吧。"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "BagPicked",
+				"value": true
+			}
+		},
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我得等到下午，不然就遲到了。"
+			},
+			{
+				"tag": "個人電腦",
+				"msn": "你係咪想開電腦？"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "係"
+			},
+			{
+				"next": "node1b",
+				"msn": "唔係"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
+		}, 
+		"moveCamera": {
+			"type": "event",
+			"next": "changeHour",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:10",
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我還是走吧。"
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我好唔好留低手提電話叉電?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+
+			"options": [{
+				"next": "node1a",
+				"msn": "係"
+			},
+			{
+				"next": "node1b",
+				"msn": "唔係"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
+	}
+}{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "等我放學回來再睡一會。"
+			}]
+		}		
+	},
+	"init":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node0",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "是我眼花了…還是手機顯示的是昨天的日期？"
+			},
+			{
+				"tag": "你",
+				"msn": "是壞了還是怎麼了？"
+			}]
+		}
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我現在不需要這裡的任何東西。"
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我現在要去上課了，但還沒收拾好。看來我要另外再找個時間去做。"
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "一切都準備就緒，我們出發吧。"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "BagPicked",
+				"value": true
+			}
+		},
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我得等到下午，不然就遲到了。"
+			},
+			{
+				"tag": "個人電腦",
+				"msn": "你係咪想開電腦？"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "係"
+			},
+			{
+				"next": "node1b",
+				"msn": "唔係"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
+		}, 
+		"moveCamera": {
+			"type": "event",
+			"next": "changeHour",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:10",
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我還是走吧。"
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我好唔好留低手提電話叉電?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+
+			"options": [{
+				"next": "node1a",
+				"msn": "係"
+			},
+			{
+				"next": "node1b",
+				"msn": "唔係"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
+	}
+}

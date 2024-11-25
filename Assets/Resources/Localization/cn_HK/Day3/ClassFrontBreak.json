@@ -1,0 +1,33 @@
+﻿{
+	"init":{
+		"root":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我應該要在回家前去浴室。"
+			},
+			{
+				"tag": "你",
+				"msn": "也許那筆記是重要的。"
+			}]
+		}
+	},
+	"door": {
+		"root": {
+			"next": "changeHour",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:08",
+			}
+		}
+	}
+}

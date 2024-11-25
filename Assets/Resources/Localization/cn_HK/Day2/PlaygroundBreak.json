@@ -1,0 +1,256 @@
+{
+	"anaGroup": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeNoGum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			},
+			{
+				"next": "nodeWhashed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "nodeInit",
+				"condition": "true"
+			}]
+		},
+		"nodeNoGum": {
+			"type": "dialog",
+			"next": "FadeOutAna",
+			"fragments": [{
+				"tag": "竊竊私語",
+				"msn": "嗯，看來他沒有黏香口膠。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "噓。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你好，<$ varObject('global', 'UserNameNonStatic') $>。"
+			},
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "你好。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你有沒有見過阿歷？"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "我們需要和他談談。"
+			}]
+		},
+		"FadeOutAna": {
+			"next": "FadeOutJose",
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "ana"
+			}
+		},
+		"FadeOutJose": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "jose"
+			}
+		},
+		"nodeInit": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Ana",
+				"character": "安娜",
+				"msn": "你應該洗洗衣服，你的褲子真是一團糟。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你家裡沒有洗衣機嗎？"
+			},
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "哈哈哈，新潮流！褲子上黏著香口膠。"
+			},
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "那件破衣服不值得洗。"
+			},
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "他應該直接把它丟進垃圾桶。"
+			},
+			{
+				"tag": "Ana",
+				"character": "Ana",
+				"msn": "哈哈哈哈"
+			}]
+		},
+		"nodeWhashed": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈，你尿褲子了嗎？"
+			},
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "哈哈哈哈，不，不，你看，他自己拉屎了。"
+			},
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "安娜，你有手機嗎？拍張照片！ ！"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈哈哈"
+			}]
+		}
+	},
+	"guilleGroup":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeNoGum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			},
+			{
+				"next": "nodeWashed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "nodeInit",
+				"condition": "true"
+			}]
+		},
+		"nodeInit": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "試著去洗手間把那口香糖弄掉。"
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"nodeWashed": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "好大的污漬。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "嗯，沒關係，過一會兒就會乾了。"
+			}]
+		},
+		"nodeNoGum": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "喂，<$ varObject('global', 'UserNameNonStatic') $>。<$ varObject('global', 'UserNameNonStatic') $>。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我們正在談論阿歷。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "今天早上他表現得很奇怪，他甚至是第一個到達的。"
+			}]
+		}, 
+		"node0": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "吉耶"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "你可能坐到口香糖上了。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "真糟糕，上課前先去洗手間吧。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "是啊，也许你能去掉它。"
+			}]
+		},
+		"guilleFS": {
+			"type": "event",
+			"next": "joseFS",
+			"event": {
+				"name": "change friendship",
+				"var": "GuilleFS",
+				"value": 10,
+			}
+		},
+		"alisonFS": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFS",
+				"value": 10,
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "現在是小息時間，還有幾堂課我才能回家。"
+			}]
+		}
+	}
+}

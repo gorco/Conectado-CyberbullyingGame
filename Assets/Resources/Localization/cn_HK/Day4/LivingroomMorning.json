@@ -1,0 +1,185 @@
+{
+	"parents": {
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "checkFS",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"repeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "媽咪",
+				"character": "Mother",
+				"msn": "照顧好自己，同埋乖啲。",
+			}, 
+			{
+				"tag": "爹哋",
+				"character": "Father",
+				"msn": "記住星期日我哋去探阿嫲。"
+			}]
+		},
+		"checkFS": {
+			"type": "fork",
+			"options": [{
+				"next": "meeting",
+				"condition": "varObject('global', 'ParentsFSNonStatic') >= 80"
+			},
+			{
+				"next": "repeat",
+				"condition": "true"
+			}]
+		},
+		"meeting": {
+			"type": "dialog",
+			"next": "meetingVar",
+			"fragments": [{
+				"tag": "媽咪",
+				"character": "Mother",
+				"msn": "我哋會同你嘅導師傾下，睇下發生咗咩事。"
+			}, 
+			{
+				"tag": "爹哋",
+				"character": "Father",
+				"msn": "我哋問緊聽日見面。"
+			}]
+		},		
+		"meetingVar": {
+			"type": "event",
+			"next": "options",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 1,
+			}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "parentsMeetingMorninOption",
+			"options": [{
+				"next": "node1a",
+				"msn": "多謝。"
+			},
+			{
+				"next": "node1b",
+				"msn": "會仲差…"
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "changeVariable",
+			"fragments": [{
+				"tag": "媽咪",
+				"character": "Mother",
+				"msn": "冇事㗎，我哋都係想你好。"
+			}, 
+			{
+				"tag": "爹哋",
+				"character": "Father",
+				"msn": "我哋試下爭取最遲喺聽日見面。"
+			}]
+		},
+		"changeVariable": {
+			"type": "event",
+			"next": "repeat",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 2,
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "repeat",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我唔想你哋去，件事會變得更差。"
+			},
+			{
+				"tag": "你",
+				"msn": "佢哋會覺得我係二五仔，雖然唔係啲咩問題。"
+			}, 
+			{
+				"tag": "你",
+				"msn": "算啦，時間可以解決問題。"
+			},
+			{
+				"tag": "爹哋",
+				"character": "Father",
+				"msn": "好喇，如果情況惡化，記得要話我哋知。"
+			}]
+		}
+	},
+	"exitDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "changeHourSoon",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') < 8"
+			},{
+				"next": "changeHourLate",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') >= 8 "
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"changeHourLate": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:40",
+			}
+		},
+		"changeHourSoon": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:20",
+			}
+		},
+		"exitNode": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 19
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我唔記得拎背囊，走之前我會番房拎。"
+			}]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		}
+	}
+}

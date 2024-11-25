@@ -1,0 +1,543 @@
+﻿{
+	"init":{
+		"root":{
+			"type": "dialog",
+			"next": "lightOff",
+			"fragments": [{
+				"tag": "你",
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Mmm, what is going on Alex? Why are you still here?', 'Ana, are you here?') $>"
+			}]
+		},
+		"lightOff": {
+			"type": "event",
+			"next": "lightOn",
+			"event": {
+				"name": "active object",
+				"time": 3,
+			}
+		},
+		"lightOn": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 30,
+			}
+		},
+	},
+	"bathroomExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "發生緊乜事?度門唔開既。"
+			},
+			{
+				"tag": "你",
+				"msn": "佢地有冇鎖咗我係個洗手間呀 ?安娜!!!阿歷!!有冇人!!"
+			},
+			{
+				"tag": "你",
+				"msn": "我依家應該點做?我要離開呢度。"
+			}]
+		}
+	},
+	"light" : {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "燈呢。認真既?"
+			},
+			{
+				"tag": "你",
+				"msn": "我要離開呢度。"
+			}]
+		}
+	},
+	"door": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "呢個係個門閂，但係佢開唔到。"
+			},
+			{
+				"tag": "你",
+				"msn": "佢地有冇鎖我係個廁所度呀? 安娜!!!阿歷!!有冇人!!"
+			}]
+		}
+	},
+	"sinks": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "呀!!我啱啱撞到洗手盤。哎呀!!"
+			}]
+		}
+	},
+	"floor": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "咁濕既…但呢度係地板。"
+			},
+			{
+				"tag": "你",
+				"msn": "呀!!請唔好係度痾尿…"
+			}]
+		}
+	},
+	"onAgain": {
+		"root": {
+			"type": "dialog",
+			"next": "teacher",
+			"fragments": [{
+				"tag": "你",
+				"msn": "燈著返啦!!同埋我可以聽到走廊有嘢。我應該已經走到出去。"
+			}]
+		},
+		"teacher": {
+			"type": "event",
+			"next": "tDialog",
+			"event": {
+				"name": "little move",
+				"key": "teacher"
+			}
+		},
+		"tDialog": {
+			"type": "dialog",
+			"next": "forkEnd",
+			"fragments": [{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "你被鎖住咗係度做緊啲乜野呀?"
+			}]
+		},
+		"forkEnd": {
+			"type": "fork",
+			"options": [{
+				"next": "goodFinalByParents",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') == 2 && varObject('global', 'ParentsFSNonStatic') >= 80"
+			},
+			{
+				"next": "parentsMeetingNoFS",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') == 2 && varObject('global', 'ParentsFSNonStatic') < 80"
+			},
+			{
+				"next": "parentsNoMeetingNoFS",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') < 2 && varObject('global', 'ParentsFSNonStatic') < 80"
+			},
+			{
+				"next": "parentsNoMeetingFS",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') < 2 && varObject('global', 'ParentsFSNonStatic') >= 80"
+			}]
+		},
+		"goodFinalByParents": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "今日我同你既家長開咗個會，同埋佢地同我講晒所有嘢。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "你應該早啲直接同我講呀嘛。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "我估係阿歷將你鎖咗係個廁所度，係唔係呢?"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "會被驅逐離校3日。如果佢番到嚟繼續煩住你既話，你一定要話俾我知。"
+"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "如果佢繼續咁樣既呢，為咗大家好，我地會將佢驅逐離校，或者甚至叫警察同告佢。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "返屋企休息啦。"
+			}]
+		},
+		"parentsMeetingNoFS": {
+			"type": "options",
+			"questionId": "TeacherTattle",
+			"options": [{
+				"next": "tattleAndMeeting",
+				"msn": "(同佢講晒阿歷對我所做既事)"
+			},
+			{
+				"next": "noTattleAndMeeting",
+				"msn": "我唔知道發生緊乜嘢事。"
+			}]
+		},
+		"tattleAndMeeting": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "點解你唔早啲同我講呀?"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "除此之外，今日我同你既家長開咗個會，同埋我地傾過呢樣嘢。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "就住你所講既嘢，我會同校長傾，將阿歷驅逐離校3日。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "如果佢繼續透過自己或者社交媒體騷擾你，你話俾我知就可以啦。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "如果佢繼續咁樣既呢，為咗大家好，我地會將佢驅逐離校，或者甚至叫警察同告佢。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "返屋企休息啦。"
+			}]
+		},
+		"noTattleAndMeeting": {
+			"type": "fork",
+			"options": [{
+				"next": "mariaAndMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') >= 60"
+			},
+			{
+				"next": "noMariaAndMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') < 60"
+			}]
+		},
+		"mariaAndMeeting": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "你肯定嗎?"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "今日我同你既家長開咗個會，似乎你同阿歷出咗麻煩喎。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "而且，瑪莉亞同學校輔導員過過嚟話俾我知阿歷對你挑起事端。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "你唔需要收埋任何嘢，你向人求救時唔需要偷偷摸摸。阿歷既行為顯示到佢需要被罰。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "我地已經決定將阿歷驅逐離校3日。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "如果佢繼續咁樣既呢，為咗大家好，我地會將佢驅逐離校，或者甚至叫警察同告佢。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "返屋企休息啦。"
+			}]
+		},
+		"noMariaAndMeeting": {
+			"type": "dialog",
+			"next": "final2",
+			"fragments": [
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "今日我同你既家長開咗個會，佢地好擔心。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "老師如果你同同學有任何麻煩你應該同我或都學校輔導員講。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "如果你拒絶幫忙，事情可能變得更差。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "無論任何情況，你唔值得被取笑同欺負既。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "如果呢件事係咁發生，請尋求協助，若果唔係，事情會一直發生。"
+			}]
+		},
+		"parentsNoMeetingNoFS": {
+			"type": "options",
+			"questionId": "TeacherTattle",
+			"options": [{
+				"next": "tattleAndNoMeeting",
+				"msn": "(講晒阿歷所做既事)"
+			},
+			{
+				"next": "noTattleAndNoMeeting",
+				"msn": "我唔知道發生緊乜嘢事。"
+			}]
+		},
+		"tattleAndNoMeeting": {
+			"type": "fork",
+			"options": [{
+				"next": "mariaAndNoMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') >= 60"
+			},
+			{
+				"next": "noMariaAndNoMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') < 60"
+			}]
+		},
+		"mariaAndNoMeeting": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "點解你之前唔同我講呀?"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "而且，瑪莉亞同學校輔導員過過嚟話俾我知阿歷對你挑起事端。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "佢關心你，我地需要好似佢咁樣既朋友。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "阿歷既行為應得到懲罰，而且你同我講晒所有事係好重要既。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "呢個唔係你既錯，你唔值得既。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "我地決定將阿歷驅逐離校3日。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "如果佢繼續咁樣既呢，為咗大家好，我地會將佢驅逐離校，或者甚至叫警察同告佢。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "返屋企休息啦。"
+			}]
+		},
+		"noMariaAndNoMeeting": {
+			"type": "dialog",
+			"next": "final2",
+			"fragments": [
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "我會同你既家長傾。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "如果你仲同阿歷出現麻煩，過嚟同我講，聽日我會話佢。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "你講呢件事出嚟好重要，事情唔會因時間而變好既。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "無論任何情況，你唔值得被取笑同欺負既。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "呢件事唔會變，直到你尋求協助，若果唔係，事情會一直發生。"
+			}]
+		},
+		"noTattleAndNoMeeting": {
+			"type": "dialog",
+			"next": "final1",
+			"fragments": [
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "你肯定無事?"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "咁，你返屋企啦。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "但記住，如果你同任何人出現麻煩，而你唔尋求協助，事情一定會差落去。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "無論任何情況，你唔值得被取笑同欺負既。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "呢件事唔會變，直到你尋求協助。"
+			}]
+		},
+		"parentsNoMeetingFS": {
+			"type": "options",
+			"questionId": "TeacherTattle",
+			"options": [{
+				"next": "tattle",
+				"msn": "(話晒阿歷對我所做既所有事)"
+			},
+			{
+				"next": "noTattle",
+				"msn": "我唔知道發生緊乜嘢事。"
+			}]
+		},
+		"tattle": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "點解你之前唔同我講晒所有呢啲嘢呀?"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "我會叫你既家長，同佢講呢件事。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "睇吓我地點樣處理阿歷。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "我會嘗試將阿歷驅逐離校3日。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "如果任何事情發生，唔好猶豫，同我或者學校輔導員講。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "返屋企休息啦。"
+			}]
+		},
+		"noTattle": {
+			"type": "dialog",
+			"next": "final1",
+			"fragments": [
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "你肯定所有嘢無事?"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "咁，你返屋企啦。但記住呢點…"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "如果有人取笑你，你就同我或者學校輔導員講。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "搵人幫手，事情唔會因時間而自變好既，只會變得更差。"
+			}]
+		},
+		"final1": {
+			"type": "event",
+			"next": "end",
+			"event": {
+				"name": "change variable",
+				"var": "Final",
+				"value": 1,
+			}
+		},
+		"final2": {
+			"type": "event",
+			"next": "end",
+			"event": {
+				"name": "change variable",
+				"var": "Final",
+				"value": 2,
+			}
+		},
+		"final3": {
+			"type": "event",
+			"next": "end",
+			"event": {
+				"name": "change variable",
+				"var": "Final",
+				"value": 3,
+			}
+		},
+		"end": {
+			"type": "event",
+			"next": "changeScene",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "You go back home and sleep earlier today. As usual, it's dream time..."
+			}
+		},
+		"changeScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 27
+			}
+		}
+	},
+}

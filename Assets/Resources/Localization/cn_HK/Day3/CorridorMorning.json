@@ -1,0 +1,307 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "alisonBoard",
+				"condition": "varObject('global', 'AlisonFSNonStatic') > 60"
+			},
+			{
+				"next": "ignore",
+				"condition": "true"
+			}]
+		},	
+		"ignore": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alison",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "你",
+				"msn": "又不理會我…我做錯了什麽嗎？"
+			}]
+		}, 
+		"alisonBoard": {
+			"type": "event",
+			"next": "node0",
+			"event": {
+				"name": "change variable",
+				"var": "AlisonBoard",
+				"value": true,
+			}
+		},
+		"node0": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node1",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "不要理會那告示板。"
+			}]
+		}, 
+		"node1": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我剛剛看看告示板。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "然後…你今天不要理它會比較好。"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "AlisonNoticeBoard",
+			"options": [{
+				"next": "node1A",
+				"msn": "我已經看過它了。"
+			},
+			{
+				"next": "node1B",
+				"msn": "為什麽？那是什麽？"
+			}]
+		},
+		"node1A": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我很抱歉，阿歷這次做得太過火了。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "也許你應該跟老師或校長談一談。"
+			}]
+		},
+		"node1B": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "有人把你的照片張貼在學校所有的告示版上。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "操場上也有。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我想你應該要去與任何一個老師談談。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+	},
+	"board":{
+		"root": {
+			"type": "event",
+			"next": "forkNode",
+			"event": {
+				"name": "change variable",
+				"var": "BoardQuest",
+				"value": 1,
+			}
+		},
+		"forkNode": {
+			"type": "fork",
+			"options": [{
+				"next": "gum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "washed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "nogum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			}]
+		},
+		"gum": {
+			"type": "event",
+			"next": "gumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGum"
+			}
+		},
+		"gumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "你",
+				"msn": "這裏有張我的照片，它被修改過，所以看起來像是我在拉香口膠。"
+			},
+			{
+				"tag": "你",
+				"msn": "誰想用這種方式嘲笑我？"
+			}]
+		},
+		"deactive": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 0
+			}
+		},
+		"washed": {
+			"type": "event",
+			"next": "washedDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGumWhased"
+			}
+		},
+		"washedDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "你",
+				"msn": "這是一張我昨天剛弄走那香口膠的照片。"
+			},
+			{
+				"tag": "你",
+				"msn": "附上原汁原味的一句句子// “有個寶寶來到了教室\”。"
+			}]
+		},
+		"nogum": {
+			"type": "event",
+			"next": "nogumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoDog"
+			}
+		},
+		"nogumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "你",
+				"msn": "這張照片裏，我的頭被剪接在一隻狗身上，並吐着舌頭。"
+			},
+			{
+				"tag": "你",
+				"msn": "為什麽？是誰把它放在那裏的？"
+			}]
+		},
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我唔可以入去，呢度係男仔廁所。"
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我唔可以入去，呢度係女仔廁所。"
+			}]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "speak",
+				"condition": "varObject('global', 'AlisonFSNonStatic') > 60 &&  varObject('state', 'AlisonBoard') == false"
+			},
+			{
+				"next": "move",
+				"condition": "true"
+			},]
+		},
+		"move": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		},
+		"speak": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我應該先跟愛莉談談，她的行為很奇怪。"
+			}]
+		}
+	}
+}

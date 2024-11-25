@@ -1,0 +1,159 @@
+{
+	"default": {
+		"root": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "你",
+					"msn": "我依家冇乜野可以貼，我有更重要既野去做。"
+				}
+			]
+		}
+	},
+	"earingFounded": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": "You're welcome, Allison",
+				"key": "You",
+				"other": "empty",
+				"time": 0
+			}
+		}
+	},
+	"insultPost": {
+		"root": {
+			"type": "options",
+			"questionId": "insultPostOptions",
+			"options": [
+				{
+					"next": "node1a",
+					"msn": "(舉報貼子)"
+				},
+				{
+					"next": "node1b",
+					"msn": "你係個屎忽鬼"
+				},
+				{
+					"next": "node1c",
+					"msn": "我最後會同你導師講"
+				}
+			]
+		},
+		"node1a": {
+			"type": "dialog",
+			"fragments": [
+				{
+					"tag": "你",
+					"msn": "我會舉報留言，睇吓佢地會唔會因為內容而刪除。"
+				}
+			]
+		},
+		"node1b": {
+			"type": "event",
+			"next": "node2b",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "You're all assholes, fuck off. You act like three year olds.",
+				"key": "You",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"node2a": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "I'm sure you are the one who pissed himself at night, hahaha",
+				"key": "Ana",
+				"other": "empty",
+				"time": 1
+			}
+		},
+		"node1c": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "I'm sick of them. Tomorrow I'll speak to the tutor.",
+				"key": "You",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"node2b": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "Look, we can also post <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him crybaby', 'her crybaby') $>",
+				"key": "Ana",
+				"other": "empty",
+				"time": 1
+			}
+		}
+	},
+	"trollPost": {
+		"root": {
+			"type": "options",
+			"questionId": "trollPostOptions",
+			"options": [
+				{
+					"next": "node1a",
+					"msn": "(刪除貼子)"
+				},
+				{
+					"next": "node1b",
+					"msn": "愛莉…咁就係你想交換密碼既原因。"
+				},
+				{
+					"msn": "(唔出聲)"
+				}
+			]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "loadPub",
+			"fragments": [
+				{
+					"tag": "你",
+					"msn": "我要刪除貼子"
+				}
+			]
+		},
+		"loadPub": {
+			"type": "event",
+			"next": "mobileMessage",
+			"event": {
+				"name": "computer publication",
+				"other": "load"
+			}
+		},
+		"mobileMessage": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alex",
+				"value": "I've seen you have deleted your post with your phone numbre, but don't worry, I made and screenshot and I can upload it again hahaha",
+				"key": "Alex",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "Alison... this is why you wanted to exchange passwords, you are the worst.",
+				"key": "You",
+				"other": "empty",
+				"time": 0
+			}
+		}
+	}
+}

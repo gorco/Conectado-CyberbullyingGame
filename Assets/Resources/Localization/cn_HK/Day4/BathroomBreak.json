@@ -1,0 +1,37 @@
+﻿{
+	"bathroomExit": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"mobile":{
+		"root": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [
+			{
+				"tag": "你",
+				"msn": "呢部係我嘅電話。"
+			},{
+				"tag": "你",
+				"msn": "邊個攞咗部電話，仲要擺喺 <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' 廁所？"
+			},
+			{
+				"tag": "你",
+				"msn": "大鑊，開唔到機。希望只係冇電喇，等陣返到屋企即刻叉電。"
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "SharedPassQuest",
+				"value": 2
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"schoolEnter": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "今天沒有課堂了，沒有人留下來。"
+			},
+			{
+				"tag": "你",
+				"msn": "我最好回家。"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 16
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "15:00",
+			}
+		}
+	}
+}

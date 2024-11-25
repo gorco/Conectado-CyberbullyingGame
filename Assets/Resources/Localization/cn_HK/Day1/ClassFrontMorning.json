@@ -1,0 +1,96 @@
+﻿{
+	"teacher":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "上星期，如果記得的話，我們在學習如何對一個句子進行形態分析。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "現在是語法分析時間。"
+			},
+			{
+				"tag": "敲門",
+				"msn": "(有人敲門)"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "入來。"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"next": "node2",
+			"event": {
+				"name": "class entrance",
+				"synchronous": true,
+			}
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "friendship",
+			"fragments": [{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "阿歷，你遲到，請坐。"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "新來的坐了我的座位。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "他的名字是<$ varObject('global', 'UserNameNonStatic') $>。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "現在先坐到別的位置上，我已經讓愛莉在頭幾天裡幫幫<$ if(varObject('global', 'MaleSexNonStatic')==true, '他', '她') $>。"
+			}]
+		},
+		"friendship": {
+			"type": "event",
+			"next": "black",
+			"event": {
+				"name": "change friendship",
+				"var": "AlejandroFS",
+				"value": -10,
+			}
+		},
+		"black": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "The bell rings, it is recess time. Your opportunity to make friends."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 5,
+				"time": 5
+			}
+		}
+	}
+}

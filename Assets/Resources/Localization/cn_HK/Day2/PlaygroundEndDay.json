@@ -1,0 +1,104 @@
+{
+	"schoolEnter": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "今天的課已經結束了，也沒人了。"			
+			},
+			{
+				"tag": "你",
+				"msn": "我還是回家吧。"
+			}]
+		}
+	},
+	"guille":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "別聽他們，回家吧，明天又是新的一天。"
+			}]
+		},
+	},
+	"laugh": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "聲音",
+				"msn": "哈哈哈哈哈"
+			}]
+		},
+	},
+	"globalLaugh": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "wash",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "notGum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			}
+			{
+				"next": "notWash",
+				"condition": "true"
+			}]
+		},
+		"notGum": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "notGum"
+			}
+		},
+		"wash": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "聲音",
+				"msn": "哈哈哈哈哈"
+			},
+			{
+				"tag": "聲音",
+				"msn": "這污漬 <$ varObject('global', 'UserNameNonStatic') $>, ，起來就像你拉屎一樣。"
+			}]
+		},
+
+		"notWash": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "聲音",
+				"msn": "哈哈哈哈哈."
+			},
+			{
+				"tag": "聲音",
+				"msn": "你應該洗洗衣服。"
+			},
+			{
+				"tag": "聲音",
+				"msn": "不管你黏著多少香口膠，它都不會流行。"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 11
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "15:00",
+			}
+		}
+	}
+}

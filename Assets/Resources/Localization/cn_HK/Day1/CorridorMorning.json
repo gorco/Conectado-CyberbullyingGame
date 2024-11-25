@@ -1,0 +1,188 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "varObject('state', 'AlisonDialog') == true"
+			},
+			{
+				"next": "node2",
+				"condition": "true"
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "看來你已經找到教室了。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "門口的紅髮女孩是瑪莉亞，她也是我們班的。她有點害羞，但是人很好。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "佈告欄旁邊是吉耶，你已經認識他了。"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "抱歉，我趕時間，我再不進去我就遲到了。"
+			}]
+		}			
+	},
+	"maria":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "..."
+			},
+			{
+				"tag": "你",
+				"msn": "她看起來不太自在，最好暫時不要打擾她。"
+			}]
+		}		
+	},
+	"guillermo":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node2",
+				"condition": "true"
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "記得看看佈告欄，有時你能發現有趣的事。"
+			}]
+		},		
+		"node2": {
+			"type": "dialog",
+			"next": "quest",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "你好，我正在看壁布板。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "有時會有一些有趣的東西，最近有人留下了信息、貼紙和謎語。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "每天至少看一次，養成習慣吧。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "我們進去吧？"
+			}]
+		},	
+		"quest": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 2,
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我唔可以入去，呢度係男仔廁所。"
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我唔可以入去，呢度係女仔廁所。"
+			}]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		}
+	}
+}

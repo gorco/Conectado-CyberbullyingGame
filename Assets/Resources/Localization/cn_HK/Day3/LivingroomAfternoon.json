@@ -1,0 +1,447 @@
+{
+	"mother": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node2",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "init",
+				"condition": "true"
+			}]
+		},
+		"init":{
+			"type": "setter",
+			"next": "initSchool",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"initSchool":{
+			"type": "setter",
+			"next": "initGuille",
+			"set": {
+				"var": "aboutSchool",
+				"value": true
+			}
+		},
+		"initGuille":{
+			"type": "setter",
+			"next": "initBoard",
+			"set": {
+				"var": "aboutGuille",
+				"value": true
+			}
+		},
+		"initBoard":{
+			"type": "setter",
+			"next": "initMaria",
+			"set": {
+				"var": "aboutBoard",
+				"value": true
+			}
+		},
+		"initMaria":{
+			"type": "setter",
+			"next": "node1",
+			"set": {
+				"var": "aboutMaria",
+				"value": true
+			}
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "下午好，親愛的。"
+			}, 
+			{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "你今天過得怎樣？"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "parentsFS",
+			"fragments": [{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "你想談談什麽嗎？"
+			}]
+		},
+		"parentsFS": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": -15,
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 1
+			}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "parentsAfternoonThirdDay",
+			"options": [{
+				"msn": "其實也沒什麽。",
+				"condition": "page == 1"
+			},
+			{
+				"next": "maria",
+				"msn": "瑪莉亞沒有來。",
+				"condition": "page == 1 && aboutMaria == true"
+			},
+			{
+				"next": "page2",
+				"msn": "（聊其他話題。）",
+				"condition": "page == 1"
+			},
+			{
+				"next": "school",
+				"msn": "班上",
+				"condition": "page == 2 && aboutSchool == true"
+			},
+			{
+				"next": "board",
+				"msn": "（説出告示牌上照片的事情。）",
+				"condition": "page == 2 && aboutBoard == true && varObject('global', 'BoardQuestNonStatic') > 0"
+			},
+			{
+				"next": "page3",
+				"msn": "（説出其他同學的事情。）",
+				"condition": "page == 2"
+			},
+			{
+				"next": "guille",
+				"msn": "我跟吉耶談過了。",
+				"condition": "page == 3 && aboutGuille == true"
+			},
+			{
+				"msn": "我要回房間了，我有事情要做。",
+				"condition": "page == 3"
+			}]
+		},
+		"page2":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 2
+			}
+		},
+		"page3":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 3
+			}
+		},
+		"guille": {
+			"type": "dialog",
+			"next": "guilleFork",
+			"fragments": [{
+				"tag": "你",
+				"msn": "吉耶告訴我阿歷討厭我。"
+			},
+			{
+				"tag": "你",
+				"msn": "阿歷令我的生活變得悲慘。"
+			},
+			{
+				"tag": "你",
+				"msn": "而且他在脅迫半班的人不去理會我。"
+			}]
+		},
+		"guilleFork": {
+			"type": "fork",
+			"options": [{
+				"next": "guilleBoard",
+				"condition": "varObject('global', 'GuillermoQuestNonStatic') == 1"
+			},
+			{
+				"next": "guilleUpParentsFS",
+				"condition": "true"
+			}]
+		},
+		"guilleBoard": {
+			"type": "dialog",
+			"next": "guilleUpParentsFS",
+			"fragments": [{
+				"tag": "你",
+				"msn": "吉耶也告訴我，安娜是第一個加入阿歷這場游戲的人。"
+			},
+			{
+				"tag": "你",
+				"msn": "她這天早上第一個到了…"
+			},
+			{
+				"tag": "你",
+				"msn": "並決定把我的照片張貼到學校所有的告示板上。"
+			}]
+		},
+		"guilleUpParentsFS": {
+			"type": "event",
+			"next": "guilleSetter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 10,
+			}
+		},
+		"guilleSetter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutGuille",
+				"value": false
+			}
+		},	
+		"maria": {
+			"type": "dialog",
+			"next": "mariaUpParentsFS",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我今天沒見到瑪莉亞。"
+			}]
+		},
+		"mariaUpParentsFS": {
+			"type": "event",
+			"next": "mariaSetter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 5,
+			}
+		},
+		"mariaSetter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutMaria",
+				"value": false
+			}
+		},	
+		"board": {
+			"type": "dialog",
+			"next": "boardUpParentsFS",
+			"fragments": [{
+				"tag": "你",
+				"msn": "他們決定把我的照片張貼到學校所有的告示板上。"
+			},
+			{
+				"tag": "你",
+				"msn": "我不知道我做錯了什麽，讓他們這樣對待我。"
+			},
+			{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "我待會會跟你爸爸說這件事。"
+			},
+			{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "也許我們需要去與你的老師談談，看看到底發生了什麽。"
+			}]
+		},
+		"boardUpParentsFS": {
+			"type": "event",
+			"next": "boardSetter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 15,
+			}
+		},
+		"boardSetter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutBoard",
+				"value": false
+			}
+		},
+		"school": {
+			"type": "dialog",
+			"next": "schoolUpParentsFS",
+			"fragments": [{
+				"tag": "你",
+				"msn": "幾乎所有人都不理會我，他們很少與我聊天。"
+			},
+			{
+				"tag": "你",
+				"msn": "就像所有人都在避開我又或是在冷待我。"
+			}]
+		},
+		"schoolUpParentsFS": {
+			"type": "event",
+			"next": "setterSchool",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 5,
+			}
+		},
+		"setterSchool":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutSchool",
+				"value": false
+			}
+		}
+	},
+	"exitDoor": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我沒有什麽事情需要係街上做。"
+			}]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "move",
+				"condition": "repeated == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"move": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"next": "move2",
+			"set": {
+				"var": "repeated",
+				"value": true
+			}
+		},
+		"move2": {
+			"type": "event",
+			"next": "changeHour2",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		},
+		"changeHour2": {
+			"type": "event",
+			"next": "message1",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "21:30",
+			}
+		},
+		"message1": {
+			"type": "event",
+			"next": "message2",
+			"event": {
+				"name": "computer publication",
+				"var": "insult",
+				"value": "looking 4 a nickname 4 <$ varObject('global', 'UserNameNonStatic') $>",
+				"key": "Ana",
+				"other": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'photoForeheadBoy', 'photoForeheadGirl') $>",
+				"time": 1
+			}
+		},
+		"message2": {
+			"type": "event",
+			"next": "message3",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "look at that forehead...Shiphead",
+				"key": "Ana",
+				"time": 1.2 
+			}
+		},
+		"message3": {
+			"type": "event",
+			"next": "message4",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "LOL, looks like a big wall. Why not TRUMP?",
+				"key": "Jose",
+				"time": 1.4
+			}
+		},
+		"message4": {
+			"type": "event",
+			"next": "message4v2",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "Air. What your ears make when they move LOL",
+				"key": "Alex",
+				"time": 1.6
+			}
+		},
+		"message4v2": {
+			"type": "event",
+			"next": "message5",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "Hahaha, Álex, it's WIND, not air",
+				"key": "Ana",
+				"time": 1.7
+			}
+		},
+		"message5": {
+			"type": "event",
+			"next": "message6",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "Don't get complicated, we can call <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $> outkast ... anyway, no more speaking to the outkast...",
+				"key": "Ester",
+				"time": 2
+			}
+		},
+		"message6": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "outkast is not very original... what'bout gremlin?",
+				"key": "Ana",
+				"other": "insultPost",
+				"time": 2.5
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "21:30",
+			}
+		}
+	}
+}

@@ -1,0 +1,155 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "要走喇。"
+			}]
+		}		
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我依家唔需要任何嘢。"
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "..."
+			}]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我會帶晒所有嘢走。"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "BagPicked",
+				"value": true
+			}
+		},
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "個人電腦",
+				"msn": "你係咪想開電腦？"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"options": [{
+				"next": "node1a",
+				"msn": "係"
+			},
+			{
+				"next": "node1b",
+				"msn": "唔係"
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "佢唔著，係唔係壞咗呢?"
+			}]
+		},	
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "最好唔好，去上堂。"
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我好唔好留低手提電話叉電?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "好"
+			},
+			{
+				"next": "node1b",
+				"msn": "唔好"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"next": "fork",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		},
+		"fork": {
+			"type": "fork",
+			"options": [{
+				"next": "parentsGo",
+				"condition": "repeated == true"
+			}]
+		},
+		"parentsGo": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "你",
+				"msn": "媽媽同爸爸已經走咗。我會喺下晝見佢地。"
+			}]
+		},	
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "repeated",
+				"value": true
+			}
+		},
+	}
+}

@@ -1,0 +1,180 @@
+{
+	"maria":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nogum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			},
+			{
+				"next": "whased",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nogum": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "她像往常一樣在看書，最好不要打擾她。"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "也許你還沒注意到，但你的屁股上黏著一塊香口膠。"
+			},
+			{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "你可以去洗手間照照鏡子。"
+			}]
+		},
+		"whased": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "你做了什麼？這麼大的污漬。"
+			},
+			{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "噢老友，看起來你尿濕了自己，甚至還拉了。"
+			}]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"next": "alisonMove",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"alisonMove": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "little move",
+				"key": "alison"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:20",
+			}
+		},
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我不能去那裡，那是男廁。"
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我不能去那裡，那是女廁。"
+			}]
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "你",
+				"msn": "如果我進去，而老師出現，我就不能出來了。"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "endBreak",
+			"options": [{
+				"next": "black",
+				"msn": "(無論如何都要進去) 。"
+			},
+			{
+				"msn": "我再去別處走走吧。"
+			}]
+		},
+		"black": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "As soon as you get in, the bell rings and the teacher appears. You did not notice but the morning is over, it's time to go home..."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "enter",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:02",
+			}
+		},
+		"enter": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "endDay"
+			}
+		}
+	}
+}

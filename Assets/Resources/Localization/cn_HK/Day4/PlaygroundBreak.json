@@ -1,0 +1,213 @@
+{
+	"alexAndAna": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "mobile",
+				"condition": "spoken == true && varObject('state', 'MariaJoke') == 2"
+			},
+			{
+				"next": "ask",
+				"condition": "varObject('state', 'MariaJoke') == 1 && varObject('state', 'TimeEnough') == true"
+			},
+			{
+				"next": "noTime",
+				"condition": "varObject('state', 'MariaJoke') == 1 && varObject('state', 'TimeEnough') == false"
+			},
+			{
+				"next": "lost",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "lost",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "repeat",
+				"condition": "true"
+			}]
+		},
+		"ask": {
+			"type": "dialog",
+			"next": "askOptions",
+			"fragments": [{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "你有冇偷偷將海報貼咗喺瑪莉亞嘅背脊上？"
+			}]
+		},
+		"askOptions": {
+			"type": "options",
+			"questionId": "AnaAlexMariaJokeAskSuccess",
+			"options": [{
+				"next": "taskSuccess",
+				"msn": "有"
+			},
+			{
+				"next": "noTime",
+				"msn": "冇"
+			}]
+		},
+		"taskSuccess": {
+			"type": "event",
+			"next": "mobile",
+			"event": {
+				"name": "change variable",
+				"var": "MariaJoke",
+				"value": 2,
+			}
+		},
+		"noTime": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "你仲等緊咩？快啲去將海報貼喺瑪莉亞嘅背脊上。"
+			}]
+		},
+		"mobile": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "哈哈哈哈，做得好。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈哈哈，你部電話喺<$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>'廁所。"
+			}]
+		},
+		"repeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "哈哈哈哈。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈哈哈。"
+			}]
+		},
+		"lost": {
+			"type": "options",
+			"questionId": "AnaAlexAskMobileLost",
+			"options": [{
+				"next": "node1a",
+				"msn": "係咪你呀？將我部電話收埋喺<$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>'廁所?",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "node1b",
+				"msn": "有冇人知我部電話喺邊？唔好玩啦。",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "setter",
+				"msn": "我知道係你哋做㗎，真係唔好笑。",
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "真係我哋做咁又點？你會唔會喊住去搵老師或者同屋企人告狀…?"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈哈，我敢肯定佢會。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "快啲走啦，去其他地方喊啦。"
+			}]
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "jokeAccepted",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "可能啦"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "如果你去將呢張紙貼喺瑪莉亞嘅背脊上面，我哋就話你知部電話喺邊。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "(佢遞俾你一張紙，上面貼住膠紙，寫住「我係受虐狂，睇到就侮辱我」) 。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "搞掂咗先返嚟搵我哋…唔係就話就唔好煩我哋。"
+			}]
+		},
+		"jokeAccepted": {
+			"type": "event",
+			"next": "mariaQuest",
+			"event": {
+				"name": "change variable",
+				"var": "MariaJoke",
+				"value": 1,
+			}
+		},
+		"mariaQuest": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "MariaQuest",
+				"value": 1,
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"next": "repeat",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "event",
+			"next": "time",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"time": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "TimeEnough",
+				"value": true,
+			}
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "而家係小息時間，仲有幾堂課先落堂…"
+			}]
+		}
+	}
+}

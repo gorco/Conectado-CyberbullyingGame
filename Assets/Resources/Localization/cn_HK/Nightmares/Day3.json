@@ -1,0 +1,320 @@
+{
+	"intro":{
+		"root": {
+			"type": "dialog",
+			"next": "fade",
+			"fragments": [{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "我會保證冇人會同你傾偈。"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "你可以做任何嘢，但係你唔會得到任何嘢。"
+			},
+			{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "去啦，同同班既同學去傾，睇下佢地會唔會同你傾偈。"
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "activate",
+			"event": {
+				"name": "little move",
+				"key": "shadow"
+			}
+		},
+		"activate": {
+			"type": "event",
+			"event": {
+				"name": "active object",
+				"time": 0.2,
+			}
+		}
+	},
+	"finishNightmare":{
+		"root": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "我覺得你孤獨。"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "你被人忽視你有乜嘢感受?"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				
+				"msn": "冇人對你重視，你覺唔覺得好笑嗎?"
+			},
+			{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "因為我淨係見到你已經笑唔停。"
+			}]
+		},
+		"variable": {
+			"type": "event",
+			"next": "repeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 3,
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	},
+	"jose":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Jose",
+			"options": [{
+				"next": "fade",
+				"msn": "你係唔係冇原因而忽視我?因為你被人叫咁樣做?"
+			},
+			{
+				"next": "fade",
+				"msn": "我地可以做朋友。"
+			},
+			{
+				"next": "fade",
+				"msn": "你幾多歲?3歲?同我傾。"
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "jose"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	},
+	"guille":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Guille",
+			"options": [{
+				"next": "fade",
+				"msn": "你係我既朋友，係唔係?"
+			},
+			{
+				"next": "fade",
+				"msn": "吉耶，你唔似其他人。"
+			},
+			{
+				"next": "fade",
+				"msn": "唔好俾佢地威脅你。"
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "guille"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	},
+	"alison":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Alison",
+			"options": [{
+				"next": "fade",
+				"msn": "你係我既朋友，係唔係?"
+			},
+			{
+				"next": "fade",
+				"msn": "你好似對我好好，你唔會唔理我，係唔係?"
+			},
+			{
+				"next": "fade",
+				"msn": "唔該你，同我傾。"
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "alison"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	},
+	"maria":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Maria",
+			"options": [{
+				"next": "fade",
+				"msn": "你係唔係都係唔理我嗎?"
+			},
+			{
+				"next": "fade",
+				"msn": "佢地有冇對你做同樣既野? 唔好唔理我，你知道個感受係點。"
+			},
+			{
+				"next": "fade",
+				"msn": "你明白我，係唔係?"
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "maria"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	},
+	"ana":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "..."
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "nightmare3Ana",
+			"options": [{
+				"next": "fade",
+				"msn": "我對你做過乜野?點解你都跟住我?"
+			},
+			{
+				"next": "fade",
+				"msn": "如果阿歷由條橋跳落嚟呢?你會唔會都係咁做?"
+			},
+			{
+				"next": "fade",
+				"msn": "我地可唔可以好好相處?"
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"next": "changeVariable",
+			"event": {
+				"name": "fade out",
+				"key": "ana"
+			}
+		},
+		"changeVariable": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "Talk",
+				"value": 1,
+			}
+		},
+	}
+}

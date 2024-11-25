@@ -1,0 +1,210 @@
+﻿{
+	"board":{
+		"root": {
+			"type": "event",
+			"next": "forkNode",
+			"event": {
+				"name": "change variable",
+				"var": "BoardQuest",
+				"value": 1,
+			}
+		},
+		"forkNode": {
+			"type": "fork",
+			"options": [{
+				"next": "gum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "washed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "nogum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			}]
+		},
+		"gum": {
+			"type": "event",
+			"next": "gumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGum"
+			}
+		},
+		"gumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "你",
+				"msn": "這裏有張我的照片，它被修改過，所以看起來像是我在拉香口膠。"
+			},
+			{
+				"tag": "你",
+				"msn": "誰想用這種方式嘲笑我？"
+			}]
+		},
+		"deactive": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 0
+			}
+		},
+		"washed": {
+			"type": "event",
+			"next": "washedDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGumWhased"
+			}
+		},
+		"washedDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "你",
+				"msn": "這是一張我昨天剛弄走那香口膠的照片。"
+			},
+			{
+				"tag": "你",
+				"msn": "附上原汁原味的一句句子// “有個寶寶來到了教室\” "
+			}]
+		},
+		"nogum": {
+			"type": "event",
+			"next": "nogumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoDog"
+			}
+		},
+		"nogumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "你",
+				"msn": "這張照片裏，我的頭被剪接在一隻狗身上，並吐着舌頭。"
+			},
+			{
+				"tag": "你",
+				"msn": "為什麽？是誰把它放在那裏的？"
+			}]
+		},
+	},
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> 你遲到了。"
+			},{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "請你坐下，好讓我們能繼續課堂。"
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "It has been a boring day. Classes are over and most of the people have been ignoring me the whole day. There's a paper note on your desk telling you to go to the toilet, there's someone waiting there."
+			}
+		},
+		"node3": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 15
+			}
+		}
+	},
+	"table":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "你",
+				"msn": "這座位是空的，我要坐在這裏嗎？"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "sitDownClass",
+			"options": [{
+				"next": "node2",
+				"msn": "好"
+			},
+			{
+				"msn": "唔好"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "",
+				"msn": "(後面有人敲門，老師已到)。"
+			}]
+		},
+		"node3": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "It has been a boring day. Classes are over and most of the people have been ignoring me the whole day. There's a paper note on your desk telling you to go to the toilet, there's someone waiting there."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 15
+			}
+		}
+	}
+}

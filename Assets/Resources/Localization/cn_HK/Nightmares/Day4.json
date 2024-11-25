@@ -1,0 +1,262 @@
+{
+	"intro":{
+		"root": {
+			"type": "dialog",
+			"next": "fade",
+			"fragments": [{
+				"tag": "影子",
+				"character": "Shadow",
+				
+				"msn": "你鐘唔鐘意我地啱啱上載既相?"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "你可以嘗試刪除佢地…"
+			},
+			{
+				"tag": "影子",
+				"character": "Shadow",
+				
+				"msn": "除咗你要刪除或都舉報之，你要做多d野。"
+			},
+			{
+				"tag": "影子",
+				"character": "Shadow",
+				
+				"msn": "去啦, 試…我地全部都有個備份。"
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "shadow"
+			}
+		}
+	},
+	"portal":{
+		"root":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "唔會得到任何嘢。"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "哈哈哈"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "相都仲係度。"
+			},{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "一放上網，人人都可以整個備份。"
+			},{
+				"tag": "",
+				"msn": "..."
+			}, {
+				"tag": "網站傳來的聲音",
+				"msn": "都唔係你既錯啦。嚟， 再睇多次睇晒成個網站。"
+			}, {
+				"tag": "網站傳來的聲音",
+				"msn": "嘗試改變事情。"
+			}]
+		}
+	},
+	"cross": {
+		"root": {
+			"type": "options",
+			"questionId": "portalDay4",
+			"options": [{
+				"next": "node1",
+				"msn": "睇晒網站。"
+			},
+			{
+				"next": "node2",
+				"msn": "不，今次唔得。"
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [{
+				"tag": "你",
+				
+				"msn": "我唔知係唔係無問題。我唔想再重複唔好既日子。"
+			},
+			{
+				"tag": "你",
+				"msn": "我會相信奇怪既聲音…係…我會睇晒佢。"
+			}]
+		},
+		"node2":{
+			"type": "dialog",
+			"next": "variable2",
+			"fragments": [{
+				"tag": "你",
+				"msn": "如果你唔話俾我聽你係乜水，我唔會講清楚。"
+			}, {
+				"tag": "網站傳來的聲音",
+				"msn": "我做唔到，你要相信我。我會俾你機會去轉變事情。"
+			}, {
+				"tag": "你",
+				"msn": "轉乜嘢?"
+			}, {
+				"tag": "網站傳來的聲音",
+				
+				"msn": "不!時間過得好快，你差唔多要起身…"
+			},
+			{
+				"tag": "網站傳來的聲音",
+				"msn": "依家太遲啦…祝你好運。"
+			}]
+		},
+		"variable": {
+			"type": "event",
+			"next": "repeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 3,
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": true,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "loadMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"loadMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "load"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		},
+		"variable2": {
+			"type": "event",
+			"next": "repeatDay2",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 4,
+			}
+		},
+		"repeatDay2": {
+			"type": "event",
+			"next": "changeHour2",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false,
+			}
+		},
+		"changeHour2": {
+			"type": "event",
+			"next" : "saveMobile2",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile2": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		}
+	},
+	"finishNightmare":{
+		"root": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [{
+				"tag": "影子",
+				"character": "Shadow",
+				
+				"msn": "你唔會得到任何嘢。"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "哈哈哈"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "相都仲係度。"
+			},{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "一放上網所有人都會有備份。"
+			}]
+		},
+		"variable": {
+			"type": "event",
+			"next": "repeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 4,
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	}
+}

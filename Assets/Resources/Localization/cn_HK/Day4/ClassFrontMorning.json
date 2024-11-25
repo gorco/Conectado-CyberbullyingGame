@@ -1,0 +1,86 @@
+﻿{
+	"teacher":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "Teacher",
+				"character": "老師",
+				"msn": "如果你記得上個星期，我哋學緊點做語態分析。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "依家係教句法分析。"
+			},
+			{
+				"tag": "敲門",
+				"msn": "(有人敲緊門)"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "入嚟。"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"next": "node2",
+			"event": {
+				"name": "class entrance",
+				"synchronous": true,
+			}
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "black",
+			"fragments": [{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "阿歷，你遲到喎，請坐低啦。"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "新嚟嘅人坐咗我嗰位。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "我叫 <$ varObject('global', 'UserNameNonStatic') $>。"
+			},
+			{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "暫時坐住其他位先，呢幾日我已經請咗愛莉幫手。"
+			}]
+		},
+		"black": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "The bell rings, it's break time."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 5
+			}
+		}
+	}
+}

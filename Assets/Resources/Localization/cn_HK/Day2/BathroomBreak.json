@@ -1,0 +1,78 @@
+﻿{
+	"bathroomExit": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"mirror": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeInit",
+				"condition": "varObject('global', 'GumQuestNonStatic') != 2"
+			}]
+		},
+		"nodeInit": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "gum == false"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我已經把香口膠去掉了，但污漬更明顯了。"
+			},
+			{
+				"tag": "你",
+				"msn": "他們更加會嘲笑我的。"
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"next": "nodeRepeat",
+			"set": {
+				"var": "gum",
+				"value": false
+			}
+		},
+		"node0": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "你",
+				"msn": "或許水和肥皂就是我所需要的。."
+			}]
+		}, 
+		"options": {
+			"type": "options",
+			"questionId": "bathroomGum",
+			"options": [{
+				"next": "quest",
+				"msn": "(嘗試用水和肥皂)"
+			},
+			{
+				"msn": "(保持原貌)"
+			}]
+		},
+		"quest": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change variable",
+				"var": "GumQuest",
+				"value": 1,
+			}
+		},
+	}
+}

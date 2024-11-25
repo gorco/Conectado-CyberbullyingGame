@@ -1,0 +1,180 @@
+{
+	"init":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node0",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "又係重複嘅一日...我係咪仲發緊夢？"
+			},
+			{
+				"tag": "你",
+				"msn": "邊個喺度門傳出聲音？ "
+			},
+			{
+				"tag": "你",
+				"msn": "點解我每次穿過道門，日子就會重複"
+			}]
+		}
+	},
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "又一日，我要走啦，希望快啲完。"
+			}]
+		}		
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "呢度冇嘢有用。"
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我依家整返好佢，好過去返學… 媽咪會嬲。"
+			}]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我要行喇... "
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "BagPicked",
+				"value": true
+			}
+		},
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "如果依家開機，我肯定會遲到。"
+			},
+			{
+				"tag": "你",
+				"msn": "成日都係咁，最好等到下晝。"
+			},
+			{
+				"tag": "個人電腦",
+				"msn": "你係咪想開電腦？"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"options": [{
+				"next": "node1a",
+				"msn": "係"
+			},
+			{
+				"next": "node1b",
+				"msn": "唔係"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
+		}, 
+		"moveCamera": {
+			"type": "event",
+			"next": "changeHour",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:10",
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我最好依家走。"
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我好唔好留低手提電話叉電?"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "好"
+			},
+			{
+				"next": "node1b",
+				"msn": "唔好"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
+	}
+}

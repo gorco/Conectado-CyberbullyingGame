@@ -1,0 +1,37 @@
+﻿{
+	"init":{
+		"root":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "所有人已經走晒。"
+			},
+			{
+				"tag": "你",
+				"msn": "我應唔應該相信阿歷。走入廁所同<$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'Ana') $>講?"
+			},
+			{
+				"tag": "你",
+				"msn": "如果要去，係唔係一次就係咁多?"
+			}]
+		}
+	},
+	"door": {
+		"root": {
+			"next": "changeHour",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:08",
+			}
+		}
+	}
+}

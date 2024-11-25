@@ -1,0 +1,83 @@
+{
+	"jose":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "true"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "哈哈哈…"
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "我想多謝你，阿歷因為我既體重而挑我是非…"
+			},
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "直到你嚟到。我好開心你喺度，靚仔。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		}
+	},
+	"principalNote":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "字條",
+				"msn": "校長室"
+			}]
+		}
+	},
+	"principalDoor":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "睇嚟冇人係度。"
+			}]
+		}
+	},
+	"stairsToCorridor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"stairsToPlayground": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我應該直接入班房。"
+			}]
+		}
+	}
+}

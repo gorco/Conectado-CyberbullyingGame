@@ -1,0 +1,183 @@
+﻿{
+	"board":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "尋日好似有人影咗相"
+			}]
+		}
+	},
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> 你遲到。"
+			},{
+				"tag": "老師",
+				"character": "Teacher",
+				"msn": "請大家坐低，我哋依家繼續上堂。"
+			}]
+		},
+		"node2": {
+			"type": "fork",
+			"options": [{
+				"next": "endDay",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "break",
+				"condition": "true"
+			}]
+		},
+		"break": {
+			"type": "event",
+			"next": "breakHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "The bell is ringing, it's break time..."
+			}
+		},
+		"breakHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 20
+			}
+		},
+		"endDay": {
+			"type": "event",
+			"next": "breakHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "It seems like classes are lasting longer and longer... Luckly it's time to go home."
+			}
+		},
+		"endDayHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		}
+	},
+	"table":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "你",
+				"msn": "呢個位冇人，我可唔可以坐喺呢度？"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "sitDownClass",
+			"options": [{
+				"next": "node2",
+				"msn": "可以"
+			},
+			{
+				"msn": "唔可以"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "nodeFork",
+			"fragments": [{
+				"tag": "",
+				"msn": "(後面有人敲門，老師已到)"
+			}]
+		},
+		"nodeFork": {
+			"type": "fork",
+			"options": [{
+				"next": "endDay",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "break",
+				"condition": "true"
+			}]
+		},
+		"break": {
+			"type": "event",
+			"next": "breakHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "The bell indicates it's break time..."
+			}
+		},
+		"breakHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"endDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "It seems like classes are lasting longer and longer... Luckly it's time to go home."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 20
+			}
+		}
+	},
+}

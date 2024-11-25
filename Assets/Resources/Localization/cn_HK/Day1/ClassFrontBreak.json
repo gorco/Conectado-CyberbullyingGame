@@ -1,0 +1,452 @@
+﻿{
+	"alejandro":{
+		"root": {
+			"type": "fork",
+			"options": [{
+					"next": "go",
+					"condition": "spoken == true"
+			},
+			{
+					"next": "setter",
+					"condition": "true"
+			}]
+		},
+		"go": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Alejandro",
+				"character": "阿歷",
+				"msn": "你看什麼呢？走開，我們已經沒什麼可說。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "node0",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"node0": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "喂，新来的，我們聊一聊！"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "今天你坐了我的坐位，我不想你再坐在那裡。"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "從明天開始，你坐在後面的空位。"
+			}]
+		},
+		"node1": {
+			"type": "options",
+			"questionId": "AlexFirstDayThreat",
+			"options": [{
+				"next": "quest2a",
+				"msn": "好的，對不起，不會再發生了。"
+			},
+			{
+				"next": "quest2b",
+				"msn": "不過是个坐位而已"
+			},
+			{
+				"next": "quest2c",
+				"msn": "你是誰，憑什麼告訴我能坐哪裡，不能坐哪裡？"
+			}]
+		},
+		"quest2a": {
+			"type": "event",
+			"next": "node2a",
+			"event": {
+				"name": "change variable",
+				"var": "AlejandroQuest",
+				"value": 1,
+			}
+		},
+		"node2a": {
+			"type": "dialog",
+			"next": "move",
+			"fragments": [{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "這就對了，聽話點。"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "順帶一提，作為補償，給我那個三文治，我餓了。"
+			},
+			{
+				"tag": "你",
+				"msn": "（你把三文治给了他）"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "好了，滾開。"
+			}]
+		},
+		"quest2b": {
+			"type": "event",
+			"next": "node2b",
+			"event": {
+				"name": "change variable",
+				"var": "AlejandroQuest",
+				"value": 1,
+			}
+		},
+		"node2b": {
+			"type": "dialog",
+			"next": "nodeFS10",
+			"fragments": [{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "是的，那不過是個坐位，但那是我的坐位。"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "所以你去找別的座位吧。"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "(用威脅的語氣)否則我會幫你找一個。"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "我幫上一個找一張座位...他也在他的臉上找到瘀傷。"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "現在走開。"
+			}]
+		},
+		"nodeFS10":{
+			"type": "event",
+			"next": "move",
+			"event": {
+				"name": "change friendship",
+				"var": "AlejandroFS",
+				"value": -10,
+			}
+		},
+		"quest2c": {
+			"type": "event",
+			"next": "node2c",
+			"event": {
+				"name": "change variable",
+				"var": "AlejandroQuest",
+				"value": 2,
+			}
+		},
+		"node2c": {
+			"type": "dialog",
+			"next": "nodeFS20",
+			"fragments": [{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "你挺聰明的，不是嗎？"
+			},
+			{
+				"tag": "",
+				"msn": "(你被推了一下)"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "就這樣吧，蠢材。"
+			},
+			{
+				"tag": "",
+				"msn": "(阿歷離開了)"
+			}]
+		},
+		"nodeFS20":{
+			"type": "event",
+			"next": "fade",
+			"event": {
+				"name": "change friendship",
+				"var": "AlejandroFS",
+				"value": -20,
+			}
+		},
+		"move": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "alejandro"
+			}
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "alejandro"
+			}
+		}
+	},
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "first",
+				"condition": "varObject('state', 'AlisonDialog') == false"
+			},
+			{
+				"next": "earingFound",
+				"condition": "varObject('state', 'EaringFound') == true"
+			},
+			{
+				"next": "earingNotFound",
+				"condition": "varObject('state', 'EaringFound') == false"
+			}]
+		},
+		"earingFound": {
+			"type": "dialog",
+			"next": "quest",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我看到你已找回了耳環。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "非常感謝你。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "你真棒，我欠你一个人情。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "小息時間快結束，我們應該回教室了。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "裡面見。"
+			}]
+		},
+		"quest": {
+			"type": "event",
+			"next": "nodeFS",
+			"event": {
+				"name": "change variable",
+				"var": "AlisonQuest",
+				"value": 1,
+			}
+		},
+		"nodeFS":{
+			"type": "event",
+			"next": "fade",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFS",
+				"value": 20,
+			}
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "alison"
+			}
+		},
+		"earingNotFound": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "你還沒找到嗎？"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "請繼續幫我找找。"
+			}]
+		},
+		"first": {
+			"type": "dialog",
+			"next": "earing",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我到底把它丟在哪裡了…"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "對不起 <$ varObject('global', 'UserNameNonStatic') $>, 我沒看到你。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我在找一隻耳環，我不知道它掉在哪裡了。"
+			}]
+		},
+		"earing": {
+			"type": "event",
+			"next": "node1",
+			"event": {
+				"name": "change state",
+				"key": "AlisonDialog",
+				"var": "AlisonDialog",
+				"value": true,
+				"state": 0
+			}
+		},
+		"node1": {
+			"type": "options",
+			"questionId": "AlisonEaringAsk",
+			"options": [{
+				"next": "node2a",
+				"msn": "你在走廊找過了嗎？"
+			},
+			{
+				"next": "node2a",
+				"msn": "你在操場找過了嗎？"
+			},
+			{
+				"next": "node2b",
+				"msn": "或許你把它忘在家裡了…"
+			}]
+		},
+		"node2a": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我還沒找過。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我還要在教室繼續找……你能去那裡找找找嗎？"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "你會幫我一個很大的忙。"
+			}]
+		},
+		"node2b": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "不可能的，今天早上我還戴著。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "它-它-它們是新的，一份禮…禮物。"
+			},
+			{
+				"tag": "",
+				"msn": "（你注意到她非常擔心，快要哭了）"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "拜託，*抽泣* *抽泣* 你能幫我找找它們嗎？"
+			}]
+		},
+		"node3": {
+			"type": "options",
+			"questionId": "AlisonEaringQuest",
+			"options": [{
+				"next": "node4",
+				"msn": "好的，我去看看。"
+			},
+			{
+				"next": "node4",
+				"msn": "好(我會享受小息及告訴她沒沒有找到任何東西) 。"
+			}]
+		},
+		"node4": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "非常感謝你。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "另外，這是我的電話號碼，這樣我們可以互發訊息。"
+			},
+			{
+				"tag": "",
+				"msn": "(你也給她你的電話號嗎)"
+			}]
+		}
+	},
+	"door": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "corridor",
+				"condition": "varObject('state', 'AlisonDialog') == true"
+			},
+			{
+				"next": "alison",
+				"condition": "varObject('state', 'AlisonDialog') == false"
+			}]
+		},
+		"alison": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "愛莉看來很擔心。"
+			},
+			{
+				"tag": "你",
+				"msn": "我應該和她聊聊，看看發生了什麼事。"
+			}]
+		},
+		"corridor": {
+			"next": "alisonMsn",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"alisonMsn": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "mobile message",
+				"var": "Alison Clase",
+				"value": "Thanks again for helping me",
+				"key": "Alison Clase",
+				"other": "alisonThx",
+				"time": 3
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:10",
+			}
+		},
+	}
+}

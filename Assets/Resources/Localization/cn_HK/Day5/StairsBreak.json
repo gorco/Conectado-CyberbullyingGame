@@ -1,0 +1,42 @@
+{
+	"alex": {
+		"root": {
+			"type": "dialog",
+			"next": "changeVar",
+			"fragments": [{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "真係?你冇入過廁所就想走。"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "諗吓呢次係攪掂所有嘢既機會。嚟啦…我會陪你走。"
+			}]
+		},
+		"changeVar": {
+			"type": "event",
+			"next": "node2a",
+			"event": {
+				"name": "change variable",
+				"var": "Alex",
+				"value": true,
+			}
+		},
+		"node2a": {
+			"type": "event",
+			"next": "moveEvent",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"moveEvent": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "alejandro"
+			}
+		}
+	}
+}

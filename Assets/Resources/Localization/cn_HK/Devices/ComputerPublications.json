@@ -1,0 +1,11 @@
+{
+	"default":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我冇新相可以上載。"
+			}]
+		}
+	}
+}

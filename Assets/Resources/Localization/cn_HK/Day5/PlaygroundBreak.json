@@ -1,0 +1,212 @@
+{
+	"anaGroup":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeNoGum",
+				"condition": "varObject('global', 'AuxQuestNonStatic') == 2"
+			},
+			{
+				"next": "nodeInit",
+				"condition": "true"
+			}]
+		},
+		"nodeNoGum": {
+			"type": "dialog",
+			"next": "FadeOutAna",
+			"fragments": [{
+				"tag": "細聲講",
+				"msn": "唔，好似佢身上冇任何香口膠貼住係佢度。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "噓"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "喂  <$ varObject('global', 'UserNameNonStatic') $>"
+			},
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "你好"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你有冇見過阿歷?"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "我地應該同佢傾。"
+			}]
+		},
+		"FadeOutAna": {
+			"next": "FadeOutJose",
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "ana"
+			}
+		},
+		"FadeOutJose": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "jose"
+			}
+		},
+		"nodeInit": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你應該洗吓你既衫，你條褲真係好污糟。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你屋企冇洗衣機咩?"
+			},
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "哈哈哈，新潮流!香口膠貼住係條褲到。"
+			},
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "咁污糟既衫唔洗再洗啦。"
+			},
+			{
+				"tag": "荷西",
+				"character": "Jose",
+				"msn": "佢應該直接將掉入垃圾桶度。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈哈哈"
+			}]
+		}
+	},
+	"guilleGroup":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeNoGum",
+				"condition": "varObject('global', 'AuxQuestNonStatic') == 2"
+			},
+			{
+				"next": "nodeInit",
+				"condition": "true"
+			}]
+		},
+		"nodeInit": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "試吓係廁所將香口膠整走。"
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"nodeNoGum": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "喂 <$ varObject('global', 'UserNameNonStatic') $>"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "我地講緊阿歷。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "佢今朝早好古怪，甚至第一個到呢度。"
+			}]
+		}, 
+		"node0": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "你坐過係邊度?"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "你可能坐咗係香口膠度。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "好污糟，上堂前直接入去洗手間。"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "係呀，你可能能夠整走佢"
+			}]
+		},
+		"guilleFS": {
+			"type": "event",
+			"next": "joseFS",
+			"event": {
+				"name": "change friendship",
+				"var": "GuilleFS",
+				"value": 10,
+			}
+		},
+		"alisonFS": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFS",
+				"value": 10,
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "係小息時間，我返屋企前都仲有堂要上。"
+			}]
+		}
+	}
+}

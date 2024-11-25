@@ -1,0 +1,211 @@
+{
+	"maria": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "friendFork",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "如果你而家唔去，你會遲到㗎"
+			}]
+		},
+		"friendFork": {
+			"type": "fork",
+			"options": [{
+				"next": "friend",
+				"condition": "varObject('global', 'AlisonFSNonStatic') > 60"
+			},
+			{
+				"next": "normal",
+				"condition": "true"
+			}]
+		},
+		"friend": {
+			"type": "dialog",
+			"next": "friendOptions",
+			"fragments": [{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "早晨，<$ varObject('global', 'UserNameNonStatic') $>"
+			},
+			{
+				"tag": "你",
+				"msn": "你好，瑪莉亞"
+			}]
+		},
+		"friendOptions": {
+			"type": "options",
+			"questionId": "MariaSickAsk",
+			"options": [{
+				"next": "friends2b",
+				"msn": "你琴日冇嚟，你有冇事？"
+			},
+			{
+				"next": "friends2a",
+				"msn": "你同我講嘢？"
+			},
+			{
+				"next": "setter",
+				"msn": "我趕時間，同埋已經響咗鐘，遲啲再傾啦。"
+			}]
+		},
+		"friends2a": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "我諗你講緊阿歷。"
+			},
+			{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "安娜上年都做過類似嘅嘢嚟搞我。"
+			},
+			{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "你應該同你屋企人或者老師講。"
+			},
+			{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "我以前有機會嘅時候冇講，之後我屋企人發現咗就逼我去見心理醫生。"
+			},
+			{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "如果你想我陪你去同老師講，講聲我知就得。但唔好唔出聲。"
+			},
+			{
+				"tag": "你",
+				"msn": "多謝，下次見。"
+			}]
+		},
+		"friends2b": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "我無事，多謝關心。"
+			},
+			{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "我尋日發燒，所以留喺屋企休息。"
+			},
+			{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "今日已經完全好返啦。"
+			}]
+		},
+		"normal": {
+			"type": "dialog",
+			"next": "normalOptions",
+			"fragments": [{
+				"tag": "你",
+				"msn": "喂，瑪莉亞"
+			},
+			{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "你好，<$ varObject('global', 'UserNameNonStatic') $>。有嘢想講？"
+			}]
+		},
+		"normalOptions": {
+			"type": "options",
+			"questionId": "MariaIgnoreAsk",
+			"options": [{
+				"next": "setter",
+				"msn": "冇吖，遲啲見。"
+			},
+			{
+				"next": "normal2",
+				"msn": "你同我講緊嘢？"
+			}]
+		},
+		"normal2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "點解唔係呢？"
+			},
+			{
+				"tag": "你",
+				"msn": "你冇同阿歷講過咩？"
+			},
+			{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "係啊，關於嗰個沉默治療嘅事…"
+			},
+			{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "佢哋上年已經搞到我好慘，當買過教訓啦。"
+			},
+			{
+				"tag": "瑪莉亞",
+				"character": "Maria",
+				"msn": "最好係同你父母或者導師講，唔好理Alex或者佢班『手下』。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+	},
+	"principalNote":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "字條",
+				"msn": "校長室"
+			}]
+		}
+	},
+	"principalDoor":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "似係冇人喺度。"
+			}]
+		}
+	},
+	"stairsToCorridor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"stairsToPlayground": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我應該直接去上堂。"
+			}]
+		}
+	}
+}

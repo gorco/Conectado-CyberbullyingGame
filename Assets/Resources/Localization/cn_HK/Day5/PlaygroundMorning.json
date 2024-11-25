@@ -1,0 +1,233 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "走開，我地無嘢好傾。"
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "如果你相信我，會冇呢啲嘢發生。係你既錯。"
+			}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "發生係你既事係你應得既。"
+			},
+			{
+				"tag": "愛莉",
+				"character": "Alison",
+				"msn": "當你俾我密碼時你係度諗乜野?"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		}
+	},
+	"ana":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh2",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈哈哈，低賤既人。"
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你睇吓邊個係度，我以為你今日唔會出現。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "仲冇電話?哈哈哈，如果你搵得夠徹底既話係唔會咁難搵既。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "依個討厭鬼…"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你嚟自邊度?哈哈哈。"
+			}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "我唔能夠相信你俾密碼俾愛莉。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你有冇諗過佢會係你既朋友?我唔相信會咁容易囉。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈哈哈!!!講真，我笑緊你。"
+			}]
+		},
+		"sh2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈哈哈!!! 我唔相信你既電話冇鎖機圖案。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "我覺得會再難啲…"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "今日會係好好笑既日子。依家所有人都覺得你係真係一名  <$ if(varObject('global', 'MaleSexNonStatic')==true, 'fucking poof who likes it all', 'fucking vicious whore') $>。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "bell",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "bellEvent",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<學校鐘聲響起>>"
+			}]
+		},
+		"bellEvent": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true" 
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "睇嚟我早咗到，入口唔俾入。我都係消磨時間。"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我啱啱嚟到。我唔可以走住。"
+			}]
+		}
+	}
+}

@@ -1,0 +1,166 @@
+{
+	"mother": {
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "checkBag",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "checkHour",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"checkBag": {
+			"type": "fork",
+			"options": [{
+				"next": "bye",
+				"condition": "varObject('state', 'BagPicked') == true"
+			},
+			{
+				"next": "getBag",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"bye": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "看來你把所有東西都收拾好了。"
+			}, 
+			{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "<$ if(varObject('global', 'HourNonStatic')<8, 'Go now or you will be late.', 'Go now, you are late.') $>"
+			}]
+		},
+		"getBag": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "你忘了背囊。"
+			}, 
+			{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "它在你房間，趕緊帶上出發。"
+			}]
+		},
+		"checkHour": {
+			"type": "fork",
+			"options": [{
+				"next": "motherSoon",
+				"condition": "varObject('global', 'HourNonStatic') < 8"
+			},
+			{
+				"next": "motherLate",
+				"condition": "varObject('global', 'HourNonStatic') >= 8"
+			}]
+		},
+		"motherSoon": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "看來你已經準備出發了。"
+			}, 
+			{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "你帶齊東西了嗎？記得帶上背囊。"
+			},
+			{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "乖啲，多交些朋友。"
+			}]
+		},		
+		"motherLate": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "你看現在幾點了？"
+			}, 
+			{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "你在新學校的第一天就遲到了。"
+			},
+			{
+				"tag": "媽媽",
+				"character": "Mother",
+				"msn": "快點，帶齊所有東西，馬上離開！"
+			}]
+		}
+	},
+	"exitDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "changeHourSoon",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') < 8"
+			},{
+				"next": "changeHourLate",
+				"condition": "varObject('global', 'HourNonStatic') >= 8 && varObject('state', 'BagPicked') == true"
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"changeHourLate": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:40"
+			}
+		},
+		"changeHourSoon": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:20"
+			}
+		},
+		"exitNode": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 4
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我忘了背囊。最好回房間拿了再走。"
+			}]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		}
+	}
+}

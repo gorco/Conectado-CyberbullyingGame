@@ -1,0 +1,349 @@
+{
+	"init": {
+		"root": {
+			"type": "event",
+			"next": "fs2",
+			"event": {
+				"name": "change friendship",
+				"var": "AlejandroFS",
+				"value": -20,
+			}
+		},
+		"fs2": {
+			"type": "event",
+			"next": "fs3",
+			"event": {
+				"name": "change friendship",
+				"var": "AnaFS",
+				"value": -20,
+			}
+		},
+		"fs3": {
+			"type": "event",
+			"next": "fs4",
+			"event": {
+				"name": "change friendship",
+				"var": "JoseFS",
+				"value": -20,
+			}
+		},
+		"fs4": {
+			"type": "event",
+			"event": {
+				"name": "change friendship",
+				"var": "GuillermoFS",
+				"value": -10,
+			}
+		}
+	},
+	"board":{
+		"root": {
+			"type": "event",
+			"next": "forkNode",
+			"event": {
+				"name": "change variable",
+				"var": "BoardQuest",
+				"value": 1,
+			}
+		},
+		"forkNode": {
+			"type": "fork",
+			"options": [{
+				"next": "gum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 0"
+			},
+			{
+				"next": "washed",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "nogum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			}]
+		},
+		"gum": {
+			"type": "event",
+			"next": "gumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGum"
+			}
+		},
+		"gumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "你",
+				"msn": "這裏有張我的照片，它被修改過，所以看起來像是我在拉香口膠。"
+			},
+			{
+				"tag": "你",
+				"msn": "誰想用這種方式嘲笑我？"
+			}]
+		},
+		"deactive": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 0
+			}
+		},
+		"washed": {
+			"type": "event",
+			"next": "washedDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoGumWhased"
+			}
+		},
+		"washedDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "你",
+				"msn": "這是一張我昨天剛弄走那香口膠的照片。"
+			},
+			{
+				"tag": "你",
+				"msn": "附上原汁原味的一句句子// “有個寶寶來到了教室\”"
+			}]
+		},
+		"nogum": {
+			"type": "event",
+			"next": "nogumDialog",
+			"event": {
+				"name": "active object",
+				"time": 0,
+				"other": "photoDog"
+			}
+		},
+		"nogumDialog": {
+			"type": "dialog",
+			"next": "deactive",
+			"fragments": [{
+				"tag": "你",
+				"msn": "這張照片裏，我的頭被剪接在一隻狗身上，並吐着舌頭。"
+			},
+			{
+				"tag": "你",
+				"msn": "為什麽？是誰把它放在那裏的？"
+			}]
+		},
+	},
+	"group":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"next": "stayOption",
+			"fragments": [{
+				"tag": "你",
+				"msn": "你們是在排擠我嗎，這是認真的？"
+			},
+			{
+				"tag": "你",
+				"msn": "你也是嗎，吉耶？"
+			},
+			{
+				"tag": "",
+				"msn": "..."
+			}]
+		}, 
+		"stayOption": {
+			"type": "options",
+			"questionId": "groupIgnore",
+			"options": [{
+				"next": "stay",
+				"msn": "等等看他們會不會説話。"
+			},
+			{
+				"msn": "離開。"
+			}]
+		},
+		"stay": {
+			"type": "dialog",
+			"next": "stayOption",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "..."
+			}]
+		}, 
+		"node0": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "早安，你在這做什麽呢？"
+			},
+			{
+				"tag": "吉耶",
+				"character": "Guille",
+				"msn": "我們只是在聊天。"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "閉嘴吉耶，還記得我們的約定嗎？"
+			},
+			{
+				"tag": "阿歷",
+				"character": "Alex",
+				"msn": "還是你想你的父母知道呢？"
+			},
+			{
+				"tag": "Guille",
+				"character": "Guille",
+				"msn": "..."
+			}]
+		}, 
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"questionId": "groupIgnoreAskGuille",
+			"options": [{
+				"next": "node1A",
+				"msn": "發生了什麽，吉耶？"
+			},
+			{
+				"next": "node1B",
+				"msn": "那聽起來像是威脅。"
+			}]
+		},
+		"node1A": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "你",
+				"msn": "你還好嗎，吉耶？"
+			},
+			{
+				"tag": "",
+				"msn": "..."
+			},
+			{
+				"tag": "你",
+				"msn": "有誰要説些什麽嗎？"
+			}]
+		},
+		"node1B": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "你",
+				"msn": "你還要和吉耶過不去嗎…阿歷？"
+			},
+			{
+				"tag": "",
+				"msn": "..."
+			},
+			{
+				"tag": "你",
+				"msn": "有誰要説些什麽嗎？"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "lateorsoon",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"lateorsoon": {
+			"type": "fork",
+			"options": [{
+				"next": "bell",
+				"condition": "varObject('global', 'MinuteNonStatic') <= 30 "
+			},
+			{
+				"next": "late",
+				"condition": "varObject('global', 'MinuteNonStatic') > 30"
+			}]
+		},
+		"late": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "你",
+				"msn": "好吧，什麽都不要説。我要去教室，現在已經足夠晚了。"
+			}]
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "bellEvent",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<學校鐘聲響起>>"
+			}]
+		},
+		"bellEvent": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nodeRepeat",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true" 
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "看來我稍早到了一點，入口入唔到。我都係消磨時間"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我才剛到，我不能現在就離開。"
+			}]
+		}
+	}
+}

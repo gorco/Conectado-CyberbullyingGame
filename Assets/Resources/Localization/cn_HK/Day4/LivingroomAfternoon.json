@@ -1,0 +1,597 @@
+{
+	"init": {
+		"root":{
+			"type": "fork",
+			"options": [{
+				"next": "mobile",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "socialMessages",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') <= 1"
+			}]
+		},
+		"socialMessages" : {
+			"type": "event",
+			"next": "social1",
+			"event": {
+				"name": "computer publication",
+				"var": "troll",
+				"value": "This is me, call me 543-654-54-31",
+				"key": "Tú",
+				"other": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'photoNumberBoy', 'photoNumberGirl') $>",
+				"time": 0 
+			}
+		},
+		"social1": {
+			"type": "event",
+			"next": "social2",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "waiting 4 your calls",
+				"key": "Tú",
+				"time": 0.2
+			}
+		},
+		"social2": {
+			"type": "event",
+			"next": "social3",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "we can meet when you want ;)",
+				"key": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Ana', 'Alex') $>",
+				"time": 0.2
+			}
+		},
+		"social3": {
+			"type": "event",
+			"next": "social4",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "r u butt dialing? cuz I swear dat ass is calling me HAHAHA",
+				"key": "Jose",
+				"time": 0.4
+			}
+		},
+		"social4": {
+			"type": "event",
+			"next": "social5",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "this goes straight to the class board hahaha",
+				"key": "Ana",
+				"time": 0.8
+			}
+		},
+		"social5": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "but do u get paid?",
+				"key": "Alex",
+				"other": "trollPost",
+				"time": 1.2
+			}
+		},
+		"mobile": {
+			"type": "dialog",
+			"next": "mobileMessage0",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我喺度幫電話叉電"
+			},
+			{
+				"tag": "你",
+				"msn": "我記得擺喺門口嘅枱上面…第三個抽屜入面…"
+			},
+			{
+				"tag": "你",
+				"msn": "喺度，但用唔用到㗎？… 好嘢，太好啦。"
+			},
+			{
+				"tag": "你",
+				"msn": "呢啲係咩訊息嚟嘅？"
+			}]
+		},
+		"mobileMessage0": {
+			"type": "event",
+			"next": "mobileMessage1",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "looks like u didnt kickme out, cheers. as a gift ill tell you I love sucking penises :)",
+				"key": "",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"mobileMessage1": {
+			"type": "event",
+			"next": "mobileMessage2",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "actually i'm into everything, if anyone wants lemme know",
+				"key": "",
+				"time": 0.1
+			}
+		},
+		"mobileMessage2": {
+			"type": "event",
+			"next": "mobileMessage3",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "thanks 4 confessing, but we already knew, it's written all over your face",
+				"key": "Alex",
+				"time": 0.2
+			}
+		},
+		"mobileMessage3": {
+			"type": "event",
+			"next": "mobileMessage4",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "we got the perfect name, SUFACE, the face who sucks LOL",
+				"key": "Ana",
+				"time": 0.3
+			}
+		},
+		"mobileMessage4": {
+			"type": "event",
+			"next": "mobileMessage5",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "whats this? why r u saying these things?",
+				"key": "Alison",
+				"time": 0.3
+			}
+		},
+		"mobileMessage5": {
+			"type": "event",
+			"next": "mobileMessage6",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "the best day and i missed it...what did i loose?",
+				"key": "Jose",
+				"time": 0.4
+			}
+		},
+		"mobileMessage6": {
+			"type": "event",
+			"next": "mobileMessage7",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "youre crossing a line already, who trolled <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $>?",
+				"key": "Guille",
+				"time": 0.5
+			}
+		},
+		"mobileMessage7": {
+			"type": "event",
+			"next": "mobileMessage8",
+			"event": {
+				"name": "mobile message",
+				"var": "Clase",
+				"value": "none, whats up guille? u got sucked & dont want it to be known? hahaha",
+				"key": "Ana",
+				"other": "trollClass",
+				"time": 0.6
+			}
+		},
+		"mobileMessage8": {
+			"type": "event",
+			"next": "mobileMessage9",
+			"event": {
+				"name": "mobile message",
+				"var": "Maria",
+				"value": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'youre hot', 'imma femme & i know u 2') $>, 2morrow in the toilet ya know ;)",
+				"key": "",
+				"other": "empty",
+				"time": 0.1
+			}
+		},
+		"mobileMessage9": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Maria",
+				"value": "this is so unlike you <$ varObject('global', 'UserNameNonStatic') $>, u got trolled right?",
+				"key": "Maria",
+				"other": "trollMaria",
+				"time": 0.3
+			}
+		}
+	},
+	"parents": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node2",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "init",
+				"condition": "true"
+			}]
+		},
+		"init":{
+			"type": "setter",
+			"next": "initMaria",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"initMaria":{
+			"type": "setter",
+			"next": "initMobile",
+			"set": {
+				"var": "aboutMaria",
+				"value": true
+			}
+		},
+		"initMobile":{
+			"type": "setter",
+			"next": "node1",
+			"set": {
+				"var": "aboutMobile",
+				"value": true
+			}
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "媽咪",
+				"character": "Mother",
+				"msn": "你返嚟啦，<$ varObject('global', 'UserNameNonStatic') $>"
+			}, 
+			{
+				"tag": "媽咪",
+				"character": "Mother",
+				"msn": "今日過成點呀？"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "parentsFS",
+			"fragments": [{
+				"tag": "媽咪",
+				"character": "Mother",
+				"msn": "想唔想傾一陣偈？"
+			},
+			{
+				"tag": "爹哋",
+				"character": "Father",
+				"msn": "今日過得點呀？"
+			}]
+		},
+		"parentsFS": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": -10,
+			}
+		},
+		"setter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 1
+			}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "parentsAfternoonFouthDay",
+			"options": [{
+				"msn": "好，同平時一樣，我返房啦。",
+				"condition": "page == 1"
+			},
+			{
+				"next": "maria1",
+				"msn": "今日阿歷同安娜或過威脅我。",
+				"condition": "page == 1 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') == 1"
+			},
+			{
+				"next": "maria2",
+				"msn": "今日阿歷同安娜威脅咗我。",
+				"condition": "page == 1 && aboutMaria == true && varObject('global', 'MariaQuestNonStatic') == 2"
+			},
+			{
+				"next": "page2",
+				"msn": "（轉話題）",
+				"condition": "page == 1"
+			},
+			{
+				"next": "mobile0",
+				"msn": "我今日唔見咗部電話。",
+				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "mobile1",
+				"msn": "Alison, 我信佢。",
+				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "mobile2",
+				"msn": "有人攞咗我部電話。",
+				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"msn": "我返房啦，我哋已經傾夠啦。",
+				"condition": "page == 2"
+			}]
+		},
+		"page2":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "page",
+				"value": 2
+			}
+		},
+		"maria1": {
+			"type": "dialog",
+			"next": "mariaSetter",
+			"fragments": [{
+				"tag": "你",
+				"msn": "佢哋試過逼我貼瑪莉亞嘅海報。"
+			},
+			{
+				"tag": "你",
+				"msn": "佢哋自稱係咩學校之王喎。"
+			}]
+		},
+		"maria2": {
+			"type": "dialog",
+			"next": "mariaSetter",
+			"fragments": [{
+				"tag": "你",
+				"msn": "佢哋逼我貼瑪莉亞嘅海報…"
+			},
+			{
+				"tag": "你",
+				"msn": "如果我要攞返部手機，就要咁做。"
+			}]
+		},
+		"mariaSetter":{
+			"type": "setter",
+			"next": "forkMeeting",
+			"set": {
+				"var": "aboutMaria",
+				"value": false
+			}
+		},
+		"mobile0": {
+			"type": "dialog",
+			"next": "mobileSetter",
+			"fragments": [{
+				"tag": "你",
+				"msn": "佢哋攞咗我部手機，我攞唔返。"
+			},
+			{
+				"tag": "媽咪",
+				"character": "Mother",
+				"msn": "咁就冇手機啦。咁你要小心自己嘅嘢呀。"
+			},
+			{
+				"tag": "你",
+				"msn": "依嗰唔係我嘅錯。"
+			},
+			{
+				"tag": "爹哋",
+				"character": "Father",
+				"msn": "但呢個唔係漏低自己嘢嘅理由。算啦…"
+			}]
+		},
+		"mobile1": {
+			"type": "dialog",
+			"next": "mobileSetter2",
+			"fragments": [{
+				"tag": "你",
+				"msn": "愛莉比到驚喜我，我可以真係信任佢。"
+			},
+			{
+				"tag": "你",
+				"msn": "今日我哋交換咗密碼。"
+			},
+			{
+				"tag": "媽咪",
+				"character": "Mother",
+				"msn": "你夠膽咁做！？如果佢分享你嘅密碼，或者扮你咁點算。"
+			},
+			{
+				"tag": "媽咪",
+				"character": "Mother",
+				"msn": "你諗下自己做緊乜？"
+			},
+			{
+				"tag": "你",
+				"msn": "但我都有佢嘅密碼。我信佢。"
+			},
+			{
+				"tag": "你",
+				"msn": "佢係唯一一個想同我做朋友嘅人。"
+			}]
+		},
+		"mobile2": {
+			"type": "dialog",
+			"next": "mobileSetter",
+			"fragments": [{
+				"tag": "你",
+				"msn": "佢哋今日攞走咗我部電話。"
+			},
+			{
+				"tag": "你",
+				"msn": "有人將部電話<$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>'留喺廁所。"
+			},
+			{
+				"tag": "媽咪",
+				"character": "Mother",
+				"msn": "你要小心自己嘅嘢，唔可以隨便擺。"
+			},
+			{
+				"tag": "你",
+				"msn": "依嗰唔係我嘅錯。"
+			},
+			{
+				"tag": "爹哋",
+				"character": "Father",
+				"msn": "呢個唔係漏低自己嘢嘅理由。算啦…"
+			}]
+		},
+		"mobileSetter":{
+			"type": "setter",
+			"next": "forkMeeting",
+			"set": {
+				"var": "aboutMobile",
+				"value": false
+			}
+		},
+		"mobileSetter2":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "aboutMobile",
+				"value": false
+			}
+		},
+		"forkMeeting": {
+			"type": "fork",
+			"next": "options",
+			"options": [{
+				"next": "meetSuccess",
+				"condition": "varObject('global', 'ParentsMeetingQuest') == 2"
+			},
+			{
+				"next": "noMeet",
+				"condition": "true"
+			}]
+		},
+		"noMeet": {
+			"type": "dialog",
+			"next": "meetOptions",
+			"fragments": [{
+				"tag": "Dad",
+				"character": "爹哋",
+				"msn": "我諗要同學校傾下，睇下發生咗咩事。"
+			}]
+		},
+		"meetOptions": {
+			"type": "options",
+			"questionId": "parentsMeetingAfternoonOption",
+			"options": [{
+				"next": "yesMeeting",
+				"msn": "好，我真係頂唔順啦。"
+			},
+			{
+				"next": "noMeeting",
+				"msn": "唔好，咁會仲弊。"
+			}]
+		},
+		"yesMeeting": {
+			"type": "dialog",
+			"next": "meetingVariable",
+			"fragments": [{
+				"tag": "爹哋",
+				"character": "Father",
+				"msn": "唔使擔心，我哋會搞掂一切。"
+			}]
+		},
+		"noMeeting": {
+			"type": "dialog",
+			"next": "upParentsFS",
+			"fragments": [{
+				"tag": "爹哋",
+				"character": "Father",
+				"msn": "唔使擔心，我哋會搞掂一切。"
+			},
+			{
+				"tag": "媽咪",
+				"character": "Mother",
+				"msn": "但如果真係發生咩嚴重嘅事，咁冇人可以阻止。"
+			}]
+		},
+		"meetingVariable": {
+			"type": "event",
+			"next": "upParentsFS",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 2,
+			}
+		},
+		"meetSuccess": {
+			"type": "dialog",
+			"next": "upParentsFS",
+			"fragments": [{
+				"tag": "爹哋",
+				"character": "Father",
+				"msn": "咁更加有理由聽日去校長室解決哂件事。"
+			}]
+		},
+		"upParentsFS": {
+			"type": "event",
+			"event": {
+				"name": "change friendship",
+				"var": "ParentsFS",
+				"value": 10,
+			}
+		}	
+	},
+	"father": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "爹哋",
+				"character": "Father",
+				"msn": "同你媽咪講。"
+			},
+			{
+				"tag": "爹哋",
+				"character": "Father",
+				"msn": "佢想知道你今日過得點。"
+			}]
+		}
+	},
+	"exitDoor": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我冇嘢想喺條街度做。"
+			}]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "21:30",
+			}
+		},
+	}
+}

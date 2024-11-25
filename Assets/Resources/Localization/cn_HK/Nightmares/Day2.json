@@ -1,0 +1,185 @@
+{
+	"intro":{
+		"root": {
+			"type": "dialog",
+			"next": "fade",
+			"fragments": [{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "所以…你有冇整到出嚟?"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "你知唔知道去邊度坐?"
+			},
+			{
+				"tag": "影子",
+				"character": "Shadow",				
+				"msn": "可能你要避免拍打呢啲跌落座位既香口膠，如果唔係你要坐上其中一粒。"
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "shadow"
+			}
+		}
+	},
+	"portal":{
+		"root":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "你要坐上一粒香口膠。"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "哈哈，去啦，坐低。"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "嚟啦，你等咩喎?"
+			},{
+				"tag": "網站傳來的聲音",
+				"msn": "嚟，我嚟幫你。"
+			}, {
+				"tag": "網站傳來的聲音",
+				"msn": "去睇晒個網站。"
+			}, {
+				"tag": "網站傳來的聲音",
+				"msn": "你醒之前跑。"
+			}]
+		}
+	},
+	"cross": {
+		"root": {
+			"type": "options",
+			"questionId": "portalDay2",
+			"options": [{
+				"next": "node1",
+				"msn": "去睇晒個網站。"
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我會去。"
+			}, {
+				"tag": "你",
+				"msn": "係有啲恐怖。"
+			}, {
+				"tag": "你",
+				"msn": "但係只係一場夢。"
+			}]
+		},
+		"variable": {
+			"type": "event",
+			"next": "repeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 1,
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": true,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "loadMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"loadMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "load"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	},
+	"finishNightmare":{
+		"root": {
+			"type": "dialog",
+			"next": "changeDay",
+			"fragments": [{
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "你要坐上一粒香口膠。"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "哈哈，去啦，坐低。"
+			}, {
+				"tag": "影子",
+				"character": "Shadow",
+				"msn": "嚟啦，你等咩喎?"
+			}]
+		},
+		"changeDay": {
+			"type": "event",
+			"next": "noRepeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 2,
+			}
+		},
+		"noRepeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	}
+}
