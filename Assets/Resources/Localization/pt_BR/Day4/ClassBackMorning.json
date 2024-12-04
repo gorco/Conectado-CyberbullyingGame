@@ -24,40 +24,16 @@
 				}]
 		},
 		"node1": {
-				"type": "fork",
-				"options": [{
-					"next": "node1male",
-					"condition": "varObject('global', 'MaleSexNonStatic')==true"
-				},
-				{
-					"next": "node1female",
-					"condition": "varObject('global', 'MaleSexNonStatic')==false"
-				}]
-		},
-		"node1male": {
 			"type": "dialog",
 			"next": "node2",
 			"fragments": [{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, você está atrasado."
+				"msn": "Você está <$ if(varObject('global', 'MaleSexNonStatic')==true, 'atrasado', 'atrasada') $>."
 			},{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Por favor, sente-se rápido para podermos continuar a aula."
-			}]
-		},
-		"node1female": {
-			"type": "dialog",
-			"next": "node2",
-			"fragments": [{
-				"tag": "Professor",
-				"character": "Teacher",
-				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, você está atrasada."
-			},{
-				"tag": "Professor",
-				"character": "Teacher",
-				"msn": "Por favor, sente-se rápido para podermos continuar a aula."
+				"msn": "Por favor, sente-se e vamos continuar a aula"
 			}]
 		},
 		"node2": {

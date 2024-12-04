@@ -47,7 +47,7 @@
 			{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "O nome <$ if(varObject('global', 'MaleSexNonStatic')==true, 'dele', 'dela') $> é <$ varObject('global', 'UserNameNonStatic') $>."
+				"msn": "Seu nome é <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
 				"tag": "Professor",

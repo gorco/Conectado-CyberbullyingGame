@@ -14,6 +14,7 @@
     "EspThanks":"Special Thanks \n",
     "Sponsors":"Sponsors",
     "thankyouText":"THANK YOU!",
-    "Frversion" : "French Texts",
+    "Fr_version" : "French Texts",
+	"Pt_version" : "Brazilian Portuguese Texts",
     "homescreenButton":"Back to Homescreen"
 }
