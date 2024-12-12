@@ -1,0 +1,101 @@
+{
+	"ana":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "earingFound",
+				"condition": "varObject('state', 'EaringFound') == true"
+			},
+			{
+				"next": "node1",
+				"condition": "true"
+			}]
+		},
+		"earingFound": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "看起来你找到了艾莉森的耳环。"
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "篮子附近有点奇怪。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "我从这里看到有个闪亮的东西。"
+			}]
+		}
+	},
+	"guille":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "我们的老导师人很好。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "如果你有任何问题，直接去找他就行了。"
+			}]
+		}
+	},
+	"shine":{
+		"root": {
+			"type": "dialog",
+			"next": "take",
+			"fragments": [{
+				"tag": "你",
+				"msn": "看起来像是艾莉森的耳环。"
+			},
+			{
+				"tag": "你",
+				"msn": "我还是把它还给她吧。"
+			}]
+		},
+		"take": {
+			"type": "event",
+			"next": "fade",
+			"event": {
+				"name": "change state",
+				"key": "EaringFound",
+				"var": "EaringFound",
+				"value": true,
+				"state": 0
+			}
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "earing"
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "现在是休息时间，回家前还有几节课要上。"
+			}]
+		}
+	}
+}

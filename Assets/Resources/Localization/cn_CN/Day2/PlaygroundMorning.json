@@ -1,0 +1,441 @@
+{
+	"maria":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我已经和艾莉森谈过了。我应该去操场上找那些等着铃响的人。"
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"next": "bell",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"node0": {
+			"type": "fork",
+			"options": [{
+				"next": "notify1",
+				"condition": "varObject('global', 'MariaFSNonStatic') > 60"
+			},
+			{
+				"next": "ignore",
+				"condition": "varObject('state', 'MariaFSNonStatic') < 50"
+			},
+			{
+				"next": "normal1",
+				"condition": "true"
+			}]
+		},	
+		"notify1": {
+			"type": "dialog",
+			"next": "notify2",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "早上好，<$ varObject('global', 'UserNameNonStatic') $>。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "我听到亚历克斯在和安娜说想捉弄你一下。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "我不知道会是什么，但小心点，他们通常都不太好笑。"
+			}]
+		}, 
+		"notify2": {
+			"type": "options",
+			"questionId": "MariaJokeAdvise",
+			"options": [{
+				"next": "notify3",
+				"msn": "谢谢你的提醒"
+			},
+			{
+				"next": "notify3",
+				"msn": "我不怕他"
+			},
+			{
+				"next": "repeatedDay1",
+				"msn": "Again?",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			}]
+		},
+		"repeatedDay1": {
+			"type": "dialog",
+			"next": "notify3",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "又怎么了？"
+			},
+			{
+				"tag": "你",
+				"msn": "（她似乎不记得昨天的提醒了）"
+			},
+			{
+				"tag": "你",
+				"msn": "没事。我走了，再见。"
+			}]
+		},
+		"notify3": {
+			"type": "event",
+			"next": "quest",
+			"event":{
+				"name": "change variable",
+				"var": "JokeAdvise",
+				"value": true,
+			}
+		},
+		"quest": {
+			"type": "event",
+			"next": "notify4",
+			"event": {
+				"name": "change variable",
+				"var": "MariaQuest",
+				"value": 1,
+			}
+		},
+		"notify4": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "再见，拜拜。"
+			}]
+		}, 
+		"ignore": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "我在看书"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "如果你不介意的话……（她忽略了你，继续看书）"
+			}]
+		}, 
+		"normal1": {
+			"type": "dialog",
+			"next": "normal2",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "你需要什么吗？"
+			}]
+		}, 
+		"normal2": {
+			"type": "options",
+			"questionId": "MariaLonely",
+			"options": [{
+				"next": "setter",
+				"msn": "不，不需要，拜拜。"
+			},
+			{
+				"next": "normal3b",
+				"msn": "打个招呼吧。我总是看到你一个人在这里看书。"
+			}]
+		},
+		"normal3b": {
+			"type": "event",
+			"next": "normal4",
+			"event": {
+				"name": "change friendship",
+				"var": "MariaFS",
+				"value": 10,
+			}
+		},
+		"normal4": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "很友善。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "通常没人和我说话。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "祝你今天过得愉快。"
+			}]
+		}, 
+		"bell": {
+			"type": "dialog",
+			"next": "bellEvent",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<铃声响起>>"
+			}]
+		},
+		"bellEvent": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		}
+	},
+	"jose":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "再见"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "你看到过那个可以看你和聊天最多的人的关系的手机应用吗？"
+			},
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "它会告诉你，在所有下载了这个应用的人中，你和谁相处得来，和谁相处不来。"
+			},
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "据说它非常准确，但不清楚它是如何工作的。"
+			},
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "我看到你已经有了。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "quest",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"quest": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "JoseQuest",
+				"value": 1,
+			}
+		},
+	},
+	"ana":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "checkGood",
+				"condition": "varObject('global', 'AnaFSNonStatic') >= 50"
+			},
+			{
+				"next": "checkBad",
+				"condition": "true"
+			}]
+		},	
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"checkBad": {
+			"type": "fork",
+			"options": [{
+				"next": "badSpoken",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "bad1",
+				"condition": "true"
+			}]
+		},
+		"badSpoken": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "走开。我没什么和你说的。"
+			}]
+		},
+		"bad1": {
+			"type": "dialog",
+			"next": "badOptions",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你看什么？不说话就走开。"
+			}]
+		},
+		"badOptions": {
+			"type": "options",
+			"questionId": "AnaJokeAsk",
+			"options": [{
+				"msn": "没什么（你离开了）。"
+			},
+			{
+				"next": "bad2",
+				"msn": "我听说你和亚历克斯在谈论什么恶作剧。",
+				"condition": "varObject('state', 'JokeAdvise') == true"
+			}]
+		},
+		"bad2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "安娜Ana",
+				"character": "Ana",
+				"msn": "是啊，怎么了？拜托，走开。"
+			}]
+		},
+		"checkGood": {
+			"type": "fork",
+			"options": [{
+				"next": "goodSpoken",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "good1",
+				"condition": "true"
+			}]
+		},
+		"goodSpoken": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "走开。我没什么和你说的。"
+			}]
+		},
+		"good1": {
+			"type": "dialog",
+			"next": "goodOptions",
+			"fragments": [{
+				"tag": "安娜A",
+				"character": "Ana",
+				"msn": "早上好，<$ varObject('global', 'UserNameNonStatic') $>。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你需要什么吗？"
+			}]
+		},
+		"goodOptions": {
+			"type": "options",
+			"questionId": "AnaJokeAsk",
+			"options": [{
+				"msn": "没什么（你离开了）。"
+			},
+			{
+				"next": "good2",
+				"msn": "我听说你和亚历克斯在谈论什么恶作剧。",
+				"condition": "varObject('state', 'JokeAdvise') == true"
+			}]
+		},
+		"good2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "该死，被你发现了，真傻。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "但已经不好笑了，我们不会这么做的。"
+			}]
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true" 
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "看起来我到的太早了，现在还不能进去。我最好消磨一下时间。"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我刚到，还不能走。"
+			}]
+		}
+	}
+}

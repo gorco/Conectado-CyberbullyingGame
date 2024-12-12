@@ -1,0 +1,19 @@
+{
+    "creditsTitle":"制作人员",
+    "Manager":"项目经理",
+    "Design":"设计与开发",
+    "ArtManager":"艺术经理",
+    "ArtAndAnim":"艺术与动画",
+    "Idea":"原创概念",
+    "Thanks":"致谢",
+    "ThanksNames": "Victor Manuel Pérez Colado\n<size=30>感谢他出色的对话库</size>\n\nDan Cristian Rotaru\nIván José Pérez Colado\nLola Fernández Gutiérrez\n<size=30>感谢那次启动一切的编程马拉松</size>",
+    "BetaTesters":"测试人员",
+    "Localization": "本地化团队",
+    "Collaborators":"合作者",
+    "Schools":"教育机构\n<size=6>已参与游戏验证</size>",
+    "EspThanks":"特别感谢",
+    "Sponsors":"赞助商",
+    "thankyouText":"谢谢!",
+    "Frversion" : "法语",
+    "homescreenButton":"返回主屏幕"
+}

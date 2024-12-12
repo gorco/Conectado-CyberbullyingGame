@@ -1,0 +1,44 @@
+﻿{
+	"init":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "mobile",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') != 1"
+			}]
+		},
+		"mobile": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我找不到我的手机了。"
+			},
+			{
+				"tag": "你",
+				"msn": "上课时我把它放在桌子上了。"
+			},
+			{
+				"tag": "你",
+				"msn": "有人拿了吗？我还是问问周围的人吧。"
+			}]
+		},
+	},
+	"door": {
+		"root": {
+			"next": "changeHour",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:10",
+			}
+		},
+	}
+}

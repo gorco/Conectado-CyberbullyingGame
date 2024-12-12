@@ -1,0 +1,42 @@
+{
+	"alex": {
+		"root": {
+			"type": "dialog",
+			"next": "changeVar",
+			"fragments": [{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "真的吗？你打算不上厕所就直接走？"
+			},
+			{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "把它当作一个解决问题的机会吧，来吧……我陪你去。"
+			}]
+		},
+		"changeVar": {
+			"type": "event",
+			"next": "node2a",
+			"event": {
+				"name": "change variable",
+				"var": "Alex",
+				"value": true,
+			}
+		},
+		"node2a": {
+			"type": "event",
+			"next": "moveEvent",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"moveEvent": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "alejandro"
+			}
+		}
+	}
+}

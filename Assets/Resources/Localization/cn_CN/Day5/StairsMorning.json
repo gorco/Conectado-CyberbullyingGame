@@ -1,0 +1,83 @@
+{
+	"jose":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "true"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "哈哈哈……."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "我想谢谢你，亚历山大一直在拿我的体重开玩笑……"
+			},
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "直到你来了。我真的很高兴你在这里，小淘气鬼。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		}
+	},
+	"principalNote":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "字条",
+				"msn": "校长办公室。"
+			}]
+		}
+	},
+	"principalDoor":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "看起来里面没人。"
+			}]
+		}
+	},
+	"stairsToCorridor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"stairsToPlayground": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我应该直接去上课了。"
+			}]
+		}
+	}
+}

@@ -1,0 +1,131 @@
+﻿{
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $>，你迟到了。"
+			},{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "请坐，我们继续上课。"
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "You go and sit in the first empty desk you see, while everyone is looking at you."
+			}
+		},
+		"node3": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 10
+			}
+		}
+	},
+	"table":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "你",
+				"msn": "这个位置空着，我可以坐这里吗？"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "sitDownClass",
+			"options": [{
+				"next": "node2",
+				"msn": "是"
+			},
+			{
+				"msn": "否"
+			},
+			{
+				"next": "gum",
+				"msn": "看椅子",
+				"condition": "varObject('global', 'RepeatedNonStatic') == true"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "",
+				"msn": "（后面有敲门声，老师来了）"
+			}]
+		},
+		"gum": {
+			"type": "dialog",
+			"next": "noGum",
+			"fragments": [{
+				"tag": "你",
+				"msn": "上面粘着口香糖。"
+			},
+			{
+				"tag": "你",
+				"msn": "可能昨天也是这样，我还是把它弄掉再坐吧。"
+			}]
+		},
+		"noGum": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "change variable",
+				"var": "GumQuest",
+				"value": 2,
+			}
+		},
+		"node3": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "You all sit down and when you realize it's already break time."
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "nextScene",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:05",
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 10
+			}
+		}
+	}
+}

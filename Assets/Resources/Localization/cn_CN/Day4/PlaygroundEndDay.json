@@ -1,0 +1,80 @@
+{
+	"init": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "node1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},{
+				"next": "node2",
+				"condition": "true"
+			}]
+		},
+		"node1":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我夹克里有一张纸条……"
+			},
+			{
+				"tag": "你",
+				"msn": "“艾莉森拿了你的手机给了亚历克斯和安娜。（背面还有内容）。”"
+			},
+			{
+				"tag": "你",
+				"msn": "“她不得不告诉他们你的密码，否则就不还你手机。”（纸条结束）"
+			},
+			{
+				"tag": "你",
+				"msn": "现在我明白了今天早上是怎么回事。她也被威胁了吗？"
+			},
+			{
+				"tag": "你",
+				"msn": "该死，我没有设置解锁密码或图案。他们会拿我的手机做什么？"
+			},
+			{
+				"tag": "你",
+				"msn": "而且我今天见不到亚历克斯、安娜或艾莉森了。"
+			}]
+		},
+		"node2":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "下课了。该回家了。"
+			}]
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "今天没有课了，人也都走光了。"
+			},
+			{
+				"tag": "你",
+				"msn": "我还是回家吧。"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 21
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "15:00",
+			}
+		}
+	}
+}

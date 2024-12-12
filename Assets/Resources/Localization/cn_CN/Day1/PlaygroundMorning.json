@@ -1,0 +1,411 @@
+{
+	"guillermo":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "你是新来的吗？我以前没见过你。"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "GuillermoMeet",
+			"options": [{
+				"next": "node1a",
+				"msn": "是的，我是 <$ varObject('global', 'UserNameNonStatic') $>...。你是谁？"
+			},
+			{
+				"next": "node1b",
+				"msn": "抱歉，我有点急。（你离开了）。"
+			}]
+		},
+		"node1b": {
+			"type": "event",
+			"next": "bell",
+			"event": {
+				"name": "change friendship",
+				"var": "GuillermoFS",
+				"value": -10,
+			}
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "nodeFS",
+			"fragments": [{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "叫我吉列就行。"
+			},
+			{
+				"tag": "",
+				"msn": "<<铃声响了>>"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "我们该进去了，再见。"
+			}]
+		}, 
+		"nodeFS": {
+			"type": "event",
+			"next": "quest",
+			"event": {
+				"name": "change friendship",
+				"var": "GuillermoFS",
+				"value": 10,
+			}
+		},
+		"quest": {
+			"type": "event",
+			"next": "node2",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 1,
+			}
+		},
+		"node2": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "fade1",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		},
+		"fade1": {
+			"type": "event",
+			"next": "fade2",
+			"event": {
+				"name": "fade out",
+				"key": "alison"
+			}
+		},
+		"fade2": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "guillermo"
+			}
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<铃声响了>>"
+			}]
+		}
+	},
+	"jose":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "你回来了，还需要什么吗？"
+			}]
+		},
+		"node0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "你是新来的，对吧？"
+			},
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "你需要什么吗？"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "options",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "JoseMeet",
+			"options": [{
+				"next": "introduceFork",
+				"msn": "你好，我是 <$ varObject('global', 'UserNameNonStatic') $>.."
+			},
+			{
+				"next": "node2",
+				"msn": "（询问教室在哪里）。"
+			},
+			{
+				"next": "node3",
+				"msn": "我不需要什么了，待会见。"
+			}]
+		},
+		"introduceFork": {
+			"type": "fork",
+			"options": [{
+				"next": "know",
+				"condition": "introduced == true"
+			},
+			{
+				"next": "introducedSetter",
+				"condition": "true"
+			}]
+		},
+		"know": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "你已经告诉我你的名字了。"
+			}]
+		},
+		"introducedSetter":{
+			"type": "setter",
+			"next": "nodeFS",
+			"set": {
+				"var": "introduced",
+				"value": true
+			}
+		},
+		"nodeFS": {
+			"type": "event",
+			"next": "quest",
+			"event": {
+				"name": "change friendship",
+				"var": "JoseFS",
+				"value": 10,
+			}
+		},
+		"quest": {
+			"type": "event",
+			"next": "node1",
+			"event": {
+				"name": "change variable",
+				"var": "JoseQuest",
+				"value": 1,
+			}
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "我是何塞。"
+			},
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "你需要什么吗？"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "那也是我的教室，在二楼。你一进大楼就上右边的楼梯。"
+			}, 
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "一楼是校长办公室。"
+			},
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "你需要什么吗？"
+			}]
+		},
+		"node3": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "再见。"
+			}]
+		}
+	},
+	"alison":{
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "我认识你吗？"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "AlisonMeet",
+			"options": [{
+				"next": "nodeFS",
+				"msn": "我是<$ varObject('global', 'UserNameNonStatic') $>... 你呢？"
+			},
+			{
+				"next": "node2",
+				"msn": "不认识，不好意思，我有点急。再见。"
+			}]
+		},
+		"nodeFS": {
+			"type": "event",
+			"next": "alisonDialog",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFS",
+				"value": 10,
+			}
+		},
+		"alisonDialog": {
+			"type": "event",
+			"next": "node1",
+			"event": {
+				"name": "change variable",
+				"var": "AlisonDialog",
+				"value": true,
+			}
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "fork",
+			"fragments": [{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "很高兴认识你，我是艾莉森。"
+			},
+			{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "希望你在这里过得愉快，这里的人都很友善。"
+			},
+			{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "你是几年级的？"
+			},
+			{
+				"tag": "你",
+				"msn": "（你回答）"
+			},
+			{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "那课堂上再见了。"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "别害羞，我又不会咬人。"
+			},
+			{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "好了，再见。第一天过得愉快。"
+			}]
+		},
+		"fork": {
+			"type": "fork",
+			"options": [{
+				"next": "abierto",
+				"condition": "varObject('state', 'BellSounded') == true"
+			},
+			{
+				"next": "cerrado",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"abierto": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "我们该进去了，不然要迟到了。"
+			}]
+		},
+		"cerrado": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "操场入口旁边穿黄色衬衫的那个男孩也是我们班的。"
+			},
+			{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "他很好，你为什么不去和他说话呢？"
+			}]
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true"
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "看起来我到的有点早，不让进。我就在这里逛逛。"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我刚到，还不能走。"
+			}]
+		}
+	}
+}

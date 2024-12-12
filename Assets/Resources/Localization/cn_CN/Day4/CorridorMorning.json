@@ -1,0 +1,124 @@
+{
+	"board":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "看起来有人拍了昨天的照片。"
+			}]
+		}
+	},
+	"anaAndAlex":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "（他们看到了你但仍然忽略你。亚历克斯和安娜正在聊天）"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "我觉得“怪头船”和“小妖精”是最有创意的。"
+			},
+			{
+				"tag": "亚历克斯",
+				"character": "Alex",
+				"msn": "我一直很喜欢Outkast，"
+			},
+			{
+				"tag": "亚历克斯",
+				"character": "Alex",
+				"msn": "不过说真的，<$ varObject('global', 'UserNameNonStatic') $> “船头怪”听起来真的不错哈哈哈哈哈。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈哈哈哈，我们来看看何塞怎么想。"
+			}
+			{
+				"tag": "你",
+				"msn": "别害羞，继续无视我，然后想怎么给我起名字吧。"
+			}]
+		},
+		"node2": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "抱歉，我很赶时间。再不进去就迟到了。"
+			}]
+		}			
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我不能去那里，那是男生洗手间。"
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我不能去那里，那是女生洗手间。"
+			}]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		}
+	}
+}

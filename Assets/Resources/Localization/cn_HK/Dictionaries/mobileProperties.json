@@ -1,19 +1,19 @@
 ﻿{
-    "0":"Monday",
-    "1":"Tuesday",
-    "2":"Wednesday",
-    "3":"Thursday",
-    "4":"Friday",
-    "day":"Day",
-    "alarm":"Alarm",
-    "sleepMsn":"You are unable to sleep more. You should wake up now",
+    "0":"星期一",
+    "1":"星期二",
+    "2":"星期三",
+    "3":"星期四",
+    "4":"星期五",
+    "day":"日",
+    "alarm":"鬧鐘",
+    "sleepMsn":"你無辦法再瞓多陣。你現在應該醒啦",
 
-    "chatTextTitle":"CHATS",
-    "riskTitle":"Social Risk",
-    "friendshipTitle":"Friendships",
+    "chatTextTitle":"聊天室",
+    "riskTitle":"社交風險",
+    "friendshipTitle":"友誼",
 
-    "exitGameButton":"Exit Game",
-    "warningText":"Game will close. \n Are you sure?",
-    "YesText":"Yes",
-    "NoText":"No"
+    "exitGameButton":"離開遊戲",
+    "warningText":"遊戲會閂. 你肯定嗎?",
+    "YesText":"係",
+    "NoText":"唔係"
 }

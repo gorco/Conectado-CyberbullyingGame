@@ -1,0 +1,23 @@
+{
+    "homeNote":"这是您的控制面板，看看您的朋友分享了什么?",   
+    "homeButton":"控制面板",
+    "friendsButton":"朋友",
+    "photosButton":"发布",
+
+    "newFriendsText":"您有新的好友申请！",
+
+    "error":"输入的用户名/密码不正确",
+    "user":"用户",
+    "pass":"密码",
+    "logInText":"输入",
+    
+    "friendsText":"朋友",
+    "pendingFriendsText":"等待请求",
+    "logoText":"跟你既朋友接通知!",
+
+    "acceptButton":"接受",
+    "denyButton":"否认",
+    "commentsText":"评论",
+	"ReportButton": "举报相片",
+	"ReportButton(Clone)": "举报相片"
+}

@@ -1,0 +1,313 @@
+{
+	"maria":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "secondGood",
+				"condition": "normal == true"
+			},
+			{
+				"next": "secondBad",
+				"condition": "freak == true"
+			},
+			{
+				"next": "first",
+				"condition": "true"
+			}]
+		},
+		"secondGood": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "我正在看书，我们下次聊吧。"
+			}]
+		},
+		"secondBad": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "..."
+			},{
+				"tag": "玛丽亚",
+				"msn": "她好像在忽略我。"
+			}]
+		},
+		"first": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "你需要点什么吗？"
+			}]
+		},
+		"node1": {
+			"type": "options",
+			"questionId": "MariaMeetFirstOpt",
+			"options": [{
+				"next": "setterBad",
+				"msn": "不需要，再见。"
+			},
+			{
+				"next": "node2",
+				"msn": "你为什么一个人在这里，而不是在操场上？"
+			}]
+		},		
+		"setterBad":{
+			"type": "setter",
+			"set": {
+				"var": "freak",
+				"value": true
+			}
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "node3",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "我宁愿在这里安静地看书。"
+			}]
+		},
+		"node3": {
+			"type": "options",
+			"questionId": "MariaMeetSecondOpt",
+			"options": [{
+				"msn": "好好享受吧，再见（真是个怪人）。"
+			},
+			{
+				"next": "node4",
+				"msn": "你不喜欢和朋友们一起在操场上吗？"
+			}]
+		},	
+		"quest2": {
+			"type": "event",
+			"next": "nodeFS2",
+			"event": {
+				"name": "change variable",
+				"var": "MariaoQuest",
+				"value": 1,
+			}
+		},
+		"nodeFS2": {
+			"type": "event",
+			"next": "setterBad",
+			"event": {
+				"name": "change friendship",
+				"var": "MariaFS",
+				"value": -10,
+			}
+		},
+		"node4": {
+			"type": "dialog",
+			"next": "node5",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "你问这么多问题，有点烦人了。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "我没有朋友，他们认为我是个怪人。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "你现在可以离开了。"
+			}]
+		},
+		"node5": {
+			"type": "options",
+			"questionId": "MariaMeetThirdOpt",
+			"options": [{
+				"next": "node6",
+				"msn": "（留下）"
+			},
+			{
+				"msn": "（离开）"
+			}]
+		},
+		"node6": {
+			"type": "dialog",
+			"next": "quest1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "你在我眼里可不像个怪人。"
+			},
+			{
+				"tag": "你",
+				"msn": "我现在要去操场了，如果你想一起来，我在楼下等你。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "谢谢，你真好。"
+			}, 
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "但今天我要留在这里，我快要看完这本书了。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "在楼下玩得开心，避开亚历克斯，他是个笨蛋。"
+			}]
+		},
+		"quest1": {
+			"type": "event",
+			"next": "nodeFS1",
+			"event": {
+				"name": "change variable",
+				"var": "MariaQuest",
+				"value": 1,
+			}
+		},
+		"nodeFS1": {
+			"type": "event",
+			"next": "setterGood",
+			"event": {
+				"name": "change friendship",
+				"var": "MariaFS",
+				"value": 20,
+			}
+		},
+		"setterGood":{
+			"type": "setter",
+			"set": {
+				"var": "normal",
+				"value": true
+			}
+		},
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"next": "alisonMove",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"alisonMove": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "little move",
+				"key": "alison"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:20",
+			}
+		},
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我不能去那里，那是男厕所。"
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我不能去那里，那是女厕所。"
+			}]
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "dialog",
+			"next": "options",
+			"fragments": [{
+				"tag": "你",
+				"msn": "如果我进去后老师出现了，我就出不来了。"
+			}]
+		},
+		"options": {
+			"type": "options",
+			"questionId": "endBreak",
+			"options": [{
+				"next": "black",
+				"msn": "（不管怎样都进去）。"
+			},
+			{
+				"msn": "我还是再去散步吧。"
+			}]
+		},
+		"black": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "一进门，铃声就响了，老师也出现了。但你没有注意到上午的课已经结束了，是该回家的时候了……"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "enter",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:02",
+			}
+		},
+		"enter": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "endDay"
+			}
+		}
+	}
+}

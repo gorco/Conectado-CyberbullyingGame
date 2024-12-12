@@ -1,0 +1,233 @@
+{
+	"alison":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "走开，我们没什么好说的。"
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "如果你信任我，这一切都不会发生。这是你的错。"
+			}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "You deserve what have happened."
+			},
+			{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "你把密码给我的时候在想什么？"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		}
+	},
+	"ana":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh2",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈哈，落伍的家伙。"
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "看看谁来了，我还以为你今天不会来了呢。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "还没手机吗？哈哈哈，如果你仔细找找，其实也不难找到。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "真是个混蛋……"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你从哪儿冒出来的？哈哈哈。"
+			}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "我不敢相信你把密码给了艾莉森。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你真的以为她会成为你的朋友吗？我不敢相信竟然这么简单。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈哈！！！说真的，我都要被你逗笑了。"
+			}]
+		},
+		"sh2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈哈！！！我不敢相信你的手机没有设置锁屏图案。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "我还以为会更难一些……"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "今天真有意思。现在大家都觉得你是个 <$ if(varObject('global', 'MaleSexNonStatic')==true, 'fucking poof who likes it all', 'fucking vicious whore') $>。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "bell",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		},
+		"bell": {
+			"type": "dialog",
+			"next": "bellEvent",
+			"fragments": [
+			{
+				"tag": "",
+				"msn": "<<铃声响起>>"
+			}]
+		},
+		"bellEvent": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change state",
+				"key": "ExitDoorByBell",
+				"var": "BellSounded",
+				"value": true,
+				"state": 0
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:30",
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "enterNode",
+				"condition": "varObject('state', 'BellSounded') == true" 
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BellSounded') == false"
+			}]
+		},
+		"enterNode": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "",
+				"msn": "看来我早到了，现在还不能进去。我还是消磨一下时间吧。"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我刚到。我还不能走。"
+			}]
+		}
+	}
+}

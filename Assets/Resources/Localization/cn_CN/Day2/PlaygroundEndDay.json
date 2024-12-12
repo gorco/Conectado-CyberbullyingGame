@@ -1,0 +1,103 @@
+{
+	"schoolEnter": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "今天没有课了，而且这里也没人了。"			
+			},
+			{
+				"tag": "你",
+				"msn": "我最好还是回家吧。"
+			}]
+		}
+	},
+	"guille":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "别听他们的，回家吧，明天又是新的一天。"
+			}]
+		},
+	},
+	"laugh": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "（笑声）",
+				"msn": "哈哈哈哈"
+			}]
+		},
+	},
+	"globalLaugh": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "wash",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 1"
+			},
+			{
+				"next": "notGum",
+				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
+			}
+			{
+				"next": "notWash",
+				"condition": "true"
+			}]
+		},
+		"notGum": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "notGum"
+			}
+		},
+		"wash": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "（笑声）",
+				"msn": "哈哈哈哈"
+			},
+			{
+				"tag": "（笑声）",
+				"msn": "真是个黑历史，<$ varObject('global', 'UserNameNonStatic') $>，看起来你拉裤子了。"
+			}]
+		},
+		"notWash": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "（笑声）",
+				"msn": "哈哈哈哈"
+			},
+			{
+				"tag": "（笑声）",
+				"msn": "你应该洗衣服了。"
+			},
+			{
+				"tag": "（笑声）",
+				"msn": "不管你穿多少次那块口香糖，它都不会成为潮流。"
+			}]
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 11
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "15:00",
+			}
+		}
+	}
+}

@@ -1,0 +1,149 @@
+{
+	"guilleAndAlison": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "found",
+				"condition": "true"
+			}]
+		},
+		"repeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "..."
+			}]
+		},
+		"found": {
+			"type": "options",
+			"questionId": "GuilleAlisonAskMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "你知道是谁拿了我的手机然后把它放在厕所里的吗？",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			},
+			{
+				"next": "node1b",
+				"msn": "有人知道我的手机在哪吗？有人把它拿走了。",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "setter",
+				"msn": "我想你现在不想和我说话……那我就先走了。",
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "我们不会告发他们，但我想你已经猜到是谁了。"
+			},
+			{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "*嘘嘘嘘嘘*"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "*嘘嘘嘘嘘*"
+			}]
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "..."
+			},
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "对不起，我们不知道。"
+			},
+			{
+				"tag": "你",
+				"msn": "谢谢你，吉列尔莫。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		}
+	},
+	"principalNote":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "纸条",
+				"msn": "校长办公室。"
+			}]
+		}
+	},
+	"principalDoor":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "看起来里面没人。"
+			}]
+		}
+	},
+	"stairsToCorridor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"stairsToPlayground": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "endDay",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "break",
+				"condition": "true"
+			}]
+		},
+		"break": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "playground"
+			}
+		},
+		"endDay": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "endDay"
+			}
+		}
+	}
+}

@@ -1,0 +1,185 @@
+{
+	"parents": {
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "repeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "checkFS",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"repeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "妈妈",
+				"character": "Mother",
+				"msn": "保重，小心些。",
+			}, 
+			{
+				"tag": "爸爸",
+				"character": "Father",
+				"msn": "还有，记住我们星期天要去看奶奶。"
+			}]
+		},
+		"checkFS": {
+			"type": "fork",
+			"options": [{
+				"next": "meeting",
+				"condition": "varObject('global', 'ParentsFSNonStatic') >= 80"
+			},
+			{
+				"next": "repeat",
+				"condition": "true"
+			}]
+		},
+		"meeting": {
+			"type": "dialog",
+			"next": "meetingVar",
+			"fragments": [{
+				"tag": "妈妈",
+				"character": "Mother",
+				"msn": "我们决定去和你的老师谈谈，看看发生了什么。"
+			}, 
+			{
+				"tag": "爸爸",
+				"character": "Father",
+				"msn": "我们打算要求明天见面。"
+			}]
+		},		
+		"meetingVar": {
+			"type": "event",
+			"next": "options",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 1,
+			}
+		},
+		"options": {
+			"type": "options",
+			"questionId": "parentsMeetingMorninOption",
+			"options": [{
+				"next": "node1a",
+				"msn": "Thanks."
+			},
+			{
+				"next": "node1b",
+				"msn": "It'll be worse..."
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "changeVariable",
+			"fragments": [{
+				"tag": "妈妈",
+				"character": "Mother",
+				"msn": "完全不是那样的，亲爱的，我们希望你好好的。"
+			}, 
+			{
+				"tag": "爸爸",
+				"character": "Father",
+				"msn": "我们最迟明天要安排这次会面。"
+			}]
+		},
+		"changeVariable": {
+			"type": "event",
+			"next": "repeat",
+			"event": {
+				"name": "change variable",
+				"var": "ParentsMeetingQuest",
+				"value": 2,
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "repeat",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我不想你们去。那样会更糟。"
+			},
+			{
+				"tag": "你",
+				"msn": "他们会认为我是告密的人，而且其实这也不是什么大事。"
+			}, 
+			{
+				"tag": "你",
+				"msn": "别管了，时间会解决一切的。"
+			},
+			{
+				"tag": "爸爸",
+				"character": "Father",
+				"msn": "好吧，但如果事情变得更糟，一定要告诉我们。"
+			}]
+		}
+	},
+	"exitDoor": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "changeHourSoon",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') < 8"
+			},{
+				"next": "changeHourLate",
+				"condition": "varObject('state', 'BagPicked') == true && varObject('global', 'HourNonStatic') >= 8 "
+			},
+			{
+				"next": "dialogNode",
+				"condition": "varObject('state', 'BagPicked') == false"
+			}]
+		},
+		"changeHourLate": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:40",
+			}
+		},
+		"changeHourSoon": {
+			"type": "event",
+			"next": "exitNode",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "8:20",
+			}
+		},
+		"exitNode": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 19
+			}
+		},
+		"dialogNode": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我忘了背包。我最好回房间拿一下再出门。"
+			}]
+		}
+	},
+	"bedroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bedroom"
+			}
+		}
+	}
+}

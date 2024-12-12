@@ -1,0 +1,226 @@
+{
+	"alex":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},
+			{
+				"next": "sh1",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 1"
+			},
+			{
+				"next": "sh2",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 2"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "下课后，记得来卫生间找我。"
+			},
+			{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'I will be there', 'Ana will be waiting there') $>."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "看来你需要一个新手机了，对吧？"
+			},
+			{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "我希望你不要再把它弄丢了，或者被别人拿走了。"
+			}]
+		},
+		"sh1": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "看看你在“Conectado”上的帖子，对吧？"
+			},
+			{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "我没想到你会发这些，感觉都不像是你写的。"
+			}]
+		},
+		"sh2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "看看你的聊天评论。Surface，你让我们所有人都很惊讶。"
+			},
+			{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "我没想到会是你。感觉都不像是你写的，哈哈哈哈哈。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"next": "end",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		},
+		"end": {
+			"type": "dialog",
+			"next": "default",
+			"fragments": [
+			{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "好了，我觉得够了。"
+			},
+			{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "我们来做点什么吧。下课后，我们找个没人能听到的地方谈谈。"
+			},
+			{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "我们聊聊，你道个歉，然后我们就放你一马。"
+			},
+			{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "安娜和我不会再来烦你，其他人想干嘛就干嘛。"
+			}]
+		},
+	},
+	"guille":{
+		"root": {
+			"type": "fork",
+			"options": [
+			{
+				"next": "default",
+				"condition": "talk == true"
+			},
+			{
+				"next": "sh0",
+				"condition" : "true"
+			}]
+		},
+		"default": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "..."
+			}]
+		},
+		"sh0": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "我没什么可跟你说的。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "talk",
+				"value": true
+			}
+		}
+	},
+	"maleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"male": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"female": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我不能去那里，那是男生卫生间。"
+			}]
+		}
+	},
+	"femaleBathroom": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "male",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "female",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"female": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "bathroom"
+			}
+		},
+		"male": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我不能去那里，那是女生卫生间。"
+			}]
+		}
+	},
+	"doorToStairs": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"classDoor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classBack"
+			}
+		}
+	}
+}

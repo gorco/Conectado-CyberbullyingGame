@@ -1,0 +1,37 @@
+﻿{
+	"bathroomExit": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"mobile":{
+		"root": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [
+			{
+				"tag": "你",
+				"msn": "这是我的手机。"
+			},{
+				"tag": "你",
+				"msn": "是谁拿走了并把它留在了 <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' 卫生间里？"
+			},
+			{
+				"tag": "你",
+				"msn": "靠，它开不了机了。希望只是电池的问题。我一回家就换电池。"
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "SharedPassQuest",
+				"value": 2
+			}
+		}
+	}
+}

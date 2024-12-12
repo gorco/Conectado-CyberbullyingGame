@@ -1,0 +1,57 @@
+﻿{
+	"alejandro":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "我们没什么好谈的。"
+			},
+			{
+				"tag": "亚历山大",
+				"character": "Alex",
+				"msn": "你为什么不去找安娜和何塞？他们在操场上等你。"
+			},
+			{
+				"tag": "",
+				"msn": "（微笑着指向教室的门）"
+			}]
+		}
+	},
+	"door": {
+		"root": {
+			"next": "changeHour",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next": "anaFS",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "11:10",
+			}
+		},
+		"anaFS": {
+			"type": "event",
+			"next": "joseFS",
+			"event": {
+				"name": "change friendship",
+				"var": "AnaFS",
+				"value": -10,
+			}
+		},
+		"joseFS": {
+			"type": "event",
+			"event": {
+				"name": "change friendship",
+				"var": "JoseFS",
+				"value": -10,
+			}
+		}
+	}
+}

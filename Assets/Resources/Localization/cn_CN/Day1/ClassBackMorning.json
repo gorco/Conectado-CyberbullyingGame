@@ -1,0 +1,197 @@
+﻿{
+	"class":{
+		"root": {
+				"type": "fork",
+				"options": [{
+					"next": "minutes",
+					"condition": "varObject('global', 'HourNonStatic') >= 8"
+				}]
+		},
+		"minutes": {
+				"type": "fork",
+				"options": [{
+					"next": "node1",
+					"condition": "varObject('global', 'MinuteNonStatic') > 30"
+				}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $> 对吧？"
+			},{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "开学第一天就迟到可不是一个好的开始。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "同学们, 这是你们的新同学,请在前几天里帮帮<$ if(varObject('global', 'MaleSexNonStatic')==true, '他', '她') $>。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "<$ varObject('global', 'UserNameNonStatic') $>，我是你的老师，如果你需要什么，就告诉我。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "请<$ varObject('global', 'UserNameNonStatic') $> 坐在艾莉森的旁边。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "艾莉森，帮我一下，解答一下<$ varObject('global', 'UserNameNonStatic') $>对学校的任何疑问。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "我们继续上课吧。"
+			}]
+		},
+		"node2": {
+			"type": "event",
+			"next": "node3",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "You go and sit in your place while everyone is looking at you."
+			}
+		},
+		"node3": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classFront"
+			}
+		}
+	},
+	"ana":{
+		"root": {
+			"type": "dialog",
+			"next": "quest",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "我想你走错教室了。"
+			}]
+		},
+		"quest": {
+			"type": "event",
+			"next": "node1",
+			"event": {
+				"name": "change variable",
+				"var": "AnaQuest",
+				"value": 1,
+			}
+		},
+		"node1": {
+			"type": "options",
+			"questionId": "meetAna",
+			"options": [{
+				"next": "node1a",
+				"msn": "不，这只是我的第一天，我是<$ varObject('global', 'UserNameNonStatic') $>。"
+			},
+			{
+				"next": "node1b",
+				"msn": "那你是谁？班上的假小子吗？"
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "node2",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哦，所以你就是新来的。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "我是安娜，我也在这个班。"
+			}]
+		},
+		"node1b": {
+			"type": "dialog",
+			"next": "nodeFS",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你真是个笨蛋……"
+			}]
+		},
+		"nodeFS":{
+			"type": "event",
+			"next": "node2",
+			"event": {
+				"name": "change friendship",
+				"var": "AnaFS",
+				"value": -20,
+			}
+		},
+		"node2": {
+			"type": "dialog",
+			"next": "nodeTeacher",
+			"fragments": [{
+				"tag": "",
+				"msn": "（背景噪音，似乎你的新老师已经到了）"
+			}]
+		},
+		"nodeTeacher": {
+			"type": "dialog",
+			"next": "nodeSit",
+			"fragments": [{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "大家快来，快要上课了，进来坐好。"
+			}]
+		},
+		"nodeSit": {
+			"type": "options",
+			"questionId": "sitFirstDay",
+			"options": [{
+				"next": "node3a",
+				"msn": "（坐在最后一排）"
+			},
+			{
+				"next": "node3b",
+				"msn": "（问你可以坐在哪里）"
+			}]
+		},
+		"node3a": {
+			"type": "event",
+			"next": "node4",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "Everyone sits down, the lesson is starting."
+			}
+		},
+		"node4": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "classFront"
+			}
+		},
+		"node3b": {
+			"type": "dialog",
+			"next": "node3a",
+			"fragments": [{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "坐在艾莉森的旁边。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "艾莉森，帮我一下，解答一下<$ varObject('global', 'UserNameNonStatic') $>对学校的任何疑问。"
+			}]
+		},
+	}
+}
