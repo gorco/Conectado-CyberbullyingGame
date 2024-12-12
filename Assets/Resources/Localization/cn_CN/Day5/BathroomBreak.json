@@ -1,0 +1,542 @@
+﻿{
+	"init":{
+		"root":{
+			"type": "dialog",
+			"next": "lightOff",
+			"fragments": [{
+				"tag": "你",
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Mmm, what is going on Alex? Why are you still here?', 'Ana, are you here?') $>"
+			}]
+		},
+		"lightOff": {
+			"type": "event",
+			"next": "lightOn",
+			"event": {
+				"name": "active object",
+				"time": 3,
+			}
+		},
+		"lightOn": {
+			"type": "event",
+			"event": {
+				"name": "deactive object",
+				"time": 30,
+			}
+		},
+	},
+	"bathroomExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "怎么回事？门打不开。"
+			},
+			{
+				"tag": "你",
+				"msn": "他们把我锁在浴室里了吗？安娜！！！亚历山大！！有人吗！！"
+			},
+			{
+				"tag": "你",
+				"msn": "我现在该怎么办？我得离开这里。"
+			}]
+		}
+	},
+	"light" : {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "灯。不是吧？"
+			},
+			{
+				"tag": "你",
+				"msn": "我得离开这里。"
+			}]
+		}
+	},
+	"door": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "这是门闩，但是打不开。"
+			},
+			{
+				"tag": "你",
+				"msn": "他们真的把我锁在厕所里了吗？安娜！！！亚历山大！！有人吗！！"
+			}]
+		}
+	},
+	"sinks": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "啊！！我刚撞到水槽了。他妈的！！"
+			}]
+		}
+	},
+	"floor": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "这里湿了...但这是地板。"
+			},
+			{
+				"tag": "你",
+				"msn": "啊！！千万别是尿..."
+			}]
+		}
+	},
+	"onAgain": {
+		"root": {
+			"type": "dialog",
+			"next": "teacher",
+			"fragments": [{
+				"tag": "你",
+				"msn": "灯亮了！！我能听到走廊里有声音。我本应该已经出去了。"
+			}]
+		},
+		"teacher": {
+			"type": "event",
+			"next": "tDialog",
+			"event": {
+				"name": "little move",
+				"key": "teacher"
+			}
+		},
+		"tDialog": {
+			"type": "dialog",
+			"next": "forkEnd",
+			"fragments": [{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "你怎么会被锁在这里"
+			}]
+		},
+		"forkEnd": {
+			"type": "fork",
+			"options": [{
+				"next": "goodFinalByParents",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') == 2 && varObject('global', 'ParentsFSNonStatic') >= 80"
+			},
+			{
+				"next": "parentsMeetingNoFS",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') == 2 && varObject('global', 'ParentsFSNonStatic') < 80"
+			},
+			{
+				"next": "parentsNoMeetingNoFS",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') < 2 && varObject('global', 'ParentsFSNonStatic') < 80"
+			},
+			{
+				"next": "parentsNoMeetingFS",
+				"condition": "varObject('global', 'ParentsMeetingQuestNonStatic') < 2 && varObject('global', 'ParentsFSNonStatic') >= 80"
+			}]
+		},
+		"goodFinalByParents": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "今天我跟你父母开了个会，他们把一切都告诉我了。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "你本可以直接告诉我的。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "我猜是亚历山大把你锁在厕所里的对吧？"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "他将被停学三天。如果他回来后还继续骚扰你，你必须告诉我。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "如果他再这样，我们会开除他，甚至报警并采取法律行动。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "回家吧，休息一下。"
+			}]
+		},
+		"parentsMeetingNoFS": {
+			"type": "options",
+			"questionId": "TeacherTattle",
+			"options": [{
+				"next": "tattleAndMeeting",
+				"msn": "（告诉老师亚历山大对你做过的一切）"
+			},
+			{
+				"next": "noTattleAndMeeting",
+				"msn": "我不知道发生了什么。"
+			}]
+		},
+		"tattleAndMeeting": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "你为什么早点不告诉我？"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "而且，今天我跟你父母开了个会，我们谈过了。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "根据你告诉我的一切……我会跟校长说，让亚历山大停学三天。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "如果他继续骚扰你，无论是在现实中还是在社交媒体上，都告诉我。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "如果他再这样，我们可以永久开除他，甚至报警并采取法律行动。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "回家吧，休息一下。"
+			}]
+		},
+		"noTattleAndMeeting": {
+			"type": "fork",
+			"options": [{
+				"next": "mariaAndMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') >= 60"
+			},
+			{
+				"next": "noMariaAndMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') < 60"
+			}]
+		},
+		"mariaAndMeeting": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "你确定吗？"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "我跟你父母开了个会，看来你和亚历山大之间有些问题。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "还有，玛丽亚和学校辅导员来找我，说亚历山大在欺负你。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "你不需要隐瞒任何事情，寻求帮助并不是告密。亚历山大的行为表明他需要受到惩罚。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "我们决定让亚历山大停学三天。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "如果他再这样，我们可以永久开除他，甚至报警并采取法律行动。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "回家吧，休息一下。"
+			}]
+		},
+		"noMariaAndMeeting": {
+			"type": "dialog",
+			"next": "final2",
+			"fragments": [
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "今天我跟你父母开了个会，他们很担心。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "如果你和任何同学有矛盾，你应该告诉我或学校辅导员。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "如果你拒绝我们的帮助，事情可能会变得更糟。
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "无论如何，你不应该被嘲笑和讥讽。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "如果这种情况正在发生，寻求帮助，否则事情不会改变。"
+			}]
+		},
+		"parentsNoMeetingNoFS": {
+			"type": "options",
+			"questionId": "TeacherTattle",
+			"options": [{
+				"next": "tattleAndNoMeeting",
+				"msn": "（告诉老师亚历山大对你做过的一切）"
+			},
+			{
+				"next": "noTattleAndNoMeeting",
+				"msn": "我不知道发生了什么。"
+			}]
+		},
+		"tattleAndNoMeeting": {
+			"type": "fork",
+			"options": [{
+				"next": "mariaAndNoMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') >= 60"
+			},
+			{
+				"next": "noMariaAndNoMeeting",
+				"condition": "varObject('global', 'MariaFSNonStatic') < 60"
+			}]
+		},
+		"mariaAndNoMeeting": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "你之前为什么不告诉我？"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "还有，玛丽亚和学校辅导员也来告诉我了，你说的那些情况。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "她很关心你，我们都需要像她这样的朋友。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "亚历山大的行为应该受到惩罚，你告诉了我一切，这很重要。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "这不是你的错，你也不应该承受这些。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "我们决定让亚历山大停学三天。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "如果他再这样，我们可以永久开除他，甚至报警并采取法律行动。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "回家去吧，休息一下。"
+			}]
+		},
+		"noMariaAndNoMeeting": {
+			"type": "dialog",
+			"next": "final2",
+			"fragments": [
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "我会跟你父母谈谈这件事。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "如果你和亚历山大还有矛盾，来告诉我，明天我会训斥他。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "说出来很重要，时间不会自己改变一切。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "无论如何，你不应该被嘲笑和讥讽。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "只有寻求帮助，事情才会有所改变，否则可能会变得更糟。"
+			}]
+		},
+		"noTattleAndNoMeeting": {
+			"type": "dialog",
+			"next": "final1",
+			"fragments": [
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "你确定一切都好吗？"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "那好吧，回家吧。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "但记住：如果你和任何人有矛盾而不寻求帮助，事情肯定会变得更糟。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "无论如何，你不应该被嘲笑和讥讽。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "只有寻求帮助，事情才会有所改变。"
+			}]
+		},
+		"parentsNoMeetingFS": {
+			"type": "options",
+			"questionId": "TeacherTattle",
+			"options": [{
+				"next": "tattle",
+				"msn": "（告诉老师亚历山大对你做过的一切）"
+			},
+			{
+				"next": "noTattle",
+				"msn": "我不知道发生了什么。"
+			}]
+		},
+		"tattle": {
+			"type": "dialog",
+			"next": "final3",
+			"fragments": [
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "你之前为什么不告诉我这些？"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "我会打电话给你父母谈谈这件事。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "我们会看看能对亚历山大采取什么措施。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "我会试着让他停学三天。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "如果发生什么事，不要犹豫，告诉我或学校辅导员。"
+			},
+			{
+				"tag": "Teacher",
+				"character": "Teacher",
+				"msn": "回家吧，休息一下。"
+			}]
+		},
+		"noTattle": {
+			"type": "dialog",
+			"next": "final1",
+			"fragments": [
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "你确定一切都好吗？"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "好吧，回家吧。但记住……"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "如果有人嘲笑你，就告诉我或学校辅导员。"
+			},
+			{
+				"tag": "老师",
+				"character": "Teacher",
+				"msn": "寻求帮助，事情不会自己变好，只会变得更糟。"
+			}]
+		},
+		"final1": {
+			"type": "event",
+			"next": "end",
+			"event": {
+				"name": "change variable",
+				"var": "Final",
+				"value": 1,
+			}
+		},
+		"final2": {
+			"type": "event",
+			"next": "end",
+			"event": {
+				"name": "change variable",
+				"var": "Final",
+				"value": 2,
+			}
+		},
+		"final3": {
+			"type": "event",
+			"next": "end",
+			"event": {
+				"name": "change variable",
+				"var": "Final",
+				"value": 3,
+			}
+		},
+		"end": {
+			"type": "event",
+			"next": "changeScene",
+			"event": {
+				"name": "black",
+				"synchronous": true,
+				"var": "text",
+				"value": "You go back home and sleep earlier today. As usual, it's dream time..."
+			}
+		},
+		"changeScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 27
+			}
+		}
+	},
+}

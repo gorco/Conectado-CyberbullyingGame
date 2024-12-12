@@ -1,23 +1,23 @@
 {
-    "homeNote":"This is your dashboard, look what your friends have shared",   
-    "homeButton":"Dashboard",
-    "friendsButton":"Friends",
-    "photosButton":"Publish",
+    "homeNote":"呢個係你既儀錶板，睇吓你既朋友分享咗乜野?",   
+    "homeButton":"儀錶板",
+    "friendsButton":"朋友",
+    "photosButton":"發佈",
 
-    "newFriendsText":"You've got new friend petitions!",
+    "newFriendsText":"您收到了新朋友既請求！",
 
-    "error":"User/Password introduced are incorrect",
-    "user":"User",
-    "pass":"Password",
-    "logInText":"Enter",
+    "error":"用戶/密碼唔正確",
+    "user":"用戶",
+    "pass":"密碼",
+    "logInText":"輸入",
     
-    "friendsText":"Friends",
-    "pendingFriendsText":"Pending petitions: ",
+    "friendsText":"朋友",
+    "pendingFriendsText":"待候請求",
     "logoText":"CONNECT WITH YOUR FRIENDS!",
 
-    "acceptButton":"Accept",
-    "denyButton":"Deny",
-    "commentsText":"Comments",
-	"ReportButton": "Report\n Photo",
-	"ReportButton(Clone)": "Report\n Foto"
+    "acceptButton":"接受",
+    "denyButton":"否認",
+    "commentsText":"評論",
+	"ReportButton": "舉報相",
+	"ReportButton(Clone)": "舉報相"
 }

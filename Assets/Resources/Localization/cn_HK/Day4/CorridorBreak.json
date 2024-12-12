@@ -244,7 +244,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "As soon as you get in, the bell rings and the teacher appears. You did not notice but the morning is over. It's time to go home..."
+				"value": "當你入去既時侯，鐘聲響起而老師出現。你唔察覺但朝早已完，係時侯返屋企…"
 			}
 		},
 		"changeHour": {

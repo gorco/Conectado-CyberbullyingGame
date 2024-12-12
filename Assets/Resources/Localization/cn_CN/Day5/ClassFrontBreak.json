@@ -1,0 +1,37 @@
+﻿{
+	"init":{
+		"root":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "大家都走了。"
+			},
+			{
+				"tag": "你",
+				"msn": "我应该相信亚历山大，然后去卫生间找('global', 'MaleSexNonStatic')==true, 'him', 'Ana') $>吗？"
+			},
+			{
+				"tag": "你",
+				"msn": "如果我去了，这是否意味着一切都能一次性解决？"
+			}]
+		}
+	},
+	"door": {
+		"root": {
+			"next": "changeHour",
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "14:08",
+			}
+		}
+	}
+}

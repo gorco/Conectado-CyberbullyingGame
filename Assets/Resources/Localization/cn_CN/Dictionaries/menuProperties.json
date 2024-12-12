@@ -1,0 +1,28 @@
+{
+	"playButton": "播放",
+    "creditsButton": "制作人员",
+    "exitButton":"退出",
+
+    "sessionText":"会话密钥",
+    "inputSession": "输入会话密钥",
+    
+    "userInfoTitle": "与您的朋友保持联络！",
+    "nameText":"姓名",
+    "nameField":"你的姓名",
+    "userText":"用戶",
+    "userField":"您的用户名",
+    "passText":"密码",
+    "passField":"你的密码",
+    "errorText":"请在开始之前填写所有空白",
+    "nameLengthError":"您的姓名不能超过10个英文字符",
+    "spaceError":"您的用户名和密码不能包含空格",
+    "userpasswordLengthError":"您的用户名和密码不能超过16个字符",
+    "nameError":"请填写您的姓名",
+    "userError":"请填写您的用户名",
+    "passwordError":"请填写密码",
+    "genderError":"您需要选择性别",
+    "startButton":"开始",
+    "backButton":"返回",
+    "adviseTitle":"重要提示！",
+    "adviseText":"不要提交您已经使用的密码。请设置一个新的密码。它仅在游戏内使用。"
+}

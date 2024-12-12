@@ -14,6 +14,11 @@
   "EspThanks": "Remerciements particuliers \n",
   "Sponsors": "Sponsors",
   "thankyouText": "MERCI!",
-  "Frversion" : "Textes en Français",
+  "Fr_version" : "Textes en Français",
+  "Br_version": "Textes en Portugais Brésilien",
+  "Cn_version": "Textes en Chinois Simplifié",
+  "Hk_version": "Textes en Chinois Traditionnel",
+  "Cn_names": "Ying Lau \n Yu Shi \n Hin Henry Chan \n Issac Lu",
+  "Hk_names": "Ying Lau \n Hin Henry Chan \n Issac Lu",
   "homescreenButton": "Retour à l'écran d'accueil"
 }

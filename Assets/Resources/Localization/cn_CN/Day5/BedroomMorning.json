@@ -1,0 +1,155 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "得走了。"
+			}]
+		}		
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我现在不需要这里任何东西。"
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "..."
+			}]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我把东西都带上，然后离开。"
+			}]
+		},
+		"node1": {
+			"type": "event",
+			"event": {
+				"name": "pick",
+				"var": "BagPicked",
+				"value": true
+			}
+		},
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "电脑",
+				"msn": "你想打开电脑吗？"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"options": [{
+				"next": "node1a",
+				"msn": "是"
+			},
+			{
+				"next": "node1b",
+				"msn": "否"
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "它开不了机，是坏了吗？"
+			}]
+		},	
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "最好还是别管它，去上课吧。"
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我要不要把手机留下充电？"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "是"
+			},
+			{
+				"next": "node1b",
+				"msn": "否"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"next": "fork",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		},
+		"fork": {
+			"type": "fork",
+			"options": [{
+				"next": "parentsGo",
+				"condition": "repeated == true"
+			}]
+		},
+		"parentsGo": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "你",
+				"msn": "爸爸妈妈已经走了。我下午会见到他们。"
+			}]
+		},	
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "repeated",
+				"value": true
+			}
+		},
+	}
+}

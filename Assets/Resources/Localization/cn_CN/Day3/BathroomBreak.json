@@ -1,0 +1,228 @@
+﻿{
+	"bathroomExit": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"guille":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "setter",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "我真的很抱歉，说真的，但我父母不能知道这件事。"
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"next": "sexFork",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"sexFork": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeMale",
+				"condition": "varObject('global', 'MaleSexNonStatic') == true"
+			},
+			{
+				"next": "nodeFemale",
+				"condition": "varObject('global', 'MaleSexNonStatic') == false"
+			}]
+		},
+		"nodeMale": {
+			"type": "dialog",
+			"next": "nodeUnisex",
+			"fragments": [{
+				"tag": "你",
+				"msn": "所以写纸条的那个人……是你，吉列尔莫。"
+			},
+			{
+				"tag": "你",
+				"msn": "那你现在跟我说话了。"
+			},
+			{
+				"tag": "你",
+				"msn": "为什么班上有一半的人都不理我？"
+			}]
+		},
+		"nodeFemale": {
+			"type": "dialog",
+			"next": "nodeUnisex",
+			"fragments": [{
+				"tag": "你",
+				"msn": "你在女厕所干什么, 吉列尔莫?"
+			},
+			{
+				"tag": "你",
+				"msn": "你不可以在这里, 走开。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character" : "Guille",
+				"msn": "我需要跟你谈谈。我就是留下这张纸条的人。"
+			},
+			{
+				"tag": "你",
+				"msn": "那你跟我说话吗？"
+			},
+			{
+				"tag": "你",
+				"msn": "为什么班上有一半的人都不理我？"
+			}]
+		},
+		"nodeUnisex": {
+			"type": "dialog",
+			"next": "changeVariable",
+			"fragments": [{
+				"tag": "吉列尔莫",
+				"character" : "Guille",
+				"msn": "这就是我想跟你说的。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character" : "Guille",
+				"msn": "我不能在亚历山大或他任何朋友能看到我们的地方跟你说话。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character" : "Guille",
+				"msn": "他威胁我说要把我抽烟喝酒的照片发给我父母。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character" : "Guille",
+				"msn": "我爸妈管得很严，要是他们发现了，我不知道会发生什么……他们甚至可能会把我送到另一所高中。My parents are very strict and if they discover it I don't know what could happen...they might even send me to another high school."
+			},
+			{
+				"tag": "你",
+				"msn": "但为什么亚历山大不想让任何人跟我说话？"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character" : "Guille",
+				"msn": "我们不知道，他从第一天起就对你有意见。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character" : "Guille",
+				"msn": "太多人会按他的意愿行事，但我们中有些人被他威胁过。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character" : "Guille",
+				"msn": "去年玛丽亚也发生过类似的事情，虽然那是安娜干的。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character" : "Guille",
+				"msn": "从那以后她就没有朋友了，当有人想跟她说话时……她就无视我们。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character" : "Guille",
+				"msn": "她还没原谅我们。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character" : "Guille",
+				"msn": "好吧……我只想说对不起，但在亚历山大不再生气之前，我不能跟你说话。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character" : "Guille",
+				"msn": "我真的很抱歉，<$ varObject('global', 'UserNameNonStatic') $>。"
+			}]
+		},
+		"changeVariable": {
+			"type": "event",
+			"next": "boardFork",
+			"event": {
+				"name": "change variable",
+				"var": "GuilleSpoke",
+				"value": true,
+			}
+		},
+		"boardFork": {
+			"type": "fork",
+			"options": [{
+				"next": "option",
+				"condition": "varObject('global', 'BoardQuestNonStatic') == 1"
+			}]
+		},
+		"option": {
+			"type": "options",
+			"questionId": "GuilleBathroomDialog",
+			"options": [{
+				"next": "nodeAlex",
+				"msn": "就这样？亚历山大得到了他想要的？"
+			},
+			{
+				"next": "nodeBoard",
+				"msn": "那我贴在公告板上的照片呢？是亚历山大干的吗？"
+			}]
+		},
+		"nodeAlex": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "我真的很抱歉，说真的。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "但我不想让他也让我的生活变得悲惨。"
+			}]
+		},
+		"nodeBoard": {
+			"type": "dialog",
+			"next": "guilleQuest",
+			"fragments": [{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "那是安娜的作风。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "她真的很喜欢亚历山大，如果他跟你过不去，她也会对你做同样的事情。."
+			},
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "还有何塞，他是亚历山大的忠实追随者，自己没有主见。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "避开他们三个。"
+			}]
+		},
+		"guilleQuest": {
+			"type": "event",
+			"event": {
+				"name": "change variable",
+				"var": "GuillermoQuest",
+				"value": 1,
+			}
+		}
+	}
+}

@@ -1,0 +1,181 @@
+{
+	"bed":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "嗯，我是不是该去睡觉了？"
+			}]
+		},
+		"node1": {
+			"type": "options",
+			"questionId": "goToSleep",
+			"options": [{
+				"next": "sleepfork",
+				"msn": "是"
+			},
+			{
+				"msn": "否"
+			}]
+		},
+		"sleepfork": {
+			"type": "fork",
+			"options": [{
+				"next": "sleep",
+				"condition": "varObject('global', 'SharedPassQuestNonStatic') == 0"
+			},{
+				"next": "scene",
+				"condition": "true"
+			}]
+		},
+		"sleep": {
+			"type": "dialog",
+			"next": "scene",
+			"fragments": [{
+				"tag": "你",
+				"msn": "但是我没法用手机定闹钟了。"
+			},
+			{
+				"tag": "你",
+				"msn": "嗯，那我就用我的旧手机吧，但它没有电话卡，所以只能当闹钟用。"
+			},
+			{
+				"tag": "你",
+				"msn": "好吧，闹钟已经设好了……该睡觉了。"
+			}]
+		},
+		"scene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 22,
+				"time": 3
+			}
+		}		
+	},
+	"wardrobeInside1":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "这里什么有用的东西都没有。"
+			}]
+		}		
+	},
+	"wardrobeInside2":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我不需要这里任何东西。"
+			}]
+		}		
+	},
+	"bag":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我刚回来。"
+			},
+			{
+				"tag": "你",
+				"msn": "我其实根本不需要背包。",
+			}]
+		}
+	},
+	"computer":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "电脑",
+				"msn": "你想打开电脑吗？"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "turnOnPC",
+			"options": [{
+				"next": "node1a",
+				"msn": "是的"
+			},
+			{
+				"next": "node1b",
+				"msn": "不"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"next": "moveCamera",
+			"event":{
+				"name": "computerON"
+			}
+		}, 
+		"moveCamera": {
+			"type": "event",
+			"event":{
+				"name": "move camera",
+				"key": "computer"
+			}
+		},
+		"node1b": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我还是现在离开吧..."
+			}]
+		}		
+	},
+	"plug":{
+		"root": {
+			"type": "dialog",
+			"next": "node1",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我要不要把手机留着充电？"
+			}]
+		},		
+		"node1": {
+			"type": "options",
+			"questionId": "plugInMobile",
+			"options": [{
+				"next": "node1a",
+				"msn": "是的"
+			},
+			{
+				"next": "node1b",
+				"msn": "不"
+			}]
+		},
+		"node1a": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": true,
+				"state": 0
+			}
+		}, 
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "change state",
+				"var": "ChargingMobile",
+				"value": false,
+				"state": 1
+			}
+		}		
+	},
+	"livingroomDoor" : {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "livingroom"
+			}
+		}
+	}
+}

@@ -1,0 +1,154 @@
+{
+	"default":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				
+				"msn": "I don't have anything to post right now, I have better things to do."
+			}]
+		}
+	},
+	"earingFounded": {
+		"root":{
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "earing",
+				"value": "You're welcome, Allison",
+				"key": "You",
+				"other" : "empty",
+				"time": 0
+			}
+		}
+	},
+	"insultPost": {
+		"root":{
+			"type": "options",
+			"questionId": "insultPostOptions",
+			"options": [{
+				"next": "node1a",
+				"msn": "(Report Post)"
+			},
+			{
+				"next": "node1b",
+				"msn": "You are an asshole"
+			},
+			{
+				"next": "node1c",
+				"msn": "I'm gonna end up having a word with your tutor"
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I'm gonna report the message, see if they delete it because of its content."
+			}]
+		},
+		"node1b": {
+			"type": "event",
+			"next": "node2b",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				
+				"value": "You're all assholes, fuck off. You act like three year olds.",
+				"key": "You",
+				"other" : "empty",
+				"time": 0
+			}
+		},
+		"node2b": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				"value": "I'm sure you are the one who pissed himself at night, hahaha",
+				"key": "Ana",
+				"other" : "empty",
+				"time": 1
+			}
+		},
+		"node1c": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				
+				"value": "I'm sick of them. Tomorrow I'll speak to the tutor.",
+				"key": "You",
+				"other" : "empty",
+				"time": 0
+			}
+		},
+		"node2b": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "insult",
+				
+				"value": "Look, we can also post <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him crybaby', 'her crybaby') $>",
+				"key": "Ana",
+				"other" : "empty",
+				"time": 1
+			}
+		}
+	},
+	"trollPost": {
+		"root":{
+			"type": "options",
+			"questionId": "trollPostOptions",
+			"options": [{
+				"next": "node1a",
+				"msn": "(Delete Post)"
+			},
+			{
+				"next": "node1b",
+				"msn": "Alison... this is why you wanted to exchange passwords."
+			},
+			{
+				"msn": "(Remain silent)"
+			}]
+		},
+		"node1a": {
+			"type": "dialog",
+			"next": "loadPub",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I'm gonna delete the post"
+			}]
+		},
+		"loadPub": {
+			"type": "event",
+			"next": "mobileMessage",
+			"event": {
+				"name": "computer publication",
+				"other": "load"
+			}
+		},
+		"mobileMessage": {
+			"type": "event",
+			"event": {
+				"name": "mobile message",
+				"var": "Alex",
+				
+				"value": "I've seen you have deleted your post with your phone numbre, but don't worry, I made and screenshot and I can upload it again hahaha",
+				"key": "Alex",
+				"other": "empty",
+				"time": 0
+			}
+		},
+		"node1b": {
+			"type": "event",
+			"event": {
+				"name": "computer comment",
+				"var": "troll",
+				"value": "Alison... this is why you wanted to exchange passwords, you are the worst.",
+				"key": "You",
+				"other" : "empty",
+				"time": 0
+			}
+		}
+	}
+}

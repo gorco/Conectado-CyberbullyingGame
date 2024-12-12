@@ -1,0 +1,211 @@
+{
+	"maria": {
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "friendFork",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "如果你现在不去就迟到了。"
+			}]
+		},
+		"friendFork": {
+			"type": "fork",
+			"options": [{
+				"next": "friend",
+				"condition": "varObject('global', 'AlisonFSNonStatic') > 60"
+			},
+			{
+				"next": "normal",
+				"condition": "true"
+			}]
+		},
+		"friend": {
+			"type": "dialog",
+			"next": "friendOptions",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "早上好，<$ varObject('global', 'UserNameNonStatic') $>"
+			},
+			{
+				"tag": "你",
+				"msn": "你好，玛丽亚。"
+			}]
+		},
+		"friendOptions": {
+			"type": "options",
+			"questionId": "MariaSickAsk",
+			"options": [{
+				"next": "friends2b",
+				"msn": "你昨天没来。你还好吗？You didn't come yesterday. Are you alright?"
+			},
+			{
+				"next": "friends2a",
+				"msn": "你在和我说话吗？"
+			},
+			{
+				"next": "setter",
+				"msn": "我很赶时间，铃已经响了。待会儿再聊。"
+			}]
+		},
+		"friends2a": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "我想你是说亚历克斯。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "安娜去年也对我做过类似的事情。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "你应该告诉你的父母或我们的导师。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "我当时有机会但没这么做。我爸妈发现后逼我去看心理医生。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "如果你需要我和你一起去和老师谈就告诉我。但不要保持沉默。"
+			},
+			{
+				"tag": "你",
+				"msn": "谢啦，回头见。"
+			}]
+		},
+		"friends2b": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "嗯，我没事。谢谢关心。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "昨天我发高烧，所以待在家里休息。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "今天我已经没事了。"
+			}]
+		},
+		"normal": {
+			"type": "dialog",
+			"next": "normalOptions",
+			"fragments": [{
+				"tag": "你",
+				"msn": "嘿，玛丽亚。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "你好，<$ varObject('global', 'UserNameNonStatic') $>。你想要什么吗？"
+			}]
+		},
+		"normalOptions": {
+			"type": "options",
+			"questionId": "MariaIgnoreAsk",
+			"options": [{
+				"next": "setter",
+				"msn": "不用，回头见。"
+			},
+			{
+				"next": "normal2",
+				"msn": "你是在和我说话吗？"
+			}]
+		},
+		"normal2": {
+			"type": "dialog",
+			"next": "setter",
+			"fragments": [{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "为什么不会呢？"
+			},
+			{
+				"tag": "你",
+				"msn": "你没和亚历克斯说过吗？
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "说了，关于他们不理睬人的事情……"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "他们去年把我的生活搞得一团糟。我学到教训了。"
+			},
+			{
+				"tag": "玛丽亚",
+				"character": "Maria",
+				"msn": "你最好告诉你的父母或导师，不要听亚历克斯或他的“手下”的话。"
+			}]
+		},
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+	},
+	"principalNote":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "纸条",
+				"msn": "校长办公室"
+			}]
+		}
+	},
+	"principalDoor":{
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "看起来里面没人。"
+			}]
+		}
+	},
+	"stairsToCorridor": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "corridor"
+			}
+		}
+	},
+	"stairsToPlayground": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "我应该直接去上课了。"
+			}]
+		}
+	}
+}

@@ -1,0 +1,19 @@
+﻿{
+    "0":"星期一",
+    "1":"星期二",
+    "2":"星期三",
+    "3":"星期四",
+    "4":"星期五",
+    "day":"日",
+    "alarm":"闹钟",
+    "sleepMsn":"您不能再睡了。现在应该起床了",
+
+    "chatTextTitle":"聊天",
+    "riskTitle":"社交风险",
+    "friendshipTitle":"友谊",
+
+    "exitGameButton":"退出游戏",
+    "warningText":"游戏将关闭。您确定吗？",
+    "YesText":"是",
+    "NoText":"否"
+}

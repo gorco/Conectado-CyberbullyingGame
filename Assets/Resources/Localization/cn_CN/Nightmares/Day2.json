@@ -1,0 +1,185 @@
+{
+	"intro":{
+		"root": {
+			"type": "dialog",
+			"next": "fade",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "So... Have we worked this out?"
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Do you know where to sit?"
+			},
+			{
+				"tag": "Shadow",
+				"character": "Shadow",				
+				"msn": "Maybe you should avoid those gums to fall on the chairs by hitting them, or you'll have to sit on one of them."
+			}]
+		},
+		"fade": {
+			"type": "event",
+			"event": {
+				"name": "little move",
+				"key": "shadow"
+			}
+		}
+	},
+	"portal":{
+		"root":{
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "You will have to sit on a gum."
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Hahahaha, go on, sit down."
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Come on, what are you waiting for?"
+			},{
+				"tag": "Voice from the portal",
+				"msn": "Come, I will help you."
+			}, {
+				"tag": "Voice from the portal",
+				"msn": "Go through the portal."
+			}, {
+				"tag": "Voice from the portal",
+				"msn": "Run, before you wake up."
+			}]
+		}
+	},
+	"cross": {
+		"root": {
+			"type": "options",
+			"questionId": "portalDay2",
+			"options": [{
+				"next": "node1",
+				"msn": "Go through the portal"
+			}]
+		},
+		"node1": {
+			"type": "dialog",
+			"next": "variable",
+			"fragments": [{
+				"tag": "You",
+				"msn": "I will go."
+			}, {
+				"tag": "You",
+				"msn": "It's a little bit scary."
+			}, {
+				"tag": "You",
+				"msn": "But it's just a dream."
+			}]
+		},
+		"variable": {
+			"type": "event",
+			"next": "repeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 1,
+			}
+		},
+		"repeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": true,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "loadMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"loadMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "load"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	},
+	"finishNightmare":{
+		"root": {
+			"type": "dialog",
+			"next": "changeDay",
+			"fragments": [{
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "You will have to sit on a gum."
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Hahahaha, go on, sit down."
+			}, {
+				"tag": "Shadow",
+				"character": "Shadow",
+				"msn": "Come on, what are you waiting for?"
+			}]
+		},
+		"changeDay": {
+			"type": "event",
+			"next": "noRepeatDay",
+			"event": {
+				"name": "change variable",
+				"var": "Day",
+				"value": 2,
+			}
+		},
+		"noRepeatDay": {
+			"type": "event",
+			"next": "changeHour",
+			"event": {
+				"name": "change variable",
+				"var": "Repeated",
+				"value": false,
+			}
+		},
+		"changeHour": {
+			"type": "event",
+			"next" : "saveMobile",
+			"event":{
+				"name": "change variable",
+				"var": "hour",
+				"value": "7:30",
+			}
+		},
+		"saveMobile": {
+			"type": "event",
+			"next": "nextScene",
+			"event": {
+				"name": "mobile message",
+				"other": "save"
+			}
+		},
+		"nextScene": {
+			"type": "event",
+			"event": {
+				"name": "change scene",
+				"var": "scene",
+				"value": 2
+			}
+		}
+	}
+}

@@ -1,13 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Thanks : MonoBehaviour {
 
 	public Vector2 start;
-	public Vector2 end;
+	private Vector2 end;
 	public GameObject rewindIcon;
 	public GameObject rewindIcon2;
+	public GameObject endObject;
 
 	public float speed;
 
@@ -16,6 +18,8 @@ public class Thanks : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		transform.localPosition = start;
+		end = endObject.transform.localPosition;
+		end.y = Math.Abs(end.y);
 	}
 	
 	// Update is called once per frame

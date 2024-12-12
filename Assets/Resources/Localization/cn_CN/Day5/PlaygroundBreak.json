@@ -1,0 +1,212 @@
+{
+	"anaGroup":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeNoGum",
+				"condition": "varObject('global', 'AuxQuestNonStatic') == 2"
+			},
+			{
+				"next": "nodeInit",
+				"condition": "true"
+			}]
+		},
+		"nodeNoGum": {
+			"type": "dialog",
+			"next": "FadeOutAna",
+			"fragments": [{
+				"tag": "（小声说话）",
+				"msn": "嗯，看来他身上没有粘着口香糖。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "嘘……"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "嘿， <$ varObject('global', 'UserNameNonStatic') $>"
+			},
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "你好"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你看到亚历山大了吗？"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "我们需要和他谈谈。"
+			}]
+		},
+		"FadeOutAna": {
+			"next": "FadeOutJose",
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "ana"
+			}
+		},
+		"FadeOutJose": {
+			"type": "event",
+			"event": {
+				"name": "fade out",
+				"key": "jose"
+			}
+		},
+		"nodeInit": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你应该洗洗衣服了，你的裤子真是一团糟。."
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "你家里没有洗衣机吗？"
+			},
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "哈哈哈，新潮流！裤子上粘着口香糖。"
+			},
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "那件难看的衣服根本不值得洗。"
+			},
+			{
+				"tag": "何塞",
+				"character": "Jose",
+				"msn": "他应该直接把它扔进垃圾桶。"
+			},
+			{
+				"tag": "安娜",
+				"character": "Ana",
+				"msn": "哈哈哈"
+			}]
+		}
+	},
+	"guilleGroup":{
+		"root": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeNoGum",
+				"condition": "varObject('global', 'AuxQuestNonStatic') == 2"
+			},
+			{
+				"next": "nodeInit",
+				"condition": "true"
+			}]
+		},
+		"nodeInit": {
+			"type": "fork",
+			"options": [{
+				"next": "nodeRepeat",
+				"condition": "spoken == true"
+			},
+			{
+				"next": "node0",
+				"condition": "true"
+			}]
+		},
+		"nodeRepeat": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "试着在厕所里把那块口香糖弄掉。"
+			}]
+		}, 
+		"setter":{
+			"type": "setter",
+			"set": {
+				"var": "spoken",
+				"value": true
+			}
+		},
+		"nodeNoGum": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "嘿，<$ varObject('global', 'UserNameNonStatic') $>"
+			},
+			{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "我们刚才在谈亚历山大。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "他今天早上很奇怪，而且还是第一个到这里的。"
+			}]
+		}, 
+		"node0": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "你坐哪里了？"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "你可能坐到口香糖上了。"
+			},
+			{
+				"tag": "艾莉森",
+				"character": "Alison",
+				"msn": "真是一团糟，上课前去厕所处理一下吧。"
+			},
+			{
+				"tag": "吉列尔莫",
+				"character": "Guille",
+				"msn": "对，也许你能把它弄掉。"
+			}]
+		},
+		"guilleFS": {
+			"type": "event",
+			"next": "joseFS",
+			"event": {
+				"name": "change friendship",
+				"var": "GuilleFS",
+				"value": 10,
+			}
+		},
+		"alisonFS": {
+			"type": "event",
+			"next": "setter",
+			"event": {
+				"name": "change friendship",
+				"var": "AlisonFS",
+				"value": 10,
+			}
+		}
+	},
+	"schoolEnter": {
+		"root": {
+			"type": "event",
+			"event": {
+				"name": "move camera",
+				"key": "stairs"
+			}
+		}
+	},
+	"schoolExit": {
+		"root": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "你",
+				"msn": "现在是休息时间，我还要上几节课才能回家。"
+			}]
+		}
+	}
+}
