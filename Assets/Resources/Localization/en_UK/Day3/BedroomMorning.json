@@ -94,7 +94,7 @@
 			"questionId": "turnOnPC",
 			"options": [{
 				"next": "node1a",
-				"msn": "Yes	"
+				"msn": "Yes"
 			},
 			{
 				"next": "node1b",

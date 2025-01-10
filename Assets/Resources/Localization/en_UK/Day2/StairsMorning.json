@@ -3,7 +3,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Note	",
+				"tag": "Note",
 				"msn": "Principal's office."
 			}]
 		}

@@ -87,7 +87,7 @@
 				"next": "node1female",
 				"condition": "varObject('global', 'MaleSexNonStatic') == false"
 			}]
-		}
+		},
 		"node1male": {
 			"type": "dialog",
 			"next": "setter",

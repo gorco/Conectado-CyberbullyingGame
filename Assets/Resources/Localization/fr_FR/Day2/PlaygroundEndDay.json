@@ -45,7 +45,7 @@
 			{
 				"next": "notGum",
 				"condition": "varObject('global', 'GumQuestNonStatic') == 2"
-			}
+			},
 			{
 				"next": "notWash",
 				"condition": "true"

@@ -183,7 +183,7 @@
 				"condition": "page == 1"
 			},
 			{
-				"next": "alison",(告訴他們關於香口膠的事)
+				"next": "alison",
 				"msn": "關於愛莉…",
 				"condition": "page == 2 && aboutAlison == true && varObject('global', 'AlisonQuestNonStatic') > 0"
 			},
@@ -541,6 +541,7 @@
 			"fragments": [{
 				"tag": "你",
 				"msn": "他在找人打架。"
+			},
 			{
 				"tag": "你",
 				"msn": "他讓我想揍他一頓。"
