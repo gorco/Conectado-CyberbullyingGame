@@ -54,7 +54,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "The bell is ringing, it's break time..."
+				"value": "鐘聲響了，小息時間到…"
 			}
 		},
 		"breakHour": {
@@ -81,7 +81,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "It seems like classes are lasting longer and longer... Luckly it's time to go home."
+				"value": "好似課程越來越長了...好彩係時候返屋企啦"
 			}
 		},
 		"endDayHour": {
@@ -140,7 +140,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "The bell indicates it's break time..."
+				"value": "鐘聲響了，小息時間到…"
 			}
 		},
 		"breakHour": {
@@ -159,7 +159,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "It seems like classes are lasting longer and longer... Luckly it's time to go home."
+				"value": "好似課程越來越長了...好彩係時候返屋企啦"
 			}
 		},
 		"changeHour": {

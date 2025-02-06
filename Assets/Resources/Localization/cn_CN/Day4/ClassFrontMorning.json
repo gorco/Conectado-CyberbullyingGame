@@ -52,7 +52,7 @@
 			{
 				"tag": "老师",
 				"character": "Teacher",
-				"msn": "亚历山大，你先坐别的位置吧。我已经让艾莉森在前几天帮助 <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $> 了。"
+				"msn": "亚历山大，你先坐别的位置吧。我已经让艾莉森在前几天帮助 <$ if(varObject('global', 'MaleSexNonStatic')==true, '他', '她') $> 了。"
 			}]
 		},
 		"black": {
@@ -62,7 +62,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "The bell rings, it's break time."
+				"value": "铃声响了，休息时间到了。"
 			}
 		},
 		"changeHour": {

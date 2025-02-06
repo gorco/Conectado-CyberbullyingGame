@@ -59,7 +59,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "You go and sit in your place while everyone is looking at you."
+				"value": "當所有人都望住你既時候，你就去坐在你既位上。"
 			}
 		},
 		"node3": {
@@ -119,8 +119,8 @@
 			"type": "dialog",
 			"next": "nodeFS",
 			"fragments": [{
-				"tag": "Ana",
-				"character": "安娜",
+				"tag": "安娜",
+				"character": "Ana",
 				"msn": "你是個討厭鬼..."
 			}]
 		},
@@ -169,7 +169,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Everyone sits down, the lesson is starting."
+				"value": "大家就坐，課程開始啦。"
 			}
 		},
 		"node4": {

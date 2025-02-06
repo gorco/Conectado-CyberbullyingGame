@@ -646,7 +646,7 @@
 			"event": {
 				"name": "computer friend",
 				"var": "Guillermo",
-				"value": "If the plan doesn't work, change it but don't change the goal.",
+				"value": "如果計劃起唔到作用，就改變佢，但唔好改變目標。",
 				"time": 0,
 				"other": "guilleAccept,guilleDeny"
 			}
@@ -657,7 +657,7 @@
 			"event": {
 				"name": "computer friend",
 				"var": "Alison",
-				"value": "There's always a reason to move forward.",
+				"value": "總有一個理由促使我們繼續向前。",
 				"time": 0,
 				"other": "alisonAccept,alisonDeny"
 			}
@@ -678,7 +678,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Clase",
-				"value": "I've sent you a friend request.",
+				"value": "我已經向你發送好友請求。",
 				"key": "Alison Clase",
 				"time": 2 
 			}
@@ -689,7 +689,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Clase",
-				"value": "Accept it from the computer :)",
+				"value": "係電腦接受佢啦:)",
 				"key": "Alison Clase",
 				"other": "alisonRequest",
 				"time": 3 

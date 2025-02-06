@@ -120,7 +120,7 @@
 			"type": "options",
 			"questionId": "parentsAfternoonFirstDay",
 			"options": [{
-				"msn": "Good, the usual, I'm going to my room.",
+				"msn": "好的，跟往常一样，我要走回我的房间了。",
 				"condition": "page == 1"
 			},
 			{
@@ -169,7 +169,7 @@
 				"condition": "page == 4  && aboutAna == true && varObject('global', 'GuillermoQuestNonStatic') > 0"
 			},
 			{
-				"next": "学校",
+				"next": "school",
 				"msn": "The school...",
 				"condition": "page == 4 && aboutSchool == true "
 			},
@@ -375,11 +375,11 @@
 			},
 			{
 				"tag": "你",
-				"msn": "They cut her off."
+				"msn": "他们打断了她的话。"
 			},
 			{
-				"tag": "You",
-				"msn": "I've been talking to her for a while and she didn't looked weird to me."
+				"tag": "你",
+				"msn": "我已经和她交谈了一会儿，她看上去并不奇怪。"
 			}]
 		},
 		"mariaUpParentsFS": {
@@ -403,27 +403,27 @@
 			"type": "dialog",
 			"next": "forkAlex",
 			"fragments": [{
-				"tag": "You",
-				"msn": "There's also Álex."
+				"tag": "你",
+				"msn": "那里还有亚历。"
 			},
 			{
-				"tag": "You",
-				"msn": "He's arrived late."
+				"tag": "你",
+				"msn": "他来迟了。"
 			},
 			{
-				"tag": "You",
-				"msn": "He's kind of rude and a bit scary."
+				"tag": "你",
+				"msn": "他有点粗鲁，还有点吓人的。"
 			}]
 		},
 		"optionsAlex": {
 			"type": "options",
 			"options": [{
 				"next": "forkAlex",
-				"msn": "(Talk about the incident)"
+				"msn": "（谈论事件经过）"
 			},
 			{
 				"next": "setterAlex",
-				"msn": "(Change the topic)"
+				"msn": "（转移话题）"
 			}]
 		},
 		"forkAlex": {
@@ -445,64 +445,64 @@
 			"type": "dialog",
 			"next": "alexUpParentsFS",
 			"fragments": [{
-				"tag": "You",
-				"msn": "Looks like I took his spot when I got in class."
+				"tag": "你",
+				"msn": "看来我上课的时候就占了他的位置了。"
 			},
 			{
-				"tag": "You",
-				"msn": "But I apologized and it looks like he's no longer angry."
+				"tag": "你",
+				"msn": "但我道了歉，看起来他不再生气了。"
 			}]
 		},
 		"alexThread": {
 			"type": "dialog",
 			"next": "alexUpParentsFS",
 			"fragments": [{
-				"tag": "You",
-				"msn": "He's classic troublemaker."
+				"tag": "你",
+				"msn": "他是一个典型的麻烦制造者。"
 			},
 			{
-				"tag": "You",
-				"msn": "I sat on his spot without knowing."
+				"tag": "你",
+				"msn": "我不知不觉的坐在了他的位置上。"
 			},
 			{
-				"tag": "You",
-				"msn": "He has threatened me."
+				"tag": "你",
+				"msn": "他威胁过我。"
 			},
 			{
-				"tag": "Mom",
+				"tag": "妈妈",
 				"character": "Mother",
-				"msn": "Did he threaten you?"
+				"msn": "他威胁你了吗？"
 			},
 			{
-				"tag": "Mom",
+				"tag": "妈妈",
 				"character": "Mother",
-				"msn": "I'm sure you misunderstood."
+				"msn": "我确信你误会了。"
 			},
 			{
-				"tag": "Mom",
+				"tag": "妈妈",
 				"character": "Mother",
-				"msn": "Who else have you met today?"
+				"msn": "今天你还见到了谁？"
 			}]
 		},
 		"alexBad": {
 			"type": "dialog",
 			"next": "alexUpParentsFS",
 			"fragments": [{
-				"tag": "You",
-				"msn": "He is rude and a troublemaker."
+				"tag": "你",
+				"msn": "他很粗鲁，也是一个麻烦制造者。"
 			},
 			{
-				"tag": "You",
-				"msn": "All because I've sat in his spot."
+				"tag": "你",
+				"msn": "这一切都是因为我坐在了他的位置上。"
 			},
 			{
-				"tag": "You",
-				"msn": "He should look for another one."
+				"tag": "你",
+				"msn": "他应该再找另一个。"
 			},
 			{
-				"tag": "Mom",
+				"tag": "妈妈",
 				"character": "Mother",
-				"msn": "You should apologize and not look for troubles."
+				"msn": "你应该道歉而不是自找麻烦。"
 			}]
 		},	
 		"alexUpParentsFS": {
@@ -526,12 +526,12 @@
 			"type": "dialog",
 			"next": "anaUpParentsFS",
 			"fragments": [{
-				"tag": "You",
-				"msn": "There's also Ana."
+				"tag": "你",
+				"msn": "那里还有安娜。"
 			},
 			{
-				"tag": "You",
-				"msn": "She's a bit scary."
+				"tag": "你",
+				"msn": "她有点吓人。"
 			}]
 		},
 		"anaUpParentsFS": {
@@ -555,8 +555,8 @@
 			"type": "dialog",
 			"next": "optionsSchool",
 			"fragments": [{
-				"tag": "You",
-				"msn": "And school, well..."
+				"tag": "你",
+				"msn": "还有学校，那么……"
 			}]
 		},
 		"optionsSchool": {
@@ -564,11 +564,11 @@
 			"questionId": "parentsAfternoonFirstDaySchool",
 			"options": [{
 				"next": "setterSchool",
-				"msn": "I like how the building and the playground are."
+				"msn": "我喜欢这座建筑和游乐场的外观。"
 			},
 			{
 				"next": "setterSchool",
-				"msn": "It's boring, there's nothing to do."
+				"msn": "很无聊，没什么事可做。"
 			}]
 		},
 		"setterSchool":{
@@ -584,14 +584,14 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Dad",
+				"tag": "爸爸",
 				"character": "Father",
-				"msn": "Talk to your mother."
+				"msn": "跟你的妈妈谈谈。"
 			},
 			{
-				"tag": "Dad",
+				"tag": "爸爸",
 				"character": "Father",
-				"msn": "She wants to know how was your day."
+				"msn": "她想知道你今天过得怎么样。"
 			}]
 		}
 	},
@@ -599,8 +599,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "I have nothing to do outside."
+				"tag": "你",
+				"msn": "我在外面没什么事做。"
 			}]
 		}
 	},
@@ -646,7 +646,7 @@
 			"event": {
 				"name": "computer friend",
 				"var": "Guillermo",
-				"value": "If the plan doesn't work, change it but don't change the goal.",
+				"value": "如果计划不起作用，就改变它，但不要改变目标。",
 				"time": 0,
 				"other": "guilleAccept,guilleDeny"
 			}
@@ -657,7 +657,7 @@
 			"event": {
 				"name": "computer friend",
 				"var": "Alison",
-				"value": "There's always a reason to move forward.",
+				"value": "总有一个理由促使我们继续前进。",
 				"time": 0,
 				"other": "alisonAccept,alisonDeny"
 			}
@@ -678,7 +678,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Clase",
-				"value": "I've sent you a friend request.",
+				"value": "我已向您发送好友请求。",
 				"key": "Alison Clase",
 				"time": 2 
 			}
@@ -689,7 +689,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Clase",
-				"value": "Accept it from the computer :)",
+				"value": "从电脑接受它:)",
 				"key": "Alison Clase",
 				"other": "alisonRequest",
 				"time": 3 

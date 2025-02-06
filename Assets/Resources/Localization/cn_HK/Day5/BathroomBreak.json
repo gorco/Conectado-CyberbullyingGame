@@ -5,7 +5,7 @@
 			"next": "lightOff",
 			"fragments": [{
 				"tag": "你",
-				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Mmm, what is going on Alex? Why are you still here?', 'Ana, are you here?') $>"
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, '咦，亞歷，發生咗乜事呀？你點解仲係呢度呀？', '安娜，你係呢度嗎？') $>"
 			}]
 		},
 		"lightOff": {
@@ -527,7 +527,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "You go back home and sleep earlier today. As usual, it's dream time..."
+				"value": "你今天早點返屋企瞓啦。和往常一樣，呢個係發夢的時間…"
 			}
 		},
 		"changeScene": {

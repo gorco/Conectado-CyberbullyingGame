@@ -29,7 +29,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "troll",
-				"value": "waiting 4 your calls",
+				"value": "等待你的来电",
 				"key": "Tú",
 				"time": 0.2
 			}
@@ -40,7 +40,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "troll",
-				"value": "we can meet when you want ;)",
+				"value": "我们可以随时见面 ;)",
 				"key": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Ana', 'Alex') $>",
 				"time": 0.2
 			}
@@ -51,7 +51,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "troll",
-				"value": "r u butt dialing? cuz I swear dat ass is calling me HAHAHA",
+				"value": "你是误打过来吗？因为我发这人是在打给我哈哈哈",
 				"key": "Jose",
 				"time": 0.4
 			}
@@ -62,7 +62,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "troll",
-				"value": "this goes straight to the class board hahaha",
+				"value": "这直接发到班级公告板上了哈哈哈",
 				"key": "Ana",
 				"time": 0.8
 			}
@@ -72,7 +72,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "troll",
-				"value": "but do u get paid?",
+				"value": "但你得到报酬了吗？",
 				"key": "Alex",
 				"other": "trollPost",
 				"time": 1.2
@@ -104,7 +104,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "looks like u didnt kickme out, cheers. as a gift ill tell you I love sucking penises :)",
+				"value": "看起来你没有把我踢出去，干杯。作为礼物我会告诉你我喜欢吮吸阴茎 :)",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -116,7 +116,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "actually i'm into everything, if anyone wants lemme know",
+				"value": "事实上我对一切都感兴趣，如果有人想知道的话，请告诉我",
 				"key": "",
 				"time": 0.1
 			}
@@ -127,7 +127,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "thanks 4 confessing, but we already knew, it's written all over your face",
+				"value": "谢谢你的坦白，但我们已经知道了，你的脸上写满了一切",
 				"key": "Alex",
 				"time": 0.2
 			}
@@ -138,7 +138,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "we got the perfect name, SUFACE, the face who sucks LOL",
+				"value": "我们有一个完美的名字，SUFACE，那个烂脸哈哈哈",
 				"key": "Ana",
 				"time": 0.3
 			}
@@ -149,7 +149,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "whats this? why r u saying these things?",
+				"value": "这是什么？你为什么这么说？",
 				"key": "Alison",
 				"time": 0.3
 			}
@@ -160,7 +160,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "the best day and i missed it...what did i loose?",
+				"value": "最好的一天我却错过了...我失去了什么？",
 				"key": "Jose",
 				"time": 0.4
 			}
@@ -171,7 +171,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "youre crossing a line already, who trolled <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $>?",
+				"value": "你已经越界了，谁在搞怪 <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $>?",
 				"key": "Guille",
 				"time": 0.5
 			}
@@ -182,7 +182,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "none, whats up guille? u got sucked & dont want it to be known? hahaha",
+				"value": "没有，怎么了，吉耶？你被坑了，不想让人知道？哈哈哈",
 				"key": "Ana",
 				"other": "trollClass",
 				"time": 0.6
@@ -194,7 +194,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Maria",
-				"value": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'youre hot', 'imma femme & i know u 2') $>, 2morrow in the toilet ya know ;)",
+				"value": "<$ if(varObject('global', 'MaleSexNonStatic')==true, '你很性感', '我是女人，我了解你') $>, 明天在厕所你就会知道 ;)",
 				"key": "",
 				"other": "empty",
 				"time": 0.1
@@ -205,7 +205,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Maria",
-				"value": "this is so unlike you <$ varObject('global', 'UserNameNonStatic') $>, u got trolled right?",
+				"value": "这太不像你了 <$ varObject('global', 'UserNameNonStatic') $>, 你被坑了是吧？",
 				"key": "Maria",
 				"other": "trollMaria",
 				"time": 0.3

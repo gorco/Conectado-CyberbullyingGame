@@ -71,7 +71,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "The bell rings, it is recess time. Your opportunity to make friends."
+				"value": "铃声响了，休息时间到了。这是你交朋友的机会。"
 			}
 		},
 		"changeHour": {

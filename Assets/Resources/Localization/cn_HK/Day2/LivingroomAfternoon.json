@@ -584,7 +584,7 @@
 			"next": "setterSchool",
 			"fragments": [{
 				"tag": "你",
-				"msn": "I'm beginning to feel uncomfortable."
+				"msn": "我開始覺得唔舒服。"
 			}]
 		},
 		"setterSchool":{
@@ -664,7 +664,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "<$ varObject('global', 'UserNameNonStatic') $> this is the chat we use all classm8s",
+				"value": "<$ varObject('global', 'UserNameNonStatic') $> 呢個係我们所有同学都使用既聊天室",
 				"key": "Alison",
 				"other": "thxClass",
 				"time": 0 
@@ -676,7 +676,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Welcome",
+				"value": "歡迎",
 				"key": "Guille",
 				"time": 1 
 			}
@@ -698,7 +698,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Why da invit8on? didnt u speak with Alex tday?",
+				"value": "點解要邀请？你今天唔係同阿歷講野咩？",
 				"key": "Ana",
 				"time": 8 
 			}
@@ -709,7 +709,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Hmm, hasn't earned 2be in this group. Someone kick <$ if(varObject('global', 'MaleSexNonStatic')==true, 'his', 'her') $> out NOW!",
+				"value": "咦，仲未有資格加入這個小組。有人踢 <$ if(varObject('global', 'MaleSexNonStatic')==true, 'his', 'her') $> 去群組!",
 				"key": "Alex",
 				"time": 10 
 			}
@@ -720,7 +720,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "The only 1 left is that freak, María",
+				"value": "唯一剩低既就係呢個怪物，瑪莉亞",
 				"key": "Alex",
 				"other": "kickClass",
 				"time": 12 
@@ -731,7 +731,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Jose is the admin, talk 2morrow with him, doesnt read this chat to often",
+				"value": "荷茜係管理員，明天同佢傾傾，他唔係成日閱讀聊呢個聯天",
 				"key": "Ana",
 				"time": 14
 			}
