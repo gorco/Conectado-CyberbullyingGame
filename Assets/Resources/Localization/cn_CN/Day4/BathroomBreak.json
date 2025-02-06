@@ -18,7 +18,7 @@
 				"msn": "这是我的手机。"
 			},{
 				"tag": "你",
-				"msn": "是谁拿走了并把它留在了 <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' 卫生间里？"
+				"msn": "是谁拿走了并把它留在了 <$ if(varObject('global', 'MaleSexNonStatic')==true, '女', '男') $>' 卫生间里？"
 			},
 			{
 				"tag": "你",

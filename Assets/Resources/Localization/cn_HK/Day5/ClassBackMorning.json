@@ -34,7 +34,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Classes are over, but people have been looking at you and whispering at your back during the whole day."
+				"value": "課堂已經完啦，但是成日都有人注視你、係你背後竊竊私語。"
 			}
 		},
 		"node3": {
@@ -90,7 +90,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Another day of whispers at your back. It's time to go home."
+				"value": "又係在你背後竊竊私語的一天。該回家啦。"
 			}
 		},
 		"changeHour": {

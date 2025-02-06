@@ -46,7 +46,7 @@
 			{
 				"tag": "艾莉森",
 				"character": "Alison",
-				"msn": "You deserve what have happened."
+				"msn": "这是你应得的。"
 			},
 			{
 				"tag": "艾莉森",
@@ -154,7 +154,7 @@
 			{
 				"tag": "安娜",
 				"character": "Ana",
-				"msn": "今天真有意思。现在大家都觉得你是个 <$ if(varObject('global', 'MaleSexNonStatic')==true, 'fucking poof who likes it all', 'fucking vicious whore') $>。"
+				"msn": "今天真有意思。现在大家都觉得你是个 <$ if(varObject('global', 'MaleSexNonStatic')==true, '他妈的喜欢这一切的人', '他妈的淫荡妓女') $>。"
 			}]
 		},
 		"setter":{

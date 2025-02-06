@@ -154,8 +154,8 @@
 			"type": "dialog",
 			"next": "nodeFS20",
 			"fragments": [{
-				"tag": "Alejandro",
-				"character": "亚历山大",
+				"tag": "亚历山大",
+				"character": "Alejandro",
 				"msn": "你很爱耍聪明，对吧？"
 			},
 			{
@@ -434,7 +434,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Alison Clase",
-				"value": "Thanks again for helping me",
+				"value": "再次感谢你的帮助。",
 				"key": "Alison Clase",
 				"other": "alisonThx",
 				"time": 3

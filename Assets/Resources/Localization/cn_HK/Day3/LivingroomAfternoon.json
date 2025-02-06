@@ -363,7 +363,7 @@
 			"event": {
 				"name": "computer publication",
 				"var": "insult",
-				"value": "looking 4 a nickname 4 <$ varObject('global', 'UserNameNonStatic') $>",
+				"value": "尋找 <$ varObject('global', 'UserNameNonStatic') $> 既花名",
 				"key": "Ana",
 				"other": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'photoForeheadBoy', 'photoForeheadGirl') $>",
 				"time": 1
@@ -375,7 +375,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "look at that forehead...Shiphead",
+				"value": "睇吓個個額頭…Shiphead",
 				"key": "Ana",
 				"time": 1.2 
 			}
@@ -386,7 +386,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "LOL, looks like a big wall. Why not TRUMP?",
+				"value": "哈哈，望落似一幅大牆。點解唔係特朗普？",
 				"key": "Jose",
 				"time": 1.4
 			}
@@ -397,7 +397,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Air. What your ears make when they move LOL",
+				"value": "空氣。當你的耳朵郁時會發出什麼聲音？",
 				"key": "Alex",
 				"time": 1.6
 			}
@@ -408,7 +408,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Hahaha, Álex, it's WIND, not air",
+				"value": "哈哈哈，亞歷，吪個係風，唔係空氣",
 				"key": "Ana",
 				"time": 1.7
 			}
@@ -419,7 +419,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Don't get complicated, we can call <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $> outkast ... anyway, no more speaking to the outkast...",
+				"value": "唔好諗得太複雜，我地可以叫 <$ if(varObject('global', 'MaleSexNonStatic')==true, '他', '她') $> 被排斥既人…無論點，不好再和被排斥者既人講野了…",
 				"key": "Ester",
 				"time": 2
 			}
@@ -429,7 +429,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "outkast is not very original... what'bout gremlin?",
+				"value": "被排斥的人並無乜野新意... 咁小精靈又點？",
 				"key": "Ana",
 				"other": "insultPost",
 				"time": 2.5

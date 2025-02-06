@@ -154,7 +154,7 @@
 			{
 				"tag": "安娜",
 				"character": "Ana",
-				"msn": "今日會係好好笑既日子。依家所有人都覺得你係真係一名  <$ if(varObject('global', 'MaleSexNonStatic')==true, 'fucking poof who likes it all', 'fucking vicious whore') $>。"
+				"msn": "今日會係好好笑既日子。依家所有人都覺得你係真係一名  <$ if(varObject('global', 'MaleSexNonStatic')==true, '他媽的喜歡這一切的人', '他媽的淫蕩妓女') $>。"
 			}]
 		},
 		"setter":{

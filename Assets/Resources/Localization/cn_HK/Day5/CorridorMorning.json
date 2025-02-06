@@ -30,7 +30,7 @@
 			{
 				"tag": "阿歷",
 				"character": "Alex",
-				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'I will be there', 'Ana will be waiting there') $>."
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, '我會係呢度', '安娜會係呢度') $>."
 			}]
 		},
 		"sh0": {

@@ -34,21 +34,21 @@
 		"bye": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Mom",
-				"character": "妈妈",
+				"tag": "妈妈",
+				"character": "Mother",
 				"msn": "看来你东西都收拾好了。"
 			}, 
 			{
-				"tag": "Mom",
-				"character": "妈妈",
-				"msn": "<$ if(varObject('global', 'HourNonStatic')<8, 'Go now or you will be late.', 'Go now, you are late.') $>"
+				"tag": "妈妈",
+				"character": "Mother",
+				"msn": "<$ if(varObject('global', 'HourNonStatic')<8, '快走，不然你就迟到了。', '快走，你迟到了。') $>"
 			}]
 		},
 		"getBag": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Mom",
-				"character": "妈妈",
+				"tag": "妈妈",
+				"character": "Mother",
 				"msn": "你忘了背书包。"
 			}, 
 			{

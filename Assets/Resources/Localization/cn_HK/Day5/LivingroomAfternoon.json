@@ -354,7 +354,7 @@
 			"event": {
 				"name": "computer publication",
 				"var": "insult",
-				"value": "looking 4 a nickname",
+				"value": "尋找花名。",
 				"key": "Jose",
 				"time": 1
 			}
@@ -365,7 +365,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Look at that forehead...Shiphead",
+				"value": "睇吓個個額頭…船頭",
 				"key": "Ana",
 				"time": 1.2 
 			}
@@ -376,7 +376,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "LOL, looks like a big wall. Why not TRUMP?",
+				"value": "哈哈，睇嚟似一幅大牆。點解唔係特朗普？?",
 				"key": "Jose",
 				"time": 1.4
 			}
@@ -387,7 +387,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Air, what your ears make when they move LOL",
+				"value": "空氣，你的耳朵移動時會發出乜野聲音，哈哈",
 				"key": "Alex",
 				"time": 1.6
 			}
@@ -398,7 +398,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "dont get complicated, we can call <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $> outkast ... anyway, no more speaking to the outkast...",
+				"value": "不要太複雜，我們可以打電話 <$ if(varObject('global', 'MaleSexNonStatic')==true, '他', '她') $> 被排斥的人……無論如何，不要再和被排斥的人說話了……",
 				"key": "Ester",
 				"time": 2
 			}
@@ -408,7 +408,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "outkast is not very original... what'bout gremlin?",
+				"value": "被排斥的人並沒有什麼新意... 那小精靈又如何？",
 				"key": "Ana",
 				"other": "insultPost",
 				"time": 2.5

@@ -48,7 +48,7 @@
 			"questionId": "MariaSickAsk",
 			"options": [{
 				"next": "friends2b",
-				"msn": "你昨天没来。你还好吗？You didn't come yesterday. Are you alright?"
+				"msn": "你昨天没来。你还好吗？"
 			},
 			{
 				"next": "friends2a",

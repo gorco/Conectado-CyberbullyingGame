@@ -18,7 +18,7 @@
 				"msn": "呢部係我嘅電話。"
 			},{
 				"tag": "你",
-				"msn": "邊個攞咗部電話，仲要擺喺 <$ if(varObject('global', 'MaleSexNonStatic')==true, 'girls', 'boys') $>' 廁所？"
+				"msn": "邊個攞咗部電話，仲要擺喺 <$ if(varObject('global', 'MaleSexNonStatic')==true, '女', '男') $>' 廁所？"
 			},
 			{
 				"tag": "你",

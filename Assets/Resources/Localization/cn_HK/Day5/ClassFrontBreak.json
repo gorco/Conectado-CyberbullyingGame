@@ -8,7 +8,7 @@
 			},
 			{
 				"tag": "你",
-				"msn": "我應唔應該相信阿歷。走入廁所同<$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'Ana') $>講?"
+				"msn": "我應唔應該相信阿歷。走入廁所同<$ if(varObject('global', 'MaleSexNonStatic')==true, '他', '安娜') $>講?"
 			},
 			{
 				"tag": "你",

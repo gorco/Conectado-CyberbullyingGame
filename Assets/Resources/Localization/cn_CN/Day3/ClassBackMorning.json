@@ -130,7 +130,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "It has been a boring day. Classes are over and most of the people have been ignoring me the whole day. There's a paper note on your desk telling you to go to the toilet, there's someone waiting there."
+				"value": "今天真是无聊的一天。课堂已经结束了，大多数人整天都不理我。桌子上有一张纸条，叫你去厕所，有人在那里等着。"
 			}
 		},
 		"node3": {
@@ -186,7 +186,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "It has been a boring day. Classes are over and most of the people have been ignoring me the whole day. There's a paper note on your desk telling you to go to the toilet, there's someone waiting there."
+				"value": "今天真是无聊的一天。课堂已经结束了，大多数人整天都不理我。桌子上有一张纸条，叫你去厕所，有人在那里等着。"
 			}
 		},
 		"changeHour": {

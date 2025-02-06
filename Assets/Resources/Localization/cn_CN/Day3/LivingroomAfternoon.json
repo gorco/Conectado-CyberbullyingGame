@@ -363,7 +363,7 @@
 			"event": {
 				"name": "computer publication",
 				"var": "insult",
-				"value": "looking 4 a nickname 4 <$ varObject('global', 'UserNameNonStatic') $>",
+				"value": "寻找 <$ varObject('global', 'UserNameNonStatic') $> 的昵称",
 				"key": "Ana",
 				"other": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'photoForeheadBoy', 'photoForeheadGirl') $>",
 				"time": 1
@@ -375,7 +375,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "look at that forehead...Shiphead",
+				"value": "看看那额头...Shiphead",
 				"key": "Ana",
 				"time": 1.2 
 			}
@@ -386,7 +386,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "LOL, looks like a big wall. Why not TRUMP?",
+				"value": "哈哈，看起来像是一堵大墙。为什么不是特朗普？",
 				"key": "Jose",
 				"time": 1.4
 			}
@@ -397,7 +397,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Air. What your ears make when they move LOL",
+				"value": "空气。耳朵动起来会发出什么声音？哈哈",
 				"key": "Alex",
 				"time": 1.6
 			}
@@ -408,7 +408,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Hahaha, Álex, it's WIND, not air",
+				"value": "哈哈哈，亚历克斯，这是风，不是空气",
 				"key": "Ana",
 				"time": 1.7
 			}
@@ -419,7 +419,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Don't get complicated, we can call <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him', 'her') $> outkast ... anyway, no more speaking to the outkast...",
+				"value": "不要想得太复杂，我们可以叫 <$ if(varObject('global', 'MaleSexNonStatic')==true, '他', '她') $> 被抛弃的人……无论如何，不​​要再和被抛弃的人说话了……",
 				"key": "Ester",
 				"time": 2
 			}
@@ -429,7 +429,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "outkast is not very original... what'bout gremlin?",
+				"value": "被抛弃的人并没有什么新意... 那小精灵 又如何？",
 				"key": "Ana",
 				"other": "insultPost",
 				"time": 2.5

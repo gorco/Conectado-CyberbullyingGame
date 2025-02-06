@@ -5,7 +5,7 @@
 			"next": "lightOff",
 			"fragments": [{
 				"tag": "你",
-				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Mmm, what is going on Alex? Why are you still here?', 'Ana, are you here?') $>"
+				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, '嗯，亚历克斯，发生什么事了？你为什么还在这里？', '安娜，你在这里吗？') $>"
 			}]
 		},
 		"lightOff": {
@@ -463,7 +463,7 @@
 				"msn": "如果发生什么事，不要犹豫，告诉我或学校辅导员。"
 			},
 			{
-				"tag": "Teacher",
+				"tag": "老师",
 				"character": "Teacher",
 				"msn": "回家吧，休息一下。"
 			}]
@@ -527,7 +527,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "You go back home and sleep earlier today. As usual, it's dream time..."
+				"value": "今天你回家早点睡吧，照例是做梦的时间了……"
 			}
 		},
 		"changeScene": {

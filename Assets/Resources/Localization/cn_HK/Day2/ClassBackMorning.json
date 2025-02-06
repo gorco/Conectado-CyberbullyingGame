@@ -34,7 +34,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "You go and sit in the first empty desk you see, while everyone is looking at you."
+				"value": "你走到你睇到的第一張空枱前坐低，所有人都望住你。"
 			}
 		},
 		"node3": {
@@ -107,7 +107,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "You all sit down and when you realize it's already break time."
+				"value": "你地都坐低後先意識到已經係休息時間啦。"
 			}
 		},
 		"changeHour": {

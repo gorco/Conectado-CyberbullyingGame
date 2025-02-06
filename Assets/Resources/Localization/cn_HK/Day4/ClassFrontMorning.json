@@ -4,8 +4,8 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "Teacher",
-				"character": "老師",
+				"tag": "老師",
+				"character": "Teacher",
 				"msn": "如果你記得上個星期，我哋學緊點做語態分析。"
 			},
 			{
@@ -62,7 +62,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "The bell rings, it's break time."
+				"value": "鐘聲響了，小息時間到了。"
 			}
 		},
 		"changeHour": {

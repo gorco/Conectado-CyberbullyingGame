@@ -169,7 +169,7 @@
 			"type": "options",
 			"questionId": "parentsAfternoonSecondDay",
 			"options": [{
-				"msn": "As usual",
+				"msn": "照常。",
 				"condition": "page == 1"
 			},
 			{
@@ -664,7 +664,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "<$ varObject('global', 'UserNameNonStatic') $> this is the chat we use all classm8s",
+				"value": "<$ varObject('global', 'UserNameNonStatic') $> 这是我们所有同学使用的聊天室",
 				"key": "Alison",
 				"other": "thxClass",
 				"time": 0 
@@ -676,7 +676,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Welcome",
+				"value": "欢迎",
 				"key": "Guille",
 				"time": 1 
 			}
@@ -698,7 +698,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Why da invit8on? didnt u speak with Alex tday?",
+				"value": "为什么要邀请？你今天不是和亚历说话了吗？",
 				"key": "Ana",
 				"time": 8 
 			}
@@ -709,7 +709,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Hmm, hasn't earned 2be in this group. Someone kick <$ if(varObject('global', 'MaleSexNonStatic')==true, 'his', 'her') $> out NOW!",
+				"value": "还没资格加入这个组。有人踢 <$ if(varObject('global', 'MaleSexNonStatic')==true, '他', '她') $> 去群组!",
 				"key": "Alex",
 				"time": 10 
 			}
@@ -720,7 +720,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "The only 1 left is that freak, María",
+				"value": "唯一剩下的就是那个怪物，玛丽亚",
 				"key": "Alex",
 				"other": "kickClass",
 				"time": 12 
@@ -731,7 +731,7 @@
 			"event": {
 				"name": "mobile message",
 				"var": "Clase",
-				"value": "Jose is the admin, talk 2morrow with him, doesnt read this chat to often",
+				"value": "荷茜是管理员，明天和他谈谈，他不经常阅读此聊天",
 				"key": "Ana",
 				"time": 14
 			}

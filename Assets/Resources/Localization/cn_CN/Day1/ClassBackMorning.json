@@ -59,7 +59,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "You go and sit in your place while everyone is looking at you."
+				"value": "当所有人都看着你的时候，你就坐到你的位置上。"
 			}
 		},
 		"node3": {
@@ -169,7 +169,7 @@
 				"name": "black",
 				"synchronous": true,
 				"var": "text",
-				"value": "Everyone sits down, the lesson is starting."
+				"value": "大家就坐，课堂开始了。"
 			}
 		},
 		"node4": {
