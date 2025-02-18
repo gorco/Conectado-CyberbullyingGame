@@ -24,5 +24,9 @@
     "startButton":"Start",
     "backButton":"Back",
     "adviseTitle":"IMPORTANT!",
-    "adviseText":"Don't submit a password you already use. Make up a good one. It will only be used inside the game."
+    "adviseText":"Don't submit a password you already use. Make up a good one. It will only be used inside the game.",
+
+    "surveyText":"To continue you must complete the following survey.",
+    "surveyButton":"Open survey",
+    "continueButton":"Continue"
 }

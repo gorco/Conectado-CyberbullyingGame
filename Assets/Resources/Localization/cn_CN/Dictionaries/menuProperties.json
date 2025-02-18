@@ -24,5 +24,9 @@
     "startButton":"开始",
     "backButton":"返回",
     "adviseTitle":"重要提示！",
-    "adviseText":"不要提交您已经使用的密码。请设置一个新的密码。它仅在游戏内使用。"
+    "adviseText":"不要提交您已经使用的密码。请设置一个新的密码。它仅在游戏内使用。",
+	
+    "surveyText":"To continue you must complete the following survey.",
+    "surveyButton":"Open survey",
+    "continueButton":"Continue"
 }

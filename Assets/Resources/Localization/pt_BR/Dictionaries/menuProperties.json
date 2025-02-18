@@ -24,5 +24,9 @@
     "startButton":"Começar",
     "backButton":"Voltar",
     "adviseTitle":"IMPORTANTE!",
-    "adviseText":"Não use uma senha que você já utiliza. Crie uma nova. Ela será usada apenas dentro do jogo."
+    "adviseText":"Não use uma senha que você já utiliza. Crie uma nova. Ela será usada apenas dentro do jogo.",
+
+    "surveyText":"Para continuar, você deve preencher a seguinte pesquisa.",
+    "surveyButton":"Abra a pesquisa",
+    "continueButton":"Continuar"
 }

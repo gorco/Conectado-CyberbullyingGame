@@ -24,5 +24,9 @@
     "startButton":"開始",
     "backButton":"返回",
     "adviseTitle":"重要事項!",
-    "adviseText":"不要提交您已使用的密碼。好好開一個好啲。它只會在遊戲內使用。"
+    "adviseText":"不要提交您已使用的密碼。好好開一個好啲。它只會在遊戲內使用。",
+	
+    "surveyText":"To continue you must complete the following survey.",
+    "surveyButton":"Open survey",
+    "continueButton":"Continue"
 }

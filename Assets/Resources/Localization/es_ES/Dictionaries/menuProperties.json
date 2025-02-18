@@ -24,5 +24,9 @@
     "startButton":"Empezar",
     "backButton":"Atrás",
     "adviseTitle":"¡IMPORTANTE!",
-    "adviseText":"No introduzcas una contraseña que ya uses. Piensa en una buena. Sólo será utilizada dentro del juego."
+    "adviseText":"No introduzcas una contraseña que ya uses. Piensa en una buena. Sólo será utilizada dentro del juego.",
+	
+    "surveyText":"Para continuar, debes rellenar la siguiente encuesta.",
+    "surveyButton":"Abrir encuesta",
+    "continueButton":"Continuar"
 }
