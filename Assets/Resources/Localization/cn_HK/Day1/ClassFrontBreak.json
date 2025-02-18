@@ -14,8 +14,8 @@
 		"go": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alejandro",
-				"character": "阿歷",
+				"tag": "阿歷",
+				"character": "Alex",
 				"msn": "你看什麼呢？走開，我們已經沒什麼可說。"
 			}]
 		},
@@ -433,9 +433,9 @@
 			"next": "changeHour",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
+				"var": "愛莉",
 				"value": "多謝你幫我。",
-				"key": "Alison Clase",
+				"key": "愛莉",
 				"other": "alisonThx",
 				"time": 3
 			}

@@ -16,8 +16,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "earing",
-				"value": "You're welcome, Allison",
-				"key": "You",
+				"value": "唔駛客氣, 愛莉",
+				"key": "你",
 				"other": "empty",
 				"time": 0
 			}
@@ -57,8 +57,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "You're all assholes, fuck off. You act like three year olds.",
-				"key": "You",
+				"value": "你哋都是賤人，躝開。你的所作所為就好似三歲既細路一樣。",
+				"key": "你",
 				"other": "empty",
 				"time": 0
 			}
@@ -68,8 +68,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "I'm sure you are the one who pissed himself at night, hahaha",
-				"key": "Ana",
+				"value": "我確認你就係個個晚上瀨尿既人，哈哈哈",
+				"key": "安娜",
 				"other": "empty",
 				"time": 1
 			}
@@ -79,8 +79,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "I'm sick of them. Tomorrow I'll speak to the tutor.",
-				"key": "You",
+				"value": "我厭倦咗佢地。明日我將會同導師講。",
+				"key": "你",
 				"other": "empty",
 				"time": 0
 			}
@@ -90,8 +90,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Look, we can also post <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him crybaby', 'her crybaby') $>",
-				"key": "Ana",
+				"value": "睇吓，我哋亦可以發帖 <$ if(varObject('global', 'MaleSexNonStatic')==true, '他係個喊鬼', '她係個喊鬼') $>",
+				"key": "安娜",
 				"other": "empty",
 				"time": 1
 			}
@@ -137,9 +137,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Alex",
-				"value": "I've seen you have deleted your post with your phone numbre, but don't worry, I made and screenshot and I can upload it again hahaha",
-				"key": "Alex",
+				"var": "阿歷",
+				"value": "我睇到你刪除了你的帖子，上面有你的電話號碼，不過唔使擔心，我截咗圖啦，我可以再上傳一次哈哈哈",
+				"key": "阿歷",
 				"other": "empty",
 				"time": 0
 			}
@@ -149,8 +149,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "troll",
-				"value": "Alison... this is why you wanted to exchange passwords, you are the worst.",
-				"key": "You",
+				"value": "愛莉……呢個就係你想要交換密碼的原因，你係最壞。",
+				"key": "你",
 				"other": "empty",
 				"time": 0
 			}

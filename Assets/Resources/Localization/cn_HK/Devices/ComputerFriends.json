@@ -6,8 +6,8 @@
 			"event": {
 				"name": "computer publication",
 				"var": "earing",
-				"value": "My new earrings, I<3U :)",
-				"key": "Alison",
+				"value": "我既新耳環，我愛伱:)",
+				"key": "愛莉",
 				"other": "photoEaring",
 				"time": 0 
 			}
@@ -18,8 +18,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "earing",
-				"value": "I love them, you know where they bought them?",
-				"key": "Alicia",
+				"value": "我好鐘意佢哋，你知道佢哋係邊度買嗎？",
+				"key": "愛麗絲亞",
 				"time": 0.3 
 			}
 		},
@@ -30,8 +30,8 @@
 				"name": "computer comment",
 				"var": "earing",
 				
-				"value": "Pff, I just lost one in class, girl",
-				"key": "Alison",
+				"value": "噢，我啱啱在課堂上唔見一個，姑娘",
+				"key": "愛莉",
 				"time": 0.6
 			}
 		},
@@ -41,8 +41,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "earing",
-				"value": ":( wish u can find it, look well where u've been",
-				"key": "Alicia",
+				"value": ":( 希望你能找到它，好好看看我去過哪裡",
+				"key": "愛麗絲亞",
 				"time": 1
 			}
 		},
@@ -62,8 +62,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "earing",
-				"value": "<$ varObject('global', 'UserNameNonStatic') $> found it and returned it to me. Thank you very much :)",
-				"key": "Alison",
+				"value": "<$ varObject('global', 'UserNameNonStatic') $> 搵到啦並將佢還返俾我。非常感謝 :)",
+				"key": "愛莉",
 				"other" : "earingFounded",
 				"time": 1.5
 			}
@@ -73,8 +73,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "earing",
-				"value": "It was impossible to find, someone might have keep it. Thank so much to all the people who helped me search for it.",
-				"key": "Alison",
+				"value": "唔可能搵到佢，可能有人將佢攞走咗。非常感謝所有幫我搵既人。",
+				"key": "愛莉",
 				"time": 1.5
 			}
 		}
@@ -92,8 +92,8 @@
 			"type": "event",
 			"event": {
 				"name": "computer friend",
-				"var": "Alison",
-				"value": "There's always a reason to keep going",
+				"var": "愛莉",
+				"value": "總有一個理由繼續前行",
 				"time": 0,
 				"other": "alisonAccept,alisonDeny"
 			}
@@ -106,8 +106,8 @@
 			"event": {
 				"name": "computer publication",
 				"var": "match",
-				"value": "Watching the game",
-				"key": "Guillermo",
+				"value": "睇緊球賽",
+				"key": "吉耶",
 				"other": "photoMatch",
 				"time": 0 
 			}
@@ -118,8 +118,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "match",
-				"value": "What a game dude! we should hang out to watch the next one. My father bought a new tv and is huuuge",
-				"key": "Jesus",
+				"value": "兄弟，呢場真係一場精彩的比賽！我們應該一齊出去睇睇下一集。我爸爸買咗一台新電視，非常大",
+				"key": "伊穌斯",
 				"time": 0 
 			}
 		},
@@ -128,8 +128,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "match",
-				"value": "I'm in guys, hit me up whenever u want",
-				"key": "Miguel",
+				"value": "我加入咗，你們隨時都可以聯絡我",
+				"key": "米高",
 				"time": 0.5 
 			}
 		}
@@ -147,19 +147,19 @@
 			"type": "options",
 			"questionId": "GuilleFriendRequest",
 			"options": [{
-				"msn": "係，我最好唔接受佢。"
+				"msn": "是的，我最好不接受它。"
 			},
 			{
 				"next": "resend",
-				"msn": "不，我都係好好地諗。"
+				"msn": "不，我都是好好地想。"
 			}]
 		},
 		"resend":{
 			"type": "event",
 			"event": {
 				"name": "computer friend",
-				"var": "Guillermo",
-				"value": "If the plan doesn't work change the plan, but don't change the goal.",
+				"var": "吉耶",
+				"value": "如果计划起不到作用就改变计划，但不要改变目标。",
 				"time": 0,
 				"other": "guilleAccept,guilleDeny"
 			}

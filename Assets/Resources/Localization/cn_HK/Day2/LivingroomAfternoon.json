@@ -663,9 +663,9 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我們的群組",
 				"value": "<$ varObject('global', 'UserNameNonStatic') $> 呢個係我们所有同学都使用既聊天室",
-				"key": "Alison",
+				"key": "愛莉",
 				"other": "thxClass",
 				"time": 0 
 			}
@@ -675,9 +675,9 @@
 			"next": "message3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我們的群組",
 				"value": "歡迎",
-				"key": "Guille",
+				"key": "吉耶",
 				"time": 1 
 			}
 		},
@@ -686,9 +686,9 @@
 			"next": "message4",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我們的群組",
 				"value": ":)",
-				"key": "Alison",
+				"key": "愛莉",
 				"time": 2 
 			}
 		},
@@ -697,9 +697,9 @@
 			"next": "message5",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我們的群組",
 				"value": "點解要邀请？你今天唔係同阿歷講野咩？",
-				"key": "Ana",
+				"key": "安娜",
 				"time": 8 
 			}
 		},
@@ -708,9 +708,9 @@
 			"next": "message6",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我們的群組",
 				"value": "咦，仲未有資格加入這個小組。有人踢 <$ if(varObject('global', 'MaleSexNonStatic')==true, '他', '她') $> 去群組!",
-				"key": "Alex",
+				"key": "阿歷",
 				"time": 10 
 			}
 		},
@@ -719,9 +719,9 @@
 			"next": "message7",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我們的群組",
 				"value": "唯一剩低既就係呢個怪物，瑪莉亞",
-				"key": "Alex",
+				"key": "阿歷",
 				"other": "kickClass",
 				"time": 12 
 			}
@@ -730,9 +730,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我們的群組",
 				"value": "荷茜係管理員，明天同佢傾傾，他唔係成日閱讀聊呢個聯天",
-				"key": "Ana",
+				"key": "安娜",
 				"time": 14
 			}
 		}

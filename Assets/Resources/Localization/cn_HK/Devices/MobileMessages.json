@@ -24,8 +24,8 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
-				"value": "It's nothing",
+				"var": "愛莉",
+				"value": "冇野",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -52,8 +52,8 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
-				"value": "Yes, I accept your invitation now :)",
+				"var": "愛莉",
+				"value": "係, 我依家接受你既邀請 :)",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -63,8 +63,8 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
-				"value": "I'll look into it when I can. I'm busy right know",
+				"var": "愛莉",
+				"value": "當我可機會既時候我會調查呢件事。我宜家好忙",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -76,8 +76,8 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "Thank you :)",
+				"var": "我們的群組",
+				"value": "多謝 :)",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -106,9 +106,8 @@
 			"next": "messageA2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				
-				"value": "I just get to school and it really feels like awful that you guys treat me like shit.",
+				"var": "我們的群組",
+				"value": "我啱啱嚟到學校，你哋對我咁唔公平，感覺真係太差啦。",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -119,8 +118,8 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "I'm not saying you all must like me, but all you could do is treat me with some respect.",
+				"var": "我們的群組",
+				"value": "我唔係話你哋都一定要鐘意我，但你哋必須尊重我。",
 				"key": "",
 				"time": 0.2
 			}
@@ -130,8 +129,8 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "Grow up, how old are you?",
+				"var": "我們的群組",
+				"value": "成熟啲啦，你幾大呀？",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -142,9 +141,8 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				
-				"value": "I don't understand, what have I done to you to insult, ignore and make jokes about of me?",
+				"var": "我們的群組",
+				"value": "我唔明白，我做了乜野事令你如此侮辱、忽視和取笑我？",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -155,9 +153,9 @@
 			"next": "message3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "What's your problem with <$ varObject('global', 'UserNameNonStatic') $>?",
-				"key": "Alison",
+				"var": "我們的群組",
+				"value": "你同 <$ varObject('global', 'UserNameNonStatic') $> 有乜野問題?",
+				"key": "愛莉",
 				"time": 2 
 			}
 		},
@@ -166,9 +164,9 @@
 			"next": "message4",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "You're crossing the line",
-				"key": "Guille",
+				"var": "我們的群組",
+				"value": "你過界喇",
+				"key": "吉耶",
 				"time": 4 
 			}
 		},
@@ -176,9 +174,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "This is not your bussiness. I can make Jose to kick you out too.",
-				"key": "Alex",
+				"var": "我們的群組",
+				"value": "呢個唔關你事。我也可以讓何塞把你踢出去。",
+				"key": "阿歷",
 				"other": "kickClass2",
 				"time": 8 
 			}
@@ -206,8 +204,8 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "If me being in this group chat is a problem, I'm leaving",
+				"var": "我們的群組",
+				"value": "如果我加入呢個群聊有問題，我就離開啦",
 				"key": "",
 				"time": 0 
 			}
@@ -217,8 +215,8 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "I hope Jorge is not as stupid as you are when he reads the chat",
+				"var": "我們的群組",
+				"value": "我希望 Jorge 係睇聊天室內容既時候不會好似你一樣咁蠢",
 				"key": "",
 				"time": 0 
 			}
@@ -228,8 +226,8 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "Stop, I haven't done anything to you that justifies the way you're treating me",
+				"var": "我們的群組",
+				"value": "停低，我沒有對你做任何嘢，令你咁樣對我",
 				"key": "",
 				"time": 0 
 			}
@@ -238,8 +236,8 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "I'm going to bed, see you tomorrow",
+				"var": "我們的群組",
+				"value": "我要瞓覺了，明天見",
 				"key": "",
 				"other": "empty",
 				"time": 1 
@@ -265,11 +263,10 @@
 		"nodeB": {
 			"type": "event",
 			"next": "mariaFS",
-			"next": "nodeA2",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
-				"value": "Yes, I wrote it, see you tomorrow <3",
+				"var": "瑪莉亞",
+				"value": "係既，我寫咗，明天見 <3",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -288,8 +285,8 @@
 			"next": "nodeA2",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
-				"value": "Sorry María, I didn't write it, they might write you when they stole my phone",
+				"var": "瑪莉亞",
+				"value": "對唔住，瑪莉亞，呢啲唔係我寫的，他們偷我手機的時候可能會寫信給你",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -300,8 +297,8 @@
 			"next": "nodeA3",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
-				"value": "i'm so sorry, really",
+				"var": "瑪莉亞",
+				"value": "我好對唔住，真的",
 				"key": "",
 				"other": "empty",
 				"time": 0.2
@@ -311,9 +308,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
-				"value": "i believe u, relax, get some rest",
-				"key": "Maria",
+				"var": "瑪莉亞",
+				"value": "我信你，放鬆，休息一下",
+				"key": "瑪莉亞",
 				"other": "empty",
 				"time": 4
 			}
@@ -341,8 +338,8 @@
 			"next": "nodeA2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "someone's used my phone to write this",
+				"var": "我們的群組",
+				"value": "有人用我的手機寫咗呢個",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -353,9 +350,9 @@
 			"next": "nodeA3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "We have photos of what u said, we're gonna share them with all the other classrooms, hahaha",
-				"key": "Ana",
+				"var": "我們的群組",
+				"value": "我們有你所講既相，我們會跟其他課室分享，哈哈哈",
+				"key": "安娜",
 				"time": 2
 			}
 		},
@@ -363,9 +360,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "hahaha it's too late now to deny anything :P",
-				"key": "Alex",
+				"var": "我們的群組",
+				"value": "哈哈哈現在否認什乜野都太遲啦 :P",
+				"key": "阿歷",
 				"time": 4
 			}
 		},
@@ -374,8 +371,8 @@
 			"next": "nodeB2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "Álex, Ana, fuck you both, I know it's your thing",
+				"var": "我們的群組",
+				"value": "阿歷，安娜，操你哋兩個的，我知道係你哋既嘢",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -386,9 +383,9 @@
 			"next": "nodeB3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "maybe it is, so? we already have photos of the conversation",
-				"key": "Ana",
+				"var": "我們的群組",
+				"value": "可能係, 咁又點? 我哋已經有對話既相啦",
+				"key": "安娜",
 				"time": 2
 			}
 		},
@@ -396,9 +393,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "tomorrow everyone will know about your personal tastes hahaha",
-				"key": "Alex",
+				"var": "我們的群組",
+				"value": "明天大家都會知道你既個人品味哈哈哈",
+				"key": "阿歷",
 				"time": 2
 			}
 		},
@@ -407,8 +404,8 @@
 			"next": "nodeC2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "Yes, I love it, problem? Como oís, me encanta, algún problema? YOU ARE JEALOUS!!",
+				"var": "我們的群組",
+				"value": "係呀，我鐘意佢，有乜野問題？咁，我鐘意佢，仲有乜野問題？你妒忌啦！",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -418,9 +415,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "tomorrow everyone will know about your personal tastes hahaha",
-				"key": "Alex",
+				"var": "我們的群組",
+				"value": "明天大家都會知道你既個人品味哈哈哈",
+				"key": "阿歷",
 				"time": 2
 			}
 		}

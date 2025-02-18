@@ -3,8 +3,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "I don't have any new photos to upload."
+				"tag": "你",
+				"msn": "我没有新的相可以上载。"
 			}]
 		}
 	}

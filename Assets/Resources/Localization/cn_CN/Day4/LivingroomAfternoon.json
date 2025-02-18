@@ -103,7 +103,7 @@
 			"next": "mobileMessage1",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我们的群组",
 				"value": "看起来你没有把我踢出去，干杯。作为礼物我会告诉你我喜欢吮吸阴茎 :)",
 				"key": "",
 				"other": "empty",
@@ -115,7 +115,7 @@
 			"next": "mobileMessage2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我们的群组",
 				"value": "事实上我对一切都感兴趣，如果有人想知道的话，请告诉我",
 				"key": "",
 				"time": 0.1
@@ -126,9 +126,9 @@
 			"next": "mobileMessage3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我们的群组",
 				"value": "谢谢你的坦白，但我们已经知道了，你的脸上写满了一切",
-				"key": "Alex",
+				"key": "亚历山大",
 				"time": 0.2
 			}
 		},
@@ -137,9 +137,9 @@
 			"next": "mobileMessage4",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我们的群组",
 				"value": "我们有一个完美的名字，SUFACE，那个烂脸哈哈哈",
-				"key": "Ana",
+				"key": "安娜",
 				"time": 0.3
 			}
 		},
@@ -148,9 +148,9 @@
 			"next": "mobileMessage5",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我们的群组",
 				"value": "这是什么？你为什么这么说？",
-				"key": "Alison",
+				"key": "艾莉森",
 				"time": 0.3
 			}
 		},
@@ -159,9 +159,9 @@
 			"next": "mobileMessage6",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我们的群组",
 				"value": "最好的一天我却错过了...我失去了什么？",
-				"key": "Jose",
+				"key": "何塞",
 				"time": 0.4
 			}
 		},
@@ -170,9 +170,9 @@
 			"next": "mobileMessage7",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我们的群组",
 				"value": "你已经越界了，谁在搞怪 <$ if(varObject('global', 'MaleSexNonStatic')==true, '他', '她') $>?",
-				"key": "Guille",
+				"key": "吉列尔莫",
 				"time": 0.5
 			}
 		},
@@ -181,9 +181,9 @@
 			"next": "mobileMessage8",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "我们的群组",
 				"value": "没有，怎么了，吉耶？你被坑了，不想让人知道？哈哈哈",
-				"key": "Ana",
+				"key": "安娜",
 				"other": "trollClass",
 				"time": 0.6
 			}
@@ -193,7 +193,7 @@
 			"next": "mobileMessage9",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
+				"var": "玛丽亚",
 				"value": "<$ if(varObject('global', 'MaleSexNonStatic')==true, '你很性感', '我是女人，我了解你') $>, 明天在厕所你就会知道 ;)",
 				"key": "",
 				"other": "empty",
@@ -204,9 +204,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
+				"var": "玛丽亚",
 				"value": "这太不像你了 <$ varObject('global', 'UserNameNonStatic') $>, 你被坑了是吧？",
-				"key": "Maria",
+				"key": "玛丽亚",
 				"other": "trollMaria",
 				"time": 0.3
 			}

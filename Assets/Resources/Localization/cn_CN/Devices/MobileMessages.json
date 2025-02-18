@@ -3,8 +3,8 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "I have nothing to answer"
+				"tag": "你",
+				"msn": "我无话可回答"
 			}]
 		}
 	},
@@ -14,18 +14,18 @@
 			"questionId": "AlisonEaringMobileTy",
 			"options": [{
 				"next": "node1",
-				"msn": "It's nothing"
+				"msn": "没关系"
 			},
 			{
-				"msn": "(Don't answer, I'll see what I respond later)"
+				"msn": "（不要回答，稍后我会看看我如何回应）"
 			}]
 		},
 		"node1": {
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
-				"value": "It's nothing",
+				"var": "艾莉森",
+				"value": "没关系",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -38,22 +38,22 @@
 			"questionId": "AlisonFriendRequestMobile",
 			"options": [{
 				"next": "node1",
-				"msn": "Yes, I accept you now"
+				"msn": "是的，我现在接受你"
 			},
 			{
 				"next": "node2",
-				"msn": "I'll look into it when I can"
+				"msn": "我会尽快调查"
 			},
 			{
-				"msn": "(She's very boring, I won't answer)"
+				"msn": "（她很无聊，我就不回答了）"
 			}]
 		},
 		"node1": {
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
-				"value": "Yes, I accept your invitation now :)",
+				"var": "艾莉森",
+				"value": "是的，我现在接受你的邀请 :)",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -63,8 +63,8 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
-				"value": "I'll look into it when I can. I'm busy right know",
+				"var": "艾莉森",
+				"value": "我会尽快调查一下。我现在很忙",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -76,8 +76,8 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "Thank you :)",
+				"var": "我们的群组",
+				"value": "谢谢 :)",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -90,15 +90,15 @@
 			"questionId": "mobileKickMessages",
 			"options": [{
 				"next": "messageA",
-				"msn": "You treat me awful. It makes me feel bad"
+				"msn": "你对我太差了。这让我感觉很糟糕"
 			},
 			{
 				"next": "messageB",
-				"msn": "Grow up"
+				"msn": "成熟一点"
 			},
 			{
 				"next": "messageC",
-				"msn": "What have I done to you?"
+				"msn": "我对你做了什么？"
 			}]
 		},
 		"messageA": {
@@ -106,9 +106,8 @@
 			"next": "messageA2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				
-				"value": "I just get to school and it really feels like awful that you guys treat me like shit.",
+				"var": "我们的群组",
+				"value": "我才刚刚到学校，你们对我如此不公平，这感觉真是太糟糕了。",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -119,8 +118,8 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "I'm not saying you all must like me, but all you could do is treat me with some respect.",
+				"var": "我们的群组",
+				"value": "我不是说你们都必须喜欢我，但你们必须尊重我。",
 				"key": "",
 				"time": 0.2
 			}
@@ -130,8 +129,8 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "Grow up, how old are you?",
+				"var": "我们的群组",
+				"value": "成熟一点，你多大了？",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -142,9 +141,8 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				
-				"value": "I don't understand, what have I done to you to insult, ignore and make jokes about of me?",
+				"var": "我们的群组",
+				"value": "我不明白，我做了什么让你如此侮辱、忽视和取笑我？",
 				"key": "",
 				"other": "empty",
 				"time": 0 
@@ -155,9 +153,9 @@
 			"next": "message3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "What's your problem with <$ varObject('global', 'UserNameNonStatic') $>?",
-				"key": "Alison",
+				"var": "我们的群组",
+				"value": "你对于 <$ varObject('global', 'UserNameNonStatic') $> 有什么问题?",
+				"key": "艾莉森",
 				"time": 2 
 			}
 		},
@@ -166,9 +164,9 @@
 			"next": "message4",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "You're crossing the line",
-				"key": "Guille",
+				"var": "我们的群组",
+				"value": "你越界了",
+				"key": "吉列尔莫",
 				"time": 4 
 			}
 		},
@@ -176,9 +174,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "This is not your bussiness. I can make Jose to kick you out too.",
-				"key": "Alex",
+				"var": "我们的群组",
+				"value": "这不关你的事。我可以让何塞把你踢出去。",
+				"key": "亚历山大",
 				"other": "kickClass2",
 				"time": 8 
 			}
@@ -190,15 +188,15 @@
 			"questionId": "mobileKickOptions",
 			"options": [{
 				"next": "messageA",
-				"msn": "Don't worry, I'm leaving"
+				"msn": "别担心，我要走了"
 			},
 			{
 				"next": "messageB",
-				"msn": "I hope Jose is more intelligent."
+				"msn": "我希望何塞更聪明一些。"
 			},
 			{
 				"next": "messageC",
-				"msn": "Alex, stop"
+				"msn": "亚历克斯，停"
 			}]
 		},
 		"messageA": {
@@ -206,8 +204,8 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "If me being in this group chat is a problem, I'm leaving",
+				"var": "我们的群组",
+				"value": "如果我加入这个群聊有问题，我就离开",
 				"key": "",
 				"time": 0 
 			}
@@ -217,8 +215,8 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "I hope Jorge is not as stupid as you are when he reads the chat",
+				"var": "我们的群组",
+				"value": "我希望 Jorge 在阅读聊天内容时不会像你一样愚蠢",
 				"key": "",
 				"time": 0 
 			}
@@ -228,8 +226,8 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "Stop, I haven't done anything to you that justifies the way you're treating me",
+				"var": "我们的群组",
+				"value": "停下来，我没有对你做任何事，所以你才这样对待我",
 				"key": "",
 				"time": 0 
 			}
@@ -238,8 +236,8 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "I'm going to bed, see you tomorrow",
+				"var": "我们的群组",
+				"value": "我要睡觉了，明天见",
 				"key": "",
 				"other": "empty",
 				"time": 1 
@@ -252,24 +250,23 @@
 			"questionId": "mobileTrollMariaChat",
 			"options": [{
 				"next": "nodeA",
-				"msn": "I haven't written anything"
+				"msn": "我还没写任何东西"
 			},
 			{
 				"next": "nodeB",
-				"msn": "Yes, It was me"
+				"msn": "是的，是我"
 			},
 			{
-				"msn": "(Don't answer)"
+				"msn": "（不要回答）"
 			}]
 		},
 		"nodeB": {
 			"type": "event",
 			"next": "mariaFS",
-			"next": "nodeA2",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
-				"value": "Yes, I wrote it, see you tomorrow <3",
+				"var": "玛丽亚",
+				"value": "是的，我写了，明天见 <3",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -288,8 +285,8 @@
 			"next": "nodeA2",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
-				"value": "Sorry María, I didn't write it, they might write you when they stole my phone",
+				"var": "玛丽亚",
+				"value": "对不起，玛丽亚，这不是我写的，他们偷我手机的时候可能会给你写信",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -300,8 +297,8 @@
 			"next": "nodeA3",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
-				"value": "i'm so sorry, really",
+				"var": "玛丽亚",
+				"value": "我很抱歉，真的",
 				"key": "",
 				"other": "empty",
 				"time": 0.2
@@ -311,9 +308,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Maria",
-				"value": "i believe u, relax, get some rest",
-				"key": "Maria",
+				"var": "玛丽亚",
+				"value": "我相信你，放松，休息一下",
+				"key": "玛丽亚",
 				"other": "empty",
 				"time": 4
 			}
@@ -325,15 +322,15 @@
 			"questionId": "mobileTrollClassChat",
 			"options": [{
 				"next": "nodeA",
-				"msn": "I didn't write anything"
+				"msn": "我什么都没写"
 			},
 			{
 				"next": "nodeB",
-				"msn": "Alex, Ana, fuck you"
+				"msn": "亚历克斯，安娜，操你们"
 			},
 			{
 				"next": "nodeC",
-				"msn": "As you heard, I love it"
+				"msn": "正如你所听到的，我喜欢它"
 			}]
 		},
 		"nodeA": {
@@ -341,8 +338,8 @@
 			"next": "nodeA2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "someone's used my phone to write this",
+				"var": "我们的群组",
+				"value": "有人用我的手机写了这个",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -353,9 +350,9 @@
 			"next": "nodeA3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "We have photos of what u said, we're gonna share them with all the other classrooms, hahaha",
-				"key": "Ana",
+				"var": "我们的群组",
+				"value": "我们有你所说的照片，我们会与其他教室分享，哈哈哈",
+				"key": "安娜",
 				"time": 2
 			}
 		},
@@ -363,9 +360,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "hahaha it's too late now to deny anything :P",
-				"key": "Alex",
+				"var": "我们的群组",
+				"value": "哈哈哈現在否認什麼都太晚了 :P",
+				"key": "亚历山大",
 				"time": 4
 			}
 		},
@@ -374,8 +371,8 @@
 			"next": "nodeB2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "Álex, Ana, fuck you both, I know it's your thing",
+				"var": "我们的群组",
+				"value": "亞歷克斯，安娜，操你们俩，我知道这是你们的事",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -386,9 +383,9 @@
 			"next": "nodeB3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "maybe it is, so? we already have photos of the conversation",
-				"key": "Ana",
+				"var": "我们的群组",
+				"value": "也许是吧？我们已经有对话的照片了",
+				"key": "安娜",
 				"time": 2
 			}
 		},
@@ -396,9 +393,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "tomorrow everyone will know about your personal tastes hahaha",
-				"key": "Alex",
+				"var": "我们的群组",
+				"value": "明天大家都会知道你的个人品味哈哈哈",
+				"key": "亚历山大",
 				"time": 2
 			}
 		},
@@ -407,8 +404,8 @@
 			"next": "nodeC2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "Yes, I love it, problem? Como oís, me encanta, algún problema? YOU ARE JEALOUS!!",
+				"var": "我们的群组",
+				"value": "系呀，我喜欢它，有什么问题？那么，我喜欢它，还有什么问题？你妒忌啦！！",
 				"key": "",
 				"other": "empty",
 				"time": 0
@@ -418,9 +415,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "tomorrow everyone will know about your personal tastes hahaha",
-				"key": "Alex",
+				"var": "我们的群组",
+				"value": "明天大家都会知道你的个人品味哈哈哈",
+				"key": "亚历山大",
 				"time": 2
 			}
 		}

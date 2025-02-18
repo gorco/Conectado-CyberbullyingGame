@@ -3,9 +3,9 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
+				"tag": "你",
 				
-				"msn": "I don't have anything to post right now, I have better things to do."
+				"msn": "我现在没有什么可以发布，我还有更好的事情要做。"
 			}]
 		}
 	},
@@ -15,8 +15,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "earing",
-				"value": "You're welcome, Allison",
-				"key": "You",
+				"value": "别客气，艾莉森",
+				"key": "你",
 				"other" : "empty",
 				"time": 0
 			}
@@ -28,22 +28,22 @@
 			"questionId": "insultPostOptions",
 			"options": [{
 				"next": "node1a",
-				"msn": "(Report Post)"
+				"msn": "（举报帖子）"
 			},
 			{
 				"next": "node1b",
-				"msn": "You are an asshole"
+				"msn": "你是个混蛋"
 			},
 			{
 				"next": "node1c",
-				"msn": "I'm gonna end up having a word with your tutor"
+				"msn": "我最后要和你的导师谈谈"
 			}]
 		},
 		"node1a": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "You",
-				"msn": "I'm gonna report the message, see if they delete it because of its content."
+				"tag": "你",
+				"msn": "我要报告该消息，看看他们是否会因为其内容而将其删除。"
 			}]
 		},
 		"node1b": {
@@ -53,8 +53,8 @@
 				"name": "computer comment",
 				"var": "insult",
 				
-				"value": "You're all assholes, fuck off. You act like three year olds.",
-				"key": "You",
+				"value": "你们都是混蛋，滚开。你们就像三岁的小孩一样。",
+				"key": "你",
 				"other" : "empty",
 				"time": 0
 			}
@@ -64,8 +64,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "I'm sure you are the one who pissed himself at night, hahaha",
-				"key": "Ana",
+				"value": "我确定你就是那个晚上尿裤子的人，哈哈哈",
+				"key": "安娜",
 				"other" : "empty",
 				"time": 1
 			}
@@ -76,8 +76,8 @@
 				"name": "computer comment",
 				"var": "insult",
 				
-				"value": "I'm sick of them. Tomorrow I'll speak to the tutor.",
-				"key": "You",
+				"value": "我受够了他们。明天我要和导师谈谈。",
+				"key": "你",
 				"other" : "empty",
 				"time": 0
 			}
@@ -88,8 +88,8 @@
 				"name": "computer comment",
 				"var": "insult",
 				
-				"value": "Look, we can also post <$ if(varObject('global', 'MaleSexNonStatic')==true, 'him crybaby', 'her crybaby') $>",
-				"key": "Ana",
+				"value": "瞧，我们也可以发帖 <$ if(varObject('global', 'MaleSexNonStatic')==true, '他爱哭鬼', '她爱哭鬼') $>",
+				"key": "安娜",
 				"other" : "empty",
 				"time": 1
 			}
@@ -101,22 +101,22 @@
 			"questionId": "trollPostOptions",
 			"options": [{
 				"next": "node1a",
-				"msn": "(Delete Post)"
+				"msn": "(删除帖子)"
 			},
 			{
 				"next": "node1b",
-				"msn": "Alison... this is why you wanted to exchange passwords."
+				"msn": "艾莉森……这就是你想交换密码的原因。"
 			},
 			{
-				"msn": "(Remain silent)"
+				"msn": "（保持沉默）"
 			}]
 		},
 		"node1a": {
 			"type": "dialog",
 			"next": "loadPub",
 			"fragments": [{
-				"tag": "You",
-				"msn": "I'm gonna delete the post"
+				"tag": "你",
+				"msn": "我要删除该帖子"
 			}]
 		},
 		"loadPub": {
@@ -131,10 +131,9 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Alex",
-				
-				"value": "I've seen you have deleted your post with your phone numbre, but don't worry, I made and screenshot and I can upload it again hahaha",
-				"key": "Alex",
+				"var": "亚历山大",
+				"value": "我看到你删除了你的帖子，上面有你的电话号码，不过别担心，我截图了，我可以再上传一次哈哈哈",
+				"key": "亚历山大",
 				"other": "empty",
 				"time": 0
 			}
@@ -144,8 +143,8 @@
 			"event": {
 				"name": "computer comment",
 				"var": "troll",
-				"value": "Alison... this is why you wanted to exchange passwords, you are the worst.",
-				"key": "You",
+				"value": "艾莉森……这就是你想要交换密码的原因，你太坏了。",
+				"key": "你",
 				"other" : "empty",
 				"time": 0
 			}

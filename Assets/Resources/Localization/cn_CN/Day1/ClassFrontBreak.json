@@ -433,9 +433,9 @@
 			"next": "changeHour",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
+				"var": "艾莉森",
 				"value": "再次感谢你的帮助。",
-				"key": "Alison Clase",
+				"key": "艾莉森",
 				"other": "alisonThx",
 				"time": 3
 			}

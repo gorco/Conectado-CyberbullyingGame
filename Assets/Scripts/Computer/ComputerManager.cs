@@ -201,23 +201,23 @@ public class ComputerManager : EventManager {
 		{
 			avatarFile = GlobalState.MaleSex ? "Boy" : "Girl";
 		}
-		else if (author == "Guille" || author == "Guillermo" || author == "Guillaume")
+		else if (author == "Guille" || author == "Guillermo" || author == "Guillaume" || author == "吉列尔莫" || author == "吉耶")
 		{
 			avatarFile = "Guille";
 		}
-		else if (author == "Alex" || author == "Álex" || author == "Alejandro" || author == "Alexandre")
+		else if (author == "Alex" || author == "Álex" || author == "Alejandro" || author == "Alexandre" || author == "亚历山大" || author == "阿歷")
 		{
 			avatarFile = "Alex";
 		}
-		else if (author == "Ana" || author == "Anna")
+		else if (author == "Ana" || author == "Anna" || author == "安娜")
 		{
 			avatarFile = "Ana";
 		}
-		else if (author == "Alice" || author == "Alison")
+		else if (author == "Alice" || author == "Alison" || author == "艾莉森" || author == "愛莉")
 		{
 			avatarFile = "Alison";
 		}
-		else if (author == "Jose" || author == "Joseph" || author == "José")
+		else if (author == "Jose" || author == "Joseph" || author == "José" || author == "何塞" || author == "荷西")
 		{
 			avatarFile = "Jose";
 		}
