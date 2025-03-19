@@ -55,23 +55,27 @@ public class SocialFriend : MonoBehaviour {
 		this.state.text = state;
 
 		string avatarFile = "";
-		if (name == "Guille" || name == "Guillermo" || name == "Guillaume")
+		if (name == "Guille" || name == "Guillermo" || name == "Guillaume" || 
+			name == "Guilherme" || name == "吉列尔莫" || name == "吉耶")
 		{
 			avatarFile = "Guille";
 		}
-		else if (name == "Alex" || name == "Álex" || name == "Alejandro" || name == "Alexandre")
+		else if (name == "Alex" || name == "Álex" || name == "Alejandro" || 
+			name == "Alexandre" || name == "亚历山大" || name == "阿歷")
 		{
 			avatarFile = "Alex";
 		}
-		else if (name == "Ana" || name == "Anna")
+		else if (name == "Ana" || name == "Anna" || name == "安娜")
 		{
 			avatarFile = "Ana";
 		}
-		else if (name == "Alice" || name == "Alison")
+		else if (name == "Alice" || name == "Alison" ||
+			name == "艾莉森" || name == "愛莉")
 		{
 			avatarFile = "Alison";
 		}
-		else if (name == "Jose" || name == "Joseph" || name == "José")
+		else if (name == "Jose" || name == "Joseph" || name == "José" ||
+			name == "何塞" || name == "荷西")
 		{
 			avatarFile = "Jose";
 		}

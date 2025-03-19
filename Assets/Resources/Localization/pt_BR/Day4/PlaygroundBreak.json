@@ -35,7 +35,7 @@
 			"type": "dialog",
 			"next": "askOptions",
 			"fragments": [{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Você conseguiu colar o cartaz na Maria sem ela perceber?"
 			}]
@@ -64,7 +64,7 @@
 		"noTime": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "O que você tá esperando? Vai logo colar ele nas costas dela..."
 			}]
@@ -72,7 +72,7 @@
 		"mobile": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Hahahaha, muito bem."
 			},
@@ -85,7 +85,7 @@
 		"repeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Hahaha."
 			},
@@ -117,7 +117,7 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "E se tivesse sido a gente? Você vai correr para contar para seus pais ou pro professor...?"
 			},

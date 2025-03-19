@@ -150,7 +150,7 @@
 		"nodeRepeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Tente tirar o chiclete no banheiro."
 			}]
@@ -165,12 +165,12 @@
 		"nodeWashed": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Que sujeira."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Está tudo bem, isso vai secar rápido."
 			}]
@@ -178,17 +178,17 @@
 		"nodeNoGum": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Ei,  <$ varObject('global', 'UserNameNonStatic') $>!"
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Estamos falando sobre Alex."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Hoje de manhã, ele estava agindo estranho, até foi o primeiro a chegar."
 			}]
@@ -196,22 +196,22 @@
 		"node0": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Onde você sentou?"
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Acho que você sentou em um chiclete."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Que confusão! Vá direto para o banheiro antes da aula."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Sim, talvez você consiga tirar."
 			}]

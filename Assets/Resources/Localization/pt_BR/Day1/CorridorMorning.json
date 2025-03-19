@@ -14,25 +14,25 @@
 		"node1": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Você conseguiu encontrar a sala de aula."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "A menina de cabelo vermelho ao lado da porta é a Maria. Ela também está na nossa turma. Ela é um pouco tímida, mas é legal."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
-				"msn": "E ao lado do mural está o Guille, você já conheceu ele."
+				"msn": "E ao lado do mural está o Guilherme, você já conheceu ele."
 			}]
 		},
 		"node2": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Desculpe, estou com pressa e vou me atrasar se não entrar agora."
 			}]
@@ -67,7 +67,7 @@
 		"node1": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Guillermo",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Não se esqueça de olhar o mural. Às vezes, tem coisas interessantes lá."
 			}]
@@ -76,22 +76,22 @@
 			"type": "dialog",
 			"next": "quest",
 			"fragments": [{
-				"tag": "Guillermo",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Oi, eu estava lendo o mural agora."
 			},
 			{
-				"tag": "Guillermo",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Tem algumas mensagens e adesivos bem legais por lá."
 			},
 			{
-				"tag": "Guillermo",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "É bom dar uma olhada pelo menos uma vez por dia, é importante se acostumar a fazer isso."
 			},
 			{
-				"tag": "Guillermo",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Vamos entrar?"
 			}]

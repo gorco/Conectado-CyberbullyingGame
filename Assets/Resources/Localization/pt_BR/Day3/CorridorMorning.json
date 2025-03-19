@@ -14,7 +14,7 @@
 		"ignore": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "..."
 			},
@@ -46,7 +46,7 @@
 		"nodeRepeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Esquece o mural."
 			}]
@@ -55,12 +55,12 @@
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Eu estava olhando o mural."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "E... Acho que é melhor você ignorá-lo hoje."
 			}]
@@ -81,12 +81,12 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Desculpa, o Alex foi longe demais com isso."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Acho que você deveria falar com o coordenador ou o diretor."
 			}]
@@ -95,17 +95,17 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Colocaram uma foto sua em todos os murais da escola."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Também colocaram no pátio."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Acho que você deveria falar com qualquer professor que encontrar."
 			}]
@@ -300,7 +300,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Você",
-				"msn": "Eu deveria falar com a Alison antes de entrar. Ela está agindo estranho."
+				"msn": "Eu deveria falar com a Alice antes de entrar. Ela está agindo estranho."
 			}]
 		}
 	}

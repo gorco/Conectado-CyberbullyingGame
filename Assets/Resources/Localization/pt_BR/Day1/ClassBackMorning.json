@@ -39,12 +39,12 @@
 			{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Por favor, <$ varObject('global', 'UserNameNonStatic') $>, sente-se perto da Alison."
+				"msn": "Por favor, <$ varObject('global', 'UserNameNonStatic') $>, sente-se perto da Alice."
 			},
 			{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Alison, por favor, ajude <$ varObject('global', 'UserNameNonStatic') $> com qualquer dúvida que tiver sobre a escola."
+				"msn": "Alice, por favor, ajude <$ varObject('global', 'UserNameNonStatic') $> com qualquer dúvida que tiver sobre a escola."
 			},
 			{
 				"tag": "Professor",
@@ -185,12 +185,12 @@
 			"fragments": [{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Sente perto da Alison."
+				"msn": "Sente perto da Alice."
 			},
 			{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Alison, por favor, ajude <$ varObject('global', 'UserNameNonStatic') $> com qualquer dúvida que tiver sobre a escola."
+				"msn": "Alice, por favor, ajude <$ varObject('global', 'UserNameNonStatic') $> com qualquer dúvida que tiver sobre a escola."
 			}]
 		},
 	}

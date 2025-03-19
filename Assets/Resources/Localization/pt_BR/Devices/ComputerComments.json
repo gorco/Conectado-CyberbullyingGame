@@ -14,7 +14,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "earing",
-				"value": "De nada, Allison",
+				"value": "De nada, Alice",
 				"key": "Você",
 				"other" : "empty",
 				"time": 0
@@ -104,7 +104,7 @@
 			},
 			{
 				"next": "node1b",
-				"msn": "Alison... Era por isso que você queria trocar senhas comigo."
+				"msn": "Alice... Era por isso que você queria trocar senhas comigo."
 			},
 			{
 				"msn": "(Permanecer em silêncio)"
@@ -142,7 +142,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "troll",
-				"value": "Alison... é por isso que você queria trocar senhas, você é a pior.",
+				"value": "Alice... é por isso que você queria trocar senhas, você é a pior.",
 				"key": "Você",
 				"other" : "empty",
 				"time": 0

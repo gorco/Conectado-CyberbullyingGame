@@ -27,7 +27,7 @@
 			"event":{
 				"name": "change variable",
 				"var": "hour",
-				"value": "15:00",
+				"value": "15:00"
 			}
 		}
 	}

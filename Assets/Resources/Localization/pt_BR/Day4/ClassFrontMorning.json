@@ -37,22 +37,22 @@
 			"fragments": [{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Alejandro, você se atrasou. Por favor, sente-se."
+				"msn": "Alexandre, você se atrasou. Por favor, sente-se."
 			},
 			{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'O novato', 'A novata') $> está ocupando o meu lugar."
 			},
 			{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "O nome <$ if(varObject('global', 'MaleSexNonStatic')==true, 'dele', 'dela') $> é <$ varObject('global', 'UserNameNonStatic') $>."
+				"msn": "Seu nome é <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Por enquanto, sente-se em outra carteira. Pedi à Alison para ajudar <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> nos primeiros dias"
+				"msn": "Por enquanto, sente-se em outra carteira. Pedi à Alice para ajudar <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> nos primeiros dias"
 			}]
 		},
 		"black": {

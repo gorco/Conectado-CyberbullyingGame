@@ -376,7 +376,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "LOL, parece um grande muro. Por que não MURALHA?",
+				"value": "LOL, parece um muro. Que tal MURALHA?",
 				"key": "Jose",
 				"time": 1.4
 			}
@@ -398,7 +398,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Não complique, podemos chamar <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele de Excluído', 'ela de Excluída') $>... enfim, não vamos mais falar com <$ if(varObject('global', 'MaleSexNonStatic')==true, 'o Excluído', 'a Excluída') $>...",
+				"value": "Não complique, podemos chamar <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele de Excluído... enfim, não vamos mais falar com ele', 'ela de Excluída... enfim, não vamos mais falar com ela') $>...",
 				"key": "Ester",
 				"time": 2
 			}

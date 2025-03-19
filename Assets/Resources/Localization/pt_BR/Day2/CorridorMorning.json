@@ -14,7 +14,7 @@
 		"nodeRepeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Vamos entrar ou vamos chegar tarde."
 			}]
@@ -41,22 +41,22 @@
 			"type": "dialog",
 			"next": "checkRepeat",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Oi, <$ varObject('global', 'UserNameNonStatic') $>! Como você está?"
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "A propósito, o Alex comentou antes que queria fazer uma pegadinha com você."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Sabe, ele não costumava ser assim, não sei o que está acontecendo."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Tome cuidado, tá?"
 			}]
@@ -80,7 +80,7 @@
 				"tag": "Você",
 				"msn": "De novo, é?"
 			},{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "E daí?"
 			},
@@ -115,7 +115,7 @@
 			"type": "dialog",
 			"next": "normal2",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Oi, <$ varObject('global', 'UserNameNonStatic') $>! Como você está?"
 			}]
@@ -208,12 +208,12 @@
 			"type": "dialog",
 			"next": "quest1",
 			"fragments": [{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Sou meio brincalhão, mas fica tranquilo."
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Vamos todos rir juntos."
 			}]
@@ -235,7 +235,7 @@
 				"msn": "Por que não começamos de novo?"
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Tudo certo, vamos entrar."
 			}]
@@ -261,7 +261,7 @@
 				"msn": "Sempre procurando briga por qualquer motivo."
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Se já terminou de me incomodar, sai logo daqui."
 			}]
@@ -279,12 +279,12 @@
 			"type": "dialog",
 			"next": "quest1",
 			"fragments": [{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Se você está falando sobre meu lugar..."
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Não é brincadeira, não quero que se sente lá de novo."
 			}]
@@ -293,17 +293,17 @@
 			"type": "dialog",
 			"next": "quest2",
 			"fragments": [{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "O chiclete?"
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Não olhe pra mim."
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Lembro que cheguei tarde."
 			}]
@@ -316,7 +316,7 @@
 				"msn": "Você ainda está chateado com a história do lugar?"
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Talvez. E você, já sabe qual é o seu lugar?"
 			}]
@@ -367,17 +367,17 @@
 			"type": "dialog",
 			"next": "matchOptions",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Vamos nos encontrar neste sábado para assistir a um filme na minha casa."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Você quer vir? Alguns colegas da turma vão estar lá."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "E vamos assistir na TV enorme que meu pai acabou de comprar pra ver futebol."
 			}]
@@ -402,12 +402,12 @@
 			"type": "dialog",
 			"next": "questGo",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Ótimo, mais um para o nosso time!"
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Vou te passar o endereço e os detalhes."
 			}]
@@ -425,12 +425,12 @@
 			"type": "dialog",
 			"next": "questNoGo",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Que pena..."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Bom, até mais!"
 			}]
@@ -448,7 +448,7 @@
 			"type": "dialog",
 			"next": "questAsk",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Então me avise."
 			}]

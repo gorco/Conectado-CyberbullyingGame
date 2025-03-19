@@ -14,12 +14,12 @@
 		"repeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "..."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "..."
 			}]
@@ -46,22 +46,22 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "..."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Não vamos dedurar eles, mas acho que você já sabe quem foi."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "*sshhhhhh*"
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "*sshhhhhh*"
 			}]
@@ -70,18 +70,18 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "..."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Desculpe, não fazemos ideia."
 			},
 			{
 				"tag": "Você",
-				"msn": "Obrigado, Guille."
+				"msn": "Obrigado, Gui."
 			}]
 		},
 		"setter":{

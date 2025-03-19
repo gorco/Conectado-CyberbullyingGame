@@ -28,7 +28,7 @@
 			"next": "node2",
 			"event": {
 				"name": "class entrance",
-				"synchronous": true,
+				"synchronous": true
 			}
 		},
 		"node2": {
@@ -37,22 +37,22 @@
 			"fragments": [{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Alejandro, você está atrasado. Por favor, sente-se."
+				"msn": "Alexandre, você está atrasado. Por favor, sente-se."
 			},
 			{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'O novato', 'A novata') $> está no meu lugar."
 			},
 			{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "O nome <$ if(varObject('global', 'MaleSexNonStatic')==true, 'dele', 'dela') $> é <$ varObject('global', 'UserNameNonStatic') $>."
+				"msn": "Seu nome é <$ varObject('global', 'UserNameNonStatic') $>."
 			},
 			{
 				"tag": "Professor",
 				"character": "Teacher",
-				"msn": "Sente-se em outra cadeira por enquanto. Pedi para a Alison ajudar <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> nos primeiros dias."
+				"msn": "Sente-se em outra cadeira por enquanto. Pedi para a Alice ajudar <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> nos primeiros dias."
 			}]
 		},
 		"friendship": {

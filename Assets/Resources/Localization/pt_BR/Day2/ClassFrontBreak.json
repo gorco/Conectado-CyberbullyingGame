@@ -3,12 +3,12 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "Não temos muito o que conversar."
 			},
 			{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "Por que você não vai encontrar a Ana e o José? Eles estavam te esperando no pátio."
 			},

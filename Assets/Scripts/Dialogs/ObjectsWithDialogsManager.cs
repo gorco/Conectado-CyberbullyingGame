@@ -43,6 +43,8 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 
         string fileContents = jsonFile.text;
         JSONObject json = JSONObject.Create(fileContents);
+		Debug.LogWarning("->content:" + fileContents);
+
 		foreach (Transform child in transform)
 		{
 			if (!child.GetComponent<ThrowDialog>())
@@ -69,6 +71,7 @@ public class ObjectsWithDialogsManager : MonoBehaviour {
 						else
 						{
 							Debug.LogWarning("Dialog with key " + name + " doesn't exist in file " + fileName);
+							Debug.LogWarning("file:" + json.ToString());
 						}
 					} catch (Exception e)
 					{

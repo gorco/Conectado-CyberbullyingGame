@@ -18,7 +18,7 @@
 		"nogum": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Ela está sempre lendo, é melhor não incomodá-la."
 			}]
@@ -26,12 +26,12 @@
 		"node0": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Acho que você não percebeu, mas tem um chiclete grudado na sua calça."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Você pode ir ver isso no espelho do banheiro."
 			}]
@@ -39,12 +39,12 @@
 		"whased": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "O que aconteceu? Que bagunça."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Oh, meu amigo, parece que você molhou suas calças ou que 'sujou' elas."
 			}]

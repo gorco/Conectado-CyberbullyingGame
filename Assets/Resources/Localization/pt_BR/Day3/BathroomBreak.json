@@ -23,7 +23,7 @@
 		"nodeRepeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Desculpa, mas meus pais não podem saber disso."
 			}]
@@ -52,7 +52,7 @@
 			"next": "nodeUnisex",
 			"fragments": [{
 				"tag": "Você",
-				"msn": "Então, quem escreveu o bilhete foi você, Guille."
+				"msn": "Então, quem escreveu o bilhete foi você, Guilherme."
 			},
 			{
 				"tag": "Você",
@@ -75,7 +75,7 @@
 				"msn": "Você não pode estar aqui. Sai fora!"
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character" : "Guille",
 				"msn": "Eu preciso falar com você. Fui eu quem escreveu o bilhete."
 			},
@@ -92,22 +92,22 @@
 			"type": "dialog",
 			"next": "changeVariable",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character" : "Guille",
 				"msn": "É disso que eu quero falar com você."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character" : "Guille",
 				"msn": "Não posso falar com você aqui, onde o Alex ou os amigos dele podem nos ver."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character" : "Guille",
 				"msn": "Ele ameaçou mostrar uma foto minha fumando e bebendo pros meus pais."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character" : "Guille",
 				"msn": "Meus pais são muito rigorosos e, se descobrirem, não sei o que pode acontecer... Talvez até me mandem pra outra escola."
 			},
@@ -116,37 +116,37 @@
 				"msn": "Mas por que o Alex não quer que ninguém fale comigo?"
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character" : "Guille",
 				"msn": "A gente não sabe. Ele te implicou desde o primeiro dia."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character" : "Guille",
 				"msn": "Muita gente faz o que ele quer, mas alguns de nós já foram ameaçados por ele."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character" : "Guille",
 				"msn": "No ano passado, a Ana fez algo parecido com a Maria."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character" : "Guille",
 				"msn": "Ela não tem amigos desde então e, quando alguém tenta falar com ela, acaba ignorando."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character" : "Guille",
 				"msn": "Ela ainda não nos perdoou."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character" : "Guille",
 				"msn": "Olha, eu só queria pedir desculpas, mas enquanto o Alex estiver assim, não poderei falar com você."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character" : "Guille",
 				"msn": "Desculpa mesmo, <$ varObject('global', 'UserNameNonStatic') $>."
 			}]
@@ -182,12 +182,12 @@
 		"nodeAlex": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Desculpa mesmo."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Mas não quero que ele torne minha vida um inferno também."
 			}]
@@ -196,22 +196,22 @@
 			"type": "dialog",
 			"next": "guilleQuest",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Isso foi a Ana quem fez."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Ela realmente gosta do Alex e, se ele te implicar, ela vai fazer o mesmo."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "E o José é o capacho dele, não consegue pensar por si mesmo."
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Evite os três."
 			}]

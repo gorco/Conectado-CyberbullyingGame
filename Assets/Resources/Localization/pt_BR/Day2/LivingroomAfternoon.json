@@ -174,7 +174,7 @@
 			},
 			{
 				"next": "guille",
-				"msn": "Guille me convidou para ir à casa dele neste sábado.",
+				"msn": "Guilherme me convidou para ir à casa dele neste sábado.",
 				"condition": "page == 1 && aboutGuille == true && varObject('global', 'GuillermoQuestNonStatic') > 0"
 			},
 			{
@@ -184,7 +184,7 @@
 			},
 			{
 				"next": "alison",
-				"msn": "Sobre a Alison...",
+				"msn": "Sobre a Alice...",
 				"condition": "page == 2 && aboutAlison == true && varObject('global', 'AlisonQuestNonStatic') > 0"
 			},
 			{
@@ -326,7 +326,7 @@
 			"next": "alisonUpParentsFS",
 			"fragments": [{
 				"tag": "Você",
-				"msn": "A Alison é super legal."
+				"msn": "A Alice é super legal."
 			},
 			{
 				"tag": "Você",
@@ -663,9 +663,9 @@
 			"next": "message2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "<$ varObject('global', 'UserNameNonStatic') $> este é o chat que usamos com a galera.",
-				"key": "Alison",
+				"key": "Alice",
 				"other": "thxClass",
 				"time": 0 
 			}
@@ -675,9 +675,9 @@
 			"next": "message3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Bem-vindo!",
-				"key": "Guille",
+				"key": "Guilherme",
 				"time": 1 
 			}
 		},
@@ -686,9 +686,9 @@
 			"next": "message4",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": ":)",
-				"key": "Alison",
+				"key": "Alice",
 				"time": 2 
 			}
 		},
@@ -697,7 +697,7 @@
 			"next": "message5",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Por que o convite? Você não conversou com o Alex hoje?",
 				"key": "Ana",
 				"time": 8 
@@ -708,7 +708,7 @@
 			"next": "message6",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "Hmm, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele não merece estar neste grupo. Alguém tira ele AGORA!', 'ela não merece estar neste grupo. Alguém tira ela AGORA!') $>",
 				"key": "Alex",
 				"time": 10 
@@ -719,7 +719,7 @@
 			"next": "message7",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "A única que sobra é aquela estranha, Maria.",
 				"key": "Alex",
 				"other": "kickClass",
@@ -730,7 +730,7 @@
 			"type": "event",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "José é o administrador. Fala com ele amanhã, ele não acompanha esse chat muito bem.",
 				"key": "Ana",
 				"time": 14

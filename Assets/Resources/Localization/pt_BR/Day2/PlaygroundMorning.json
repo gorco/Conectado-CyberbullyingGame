@@ -15,7 +15,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Você",
-				"msn": "Já falei com a Alison. Melhor eu dar uma olhada no pátio."
+				"msn": "Já falei com a Alice. Melhor eu dar uma olhada no pátio."
 			}]
 		}, 
 		"setter":{
@@ -116,7 +116,7 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Até mais, tchau!"
 			}]
@@ -125,12 +125,12 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Estou lendo"
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Se não se importa... (Ela te ignora e continua lendo.)"
 			}]
@@ -139,7 +139,7 @@
 			"type": "dialog",
 			"next": "normal2",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Você precisa de algo?"
 			}]
@@ -169,17 +169,17 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Que gentil."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Ninguém costuma falar comigo."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Tenha um bom dia."
 			}]

@@ -21,12 +21,12 @@
 				"msn": "Acho que Outdoor e Troll são os mais originais."
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Eu ainda prefiro <$ if(varObject('global', 'MaleSexNonStatic')==true, 'Excluído', 'Excluída') $>."
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Ainda assim, eu concordo que '<$ varObject('global', 'UserNameNonStatic') $> Outdoor' soa muito bom hahaha. "
 			},
@@ -43,7 +43,7 @@
 		"node2": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Desculpe, estou com pressa. Vou me atrasar se não entrar agora."
 			}]

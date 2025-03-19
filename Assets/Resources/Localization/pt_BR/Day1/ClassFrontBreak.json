@@ -14,7 +14,7 @@
 		"go": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "O que você está olhando? Vai embora, já falamos tudo o que precisávamos."
 			}]
@@ -31,17 +31,17 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "Ei, <$ if(varObject('global', 'MaleSexNonStatic')==true, 'novato', 'novata') $>, vamos conversar um pouco!"
 			},
 			{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "Hoje você se sentou no meu lugar. Não quero que faça isso de novo."
 			},
 			{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "Amanhã você vai se sentar na cadeira vazia lá do fundo."
 			}]
@@ -68,19 +68,19 @@
 			"event": {
 				"name": "change variable",
 				"var": "AlejandroQuest",
-				"value": 1,
+				"value": 1
 			}
 		},
 		"node2a": {
 			"type": "dialog",
 			"next": "move",
 			"fragments": [{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "Isso mesmo, obediente."
 			},
 			{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "E mais, pra me compensar pelo o que fez, vou pegar seu sanduíche também. Estou com fome."
 			},
@@ -89,7 +89,7 @@
 				"msn": "(Você dá a ele o seu sanduíche)"
 			},
 			{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "Agora vai, sai logo daqui."
 			}]
@@ -107,27 +107,27 @@
 			"type": "dialog",
 			"next": "nodeFS10",
 			"fragments": [{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "É isso aí, é só uma cadeira, mas é o meu lugar."
 			},
 			{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "Então, vá encontrar outro pra você."
 			},
 			{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "(Com um tom ameaçador) Ou vou ter que te ajudar a encontrar um."
 			},
 			{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
-				"msn": "E o último que ajudei a encontrar um lugar... Bem, ele acabou encontrando a minha mão na cara dele!"
+				"msn": "E o último que ajudei a encontrar um lugar... Bem, ele acabou encontrando foi a minha mão na cara dele!"
 			},
 			{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "Agora sai daqui."
 			}]
@@ -154,7 +154,7 @@
 			"type": "dialog",
 			"next": "nodeFS20",
 			"fragments": [{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "Você se acha <$ if(varObject('global', 'MaleSexNonStatic')==true, 'o espertão', 'a espertona') $>, não é?"
 			},
@@ -163,13 +163,13 @@
 				"msn": "(Você é <$ if(varObject('global', 'MaleSexNonStatic')==true, 'empurrado', 'empurrada') $>)."
 			},
 			{
-				"tag": "Alejandro",
+				"tag": "Alexandre",
 				"character": "Alex",
 				"msn": "Que seja, idiota."
 			},
 			{
 				"tag": "",
-				"msn": "(Alejandro vai embora)"
+				"msn": "(Alexandre vai embora)"
 			}]
 		},
 		"nodeFS20":{
@@ -216,27 +216,27 @@
 			"type": "dialog",
 			"next": "quest",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Vejo que você achou meu brinco."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Muito obrigada!"
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Você é incrível, te devo uma."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "O recreio está quase acabando, vamos voltar pra sala."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Te vejo lá dentro!"
 			}]
@@ -269,12 +269,12 @@
 		"earingNotFound": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Você ainda não achou?"
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Por favor, continue procurando."
 			}]
@@ -283,17 +283,17 @@
 			"type": "dialog",
 			"next": "earing",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Onde será que eu perdi isso..."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Desculpe <$ varObject('global', 'UserNameNonStatic') $>, eu não te vi."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Estou procurando meu brinco, mas não sei onde posso ter deixado."
 			}]
@@ -329,17 +329,17 @@
 			"type": "dialog",
 			"next": "node3",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Ainda não procurei."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Você pode ir lá? Enquanto isso, eu termino de procurar na sala..."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Você me faria um grande favor."
 			}]
@@ -348,21 +348,21 @@
 			"type": "dialog",
 			"next": "node3",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Não pode ser, eu estava usando eles esta manhã."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
-				"msn": "E-e-eles são novos, ganhei de p-presente."
+				"msn": "Eles são novos, ganhei de presente..."
 			},
 			{
 				"tag": "",
 				"msn": "(Você percebe que ela está muito preocupada e prestes a chorar)"
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Por favor, sniff, sniff, você pode me ajudar a encontrá-los?"
 			}]
@@ -382,12 +382,12 @@
 		"node4": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Muito obrigada."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Aqui está meu número de telefone, assim podemos trocar mensagens."
 			},
@@ -413,7 +413,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Você",
-				"msn": "Alison parece preocupada."
+				"msn": "Alice parece preocupada."
 			},
 			{
 				"tag": "Você",
@@ -433,9 +433,9 @@
 			"next": "changeHour",
 			"event": {
 				"name": "mobile message",
-				"var": "Alison Clase",
+				"var": "Alice Classe",
 				"value": "Obrigado de novo por ter me ajudado",
-				"key": "Alison Clase",
+				"key": "Alice Classe",
 				"other": "alisonThx",
 				"time": 3
 			}

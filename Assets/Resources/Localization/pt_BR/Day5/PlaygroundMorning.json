@@ -24,7 +24,7 @@
 			"type": "dialog",
 			"fragments": [
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Some daqui, não temos nada para conversar."
 			}]
@@ -34,7 +34,7 @@
 			"next": "setter",
 			"fragments": [
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Nada disso teria acontecido se você tivesse confiado em mim. É sua culpa."
 			}]
@@ -44,12 +44,12 @@
 			"next": "setter",
 			"fragments": [
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Você merece o que aconteceu."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "O que você estava pensando ao me dar sua senha?"
 			}]
@@ -124,7 +124,7 @@
 			{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Não consigo acreditar que você deu sua senha para a Alison."
+				"msn": "Não consigo acreditar que você deu sua senha para a Alice."
 			},
 			{
 				"tag": "Ana",

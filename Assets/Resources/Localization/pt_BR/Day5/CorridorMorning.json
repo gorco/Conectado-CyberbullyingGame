@@ -23,12 +23,12 @@
 		"default": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Quando a aula acabar, não esquece de ir até os banheiros."
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'Eu estarei lá', 'Ana vai estar esperando lá') $>."
 			}]
@@ -38,12 +38,12 @@
 			"next": "setter",
 			"fragments": [
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Parece que você vai precisar de um celular novo, né?"
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Espero que você não perca esse também... ou que não te tirem ele."
 			}]
@@ -53,12 +53,12 @@
 			"next": "setter",
 			"fragments": [
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Dá uma olhada nos seus posts no \"Conectado\", ok?"
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Não esperava isso de você, é como se não fosse você escrevendo XD."
 			}]
@@ -68,12 +68,12 @@
 			"next": "setter",
 			"fragments": [
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Olha seus comentários no chat. Superou nossas expectativas."
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Não esperava isso de você. É como se não fosse você escrevendo hahaha."
 			}]
@@ -91,22 +91,22 @@
 			"next": "default",
 			"fragments": [
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Bem, acho que já é o suficiente."
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "Vamos fazer o seguinte. Quando as aulas acabarem, vamos conversar onde ninguém possa nos ouvir."
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "A gente fala sobre isso, você se desculpa e te deixamos em paz."
 			},
 			{
-				"tag": "Álex",
+				"tag": "Alex",
 				"character": "Alex",
 				"msn": "A Ana e eu vamos te deixar tranquilo e o resto pode fazer o que quiser."
 			}]
@@ -128,7 +128,7 @@
 		"default": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "..."
 			}]
@@ -138,7 +138,7 @@
 			"next": "setter",
 			"fragments": [
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Não tenho nada pra falar com você."
 			}]

@@ -16,7 +16,7 @@
 			"fragments": [{
 				"tag": "Ana",
 				"character": "Ana",
-				"msn": "Parece que você encontrou o brinco perdido da Alison."
+				"msn": "Parece que você encontrou o brinco perdido da Alice."
 			}]
 		},
 		"node1": {
@@ -37,12 +37,12 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Nosso professor é bem legal!"
 			},
 			{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Se você tiver algum problema, é só falar com ele."
 			}]
@@ -54,7 +54,7 @@
 			"next": "take",
 			"fragments": [{
 				"tag": "Você",
-				"msn": "Parece que é o brinco perdido da Alison!"
+				"msn": "Parece que é o brinco perdido da Alice!"
 			},
 			{
 				"tag": "Você",

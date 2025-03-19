@@ -18,7 +18,7 @@
 				"name": "computer publication",
 				"var": "troll",
 				"value": "Sou eu, me chama no (34) 953259340",
-				"key": "Tú",
+				"key": "Você",
 				"other": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'photoNumberBoy', 'photoNumberGirl') $>",
 				"time": 0 
 			}
@@ -30,7 +30,7 @@
 				"name": "computer comment",
 				"var": "troll",
 				"value": "to esperando sua ligação",
-				"key": "Tú",
+				"key": "Você",
 				"time": 0.2
 			}
 		},
@@ -103,7 +103,7 @@
 			"next": "mobileMessage1",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "parece q vc não me bloqueou, valeu. De presente, vou te contar q eu amo chupar rola :)",
 				"key": "",
 				"other": "empty",
@@ -115,7 +115,7 @@
 			"next": "mobileMessage2",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "na real, eu curto de tudo, se alguém quiser fazer algo 'especial', me chama",
 				"key": "",
 				"time": 0.1
@@ -126,7 +126,7 @@
 			"next": "mobileMessage3",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "valeu por nos contar, mas a gente já sabia, é bem a sua cara mesmo",
 				"key": "Alex",
 				"time": 0.2
@@ -137,7 +137,7 @@
 			"next": "mobileMessage4",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "achamos o nome perfeito, CHUPA-CHUPA",
 				"key": "Ana",
 				"time": 0.3
@@ -148,9 +148,9 @@
 			"next": "mobileMessage5",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "o q q é isso? pq vc tá falando essas coisas?",
-				"key": "Alison",
+				"key": "Alice",
 				"time": 0.3
 			}
 		},
@@ -159,7 +159,7 @@
 			"next": "mobileMessage6",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "putz, o melhor dia e eu perdi... o q eu perdi?",
 				"key": "Jose",
 				"time": 0.4
@@ -170,9 +170,9 @@
 			"next": "mobileMessage7",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
+				"var": "Classe",
 				"value": "vc tá passando do limite já, quem trollou <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $>?",
-				"key": "Guille",
+				"key": "Guilherme",
 				"time": 0.5
 			}
 		},
@@ -181,8 +181,8 @@
 			"next": "mobileMessage8",
 			"event": {
 				"name": "mobile message",
-				"var": "Clase",
-				"value": "ninguém, e aí guille? foi chupado e não quer q saibam? hahaha",
+				"var": "Classe",
+				"value": "ninguém, e aí Guilherme? foi chupado e não quer q saibam? hahaha",
 				"key": "Ana",
 				"other": "trollClass",
 				"time": 0.6
@@ -322,7 +322,7 @@
 			},
 			{
 				"next": "mobile1",
-				"msn": "Alison, posso confiar nela.",
+				"msn": "Alice, posso confiar nela.",
 				"condition": "page == 2 && aboutMobile == true && varObject('global', 'SharedPassQuestNonStatic') == 1"
 			},
 			{
@@ -402,7 +402,7 @@
 			"next": "mobileSetter2",
 			"fragments": [{
 				"tag": "Você",
-				"msn": "A Alison me surpreendeu. Posso confiar mesmo nela."
+				"msn": "A Alice me surpreendeu. Posso confiar mesmo nela."
 			},
 			{
 				"tag": "Você",

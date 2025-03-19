@@ -14,7 +14,7 @@
 		"nodeRepeat": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Você vai se atrasar se não for agora."
 			}]
@@ -34,7 +34,7 @@
 			"type": "dialog",
 			"next": "friendOptions",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Bom dia, <$ varObject('global', 'UserNameNonStatic') $>"
 			},
@@ -63,27 +63,27 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Acho que você está falando do Alex."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Ana fez algo parecido ano passado para me sacanear."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Você deveria falar com seus pais ou com nosso coordenador."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Eu não fiz isso quando tive a chance. Meus pais me obrigaram a ir ver um psicólogo quando descobriram."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Se precisar que eu vá com você falar com o professor, é só me chamar. Mas não se cale."
 			},
@@ -96,17 +96,17 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Sim, estou bem. Obrigada por perguntar."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Ontem eu estava com febre, então fiquei em casa descansando."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Hoje estou nova em folha."
 			}]
@@ -119,7 +119,7 @@
 				"msn": "Oi, Maria"
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Olá, <$ varObject('global', 'UserNameNonStatic') $>. Precisa de algo?"
 			}]
@@ -140,7 +140,7 @@
 			"type": "dialog",
 			"next": "setter",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Por que não estaria?"
 			},
@@ -149,17 +149,17 @@
 				"msn": "Você não falou com o Alex?"
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Sim, sobre o negócio de não falar com você..."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "Eles tornaram minha vida um inferno no ano passado. Aprendi a lição."
 			},
 			{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "É melhor você conversar com seus pais ou o professor e ignorar o Alex e seus 'minions'."
 			}]

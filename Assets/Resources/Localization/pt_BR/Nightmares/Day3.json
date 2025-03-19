@@ -149,7 +149,7 @@
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "..."
 			}]
@@ -192,7 +192,7 @@
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "..."
 			}]
@@ -235,7 +235,7 @@
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "María",
+				"tag": "Maria",
 				"character": "Maria",
 				"msn": "..."
 			}]

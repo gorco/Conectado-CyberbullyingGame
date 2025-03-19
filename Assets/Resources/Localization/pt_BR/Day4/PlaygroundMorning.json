@@ -4,22 +4,22 @@
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "<$ varObject('global', 'UserNameNonStatic') $>, eu queria falar com você."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Não sei se você já está sabendo, mas o Alex disse para todos nós não conversarmos com você."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "E ele está ameaçando quem não o segue."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Posso confiar em você? Não quero que a gente pare de ser amigos."
 			}]
@@ -40,12 +40,12 @@
 			"type": "dialog",
 			"next": "alisonFS",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Então não tenho escolha, vou parar de falar com você."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Não quero correr riscos."
 			}]
@@ -54,27 +54,27 @@
 			"type": "dialog",
 			"next": "passChange",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Que bom ouvir isso."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Vamos trocar nossas senhas de celular e redes sociais."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Como um gesto de amizade e confiança."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "No passado, as pessoas apertavam as mãos sobre feridas abertas para compartilhar sangue."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Mas isso é nojento e nem um pouco saudável."
 			}]
@@ -95,17 +95,17 @@
 			"type": "dialog",
 			"next": "alisonFS",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Se você não confia em mim, eu também não posso confiar em você."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Desculpe, mas não posso mais falar com você."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Não quero que o Alex fique contra mim."
 			}]
@@ -114,10 +114,10 @@
 			"type": "dialog",
 			"next": "changeVariable",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"msn": "Você escreve as senhas pelo celular."
 			},{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Perfeito. \"Melhores amigos\" (sorrindo de orelha a orelha)"
 			}]
@@ -212,7 +212,7 @@
 		"root": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Guille",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "(A expressão do rosto dele muda ao te ver. Ele vira a cabeça e olha para o outro lado)"
 			}]

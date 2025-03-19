@@ -125,7 +125,7 @@
 			},
 			{
 				"next": "guille",
-				"msn": "Conversei com o Guille hoje",
+				"msn": "Conversei com o Guilherme hoje",
 				"condition": "page == 3 && aboutGuille == true"
 			},
 			{
@@ -154,7 +154,7 @@
 			"next": "guilleFork",
 			"fragments": [{
 				"tag": "Você",
-				"msn": "O Guille disse que o Alex me odeia."
+				"msn": "O Guilherme disse que o Alex me odeia."
 			},
 			{
 				"tag": "Você",
@@ -419,7 +419,7 @@
 			"event": {
 				"name": "computer comment",
 				"var": "insult",
-				"value": "Não complique muito, podemos chamar só de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'EXCLUÍDO... de qualquer forma, agora ninguém mais fala com o Excluído...', 'EXCLUÍDA... de qualquer forma, agora ninguém mais fala com o Excluída...') $> ",
+				"value": "Não complique muito, podemos chamar só de <$ if(varObject('global', 'MaleSexNonStatic')==true, 'EXCLUÍDO... de qualquer forma, agora ninguém mais fala com ele', 'EXCLUÍDA... de qualquer forma, agora ninguém mais fala com ela') $>...",
 				"key": "Ester",
 				"time": 2
 			}

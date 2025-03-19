@@ -197,15 +197,18 @@ public class ComputerManager : EventManager {
 		}
 
 		var avatarFile = author;
-		if(author == "Tú" || author == "Toi"|| author == "You" || author == "Você" || author == "你")
+		if(author == "Tú" || author == "Toi"|| author == "You" || 
+			author == "Você" || author == "你")
 		{
 			avatarFile = GlobalState.MaleSex ? "Boy" : "Girl";
 		}
-		else if (author == "Guille" || author == "Guillermo" || author == "Guillaume" || author == "吉列尔莫" || author == "吉耶")
+		else if (author == "Guille" || author == "Guillermo" || author == "Guillaume" || 
+			author == "Guilherme" || author == "吉列尔莫" || author == "吉耶")
 		{
 			avatarFile = "Guille";
 		}
-		else if (author == "Alex" || author == "Álex" || author == "Alejandro" || author == "Alexandre" || author == "亚历山大" || author == "阿歷")
+		else if (author == "Alex" || author == "Álex" || author == "Alejandro" || 
+			author == "Alexandre" || author == "亚历山大" || author == "阿歷")
 		{
 			avatarFile = "Alex";
 		}
@@ -213,11 +216,13 @@ public class ComputerManager : EventManager {
 		{
 			avatarFile = "Ana";
 		}
-		else if (author == "Alice" || author == "Alison" || author == "艾莉森" || author == "愛莉")
+		else if (author == "Alice" || author == "Alison" || 
+			author == "艾莉森" || author == "愛莉")
 		{
 			avatarFile = "Alison";
 		}
-		else if (author == "Jose" || author == "Joseph" || author == "José" || author == "何塞" || author == "荷西")
+		else if (author == "Jose" || author == "Joseph" || author == "José" || 
+			author == "何塞" || author == "荷西")
 		{
 			avatarFile = "Jose";
 		}

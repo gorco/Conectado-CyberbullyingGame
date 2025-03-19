@@ -4,7 +4,7 @@
 			"type": "dialog",
 			"next": "node1",
 			"fragments": [{
-				"tag": "Guillermo",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Você é novo aqui? Acho que nunca te vi antes."
 			}]
@@ -34,16 +34,16 @@
 			"type": "dialog",
 			"next": "nodeFS",
 			"fragments": [{
-				"tag": "Guillermo",
+				"tag": "Guilherme",
 				"character": "Guille",
-				"msn": "Pode me chamar de Guille."
+				"msn": "Pode me chamar de Guilherme."
 			},
 			{
 				"tag": "",
 				"msn": "<<<O sinal está tocando>>"
 			},
 			{
-				"tag": "Guillermo",
+				"tag": "Guilherme",
 				"character": "Guille",
 				"msn": "Vamos entrar, até mais."
 			}]
@@ -263,7 +263,7 @@
 			"type": "dialog",
 			"next": "options",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "A gente se conhece?"
 			}]
@@ -302,17 +302,17 @@
 			"type": "dialog",
 			"next": "fork",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
-				"msn": "Prazer, sou a Alison"
+				"msn": "Prazer, sou a Alice"
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Espero que você goste daqui, as pessoas são super bacanas."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Em qual série você está?"
 			},
@@ -321,7 +321,7 @@
 				"msn": "(Você responde)"
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Vejo você na sala então."
 			}]
@@ -329,12 +329,12 @@
 		"node2": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Não seja <$ if(varObject('global', 'MaleSexNonStatic')==true, 'tímido', 'tímida') $>, eu não mordo, viu?"
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Então, até mais. Tenha um bom primeiro dia."
 			}]
@@ -353,7 +353,7 @@
 		"abierto": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Vamos entrar agora ou vamos nos atrasar."
 			}]
@@ -361,12 +361,12 @@
 		"cerrado": {
 			"type": "dialog",
 			"fragments": [{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Aquele garota de camiseta amarela perto da entrada do pátio também está na nossa turma."
 			},
 			{
-				"tag": "Alison",
+				"tag": "Alice",
 				"character": "Alison",
 				"msn": "Ele é muito legal! Por que você não vai falar com ele?"
 			}]
