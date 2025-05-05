@@ -6,7 +6,7 @@
 			"fragments": [{
 				"tag": "Guilherme",
 				"character": "Guille",
-				"msn": "Você é novo aqui? Acho que nunca te vi antes."
+				"msn": "Você é novo aqui? Acho que nunca te vi."
 			}]
 		},		
 		"node1": {
@@ -14,7 +14,7 @@
 			"questionId": "GuillermoMeet",
 			"options": [{
 				"next": "node1a",
-				"msn": "Sim, me chamo <$ varObject('global', 'UserNameNonStatic') $>...  Quem é você?"
+				"msn": "Sim, eu sou <$ varObject('global', 'UserNameNonStatic') $>...  Quem é você?"
 			},
 			{
 				"next": "node1b",
@@ -167,7 +167,7 @@
 			},
 			{
 				"next": "node3",
-				"msn": "Não preciso de nada, até mais."
+				"msn": "Não preciso de nada, tchau."
 			}]
 		},
 		"introduceFork": {
@@ -273,7 +273,7 @@
 			"questionId": "AlisonMeet",
 			"options": [{
 				"next": "nodeFS",
-				"msn": "Sou <$ varObject('global', 'UserNameNonStatic') $>, e você é...?"
+				"msn": "Sou <$ varObject('global', 'UserNameNonStatic') $>, qual o seu nome..?"
 			},
 			{
 				"next": "node2",
@@ -314,7 +314,7 @@
 			{
 				"tag": "Alice",
 				"character": "Alison",
-				"msn": "Em qual série você está?"
+				"msn": "Em qual série você estuda?"
 			},
 			{
 				"tag": "Você",
@@ -336,7 +336,7 @@
 			{
 				"tag": "Alice",
 				"character": "Alison",
-				"msn": "Então, até mais. Tenha um bom primeiro dia."
+				"msn": "Então, até mais. Tenha um bom primeiro dia de aula."
 			}]
 		},
 		"fork": {
@@ -404,7 +404,7 @@
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Você",
-				"msn": "Acabei de chegar, não posso sair ainda não!"
+				"msn": "Acabei de chegar, então ainda não posso sair!"
 			}]
 		}
 	}

@@ -1,27 +1,29 @@
 ﻿{
-	"teacher":{
+	"teacher": {
 		"root": {
 			"type": "dialog",
 			"next": "node1",
-			"fragments": [{
-				"tag": "Professor",
-				"character": "Teacher",
-				"msn": "Na semana passada, se vocês se lembram, estávamos aprendendo como fazer uma análise morfológica de uma frase."
-			},
-			{
-				"tag": "Professor",
-				"character": "Teacher",
-				"msn": "Agora é hora de analisar a sintaxe."
-			},
-			{
-				"tag": "Batidas na porta",
-				"msn": "(Alguém bate à porta)"
-			},
-			{
-				"tag": "Professor",
-				"character": "Teacher",
-				"msn": "Pode entrar."
-			}]
+			"fragments": [
+				{
+					"tag": "Professor",
+					"character": "Teacher",
+					"msn": "Na semana passada, se vocês se lembram, estávamos aprendendo como fazer uma análise morfológica de uma frase."
+				},
+				{
+					"tag": "Professor",
+					"character": "Teacher",
+					"msn": "Agora é hora de analisar a sintaxe."
+				},
+				{
+					"tag": "Batidas na porta",
+					"msn": "(Alguém bate à porta)"
+				},
+				{
+					"tag": "Professor",
+					"character": "Teacher",
+					"msn": "Pode entrar."
+				}
+			]
 		},
 		"node1": {
 			"type": "event",
@@ -34,26 +36,28 @@
 		"node2": {
 			"type": "dialog",
 			"next": "friendship",
-			"fragments": [{
-				"tag": "Professor",
-				"character": "Teacher",
-				"msn": "Alexandre, você está atrasado. Por favor, sente-se."
-			},
-			{
-				"tag": "Alexandre",
-				"character": "Alex",
-				"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'O novato', 'A novata') $> está no meu lugar."
-			},
-			{
-				"tag": "Professor",
-				"character": "Teacher",
-				"msn": "Seu nome é <$ varObject('global', 'UserNameNonStatic') $>."
-			},
-			{
-				"tag": "Professor",
-				"character": "Teacher",
-				"msn": "Sente-se em outra cadeira por enquanto. Pedi para a Alice ajudar <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> nos primeiros dias."
-			}]
+			"fragments": [
+				{
+					"tag": "Professor",
+					"character": "Teacher",
+					"msn": "Alexandre, você está atrasado. Por favor, sente-se."
+				},
+				{
+					"tag": "Alexandre",
+					"character": "Alex",
+					"msn": "<$ if(varObject('global', 'MaleSexNonStatic')==true, 'O novato', 'A novata') $> está no meu lugar."
+				},
+				{
+					"tag": "Professor",
+					"character": "Teacher",
+					"msn": "Seu nome é <$ varObject('global', 'UserNameNonStatic') $>."
+				},
+				{
+					"tag": "Professor",
+					"character": "Teacher",
+					"msn": "Sente-se em outra cadeira por enquanto. Pedi para a Alice ajudar <$ if(varObject('global', 'MaleSexNonStatic')==true, 'ele', 'ela') $> nos primeiros dias."
+				}
+			]
 		},
 		"friendship": {
 			"type": "event",
@@ -77,7 +81,7 @@
 		"changeHour": {
 			"type": "event",
 			"next": "nextScene",
-			"event":{
+			"event": {
 				"name": "change variable",
 				"var": "hour",
 				"value": "11:05"

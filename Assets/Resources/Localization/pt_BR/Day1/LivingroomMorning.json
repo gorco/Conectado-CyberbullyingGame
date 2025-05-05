@@ -23,7 +23,7 @@
 		"checkBag": {
 			"type": "fork",
 			"options": [{
-				"next": "bye",
+				"next": "checkHour",
 				"condition": "varObject('state', 'BagPicked') == true"
 			},
 			{
@@ -31,7 +31,18 @@
 				"condition": "varObject('state', 'BagPicked') == false"
 			}]
 		},
-		"bye": {
+		"checkHour": {
+			"type": "fork",
+			"options": [{
+				"next": "byeEarly",
+				"condition": "varObject('global', 'HourNonStatic')<8"
+			},
+			{
+				"next": "byeLate",
+				"condition": "varObject('global', 'HourNonStatic')>=8"
+			}]
+		},
+		"byeEarly": {
 			"type": "dialog",
 			"fragments": [{
 				"tag": "Mãe",
@@ -41,7 +52,20 @@
 			{
 				"tag": "Mãe",
 				"character": "Mother",
-				"msn": "<$ if(varObject('global', 'HourNonStatic')<8, 'Vá agora ou você vai se atrasar.', 'Vá agora, você já está <$ if(varObject('global', 'MaleSexNonStatic')==true, 'atrasado', 'atrasada') $>.') $>."
+				"msn": "Vá agora ou você vai se atrasar."
+			}]
+		},
+		"byeLate": {
+			"type": "dialog",
+			"fragments": [{
+				"tag": "Mãe",
+				"character": "Mother",
+				"msn": "Parece que você pegou tudo."
+			}, 
+			{
+				"tag": "Mãe",
+				"character": "Mother",
+				"msn": "Vá agora, você já está <$ if(varObject('global', 'MaleSexNonStatic')==true, 'atrasado', 'atrasada') $>."
 			}]
 		},
 		"getBag": {
